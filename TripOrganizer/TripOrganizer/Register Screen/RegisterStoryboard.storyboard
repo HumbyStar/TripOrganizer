@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,18 +12,11 @@
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="RegisterViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triporganizer-logo" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-eV-Tnj">
-                                <rect key="frame" x="112.66666666666669" y="159" width="168" height="189"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="168" id="eHj-nX-oQU"/>
-                                    <constraint firstAttribute="height" constant="189" id="yGM-T7-v0A"/>
-                                </constraints>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFR-GP-fkB">
-                                <rect key="frame" x="25" y="378" width="343" height="43"/>
+                                <rect key="frame" x="25" y="319" width="325" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="sKA-4H-kW3"/>
                                 </constraints>
@@ -31,7 +24,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dw-Yb-w0i">
-                                <rect key="frame" x="25" y="441" width="343" height="43"/>
+                                <rect key="frame" x="25" y="382" width="325" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="RFb-hB-Ls1"/>
                                 </constraints>
@@ -39,7 +32,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCh-RB-GFq">
-                                <rect key="frame" x="25" y="504" width="343" height="43"/>
+                                <rect key="frame" x="25" y="445" width="325" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="sYf-t2-hCv"/>
                                 </constraints>
@@ -47,7 +40,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCn-4b-BZh">
-                                <rect key="frame" x="25" y="587" width="343" height="43"/>
+                                <rect key="frame" x="25" y="528" width="325" height="43"/>
                                 <color key="backgroundColor" red="0.4470587969" green="0.4470587969" blue="0.4470587969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="9DQ-kW-EXt"/>
@@ -62,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGe-RH-2Qe">
-                                <rect key="frame" x="25" y="660" width="343" height="29.666666666666629"/>
+                                <rect key="frame" x="25" y="601" width="325" height="29.5"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Ja possui uma conta? Entre aqui">
@@ -72,6 +65,13 @@
                                     <action selector="alreadyHaveAccountPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UTH-P3-A2H"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triporganizer-logo" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-eV-Tnj">
+                                <rect key="frame" x="87" y="67" width="200" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eHj-nX-oQU"/>
+                                    <constraint firstAttribute="height" constant="225" id="yGM-T7-v0A"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,7 +82,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dCh-RB-GFq" secondAttribute="trailing" constant="25" id="9Dz-YV-YCq"/>
                             <constraint firstItem="2cG-eV-Tnj" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="B4b-t8-rvh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4dw-Yb-w0i" secondAttribute="trailing" constant="25" id="C2A-WY-Vu0"/>
-                            <constraint firstItem="AFR-GP-fkB" firstAttribute="top" secondItem="2cG-eV-Tnj" secondAttribute="bottom" constant="30" id="D7M-cJ-usz"/>
+                            <constraint firstItem="AFR-GP-fkB" firstAttribute="top" secondItem="2cG-eV-Tnj" secondAttribute="bottom" constant="27" id="D7M-cJ-usz"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lCn-4b-BZh" secondAttribute="trailing" constant="25" id="Gpl-YS-RNE"/>
                             <constraint firstItem="AFR-GP-fkB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="Jw0-ib-S9b"/>
                             <constraint firstItem="4dw-Yb-w0i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="LnU-QI-htP"/>
@@ -91,7 +91,7 @@
                             <constraint firstItem="lCn-4b-BZh" firstAttribute="top" secondItem="dCh-RB-GFq" secondAttribute="bottom" constant="40" id="Zvb-2s-GVD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AFR-GP-fkB" secondAttribute="trailing" constant="25" id="c5u-Qt-45l"/>
                             <constraint firstItem="dCh-RB-GFq" firstAttribute="top" secondItem="4dw-Yb-w0i" secondAttribute="bottom" constant="20" id="eYc-ge-vXI"/>
-                            <constraint firstItem="2cG-eV-Tnj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="100" id="f2X-dS-436"/>
+                            <constraint firstItem="2cG-eV-Tnj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="67" id="f2X-dS-436"/>
                             <constraint firstItem="dCh-RB-GFq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="ypx-CW-lQm"/>
                         </constraints>
                     </view>
