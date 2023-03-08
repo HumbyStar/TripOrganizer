@@ -48,10 +48,9 @@ class RegisterViewController: UIViewController {
         
         registerButton.clipsToBounds = true
         registerButton.layer.cornerRadius = 20
-        registerButton.backgroundColor = UIColor(red: 167/255, green: 167/255, blue: 167/255, alpha: 1.0)
+        registerButton.backgroundColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
         registerButton.setTitleColor(.white, for: .normal)
         
-        alreadyHaveAccount.setTitle("Já possui uma conta? Entre aqui", for: .normal)
         alreadyHaveAccount.setTitleColor(.black,  for: .normal)
         
     }
