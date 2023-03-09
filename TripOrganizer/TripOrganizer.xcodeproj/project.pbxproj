@@ -13,6 +13,18 @@
 		0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4729B6621C009550C8 /* Main.storyboard */; };
 		0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
 		0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */; };
+		4379D1DC29BA453C00EFB73A /* TabBarStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4379D1DB29BA453C00EFB73A /* TabBarStoryboard.storyboard */; };
+		4379D1DE29BA45FF00EFB73A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379D1DD29BA45FF00EFB73A /* TabBarController.swift */; };
+		4379D1E129BA464D00EFB73A /* HomeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4379D1E029BA464D00EFB73A /* HomeVC.storyboard */; };
+		4379D1E329BA465900EFB73A /* FlightVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4379D1E229BA465900EFB73A /* FlightVC.storyboard */; };
+		4379D1E529BA466800EFB73A /* RestaurantVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4379D1E429BA466800EFB73A /* RestaurantVC.storyboard */; };
+		4379D1E729BA467D00EFB73A /* HotelVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4379D1E629BA467D00EFB73A /* HotelVC.storyboard */; };
+		4379D1E929BA468E00EFB73A /* LoungeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4379D1E829BA468E00EFB73A /* LoungeVC.storyboard */; };
+		4379D1EB29BA46A700EFB73A /* LoungeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379D1EA29BA46A700EFB73A /* LoungeVC.swift */; };
+		4379D1ED29BA46B400EFB73A /* HotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379D1EC29BA46B400EFB73A /* HotelVC.swift */; };
+		4379D1EF29BA46C300EFB73A /* FlightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379D1EE29BA46C300EFB73A /* FlightVC.swift */; };
+		4379D1F129BA46D100EFB73A /* RestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379D1F029BA46D100EFB73A /* RestaurantVC.swift */; };
+		4379D1F329BA46DF00EFB73A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4379D1F229BA46DF00EFB73A /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +36,18 @@
 		0C36EC4A29B6621E009550C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C36EC4D29B6621E009550C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4379D1DB29BA453C00EFB73A /* TabBarStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBarStoryboard.storyboard; sourceTree = "<group>"; };
+		4379D1DD29BA45FF00EFB73A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4379D1E029BA464D00EFB73A /* HomeVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeVC.storyboard; sourceTree = "<group>"; };
+		4379D1E229BA465900EFB73A /* FlightVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlightVC.storyboard; sourceTree = "<group>"; };
+		4379D1E429BA466800EFB73A /* RestaurantVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantVC.storyboard; sourceTree = "<group>"; };
+		4379D1E629BA467D00EFB73A /* HotelVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HotelVC.storyboard; sourceTree = "<group>"; };
+		4379D1E829BA468E00EFB73A /* LoungeVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoungeVC.storyboard; sourceTree = "<group>"; };
+		4379D1EA29BA46A700EFB73A /* LoungeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoungeVC.swift; sourceTree = "<group>"; };
+		4379D1EC29BA46B400EFB73A /* HotelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelVC.swift; sourceTree = "<group>"; };
+		4379D1EE29BA46C300EFB73A /* FlightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightVC.swift; sourceTree = "<group>"; };
+		4379D1F029BA46D100EFB73A /* RestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantVC.swift; sourceTree = "<group>"; };
+		4379D1F229BA46DF00EFB73A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,7 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				4379D1DF29BA460300EFB73A /* TabBar */,
 				0C36EC4129B6621C009550C8 /* AppDelegate.swift */,
 				0C36EC4329B6621C009550C8 /* SceneDelegate.swift */,
 				0C36EC4529B6621C009550C8 /* ViewController.swift */,
@@ -65,6 +90,65 @@
 				0C36EC4F29B6621E009550C8 /* Info.plist */,
 			);
 			path = TripOrganizer;
+			sourceTree = "<group>";
+		};
+		4379D1DF29BA460300EFB73A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4379D1DB29BA453C00EFB73A /* TabBarStoryboard.storyboard */,
+				4379D1DD29BA45FF00EFB73A /* TabBarController.swift */,
+				4379D1F729BA470500EFB73A /* Lounge */,
+				4379D1F429BA46E500EFB73A /* Home */,
+				4379D1F529BA46F700EFB73A /* Flight */,
+				4379D1F629BA470000EFB73A /* Hotel */,
+				4379D1F829BA470A00EFB73A /* Restaurant */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		4379D1F429BA46E500EFB73A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4379D1E029BA464D00EFB73A /* HomeVC.storyboard */,
+				4379D1F229BA46DF00EFB73A /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4379D1F529BA46F700EFB73A /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+				4379D1E229BA465900EFB73A /* FlightVC.storyboard */,
+				4379D1EE29BA46C300EFB73A /* FlightVC.swift */,
+			);
+			path = Flight;
+			sourceTree = "<group>";
+		};
+		4379D1F629BA470000EFB73A /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				4379D1E629BA467D00EFB73A /* HotelVC.storyboard */,
+				4379D1EC29BA46B400EFB73A /* HotelVC.swift */,
+			);
+			path = Hotel;
+			sourceTree = "<group>";
+		};
+		4379D1F729BA470500EFB73A /* Lounge */ = {
+			isa = PBXGroup;
+			children = (
+				4379D1E829BA468E00EFB73A /* LoungeVC.storyboard */,
+				4379D1EA29BA46A700EFB73A /* LoungeVC.swift */,
+			);
+			path = Lounge;
+			sourceTree = "<group>";
+		};
+		4379D1F829BA470A00EFB73A /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				4379D1E429BA466800EFB73A /* RestaurantVC.storyboard */,
+				4379D1F029BA46D100EFB73A /* RestaurantVC.swift */,
+			);
+			path = Restaurant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +212,12 @@
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
 				0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */,
+				4379D1E529BA466800EFB73A /* RestaurantVC.storyboard in Resources */,
+				4379D1E129BA464D00EFB73A /* HomeVC.storyboard in Resources */,
+				4379D1DC29BA453C00EFB73A /* TabBarStoryboard.storyboard in Resources */,
+				4379D1E929BA468E00EFB73A /* LoungeVC.storyboard in Resources */,
+				4379D1E729BA467D00EFB73A /* HotelVC.storyboard in Resources */,
+				4379D1E329BA465900EFB73A /* FlightVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +228,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4379D1EB29BA46A700EFB73A /* LoungeVC.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
+				4379D1DE29BA45FF00EFB73A /* TabBarController.swift in Sources */,
+				4379D1F329BA46DF00EFB73A /* HomeVC.swift in Sources */,
+				4379D1EF29BA46C300EFB73A /* FlightVC.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */,
+				4379D1ED29BA46B400EFB73A /* HotelVC.swift in Sources */,
+				4379D1F129BA46D100EFB73A /* RestaurantVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
