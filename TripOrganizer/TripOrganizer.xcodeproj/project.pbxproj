@@ -67,18 +67,10 @@
 				0C36EC4A29B6621E009550C8 /* Assets.xcassets */,
 				0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */,
 				0C36EC4F29B6621E009550C8 /* Info.plist */,
-				5050BCB429B8D8E70019BB69 /* Register Screen */,
-			);
-			path = TripOrganizer;
-			sourceTree = "<group>";
-		};
-		5050BCB429B8D8E70019BB69 /* Register Screen */ = {
-			isa = PBXGroup;
-			children = (
 				5050BCB529B8D9050019BB69 /* RegisterViewController.swift */,
 				5050BCB729B8D92B0019BB69 /* RegisterStoryboard.storyboard */,
 			);
-			path = "Register Screen";
+			path = TripOrganizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
