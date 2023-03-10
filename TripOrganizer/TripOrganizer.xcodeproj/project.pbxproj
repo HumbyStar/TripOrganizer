@@ -70,11 +70,11 @@
 			children = (
 				0C111C1229BACD9000A0DCF4 /* Home */,
 				0C111C1529BACD9000A0DCF4 /* Restaurant */,
-				0C111C1829BACD9000A0DCF4 /* TabBarStoryboard.storyboard */,
 				0C111C1929BACD9000A0DCF4 /* Hotel */,
 				0C111C1C29BACD9000A0DCF4 /* Flight */,
 				0C111C1F29BACD9000A0DCF4 /* Lounge */,
 				0C111C2229BACD9000A0DCF4 /* TabBarController.swift */,
+				0C111C1829BACD9000A0DCF4 /* TabBarStoryboard.storyboard */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
