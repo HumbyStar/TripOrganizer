@@ -7,4 +7,8 @@
 
 import UIKit
 
-
+class RecoverViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}

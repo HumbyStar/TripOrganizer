@@ -25,6 +25,8 @@
 		0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4729B6621C009550C8 /* Main.storyboard */; };
 		0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
 		0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */; };
+		0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */; };
+		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		0C36EC4A29B6621E009550C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C36EC4D29B6621E009550C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassworld/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,13 +72,12 @@
 		0C111C1129BACD9000A0DCF4 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				0C61EB0829BBE14E00F54F47 /* TabBarFiles */,
 				0C111C1229BACD9000A0DCF4 /* Home */,
 				0C111C1529BACD9000A0DCF4 /* Restaurant */,
 				0C111C1929BACD9000A0DCF4 /* Hotel */,
 				0C111C1C29BACD9000A0DCF4 /* Flight */,
 				0C111C1F29BACD9000A0DCF4 /* Lounge */,
-				0C111C2229BACD9000A0DCF4 /* TabBarController.swift */,
-				0C111C1829BACD9000A0DCF4 /* TabBarController.storyboard */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -143,18 +146,61 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
-				0C36EC4129B6621C009550C8 /* AppDelegate.swift */,
-				0C36EC4329B6621C009550C8 /* SceneDelegate.swift */,
-				0C36EC4529B6621C009550C8 /* ViewController.swift */,
-				0C36EC4729B6621C009550C8 /* Main.storyboard */,
-				0C36EC4A29B6621E009550C8 /* Assets.xcassets */,
-				0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */,
+				0C61EB0529BBDFEA00F54F47 /* Register */,
+				0C61EB0429BBDFD000F54F47 /* RecoverPassworld */,
+				0C61EB0729BBE13100F54F47 /* Login */,
 				0C36EC4F29B6621E009550C8 /* Info.plist */,
+			);
+			path = TripOrganizer;
+			sourceTree = "<group>";
+		};
+		0C61EB0429BBDFD000F54F47 /* RecoverPassworld */ = {
+			isa = PBXGroup;
+			children = (
+				0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */,
+				0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */,
+			);
+			path = RecoverPassworld;
+			sourceTree = "<group>";
+		};
+		0C61EB0529BBDFEA00F54F47 /* Register */ = {
+			isa = PBXGroup;
+			children = (
 				5050BCB529B8D9050019BB69 /* RegisterController.swift */,
 				5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */,
 			);
-			path = TripOrganizer;
+			path = Register;
+			sourceTree = "<group>";
+		};
+		0C61EB0629BBE10000F54F47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C36EC4129B6621C009550C8 /* AppDelegate.swift */,
+				0C36EC4329B6621C009550C8 /* SceneDelegate.swift */,
+				0C36EC4729B6621C009550C8 /* Main.storyboard */,
+				0C36EC4A29B6621E009550C8 /* Assets.xcassets */,
+				0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0C61EB0729BBE13100F54F47 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0C36EC4529B6621C009550C8 /* ViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0C61EB0829BBE14E00F54F47 /* TabBarFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C2229BACD9000A0DCF4 /* TabBarController.swift */,
+				0C111C1829BACD9000A0DCF4 /* TabBarController.storyboard */,
+			);
+			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +270,7 @@
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
+				0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */,
 				0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +285,7 @@
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
 				0C111C2D29BACD9000A0DCF4 /* LoungeVC.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
+				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,

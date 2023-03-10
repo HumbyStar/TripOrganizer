@@ -22,7 +22,17 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3B-f7-Gfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1330" y="-2"/>
+            <point key="canvasLocation" x="-1641" y="-2"/>
+        </scene>
+        <!--RecoverViewController-->
+        <scene sceneID="wB4-F3-mjJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecoverViewController" id="8TK-x1-dli" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5xc-KM-LkU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BiH-K1-l8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-503" y="457"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -100,6 +110,9 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="8TK-x1-dli" kind="show" id="gHU-ai-zpz"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oY-c2-tt6">
                                         <rect key="frame" x="192.5" y="0.0" width="162.5" height="31"/>
