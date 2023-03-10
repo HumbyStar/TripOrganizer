@@ -61,7 +61,7 @@ class RegisterController: UIViewController {
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
-        
+        navigationController?.popViewController(animated: true)
         
     }
 }
