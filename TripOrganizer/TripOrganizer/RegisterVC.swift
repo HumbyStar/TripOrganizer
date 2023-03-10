@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterVC: UIViewController {
+class RegisterController: UIViewController {
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!

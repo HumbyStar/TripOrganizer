@@ -8,22 +8,33 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupTabBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupTabBar() {
+        tabBar.isTranslucent = false
+        tabBar.tintColor = .systemBlue
+        
+        let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithDefaultBackground()
+        tabBarAppearance.backgroundColor = .white
+        tabBar.standardAppearance = tabBarAppearance
+        tabBar.scrollEdgeAppearance = tabBarAppearance
+        
+        guard let items = tabBar.items else { return }
+        
+        items[0].image = UIImage(systemName: "house.fill")
+        items[1].image = UIImage(systemName: "airplane")
+        items[2].image = UIImage(systemName: "bed.double.fill")
+        items[3].image = UIImage(systemName: "fork.knife")
+        items[4].image = UIImage(systemName: "play.fill")
+        
     }
-    */
-
 }
+
+
+
