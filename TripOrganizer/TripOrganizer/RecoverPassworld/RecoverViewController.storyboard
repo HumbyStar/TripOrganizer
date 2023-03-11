@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="FBD-BL-MAx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainLogo2" translatesAutoresizingMaskIntoConstraints="NO" id="FBD-BL-MAx">
                                 <rect key="frame" x="74.666666666666686" y="114" width="244" height="253"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="253" id="XWS-2X-Ylw"/>
@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirme o seu e-mail de cadastro para o envio de uma nova senha temporária." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBq-zs-eqX">
-                                <rect key="frame" x="41" y="368" width="311" height="51"/>
+                                <rect key="frame" x="41" y="382" width="311" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="Bcx-Vq-IHn"/>
                                     <constraint firstAttribute="height" constant="51" id="PAM-9s-eWt"/>
@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7b-3H-9ic">
-                                <rect key="frame" x="19" y="446" width="355" height="45"/>
+                                <rect key="frame" x="19" y="460" width="355" height="45"/>
                                 <color key="backgroundColor" red="0.78431367870000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="YQQ-0h-11R"/>
@@ -50,7 +50,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5N-7e-cWE">
-                                <rect key="frame" x="19" y="531" width="355" height="45"/>
+                                <rect key="frame" x="19" y="545" width="355" height="45"/>
                                 <color key="backgroundColor" red="0.44705885649999999" green="0.44705885649999999" blue="0.44705885649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="l0t-Zl-yeH"/>
@@ -69,12 +69,12 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725484609999998" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FBD-BL-MAx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="55" id="48H-IN-3W3"/>
                             <constraint firstItem="d5N-7e-cWE" firstAttribute="top" secondItem="u7b-3H-9ic" secondAttribute="bottom" constant="40" id="4Vh-Lp-AbQ"/>
                             <constraint firstItem="u7b-3H-9ic" firstAttribute="top" secondItem="vBq-zs-eqX" secondAttribute="bottom" constant="27" id="54j-5x-3IL"/>
-                            <constraint firstItem="vBq-zs-eqX" firstAttribute="top" secondItem="FBD-BL-MAx" secondAttribute="bottom" constant="1" id="AoV-pj-9P8"/>
+                            <constraint firstItem="vBq-zs-eqX" firstAttribute="top" secondItem="FBD-BL-MAx" secondAttribute="bottom" constant="15" id="AoV-pj-9P8"/>
                             <constraint firstItem="FBD-BL-MAx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CbL-Nw-wm9"/>
                             <constraint firstItem="d5N-7e-cWE" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="G4z-Qn-tRD"/>
                             <constraint firstItem="vBq-zs-eqX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bXS-88-jOK"/>
@@ -88,11 +88,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="529" height="654"/>
+        <image name="mainLogo2" width="936" height="1052"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
