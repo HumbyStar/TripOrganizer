@@ -21,25 +21,57 @@ class AttractionVC: UIViewController {
         super.viewDidLoad()
         configCollectionView()
         configViewStyle()
+        configMapShadow()
+        configViewShadow()
+        configSearchBarShadowBar()
     }
     
     func configViewStyle() {
-        detailView.layer.borderWidth = 1.5
+        detailView.layer.borderWidth = 3.0
         detailView.layer.borderColor = UIColor.white.cgColor
         detailView.clipsToBounds = true
-        detailView.layer.cornerRadius = 10
+        detailView.layer.cornerRadius = 15
         
-        map.layer.borderWidth = 1.5
+        map.layer.borderWidth = 3.0
         map.layer.borderColor = UIColor.white.cgColor
         map.clipsToBounds = true
-        map.layer.cornerRadius = 10
+        map.layer.cornerRadius = 2
         
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         
         if let textField = searchBar.value(forKey: "searchField") as? UITextField {
             textField.backgroundColor = UIColor.white
         }
+        
     }
+    
+    func configViewShadow() {
+        detailView.layer.shadowColor = UIColor.black.cgColor
+        detailView.layer.shadowOpacity = 0.5
+        detailView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        detailView.layer.shadowRadius = 4
+        detailView.layer.masksToBounds = false
+    }
+    
+    
+    func configMapShadow() {
+        map.layer.shadowColor = UIColor.black.cgColor
+        map.layer.shadowOpacity = 0.5
+        map.layer.shadowOffset = CGSize(width: 0, height: 2)
+        map.layer.shadowRadius = 4
+        map.layer.masksToBounds = false
+        
+    }
+    
+    func configSearchBarShadowBar() {
+        searchBar.layer.shadowColor = UIColor.black.cgColor
+        searchBar.layer.shadowOpacity = 0.5
+        searchBar.layer.shadowOffset = CGSize(width: 0, height: 2)
+        searchBar.layer.shadowRadius = 4
+        searchBar.layer.masksToBounds = false
+    }
+    
+    
     
     func configCollectionView() {
         self.collectionView.delegate = self
