@@ -25,7 +25,8 @@
 		0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4729B6621C009550C8 /* Main.storyboard */; };
 		0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
 		0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */; };
-		0C3AD1E529C3524800E7FE73 /* perfilScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AD1E429C3524800E7FE73 /* perfilScreenStoryboard.storyboard */; };
+		0C3AD1E529C3524800E7FE73 /* PerfilScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AD1E429C3524800E7FE73 /* PerfilScreenStoryboard.storyboard */; };
+		0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */; };
 		0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */; };
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
@@ -53,7 +54,8 @@
 		0C36EC4A29B6621E009550C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C36EC4D29B6621E009550C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C3AD1E429C3524800E7FE73 /* perfilScreenStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = perfilScreenStoryboard.storyboard; path = TripOrganizer/perfilScreenStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		0C3AD1E429C3524800E7FE73 /* PerfilScreenStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PerfilScreenStoryboard.storyboard; path = TripOrganizer/TabBar/Perfil/PerfilScreenStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
+		0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassworld/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				0C61EB0829BBE14E00F54F47 /* TabBarFiles */,
+				0C3AD1EC29C3545200E7FE73 /* Perfil */,
 				0C111C1229BACD9000A0DCF4 /* Home */,
 				0C111C1529BACD9000A0DCF4 /* Restaurant */,
 				0C111C1929BACD9000A0DCF4 /* Hotel */,
@@ -158,6 +161,15 @@
 			path = TripOrganizer;
 			sourceTree = "<group>";
 		};
+		0C3AD1EC29C3545200E7FE73 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				0C3AD1E429C3524800E7FE73 /* PerfilScreenStoryboard.storyboard */,
+				0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
 		0C61EB0429BBDFD000F54F47 /* RecoverPassworld */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				0C36EC4129B6621C009550C8 /* AppDelegate.swift */,
-				0C3AD1E429C3524800E7FE73 /* perfilScreenStoryboard.storyboard */,
 				0C36EC4329B6621C009550C8 /* SceneDelegate.swift */,
 				0C36EC4729B6621C009550C8 /* Main.storyboard */,
 				0C36EC4A29B6621E009550C8 /* Assets.xcassets */,
@@ -265,7 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
-				0C3AD1E529C3524800E7FE73 /* perfilScreenStoryboard.storyboard in Resources */,
+				0C3AD1E529C3524800E7FE73 /* PerfilScreenStoryboard.storyboard in Resources */,
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
 				5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */,
 				0C111C2729BACD9000A0DCF4 /* TabBarController.storyboard in Resources */,
@@ -292,6 +303,7 @@
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
+				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantVC.swift in Sources */,
