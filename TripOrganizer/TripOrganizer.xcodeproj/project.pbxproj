@@ -16,8 +16,8 @@
 		0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C1B29BACD9000A0DCF4 /* HotelVC.swift */; };
 		0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C111C1D29BACD9000A0DCF4 /* FlightVC.storyboard */; };
 		0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C1E29BACD9000A0DCF4 /* FlightVC.swift */; };
-		0C111C2C29BACD9000A0DCF4 /* LoungeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C111C2029BACD9000A0DCF4 /* LoungeVC.storyboard */; };
-		0C111C2D29BACD9000A0DCF4 /* LoungeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C2129BACD9000A0DCF4 /* LoungeVC.swift */; };
+		0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */; };
+		0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */; };
 		0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C2229BACD9000A0DCF4 /* TabBarController.swift */; };
 		0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4129B6621C009550C8 /* AppDelegate.swift */; };
 		0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4329B6621C009550C8 /* SceneDelegate.swift */; };
@@ -25,6 +25,7 @@
 		0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4729B6621C009550C8 /* Main.storyboard */; };
 		0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
 		0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */; };
+		0C3AD1E529C3524800E7FE73 /* perfilScreenStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AD1E429C3524800E7FE73 /* perfilScreenStoryboard.storyboard */; };
 		0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */; };
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
@@ -41,8 +42,8 @@
 		0C111C1B29BACD9000A0DCF4 /* HotelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelVC.swift; sourceTree = "<group>"; };
 		0C111C1D29BACD9000A0DCF4 /* FlightVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FlightVC.storyboard; sourceTree = "<group>"; };
 		0C111C1E29BACD9000A0DCF4 /* FlightVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightVC.swift; sourceTree = "<group>"; };
-		0C111C2029BACD9000A0DCF4 /* LoungeVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoungeVC.storyboard; sourceTree = "<group>"; };
-		0C111C2129BACD9000A0DCF4 /* LoungeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoungeVC.swift; sourceTree = "<group>"; };
+		0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AttractionVC.storyboard; sourceTree = "<group>"; };
+		0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionVC.swift; sourceTree = "<group>"; };
 		0C111C2229BACD9000A0DCF4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0C36EC3E29B6621C009550C8 /* TripOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C36EC4129B6621C009550C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		0C36EC4A29B6621E009550C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C36EC4D29B6621E009550C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C3AD1E429C3524800E7FE73 /* perfilScreenStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = perfilScreenStoryboard.storyboard; path = TripOrganizer/perfilScreenStoryboard.storyboard; sourceTree = SOURCE_ROOT; };
 		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassworld/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 				0C111C1529BACD9000A0DCF4 /* Restaurant */,
 				0C111C1929BACD9000A0DCF4 /* Hotel */,
 				0C111C1C29BACD9000A0DCF4 /* Flight */,
-				0C111C1F29BACD9000A0DCF4 /* Lounge */,
+				0C111C1F29BACD9000A0DCF4 /* Attraction */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -118,13 +120,13 @@
 			path = Flight;
 			sourceTree = "<group>";
 		};
-		0C111C1F29BACD9000A0DCF4 /* Lounge */ = {
+		0C111C1F29BACD9000A0DCF4 /* Attraction */ = {
 			isa = PBXGroup;
 			children = (
-				0C111C2029BACD9000A0DCF4 /* LoungeVC.storyboard */,
-				0C111C2129BACD9000A0DCF4 /* LoungeVC.swift */,
+				0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */,
+				0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */,
 			);
-			path = Lounge;
+			path = Attraction;
 			sourceTree = "<group>";
 		};
 		0C36EC3529B6621C009550C8 = {
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				0C36EC4129B6621C009550C8 /* AppDelegate.swift */,
+				0C3AD1E429C3524800E7FE73 /* perfilScreenStoryboard.storyboard */,
 				0C36EC4329B6621C009550C8 /* SceneDelegate.swift */,
 				0C36EC4729B6621C009550C8 /* Main.storyboard */,
 				0C36EC4A29B6621E009550C8 /* Assets.xcassets */,
@@ -262,11 +265,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
+				0C3AD1E529C3524800E7FE73 /* perfilScreenStoryboard.storyboard in Resources */,
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
 				5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */,
 				0C111C2729BACD9000A0DCF4 /* TabBarController.storyboard in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
-				0C111C2C29BACD9000A0DCF4 /* LoungeVC.storyboard in Resources */,
+				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
@@ -283,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
-				0C111C2D29BACD9000A0DCF4 /* LoungeVC.swift in Sources */,
+				0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,

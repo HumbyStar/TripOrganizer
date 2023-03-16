@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoungeVC: UIViewController {
+class AttractionVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

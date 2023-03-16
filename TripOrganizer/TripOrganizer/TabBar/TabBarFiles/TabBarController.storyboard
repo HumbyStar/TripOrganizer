@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="724" y="-1189"/>
         </scene>
-        <!--LoungeVC-->
+        <!--AttractionVC-->
         <scene sceneID="rBa-11-DfV">
             <objects>
-                <viewControllerPlaceholder storyboardName="LoungeVC" referencedIdentifier="LoungeVC" id="7d8-tY-tPV" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AttractionVC" referencedIdentifier="AttractionVC" id="7d8-tY-tPV" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="0Us-tw-It8"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSH-xQ-S6i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
