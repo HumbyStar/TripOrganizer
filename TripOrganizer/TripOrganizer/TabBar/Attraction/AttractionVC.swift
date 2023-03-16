@@ -12,6 +12,7 @@ class AttractionVC: UIViewController {
     
     let locationImagelist: [String] = ["1","2","3","4","5"]
 
+    @IBOutlet var mapView: UIView!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var map: MKMapView!
     @IBOutlet var collectionView: UICollectionView!
@@ -21,8 +22,8 @@ class AttractionVC: UIViewController {
         super.viewDidLoad()
         configCollectionView()
         configViewStyle()
-        configMapShadow()
-        configViewShadow()
+        //configMapShadow()
+        configDetailViewShadow()
         configSearchBarShadowBar()
     }
     
@@ -32,10 +33,10 @@ class AttractionVC: UIViewController {
         detailView.clipsToBounds = true
         detailView.layer.cornerRadius = 15
         
-        map.layer.borderWidth = 3.0
-        map.layer.borderColor = UIColor.white.cgColor
-        map.clipsToBounds = true
-        map.layer.cornerRadius = 2
+        mapView.layer.borderWidth = 3.0
+        mapView.layer.borderColor = UIColor.white.cgColor
+        mapView.clipsToBounds = true
+        mapView.layer.cornerRadius = 15
         
         collectionView.backgroundColor = .clear
         
@@ -45,7 +46,7 @@ class AttractionVC: UIViewController {
         
     }
     
-    func configViewShadow() {
+    func configDetailViewShadow() {
         detailView.layer.shadowColor = UIColor.black.cgColor
         detailView.layer.shadowOpacity = 0.5
         detailView.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -55,11 +56,11 @@ class AttractionVC: UIViewController {
     
     
     func configMapShadow() {
-        map.layer.shadowColor = UIColor.black.cgColor
-        map.layer.shadowOpacity = 0.5
-        map.layer.shadowOffset = CGSize(width: 0, height: 2)
-        map.layer.shadowRadius = 4
-        map.layer.masksToBounds = false
+        mapView.layer.shadowColor = UIColor.black.cgColor
+        mapView.layer.shadowOpacity = 0.5
+        mapView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        mapView.layer.shadowRadius = 1
+        mapView.layer.masksToBounds = false
         
     }
     

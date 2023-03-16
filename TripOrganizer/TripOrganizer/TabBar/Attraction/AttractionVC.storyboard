@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,27 +18,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sr. Fulano estamos quase lá, digite onde deseja conhecer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeW-gF-Dof">
-                                <rect key="frame" x="25" y="69" width="343" height="14.333333333333329"/>
+                                <rect key="frame" x="25" y="69" width="343" height="13.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.63137254901960782" green="0.61568627450980395" blue="0.61568627450980395" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" restorationIdentifier="searchField" searchBarStyle="minimal" placeholder="Procure por um ponto turístico" translatesAutoresizingMaskIntoConstraints="NO" id="pJW-sN-Uf9">
-                                <rect key="frame" x="25" y="83.333333333333329" width="343" height="55.999999999999986"/>
+                                <rect key="frame" x="25" y="82.333333333333329" width="343" height="55.999999999999986"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="B6B-xE-q4E"/>
                                 </connections>
                             </searchBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLn-RZ-hM1">
-                                <rect key="frame" x="30" y="149.33333333333337" width="333" height="270"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugf-gU-VHI">
+                                <rect key="frame" x="30" y="148.33333333333337" width="333" height="270"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLn-RZ-hM1">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="270"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="270" id="aSH-iv-d7A"/>
+                                        </constraints>
+                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="aSH-iv-d7A"/>
+                                    <constraint firstItem="PLn-RZ-hM1" firstAttribute="top" secondItem="Ugf-gU-VHI" secondAttribute="top" id="FPM-3x-4OY"/>
+                                    <constraint firstItem="PLn-RZ-hM1" firstAttribute="leading" secondItem="Ugf-gU-VHI" secondAttribute="leading" id="Kar-fX-M6m"/>
+                                    <constraint firstAttribute="trailing" secondItem="PLn-RZ-hM1" secondAttribute="trailing" id="Y1V-p9-FDk"/>
+                                    <constraint firstAttribute="bottom" secondItem="PLn-RZ-hM1" secondAttribute="bottom" id="e4w-bu-2Yj"/>
                                 </constraints>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o14-IW-ZfX">
-                                <rect key="frame" x="30" y="439.33333333333326" width="333" height="368.66666666666674"/>
+                                <rect key="frame" x="30" y="438.33333333333326" width="333" height="369.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Praça do Japão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVf-Ka-K8c">
                                         <rect key="frame" x="10" y="10" width="118" height="21"/>
@@ -55,7 +68,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horário: Abre as 12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5y-2D-KVG">
-                                        <rect key="frame" x="9.9999999999999929" y="101.00000000000006" width="108.33333333333331" height="12"/>
+                                        <rect key="frame" x="10.000000000000007" y="101.00000000000006" width="108.66666666666669" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -67,7 +80,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J9O-3G-o3I">
-                                        <rect key="frame" x="10" y="135.00000000000006" width="313" height="223.66666666666669"/>
+                                        <rect key="frame" x="10" y="135.00000000000006" width="313" height="224.66666666666669"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kW7-cn-67q">
                                             <size key="itemSize" width="128" height="128"/>
@@ -122,14 +135,14 @@
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725484609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pJW-sN-Uf9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="FuQ-ii-gl5"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PLn-RZ-hM1" secondAttribute="trailing" constant="30" id="NOv-Ux-KTt"/>
                             <constraint firstItem="pJW-sN-Uf9" firstAttribute="top" secondItem="BeW-gF-Dof" secondAttribute="bottom" id="Nej-GB-Kni"/>
-                            <constraint firstItem="PLn-RZ-hM1" firstAttribute="top" secondItem="pJW-sN-Uf9" secondAttribute="bottom" constant="10" id="QHs-zj-8nU"/>
                             <constraint firstItem="BeW-gF-Dof" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="QIg-th-Pjn"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pJW-sN-Uf9" secondAttribute="trailing" constant="25" id="fzT-v6-jej"/>
-                            <constraint firstItem="PLn-RZ-hM1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="izR-OM-WzS"/>
+                            <constraint firstItem="o14-IW-ZfX" firstAttribute="top" secondItem="Ugf-gU-VHI" secondAttribute="bottom" constant="20" id="hP8-ty-9qb"/>
+                            <constraint firstItem="Ugf-gU-VHI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="iLh-Vc-D5W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ugf-gU-VHI" secondAttribute="trailing" constant="30" id="lBO-ya-yDb"/>
+                            <constraint firstItem="Ugf-gU-VHI" firstAttribute="top" secondItem="pJW-sN-Uf9" secondAttribute="bottom" constant="10" id="pOA-Hu-asl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BeW-gF-Dof" secondAttribute="trailing" constant="25" id="r57-vQ-KEG"/>
-                            <constraint firstItem="o14-IW-ZfX" firstAttribute="top" secondItem="PLn-RZ-hM1" secondAttribute="bottom" constant="20" id="t1N-rK-ING"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="o14-IW-ZfX" secondAttribute="bottom" constant="10" id="t6f-tQ-b5T"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o14-IW-ZfX" secondAttribute="trailing" constant="30" id="uoh-4T-pO4"/>
                             <constraint firstItem="BeW-gF-Dof" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="z6p-GL-P9M"/>
@@ -140,16 +153,20 @@
                         <outlet property="collectionView" destination="J9O-3G-o3I" id="buX-6J-wCI"/>
                         <outlet property="detailView" destination="o14-IW-ZfX" id="mdn-I4-BUi"/>
                         <outlet property="map" destination="PLn-RZ-hM1" id="gSi-6s-kft"/>
+                        <outlet property="mapView" destination="Ugf-gU-VHI" id="aKx-zz-o7v"/>
                         <outlet property="searchBar" destination="pJW-sN-Uf9" id="pMT-u3-Yld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="44"/>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
         <image name="Estrelas" width="146" height="32"/>
         <image name="stars" width="45" height="14"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
