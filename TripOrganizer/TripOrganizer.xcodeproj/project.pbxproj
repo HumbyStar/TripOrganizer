@@ -31,6 +31,8 @@
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		50631D7029C373D000301007 /* AttractionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50631D6E29C373D000301007 /* AttractionCell.swift */; };
+		50631D7129C373D000301007 /* AttractionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50631D6F29C373D000301007 /* AttractionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		50631D6E29C373D000301007 /* AttractionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionCell.swift; sourceTree = "<group>"; };
+		50631D6F29C373D000301007 /* AttractionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttractionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 		0C111C1F29BACD9000A0DCF4 /* Attraction */ = {
 			isa = PBXGroup;
 			children = (
+				50631D6D29C3737300301007 /* Cell */,
 				0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */,
 				0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */,
 			);
@@ -217,6 +222,15 @@
 			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
+		50631D6D29C3737300301007 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				50631D6E29C373D000301007 /* AttractionCell.swift */,
+				50631D6F29C373D000301007 /* AttractionCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
+				50631D7129C373D000301007 /* AttractionCell.xib in Resources */,
 				0C3AD1E529C3524800E7FE73 /* PerfilScreenStoryboard.storyboard in Resources */,
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
 				5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */,
@@ -304,6 +319,7 @@
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
+				50631D7029C373D000301007 /* AttractionCell.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantVC.swift in Sources */,
