@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,45 +17,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.93725484609999998" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="M6D-iX-XcK" id="77k-Mu-qoN"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="xge-FC-KVa">
-                    <connections>
-                        <outlet property="delegate" destination="Y6W-OH-hqX" id="iJm-Pw-z7B"/>
-                        <outlet property="searchContentsController" destination="Y6W-OH-hqX" id="i4m-eL-wGO"/>
-                        <outlet property="searchResultsDataSource" destination="Y6W-OH-hqX" id="Xyf-ge-6sq"/>
-                        <outlet property="searchResultsDelegate" destination="Y6W-OH-hqX" id="JG8-X1-TQ4"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="x0l-mT-Vyw">
-                    <connections>
-                        <outlet property="delegate" destination="Y6W-OH-hqX" id="DbO-Ru-6Fz"/>
-                        <outlet property="searchContentsController" destination="Y6W-OH-hqX" id="ni7-Vc-y0M"/>
-                        <outlet property="searchResultsDataSource" destination="Y6W-OH-hqX" id="7Uy-M7-WzV"/>
-                        <outlet property="searchResultsDelegate" destination="Y6W-OH-hqX" id="J59-hH-HFC"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="CaS-Wq-c1s">
-                    <connections>
-                        <outlet property="delegate" destination="Y6W-OH-hqX" id="b1U-SG-PpL"/>
-                        <outlet property="searchContentsController" destination="Y6W-OH-hqX" id="eIl-Um-p31"/>
-                        <outlet property="searchResultsDataSource" destination="Y6W-OH-hqX" id="ii4-cB-lvt"/>
-                        <outlet property="searchResultsDelegate" destination="Y6W-OH-hqX" id="AMU-0R-9Sh"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="M6D-iX-XcK">
-                    <connections>
-                        <outlet property="delegate" destination="Y6W-OH-hqX" id="9au-1Q-yiR"/>
-                        <outlet property="searchContentsController" destination="Y6W-OH-hqX" id="0pc-kd-tV9"/>
-                        <outlet property="searchResultsDataSource" destination="Y6W-OH-hqX" id="f2x-UP-JGT"/>
-                        <outlet property="searchResultsDelegate" destination="Y6W-OH-hqX" id="AEt-0u-dfC"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="92" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="44" y="15"/>
         </scene>
     </scenes>
 </document>
