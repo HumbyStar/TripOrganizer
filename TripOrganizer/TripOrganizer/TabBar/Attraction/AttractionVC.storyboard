@@ -109,11 +109,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAX-r4-MkH">
+                                        <rect key="frame" x="247" y="24" width="58" height="48"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="addbutton"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725484609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="ims-98-vC7" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="10" id="2cI-2b-Tnv"/>
                                     <constraint firstItem="KWQ-fQ-WcI" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="3cT-Xt-NVZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="PAX-r4-MkH" secondAttribute="trailing" constant="10" id="5tn-fX-1eL"/>
                                     <constraint firstItem="eVf-Ka-K8c" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="Dly-aX-H0r"/>
                                     <constraint firstItem="pYL-8r-ReW" firstAttribute="top" secondItem="k5y-2D-KVG" secondAttribute="bottom" constant="10" id="FXY-ZB-lv2"/>
                                     <constraint firstAttribute="bottom" secondItem="J9O-3G-o3I" secondAttribute="bottom" id="FfG-gI-HaG"/>
@@ -128,6 +134,7 @@
                                     <constraint firstItem="J9O-3G-o3I" firstAttribute="top" secondItem="pYL-8r-ReW" secondAttribute="bottom" id="kQL-Iv-ney"/>
                                     <constraint firstAttribute="trailing" secondItem="3Ce-0D-YUu" secondAttribute="trailing" constant="10" id="m9E-nJ-g1X"/>
                                     <constraint firstItem="eVf-Ka-K8c" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="10" id="mTw-Cg-UfY"/>
+                                    <constraint firstItem="PAX-r4-MkH" firstAttribute="top" secondItem="3Ce-0D-YUu" secondAttribute="bottom" id="myQ-Oa-vZq"/>
                                     <constraint firstItem="k5y-2D-KVG" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="oL9-md-UIZ"/>
                                     <constraint firstItem="Vea-UL-S82" firstAttribute="top" secondItem="EVO-Zj-FsQ" secondAttribute="bottom" constant="10" id="sHE-u6-GXu"/>
                                     <constraint firstItem="J9O-3G-o3I" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="vsl-xL-cHX"/>
@@ -163,11 +170,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="138.40000000000001" y="3.1484257871064472"/>
         </scene>
     </scenes>
     <resources>
         <image name="Estrelas" width="146" height="32"/>
+        <image name="addbutton" width="34" height="34"/>
         <image name="stars" width="45" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
