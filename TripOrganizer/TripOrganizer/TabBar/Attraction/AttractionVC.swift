@@ -18,6 +18,10 @@ class AttractionVC: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var detailView: UIView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
