@@ -10,6 +10,8 @@ import UIKit
 class FlightVC: UIViewController {
     
     
+    @IBOutlet weak var chooseADestinationLabel: UILabel!
+    
     @IBOutlet weak var flightOriginView: UIView!
     @IBOutlet weak var flightOriginTextField: UITextField!
 
@@ -29,6 +31,8 @@ class FlightVC: UIViewController {
     
     @IBOutlet weak var ticketSearchButton: UIButton!
     
+    @IBOutlet weak var airTicketsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configElements()
@@ -42,7 +46,23 @@ class FlightVC: UIViewController {
         calendarOnGoingTextField.borderStyle = .none
         calendarOutGoingTextField.borderStyle = .none
         passengersTextField.borderStyle = .none
-
+        
+        chooseADestinationLabel.text = "Vamos escolher um lugar de destino?"
+        
+        flightOriginTextField.placeholder = "Escolha a origem"
+        flightDestinationTextField.placeholder = "Escolha o destino"
+        
+        calendarOnGoingTextField.placeholder = "Ida"
+        calendarOutGoingTextField.placeholder = "Retorno"
+        
+        passengersTextField.placeholder = "Quantos passageiros?"
+       
+        let font = UIFont.systemFont(ofSize: 15)
+        let atributos: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
+        let textoComFonte = NSAttributedString(string: "Buscar passagens", attributes: atributos)
+        ticketSearchButton.setAttributedTitle(textoComFonte, for: .normal)
+        
+        airTicketsLabel.text = "Passagens de avião"
         
         flightOriginView.layer.cornerRadius = 5
         flightOriginView.clipsToBounds = true
