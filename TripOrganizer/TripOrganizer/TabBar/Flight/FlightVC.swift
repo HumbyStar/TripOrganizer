@@ -9,17 +9,17 @@ import UIKit
 
 class FlightVC: UIViewController {
     
-    private var ongoingAirlinerList: [String] = ["GOL", "AZUL"]
-    private var outgoingAirlinerList: [String] = ["TAM", "GOL"]
+    private var ongoingAirlinerList: [String] = ["GOL", "AZUL", "GOL", "AZUL"]
+    private var outgoingAirlinerList: [String] = ["TAM", "GOL", "TAM", "GOL"]
     
-    private var ongoingDepartureList: [String] = ["GIG", "GRU"]
-    private var ongoingArrivalList: [String] = ["GRU", "GIG"]
+    private var ongoingDepartureList: [String] = ["GIG", "GRU", "GIG", "GRU"]
+    private var ongoingArrivalList: [String] = ["GRU", "GIG", "GRU", "GIG"]
     
-    private var outgoingDepartureList: [String] = ["VCP", "BSB"]
-    private var outgoingArrivalList: [String] = ["BSB", "VCP"]
+    private var outgoingDepartureList: [String] = ["VCP", "BSB", "VCP", "BSB"]
+    private var outgoingArrivalList: [String] = ["BSB", "VCP", "BSB", "VCP"]
     
-    private var priceWithoutTaxList: [Double] = [500.50, 865.92]
-    private var priceWithTaxList: [Double] = [1238.2, 321.23]
+    private var priceWithoutTaxList: [Double] = [500.50, 865.92, 3123, 1223]
+    private var priceWithTaxList: [Double] = [1238.2, 321.23, 6783, 1980]
     
     @IBOutlet weak var chooseADestinationLabel: UILabel!
     @IBOutlet weak var flightOriginView: UIView!
