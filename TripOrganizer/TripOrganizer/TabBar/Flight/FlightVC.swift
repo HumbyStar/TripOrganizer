@@ -9,34 +9,43 @@ import UIKit
 
 class FlightVC: UIViewController {
     
+    private var ongoingAirlinerList: [String] = ["GOL", "AZUL"]
+    private var outgoingAirlinerList: [String] = ["TAM", "GOL"]
+    
+    private var ongoingDepartureList: [String] = ["GIG", "GRU"]
+    private var ongoingArrivalList: [String] = ["GRU", "GIG"]
+    
+    private var outgoingDepartureList: [String] = ["VCP", "BSB"]
+    private var outgoingArrivalList: [String] = ["BSB", "VCP"]
+    
+    private var priceWithoutTaxList: [Double] = [500.50, 865.92]
+    private var priceWithTaxList: [Double] = [1238.2, 321.23]
     
     @IBOutlet weak var chooseADestinationLabel: UILabel!
-    
     @IBOutlet weak var flightOriginView: UIView!
     @IBOutlet weak var flightOriginTextField: UITextField!
-
     @IBOutlet weak var calendarOnGoingView: UIView!
     @IBOutlet weak var calendarOnGoingTextField: UITextField!
-    
     @IBOutlet weak var calendarOutGoingView: UIView!
     @IBOutlet weak var calendarOutGoingTextField: UITextField!
-   
     @IBOutlet weak var flightDestinationView: UIView!
     @IBOutlet weak var flightDestinationTextField: UITextField!
-   
-    
     @IBOutlet weak var passengersView: UIView!
     @IBOutlet weak var passengersTextField: UITextField!
-    
-    
     @IBOutlet weak var ticketSearchButton: UIButton!
-    
     @IBOutlet weak var airTicketsLabel: UILabel!
+    @IBOutlet weak var flightTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configElements()
-
+        configTableView()
+    }
+    
+    private func configTableView() {
+        flightTableView.dataSource = self
+        flightTableView.delegate = self
+        flightTableView.register(FlightTableViewCell.nib(), forCellReuseIdentifier: FlightTableViewCell.identifier)
     }
     
     private func configElements() {
@@ -79,4 +88,23 @@ class FlightVC: UIViewController {
 
     }
 
+}
+
+extension FlightVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ongoingAirlinerList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: FlightTableViewCell.identifier, for: indexPath) as? FlightTableViewCell
+        cell?.setupCell(ongoingCiaName: ongoingAirlinerList[indexPath.row], outgoingCiaName: outgoingAirlinerList[indexPath.row], ongoingDeparture: ongoingDepartureList[indexPath.row], ongoingArrival: ongoingArrivalList[indexPath.row], outgoingDeparture: outgoingDepartureList[indexPath.row], outgoingArrival: outgoingArrivalList[indexPath.row], priceWithoutTax: priceWithoutTaxList[indexPath.row], priceWithTax: priceWithTaxList[indexPath.row])
+        
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 235
+    }
+    
 }

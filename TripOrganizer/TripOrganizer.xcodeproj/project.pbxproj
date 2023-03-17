@@ -29,6 +29,8 @@
 		0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */; };
 		0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */; };
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
+		43B79FB329C49EAD006C7EFF /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B79FB129C49EAD006C7EFF /* FlightTableViewCell.swift */; };
+		43B79FB429C49EAD006C7EFF /* FlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43B79FB229C49EAD006C7EFF /* FlightTableViewCell.xib */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassworld/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
+		43B79FB129C49EAD006C7EFF /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
+		43B79FB229C49EAD006C7EFF /* FlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +121,7 @@
 		0C111C1C29BACD9000A0DCF4 /* Flight */ = {
 			isa = PBXGroup;
 			children = (
+				43B79FB029C49E8D006C7EFF /* Cell */,
 				0C111C1D29BACD9000A0DCF4 /* FlightVC.storyboard */,
 				0C111C1E29BACD9000A0DCF4 /* FlightVC.swift */,
 			);
@@ -217,6 +222,15 @@
 			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
+		43B79FB029C49E8D006C7EFF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43B79FB129C49EAD006C7EFF /* FlightTableViewCell.swift */,
+				43B79FB229C49EAD006C7EFF /* FlightTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +294,7 @@
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
 				5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */,
 				0C111C2729BACD9000A0DCF4 /* TabBarController.storyboard in Resources */,
+				43B79FB429C49EAD006C7EFF /* FlightTableViewCell.xib in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
 				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
@@ -298,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
+				43B79FB329C49EAD006C7EFF /* FlightTableViewCell.swift in Sources */,
 				0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
