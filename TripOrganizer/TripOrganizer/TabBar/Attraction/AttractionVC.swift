@@ -26,14 +26,14 @@ class AttractionVC: UIViewController {
         super.viewDidLoad()
         configCollectionView()
         configViewStyle()
-        //configMapShadow()
+//        configMapShadow()
         configMapConstraints()
         configDetailViewShadow()
         configSearchBarShadowBar()
     }
     
     func configViewStyle() {
-        detailView.layer.borderWidth = 3.0
+//        detailView.layer.borderWidth = 3.0
         detailView.layer.borderColor = UIColor.white.cgColor
         detailView.clipsToBounds = true
         detailView.layer.cornerRadius = 15
@@ -68,7 +68,7 @@ class AttractionVC: UIViewController {
             case 2532: // iPhone 14
                 heightConstraint.constant = 350
             default: // IPhone Pro Max
-                heightConstraint.constant = 400 // fallback value for other devices
+                heightConstraint.constant = 400 // default value for other devices
                 // IPhone 14 pro?
             }
         }
