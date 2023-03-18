@@ -27,6 +27,7 @@ class AttractionVC: UIViewController {
         configCollectionView()
         configViewStyle()
         //configMapShadow()
+        configMapConstraints()
         configDetailViewShadow()
         configSearchBarShadowBar()
     }
@@ -49,6 +50,30 @@ class AttractionVC: UIViewController {
         }
         
     }
+    
+    public func configMapConstraints() {
+        let heightConstraint = mapView.heightAnchor.constraint(equalToConstant: 270)
+        heightConstraint.isActive = true
+
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            switch UIScreen.main.nativeBounds.height {
+            case 1136: // iPhone SE (1st generation), iPhone 5, iPhone 5S, iPhone 5C
+                heightConstraint.constant = 150
+            case 1334, 1920, 2208: // iPhone 6, 6S, 7, 8, SE (2nd generation)
+                heightConstraint.constant = 270
+            case 2436, 2688, 1792: // iPhone X, XS, XR, 11 Pro, 12 mini, 11, 12
+                heightConstraint.constant = 300
+            case 2778: // IPhone 14 Plus
+                heightConstraint.constant = 400
+            case 2532: // iPhone 14
+                heightConstraint.constant = 350
+            default: // IPhone Pro Max
+                heightConstraint.constant = 400 // fallback value for other devices
+                // IPhone 14 pro?
+            }
+        }
+    }
+    
     
     func configDetailViewShadow() {
         detailView.layer.shadowColor = UIColor.black.cgColor
