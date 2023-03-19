@@ -25,23 +25,16 @@ class AttractionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
-        configViewStyle()
-//        configMapShadow()
+        configSearchBarStyle()
+        configMapViewBorder()
+        configDetailViewBorder()
+        configMapViewShadow()
         configMapConstraints()
         configDetailViewShadow()
         configSearchBarShadowBar()
     }
     
-    func configViewStyle() {
-//        detailView.layer.borderWidth = 3.0
-        detailView.layer.borderColor = UIColor.white.cgColor
-        detailView.clipsToBounds = true
-        detailView.layer.cornerRadius = 15
-        
-        mapView.layer.borderWidth = 3.0
-        mapView.layer.borderColor = UIColor.white.cgColor
-        mapView.clipsToBounds = true
-        mapView.layer.cornerRadius = 15
+    func configSearchBarStyle() {
         
         collectionView.backgroundColor = .clear
         
@@ -74,6 +67,12 @@ class AttractionVC: UIViewController {
         }
     }
     
+    func configDetailViewBorder() {
+//      detailView.layer.borderWidth = 3.0 -> a borda fica por cima do botão.
+        detailView.layer.borderColor = UIColor.white.cgColor
+        detailView.clipsToBounds = true
+        detailView.layer.cornerRadius = 15
+    }
     
     func configDetailViewShadow() {
         detailView.layer.shadowColor = UIColor.black.cgColor
@@ -83,12 +82,19 @@ class AttractionVC: UIViewController {
         detailView.layer.masksToBounds = false
     }
     
+    func configMapViewBorder() {
+        mapView.layer.borderWidth = 3.0
+        mapView.layer.borderColor = UIColor.white.cgColor
+        mapView.clipsToBounds = true
+        mapView.layer.cornerRadius = 15
+    }
     
-    func configMapShadow() {
+    
+    func configMapViewShadow() {
         mapView.layer.shadowColor = UIColor.black.cgColor
         mapView.layer.shadowOpacity = 0.5
         mapView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        mapView.layer.shadowRadius = 1
+        mapView.layer.shadowRadius = 4
         mapView.layer.masksToBounds = false
         
     }
