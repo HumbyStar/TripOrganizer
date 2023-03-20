@@ -161,16 +161,24 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAttractionButton" destination="PAX-r4-MkH" id="syb-uL-8sX"/>
+                        <outlet property="attractionAdressLabel" destination="EVO-Zj-FsQ" id="f4D-5R-DKr"/>
+                        <outlet property="attractionNameLabel" destination="eVf-Ka-K8c" id="oQN-fF-qxJ"/>
+                        <outlet property="avaliationStarsImageView" destination="3Ce-0D-YUu" id="ADV-9t-T2n"/>
                         <outlet property="collectionView" destination="J9O-3G-o3I" id="buX-6J-wCI"/>
                         <outlet property="detailView" destination="o14-IW-ZfX" id="mdn-I4-BUi"/>
+                        <outlet property="entranceFeeLabel" destination="Vea-UL-S82" id="GML-Nb-QCS"/>
                         <outlet property="map" destination="PLn-RZ-hM1" id="gSi-6s-kft"/>
                         <outlet property="mapView" destination="Ugf-gU-VHI" id="aKx-zz-o7v"/>
+                        <outlet property="openingHoursLabel" destination="k5y-2D-KVG" id="9YZ-On-37F"/>
+                        <outlet property="phoneLabel" destination="pYL-8r-ReW" id="QaO-XY-Neg"/>
                         <outlet property="searchBar" destination="pJW-sN-Uf9" id="pMT-u3-Yld"/>
+                        <outlet property="starsImageView" destination="KWQ-fQ-WcI" id="mOk-9g-h3a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-820" y="46"/>
+            <point key="canvasLocation" x="-343" y="45"/>
         </scene>
     </scenes>
     <resources>

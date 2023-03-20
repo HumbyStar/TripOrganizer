@@ -17,6 +17,15 @@ class AttractionVC: UIViewController {
     @IBOutlet var map: MKMapView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var detailView: UIView!
+    @IBOutlet var addAttractionButton: UIButton!
+    @IBOutlet var attractionNameLabel: UILabel!
+    @IBOutlet var starsImageView: UIImageView!
+    @IBOutlet var attractionAdressLabel: UILabel!
+    @IBOutlet var openingHoursLabel: UILabel!
+    @IBOutlet var phoneLabel: UILabel!
+    @IBOutlet var entranceFeeLabel: UILabel!
+    @IBOutlet var avaliationStarsImageView: UIImageView!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -28,7 +37,7 @@ class AttractionVC: UIViewController {
         configSearchBarStyle()
         configMapViewBorder()
         configDetailViewBorder()
-        configMapViewShadow()
+//        configMapViewShadow()
         configMapConstraints()
         configDetailViewShadow()
         configSearchBarShadowBar()
