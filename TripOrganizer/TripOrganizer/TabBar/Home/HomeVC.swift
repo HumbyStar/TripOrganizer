@@ -8,22 +8,64 @@
 import UIKit
 
 class HomeVC: UIViewController {
+    
+    //MARK: - Outleets
+    @IBOutlet weak var ivPhoto: UIImageView!
+    @IBOutlet weak var lbWelcome: UILabel!
+    @IBOutlet weak var viewInfos: UIView!
+    @IBOutlet weak var lbCheckUpdate: UILabel!
+    @IBOutlet weak var lbQuantityDays: UILabel!
+    @IBOutlet weak var lbAirplane: UILabel!
+    @IBOutlet weak var lbHotel: UILabel!
+    @IBOutlet weak var lbRestaurant: UILabel!
+    @IBOutlet weak var lbAttractions: UILabel!
+    @IBOutlet weak var lbTotalCoast: UILabel!
+    @IBOutlet weak var cvPlaces: UICollectionView!
+    
+    private let images: [String] = ["teste", "teste2", "teste3"]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+      extrasFeatures()
     }
     
+    private func extrasFeatures(){
+        cvPlaces.delegate = self
+        cvPlaces.dataSource = self
+        viewInfos.layer.borderWidth = 3
+        viewInfos.layer.borderColor = UIColor.white.cgColor
+        if let layout = cvPlaces.collectionViewLayout as? UICollectionViewFlowLayout {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            layout.scrollDirection = .horizontal
+            layout.estimatedItemSize = .zero
+        }
     }
-    */
+    
+    @IBAction func tapInPerfil(_ sender: UIButton) {
+        self.navigationController?.present(PerfilViewController(), animated: true)
+    }
+}
 
+extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? HomeCollectionViewCell
+        cell?.ivPlaces.image = UIImage(named: images[indexPath.row])
+        return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = cvPlaces.bounds.height
+        let width = cvPlaces.bounds.width
+        
+        return CGSize(width: 120, height: height)
+    }
+    
 }
