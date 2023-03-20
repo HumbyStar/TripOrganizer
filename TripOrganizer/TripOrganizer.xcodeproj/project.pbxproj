@@ -31,6 +31,10 @@
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		50DF156C29C8BE59003964BF /* AttractionInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DF156B29C8BE59003964BF /* AttractionInfoController.swift */; };
+		50DF156E29C8BE71003964BF /* AttractionInfoController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50DF156D29C8BE71003964BF /* AttractionInfoController.storyboard */; };
+		50DF157229C8CC80003964BF /* AttractionInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DF157029C8CC80003964BF /* AttractionInfoCell.swift */; };
+		50DF157329C8CC80003964BF /* AttractionInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DF157129C8CC80003964BF /* AttractionInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		50DF156B29C8BE59003964BF /* AttractionInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInfoController.swift; sourceTree = "<group>"; };
+		50DF156D29C8BE71003964BF /* AttractionInfoController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AttractionInfoController.storyboard; sourceTree = "<group>"; };
+		50DF157029C8CC80003964BF /* AttractionInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionInfoCell.swift; sourceTree = "<group>"; };
+		50DF157129C8CC80003964BF /* AttractionInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttractionInfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,7 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				50DF156A29C8BDD9003964BF /* Attraction Info */,
 				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
 				0C61EB0529BBDFEA00F54F47 /* Register */,
@@ -217,6 +226,25 @@
 			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
+		50DF156A29C8BDD9003964BF /* Attraction Info */ = {
+			isa = PBXGroup;
+			children = (
+				50DF156F29C8CC2F003964BF /* Cell */,
+				50DF156B29C8BE59003964BF /* AttractionInfoController.swift */,
+				50DF156D29C8BE71003964BF /* AttractionInfoController.storyboard */,
+			);
+			path = "Attraction Info";
+			sourceTree = "<group>";
+		};
+		50DF156F29C8CC2F003964BF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				50DF157029C8CC80003964BF /* AttractionInfoCell.swift */,
+				50DF157129C8CC80003964BF /* AttractionInfoCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DF156E29C8BE71003964BF /* AttractionInfoController.storyboard in Resources */,
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
 				0C3AD1E529C3524800E7FE73 /* PerfilScreenStoryboard.storyboard in Resources */,
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
@@ -282,6 +311,7 @@
 				0C111C2729BACD9000A0DCF4 /* TabBarController.storyboard in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
 				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
+				50DF157329C8CC80003964BF /* AttractionInfoCell.xib in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
@@ -297,7 +327,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DF156C29C8BE59003964BF /* AttractionInfoController.swift in Sources */,
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
+				50DF157229C8CC80003964BF /* AttractionInfoCell.swift in Sources */,
 				0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
