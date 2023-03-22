@@ -182,6 +182,14 @@
                                             <constraint firstAttribute="width" secondItem="nYB-Ok-2IW" secondAttribute="height" multiplier="75:62" id="2LN-FI-h6x"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48T-LI-SmN">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="260"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                                        <connections>
+                                            <action selector="goToPlannerScreen:" destination="ahI-c8-cW6" eventType="touchUpInside" id="nnB-6f-7oQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94509804249999996" green="0.94509804249999996" blue="0.94509804249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -190,8 +198,11 @@
                                     <constraint firstItem="HeB-xY-wbS" firstAttribute="centerY" secondItem="fdH-GN-csr" secondAttribute="centerY" constant="-35" id="0xZ-2g-pvD"/>
                                     <constraint firstItem="goL-P2-Qw6" firstAttribute="centerY" secondItem="Wfs-7H-FW9" secondAttribute="centerY" id="Cpr-6c-VWH"/>
                                     <constraint firstItem="goL-P2-Qw6" firstAttribute="leading" secondItem="fdH-GN-csr" secondAttribute="leading" constant="10" id="JAY-aF-VkT"/>
+                                    <constraint firstItem="48T-LI-SmN" firstAttribute="top" secondItem="fdH-GN-csr" secondAttribute="top" id="Pdg-BF-xPn"/>
+                                    <constraint firstAttribute="bottom" secondItem="48T-LI-SmN" secondAttribute="bottom" id="RDe-P6-op4"/>
                                     <constraint firstItem="Wfs-7H-FW9" firstAttribute="leading" secondItem="nYB-Ok-2IW" secondAttribute="trailing" constant="3.5" id="Yur-8B-Uuw"/>
                                     <constraint firstAttribute="width" secondItem="fdH-GN-csr" secondAttribute="height" multiplier="313:260" id="aCf-7W-LFl"/>
+                                    <constraint firstItem="48T-LI-SmN" firstAttribute="leading" secondItem="fdH-GN-csr" secondAttribute="leading" id="ahI-pv-Jfn"/>
                                     <constraint firstItem="Wfs-7H-FW9" firstAttribute="top" secondItem="fdH-GN-csr" secondAttribute="top" constant="6" id="bJO-Fc-Xys"/>
                                     <constraint firstAttribute="trailing" secondItem="Wfs-7H-FW9" secondAttribute="trailing" constant="20" id="bgA-c3-sts"/>
                                     <constraint firstItem="HeB-xY-wbS" firstAttribute="top" secondItem="goL-P2-Qw6" secondAttribute="bottom" constant="5" id="cVR-0y-GwJ"/>
@@ -199,6 +210,7 @@
                                     <constraint firstItem="nYB-Ok-2IW" firstAttribute="leading" secondItem="fdH-GN-csr" secondAttribute="leading" constant="10" id="g3B-fC-9rp"/>
                                     <constraint firstItem="HeB-xY-wbS" firstAttribute="centerX" secondItem="goL-P2-Qw6" secondAttribute="centerX" id="iDJ-u6-pIT"/>
                                     <constraint firstAttribute="bottom" secondItem="nYB-Ok-2IW" secondAttribute="bottom" constant="8" id="l4a-uu-3Jv"/>
+                                    <constraint firstAttribute="trailing" secondItem="48T-LI-SmN" secondAttribute="trailing" id="ohA-9W-FrY"/>
                                     <constraint firstItem="Wfs-7H-FW9" firstAttribute="centerY" secondItem="fdH-GN-csr" secondAttribute="centerY" constant="-55" id="rpG-AT-Iud"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -290,6 +302,7 @@
                     </view>
                     <connections>
                         <outlet property="cvPlaces" destination="av3-jb-fwY" id="cKG-jg-G3q"/>
+                        <outlet property="ivPhoto" destination="IrK-tV-atl" id="vJe-3I-G6M"/>
                         <outlet property="lbAirplane" destination="knw-YR-gfM" id="gig-4q-Jzv"/>
                         <outlet property="lbAttractions" destination="xBq-aG-H20" id="xAs-LB-KEc"/>
                         <outlet property="lbCheckUpdate" destination="HeB-xY-wbS" id="fIf-TQ-eGE"/>

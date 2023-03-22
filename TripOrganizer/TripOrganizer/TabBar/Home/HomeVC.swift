@@ -48,6 +48,11 @@ class HomeVC: UIViewController {
     @IBAction func tapInPerfil(_ sender: UIButton) {
         self.navigationController?.present(PerfilViewController(), animated: true)
     }
+    
+    @IBAction func goToPlannerScreen(_ sender: UIButton) {
+        print("Go To Planner Screen")
+    }
+    
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
