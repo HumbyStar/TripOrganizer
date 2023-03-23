@@ -9,6 +9,7 @@ import UIKit
 
 class HotelVC: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewWillAppear(_ animated: Bool) {
             navigationController?.setNavigationBarHidden(true, animated: false)
@@ -16,10 +17,27 @@ class HotelVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configCollectionView()
     }
     
+    private func configCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(HoteisCollectionViewCell.nib(), forCellWithReuseIdentifier: HoteisCollectionViewCell.identifier)
+    }
+    
+}
 
-
+extension HotelVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        return UICollectionViewCell()
+    }
+    
+    
 }
