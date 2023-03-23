@@ -17,54 +17,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
-                                <rect key="frame" x="16" y="55" width="343" height="56"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
+                                <rect key="frame" x="16" y="31" width="343" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="wpz-4k-htJ"/>
                                 </connections>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sr.Fulano estamos quase lá, digite onde deseja conhecer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buI-vs-cyT">
-                                <rect key="frame" x="46" y="34" width="283.5" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sr.Fulano estamos quase lá, digite onde deseja conhecer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buI-vs-cyT">
+                                <rect key="frame" x="46" y="10" width="283.5" height="13.5"/>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xls-1V-ZE4">
-                                <rect key="frame" x="16" y="151" width="343" height="212"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-f6-HQp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-f6-HQp">
                                 <rect key="frame" x="16" y="385" width="343" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xls-1V-ZE4">
+                                <rect key="frame" x="16" y="107" width="343" height="212"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="212" id="ciC-TT-QZZ"/>
+                                </constraints>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.9529411793" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="sHU-f6-HQp" firstAttribute="top" secondItem="xls-1V-ZE4" secondAttribute="bottom" constant="66" id="2wk-5H-xQD"/>
+                            <constraint firstItem="buI-vs-cyT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4Hu-YP-iSw"/>
+                            <constraint firstItem="DY3-Ls-0Q8" firstAttribute="top" secondItem="buI-vs-cyT" secondAttribute="bottom" constant="7.5" id="MuQ-nq-hRR"/>
+                            <constraint firstItem="xls-1V-ZE4" firstAttribute="top" secondItem="DY3-Ls-0Q8" secondAttribute="bottom" constant="20" id="Mw4-5e-8vb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xls-1V-ZE4" secondAttribute="trailing" constant="16" id="QhS-7F-P2v"/>
                             <constraint firstAttribute="trailing" secondItem="DY3-Ls-0Q8" secondAttribute="trailing" constant="16" id="aiw-UD-lJG"/>
+                            <constraint firstItem="sHU-f6-HQp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="cqO-Zc-i5b"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sHU-f6-HQp" secondAttribute="trailing" constant="16" id="iIj-Oc-OnZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sHU-f6-HQp" secondAttribute="bottom" constant="20" id="itg-Qo-K6j"/>
+                            <constraint firstItem="xls-1V-ZE4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ror-Tf-0Cx"/>
+                            <constraint firstItem="buI-vs-cyT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="vZT-d0-6mL"/>
                             <constraint firstItem="DY3-Ls-0Q8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="zxe-K0-OtS"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="VZI-rp-AJx" id="AJR-NU-EGh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="VZI-rp-AJx">
-                    <connections>
-                        <outlet property="delegate" destination="Y6W-OH-hqX" id="LJS-eb-o7T"/>
-                        <outlet property="searchBar" destination="DY3-Ls-0Q8" id="8IP-DS-iDD"/>
-                        <outlet property="searchContentsController" destination="Y6W-OH-hqX" id="0uh-9K-mqJ"/>
-                        <outlet property="searchResultsDataSource" destination="Y6W-OH-hqX" id="Mw2-bn-vDF"/>
-                        <outlet property="searchResultsDelegate" destination="Y6W-OH-hqX" id="RNS-6u-1tq"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="28" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="-202" y="-9"/>
         </scene>
     </scenes>
     <resources>
