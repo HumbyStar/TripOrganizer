@@ -31,6 +31,8 @@
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		C43E84E529CE2FB60032C279 /* InfoHoteisStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43E84E429CE2FB60032C279 /* InfoHoteisStoryboard.storyboard */; };
+		C43E84E729CE2FE10032C279 /* InfoHoteisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43E84E629CE2FE10032C279 /* InfoHoteisViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		C43E84E429CE2FB60032C279 /* InfoHoteisStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoHoteisStoryboard.storyboard; sourceTree = "<group>"; };
+		C43E84E629CE2FE10032C279 /* InfoHoteisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHoteisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				C43E84E229CE2F010032C279 /* InfoScreen */,
 				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
 				0C61EB0529BBDFEA00F54F47 /* Register */,
@@ -217,6 +222,24 @@
 			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
+		C43E84E229CE2F010032C279 /* InfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C43E84E329CE2F1F0032C279 /* InfoHotel */,
+			);
+			name = InfoScreen;
+			path = Resources/InfoScreen;
+			sourceTree = "<group>";
+		};
+		C43E84E329CE2F1F0032C279 /* InfoHotel */ = {
+			isa = PBXGroup;
+			children = (
+				C43E84E429CE2FB60032C279 /* InfoHoteisStoryboard.storyboard */,
+				C43E84E629CE2FE10032C279 /* InfoHoteisViewController.swift */,
+			);
+			path = InfoHotel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +303,7 @@
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
 				5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */,
 				0C111C2729BACD9000A0DCF4 /* TabBarController.storyboard in Resources */,
+				C43E84E529CE2FB60032C279 /* InfoHoteisStoryboard.storyboard in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
 				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
@@ -303,6 +327,7 @@
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
+				C43E84E729CE2FE10032C279 /* InfoHoteisViewController.swift in Sources */,
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
