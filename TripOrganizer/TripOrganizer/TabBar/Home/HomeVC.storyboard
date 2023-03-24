@@ -30,25 +30,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vamos escolher um lugar de destino" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-AO-xes">
-                                <rect key="frame" x="31" y="84" width="313" height="57.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="112" id="5U6-uG-Wut"/>
-                                </constraints>
+                                <rect key="frame" x="31" y="84" width="313" height="127"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="fdH-GN-csr">
-                                <rect key="frame" x="31" y="146.5" width="313" height="279"/>
+                                <rect key="frame" x="31" y="211" width="313" height="260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfs-7H-FW9">
-                                        <rect key="frame" x="174.5" y="6" width="118.5" height="157"/>
+                                        <rect key="frame" x="163" y="6" width="130" height="138"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="Image View" translatesAutoresizingMaskIntoConstraints="NO" id="DJs-Mb-G2Y">
-                                                <rect key="frame" x="10" y="10" width="98.5" height="137"/>
+                                                <rect key="frame" x="10" y="10" width="110" height="118"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJy-Wc-KJL">
-                                                <rect key="frame" x="41.5" y="70.5" width="35.5" height="16"/>
+                                                <rect key="frame" x="47" y="61" width="35.5" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -65,19 +62,19 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progresso da Viagem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goL-P2-Qw6">
-                                        <rect key="frame" x="10" y="76" width="160.5" height="17"/>
+                                        <rect key="frame" x="10" y="66.5" width="149" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultima atualização a 2h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeB-xY-wbS">
-                                        <rect key="frame" x="34" y="98" width="112.5" height="13"/>
+                                        <rect key="frame" x="28" y="88.5" width="112.5" height="13"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYB-Ok-2IW">
-                                        <rect key="frame" x="10" y="138" width="161" height="133"/>
+                                        <rect key="frame" x="10" y="128.5" width="149.5" height="123.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pacote referente a 7 dias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vg-Xe-KLb">
                                                 <rect key="frame" x="10" y="27" width="131" height="14"/>
@@ -186,7 +183,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48T-LI-SmN">
-                                        <rect key="frame" x="0.0" y="0.0" width="313" height="279"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="260"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title=""/>
                                         <connections>
@@ -223,7 +220,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="av3-jb-fwY">
-                                <rect key="frame" x="20" y="455.5" width="355" height="156"/>
+                                <rect key="frame" x="20" y="501" width="355" height="156"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="av3-jb-fwY" secondAttribute="height" multiplier="25:11" id="DbZ-zn-6kw"/>
@@ -274,7 +271,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destinos Populares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INb-9N-7F8">
-                                <rect key="frame" x="41" y="428" width="112" height="15"/>
+                                <rect key="frame" x="41" y="473.5" width="112" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.63137254901960782" green="0.61568627450980395" blue="0.61568627450980395" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -294,7 +291,7 @@
                             <constraint firstItem="av3-jb-fwY" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="VBf-5g-7pT"/>
                             <constraint firstItem="IrK-tV-atl" firstAttribute="top" secondItem="r1O-pE-hBo" secondAttribute="top" constant="15" id="ZP6-UT-bcv"/>
                             <constraint firstItem="av3-jb-fwY" firstAttribute="top" secondItem="fdH-GN-csr" secondAttribute="bottom" constant="30" id="bbD-ER-HHm"/>
-                            <constraint firstItem="fdH-GN-csr" firstAttribute="top" secondItem="ifA-AO-xes" secondAttribute="bottom" constant="5" id="ce2-JV-NvR"/>
+                            <constraint firstItem="fdH-GN-csr" firstAttribute="top" secondItem="ifA-AO-xes" secondAttribute="bottom" id="ce2-JV-NvR"/>
                             <constraint firstItem="r1O-pE-hBo" firstAttribute="trailing" secondItem="fdH-GN-csr" secondAttribute="trailing" constant="31" id="dyw-3D-sIl"/>
                             <constraint firstItem="1oZ-hE-uPe" firstAttribute="centerY" secondItem="lfs-ZL-eC7" secondAttribute="centerY" id="h4l-Au-EXX"/>
                             <constraint firstItem="lfs-ZL-eC7" firstAttribute="centerY" secondItem="IrK-tV-atl" secondAttribute="centerY" id="t3S-oR-I1i"/>
