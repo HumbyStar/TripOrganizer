@@ -37,7 +37,7 @@ class AttractionVC: UIViewController {
         configSearchBarStyle()
         configMapViewBorder()
         configDetailViewBorder()
-//        configMapViewShadow()
+        configMapViewShadow()
         configMapConstraints()
         configDetailViewShadow()
         configSearchBarShadowBar()
@@ -104,9 +104,9 @@ class AttractionVC: UIViewController {
         mapView.layer.shadowOpacity = 0.5
         mapView.layer.shadowOffset = CGSize(width: 0, height: 2)
         mapView.layer.shadowRadius = 4
-        mapView.layer.masksToBounds = false
-        
+        mapView.layer.masksToBounds = true
     }
+    
     
     func configSearchBarShadowBar() {
         searchBar.layer.shadowColor = UIColor.black.cgColor
