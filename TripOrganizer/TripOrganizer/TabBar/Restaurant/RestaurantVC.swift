@@ -6,9 +6,15 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantVC: UIViewController {
 
+    
+    @IBOutlet weak var informacaoRestauranteView: UIView!
+    @IBOutlet weak var mapaRestauranteMapView: MKMapView!
+    
+    @IBOutlet weak var pesquisaRestauranteSearchBar: UISearchBar!
     @IBOutlet weak var fulanoLabel: UILabel!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
@@ -18,10 +24,11 @@ class RestaurantVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 configmenuCollectionView()
-        
-        
+     configInformacaoRestauranteView()
+        configmapaRestauranteMapView()
     }
    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
@@ -36,8 +43,17 @@ configmenuCollectionView()
         }
             
     }
-   
+    func configInformacaoRestauranteView(){
+        informacaoRestauranteView.layer.borderWidth = 2
+        informacaoRestauranteView.layer.borderColor = UIColor.white.cgColor
+        
+    }
 
+    func configmapaRestauranteMapView(){
+        mapaRestauranteMapView.layer.borderWidth = 2
+        mapaRestauranteMapView.layer.borderColor = UIColor.white.cgColor
+    }
+    
 }
 extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

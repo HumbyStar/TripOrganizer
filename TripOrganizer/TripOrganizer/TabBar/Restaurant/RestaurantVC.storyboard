@@ -131,7 +131,10 @@ Telefone: (41) 3243-3430 </string>
                     </view>
                     <connections>
                         <outlet property="fulanoLabel" destination="mIv-8m-aqy" id="HL7-RU-iv3"/>
+                        <outlet property="informacaoRestauranteView" destination="OKB-rP-i9z" id="HuI-9N-oRZ"/>
+                        <outlet property="mapaRestauranteMapView" destination="8b7-1q-S0N" id="Zrw-l2-5Wl"/>
                         <outlet property="menuCollectionView" destination="izv-be-YaA" id="tuh-bi-51x"/>
+                        <outlet property="pesquisaRestauranteSearchBar" destination="qvI-Wk-zli" id="cfV-yf-XPM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

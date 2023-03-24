@@ -25,8 +25,9 @@ class MenuCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
        
         layer.borderWidth = 1.0
-                layer.borderColor = UIColor.lightGray.cgColor
-                layer.cornerRadius = 8.0
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.cornerRadius = 8.0
+       
         // Initialization code
     }
     func setupCell(image: String, valor:String){
