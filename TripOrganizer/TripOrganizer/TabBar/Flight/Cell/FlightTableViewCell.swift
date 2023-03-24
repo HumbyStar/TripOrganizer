@@ -9,15 +9,20 @@ import UIKit
 
 class FlightTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var ongoingAirlinerLabel: UILabel!
-    @IBOutlet weak var outgoingAirlinerLabel: UILabel!
+    @IBOutlet weak var outboundAirlinerLabel: UILabel!
+    @IBOutlet weak var returnAirlinerLabel: UILabel!
     
-    @IBOutlet weak var ongoingDepartureLabel: UILabel!
-    @IBOutlet weak var ongoingArrivalLabel: UILabel!
+    @IBOutlet weak var outboundAirportDepartureLabel: UILabel!
+    @IBOutlet weak var outboundAirportArrivalLabel: UILabel!
     
-    @IBOutlet weak var outgoingDepartureLabel: UILabel!
-    @IBOutlet weak var outgoingArrivalLabel: UILabel!
+    @IBOutlet weak var outboundDepTimeLabel: UILabel!
+    @IBOutlet weak var outboundArrivelTimeLabel: UILabel!
     
+    @IBOutlet weak var returnDepTimeLabel: UILabel!
+    @IBOutlet weak var returnArrivalTimeLabel: UILabel!
+    
+    @IBOutlet weak var returnAirportDepLabel: UILabel!
+    @IBOutlet weak var returnAirportArrivalLabel: UILabel!
     
     @IBOutlet weak var totalPriceLabel: UILabel!
     
@@ -42,19 +47,24 @@ class FlightTableViewCell: UITableViewCell {
 
     }
     
-    func setupCell(ongoingCiaName: String, outgoingCiaName: String, ongoingDeparture: String, ongoingArrival: String, outgoingDeparture: String, outgoingArrival: String, priceWithoutTax: Double, priceWithTax: Double) {
+    func setupCell(ongoingCiaName: String, outgoingCiaName: String, ongoingDeparture: String, ongoingArrival: String, outgoingDeparture: String, outgoingArrival: String, priceWithoutTax: Double, priceWithTax: Double, originDepTime: String, originArrivalTime: String, returnDepTime: String, returnArrivalTime: String) {
 
-        ongoingAirlinerLabel.text = ongoingCiaName
-        outgoingAirlinerLabel.text = outgoingCiaName
+        outboundAirlinerLabel.text = ongoingCiaName
+        returnAirlinerLabel.text = outgoingCiaName
         
-        ongoingDepartureLabel.text = ongoingDeparture
-        ongoingArrivalLabel.text = ongoingArrival
+        outboundAirportDepartureLabel.text = ongoingDeparture
+        outboundAirportArrivalLabel.text = ongoingArrival
         
-        outgoingDepartureLabel.text = outgoingDeparture
-        outgoingArrivalLabel.text = outgoingArrival
+        returnAirportDepLabel.text = outgoingDeparture
+        returnAirportArrivalLabel.text = outgoingArrival
         
         totalPriceWithoutTaxLabel.text = String(priceWithoutTax)
         totalPriceWithTaxesLabel.text = String(priceWithTax)
+        
+        outboundDepTimeLabel.text = originDepTime
+        outboundArrivelTimeLabel.text = originArrivalTime
+        returnDepTimeLabel.text = returnDepTime
+        returnArrivalTimeLabel.text = returnArrivalTime
         
     }
     

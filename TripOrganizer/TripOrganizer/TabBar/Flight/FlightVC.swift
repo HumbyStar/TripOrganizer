@@ -21,6 +21,12 @@ class FlightVC: UIViewController {
     private var priceWithoutTaxList: [Double] = [500.50, 865.92, 3123, 1223]
     private var priceWithTaxList: [Double] = [1238.2, 321.23, 6783, 1980]
     
+    private var outboundDepTime: [String] = ["23:00", "22:00", "21:00", "17:00"]
+    private var outboundArrivalTime: [String] = ["23:50", "22:50", "21:50", "17:50"]
+    
+    private var returnDepTime: [String] = ["10:00", "11:00", "07:00", "17:00"]
+    private var returnArrTime: [String] = ["10:50", "11:50", "07:50", "17:50"]
+    
     @IBOutlet weak var chooseADestinationLabel: UILabel!
     @IBOutlet weak var flightOriginView: UIView!
     @IBOutlet weak var flightOriginTextField: UITextField!
@@ -98,7 +104,7 @@ extension FlightVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: FlightTableViewCell.identifier, for: indexPath) as? FlightTableViewCell
-        cell?.setupCell(ongoingCiaName: ongoingAirlinerList[indexPath.row], outgoingCiaName: outgoingAirlinerList[indexPath.row], ongoingDeparture: ongoingDepartureList[indexPath.row], ongoingArrival: ongoingArrivalList[indexPath.row], outgoingDeparture: outgoingDepartureList[indexPath.row], outgoingArrival: outgoingArrivalList[indexPath.row], priceWithoutTax: priceWithoutTaxList[indexPath.row], priceWithTax: priceWithTaxList[indexPath.row])
+        cell?.setupCell(ongoingCiaName: ongoingAirlinerList[indexPath.row], outgoingCiaName: outgoingAirlinerList[indexPath.row], ongoingDeparture: ongoingDepartureList[indexPath.row], ongoingArrival: ongoingArrivalList[indexPath.row], outgoingDeparture: outgoingDepartureList[indexPath.row], outgoingArrival: outgoingArrivalList[indexPath.row], priceWithoutTax: priceWithoutTaxList[indexPath.row], priceWithTax: priceWithTaxList[indexPath.row], originDepTime: outboundDepTime[indexPath.row], originArrivalTime: outboundArrivalTime[indexPath.row], returnDepTime: returnDepTime[indexPath.row], returnArrivalTime: returnArrTime[indexPath.row])
         
         return cell ?? UITableViewCell()
     }
