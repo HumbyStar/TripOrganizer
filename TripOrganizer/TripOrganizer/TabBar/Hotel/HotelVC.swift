@@ -9,7 +9,7 @@ import UIKit
 
 class HotelVC: UIViewController {
     
-    var listRoom: [String] = ["quarto01"]
+    var listRoom: [String] = ["quarto01", "quarto02", "quarto03","quarto01", "quarto02", "quarto03","quarto01", "quarto02", "quarto03","quarto01", "quarto02", "quarto03","quarto01", "quarto02", "quarto03"]
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var adicionarButton: UIButton!
@@ -42,21 +42,19 @@ class HotelVC: UIViewController {
 extension HotelVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return listRoom.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HoteisCollectionViewCell.identifier, for: indexPath) as? HoteisCollectionViewCell
-        cell?.imageView.image = UIImage(named: "quarto01")
+        cell?.imageView.image = UIImage(named: listRoom[indexPath.row])
         cell?.layer.cornerRadius = 10
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.bounds.height
-        
-        
-        return CGSize(width: 120, height: height)
+        return CGSize(width: 120, height: height - 20)
     }
     
 }

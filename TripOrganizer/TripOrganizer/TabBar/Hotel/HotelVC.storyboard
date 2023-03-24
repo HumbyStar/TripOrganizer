@@ -88,12 +88,23 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estrela" translatesAutoresizingMaskIntoConstraints="NO" id="S83-cA-haJ">
                                         <rect key="frame" x="277" y="25" width="45" height="14"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLp-ZS-zkP">
+                                        <rect key="frame" x="313" y="-10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Phu-Ap-r43"/>
+                                            <constraint firstAttribute="width" constant="40" id="i4w-J1-22T"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Add Button"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="bvT-rh-uuw" secondAttribute="trailing" constant="74" id="1C3-2I-yRh"/>
                                     <constraint firstAttribute="trailing" secondItem="gjB-fu-2JS" secondAttribute="trailing" constant="11" id="4hc-RB-TLN"/>
+                                    <constraint firstAttribute="trailing" secondItem="oLp-ZS-zkP" secondAttribute="trailing" constant="-10" id="6jT-PP-BPf"/>
                                     <constraint firstItem="3lA-Es-FyI" firstAttribute="top" secondItem="nvr-IS-zhN" secondAttribute="bottom" constant="4" id="DW4-w6-0KT"/>
+                                    <constraint firstItem="oLp-ZS-zkP" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="-10" id="EUz-rS-YhO"/>
                                     <constraint firstAttribute="trailing" secondItem="S83-cA-haJ" secondAttribute="trailing" constant="21" id="M29-m7-k9I"/>
                                     <constraint firstItem="bvT-rh-uuw" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="24" id="MJw-ed-TMu"/>
                                     <constraint firstItem="eJI-kv-blR" firstAttribute="top" secondItem="3lA-Es-FyI" secondAttribute="bottom" constant="9" id="QC1-HE-iRy"/>
@@ -112,7 +123,7 @@
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xls-1V-ZE4">
-                                <rect key="frame" x="16" y="112" width="343" height="212"/>
+                                <rect key="frame" x="16" y="102" width="343" height="222"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -121,7 +132,7 @@
                         <constraints>
                             <constraint firstItem="buI-vs-cyT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4Hu-YP-iSw"/>
                             <constraint firstItem="DY3-Ls-0Q8" firstAttribute="top" secondItem="buI-vs-cyT" secondAttribute="bottom" constant="7.5" id="MuQ-nq-hRR"/>
-                            <constraint firstItem="xls-1V-ZE4" firstAttribute="top" secondItem="DY3-Ls-0Q8" secondAttribute="bottom" constant="20" id="Mw4-5e-8vb"/>
+                            <constraint firstItem="xls-1V-ZE4" firstAttribute="top" secondItem="DY3-Ls-0Q8" secondAttribute="bottom" constant="10" id="Mw4-5e-8vb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xls-1V-ZE4" secondAttribute="trailing" constant="16" id="QhS-7F-P2v"/>
                             <constraint firstAttribute="trailing" secondItem="DY3-Ls-0Q8" secondAttribute="trailing" constant="16" id="aiw-UD-lJG"/>
                             <constraint firstItem="sHU-f6-HQp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="cqO-Zc-i5b"/>
@@ -139,10 +150,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-918" y="-13"/>
+            <point key="canvasLocation" x="-919.20000000000005" y="-13.043478260869566"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Add Button" width="34" height="34"/>
         <image name="estrela" width="45" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
