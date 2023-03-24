@@ -23,7 +23,7 @@ class HoteisCollectionViewCell: UICollectionViewCell {
         
     }
 
-    func setupCell() {
-        
+    func setupCell(values: String) {
+        valoresLabel.text = values
     }
 }
