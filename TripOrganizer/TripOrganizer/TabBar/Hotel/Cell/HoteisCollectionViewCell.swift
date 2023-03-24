@@ -8,7 +8,11 @@
 import UIKit
 
 class HoteisCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var valoresLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var salvarImageView: UIImageView!
+    
     static let identifier = "HoteisCollectionViewCell"
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
@@ -19,7 +23,7 @@ class HoteisCollectionViewCell: UICollectionViewCell {
         
     }
 
-    func configCell() {
+    func setupCell() {
         
     }
 }

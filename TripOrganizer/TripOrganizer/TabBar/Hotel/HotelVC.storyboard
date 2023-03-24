@@ -17,8 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
                                 <rect key="frame" x="16" y="36" width="343" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="uW7-u5-aFR"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="wpz-4k-htJ"/>
@@ -34,47 +37,46 @@
                                 <rect key="frame" x="16" y="339" width="343" height="321"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chatolamour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTJ-Yf-Mvs">
-                                        <rect key="frame" x="8" y="5" width="98" height="21"/>
+                                        <rect key="frame" x="11" y="25" width="98" height="21"/>
                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                         <color key="textColor" red="0.47843140360000003" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2IU-2u-fBc">
-                                        <rect key="frame" x="8" y="31" width="278" height="11"/>
+                                        <rect key="frame" x="8" y="51" width="278" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario: abre as 12;00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvr-IS-zhN">
-                                        <rect key="frame" x="8" y="45" width="101" height="11"/>
+                                        <rect key="frame" x="8" y="65" width="101" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone: (41) 3243-3430 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lA-Es-FyI">
-                                        <rect key="frame" x="8" y="60" width="117" height="11"/>
+                                        <rect key="frame" x="8" y="80" width="117" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-rh-uuw">
-                                        <rect key="frame" x="212" y="5" width="64" height="16"/>
+                                        <rect key="frame" x="205" y="24" width="64" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" systemColor="tertiaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="estrela" translatesAutoresizingMaskIntoConstraints="NO" id="S83-cA-haJ">
-                                        <rect key="frame" x="285" y="6" width="45" height="14"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hospedagem:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJI-kv-blR">
-                                        <rect key="frame" x="8" y="80" width="107" height="21"/>
+                                        <rect key="frame" x="8" y="100" width="107" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.47843140360000003" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gjB-fu-2JS">
-                                        <rect key="frame" x="0.0" y="108" width="343" height="193"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <rect key="frame" x="11" y="128" width="321" height="183"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gjB-fu-2JS" secondAttribute="height" multiplier="107:61" id="sCi-XZ-dnq"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fJL-2d-BKP">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -83,33 +85,34 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estrela" translatesAutoresizingMaskIntoConstraints="NO" id="S83-cA-haJ">
+                                        <rect key="frame" x="277" y="25" width="45" height="14"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="S83-cA-haJ" firstAttribute="leading" secondItem="bvT-rh-uuw" secondAttribute="trailing" constant="9" id="1Cr-DN-d4J"/>
-                                    <constraint firstItem="bvT-rh-uuw" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="5" id="2xg-nt-22T"/>
-                                    <constraint firstAttribute="trailing" secondItem="gjB-fu-2JS" secondAttribute="trailing" id="4hc-RB-TLN"/>
+                                    <constraint firstAttribute="trailing" secondItem="bvT-rh-uuw" secondAttribute="trailing" constant="74" id="1C3-2I-yRh"/>
+                                    <constraint firstAttribute="trailing" secondItem="gjB-fu-2JS" secondAttribute="trailing" constant="11" id="4hc-RB-TLN"/>
                                     <constraint firstItem="3lA-Es-FyI" firstAttribute="top" secondItem="nvr-IS-zhN" secondAttribute="bottom" constant="4" id="DW4-w6-0KT"/>
-                                    <constraint firstAttribute="trailing" secondItem="S83-cA-haJ" secondAttribute="trailing" constant="13" id="IAl-SU-6YI"/>
+                                    <constraint firstAttribute="trailing" secondItem="S83-cA-haJ" secondAttribute="trailing" constant="21" id="M29-m7-k9I"/>
+                                    <constraint firstItem="bvT-rh-uuw" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="24" id="MJw-ed-TMu"/>
                                     <constraint firstItem="eJI-kv-blR" firstAttribute="top" secondItem="3lA-Es-FyI" secondAttribute="bottom" constant="9" id="QC1-HE-iRy"/>
-                                    <constraint firstAttribute="bottom" secondItem="gjB-fu-2JS" secondAttribute="bottom" constant="20" id="RlA-e5-Dhf"/>
                                     <constraint firstItem="nvr-IS-zhN" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="RnE-LJ-2nC"/>
-                                    <constraint firstItem="gTJ-Yf-Mvs" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="UI1-xC-rze"/>
+                                    <constraint firstItem="gTJ-Yf-Mvs" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="11" id="UI1-xC-rze"/>
                                     <constraint firstItem="eJI-kv-blR" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="UzG-6H-NxV"/>
                                     <constraint firstItem="2IU-2u-fBc" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="Uzi-Sx-Po7"/>
                                     <constraint firstItem="nvr-IS-zhN" firstAttribute="top" secondItem="2IU-2u-fBc" secondAttribute="bottom" constant="3" id="YTt-lJ-pMt"/>
                                     <constraint firstItem="2IU-2u-fBc" firstAttribute="top" secondItem="gTJ-Yf-Mvs" secondAttribute="bottom" constant="5" id="aKk-2y-WwK"/>
                                     <constraint firstItem="3lA-Es-FyI" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="f9O-Zg-ane"/>
-                                    <constraint firstItem="gjB-fu-2JS" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" id="fmp-zT-7Lt"/>
-                                    <constraint firstItem="gTJ-Yf-Mvs" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="5" id="jpl-y5-wNj"/>
+                                    <constraint firstItem="gjB-fu-2JS" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="11" id="fmp-zT-7Lt"/>
+                                    <constraint firstAttribute="bottom" secondItem="gjB-fu-2JS" secondAttribute="bottom" constant="10" id="heB-rT-X8F"/>
+                                    <constraint firstItem="S83-cA-haJ" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="25" id="iNg-R7-TpW"/>
+                                    <constraint firstItem="gTJ-Yf-Mvs" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="25" id="jpl-y5-wNj"/>
                                     <constraint firstItem="gjB-fu-2JS" firstAttribute="top" secondItem="eJI-kv-blR" secondAttribute="bottom" constant="7" id="r8y-GM-Tj3"/>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xls-1V-ZE4">
                                 <rect key="frame" x="16" y="112" width="343" height="212"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="212" id="ciC-TT-QZZ"/>
-                                </constraints>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -136,16 +139,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-905" y="1"/>
+            <point key="canvasLocation" x="-918" y="-13"/>
         </scene>
     </scenes>
     <resources>
         <image name="estrela" width="45" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
