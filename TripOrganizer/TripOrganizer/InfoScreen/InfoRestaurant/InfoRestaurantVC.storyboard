@@ -29,42 +29,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Telefone: (41) 3243-3430 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3a-Fm-fLN">
-                                <rect key="frame" x="91" y="293" width="161" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone: (41) 3243-3430 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3a-Fm-fLN">
+                                <rect key="frame" x="107" y="288" width="161" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Horario: abre as 12:00 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-a5-4Bk">
-                                <rect key="frame" x="105" y="265" width="147" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario: abre as 12:00 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-a5-4Bk">
+                                <rect key="frame" x="114.5" y="263" width="146.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2Q-v8-GED">
-                                <rect key="frame" x="0.0" y="317" width="375" height="138"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2Q-v8-GED">
+                                <rect key="frame" x="0.0" y="312" width="375" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="ZAG-mc-Owv"/>
+                                </constraints>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cardapio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-qB-ycp">
-                                <rect key="frame" x="16" y="459" width="96" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardapio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-qB-ycp">
+                                <rect key="frame" x="16" y="458" width="96" height="27"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total: R$ 250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-vn-HZy">
-                                <rect key="frame" x="227" y="630" width="132" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: R$ 250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-vn-HZy">
+                                <rect key="frame" x="237" y="634" width="122" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HGQ-ys-rcs">
-                                <rect key="frame" x="0.0" y="494" width="375" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HGQ-ys-rcs">
+                                <rect key="frame" x="16" y="493" width="343" height="133"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lk4-g4-SL2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -74,9 +71,14 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Px-JV-nb8" userLabel="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020">
-                                <rect key="frame" x="61" y="214" width="234" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Estrelas - cópia" translatesAutoresizingMaskIntoConstraints="NO" id="GeL-oB-NuH">
+                                <rect key="frame" x="129" y="188.5" width="117" height="25"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Px-JV-nb8" userLabel="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020">
+                                <rect key="frame" x="68" y="221.5" width="239" height="33.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="gAJ-eG-oXz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,10 +87,29 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="k2Q-v8-GED" firstAttribute="top" secondItem="Z3a-Fm-fLN" secondAttribute="bottom" constant="8" id="19q-9o-vQY"/>
+                            <constraint firstItem="Ow9-a5-4Bk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4Of-4a-MP8"/>
+                            <constraint firstItem="4Px-JV-nb8" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="A7y-9H-GXg"/>
+                            <constraint firstItem="4Px-JV-nb8" firstAttribute="top" secondItem="GeL-oB-NuH" secondAttribute="bottom" constant="8" id="Bqo-OG-hpN"/>
+                            <constraint firstItem="HGQ-ys-rcs" firstAttribute="top" secondItem="dAe-qB-ycp" secondAttribute="bottom" constant="8" id="FNX-w4-vI0"/>
+                            <constraint firstItem="dAe-qB-ycp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="IxU-ub-jcg"/>
+                            <constraint firstItem="Z3a-Fm-fLN" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="M3c-v5-Ss7"/>
+                            <constraint firstItem="mh5-vn-HZy" firstAttribute="top" secondItem="HGQ-ys-rcs" secondAttribute="bottom" constant="8" id="MQC-PC-Bia"/>
+                            <constraint firstItem="Ow9-a5-4Bk" firstAttribute="top" secondItem="4Px-JV-nb8" secondAttribute="bottom" constant="8" id="RDx-We-uNP"/>
+                            <constraint firstItem="k2Q-v8-GED" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Sev-fS-byH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HGQ-ys-rcs" secondAttribute="trailing" constant="16" id="TGa-z4-yaP"/>
                             <constraint firstItem="7eV-Zp-bhh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="V1U-Z7-5Nx"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mh5-vn-HZy" secondAttribute="bottom" constant="9" id="XjV-Lq-mB7"/>
+                            <constraint firstItem="GeL-oB-NuH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bcs-bk-ltp"/>
+                            <constraint firstItem="GeL-oB-NuH" firstAttribute="top" secondItem="7eV-Zp-bhh" secondAttribute="bottom" constant="4" id="gfO-jw-9fY"/>
+                            <constraint firstItem="k2Q-v8-GED" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="j1D-t6-yU4"/>
+                            <constraint firstItem="Z3a-Fm-fLN" firstAttribute="top" secondItem="Ow9-a5-4Bk" secondAttribute="bottom" constant="8" id="k5L-jK-Wbr"/>
+                            <constraint firstItem="dAe-qB-ycp" firstAttribute="top" secondItem="k2Q-v8-GED" secondAttribute="bottom" constant="8" id="lCo-kE-9a0"/>
                             <constraint firstItem="7eV-Zp-bhh" firstAttribute="top" secondItem="uV1-Mh-9lh" secondAttribute="bottom" constant="8" id="nvn-lU-WIb"/>
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="o4b-NB-t6a"/>
+                            <constraint firstItem="HGQ-ys-rcs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="pmX-h9-kak"/>
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="quE-zY-e8i"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mh5-vn-HZy" secondAttribute="trailing" constant="16" id="wPu-ds-bVU"/>
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xtk-g9-SvL"/>
                         </constraints>
                     </view>
@@ -99,6 +120,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Estrelas - cópia" width="117" height="25"/>
         <image name="botecoDoJoaoProjeto" width="570" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
