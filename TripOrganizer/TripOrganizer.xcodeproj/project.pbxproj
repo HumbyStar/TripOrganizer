@@ -31,6 +31,8 @@
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		889DC54429CE9C890077ABB5 /* InfoRestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DC54329CE9C890077ABB5 /* InfoRestaurantVC.swift */; };
+		889DC54629CE9CA00077ABB5 /* InfoRestaurantVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889DC54529CE9CA00077ABB5 /* InfoRestaurantVC.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		889DC54329CE9C890077ABB5 /* InfoRestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRestaurantVC.swift; sourceTree = "<group>"; };
+		889DC54529CE9CA00077ABB5 /* InfoRestaurantVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoRestaurantVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				889DC53D29CE9BB40077ABB5 /* InfoScreen */,
 				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
 				0C61EB0529BBDFEA00F54F47 /* Register */,
@@ -217,6 +222,23 @@
 			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
+		889DC53D29CE9BB40077ABB5 /* InfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				889DC53E29CE9BCC0077ABB5 /* InfoRestaurant */,
+			);
+			path = InfoScreen;
+			sourceTree = "<group>";
+		};
+		889DC53E29CE9BCC0077ABB5 /* InfoRestaurant */ = {
+			isa = PBXGroup;
+			children = (
+				889DC54329CE9C890077ABB5 /* InfoRestaurantVC.swift */,
+				889DC54529CE9CA00077ABB5 /* InfoRestaurantVC.storyboard */,
+			);
+			path = InfoRestaurant;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
+				889DC54629CE9CA00077ABB5 /* InfoRestaurantVC.storyboard in Resources */,
 				0C3AD1E529C3524800E7FE73 /* PerfilScreenStoryboard.storyboard in Resources */,
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
 				5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */,
@@ -302,6 +325,7 @@
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
+				889DC54429CE9C890077ABB5 /* InfoRestaurantVC.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
