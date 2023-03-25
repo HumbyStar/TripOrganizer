@@ -9,8 +9,9 @@ import UIKit
 import MapKit
 
 class RestaurantVC: UIViewController {
-
     
+    
+    @IBOutlet weak var adicionarButton: UIButton!
     @IBOutlet weak var informacaoRestauranteView: UIView!
     @IBOutlet weak var mapaRestauranteMapView: MKMapView!
     
@@ -18,16 +19,17 @@ class RestaurantVC: UIViewController {
     @IBOutlet weak var fulanoLabel: UILabel!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
-    var imagens:[String] = ["pratoDeComidaProjeto", "garrafaProjeto", "petiscoProjeto"]
-    var valores:[String] = ["Valor: R$ 30,00", "Valor: R$ 50,00", "Valor: R$ 50,00"]
+    var imagens:[String] = ["pratoDeComidaProjeto", "garrafaProjeto", "petiscoProjeto", "almocoProjeto"]
+    var valores:[String] = ["Valor: R$ 30,00", "Valor: R$ 50,00", "Valor: R$ 50,00", "Valor: R$ 35,00"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-configmenuCollectionView()
-     configInformacaoRestauranteView()
+        configmenuCollectionView()
+        configInformacaoRestauranteView()
         configmapaRestauranteMapView()
+        configpesquisaRestauranteSearchBar()
     }
-   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,21 +43,31 @@ configmenuCollectionView()
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = .zero
         }
-            
+        
     }
     func configInformacaoRestauranteView(){
         informacaoRestauranteView.layer.borderWidth = 2
         informacaoRestauranteView.layer.borderColor = UIColor.white.cgColor
-        
+        informacaoRestauranteView.layer.cornerRadius = 8.0
+        informacaoRestauranteView.layer.masksToBounds = true
     }
-
+    
     func configmapaRestauranteMapView(){
         mapaRestauranteMapView.layer.borderWidth = 2
         mapaRestauranteMapView.layer.borderColor = UIColor.white.cgColor
+        mapaRestauranteMapView.layer.cornerRadius = 8.0
+        mapaRestauranteMapView.layer.masksToBounds = true
+        
     }
     
+    func configpesquisaRestauranteSearchBar(){
+        pesquisaRestauranteSearchBar.placeholder = "Procure um ponto turístico para visitar"
+        if let textField = pesquisaRestauranteSearchBar.value(forKey: "searchField") as? UITextField {
+            textField.font = UIFont.systemFont(ofSize: 13)
+        }
+    }
 }
-extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imagens.count
     }
@@ -66,14 +78,9 @@ extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell ?? UICollectionViewCell()
     }
     
-    override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-        return CGSize(width: 85, height: 111)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 89, height: 143)
     }
     
-    
-    
-    
 }
-    
-    
 

@@ -17,14 +17,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="89" height="143"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garrafaProjeto" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-J6-wy2">
-                        <rect key="frame" x="2" y="2" width="85" height="111"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garrafaProjeto" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-J6-wy2">
+                        <rect key="frame" x="2" y="2" width="85" height="109"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor: R$ 30,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbU-px-RAE">
-                        <rect key="frame" x="25" y="123" width="62" height="10"/>
+                        <rect key="frame" x="24.000000000000004" y="121" width="61.333333333333343" height="12"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="10" id="xUN-65-u5W"/>
+                            <constraint firstAttribute="height" constant="12" id="xUN-65-u5W"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <nil key="textColor"/>
@@ -41,9 +41,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="tintColor" name="AccentColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="xbU-px-RAE" secondAttribute="trailing" constant="2" id="07M-5U-XDP"/>
                 <constraint firstItem="zv8-J6-wy2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="SfN-62-nSG"/>
                 <constraint firstItem="N6W-uj-dmk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="UDk-GL-Qz7"/>
+                <constraint firstItem="xbU-px-RAE" firstAttribute="leading" secondItem="N6W-uj-dmk" secondAttribute="trailing" constant="2" id="f9M-et-nd3"/>
                 <constraint firstAttribute="bottom" secondItem="N6W-uj-dmk" secondAttribute="bottom" constant="6" id="fDb-Ag-UOH"/>
                 <constraint firstItem="xbU-px-RAE" firstAttribute="top" secondItem="zv8-J6-wy2" secondAttribute="bottom" constant="10" id="fma-Of-jDr"/>
                 <constraint firstItem="zv8-J6-wy2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="oHP-zt-DWn"/>
@@ -56,7 +56,7 @@
                 <outlet property="fotoImageView" destination="zv8-J6-wy2" id="w28-Bj-ZZT"/>
                 <outlet property="valorLabel" destination="xbU-px-RAE" id="WSg-8v-oL2"/>
             </connections>
-            <point key="canvasLocation" x="70.992366412213741" y="41.197183098591552"/>
+            <point key="canvasLocation" x="70.229007633587784" y="41.197183098591552"/>
         </collectionViewCell>
     </objects>
     <resources>
