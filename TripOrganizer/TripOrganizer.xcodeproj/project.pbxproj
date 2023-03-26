@@ -155,9 +155,9 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
-				C43E84E229CE2F010032C279 /* InfoScreen */,
 				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
+				C43E84E229CE2F010032C279 /* InfoScreen */,
 				0C61EB0529BBDFEA00F54F47 /* Register */,
 				0C61EB0429BBDFD000F54F47 /* RecoverPassworld */,
 				0C61EB0729BBE13100F54F47 /* Login */,
@@ -227,8 +227,7 @@
 			children = (
 				C43E84E329CE2F1F0032C279 /* InfoHotel */,
 			);
-			name = InfoScreen;
-			path = Resources/InfoScreen;
+			path = InfoScreen;
 			sourceTree = "<group>";
 		};
 		C43E84E329CE2F1F0032C279 /* InfoHotel */ = {
