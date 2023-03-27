@@ -16,8 +16,6 @@
 		0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C1B29BACD9000A0DCF4 /* HotelVC.swift */; };
 		0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C111C1D29BACD9000A0DCF4 /* FlightVC.storyboard */; };
 		0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C1E29BACD9000A0DCF4 /* FlightVC.swift */; };
-		0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */; };
-		0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */; };
 		0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C2229BACD9000A0DCF4 /* TabBarController.swift */; };
 		0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4129B6621C009550C8 /* AppDelegate.swift */; };
 		0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4329B6621C009550C8 /* SceneDelegate.swift */; };
@@ -52,8 +50,6 @@
 		0C111C1B29BACD9000A0DCF4 /* HotelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelVC.swift; sourceTree = "<group>"; };
 		0C111C1D29BACD9000A0DCF4 /* FlightVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FlightVC.storyboard; sourceTree = "<group>"; };
 		0C111C1E29BACD9000A0DCF4 /* FlightVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightVC.swift; sourceTree = "<group>"; };
-		0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AttractionVC.storyboard; sourceTree = "<group>"; };
-		0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionVC.swift; sourceTree = "<group>"; };
 		0C111C2229BACD9000A0DCF4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0C36EC3E29B6621C009550C8 /* TripOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C36EC4129B6621C009550C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,8 +144,6 @@
 		0C111C1F29BACD9000A0DCF4 /* Attraction */ = {
 			isa = PBXGroup;
 			children = (
-				0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */,
-				0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */,
 				0CD4FB2629D20EC80017E7B5 /* Attraction */,
 			);
 			path = Attraction;
@@ -342,7 +336,6 @@
 				0C111C2729BACD9000A0DCF4 /* TabBarController.storyboard in Resources */,
 				0CD4FB2E29D20EE00017E7B5 /* HoteisCollectionViewCell.xib in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
-				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
 				0CD4FB3329D20EEB0017E7B5 /* FlightTableViewCell.xib in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
@@ -361,7 +354,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
-				0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
 				0CD4FB2A29D20EC80017E7B5 /* AttractionVC.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
