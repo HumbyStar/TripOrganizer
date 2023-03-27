@@ -50,7 +50,8 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func goToPlannerScreen(_ sender: UIButton) {
-        print("Go To Planner Screen")
+        let vc = PlaningViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

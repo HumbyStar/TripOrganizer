@@ -36,6 +36,9 @@
 		0CD4FB3429D20EEB0017E7B5 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4FB3229D20EEB0017E7B5 /* FlightTableViewCell.swift */; };
 		0CD4FB3D29D210D30017E7B5 /* AttractionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD4FB3B29D210D30017E7B5 /* AttractionCell.xib */; };
 		0CD4FB3E29D210D30017E7B5 /* AttractionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4FB3C29D210D30017E7B5 /* AttractionCell.swift */; };
+		0CD4FB4429D2123C0017E7B5 /* PlaningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4FB4029D2123C0017E7B5 /* PlaningViewController.swift */; };
+		0CD4FB4529D2123C0017E7B5 /* PlaningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4FB4229D2123C0017E7B5 /* PlaningTableViewCell.swift */; };
+		0CD4FB4629D2123C0017E7B5 /* PlaningViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD4FB4329D2123C0017E7B5 /* PlaningViewController.storyboard */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
 		889DC53929CE22820077ABB5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DC53729CE22820077ABB5 /* MenuCollectionViewCell.swift */; };
@@ -74,6 +77,9 @@
 		0CD4FB3229D20EEB0017E7B5 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		0CD4FB3B29D210D30017E7B5 /* AttractionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCell.xib; sourceTree = "<group>"; };
 		0CD4FB3C29D210D30017E7B5 /* AttractionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionCell.swift; sourceTree = "<group>"; };
+		0CD4FB4029D2123C0017E7B5 /* PlaningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaningViewController.swift; sourceTree = "<group>"; };
+		0CD4FB4229D2123C0017E7B5 /* PlaningTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaningTableViewCell.swift; sourceTree = "<group>"; };
+		0CD4FB4329D2123C0017E7B5 /* PlaningViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlaningViewController.storyboard; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
 		889DC53729CE22820077ABB5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 				0C61EB0829BBE14E00F54F47 /* TabBarFiles */,
 				0C3AD1EC29C3545200E7FE73 /* Perfil */,
 				0C111C1229BACD9000A0DCF4 /* Home */,
+				0CD4FB3F29D2123C0017E7B5 /* Planing */,
 				0C111C1529BACD9000A0DCF4 /* Restaurant */,
 				0C111C1929BACD9000A0DCF4 /* Hotel */,
 				0C111C1C29BACD9000A0DCF4 /* Flight */,
@@ -275,6 +282,25 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		0CD4FB3F29D2123C0017E7B5 /* Planing */ = {
+			isa = PBXGroup;
+			children = (
+				0CD4FB4029D2123C0017E7B5 /* PlaningViewController.swift */,
+				0CD4FB4129D2123C0017E7B5 /* Cell */,
+				0CD4FB4329D2123C0017E7B5 /* PlaningViewController.storyboard */,
+			);
+			name = Planing;
+			path = TripOrganizer/TabBar/Planing;
+			sourceTree = SOURCE_ROOT;
+		};
+		0CD4FB4129D2123C0017E7B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0CD4FB4229D2123C0017E7B5 /* PlaningTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		889DC53629CE224F0077ABB5 /* MenuCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +377,7 @@
 				0CD4FB2E29D20EE00017E7B5 /* HoteisCollectionViewCell.xib in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
 				0CD4FB3329D20EEB0017E7B5 /* FlightTableViewCell.xib in Resources */,
+				0CD4FB4629D2123C0017E7B5 /* PlaningViewController.storyboard in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
@@ -368,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD4FB4529D2123C0017E7B5 /* PlaningTableViewCell.swift in Sources */,
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
 				0CD4FB3E29D210D30017E7B5 /* AttractionCell.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
@@ -380,6 +408,7 @@
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
+				0CD4FB4429D2123C0017E7B5 /* PlaningViewController.swift in Sources */,
 				0CD4FB3429D20EEB0017E7B5 /* FlightTableViewCell.swift in Sources */,
 				0CD4FB2F29D20EE00017E7B5 /* HoteisCollectionViewCell.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantVC.swift in Sources */,
