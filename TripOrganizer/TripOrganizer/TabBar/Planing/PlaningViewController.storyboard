@@ -150,13 +150,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpU-Z6-3AZ">
-                                        <rect key="frame" x="27" y="122" width="96.5" height="19.5"/>
+                                        <rect key="frame" x="27" y="122" width="99.5" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultima atualização: 2h atrás" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5j-Dv-rFh">
-                                        <rect key="frame" x="8.5" y="145" width="134" height="12"/>
+                                        <rect key="frame" x="10" y="145" width="134" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" systemColor="systemGray2Color"/>
                                         <nil key="highlightedColor"/>
@@ -272,6 +272,17 @@
                                         <color key="textColor" systemColor="systemGray2Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5M-hH-6Qf">
+                                        <rect key="frame" x="48" y="174" width="57.5" height="28.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Voltar">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                            <color key="baseForegroundColor" systemColor="systemGrayColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapToBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vjO-uR-LEm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -289,16 +300,19 @@
                                     <constraint firstItem="hC2-Dy-17a" firstAttribute="leading" secondItem="3Fs-xJ-vMD" secondAttribute="trailing" constant="8" symbolic="YES" id="Ngb-Ou-ZzO"/>
                                     <constraint firstItem="hC2-Dy-17a" firstAttribute="top" secondItem="wlC-Mh-EE1" secondAttribute="bottom" constant="22" id="OJv-yZ-na1"/>
                                     <constraint firstItem="Xx7-Mm-xMf" firstAttribute="leading" secondItem="m9x-Fv-Dk7" secondAttribute="trailing" constant="5" id="PFp-nw-qPn"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Fs-xJ-vMD" secondAttribute="bottom" constant="3" id="QBB-qh-OTL"/>
                                     <constraint firstItem="GqQ-E8-Rr9" firstAttribute="top" secondItem="hC2-Dy-17a" secondAttribute="bottom" constant="30" id="RY9-kr-I6L"/>
                                     <constraint firstItem="0xw-nB-q2g" firstAttribute="leading" secondItem="3Fs-xJ-vMD" secondAttribute="trailing" constant="38" id="TN5-PB-Vmp"/>
                                     <constraint firstItem="gpU-Z6-3AZ" firstAttribute="leading" secondItem="u6s-2v-YY8" secondAttribute="leading" constant="27" id="Tw9-mR-guH"/>
                                     <constraint firstItem="i2A-Co-dlr" firstAttribute="top" secondItem="u6s-2v-YY8" secondAttribute="top" constant="13" id="YL7-9C-mjQ"/>
                                     <constraint firstItem="hAZ-Ff-rbL" firstAttribute="centerY" secondItem="X46-TJ-OOc" secondAttribute="centerY" id="YSb-yJ-5gd"/>
                                     <constraint firstItem="jKK-Fs-B8W" firstAttribute="centerY" secondItem="hC2-Dy-17a" secondAttribute="centerY" id="Ytd-5Y-vWf"/>
+                                    <constraint firstItem="I5M-hH-6Qf" firstAttribute="centerX" secondItem="l5j-Dv-rFh" secondAttribute="centerX" id="aCu-hi-Vuk"/>
                                     <constraint firstItem="y02-L5-EFr" firstAttribute="leading" secondItem="3Fs-xJ-vMD" secondAttribute="trailing" constant="38" id="aag-c6-23J"/>
                                     <constraint firstItem="y02-L5-EFr" firstAttribute="top" secondItem="jKK-Fs-B8W" secondAttribute="bottom" id="au9-qy-wf7"/>
                                     <constraint firstItem="jKK-Fs-B8W" firstAttribute="leading" secondItem="hC2-Dy-17a" secondAttribute="trailing" constant="5" id="bEM-Ee-oa5"/>
                                     <constraint firstItem="Xx7-Mm-xMf" firstAttribute="centerY" secondItem="m9x-Fv-Dk7" secondAttribute="centerY" id="bty-JK-kzs"/>
+                                    <constraint firstItem="I5M-hH-6Qf" firstAttribute="leading" secondItem="u6s-2v-YY8" secondAttribute="leading" constant="48" id="buZ-Ae-9Ni"/>
                                     <constraint firstItem="m9x-Fv-Dk7" firstAttribute="top" secondItem="X46-TJ-OOc" secondAttribute="bottom" constant="30" id="cbY-oD-SqB"/>
                                     <constraint firstItem="l5j-Dv-rFh" firstAttribute="top" secondItem="gpU-Z6-3AZ" secondAttribute="bottom" constant="3.5" id="cx1-qt-sqs"/>
                                     <constraint firstItem="3Fs-xJ-vMD" firstAttribute="top" secondItem="u6s-2v-YY8" secondAttribute="top" id="dfK-oI-fta"/>
@@ -306,6 +320,7 @@
                                     <constraint firstItem="0xw-nB-q2g" firstAttribute="top" secondItem="yIN-Db-p4s" secondAttribute="bottom" id="hzB-pu-y8g"/>
                                     <constraint firstItem="m9x-Fv-Dk7" firstAttribute="leading" secondItem="3Fs-xJ-vMD" secondAttribute="trailing" constant="8" id="jhU-CE-hX0"/>
                                     <constraint firstItem="gWo-bE-hEa" firstAttribute="leading" secondItem="3Fs-xJ-vMD" secondAttribute="trailing" constant="38" id="lLH-0s-7Qc"/>
+                                    <constraint firstItem="I5M-hH-6Qf" firstAttribute="top" secondItem="l5j-Dv-rFh" secondAttribute="bottom" constant="17" id="mst-uu-4TQ"/>
                                     <constraint firstItem="X46-TJ-OOc" firstAttribute="top" secondItem="GqQ-E8-Rr9" secondAttribute="bottom" constant="30" id="n9q-z2-dnR"/>
                                     <constraint firstItem="gpU-Z6-3AZ" firstAttribute="top" secondItem="i2A-Co-dlr" secondAttribute="bottom" constant="11" id="pOS-rs-WZZ"/>
                                     <constraint firstAttribute="trailing" secondItem="vvm-bV-aDy" secondAttribute="trailing" constant="20" id="q96-lB-RWQ"/>
@@ -347,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="1943.2" y="-2.2488755622188905"/>
         </scene>
     </scenes>
     <resources>
@@ -363,6 +378,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

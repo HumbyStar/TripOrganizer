@@ -18,7 +18,7 @@ class PerfilViewController: UIViewController {
     
     
     @IBAction func tappedReturnButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        navigationController?.dismiss(animated: true)
     }
     
 }

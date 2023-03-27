@@ -47,10 +47,21 @@ class HomeVC: UIViewController {
     
     @IBAction func tapInPerfil(_ sender: UIButton) {
         //Chamar perfilScreen
+        let perfilViewController = UIStoryboard(name: "PerfilViewController", bundle: nil).instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
+        
+        let navigationController = UINavigationController(rootViewController: perfilViewController ?? UIViewController())
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
     
     @IBAction func goToPlannerScreen(_ sender: UIButton) {
         //Chamar plannerScreen
+        
+        let plainingViewController = UIStoryboard(name: "PlaningViewController", bundle: nil).instantiateViewController(withIdentifier: "PlaningViewController") as? PlaningViewController
+        
+        let navigationController = UINavigationController(rootViewController: plainingViewController ?? UIViewController())
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
     
 }

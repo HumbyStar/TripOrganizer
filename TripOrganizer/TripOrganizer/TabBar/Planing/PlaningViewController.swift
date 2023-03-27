@@ -17,6 +17,12 @@ class PlaningViewController: UIViewController {
     @IBOutlet weak var ivUserPhoto: UIImageView!
     @IBOutlet weak var tableViewBadges: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +34,9 @@ class PlaningViewController: UIViewController {
         tableViewBadges.dataSource = self
     }
     
+    @IBAction func tapToBack(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
 }
 
 extension PlaningViewController: UITableViewDelegate, UITableViewDataSource {
