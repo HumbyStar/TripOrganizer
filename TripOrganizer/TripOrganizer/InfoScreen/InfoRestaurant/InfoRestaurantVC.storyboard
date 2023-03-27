@@ -25,19 +25,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boteco do João" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-Zp-bhh">
-                                <rect key="frame" x="104" y="185" width="167" height="26.5"/>
+                                <rect key="frame" x="104" y="174" width="167" height="26.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone: (41) 3243-3430 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3a-Fm-fLN">
-                                <rect key="frame" x="107" y="296" width="161" height="16"/>
+                                <rect key="frame" x="107" y="285" width="161" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario: abre as 12:00 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-a5-4Bk">
-                                <rect key="frame" x="114.5" y="280" width="146.5" height="16"/>
+                                <rect key="frame" x="114.5" y="269" width="146.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,16 +49,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: R$ 250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-vn-HZy">
-                                <rect key="frame" x="237" y="634" width="122" height="24"/>
+                                <rect key="frame" x="126.5" y="638" width="122" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HGQ-ys-rcs">
-                                <rect key="frame" x="10" y="490" width="355" height="136"/>
-                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EstrelasC" translatesAutoresizingMaskIntoConstraints="NO" id="GeL-oB-NuH">
+                                <rect key="frame" x="129" y="204.5" width="117" height="25"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Px-JV-nb8" userLabel="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020">
+                                <rect key="frame" x="68" y="237.5" width="239" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-aU-umx">
+                                <rect key="frame" x="0.0" y="304" width="375" height="147"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HGQ-ys-rcs">
+                                <rect key="frame" x="10" y="485" width="355" height="145"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HGQ-ys-rcs" secondAttribute="height" multiplier="355:136" id="y8M-fj-4iI"/>
+                                    <constraint firstAttribute="width" secondItem="HGQ-ys-rcs" secondAttribute="height" multiplier="71:29" id="LOE-A8-prn"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lk4-g4-SL2">
                                     <size key="itemSize" width="128" height="128"/>
@@ -68,49 +81,36 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EstrelasC" translatesAutoresizingMaskIntoConstraints="NO" id="GeL-oB-NuH">
-                                <rect key="frame" x="129" y="215.5" width="117" height="25"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Px-JV-nb8" userLabel="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020">
-                                <rect key="frame" x="68" y="248.5" width="239" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-aU-umx">
-                                <rect key="frame" x="0.0" y="315" width="375" height="136"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dAe-qB-ycp" firstAttribute="top" secondItem="D9V-aU-umx" secondAttribute="bottom" constant="4" id="14x-Q9-WiT"/>
-                            <constraint firstItem="7eV-Zp-bhh" firstAttribute="top" secondItem="uV1-Mh-9lh" secondAttribute="bottom" constant="15" id="8AY-rD-RE0"/>
+                            <constraint firstItem="7eV-Zp-bhh" firstAttribute="top" secondItem="uV1-Mh-9lh" secondAttribute="bottom" constant="4" id="8AY-rD-RE0"/>
                             <constraint firstItem="4Px-JV-nb8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="68" id="9sZ-2N-f4m"/>
                             <constraint firstItem="D9V-aU-umx" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="AJg-XK-0Nk"/>
                             <constraint firstItem="4Px-JV-nb8" firstAttribute="top" secondItem="GeL-oB-NuH" secondAttribute="bottom" constant="8" id="Bqo-OG-hpN"/>
                             <constraint firstItem="D9V-aU-umx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="C9o-He-gEB"/>
                             <constraint firstItem="GeL-oB-NuH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="DVg-Za-cKE"/>
-                            <constraint firstItem="HGQ-ys-rcs" firstAttribute="top" secondItem="dAe-qB-ycp" secondAttribute="bottom" constant="8" id="FNX-w4-vI0"/>
+                            <constraint firstItem="HGQ-ys-rcs" firstAttribute="top" secondItem="dAe-qB-ycp" secondAttribute="bottom" constant="3" id="FNX-w4-vI0"/>
                             <constraint firstItem="dAe-qB-ycp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="IxU-ub-jcg"/>
                             <constraint firstItem="Z3a-Fm-fLN" firstAttribute="top" secondItem="Ow9-a5-4Bk" secondAttribute="bottom" id="LTB-LO-0I4"/>
                             <constraint firstItem="mh5-vn-HZy" firstAttribute="top" secondItem="HGQ-ys-rcs" secondAttribute="bottom" constant="8" id="MQC-PC-Bia"/>
+                            <constraint firstItem="uV1-Mh-9lh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="PuZ-uQ-sCb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ow9-a5-4Bk" secondAttribute="trailing" constant="114" id="QCO-ub-9iR"/>
                             <constraint firstItem="Ow9-a5-4Bk" firstAttribute="top" secondItem="4Px-JV-nb8" secondAttribute="bottom" id="RDx-We-uNP"/>
                             <constraint firstItem="Z3a-Fm-fLN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="107" id="Rah-wI-EEF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HGQ-ys-rcs" secondAttribute="trailing" constant="10" id="TGa-z4-yaP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Z3a-Fm-fLN" secondAttribute="trailing" constant="107" id="Wj5-c3-erZ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mh5-vn-HZy" secondAttribute="bottom" constant="9" id="XjV-Lq-mB7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mh5-vn-HZy" secondAttribute="bottom" constant="5" id="XjV-Lq-mB7"/>
                             <constraint firstItem="D9V-aU-umx" firstAttribute="top" secondItem="Z3a-Fm-fLN" secondAttribute="bottom" constant="3" id="Xo9-2q-VZG"/>
                             <constraint firstItem="7eV-Zp-bhh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="be2-lL-7aL"/>
                             <constraint firstItem="Ow9-a5-4Bk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="114.5" id="gRp-On-ZKi"/>
                             <constraint firstItem="GeL-oB-NuH" firstAttribute="top" secondItem="7eV-Zp-bhh" secondAttribute="bottom" constant="4" id="gfO-jw-9fY"/>
-                            <constraint firstItem="uV1-Mh-9lh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="o4b-NB-t6a"/>
+                            <constraint firstItem="mh5-vn-HZy" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="oeq-cr-ImT"/>
                             <constraint firstItem="HGQ-ys-rcs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="pmX-h9-kak"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4Px-JV-nb8" secondAttribute="trailing" constant="68" id="qWu-v9-qob"/>
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="quE-zY-e8i"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mh5-vn-HZy" secondAttribute="trailing" constant="16" id="wPu-ds-bVU"/>
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xtk-g9-SvL"/>
                         </constraints>
                     </view>
@@ -126,9 +126,6 @@
     <resources>
         <image name="EstrelasC" width="117" height="25"/>
         <image name="botecoDoJoaoProjeto" width="570" height="300"/>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
