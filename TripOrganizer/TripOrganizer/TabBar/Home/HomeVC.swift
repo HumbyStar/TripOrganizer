@@ -2,7 +2,7 @@
 //  HomeVC.swift
 //  TripOrganizer
 //
-//  Created by Eduardo Escaleira on 09/03/23.
+//  Created by Humberto Gomes on 09/03/23.
 //
 
 import UIKit
