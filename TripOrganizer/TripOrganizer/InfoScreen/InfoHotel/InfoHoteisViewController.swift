@@ -9,10 +9,15 @@ import UIKit
 
 class InfoHoteisViewController: UIViewController {
      
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    private func configCollectionView() {
         
     }
+    
+    
 }
