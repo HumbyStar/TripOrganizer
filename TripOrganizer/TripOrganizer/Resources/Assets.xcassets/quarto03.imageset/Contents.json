@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "quartos-60-scaled 10.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}
