@@ -31,6 +31,8 @@
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		888E243B29D20471009591D2 /* InfoRestaurantVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888E243929D20471009591D2 /* InfoRestaurantVCCell.swift */; };
+		888E243C29D20471009591D2 /* InfoRestaurantVCCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888E243A29D20471009591D2 /* InfoRestaurantVCCell.xib */; };
 		889DC54429CE9C890077ABB5 /* InfoRestaurantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DC54329CE9C890077ABB5 /* InfoRestaurantVC.swift */; };
 		889DC54629CE9CA00077ABB5 /* InfoRestaurantVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 889DC54529CE9CA00077ABB5 /* InfoRestaurantVC.storyboard */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		888E243929D20471009591D2 /* InfoRestaurantVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRestaurantVCCell.swift; sourceTree = "<group>"; };
+		888E243A29D20471009591D2 /* InfoRestaurantVCCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoRestaurantVCCell.xib; sourceTree = "<group>"; };
 		889DC54329CE9C890077ABB5 /* InfoRestaurantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRestaurantVC.swift; sourceTree = "<group>"; };
 		889DC54529CE9CA00077ABB5 /* InfoRestaurantVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoRestaurantVC.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +226,15 @@
 			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
+		888E243829D20409009591D2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				888E243929D20471009591D2 /* InfoRestaurantVCCell.swift */,
+				888E243A29D20471009591D2 /* InfoRestaurantVCCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		889DC53D29CE9BB40077ABB5 /* InfoScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +246,7 @@
 		889DC53E29CE9BCC0077ABB5 /* InfoRestaurant */ = {
 			isa = PBXGroup;
 			children = (
+				888E243829D20409009591D2 /* Cell */,
 				889DC54329CE9C890077ABB5 /* InfoRestaurantVC.swift */,
 				889DC54529CE9CA00077ABB5 /* InfoRestaurantVC.storyboard */,
 			);
@@ -298,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
+				888E243C29D20471009591D2 /* InfoRestaurantVCCell.xib in Resources */,
 				889DC54629CE9CA00077ABB5 /* InfoRestaurantVC.storyboard in Resources */,
 				0C3AD1E529C3524800E7FE73 /* PerfilScreenStoryboard.storyboard in Resources */,
 				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
@@ -323,6 +338,7 @@
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
 				0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
+				888E243B29D20471009591D2 /* InfoRestaurantVCCell.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				889DC54429CE9C890077ABB5 /* InfoRestaurantVC.swift in Sources */,

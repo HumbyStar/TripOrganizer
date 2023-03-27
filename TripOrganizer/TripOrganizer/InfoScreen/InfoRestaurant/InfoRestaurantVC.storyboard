@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Info RestaurantVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="InfoRestaurantVC" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="OI6-HH-Weg"/>
+                                    <constraint firstAttribute="width" secondItem="uV1-Mh-9lh" secondAttribute="height" multiplier="75:34" id="cd9-Mq-c9h"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boteco do João" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-Zp-bhh">
@@ -56,6 +57,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HGQ-ys-rcs">
                                 <rect key="frame" x="10" y="490" width="355" height="136"/>
                                 <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HGQ-ys-rcs" secondAttribute="height" multiplier="355:136" id="y8M-fj-4iI"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lk4-g4-SL2">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -75,9 +79,6 @@
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-aU-umx">
                                 <rect key="frame" x="0.0" y="315" width="375" height="136"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="TzX-tl-BgU"/>
-                                </constraints>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -111,9 +112,11 @@
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="quE-zY-e8i"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mh5-vn-HZy" secondAttribute="trailing" constant="16" id="wPu-ds-bVU"/>
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xtk-g9-SvL"/>
-                            <constraint firstItem="uV1-Mh-9lh" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="zPA-Xm-qqN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardapioCollectionView" destination="HGQ-ys-rcs" id="7fo-5o-AgI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
