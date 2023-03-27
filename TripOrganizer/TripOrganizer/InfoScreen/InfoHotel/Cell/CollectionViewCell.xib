@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="TripOrganizer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="162" height="168"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="162" height="168"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZE-HO-T5s">
+                        <rect key="frame" x="0.0" y="0.0" width="162" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="fZE-HO-T5s" secondAttribute="height" multiplier="81:65" id="dic-JK-ZPf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 200,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPA-MB-eW7">
+                        <rect key="frame" x="41" y="138" width="80" height="21"/>
+                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h5-U5-FUu">
+                        <rect key="frame" x="132" y="-10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="28j-Dq-roN"/>
+                            <constraint firstAttribute="height" constant="40" id="KRE-x7-o11"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="imageButton"/>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="0h5-U5-FUu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-10" id="29g-Tn-5qA"/>
+                <constraint firstItem="MPA-MB-eW7" firstAttribute="top" secondItem="fZE-HO-T5s" secondAttribute="bottom" constant="8" symbolic="YES" id="NQg-zK-beF"/>
+                <constraint firstAttribute="trailing" secondItem="0h5-U5-FUu" secondAttribute="trailing" constant="-10" id="cA3-Eh-XYG"/>
+                <constraint firstItem="fZE-HO-T5s" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ed7-Mh-4vf"/>
+                <constraint firstItem="MPA-MB-eW7" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="oD4-LU-1mg"/>
+                <constraint firstItem="fZE-HO-T5s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yk3-im-n6h"/>
+                <constraint firstAttribute="trailing" secondItem="fZE-HO-T5s" secondAttribute="trailing" id="zOz-Fm-jan"/>
+            </constraints>
+            <size key="customSize" width="247" height="244"/>
+            <connections>
+                <outlet property="photosImageView" destination="fZE-HO-T5s" id="Rqs-v3-KG6"/>
+                <outlet property="valuesLabel" destination="MPA-MB-eW7" id="FKp-Qw-jbk"/>
+            </connections>
+            <point key="canvasLocation" x="175.57251908396947" y="15.492957746478874"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="imageButton" width="34" height="34"/>
+    </resources>
+</document>

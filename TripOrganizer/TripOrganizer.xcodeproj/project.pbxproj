@@ -31,6 +31,8 @@
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		C41A0AF829D20697002DEEE8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */; };
+		C41A0AF929D20697002DEEE8 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C41A0AF729D20697002DEEE8 /* CollectionViewCell.xib */; };
 		C43E84E529CE2FB60032C279 /* InfoHoteisStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43E84E429CE2FB60032C279 /* InfoHoteisStoryboard.storyboard */; };
 		C43E84E729CE2FE10032C279 /* InfoHoteisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43E84E629CE2FE10032C279 /* InfoHoteisViewController.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C41A0AF729D20697002DEEE8 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		C43E84E429CE2FB60032C279 /* InfoHoteisStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoHoteisStoryboard.storyboard; sourceTree = "<group>"; };
 		C43E84E629CE2FE10032C279 /* InfoHoteisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHoteisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +226,15 @@
 			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
+		C41A0AF529D20678002DEEE8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */,
+				C41A0AF729D20697002DEEE8 /* CollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C43E84E229CE2F010032C279 /* InfoScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +246,7 @@
 		C43E84E329CE2F1F0032C279 /* InfoHotel */ = {
 			isa = PBXGroup;
 			children = (
+				C41A0AF529D20678002DEEE8 /* Cell */,
 				C43E84E429CE2FB60032C279 /* InfoHoteisStoryboard.storyboard */,
 				C43E84E629CE2FE10032C279 /* InfoHoteisViewController.swift */,
 			);
@@ -305,6 +319,7 @@
 				C43E84E529CE2FB60032C279 /* InfoHoteisStoryboard.storyboard in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
 				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
+				C41A0AF929D20697002DEEE8 /* CollectionViewCell.xib in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
@@ -330,6 +345,7 @@
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
+				C41A0AF829D20697002DEEE8 /* CollectionViewCell.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantVC.swift in Sources */,
 				0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */,
 				5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */,
