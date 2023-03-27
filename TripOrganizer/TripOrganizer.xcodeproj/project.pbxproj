@@ -34,6 +34,8 @@
 		0CD4FB2F29D20EE00017E7B5 /* HoteisCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4FB2D29D20EE00017E7B5 /* HoteisCollectionViewCell.swift */; };
 		0CD4FB3329D20EEB0017E7B5 /* FlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD4FB3129D20EEB0017E7B5 /* FlightTableViewCell.xib */; };
 		0CD4FB3429D20EEB0017E7B5 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4FB3229D20EEB0017E7B5 /* FlightTableViewCell.swift */; };
+		0CD4FB3D29D210D30017E7B5 /* AttractionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD4FB3B29D210D30017E7B5 /* AttractionCell.xib */; };
+		0CD4FB3E29D210D30017E7B5 /* AttractionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD4FB3C29D210D30017E7B5 /* AttractionCell.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
 		889DC53929CE22820077ABB5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889DC53729CE22820077ABB5 /* MenuCollectionViewCell.swift */; };
@@ -70,6 +72,8 @@
 		0CD4FB2D29D20EE00017E7B5 /* HoteisCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoteisCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CD4FB3129D20EEB0017E7B5 /* FlightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
 		0CD4FB3229D20EEB0017E7B5 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
+		0CD4FB3B29D210D30017E7B5 /* AttractionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCell.xib; sourceTree = "<group>"; };
+		0CD4FB3C29D210D30017E7B5 /* AttractionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionCell.swift; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
 		889DC53729CE22820077ABB5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 			children = (
 				0CD4FB2729D20EC80017E7B5 /* AttractionVC.storyboard */,
 				0CD4FB2829D20EC80017E7B5 /* AttractionVC.swift */,
+				0CD4FB3A29D210D30017E7B5 /* Cell */,
 			);
 			name = Attraction;
 			sourceTree = "<group>";
@@ -257,6 +262,15 @@
 			children = (
 				0CD4FB3129D20EEB0017E7B5 /* FlightTableViewCell.xib */,
 				0CD4FB3229D20EEB0017E7B5 /* FlightTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0CD4FB3A29D210D30017E7B5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0CD4FB3B29D210D30017E7B5 /* AttractionCell.xib */,
+				0CD4FB3C29D210D30017E7B5 /* AttractionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -340,6 +354,7 @@
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
+				0CD4FB3D29D210D30017E7B5 /* AttractionCell.xib in Resources */,
 				0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */,
 				889DC53A29CE22820077ABB5 /* MenuCollectionViewCell.xib in Resources */,
 				0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */,
@@ -354,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
+				0CD4FB3E29D210D30017E7B5 /* AttractionCell.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
 				0CD4FB2A29D20EC80017E7B5 /* AttractionVC.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
