@@ -12,6 +12,7 @@ class InfoHoteisViewController: UIViewController {
     @IBOutlet weak var photosImageView: UIImageView!
     @IBOutlet weak var nameHotelLabel: UILabel!
     @IBOutlet weak var starImageView: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var listPhotos: [String] = ["infoquarto1", "infoquarto2", "infoquarto3","infoquarto1", "infoquarto2", "infoquarto3"]
@@ -20,6 +21,7 @@ class InfoHoteisViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
+        configButton()
     }
     
     private func configCollectionView() {
@@ -30,9 +32,11 @@ class InfoHoteisViewController: UIViewController {
             layout.estimatedItemSize = .zero
         }
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
-        
     }
     
+    private func configButton() {
+        
+    }
 }
 
 

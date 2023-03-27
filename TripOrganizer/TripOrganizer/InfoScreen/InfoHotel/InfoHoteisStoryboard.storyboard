@@ -62,7 +62,7 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 750,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBw-nW-EIf">
-                                <rect key="frame" x="259" y="644" width="100" height="21"/>
+                                <rect key="frame" x="137.5" y="644" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,7 +83,6 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="b84-pv-oIC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="03k-Fb-aj0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="b84-pv-oIC" secondAttribute="trailing" id="3yD-hV-e9d"/>
                             <constraint firstItem="e7g-sJ-Xyf" firstAttribute="top" secondItem="e0j-Kl-q4o" secondAttribute="bottom" id="4bT-ql-XoJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yk5-Ve-dFM" secondAttribute="trailing" constant="16" id="4ca-oq-aBa"/>
@@ -95,13 +94,13 @@
                             <constraint firstItem="Yk5-Ve-dFM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="I56-7k-xjO"/>
                             <constraint firstItem="e7g-sJ-Xyf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IZf-2S-45v"/>
                             <constraint firstItem="SCb-jE-ud7" firstAttribute="top" secondItem="wh0-tZ-pdR" secondAttribute="bottom" id="JEO-Kx-q7m"/>
+                            <constraint firstItem="b84-pv-oIC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="KaW-KL-0f3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wh0-tZ-pdR" secondAttribute="trailing" constant="107" id="Kdg-sg-ObB"/>
                             <constraint firstItem="e0j-Kl-q4o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="U4c-yQ-sJt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tjD-5o-ZPB" secondAttribute="trailing" constant="16" id="Vdf-2h-Fuh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SCb-jE-ud7" secondAttribute="trailing" constant="20" id="VoB-Md-VxH"/>
                             <constraint firstItem="tjD-5o-ZPB" firstAttribute="top" secondItem="e7g-sJ-Xyf" secondAttribute="bottom" id="YYe-qj-KD5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bBw-nW-EIf" secondAttribute="bottom" constant="2" id="Yw4-Rj-26G"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="bBw-nW-EIf" secondAttribute="trailing" constant="16" id="ZVU-Rp-1Ws"/>
                             <constraint firstItem="e7g-sJ-Xyf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="dDr-bj-4FB"/>
                             <constraint firstItem="Hnw-6w-y7N" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="e1m-V9-hfp"/>
                             <constraint firstItem="wvv-IG-3lH" firstAttribute="top" secondItem="b84-pv-oIC" secondAttribute="bottom" id="eZC-dN-ZBS"/>
@@ -109,12 +108,14 @@
                             <constraint firstItem="SCb-jE-ud7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="fd3-eQ-0dH"/>
                             <constraint firstItem="wvv-IG-3lH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="hki-Lf-TPK"/>
                             <constraint firstItem="wh0-tZ-pdR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="107" id="ojl-R7-Kiw"/>
+                            <constraint firstItem="bBw-nW-EIf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="r3m-lP-pV7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Yk5-Ve-dFM" secondAttribute="bottom" constant="31" id="sdc-Mj-a3a"/>
                             <constraint firstItem="wh0-tZ-pdR" firstAttribute="top" secondItem="Hnw-6w-y7N" secondAttribute="bottom" constant="2" id="tcX-hf-pq4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wvv-IG-3lH" secondAttribute="trailing" constant="20" id="zlV-4H-Rlj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="wh0-tZ-pdR" id="YLg-6q-KOx"/>
                         <outlet property="collectionView" destination="Yk5-Ve-dFM" id="L1o-uJ-HwB"/>
                         <outlet property="nameHotelLabel" destination="wvv-IG-3lH" id="nIz-9v-Llv"/>
                         <outlet property="photosImageView" destination="b84-pv-oIC" id="SXH-jk-TgY"/>
