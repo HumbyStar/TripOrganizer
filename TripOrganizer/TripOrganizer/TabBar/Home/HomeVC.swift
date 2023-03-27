@@ -46,12 +46,11 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func tapInPerfil(_ sender: UIButton) {
-        self.navigationController?.present(PerfilViewController(), animated: true)
+        //Chamar perfilScreen
     }
     
     @IBAction func goToPlannerScreen(_ sender: UIButton) {
-        let vc = PlaningViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        //Chamar plannerScreen
     }
     
 }
