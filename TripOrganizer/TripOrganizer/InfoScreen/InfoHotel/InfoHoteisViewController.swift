@@ -54,6 +54,6 @@ extension InfoHoteisViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 135)
+        return CGSize(width: 135, height: 135)
     }
 }
