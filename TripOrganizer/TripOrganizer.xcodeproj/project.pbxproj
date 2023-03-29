@@ -161,7 +161,7 @@
 			children = (
 				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
-				C43E84E229CE2F010032C279 /* InfoScreen */,
+				C43E84E229CE2F010032C279 /* InfoHoteisScreen */,
 				0C61EB0529BBDFEA00F54F47 /* Register */,
 				0C61EB0429BBDFD000F54F47 /* RecoverPassworld */,
 				0C61EB0729BBE13100F54F47 /* Login */,
@@ -235,22 +235,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		C43E84E229CE2F010032C279 /* InfoScreen */ = {
-			isa = PBXGroup;
-			children = (
-				C43E84E329CE2F1F0032C279 /* InfoHotel */,
-			);
-			path = InfoScreen;
-			sourceTree = "<group>";
-		};
-		C43E84E329CE2F1F0032C279 /* InfoHotel */ = {
+		C43E84E229CE2F010032C279 /* InfoHoteisScreen */ = {
 			isa = PBXGroup;
 			children = (
 				C41A0AF529D20678002DEEE8 /* Cell */,
 				C43E84E429CE2FB60032C279 /* InfoHoteisStoryboard.storyboard */,
 				C43E84E629CE2FE10032C279 /* InfoHoteisViewController.swift */,
 			);
-			path = InfoHotel;
+			path = InfoHoteisScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
