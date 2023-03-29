@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7g-sJ-Xyf">
-                                <rect key="frame" x="0.0" y="295" width="375" height="171"/>
+                                <rect key="frame" x="10" y="295" width="355" height="171"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yk5-Ve-dFM">
@@ -92,7 +92,7 @@
                             <constraint firstItem="tjD-5o-ZPB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CDt-9l-1uw"/>
                             <constraint firstItem="Hnw-6w-y7N" firstAttribute="top" secondItem="wvv-IG-3lH" secondAttribute="bottom" id="FNy-aD-pcU"/>
                             <constraint firstItem="Yk5-Ve-dFM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="I56-7k-xjO"/>
-                            <constraint firstItem="e7g-sJ-Xyf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IZf-2S-45v"/>
+                            <constraint firstItem="e7g-sJ-Xyf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="IZf-2S-45v"/>
                             <constraint firstItem="SCb-jE-ud7" firstAttribute="top" secondItem="wh0-tZ-pdR" secondAttribute="bottom" id="JEO-Kx-q7m"/>
                             <constraint firstItem="b84-pv-oIC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="KaW-KL-0f3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="wh0-tZ-pdR" secondAttribute="trailing" constant="107" id="Kdg-sg-ObB"/>
@@ -101,7 +101,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SCb-jE-ud7" secondAttribute="trailing" constant="20" id="VoB-Md-VxH"/>
                             <constraint firstItem="tjD-5o-ZPB" firstAttribute="top" secondItem="e7g-sJ-Xyf" secondAttribute="bottom" id="YYe-qj-KD5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bBw-nW-EIf" secondAttribute="bottom" constant="2" id="Yw4-Rj-26G"/>
-                            <constraint firstItem="e7g-sJ-Xyf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="dDr-bj-4FB"/>
+                            <constraint firstItem="e7g-sJ-Xyf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-10" id="dDr-bj-4FB"/>
                             <constraint firstItem="Hnw-6w-y7N" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="e1m-V9-hfp"/>
                             <constraint firstItem="wvv-IG-3lH" firstAttribute="top" secondItem="b84-pv-oIC" secondAttribute="bottom" id="eZC-dN-ZBS"/>
                             <constraint firstItem="Yk5-Ve-dFM" firstAttribute="top" secondItem="tjD-5o-ZPB" secondAttribute="bottom" id="eaD-Uz-dqo"/>
