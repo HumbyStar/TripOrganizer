@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ccv-cr-XyT">
-                        <rect key="frame" x="0.0" y="0.0" width="170" height="133"/>
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="134.66666666666666"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgB-tC-VgI">
                         <rect key="frame" x="136" y="1" width="34" height="34"/>
@@ -29,8 +29,8 @@
                         <buttonConfiguration key="configuration" style="plain" image="addButton"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 39,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCP-tm-Q3W">
-                        <rect key="frame" x="35" y="136" width="75" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <rect key="frame" x="51.666666666666664" y="137.66666666666666" width="66.666666666666686" height="19.333333333333343"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -40,10 +40,10 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ccv-cr-XyT" secondAttribute="trailing" id="3Dj-pw-bbg"/>
                 <constraint firstItem="ZgB-tC-VgI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="5Nd-rQ-u90"/>
-                <constraint firstItem="DCP-tm-Q3W" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="35" id="6Fc-v8-Kbc"/>
                 <constraint firstAttribute="trailing" secondItem="ZgB-tC-VgI" secondAttribute="trailing" id="8Ro-qx-TUz"/>
-                <constraint firstAttribute="bottom" secondItem="DCP-tm-Q3W" secondAttribute="bottom" constant="13" id="9bI-N3-l7r"/>
-                <constraint firstItem="DCP-tm-Q3W" firstAttribute="top" secondItem="ccv-cr-XyT" secondAttribute="bottom" constant="3" id="cq8-en-ace"/>
+                <constraint firstAttribute="bottom" secondItem="DCP-tm-Q3W" secondAttribute="bottom" constant="13" id="8XI-i6-i4M"/>
+                <constraint firstItem="DCP-tm-Q3W" firstAttribute="centerX" secondItem="ccv-cr-XyT" secondAttribute="centerX" id="FIB-2a-fg6"/>
+                <constraint firstItem="DCP-tm-Q3W" firstAttribute="top" secondItem="ccv-cr-XyT" secondAttribute="bottom" constant="3" id="LYK-EN-caf"/>
                 <constraint firstItem="ccv-cr-XyT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="drb-4l-zMR"/>
                 <constraint firstItem="ccv-cr-XyT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lMU-Eg-qUk"/>
             </constraints>
