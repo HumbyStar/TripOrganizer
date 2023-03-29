@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
-                                <rect key="frame" x="16" y="36" width="343" height="56"/>
+                                <rect key="frame" x="16" y="29.5" width="343" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="uW7-u5-aFR"/>
                                 </constraints>
@@ -123,7 +123,7 @@
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xls-1V-ZE4">
-                                <rect key="frame" x="16" y="102" width="343" height="222"/>
+                                <rect key="frame" x="16" y="95.5" width="343" height="228.5"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -131,7 +131,7 @@
                         <color key="backgroundColor" red="0.9529411793" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="buI-vs-cyT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4Hu-YP-iSw"/>
-                            <constraint firstItem="DY3-Ls-0Q8" firstAttribute="top" secondItem="buI-vs-cyT" secondAttribute="bottom" constant="7.5" id="MuQ-nq-hRR"/>
+                            <constraint firstItem="DY3-Ls-0Q8" firstAttribute="top" secondItem="buI-vs-cyT" secondAttribute="bottom" constant="1" id="MuQ-nq-hRR"/>
                             <constraint firstItem="xls-1V-ZE4" firstAttribute="top" secondItem="DY3-Ls-0Q8" secondAttribute="bottom" constant="10" id="Mw4-5e-8vb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xls-1V-ZE4" secondAttribute="trailing" constant="16" id="QhS-7F-P2v"/>
                             <constraint firstAttribute="trailing" secondItem="DY3-Ls-0Q8" secondAttribute="trailing" constant="16" id="aiw-UD-lJG"/>
