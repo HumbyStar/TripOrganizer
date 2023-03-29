@@ -30,8 +30,9 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N6W-uj-dmk">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N6W-uj-dmk">
                         <rect key="frame" x="6" y="117" width="16" height="20"/>
+                        <color key="tintColor" red="0.44705885649999999" green="0.44705885649999999" blue="0.44705885649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="sOM-UR-5B4"/>
                         </constraints>
@@ -39,6 +40,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <color key="tintColor" name="AccentColor"/>
             <constraints>
                 <constraint firstItem="zv8-J6-wy2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="SfN-62-nSG"/>
@@ -56,11 +58,11 @@
                 <outlet property="fotoImageView" destination="zv8-J6-wy2" id="w28-Bj-ZZT"/>
                 <outlet property="valorLabel" destination="xbU-px-RAE" id="WSg-8v-oL2"/>
             </connections>
-            <point key="canvasLocation" x="70.229007633587784" y="41.197183098591552"/>
+            <point key="canvasLocation" x="69.465648854961827" y="41.197183098591552"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bookmark" catalog="system" width="110" height="128"/>
+        <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="garrafaProjeto" width="1000" height="1000"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

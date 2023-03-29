@@ -46,17 +46,11 @@ class RestaurantVC: UIViewController {
         
     }
     func configInformacaoRestauranteView(){
-        informacaoRestauranteView.layer.borderWidth = 2
-        informacaoRestauranteView.layer.borderColor = UIColor.white.cgColor
-        informacaoRestauranteView.layer.cornerRadius = 8.0
-        informacaoRestauranteView.layer.masksToBounds = true
+        
     }
     
     func configmapaRestauranteMapView(){
-        mapaRestauranteMapView.layer.borderWidth = 2
-        mapaRestauranteMapView.layer.borderColor = UIColor.white.cgColor
-        mapaRestauranteMapView.layer.cornerRadius = 8.0
-        mapaRestauranteMapView.layer.masksToBounds = true
+        
         
     }
     
@@ -67,7 +61,7 @@ class RestaurantVC: UIViewController {
         }
     }
 }
-    extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imagens.count
     }
@@ -75,11 +69,13 @@ class RestaurantVC: UIViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell
         cell?.setupCell(image: imagens[indexPath.row], valor: valores[indexPath.row])
+        cell?.layer.cornerRadius = 10
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 89, height: 143)
+        let height = collectionView.bounds.height
+        return CGSize(width: 120, height: height - 20)
     }
     
 }
