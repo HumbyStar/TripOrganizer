@@ -19,7 +19,6 @@ class AttractionVC: UIViewController {
     @IBOutlet var detailView: UIView!
     @IBOutlet var addAttractionButton: UIButton!
     @IBOutlet var attractionNameLabel: UILabel!
-    @IBOutlet var starsImageView: UIImageView!
     @IBOutlet var attractionAdressLabel: UILabel!
     @IBOutlet var openingHoursLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
