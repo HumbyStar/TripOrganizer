@@ -34,12 +34,8 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="CVV-2M-ZbG"/>
                                 </connections>
                             </searchBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-1q-S0N">
-                                <rect key="frame" x="16" y="95.5" width="343" height="228"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-rP-i9z">
-                                <rect key="frame" x="16" y="338.5" width="343" height="321.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-rP-i9z">
+                                <rect key="frame" x="16" y="347.5" width="343" height="312.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="izv-be-YaA">
                                         <rect key="frame" x="11" y="119.5" width="321" height="183"/>
@@ -102,36 +98,41 @@ Telefone: (41) 3243-3430 </string>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="J65-go-2Dg" secondAttribute="trailing" constant="74" id="2FH-sd-TDe"/>
                                     <constraint firstItem="izv-be-YaA" firstAttribute="top" secondItem="vNc-Fn-fWu" secondAttribute="bottom" constant="7" id="3Zc-CN-LNB"/>
-                                    <constraint firstItem="rAv-wt-sWv" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="6qC-pc-aYf"/>
-                                    <constraint firstItem="iPe-PM-rMM" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="EGb-NF-YRa"/>
                                     <constraint firstAttribute="trailing" secondItem="izv-be-YaA" secondAttribute="trailing" constant="11" id="HcH-1w-bgP"/>
                                     <constraint firstItem="uVY-pa-jYu" firstAttribute="top" secondItem="iPe-PM-rMM" secondAttribute="bottom" constant="5" id="N1W-CE-yBk"/>
                                     <constraint firstItem="uVY-pa-jYu" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="10" id="NHZ-zq-dgz"/>
                                     <constraint firstAttribute="trailing" secondItem="Odn-dA-eRC" secondAttribute="trailing" constant="-10" id="NLF-2C-8af"/>
-                                    <constraint firstItem="J65-go-2Dg" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="PND-mN-2zg"/>
-                                    <constraint firstItem="Odn-dA-eRC" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="-10" id="Sii-f6-53C"/>
+                                    <constraint firstItem="rAv-wt-sWv" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="Rp1-y2-Qqy"/>
+                                    <constraint firstItem="iPe-PM-rMM" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="ZFR-Mt-W30"/>
                                     <constraint firstItem="izv-be-YaA" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="11" id="cFh-th-ycO"/>
+                                    <constraint firstItem="Odn-dA-eRC" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="-10" id="iHp-sY-GAU"/>
                                     <constraint firstItem="vNc-Fn-fWu" firstAttribute="top" secondItem="uVY-pa-jYu" secondAttribute="bottom" constant="9" id="jgV-Zo-MU8"/>
                                     <constraint firstItem="vNc-Fn-fWu" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="nB8-P4-J4g"/>
+                                    <constraint firstAttribute="bottom" secondItem="izv-be-YaA" secondAttribute="bottom" constant="10" id="vVl-ap-mtX"/>
                                     <constraint firstAttribute="trailing" secondItem="rAv-wt-sWv" secondAttribute="trailing" constant="21" id="wPA-FK-T4P"/>
                                     <constraint firstItem="iPe-PM-rMM" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="11" id="xWo-4A-4WG"/>
+                                    <constraint firstItem="J65-go-2Dg" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="yXg-fc-dhu"/>
                                 </constraints>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-1q-S0N">
+                                <rect key="frame" x="16" y="95.5" width="343" height="242"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.9529411793" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qvI-Wk-zli" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="488-s0-yxC"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8b7-1q-S0N" secondAttribute="trailing" constant="16" id="BpF-zE-j4g"/>
+                            <constraint firstItem="OKB-rP-i9z" firstAttribute="top" secondItem="8b7-1q-S0N" secondAttribute="bottom" constant="10" id="E7U-99-Dqw"/>
                             <constraint firstItem="qvI-Wk-zli" firstAttribute="top" secondItem="mIv-8m-aqy" secondAttribute="bottom" constant="1" id="Fma-Bw-zr1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OKB-rP-i9z" secondAttribute="trailing" constant="16" id="NFB-zh-e1B"/>
                             <constraint firstItem="8b7-1q-S0N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="TLn-RG-xQ5"/>
                             <constraint firstItem="OKB-rP-i9z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="TOd-D5-ZG9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OKB-rP-i9z" secondAttribute="bottom" constant="7" id="TmS-Rm-iPv"/>
                             <constraint firstItem="mIv-8m-aqy" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" constant="15" id="U8Q-tU-yGI"/>
-                            <constraint firstItem="OKB-rP-i9z" firstAttribute="top" secondItem="8b7-1q-S0N" secondAttribute="bottom" constant="15" id="b5s-dZ-6qG"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OKB-rP-i9z" secondAttribute="bottom" constant="7" id="izw-K4-ev1"/>
                             <constraint firstItem="mIv-8m-aqy" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rXL-kG-Kww"/>
-                            <constraint firstItem="8b7-1q-S0N" firstAttribute="top" secondItem="qvI-Wk-zli" secondAttribute="bottom" constant="10" id="vaJ-RN-MQO"/>
+                            <constraint firstItem="8b7-1q-S0N" firstAttribute="top" secondItem="qvI-Wk-zli" secondAttribute="bottom" constant="10" id="sjv-fb-gkb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qvI-Wk-zli" secondAttribute="trailing" constant="16" id="vsl-Vd-hhh"/>
                         </constraints>
                     </view>
