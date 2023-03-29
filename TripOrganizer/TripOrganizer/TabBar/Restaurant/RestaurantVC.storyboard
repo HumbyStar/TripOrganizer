@@ -35,10 +35,10 @@
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-rP-i9z">
-                                <rect key="frame" x="16" y="347.5" width="343" height="312.5"/>
+                                <rect key="frame" x="16" y="339" width="343" height="321"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="izv-be-YaA">
-                                        <rect key="frame" x="11" y="119.5" width="321" height="183"/>
+                                        <rect key="frame" x="11" y="128" width="321" height="183"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="izv-be-YaA" secondAttribute="height" multiplier="107:61" id="XQ9-XA-lHA"/>
@@ -51,31 +51,22 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boteco do João" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPe-PM-rMM">
-                                        <rect key="frame" x="11" y="25" width="120" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boteco do João" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPe-PM-rMM">
+                                        <rect key="frame" x="11" y="25" width="119.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                        <color key="textColor" red="0.47843140360000003" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliações" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J65-go-2Dg">
-                                        <rect key="frame" x="205" y="25" width="64" height="16"/>
+                                        <rect key="frame" x="205" y="24" width="64" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <color key="textColor" red="0.78823530669999997" green="0.78823530669999997" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="highlightedColor" red="0.78823530669999997" green="0.78823530669999997" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardápio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNc-Fn-fWu">
-                                        <rect key="frame" x="8" y="92.5" width="69" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVY-pa-jYu">
-                                        <rect key="frame" x="10" y="51" width="278" height="32.5"/>
-                                        <string key="text">Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 
-Horario: abre as 12;00 
-Telefone: (41) 3243-3430 </string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardápio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNc-Fn-fWu">
+                                        <rect key="frame" x="8" y="100" width="69" height="21"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                        <color key="textColor" red="0.47843140360000003" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odn-dA-eRC">
@@ -93,29 +84,51 @@ Telefone: (41) 3243-3430 </string>
                                         <rect key="frame" x="277" y="25" width="45" height="14"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4R-xD-NE1">
+                                        <rect key="frame" x="8" y="51" width="278" height="11"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario: abre as 12:00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtU-HF-njQ">
+                                        <rect key="frame" x="8" y="65" width="101" height="11"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone: (41) 3243-3430 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-Zg-znt">
+                                        <rect key="frame" x="8" y="80" width="117" height="11"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="vNc-Fn-fWu" firstAttribute="top" secondItem="Tqf-Zg-znt" secondAttribute="bottom" constant="9" id="1DY-3C-Si1"/>
                                     <constraint firstAttribute="trailing" secondItem="J65-go-2Dg" secondAttribute="trailing" constant="74" id="2FH-sd-TDe"/>
                                     <constraint firstItem="izv-be-YaA" firstAttribute="top" secondItem="vNc-Fn-fWu" secondAttribute="bottom" constant="7" id="3Zc-CN-LNB"/>
+                                    <constraint firstItem="Tqf-Zg-znt" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="5uz-ky-s89"/>
                                     <constraint firstAttribute="trailing" secondItem="izv-be-YaA" secondAttribute="trailing" constant="11" id="HcH-1w-bgP"/>
-                                    <constraint firstItem="uVY-pa-jYu" firstAttribute="top" secondItem="iPe-PM-rMM" secondAttribute="bottom" constant="5" id="N1W-CE-yBk"/>
-                                    <constraint firstItem="uVY-pa-jYu" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="10" id="NHZ-zq-dgz"/>
                                     <constraint firstAttribute="trailing" secondItem="Odn-dA-eRC" secondAttribute="trailing" constant="-10" id="NLF-2C-8af"/>
                                     <constraint firstItem="rAv-wt-sWv" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="Rp1-y2-Qqy"/>
-                                    <constraint firstItem="iPe-PM-rMM" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="ZFR-Mt-W30"/>
+                                    <constraint firstItem="Tqf-Zg-znt" firstAttribute="top" secondItem="mtU-HF-njQ" secondAttribute="bottom" constant="4" id="Td9-Ta-e5c"/>
+                                    <constraint firstItem="iPe-PM-rMM" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="XuL-Eh-BfT"/>
+                                    <constraint firstItem="mtU-HF-njQ" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="bLk-cY-DIG"/>
                                     <constraint firstItem="izv-be-YaA" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="11" id="cFh-th-ycO"/>
                                     <constraint firstItem="Odn-dA-eRC" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="-10" id="iHp-sY-GAU"/>
-                                    <constraint firstItem="vNc-Fn-fWu" firstAttribute="top" secondItem="uVY-pa-jYu" secondAttribute="bottom" constant="9" id="jgV-Zo-MU8"/>
                                     <constraint firstItem="vNc-Fn-fWu" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="nB8-P4-J4g"/>
+                                    <constraint firstItem="mtU-HF-njQ" firstAttribute="top" secondItem="n4R-xD-NE1" secondAttribute="bottom" constant="3" id="qU4-ot-Jup"/>
                                     <constraint firstAttribute="bottom" secondItem="izv-be-YaA" secondAttribute="bottom" constant="10" id="vVl-ap-mtX"/>
                                     <constraint firstAttribute="trailing" secondItem="rAv-wt-sWv" secondAttribute="trailing" constant="21" id="wPA-FK-T4P"/>
+                                    <constraint firstItem="n4R-xD-NE1" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="wTm-LU-m9q"/>
                                     <constraint firstItem="iPe-PM-rMM" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="11" id="xWo-4A-4WG"/>
-                                    <constraint firstItem="J65-go-2Dg" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="25" id="yXg-fc-dhu"/>
+                                    <constraint firstItem="J65-go-2Dg" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="24" id="yXg-fc-dhu"/>
+                                    <constraint firstItem="n4R-xD-NE1" firstAttribute="top" secondItem="iPe-PM-rMM" secondAttribute="bottom" constant="5" id="yjA-0L-tuZ"/>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-1q-S0N">
-                                <rect key="frame" x="16" y="95.5" width="343" height="242"/>
+                                <rect key="frame" x="16" y="95.5" width="343" height="228.5"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -123,8 +136,8 @@ Telefone: (41) 3243-3430 </string>
                         <color key="backgroundColor" red="0.9529411793" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qvI-Wk-zli" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="488-s0-yxC"/>
+                            <constraint firstItem="OKB-rP-i9z" firstAttribute="top" secondItem="8b7-1q-S0N" secondAttribute="bottom" constant="15" id="7fo-Hg-06p"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8b7-1q-S0N" secondAttribute="trailing" constant="16" id="BpF-zE-j4g"/>
-                            <constraint firstItem="OKB-rP-i9z" firstAttribute="top" secondItem="8b7-1q-S0N" secondAttribute="bottom" constant="10" id="E7U-99-Dqw"/>
                             <constraint firstItem="qvI-Wk-zli" firstAttribute="top" secondItem="mIv-8m-aqy" secondAttribute="bottom" constant="1" id="Fma-Bw-zr1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OKB-rP-i9z" secondAttribute="trailing" constant="16" id="NFB-zh-e1B"/>
                             <constraint firstItem="8b7-1q-S0N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="TLn-RG-xQ5"/>

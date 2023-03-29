@@ -56,11 +56,10 @@ class RestaurantVC: UIViewController {
     
     func configpesquisaRestauranteSearchBar(){
         pesquisaRestauranteSearchBar.placeholder = "Procure um ponto turístico para visitar"
-        if let textField = pesquisaRestauranteSearchBar.value(forKey: "searchField") as? UITextField {
-            textField.font = UIFont.systemFont(ofSize: 13)
+            
         }
     }
-}
+
 extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imagens.count
