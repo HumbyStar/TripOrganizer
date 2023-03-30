@@ -275,11 +275,22 @@
                                         <color key="textColor" red="0.52549022440000004" green="0.5187531702" blue="0.5187531702" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-Mc-AVh">
+                                        <rect key="frame" x="142" y="8" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="LaY-re-c3R"/>
+                                            <constraint firstAttribute="width" constant="35" id="iN8-Hb-lpB"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="addButton"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gTs-Mc-AVh" secondAttribute="trailing" constant="5" id="PFA-Gm-yj6"/>
                                     <constraint firstItem="Yjd-gO-WuR" firstAttribute="centerX" secondItem="Mlr-vJ-HPP" secondAttribute="centerX" id="Wek-f4-5QK"/>
                                     <constraint firstItem="Yjd-gO-WuR" firstAttribute="centerY" secondItem="Mlr-vJ-HPP" secondAttribute="centerY" id="kU1-1P-Coo"/>
+                                    <constraint firstItem="gTs-Mc-AVh" firstAttribute="top" secondItem="Mlr-vJ-HPP" secondAttribute="top" constant="8" id="rU3-np-I6E"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -323,4 +334,7 @@
             <point key="canvasLocation" x="175.57251908396947" y="84.859154929577471"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="addButton" width="498" height="501"/>
+    </resources>
 </document>
