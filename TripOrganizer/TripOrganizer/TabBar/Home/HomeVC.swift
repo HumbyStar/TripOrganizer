@@ -79,7 +79,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = cvPlaces.bounds.height
-        let width = cvPlaces.bounds.width
+//        let width = cvPlaces.bounds.width
         
         return CGSize(width: 120, height: height)
     }

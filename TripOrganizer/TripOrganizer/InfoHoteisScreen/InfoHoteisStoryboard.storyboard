@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Info Hoteis View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="InfoHoteisViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagehotel" translatesAutoresizingMaskIntoConstraints="NO" id="b84-pv-oIC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b84-pv-oIC" secondAttribute="height" multiplier="5:3" id="kmv-an-WXd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotel do João" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-IG-3lH">
+                                <rect key="frame" x="18" y="235" width="141.5" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Estrelas" translatesAutoresizingMaskIntoConstraints="NO" id="Hnw-6w-y7N">
+                                <rect key="frame" x="242" y="236" width="117" height="25"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh0-tZ-pdR">
+                                <rect key="frame" x="20" y="272" width="223" height="31.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="cRg-f2-8ah"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario: abre as 12:00 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCb-jE-ud7">
+                                <rect key="frame" x="20" y="310.5" width="138" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7g-sJ-Xyf">
+                                <rect key="frame" x="0.0" y="354.5" width="375" height="116.5"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yk5-Ve-dFM">
+                                <rect key="frame" x="16" y="501" width="343" height="135"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Yk5-Ve-dFM" secondAttribute="height" multiplier="343:135" id="Usl-bb-AEc"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zxt-gw-eQg">
+                                    <size key="itemSize" width="128" height="135"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: 750,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBw-nW-EIf">
+                                <rect key="frame" x="140.5" y="642.5" width="94.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quartos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjD-5o-ZPB">
+                                <rect key="frame" x="16" y="475" width="76.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone: (41) 3243-3430 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0j-Kl-q4o">
+                                <rect key="frame" x="20" y="330.5" width="161" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hnw-6w-y7N" firstAttribute="centerY" secondItem="wvv-IG-3lH" secondAttribute="centerY" id="0k8-Qh-13Y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Hnw-6w-y7N" secondAttribute="trailing" constant="16" id="2ec-wN-k5y"/>
+                            <constraint firstItem="e7g-sJ-Xyf" firstAttribute="top" secondItem="e0j-Kl-q4o" secondAttribute="bottom" constant="8" id="3Gj-nQ-tqu"/>
+                            <constraint firstItem="wvv-IG-3lH" firstAttribute="top" secondItem="b84-pv-oIC" secondAttribute="bottom" constant="10" id="3bP-Pa-MIO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="b84-pv-oIC" secondAttribute="trailing" id="3yD-hV-e9d"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Yk5-Ve-dFM" secondAttribute="trailing" constant="16" id="4ca-oq-aBa"/>
+                            <constraint firstItem="e0j-Kl-q4o" firstAttribute="top" secondItem="SCb-jE-ud7" secondAttribute="bottom" constant="4" id="4dq-5D-wdk"/>
+                            <constraint firstItem="b84-pv-oIC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6vZ-Qg-byg"/>
+                            <constraint firstItem="b84-pv-oIC" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="BzQ-JV-m64"/>
+                            <constraint firstItem="tjD-5o-ZPB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CDt-9l-1uw"/>
+                            <constraint firstItem="Yk5-Ve-dFM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="I56-7k-xjO"/>
+                            <constraint firstItem="e7g-sJ-Xyf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IZf-2S-45v"/>
+                            <constraint firstItem="wh0-tZ-pdR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="JUn-OU-HST"/>
+                            <constraint firstItem="SCb-jE-ud7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Xmr-b2-0fI"/>
+                            <constraint firstItem="tjD-5o-ZPB" firstAttribute="top" secondItem="e7g-sJ-Xyf" secondAttribute="bottom" constant="4" id="YYe-qj-KD5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="bBw-nW-EIf" secondAttribute="bottom" constant="5" id="Yw4-Rj-26G"/>
+                            <constraint firstItem="e0j-Kl-q4o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="bbr-Dd-T2a"/>
+                            <constraint firstItem="e7g-sJ-Xyf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="dDr-bj-4FB"/>
+                            <constraint firstItem="wvv-IG-3lH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="18" id="dr9-Ec-NoV"/>
+                            <constraint firstItem="Yk5-Ve-dFM" firstAttribute="top" secondItem="tjD-5o-ZPB" secondAttribute="bottom" constant="2" id="eaD-Uz-dqo"/>
+                            <constraint firstItem="wh0-tZ-pdR" firstAttribute="top" secondItem="wvv-IG-3lH" secondAttribute="bottom" constant="10" id="f1m-Eb-Igd"/>
+                            <constraint firstItem="SCb-jE-ud7" firstAttribute="top" secondItem="wh0-tZ-pdR" secondAttribute="bottom" constant="7" id="geT-fH-5sn"/>
+                            <constraint firstItem="bBw-nW-EIf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="r3m-lP-pV7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Yk5-Ve-dFM" secondAttribute="bottom" constant="31" id="sdc-Mj-a3a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="wh0-tZ-pdR" id="YLg-6q-KOx"/>
+                        <outlet property="collectionView" destination="Yk5-Ve-dFM" id="L1o-uJ-HwB"/>
+                        <outlet property="nameHotelLabel" destination="wvv-IG-3lH" id="nIz-9v-Llv"/>
+                        <outlet property="photosImageView" destination="b84-pv-oIC" id="SXH-jk-TgY"/>
+                        <outlet property="starImageView" destination="Hnw-6w-y7N" id="2FS-Hz-Jlp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="-2.2488755622188905"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Estrelas" width="117" height="25"/>
+        <image name="imagehotel" width="389" height="277"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
