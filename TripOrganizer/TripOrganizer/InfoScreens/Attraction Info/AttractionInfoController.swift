@@ -40,6 +40,10 @@ class AttractionInfoController: UIViewController {
         
         self.collectionView.register(AttractionInfoCell.nib(), forCellWithReuseIdentifier: AttractionInfoCell.identifier)
     }
+    
+    @IBAction func dismiss(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension AttractionInfoController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

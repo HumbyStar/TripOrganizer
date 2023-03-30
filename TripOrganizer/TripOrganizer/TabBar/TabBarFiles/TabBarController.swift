@@ -27,11 +27,11 @@ class TabBarController: UITabBarController {
         
         guard let items = tabBar.items else { return }
         
-        items[0].image = UIImage(systemName: "house.fill")
-        items[1].image = UIImage(systemName: "airplane")
-        items[2].image = UIImage(systemName: "bed.double.fill")
-        items[3].image = UIImage(systemName: "fork.knife")
-        items[4].image = UIImage(systemName: "play.fill")
+        items[0].image = UIImage(named: "Home")
+        items[1].image = UIImage(named: "airplane")
+        items[2].image = UIImage(named: "Home")
+        items[3].image = UIImage(named: "Restaurant")
+        items[4].image = UIImage(named: "Eiffel Tower")
         
     }
 }

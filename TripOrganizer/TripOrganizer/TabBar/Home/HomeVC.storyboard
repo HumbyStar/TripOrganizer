@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,20 +23,20 @@
                                     <constraint firstAttribute="width" constant="40" id="svD-4H-fLq"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá Fulano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfs-ZL-eC7">
-                                <rect key="frame" x="80" y="24.5" width="82" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá Caio Fabrini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfs-ZL-eC7">
+                                <rect key="frame" x="80" y="24.5" width="122" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.63137254899999995" green="0.61568627450000002" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vamos escolher um lugar de destino" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ifA-AO-xes">
-                                <rect key="frame" x="31" y="84" width="313" height="127"/>
+                                <rect key="frame" x="31" y="84" width="313" height="135.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="fdH-GN-csr">
-                                <rect key="frame" x="31" y="211" width="313" height="260"/>
+                                <rect key="frame" x="31" y="219.5" width="313" height="260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfs-7H-FW9">
                                         <rect key="frame" x="163" y="6" width="130" height="138"/>
@@ -45,7 +45,7 @@
                                                 <rect key="frame" x="10" y="10" width="110" height="118"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJy-Wc-KJL">
-                                                <rect key="frame" x="47" y="61" width="35.5" height="16"/>
+                                                <rect key="frame" x="47" y="61" width="36" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ultima atualização a 2h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeB-xY-wbS">
-                                        <rect key="frame" x="28" y="88.5" width="112.5" height="13"/>
+                                        <rect key="frame" x="28.5" y="88.5" width="112" height="13"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -220,7 +220,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="av3-jb-fwY">
-                                <rect key="frame" x="20" y="501" width="355" height="156"/>
+                                <rect key="frame" x="20" y="509.5" width="335" height="147.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="av3-jb-fwY" secondAttribute="height" multiplier="25:11" id="DbZ-zn-6kw"/>
@@ -271,7 +271,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destinos Populares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INb-9N-7F8">
-                                <rect key="frame" x="41" y="473.5" width="112" height="15"/>
+                                <rect key="frame" x="41" y="482" width="112" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.63137254901960782" green="0.61568627450980395" blue="0.61568627450980395" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -280,7 +280,7 @@
                         <viewLayoutGuide key="safeArea" id="r1O-pE-hBo"/>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="av3-jb-fwY" firstAttribute="trailing" secondItem="r1O-pE-hBo" secondAttribute="trailing" id="2Fo-RK-yOb"/>
+                            <constraint firstItem="av3-jb-fwY" firstAttribute="trailing" secondItem="r1O-pE-hBo" secondAttribute="trailing" constant="-20" id="2Fo-RK-yOb"/>
                             <constraint firstItem="ifA-AO-xes" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="31" id="2H1-Tc-ofV"/>
                             <constraint firstItem="r1O-pE-hBo" firstAttribute="bottom" secondItem="av3-jb-fwY" secondAttribute="bottom" constant="10" id="FUD-sc-PBw"/>
                             <constraint firstItem="INb-9N-7F8" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="41" id="H59-9F-Ohg"/>

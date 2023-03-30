@@ -17,7 +17,6 @@ class InfoRestaurantVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCardapioCollectionView()
-        
     }
     
     func configCardapioCollectionView(){
@@ -30,9 +29,12 @@ class InfoRestaurantVC: UIViewController {
             layout.estimatedItemSize = .zero
             
         }
-        
-        
     }
+    
+    @IBAction func dismiss(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension InfoRestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

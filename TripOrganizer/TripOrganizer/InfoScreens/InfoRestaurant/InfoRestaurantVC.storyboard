@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Info RestaurantVC-->
+        <!--InfoRestaurantVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="InfoRestaurantVC" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoRestaurantVC" id="Y6W-OH-hqX" userLabel="InfoRestaurantVC" customClass="InfoRestaurantVC" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,6 +83,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vck-hL-cB1">
+                                <rect key="frame" x="4" y="25" width="49.5" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="＜">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dismiss:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Hmd-bh-83S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -93,6 +104,7 @@
                             <constraint firstItem="D9V-aU-umx" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="AJg-XK-0Nk"/>
                             <constraint firstItem="D9V-aU-umx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="C9o-He-gEB"/>
                             <constraint firstItem="HGQ-ys-rcs" firstAttribute="top" secondItem="dAe-qB-ycp" secondAttribute="bottom" constant="2" id="FNX-w4-vI0"/>
+                            <constraint firstItem="vck-hL-cB1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="Fam-8f-vhA"/>
                             <constraint firstItem="dAe-qB-ycp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="18" id="IxU-ub-jcg"/>
                             <constraint firstItem="D9V-aU-umx" firstAttribute="top" secondItem="Z3a-Fm-fLN" secondAttribute="bottom" constant="8" id="Kdc-JR-yqx"/>
                             <constraint firstItem="mh5-vn-HZy" firstAttribute="top" secondItem="HGQ-ys-rcs" secondAttribute="bottom" constant="4" id="MQC-PC-Bia"/>
@@ -108,18 +120,22 @@
                             <constraint firstItem="mh5-vn-HZy" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="oeq-cr-ImT"/>
                             <constraint firstItem="HGQ-ys-rcs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="pmX-h9-kak"/>
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="quE-zY-e8i"/>
+                            <constraint firstItem="vck-hL-cB1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="4" id="rSW-33-r4g"/>
                             <constraint firstItem="Ow9-a5-4Bk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ulU-Kc-rSM"/>
                             <constraint firstItem="uV1-Mh-9lh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xtk-g9-SvL"/>
                             <constraint firstItem="4Px-JV-nb8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="zGL-lb-iWg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="03x-aq-mCU">
+                        <barButtonItem key="backBarButtonItem" title="LJKahdkjfhjkd" id="HS7-Ir-KXt"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="cardapioCollectionView" destination="HGQ-ys-rcs" id="7fo-5o-AgI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47.200000000000003" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="1925.5999999999999" y="-2.2488755622188905"/>
         </scene>
     </scenes>
     <resources>

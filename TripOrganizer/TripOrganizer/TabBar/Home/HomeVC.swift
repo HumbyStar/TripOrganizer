@@ -84,4 +84,12 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         return CGSize(width: 120, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let attractionInfoController = UIStoryboard(name: "AttractionInfoController", bundle: nil).instantiateViewController(withIdentifier: "AttractionInfoController") as? AttractionInfoController
+            
+        guard let attractionInfoController = attractionInfoController else {return}
+            
+        navigationController?.pushViewController(attractionInfoController, animated: true)
+    }
+    
 }

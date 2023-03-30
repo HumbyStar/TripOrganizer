@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Info Hoteis View Controller-->
+        <!--InfoHoteisViewController-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="InfoHoteisViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoHoteisViewController" id="Y6W-OH-hqX" userLabel="InfoHoteisViewController" customClass="InfoHoteisViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,11 +82,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7F-lv-PbN">
+                                <rect key="frame" x="4" y="25" width="49.5" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="＜">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dismiss:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="L3P-mX-a6Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Hnw-6w-y7N" firstAttribute="centerY" secondItem="wvv-IG-3lH" secondAttribute="centerY" id="0k8-Qh-13Y"/>
+                            <constraint firstItem="c7F-lv-PbN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="25" id="0xi-aM-lcF"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Hnw-6w-y7N" secondAttribute="trailing" constant="16" id="2ec-wN-k5y"/>
                             <constraint firstItem="e7g-sJ-Xyf" firstAttribute="top" secondItem="e0j-Kl-q4o" secondAttribute="bottom" constant="8" id="3Gj-nQ-tqu"/>
                             <constraint firstItem="wvv-IG-3lH" firstAttribute="top" secondItem="b84-pv-oIC" secondAttribute="bottom" constant="10" id="3bP-Pa-MIO"/>
@@ -110,6 +122,7 @@
                             <constraint firstItem="SCb-jE-ud7" firstAttribute="top" secondItem="wh0-tZ-pdR" secondAttribute="bottom" constant="7" id="geT-fH-5sn"/>
                             <constraint firstItem="bBw-nW-EIf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="r3m-lP-pV7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Yk5-Ve-dFM" secondAttribute="bottom" constant="31" id="sdc-Mj-a3a"/>
+                            <constraint firstItem="c7F-lv-PbN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="4" id="ya9-OR-HIc"/>
                         </constraints>
                     </view>
                     <connections>

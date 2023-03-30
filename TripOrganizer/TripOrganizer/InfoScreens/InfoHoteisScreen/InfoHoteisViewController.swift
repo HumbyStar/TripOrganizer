@@ -21,7 +21,6 @@ class InfoHoteisViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
-        configButton()
     }
     
     private func configCollectionView() {
@@ -34,9 +33,10 @@ class InfoHoteisViewController: UIViewController {
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
     }
     
-    private func configButton() {
-        
+    @IBAction func dismiss(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
+    
 }
 
 

@@ -146,7 +146,7 @@ extension AttractionVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.bounds.height
-        return CGSize(width: 150, height: height - 20)
+        return CGSize(width: 150, height: height - 40)
     }
     
 }
