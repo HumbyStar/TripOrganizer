@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,36 +17,50 @@
                 <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ccv-cr-XyT">
-                        <rect key="frame" x="0.0" y="0.0" width="170" height="134.66666666666666"/>
-                    </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgB-tC-VgI">
-                        <rect key="frame" x="136" y="1" width="34" height="34"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0C-YE-hzN">
+                        <rect key="frame" x="0.0" y="15" width="155" height="155"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ccv-cr-XyT">
+                                <rect key="frame" x="0.0" y="0.0" width="155" height="131.66666666666666"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgB-tC-VgI">
+                                <rect key="frame" x="117" y="-15" width="58" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="addButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 39,90" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCP-tm-Q3W">
+                                <rect key="frame" x="12" y="131.66666666666666" width="130" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="34" id="21c-v4-8ns"/>
-                            <constraint firstAttribute="width" constant="34" id="udn-ld-ZVF"/>
+                            <constraint firstAttribute="bottom" secondItem="DCP-tm-Q3W" secondAttribute="bottom" constant="4" id="5Yz-r8-F31"/>
+                            <constraint firstItem="ZgB-tC-VgI" firstAttribute="top" secondItem="Z0C-YE-hzN" secondAttribute="top" constant="-15" id="RhN-jj-tsy"/>
+                            <constraint firstAttribute="trailing" secondItem="DCP-tm-Q3W" secondAttribute="trailing" constant="13" id="UEV-pp-lIH"/>
+                            <constraint firstAttribute="trailing" secondItem="ccv-cr-XyT" secondAttribute="trailing" id="dV1-2R-UIn"/>
+                            <constraint firstItem="DCP-tm-Q3W" firstAttribute="leading" secondItem="Z0C-YE-hzN" secondAttribute="leading" constant="12" id="ejr-e7-pOY"/>
+                            <constraint firstItem="DCP-tm-Q3W" firstAttribute="top" secondItem="ccv-cr-XyT" secondAttribute="bottom" id="i87-89-foU"/>
+                            <constraint firstItem="ccv-cr-XyT" firstAttribute="top" secondItem="Z0C-YE-hzN" secondAttribute="top" id="toN-8b-CzV"/>
+                            <constraint firstItem="ccv-cr-XyT" firstAttribute="leading" secondItem="Z0C-YE-hzN" secondAttribute="leading" id="ueU-a4-cg6"/>
+                            <constraint firstAttribute="trailing" secondItem="ZgB-tC-VgI" secondAttribute="trailing" constant="-20" id="zai-Nr-CgM"/>
                         </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="addButton"/>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 39,90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCP-tm-Q3W">
-                        <rect key="frame" x="51.666666666666664" y="137.66666666666666" width="66.666666666666686" height="19.333333333333343"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ccv-cr-XyT" secondAttribute="trailing" id="3Dj-pw-bbg"/>
-                <constraint firstItem="ZgB-tC-VgI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="5Nd-rQ-u90"/>
-                <constraint firstAttribute="trailing" secondItem="ZgB-tC-VgI" secondAttribute="trailing" id="8Ro-qx-TUz"/>
-                <constraint firstAttribute="bottom" secondItem="DCP-tm-Q3W" secondAttribute="bottom" constant="13" id="8XI-i6-i4M"/>
-                <constraint firstItem="DCP-tm-Q3W" firstAttribute="centerX" secondItem="ccv-cr-XyT" secondAttribute="centerX" id="FIB-2a-fg6"/>
-                <constraint firstItem="DCP-tm-Q3W" firstAttribute="top" secondItem="ccv-cr-XyT" secondAttribute="bottom" constant="3" id="LYK-EN-caf"/>
-                <constraint firstItem="ccv-cr-XyT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="drb-4l-zMR"/>
-                <constraint firstItem="ccv-cr-XyT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lMU-Eg-qUk"/>
+                <constraint firstAttribute="bottom" secondItem="Z0C-YE-hzN" secondAttribute="bottom" id="2B3-tk-rrB"/>
+                <constraint firstItem="Z0C-YE-hzN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3xw-J7-uad"/>
+                <constraint firstAttribute="trailing" secondItem="Z0C-YE-hzN" secondAttribute="trailing" constant="15" id="DFm-0A-o1g"/>
+                <constraint firstItem="Z0C-YE-hzN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="pF7-pf-GSx"/>
             </constraints>
             <connections>
                 <outlet property="adicionarButton" destination="ZgB-tC-VgI" id="ZTX-4O-yFD"/>
@@ -57,5 +72,8 @@
     </objects>
     <resources>
         <image name="addButton" width="34" height="34"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
