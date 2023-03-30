@@ -29,7 +29,7 @@ class TabBarController: UITabBarController {
         
         items[0].image = UIImage(named: "Home")
         items[1].image = UIImage(named: "airplane")
-        items[2].image = UIImage(named: "Home")
+        items[2].image = UIImage(named: "cama")
         items[3].image = UIImage(named: "Restaurant")
         items[4].image = UIImage(named: "Eiffel Tower")
         

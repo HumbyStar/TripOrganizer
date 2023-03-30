@@ -20,6 +20,7 @@ class PlaningViewController: UIViewController {
     let images: [String] = ["restaurantes-em-curitiba-barolo 1","teste","parque1"]
     
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
