@@ -282,7 +282,7 @@
                                             <constraint firstAttribute="width" constant="35" id="iN8-Hb-lpB"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="addbutton"/>
+                                        <state key="normal" image="addButton"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -335,6 +335,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="addbutton" width="498" height="501"/>
+        <image name="addButton" width="498" height="501"/>
     </resources>
 </document>
