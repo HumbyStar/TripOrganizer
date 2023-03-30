@@ -248,7 +248,6 @@
 			children = (
 				0C36EC4129B6621C009550C8 /* AppDelegate.swift */,
 				0C36EC4329B6621C009550C8 /* SceneDelegate.swift */,
-				0C36EC4729B6621C009550C8 /* Main.storyboard */,
 				0C36EC4A29B6621E009550C8 /* Assets.xcassets */,
 				0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */,
 			);
@@ -258,6 +257,7 @@
 		0C61EB0729BBE13100F54F47 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0C36EC4729B6621C009550C8 /* Main.storyboard */,
 				0C36EC4529B6621C009550C8 /* ViewController.swift */,
 			);
 			path = Login;

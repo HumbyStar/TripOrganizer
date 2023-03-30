@@ -49,9 +49,10 @@ class HomeVC: UIViewController {
         //Chamar perfilScreen
         let perfilViewController = UIStoryboard(name: "PerfilViewController", bundle: nil).instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
         
-        let navigationController = UINavigationController(rootViewController: perfilViewController ?? UIViewController())
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
+//        let navigationController = UINavigationController(rootViewController: perfilViewController ?? UIViewController())
+        //navigationController.modalPresentationStyle = .fullScreen
+        //present(navigationController, animated: true)
+        navigationController?.pushViewController(perfilViewController ?? UIViewController(), animated: true)
     }
     
     @IBAction func goToPlannerScreen(_ sender: UIButton) {

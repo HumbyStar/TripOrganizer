@@ -18,10 +18,11 @@ class PerfilViewController: UIViewController {
     
     
     @IBAction func tappedReturnButton(_ sender: Any) {
-        navigationController?.dismiss(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func loggoutButton(_ sender: Any) {
-        print(#function)
+        navigationController?.dismiss(animated: true)
+        
     }
 }
