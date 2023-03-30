@@ -19,7 +19,6 @@ class AttractionVC: UIViewController {
     @IBOutlet var detailView: UIView!
     @IBOutlet var addAttractionButton: UIButton!
     @IBOutlet var attractionNameLabel: UILabel!
-    @IBOutlet var starsImageView: UIImageView!
     @IBOutlet var attractionAdressLabel: UILabel!
     @IBOutlet var openingHoursLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
@@ -34,18 +33,16 @@ class AttractionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
-        configSearchBarStyle()
-        configMapViewBorder()
-        configDetailViewBorder()
-        configMapViewShadow()
         configMapConstraints()
-        configDetailViewShadow()
-        configSearchBarShadowBar()
+//        configSearchBarStyle()
+//        configMapViewBorder()
+//        configDetailViewBorder()
+//        configMapViewShadow()
+//        configDetailViewShadow()
+//        configSearchBarShadowBar()
     }
     
     func configSearchBarStyle() {
-        
-        collectionView.backgroundColor = .clear
         
         if let textField = searchBar.value(forKey: "searchField") as? UITextField {
             textField.backgroundColor = UIColor.white
@@ -62,59 +59,59 @@ class AttractionVC: UIViewController {
             case 1136: // iPhone SE (1st generation), iPhone 5, iPhone 5S, iPhone 5C
                 heightConstraint.constant = 150
             case 1334, 1920, 2208: // iPhone 6, 6S, 7, 8, SE (2nd generation)
-                heightConstraint.constant = 270
+                heightConstraint.constant = 157
             case 2436, 2688, 1792: // iPhone X, XS, XR, 11 Pro, 12 mini, 11, 12
                 heightConstraint.constant = 300
             case 2778: // IPhone 14 Plus
-                heightConstraint.constant = 400
+                heightConstraint.constant = 320
             case 2532: // iPhone 14
-                heightConstraint.constant = 350
+                heightConstraint.constant = 265
             default: // IPhone Pro Max
-                heightConstraint.constant = 400 // default value for other devices
+                heightConstraint.constant = 318 // default value for other devices
                 // IPhone 14 pro?
             }
         }
     }
     
-    func configDetailViewBorder() {
+//    func configDetailViewBorder() {
 //      detailView.layer.borderWidth = 3.0 -> a borda fica por cima do botão.
-        detailView.layer.borderColor = UIColor.white.cgColor
-        detailView.clipsToBounds = true
-        detailView.layer.cornerRadius = 15
-    }
-    
-    func configDetailViewShadow() {
-        detailView.layer.shadowColor = UIColor.black.cgColor
-        detailView.layer.shadowOpacity = 0.5
-        detailView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        detailView.layer.shadowRadius = 4
-        detailView.layer.masksToBounds = false
-    }
-    
-    func configMapViewBorder() {
-        mapView.layer.borderWidth = 3.0
-        mapView.layer.borderColor = UIColor.white.cgColor
-        mapView.clipsToBounds = true
-        mapView.layer.cornerRadius = 15
-    }
-    
-    
-    func configMapViewShadow() {
-        mapView.layer.shadowColor = UIColor.black.cgColor
-        mapView.layer.shadowOpacity = 0.5
-        mapView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        mapView.layer.shadowRadius = 4
-        mapView.layer.masksToBounds = true
-    }
-    
-    
-    func configSearchBarShadowBar() {
-        searchBar.layer.shadowColor = UIColor.black.cgColor
-        searchBar.layer.shadowOpacity = 0.5
-        searchBar.layer.shadowOffset = CGSize(width: 0, height: 2)
-        searchBar.layer.shadowRadius = 4
-        searchBar.layer.masksToBounds = false
-    }
+//        detailView.layer.borderColor = UIColor.white.cgColor
+//        detailView.clipsToBounds = true
+//        detailView.layer.cornerRadius = 15
+//    }
+//
+//    func configDetailViewShadow() {
+//        detailView.layer.shadowColor = UIColor.black.cgColor
+//        detailView.layer.shadowOpacity = 0.5
+//        detailView.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        detailView.layer.shadowRadius = 4
+//        detailView.layer.masksToBounds = false
+//    }
+//
+//    func configMapViewBorder() {
+//        mapView.layer.borderWidth = 3.0
+//        mapView.layer.borderColor = UIColor.white.cgColor
+//        mapView.clipsToBounds = true
+//        mapView.layer.cornerRadius = 15
+//    }
+//
+//
+//    func configMapViewShadow() {
+//        mapView.layer.shadowColor = UIColor.black.cgColor
+//        mapView.layer.shadowOpacity = 0.5
+//        mapView.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        mapView.layer.shadowRadius = 4
+//        mapView.layer.masksToBounds = true
+//    }
+//
+//
+//    func configSearchBarShadowBar() {
+//        searchBar.layer.shadowColor = UIColor.black.cgColor
+//        searchBar.layer.shadowOpacity = 0.5
+//        searchBar.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        searchBar.layer.shadowRadius = 4
+//        searchBar.layer.masksToBounds = false
+//    }
     
     
     
@@ -129,6 +126,8 @@ class AttractionVC: UIViewController {
         }
         
         collectionView.register(AttractionCell.nib(), forCellWithReuseIdentifier: AttractionCell.identifier)
+        
+        collectionView.backgroundColor = .clear
     }
 }
 
@@ -146,7 +145,8 @@ extension AttractionVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150, height: 150)
+        let height = collectionView.bounds.height
+        return CGSize(width: 150, height: height - 20)
     }
     
 }
