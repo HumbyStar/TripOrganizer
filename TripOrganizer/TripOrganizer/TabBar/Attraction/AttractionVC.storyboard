@@ -97,9 +97,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAX-r4-MkH">
-                                        <rect key="frame" x="307" y="-15" width="58" height="48"/>
+                                        <rect key="frame" x="313" y="-10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="0rB-Yl-fkh"/>
+                                            <constraint firstAttribute="height" constant="40" id="b8H-Ym-Mij"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="addbutton"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="addButton"/>
+                                        </buttonConfiguration>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ims-98-vC7">
                                         <rect key="frame" x="227" y="30" width="51" height="12"/>
@@ -123,12 +129,12 @@
                                     <constraint firstItem="ims-98-vC7" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="30" id="dPT-fc-o2K"/>
                                     <constraint firstItem="EVO-Zj-FsQ" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="g5E-Bq-FgM"/>
                                     <constraint firstItem="J9O-3G-o3I" firstAttribute="top" secondItem="pYL-8r-ReW" secondAttribute="bottom" constant="20" id="kQL-Iv-ney"/>
-                                    <constraint firstAttribute="trailing" secondItem="PAX-r4-MkH" secondAttribute="trailing" constant="-22" id="kaN-U4-4x7"/>
+                                    <constraint firstAttribute="trailing" secondItem="PAX-r4-MkH" secondAttribute="trailing" constant="-10" id="kaN-U4-4x7"/>
                                     <constraint firstItem="eVf-Ka-K8c" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="25" id="mTw-Cg-UfY"/>
                                     <constraint firstItem="k5y-2D-KVG" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="oL9-md-UIZ"/>
                                     <constraint firstItem="EVO-Zj-FsQ" firstAttribute="top" secondItem="eVf-Ka-K8c" secondAttribute="bottom" constant="5" id="rhl-vR-iUN"/>
                                     <constraint firstItem="Vea-UL-S82" firstAttribute="top" secondItem="EVO-Zj-FsQ" secondAttribute="bottom" constant="10" id="sHE-u6-GXu"/>
-                                    <constraint firstItem="PAX-r4-MkH" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="-15" id="uP2-Vd-s43"/>
+                                    <constraint firstItem="PAX-r4-MkH" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="-10" id="uP2-Vd-s43"/>
                                     <constraint firstItem="J9O-3G-o3I" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="vsl-xL-cHX"/>
                                 </constraints>
                             </view>
@@ -172,7 +178,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addbutton" width="34" height="34"/>
+        <image name="addButton" width="498" height="501"/>
         <image name="stars" width="45" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

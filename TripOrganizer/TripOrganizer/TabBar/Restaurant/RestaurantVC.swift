@@ -55,7 +55,7 @@ class RestaurantVC: UIViewController {
     }
     
     func configpesquisaRestauranteSearchBar(){
-        pesquisaRestauranteSearchBar.placeholder = "Procure um ponto turístico para visitar"
+        pesquisaRestauranteSearchBar.placeholder = "Procure um restaurante para visitar"
             
         }
     }

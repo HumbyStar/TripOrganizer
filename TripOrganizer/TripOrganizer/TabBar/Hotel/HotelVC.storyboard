@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Procure um hotel de estadia" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
                                 <rect key="frame" x="16" y="83.333333333333329" width="358" height="55.999999999999986"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="uW7-u5-aFR"/>
@@ -72,7 +72,7 @@
                                         <color key="textColor" red="0.47843140360000003" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gjB-fu-2JS">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gjB-fu-2JS">
                                         <rect key="frame" x="11" y="128.00000000000006" width="336" height="191.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gjB-fu-2JS" secondAttribute="height" multiplier="107:61" id="sCi-XZ-dnq"/>
@@ -95,7 +95,9 @@
                                             <constraint firstAttribute="width" constant="40" id="i4w-J1-22T"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Add Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" image="addButton"/>
+                                        </buttonConfiguration>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -154,7 +156,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add Button" width="34" height="34"/>
+        <image name="addButton" width="498" height="501"/>
         <image name="estrela" width="45" height="14"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
