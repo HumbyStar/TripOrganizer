@@ -17,7 +17,8 @@ class PlaningViewController: UIViewController {
     @IBOutlet weak var ivUserPhoto: UIImageView!
     @IBOutlet weak var tableViewBadges: UITableView!
     
-    let images: [String] = ["teste","restaurantes-em-curitiba-barolo 1","parque1"]
+    let images: [String] = ["restaurantes-em-curitiba-barolo 1","teste","parque1"]
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
