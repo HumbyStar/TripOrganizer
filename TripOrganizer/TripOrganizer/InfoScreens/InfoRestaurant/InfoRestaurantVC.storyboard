@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Info RestaurantVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="InfoRestaurantVC" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botecoDoJoaoProjeto" translatesAutoresizingMaskIntoConstraints="NO" id="uV1-Mh-9lh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uV1-Mh-9lh" secondAttribute="height" multiplier="5:3" id="IhG-5S-SQC"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boteco do João" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-Zp-bhh">
+                                <rect key="frame" x="18" y="235" width="155" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario: abre as 12:00 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow9-a5-4Bk">
+                                <rect key="frame" x="20" y="305" width="119.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardapio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-qB-ycp">
+                                <rect key="frame" x="18" y="465.5" width="83.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: R$ 250" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-vn-HZy">
+                                <rect key="frame" x="134" y="640.5" width="107" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Px-JV-nb8" userLabel="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020">
+                                <rect key="frame" x="20" y="271.5" width="223" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="Z9d-Dw-JVU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-aU-umx">
+                                <rect key="frame" x="0.0" y="344" width="375" height="117.5"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HGQ-ys-rcs">
+                                <rect key="frame" x="10" y="491.5" width="355" height="145"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HGQ-ys-rcs" secondAttribute="height" multiplier="71:29" id="LOE-A8-prn"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lk4-g4-SL2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EstrelasC" translatesAutoresizingMaskIntoConstraints="NO" id="GeL-oB-NuH">
+                                <rect key="frame" x="242" y="236" width="117" height="25"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone: (41) 3243-3430 " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3a-Fm-fLN">
+                                <rect key="frame" x="20" y="322.5" width="139.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z3a-Fm-fLN" firstAttribute="top" secondItem="Ow9-a5-4Bk" secondAttribute="bottom" constant="4" id="10W-LK-BIB"/>
+                            <constraint firstItem="dAe-qB-ycp" firstAttribute="top" secondItem="D9V-aU-umx" secondAttribute="bottom" constant="4" id="14x-Q9-WiT"/>
+                            <constraint firstItem="7eV-Zp-bhh" firstAttribute="top" secondItem="uV1-Mh-9lh" secondAttribute="bottom" constant="10" id="8AY-rD-RE0"/>
+                            <constraint firstItem="D9V-aU-umx" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="AJg-XK-0Nk"/>
+                            <constraint firstItem="D9V-aU-umx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="C9o-He-gEB"/>
+                            <constraint firstItem="HGQ-ys-rcs" firstAttribute="top" secondItem="dAe-qB-ycp" secondAttribute="bottom" constant="2" id="FNX-w4-vI0"/>
+                            <constraint firstItem="dAe-qB-ycp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="18" id="IxU-ub-jcg"/>
+                            <constraint firstItem="D9V-aU-umx" firstAttribute="top" secondItem="Z3a-Fm-fLN" secondAttribute="bottom" constant="8" id="Kdc-JR-yqx"/>
+                            <constraint firstItem="mh5-vn-HZy" firstAttribute="top" secondItem="HGQ-ys-rcs" secondAttribute="bottom" constant="4" id="MQC-PC-Bia"/>
+                            <constraint firstItem="7eV-Zp-bhh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="18" id="NFC-ku-Dt5"/>
+                            <constraint firstItem="Z3a-Fm-fLN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="RG0-Yv-2ug"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HGQ-ys-rcs" secondAttribute="trailing" constant="10" id="TGa-z4-yaP"/>
+                            <constraint firstItem="Ow9-a5-4Bk" firstAttribute="top" secondItem="4Px-JV-nb8" secondAttribute="bottom" constant="7" id="Ucn-vH-P44"/>
+                            <constraint firstItem="GeL-oB-NuH" firstAttribute="centerY" secondItem="7eV-Zp-bhh" secondAttribute="centerY" id="VzU-Ii-qvX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="mh5-vn-HZy" secondAttribute="bottom" constant="5" id="XjV-Lq-mB7"/>
+                            <constraint firstItem="4Px-JV-nb8" firstAttribute="top" secondItem="7eV-Zp-bhh" secondAttribute="bottom" constant="10" id="aZc-eU-SH5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GeL-oB-NuH" secondAttribute="trailing" constant="16" id="cIw-g6-ohi"/>
+                            <constraint firstItem="uV1-Mh-9lh" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="kXh-9h-eNx"/>
+                            <constraint firstItem="mh5-vn-HZy" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="oeq-cr-ImT"/>
+                            <constraint firstItem="HGQ-ys-rcs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="pmX-h9-kak"/>
+                            <constraint firstItem="uV1-Mh-9lh" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="quE-zY-e8i"/>
+                            <constraint firstItem="Ow9-a5-4Bk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ulU-Kc-rSM"/>
+                            <constraint firstItem="uV1-Mh-9lh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xtk-g9-SvL"/>
+                            <constraint firstItem="4Px-JV-nb8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="zGL-lb-iWg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardapioCollectionView" destination="HGQ-ys-rcs" id="7fo-5o-AgI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.200000000000003" y="-2.2488755622188905"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="EstrelasC" width="117" height="25"/>
+        <image name="botecoDoJoaoProjeto" width="570" height="300"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

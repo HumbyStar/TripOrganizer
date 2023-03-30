@@ -21,4 +21,7 @@ class PerfilViewController: UIViewController {
         navigationController?.dismiss(animated: true)
     }
     
+    @IBAction func loggoutButton(_ sender: Any) {
+        print(#function)
+    }
 }

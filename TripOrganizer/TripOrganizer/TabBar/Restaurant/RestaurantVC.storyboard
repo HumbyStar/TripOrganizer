@@ -76,7 +76,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
-                                            <backgroundConfiguration key="background" image="addButton"/>
+                                            <backgroundConfiguration key="background" image="AddButton2"/>
                                         </buttonConfiguration>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estrela" translatesAutoresizingMaskIntoConstraints="NO" id="rAv-wt-sWv">
@@ -163,7 +163,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="addButton" width="498" height="501"/>
+        <image name="AddButton2" width="498" height="501"/>
         <image name="estrela" width="45" height="14"/>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -24,9 +24,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="163" height="149"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0h5-U5-FUu">
-                                <rect key="frame" x="125" y="-15" width="58" height="48"/>
+                                <rect key="frame" x="133" y="-10" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9Ty-ZB-bEm"/>
+                                    <constraint firstAttribute="width" constant="40" id="haQ-EY-kuu"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="imageButton"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="AddButton2"/>
+                                </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 200,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPA-MB-eW7">
                                 <rect key="frame" x="41.666666666666657" y="148" width="80" height="21"/>
@@ -39,11 +45,11 @@
                         <constraints>
                             <constraint firstItem="fZE-HO-T5s" firstAttribute="top" secondItem="a5b-nR-J96" secondAttribute="top" id="5wN-aT-u9v"/>
                             <constraint firstAttribute="trailing" secondItem="fZE-HO-T5s" secondAttribute="trailing" id="O6R-lw-dMA"/>
-                            <constraint firstItem="0h5-U5-FUu" firstAttribute="top" secondItem="a5b-nR-J96" secondAttribute="top" constant="-15" id="PeR-p0-tm6"/>
+                            <constraint firstItem="0h5-U5-FUu" firstAttribute="top" secondItem="a5b-nR-J96" secondAttribute="top" constant="-10" id="PeR-p0-tm6"/>
                             <constraint firstItem="MPA-MB-eW7" firstAttribute="centerX" secondItem="a5b-nR-J96" secondAttribute="centerX" id="QAv-Uu-4Nr"/>
                             <constraint firstAttribute="bottom" secondItem="MPA-MB-eW7" secondAttribute="bottom" id="eHw-gf-76h"/>
                             <constraint firstItem="fZE-HO-T5s" firstAttribute="leading" secondItem="a5b-nR-J96" secondAttribute="leading" id="lW6-Jo-ubu"/>
-                            <constraint firstAttribute="trailing" secondItem="0h5-U5-FUu" secondAttribute="trailing" constant="-20" id="mjd-kA-V2Q"/>
+                            <constraint firstAttribute="trailing" secondItem="0h5-U5-FUu" secondAttribute="trailing" constant="-10" id="mjd-kA-V2Q"/>
                             <constraint firstAttribute="bottom" secondItem="fZE-HO-T5s" secondAttribute="bottom" constant="20" id="ucG-x4-gzN"/>
                         </constraints>
                     </view>
@@ -66,7 +72,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="imageButton" width="34" height="34"/>
+        <image name="AddButton2" width="498" height="501"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
