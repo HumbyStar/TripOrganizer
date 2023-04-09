@@ -9,48 +9,40 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    @IBOutlet var homeTableView: UITableView!
+    @IBOutlet var homeCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeTableView.showsVerticalScrollIndicator = false
-        self.configTableView()
+        configCollectionView()
         self.navigationController?.isNavigationBarHidden = true
     }
     
     
-    private func configTableView() {
-        homeTableView.delegate = self
-        homeTableView.dataSource = self
-        homeTableView.register(HomeTableViewCell.nib(), forCellReuseIdentifier: HomeTableViewCell.identifier)
+    private func configCollectionView() {
+        homeCollectionView.delegate = self
+        homeCollectionView.dataSource = self
+        if let layout = homeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .vertical
+            layout.estimatedItemSize = .zero
+        }
+        
+        homeCollectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
     }
 }
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.row == 0 {
-            let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
-            cell?.setupCell(placeType: "Lazer")
-            return cell ?? UITableViewCell()
-        } else if indexPath.row == 1 {
-            let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
-            cell?.setupCell(placeType: "Restaurantes")
-            return cell ?? UITableViewCell()
-        } else {
-            let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
-            cell?.setupCell(placeType: "Hotel")
-            return cell ?? UITableViewCell()
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: HomeCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
+        return cell ?? UICollectionViewCell()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 280)
     }
+    
 }

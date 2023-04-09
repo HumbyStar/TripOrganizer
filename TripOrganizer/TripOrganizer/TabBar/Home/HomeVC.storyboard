@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,10 +122,17 @@
                                     <constraint firstItem="jVl-CK-bWf" firstAttribute="centerX" secondItem="TBV-Lq-NcB" secondAttribute="centerX" id="kk5-W2-sMM"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="olg-h1-O1p">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wqx-Za-mPB">
                                 <rect key="frame" x="20" y="325" width="335" height="287"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ya2-m4-Tbx">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r1O-pE-hBo"/>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -132,6 +140,7 @@
                             <constraint firstItem="E1e-OB-9ol" firstAttribute="leading" secondItem="ekm-od-Agf" secondAttribute="trailing" constant="5" id="07Z-po-wqc"/>
                             <constraint firstItem="LL2-uU-41r" firstAttribute="leading" secondItem="v6v-iI-AW0" secondAttribute="trailing" constant="5" id="0Re-68-g0M"/>
                             <constraint firstItem="89o-SC-fRn" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="2cu-G9-kYb"/>
+                            <constraint firstItem="r1O-pE-hBo" firstAttribute="trailing" secondItem="Wqx-Za-mPB" secondAttribute="trailing" constant="20" id="3HO-2z-yek"/>
                             <constraint firstItem="r1O-pE-hBo" firstAttribute="trailing" secondItem="GPE-JB-nnr" secondAttribute="trailing" constant="20" id="57b-78-bNK"/>
                             <constraint firstItem="BhB-NW-ZvF" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="5O9-UF-mfg"/>
                             <constraint firstItem="v6v-iI-AW0" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="5aC-GV-g8f"/>
@@ -139,17 +148,17 @@
                             <constraint firstItem="r1O-pE-hBo" firstAttribute="trailing" secondItem="gPI-vs-eXb" secondAttribute="trailing" constant="20" id="Hb2-qt-AUE"/>
                             <constraint firstItem="TBV-Lq-NcB" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="Ico-4B-1aS"/>
                             <constraint firstItem="r1O-pE-hBo" firstAttribute="trailing" secondItem="Lfo-pM-fqs" secondAttribute="trailing" constant="10" id="InZ-ao-Ua7"/>
+                            <constraint firstItem="Wqx-Za-mPB" firstAttribute="top" secondItem="GPE-JB-nnr" secondAttribute="bottom" constant="20" id="Jl1-Ah-NcS"/>
                             <constraint firstItem="wuX-As-xD2" firstAttribute="top" secondItem="gPI-vs-eXb" secondAttribute="bottom" constant="13" id="MeD-4c-Aee"/>
                             <constraint firstItem="GPE-JB-nnr" firstAttribute="top" secondItem="ekm-od-Agf" secondAttribute="bottom" constant="20" id="Mnw-Lg-eoK"/>
-                            <constraint firstItem="TBV-Lq-NcB" firstAttribute="top" secondItem="olg-h1-O1p" secondAttribute="bottom" constant="20" id="NXe-ZL-7To"/>
                             <constraint firstItem="GPE-JB-nnr" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="OfI-Lj-rcj"/>
-                            <constraint firstItem="r1O-pE-hBo" firstAttribute="trailing" secondItem="olg-h1-O1p" secondAttribute="trailing" constant="20" id="PHc-ph-1OV"/>
                             <constraint firstItem="Lfo-pM-fqs" firstAttribute="top" secondItem="r1O-pE-hBo" secondAttribute="top" constant="15" id="RPL-UQ-zYe"/>
                             <constraint firstItem="ekm-od-Agf" firstAttribute="top" secondItem="fEB-CU-chj" secondAttribute="bottom" constant="10" id="Rbw-TU-ejN"/>
                             <constraint firstItem="fEB-CU-chj" firstAttribute="top" secondItem="gPI-vs-eXb" secondAttribute="bottom" constant="12" id="Sgw-H4-i4J"/>
                             <constraint firstItem="89o-SC-fRn" firstAttribute="top" secondItem="r1O-pE-hBo" secondAttribute="top" constant="30" id="VUF-p9-Qf8"/>
                             <constraint firstItem="lW9-92-heb" firstAttribute="leading" secondItem="fEB-CU-chj" secondAttribute="trailing" constant="5" id="Vu0-hD-JvY"/>
                             <constraint firstItem="fEB-CU-chj" firstAttribute="leading" secondItem="wuX-As-xD2" secondAttribute="trailing" constant="20" id="XKj-uL-kPl"/>
+                            <constraint firstItem="TBV-Lq-NcB" firstAttribute="top" secondItem="Wqx-Za-mPB" secondAttribute="bottom" constant="20" id="bOo-wu-PER"/>
                             <constraint firstItem="v6v-iI-AW0" firstAttribute="top" secondItem="Sva-vn-dG4" secondAttribute="bottom" constant="10" id="dSf-HO-5QD"/>
                             <constraint firstItem="LL2-uU-41r" firstAttribute="leading" secondItem="v6v-iI-AW0" secondAttribute="trailing" constant="5" id="edj-Er-OFg"/>
                             <constraint firstItem="Sva-vn-dG4" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="fTG-eQ-QWI"/>
@@ -162,26 +171,28 @@
                             <constraint firstItem="E1e-OB-9ol" firstAttribute="leading" secondItem="ekm-od-Agf" secondAttribute="trailing" constant="5" id="nII-oC-e5B"/>
                             <constraint firstItem="LL2-uU-41r" firstAttribute="top" secondItem="wuX-As-xD2" secondAttribute="bottom" constant="13" id="q7n-3k-Lgs"/>
                             <constraint firstItem="ekm-od-Agf" firstAttribute="leading" secondItem="LL2-uU-41r" secondAttribute="trailing" constant="52.5" id="qKn-dz-JrM"/>
+                            <constraint firstItem="Wqx-Za-mPB" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="rvI-Ks-Z0g"/>
                             <constraint firstItem="gPI-vs-eXb" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="sZE-1e-CtT"/>
                             <constraint firstItem="Sva-vn-dG4" firstAttribute="top" secondItem="gPI-vs-eXb" secondAttribute="bottom" constant="12" id="t8V-fk-IQS"/>
-                            <constraint firstItem="olg-h1-O1p" firstAttribute="leading" secondItem="r1O-pE-hBo" secondAttribute="leading" constant="20" id="tjr-8c-eLe"/>
-                            <constraint firstItem="olg-h1-O1p" firstAttribute="top" secondItem="GPE-JB-nnr" secondAttribute="bottom" constant="20" id="uZt-3J-bXJ"/>
                             <constraint firstItem="r1O-pE-hBo" firstAttribute="trailing" secondItem="BhB-NW-ZvF" secondAttribute="trailing" constant="20" id="wqd-Nj-gn0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uv6-3A-mwP"/>
                     <connections>
-                        <outlet property="homeTableView" destination="olg-h1-O1p" id="x4u-ik-7BZ"/>
+                        <outlet property="homeCollectionView" destination="Wqx-Za-mPB" id="BfM-vM-So0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJy-L1-Imr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="-1"/>
+            <point key="canvasLocation" x="740" y="7"/>
         </scene>
     </scenes>
     <resources>
         <image name="Caio" width="1012" height="972"/>
         <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
