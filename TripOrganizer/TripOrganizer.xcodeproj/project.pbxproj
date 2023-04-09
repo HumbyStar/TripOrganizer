@@ -50,6 +50,10 @@
 		43780CB929D5D0FB002072BF /* InfoRestaurantVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780CB529D5D0FB002072BF /* InfoRestaurantVCCell.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		50726DE029E3107700D4098C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50726DDE29E3107700D4098C /* HomeTableViewCell.swift */; };
+		50726DE129E3107700D4098C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50726DDF29E3107700D4098C /* HomeTableViewCell.xib */; };
+		50726DE529E314B700D4098C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50726DE329E314B700D4098C /* HomeCollectionViewCell.swift */; };
+		50726DE629E314B700D4098C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50726DE429E314B700D4098C /* HomeCollectionViewCell.xib */; };
 		C41A0AF829D20697002DEEE8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */; };
 		C41A0AF929D20697002DEEE8 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C41A0AF729D20697002DEEE8 /* CollectionViewCell.xib */; };
 		C43E84E529CE2FB60032C279 /* InfoHoteisViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43E84E429CE2FB60032C279 /* InfoHoteisViewController.storyboard */; };
@@ -102,6 +106,10 @@
 		43780CB529D5D0FB002072BF /* InfoRestaurantVCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRestaurantVCCell.swift; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		50726DDE29E3107700D4098C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		50726DDF29E3107700D4098C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		50726DE329E314B700D4098C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		50726DE429E314B700D4098C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C41A0AF729D20697002DEEE8 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		C43E84E429CE2FB60032C279 /* InfoHoteisViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoHoteisViewController.storyboard; sourceTree = "<group>"; };
@@ -379,8 +387,20 @@
 		50025E0B29E236FE00FB70BC /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				50726DE229E314A100D4098C /* CollectionViewCell */,
+				50726DDE29E3107700D4098C /* HomeTableViewCell.swift */,
+				50726DDF29E3107700D4098C /* HomeTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		50726DE229E314A100D4098C /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				50726DE329E314B700D4098C /* HomeCollectionViewCell.swift */,
+				50726DE429E314B700D4098C /* HomeCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		C41A0AF529D20678002DEEE8 /* Cell */ = {
@@ -470,10 +490,12 @@
 				C43E84E529CE2FB60032C279 /* InfoHoteisViewController.storyboard in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
 				43780CAE29D5CBAE002072BF /* AttractionInfoCell.xib in Resources */,
+				50726DE129E3107700D4098C /* HomeTableViewCell.xib in Resources */,
 				43780C9F29D5C9B7002072BF /* AttractionCell.xib in Resources */,
 				43780C8C29D5C8A9002072BF /* MenuCollectionViewCell.xib in Resources */,
 				43780C9B29D5C9A1002072BF /* PlaningViewController.storyboard in Resources */,
 				43780CA429D5C9C5002072BF /* FlightTableViewCell.xib in Resources */,
+				50726DE629E314B700D4098C /* HomeCollectionViewCell.xib in Resources */,
 				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
 				C41A0AF929D20697002DEEE8 /* CollectionViewCell.xib in Resources */,
 				43780CB729D5D0FB002072BF /* InfoRestaurantVC.storyboard in Resources */,
@@ -498,12 +520,14 @@
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
 				0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */,
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
+				50726DE529E314B700D4098C /* HomeCollectionViewCell.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				43780CA529D5C9C5002072BF /* FlightTableViewCell.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
 				C43E84E729CE2FE10032C279 /* InfoHoteisViewController.swift in Sources */,
 				43780CAC29D5CBAE002072BF /* AttractionInfoController.swift in Sources */,
+				50726DE029E3107700D4098C /* HomeTableViewCell.swift in Sources */,
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
