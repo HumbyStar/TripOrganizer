@@ -10,17 +10,17 @@ import UIKit
 class HomeVC: UIViewController {
     
     @IBOutlet var homeCollectionView: UICollectionView!
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        configCollectionView()
-        self.navigationController?.isNavigationBarHidden = true
+        navigationController?.isNavigationBarHidden = true
+        configCollectionview()
     }
     
-    
-    private func configCollectionView() {
+    private func configCollectionview() {
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
+        
         if let layout = homeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
             layout.estimatedItemSize = .zero
@@ -28,6 +28,8 @@ class HomeVC: UIViewController {
         
         homeCollectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
     }
+    
+    
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -42,7 +44,10 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 280)
+        let width = homeCollectionView.bounds.width
+        let height = homeCollectionView.bounds.height
+        return CGSize(width: width, height: height)
+
     }
     
 }

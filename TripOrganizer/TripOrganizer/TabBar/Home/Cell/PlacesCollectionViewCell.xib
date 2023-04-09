@@ -11,32 +11,32 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PlacesCollectionViewCell" customModule="TripOrganizer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="286" height="287"/>
+            <rect key="frame" x="0.0" y="0.0" width="294" height="257"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="286" height="287"/>
+                <rect key="frame" x="0.0" y="0.0" width="294" height="257"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="91f-QB-lNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="286" height="287"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="i43-Qk-rTX">
+                        <rect key="frame" x="0.0" y="0.0" width="294" height="257"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="91f-QB-lNQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="19S-yb-23w"/>
-                <constraint firstAttribute="trailing" secondItem="91f-QB-lNQ" secondAttribute="trailing" id="QTY-xl-A2U"/>
-                <constraint firstAttribute="bottom" secondItem="91f-QB-lNQ" secondAttribute="bottom" id="hrW-DB-hLZ"/>
-                <constraint firstItem="91f-QB-lNQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xDc-me-sR3"/>
+                <constraint firstAttribute="trailing" secondItem="i43-Qk-rTX" secondAttribute="trailing" id="64Z-jw-Va2"/>
+                <constraint firstItem="i43-Qk-rTX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PpQ-Jx-uoe"/>
+                <constraint firstAttribute="bottom" secondItem="i43-Qk-rTX" secondAttribute="bottom" id="iCl-WY-OS4"/>
+                <constraint firstItem="i43-Qk-rTX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pLZ-W5-Lws"/>
             </constraints>
-            <size key="customSize" width="286" height="254"/>
+            <size key="customSize" width="294" height="257"/>
             <connections>
-                <outlet property="placesImage" destination="91f-QB-lNQ" id="wnT-SW-Jqb"/>
+                <outlet property="placeImageView" destination="i43-Qk-rTX" id="baG-OT-4TW"/>
             </connections>
-            <point key="canvasLocation" x="171" y="-4"/>
+            <point key="canvasLocation" x="168" y="-16"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="2" width="680" height="510"/>
+        <image name="1" width="680" height="510"/>
     </resources>
 </document>

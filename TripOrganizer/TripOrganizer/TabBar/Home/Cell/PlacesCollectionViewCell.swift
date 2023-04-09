@@ -8,18 +8,18 @@
 import UIKit
 
 class PlacesCollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet var placesImage: UIImageView!
     
     static let identifier: String = "PlacesCollectionViewCell"
     
     static public func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
+
+    @IBOutlet var placeImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        // Initialization code
     }
 
 }

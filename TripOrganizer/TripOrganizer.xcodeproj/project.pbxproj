@@ -50,10 +50,10 @@
 		43780CB929D5D0FB002072BF /* InfoRestaurantVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780CB529D5D0FB002072BF /* InfoRestaurantVCCell.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
-		50726DEA29E31F9300D4098C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50726DE829E31F9300D4098C /* HomeCollectionViewCell.swift */; };
-		50726DEB29E31F9300D4098C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50726DE929E31F9300D4098C /* HomeCollectionViewCell.xib */; };
-		50726DEE29E321A500D4098C /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50726DEC29E321A500D4098C /* PlacesCollectionViewCell.swift */; };
-		50726DEF29E321A500D4098C /* PlacesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50726DED29E321A500D4098C /* PlacesCollectionViewCell.xib */; };
+		50726DF229E32BD000D4098C /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50726DF029E32BD000D4098C /* HomeCollectionViewCell.swift */; };
+		50726DF329E32BD000D4098C /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50726DF129E32BD000D4098C /* HomeCollectionViewCell.xib */; };
+		50726DF729E32CE000D4098C /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50726DF529E32CE000D4098C /* PlacesCollectionViewCell.swift */; };
+		50726DF829E32CE000D4098C /* PlacesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50726DF629E32CE000D4098C /* PlacesCollectionViewCell.xib */; };
 		C41A0AF829D20697002DEEE8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */; };
 		C41A0AF929D20697002DEEE8 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C41A0AF729D20697002DEEE8 /* CollectionViewCell.xib */; };
 		C43E84E529CE2FB60032C279 /* InfoHoteisViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43E84E429CE2FB60032C279 /* InfoHoteisViewController.storyboard */; };
@@ -106,10 +106,10 @@
 		43780CB529D5D0FB002072BF /* InfoRestaurantVCCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoRestaurantVCCell.swift; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
-		50726DE829E31F9300D4098C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		50726DE929E31F9300D4098C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		50726DEC29E321A500D4098C /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
-		50726DED29E321A500D4098C /* PlacesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesCollectionViewCell.xib; sourceTree = "<group>"; };
+		50726DF029E32BD000D4098C /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		50726DF129E32BD000D4098C /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		50726DF529E32CE000D4098C /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
+		50726DF629E32CE000D4098C /* PlacesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesCollectionViewCell.xib; sourceTree = "<group>"; };
 		C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C41A0AF729D20697002DEEE8 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		C43E84E429CE2FB60032C279 /* InfoHoteisViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InfoHoteisViewController.storyboard; sourceTree = "<group>"; };
@@ -145,9 +145,9 @@
 		0C111C1229BACD9000A0DCF4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				50726DE729E31F8500D4098C /* Cell */,
 				0C111C1329BACD9000A0DCF4 /* HomeVC.storyboard */,
 				0C111C1429BACD9000A0DCF4 /* HomeVC.swift */,
+				50726DF429E32C6100D4098C /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -384,13 +384,13 @@
 			path = InfoScreens;
 			sourceTree = "<group>";
 		};
-		50726DE729E31F8500D4098C /* Cell */ = {
+		50726DF429E32C6100D4098C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				50726DE829E31F9300D4098C /* HomeCollectionViewCell.swift */,
-				50726DE929E31F9300D4098C /* HomeCollectionViewCell.xib */,
-				50726DEC29E321A500D4098C /* PlacesCollectionViewCell.swift */,
-				50726DED29E321A500D4098C /* PlacesCollectionViewCell.xib */,
+				50726DF029E32BD000D4098C /* HomeCollectionViewCell.swift */,
+				50726DF129E32BD000D4098C /* HomeCollectionViewCell.xib */,
+				50726DF529E32CE000D4098C /* PlacesCollectionViewCell.swift */,
+				50726DF629E32CE000D4098C /* PlacesCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -489,10 +489,10 @@
 				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
 				C41A0AF929D20697002DEEE8 /* CollectionViewCell.xib in Resources */,
 				43780CB729D5D0FB002072BF /* InfoRestaurantVC.storyboard in Resources */,
-				50726DEF29E321A500D4098C /* PlacesCollectionViewCell.xib in Resources */,
+				50726DF829E32CE000D4098C /* PlacesCollectionViewCell.xib in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
-				50726DEB29E31F9300D4098C /* HomeCollectionViewCell.xib in Resources */,
+				50726DF329E32BD000D4098C /* HomeCollectionViewCell.xib in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
 				0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */,
 				43780CB829D5D0FB002072BF /* InfoRestaurantVCCell.xib in Resources */,
@@ -515,7 +515,7 @@
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				43780CA529D5C9C5002072BF /* FlightTableViewCell.swift in Sources */,
-				50726DEE29E321A500D4098C /* PlacesCollectionViewCell.swift in Sources */,
+				50726DF729E32CE000D4098C /* PlacesCollectionViewCell.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
 				C43E84E729CE2FE10032C279 /* InfoHoteisViewController.swift in Sources */,
 				43780CAC29D5CBAE002072BF /* AttractionInfoController.swift in Sources */,
@@ -528,7 +528,7 @@
 				0C111C2629BACD9000A0DCF4 /* RestaurantVC.swift in Sources */,
 				43780C9129D5C943002072BF /* HoteisCollectionViewCell.swift in Sources */,
 				0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */,
-				50726DEA29E31F9300D4098C /* HomeCollectionViewCell.swift in Sources */,
+				50726DF229E32BD000D4098C /* HomeCollectionViewCell.swift in Sources */,
 				43780CB929D5D0FB002072BF /* InfoRestaurantVCCell.swift in Sources */,
 				43780CAD29D5CBAE002072BF /* AttractionInfoCell.swift in Sources */,
 				5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */,

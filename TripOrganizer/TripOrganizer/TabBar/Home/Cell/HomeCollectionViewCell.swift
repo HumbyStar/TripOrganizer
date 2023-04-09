@@ -9,22 +9,20 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
-    static let identifier: String = "HomeCollectionViewCell"
-    
-    @IBOutlet var placeType: UILabel!
     @IBOutlet var placesCollectionView: UICollectionView!
     
+    static let identifier: String = "HomeCollectionViewCell"
     
-    static public func nib() -> UINib {
+    static public func nib() -> UINib{
         return UINib(nibName: identifier, bundle: nil)
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        configCollectionView()
+        configCollectionview()
     }
     
-    private func configCollectionView() {
+    private func configCollectionview() {
         placesCollectionView.delegate = self
         placesCollectionView.dataSource = self
         
@@ -38,11 +36,10 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
 }
 
-
-extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,6 +48,8 @@ extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: contentView.frame.width, height: contentView.frame.height)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+
     }
+    
 }
