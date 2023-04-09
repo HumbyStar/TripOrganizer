@@ -10,8 +10,13 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var placesCollectionView: UICollectionView!
+    @IBOutlet var placeType: UILabel!
     
     static let identifier: String = "HomeCollectionViewCell"
+    
+    var restaurant: [String] = ["restaurante1", "restaurante2"]
+    
+    var hotel: [String] = []
     
     static public func nib() -> UINib{
         return UINib(nibName: identifier, bundle: nil)
@@ -32,6 +37,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
         }
         
         placesCollectionView.register(PlacesCollectionViewCell.nib(), forCellWithReuseIdentifier: PlacesCollectionViewCell.identifier)
+        
+        placesCollectionView.showsHorizontalScrollIndicator = false
+    }
+    
+    public func setupCell(placeType: String) {
+        self.placeType.text = placeType
+        self.placeType.font = UIFont.boldSystemFont(ofSize: 20)
     }
 
 }
@@ -39,7 +51,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
 extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,4 +64,7 @@ extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
 
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
 }

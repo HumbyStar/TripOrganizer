@@ -17,6 +17,10 @@ class PlacesCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var placeImageView: UIImageView!
     
+    public func setupCell(imageName: String) {
+        placeImageView.image = UIImage(named: imageName)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
