@@ -9,8 +9,12 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet var perfilButton: UIButton!
     @IBOutlet var homeCollectionView: UICollectionView!
-   
+    @IBOutlet var tripProgressView: UIProgressView!
+    
+    var restaurant: [String] = ["restaurante1", "restaurante2"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -29,6 +33,11 @@ class HomeVC: UIViewController {
         homeCollectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
         
         homeCollectionView.showsVerticalScrollIndicator = false
+    }
+    
+    
+    @IBAction func perfilButtonPressed(_ sender: UIButton) {
+        
     }
     
     

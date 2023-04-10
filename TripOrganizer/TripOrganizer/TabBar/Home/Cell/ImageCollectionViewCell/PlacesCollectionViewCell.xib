@@ -33,7 +33,7 @@
             <connections>
                 <outlet property="placeImageView" destination="i43-Qk-rTX" id="baG-OT-4TW"/>
             </connections>
-            <point key="canvasLocation" x="168" y="-16"/>
+            <point key="canvasLocation" x="174" y="-11"/>
         </collectionViewCell>
     </objects>
     <resources>

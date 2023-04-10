@@ -30,6 +30,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="Caio"/>
+                                <connections>
+                                    <action selector="perfilButtonPressed:" destination="ahI-c8-cW6" eventType="touchUpInside" id="jAX-hU-FeX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, Caio! Está pronto para organizar a sua viagem e facilitar a sua jornada?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhB-NW-ZvF">
                                 <rect key="frame" x="20" y="96" width="335" height="86"/>
@@ -179,6 +182,8 @@
                     <navigationItem key="navigationItem" id="Uv6-3A-mwP"/>
                     <connections>
                         <outlet property="homeCollectionView" destination="QND-zj-CCr" id="KKU-2H-O5S"/>
+                        <outlet property="perfilButton" destination="Lfo-pM-fqs" id="p5w-pV-FrU"/>
+                        <outlet property="tripProgressView" destination="GPE-JB-nnr" id="25C-dX-zB6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJy-L1-Imr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

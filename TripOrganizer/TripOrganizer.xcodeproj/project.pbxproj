@@ -387,12 +387,20 @@
 		50726DF429E32C6100D4098C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				50726DF029E32BD000D4098C /* HomeCollectionViewCell.swift */,
 				50726DF129E32BD000D4098C /* HomeCollectionViewCell.xib */,
+				50726DF029E32BD000D4098C /* HomeCollectionViewCell.swift */,
+				50CBD10D29E45416006AC11F /* ImageCollectionViewCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		50CBD10D29E45416006AC11F /* ImageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				50726DF529E32CE000D4098C /* PlacesCollectionViewCell.swift */,
 				50726DF629E32CE000D4098C /* PlacesCollectionViewCell.xib */,
 			);
-			path = Cell;
+			path = ImageCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		C41A0AF529D20678002DEEE8 /* Cell */ = {

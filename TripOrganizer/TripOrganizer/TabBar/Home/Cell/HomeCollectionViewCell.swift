@@ -16,8 +16,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     var restaurant: [String] = ["restaurante1", "restaurante2"]
     
-    var hotel: [String] = []
-    
     static public func nib() -> UINib{
         return UINib(nibName: identifier, bundle: nil)
     }
@@ -57,6 +55,7 @@ extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PlacesCollectionViewCell? = placesCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell
         return cell ?? UICollectionViewCell()
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
