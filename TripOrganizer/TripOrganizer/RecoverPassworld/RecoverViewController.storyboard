@@ -24,13 +24,13 @@
                                     <constraint firstAttribute="width" constant="244" id="f3o-5p-nk9"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirme o seu e-mail de cadastro para o envio de uma nova senha temporária." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBq-zs-eqX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirme o seu e-mail de cadastro para o envio de uma nova senha temporária." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBq-zs-eqX">
                                 <rect key="frame" x="32" y="343" width="311" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="Bcx-Vq-IHn"/>
                                     <constraint firstAttribute="height" constant="51" id="PAM-9s-eWt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
