@@ -35,38 +35,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7b-3H-9ic">
-                                <rect key="frame" x="10" y="421" width="355" height="45"/>
-                                <color key="backgroundColor" red="0.78431367870000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="30" y="421" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="YQQ-0h-11R"/>
-                                    <constraint firstAttribute="width" constant="355" id="j69-QU-dQz"/>
+                                    <constraint firstAttribute="height" constant="40" id="YQQ-0h-11R"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5N-7e-cWE">
-                                <rect key="frame" x="10" y="506" width="355" height="45"/>
-                                <color key="backgroundColor" red="0.44705885649999999" green="0.44705885649999999" blue="0.44705885649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="30" y="501" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.43921568989999998" green="0.60784316059999999" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="l0t-Zl-yeH"/>
-                                    <constraint firstAttribute="width" constant="355" id="u00-SO-DEp"/>
+                                    <constraint firstAttribute="height" constant="40" id="l0t-Zl-yeH"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Recuperar Senha">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obf-zg-hTq">
                                 <rect key="frame" x="25" y="38" width="27" height="25"/>
@@ -88,15 +75,23 @@
                             <constraint firstItem="FBD-BL-MAx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="55" id="48H-IN-3W3"/>
                             <constraint firstItem="d5N-7e-cWE" firstAttribute="top" secondItem="u7b-3H-9ic" secondAttribute="bottom" constant="40" id="4Vh-Lp-AbQ"/>
                             <constraint firstItem="u7b-3H-9ic" firstAttribute="top" secondItem="vBq-zs-eqX" secondAttribute="bottom" constant="27" id="54j-5x-3IL"/>
+                            <constraint firstItem="d5N-7e-cWE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="ANY-6z-gVY"/>
                             <constraint firstItem="vBq-zs-eqX" firstAttribute="top" secondItem="FBD-BL-MAx" secondAttribute="bottom" constant="15" id="AoV-pj-9P8"/>
                             <constraint firstItem="FBD-BL-MAx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CbL-Nw-wm9"/>
                             <constraint firstItem="d5N-7e-cWE" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="G4z-Qn-tRD"/>
                             <constraint firstItem="obf-zg-hTq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="18" id="Z7g-da-00n"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="d5N-7e-cWE" secondAttribute="trailing" constant="30" id="aVx-AT-tZO"/>
                             <constraint firstItem="vBq-zs-eqX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bXS-88-jOK"/>
                             <constraint firstItem="u7b-3H-9ic" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ezn-H2-EG5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="u7b-3H-9ic" secondAttribute="trailing" constant="30" id="hHR-gg-woO"/>
                             <constraint firstItem="obf-zg-hTq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="hV2-0H-MiU"/>
+                            <constraint firstItem="u7b-3H-9ic" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="psY-Bd-f4f"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTelaEsquecerSenhaTextField" destination="u7b-3H-9ic" id="83x-Ob-BMd"/>
+                        <outlet property="recuperarSenhaButton" destination="d5N-7e-cWE" id="3C6-fX-dlx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
