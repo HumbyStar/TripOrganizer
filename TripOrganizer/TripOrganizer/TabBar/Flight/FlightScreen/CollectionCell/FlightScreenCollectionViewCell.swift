@@ -22,6 +22,8 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
          cityImageView.contentMode = .scaleAspectFill
+        cityImageView.layer.cornerRadius = 12
+        cityImageView.clipsToBounds = true
     }
     
     func setupCell(cityName: String, cityImage: String, cityDescription: String) {
