@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,14 +17,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lazer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umf-wM-63u">
-                        <rect key="frame" x="0.0" y="10" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="20" y="9.9999999999999982" width="40" height="19.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vhg-aY-W14">
-                        <rect key="frame" x="0.0" y="41" width="292" height="310"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <rect key="frame" x="0.0" y="39.333333333333343" width="292" height="311.66666666666663"/>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="suh-Mi-mz3">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -41,7 +39,7 @@
                 <constraint firstItem="vhg-aY-W14" firstAttribute="top" secondItem="umf-wM-63u" secondAttribute="bottom" constant="10" id="NXu-k1-3e5"/>
                 <constraint firstItem="vhg-aY-W14" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TeH-lP-TpG"/>
                 <constraint firstAttribute="bottom" secondItem="vhg-aY-W14" secondAttribute="bottom" id="Y3t-D8-X9U"/>
-                <constraint firstItem="umf-wM-63u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="irn-h6-p1v"/>
+                <constraint firstItem="umf-wM-63u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="irn-h6-p1v"/>
                 <constraint firstAttribute="trailing" secondItem="vhg-aY-W14" secondAttribute="trailing" id="kCr-LD-w7M"/>
                 <constraint firstItem="umf-wM-63u" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="nM1-L0-UXy"/>
             </constraints>
@@ -53,9 +51,4 @@
             <point key="canvasLocation" x="47" y="2"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

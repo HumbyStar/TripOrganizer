@@ -32,6 +32,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         if let layout = placesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = .zero
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         }
         
         placesCollectionView.register(PlacesCollectionViewCell.nib(), forCellWithReuseIdentifier: PlacesCollectionViewCell.identifier)
@@ -41,7 +42,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     public func setupCell(placeType: String) {
         self.placeType.text = placeType
-        self.placeType.font = UIFont.boldSystemFont(ofSize: 20)
+        self.placeType.font = UIFont.systemFont(ofSize: 18)
     }
 
 }
@@ -59,7 +60,7 @@ extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width * 0.8, height: collectionView.frame.height)
 
     }
     
