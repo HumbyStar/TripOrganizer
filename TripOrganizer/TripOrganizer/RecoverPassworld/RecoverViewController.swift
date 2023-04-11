@@ -11,4 +11,9 @@ class RecoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    @IBAction func voltarButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }

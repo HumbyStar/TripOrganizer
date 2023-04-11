@@ -26,14 +26,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func esqueciSenhatappedButton(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "RecoverViewController", bundle: nil).instantiateViewController(withIdentifier: "RecoverViewController") as? RecoverViewController
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func registerTappedButton(_ sender: UIButton) {
-//        let vc = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as? RegisterController
-//        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+        let vc = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as? RegisterController
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func acessarButton(_ sender: Any) {
+        let vc = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     

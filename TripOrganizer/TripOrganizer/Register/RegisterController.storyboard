@@ -66,13 +66,27 @@
                                     <action selector="alreadyHaveAccountPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UTH-P3-A2H"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triporganizer-logo" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-eV-Tnj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newLogo" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-eV-Tnj">
                                 <rect key="frame" x="87.5" y="87" width="200" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="eHj-nX-oQU"/>
                                     <constraint firstAttribute="height" constant="225" id="yGM-T7-v0A"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvo-zH-IW6">
+                                <rect key="frame" x="25" y="38" width="27" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="YVO-RF-KVc"/>
+                                    <constraint firstAttribute="width" constant="27" id="knz-BG-4jD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="0.43921568989999998" green="0.61176472900000001" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="voltarButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Sjr-0z-UEw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.93333339689999995" green="0.93333339689999995" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -84,6 +98,8 @@
                             <constraint firstItem="2cG-eV-Tnj" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="B4b-t8-rvh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4dw-Yb-w0i" secondAttribute="trailing" constant="25" id="C2A-WY-Vu0"/>
                             <constraint firstItem="AFR-GP-fkB" firstAttribute="top" secondItem="2cG-eV-Tnj" secondAttribute="bottom" constant="27" id="D7M-cJ-usz"/>
+                            <constraint firstItem="gvo-zH-IW6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="DVI-mc-DwS"/>
+                            <constraint firstItem="gvo-zH-IW6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="18" id="EWW-3j-apK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lCn-4b-BZh" secondAttribute="trailing" constant="25" id="Gpl-YS-RNE"/>
                             <constraint firstItem="AFR-GP-fkB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="Jw0-ib-S9b"/>
                             <constraint firstItem="4dw-Yb-w0i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="LnU-QI-htP"/>
@@ -111,6 +127,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="triporganizer-logo" width="936" height="1052"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
+        <image name="newLogo" width="455" height="549"/>
     </resources>
 </document>

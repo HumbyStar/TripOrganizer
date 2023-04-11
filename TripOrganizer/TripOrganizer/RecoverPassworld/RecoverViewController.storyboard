@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,20 +12,20 @@
         <!--Recover View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="RecoverViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecoverViewController" id="Y6W-OH-hqX" customClass="RecoverViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainLogo2" translatesAutoresizingMaskIntoConstraints="NO" id="FBD-BL-MAx">
-                                <rect key="frame" x="74.666666666666686" y="114" width="244" height="253"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newLogo" translatesAutoresizingMaskIntoConstraints="NO" id="FBD-BL-MAx">
+                                <rect key="frame" x="65.5" y="75" width="244" height="253"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="253" id="XWS-2X-Ylw"/>
                                     <constraint firstAttribute="width" constant="244" id="f3o-5p-nk9"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirme o seu e-mail de cadastro para o envio de uma nova senha temporária." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBq-zs-eqX">
-                                <rect key="frame" x="41" y="382" width="311" height="51"/>
+                                <rect key="frame" x="32" y="343" width="311" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="311" id="Bcx-Vq-IHn"/>
                                     <constraint firstAttribute="height" constant="51" id="PAM-9s-eWt"/>
@@ -34,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u7b-3H-9ic">
-                                <rect key="frame" x="19" y="460" width="355" height="45"/>
+                                <rect key="frame" x="10" y="421" width="355" height="45"/>
                                 <color key="backgroundColor" red="0.78431367870000002" green="0.78431367870000002" blue="0.78431367870000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="YQQ-0h-11R"/>
@@ -50,7 +51,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5N-7e-cWE">
-                                <rect key="frame" x="19" y="545" width="355" height="45"/>
+                                <rect key="frame" x="10" y="506" width="355" height="45"/>
                                 <color key="backgroundColor" red="0.44705885649999999" green="0.44705885649999999" blue="0.44705885649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="l0t-Zl-yeH"/>
@@ -67,6 +68,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obf-zg-hTq">
+                                <rect key="frame" x="25" y="38" width="27" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="JTo-vl-bnL"/>
+                                    <constraint firstAttribute="height" constant="25" id="NO8-Tg-owr"/>
+                                </constraints>
+                                <color key="tintColor" red="0.43921568989999998" green="0.61176472900000001" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="voltarButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iQZ-Jw-a4D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.93333339689999995" green="0.93333339689999995" blue="0.93333339689999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -77,18 +91,21 @@
                             <constraint firstItem="vBq-zs-eqX" firstAttribute="top" secondItem="FBD-BL-MAx" secondAttribute="bottom" constant="15" id="AoV-pj-9P8"/>
                             <constraint firstItem="FBD-BL-MAx" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="CbL-Nw-wm9"/>
                             <constraint firstItem="d5N-7e-cWE" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="G4z-Qn-tRD"/>
+                            <constraint firstItem="obf-zg-hTq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="18" id="Z7g-da-00n"/>
                             <constraint firstItem="vBq-zs-eqX" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="bXS-88-jOK"/>
                             <constraint firstItem="u7b-3H-9ic" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ezn-H2-EG5"/>
+                            <constraint firstItem="obf-zg-hTq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="hV2-0H-MiU"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="45.600000000000001" y="-2.2488755622188905"/>
         </scene>
     </scenes>
     <resources>
-        <image name="mainLogo2" width="936" height="1052"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
+        <image name="newLogo" width="455" height="549"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

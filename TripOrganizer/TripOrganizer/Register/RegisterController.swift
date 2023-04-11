@@ -55,13 +55,15 @@ class RegisterController: UIViewController {
         
     }
     
+    
+    @IBAction func voltarButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
-        
     }
 }
