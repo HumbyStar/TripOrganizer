@@ -8,7 +8,11 @@
 import UIKit
 
 class FlightScreenCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var cityImageView: UIImageView!
+    @IBOutlet weak var cityDescriptionLabel: UILabel!
+    
     static let identifier: String = "FlightScreenCollectionViewCell"
     
     static func nib() -> UINib {
@@ -20,9 +24,11 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
         // logoImageVIew.contentMode = .scaleAspectFit
     }
     
-//    func setupCell(image: String, name: String) {
-//        logoImageVIew.image = UIImage(named: image)
-//        nameCompanyLabel.text = name
-//    }
+    func setupCell(cityName: String, cityImage: String, cityDescription: String) {
+       
+        cityNameLabel.text = cityName
+        cityDescriptionLabel.text = cityDescription
+        cityImageView.image = UIImage(named: cityName)
+    }
 
 }
