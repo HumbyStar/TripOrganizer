@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     private func configButton() {
         entrarButton.clipsToBounds = true
         entrarButton.layer.cornerRadius = 10
+//        entrarButton.isEnabled = false
         
         entrarGoogleButton.clipsToBounds = true
         entrarGoogleButton.layer.cornerRadius = 10
@@ -57,11 +58,16 @@ class ViewController: UIViewController {
         emailTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
         emailTextField.clipsToBounds = true
         emailTextField.layer.cornerRadius = 10
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.autocorrectionType = .no
         
         passWordTextField.layer.borderWidth = 2
         passWordTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
         passWordTextField.clipsToBounds = true
         passWordTextField.layer.cornerRadius = 10
+        passWordTextField.autocorrectionType = .no
+        passWordTextField.isSecureTextEntry = true
+//        passWordTextField.textContentType = .newPassword
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
