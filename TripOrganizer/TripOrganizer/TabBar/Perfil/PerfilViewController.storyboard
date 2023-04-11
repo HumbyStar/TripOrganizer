@@ -123,14 +123,14 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVX-Mv-ryb">
-                                <rect key="frame" x="75" y="30" width="247" height="185"/>
+                                <rect key="frame" x="75" y="40" width="247" height="175"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Caio" translatesAutoresizingMaskIntoConstraints="NO" id="hLk-dj-xHe">
-                                        <rect key="frame" x="0.0" y="0.0" width="247" height="185"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="247" height="175"/>
                                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wrb-QK-tIv">
-                                        <rect key="frame" x="182" y="135.5" width="50" height="49"/>
+                                        <rect key="frame" x="182" y="125.5" width="50" height="49"/>
                                         <color key="tintColor" red="0.43921568989999998" green="0.60784316059999999" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1mV-ts-loR"/>
@@ -165,7 +165,7 @@
                             <constraint firstItem="5Y7-dG-mGj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="SU2-es-71y"/>
                             <constraint firstItem="weO-sO-xgk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Tz8-Sy-zSe"/>
                             <constraint firstItem="AKS-Zw-ewm" firstAttribute="top" secondItem="m47-J2-Erx" secondAttribute="bottom" constant="16" id="Vm6-5G-eyf"/>
-                            <constraint firstItem="jVX-Mv-ryb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="YnR-1d-wgO"/>
+                            <constraint firstItem="jVX-Mv-ryb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="YnR-1d-wgO"/>
                             <constraint firstItem="iMD-dX-9Qx" firstAttribute="top" secondItem="AKS-Zw-ewm" secondAttribute="bottom" constant="10" id="Z3C-ve-ajx"/>
                             <constraint firstItem="RRn-dY-9MQ" firstAttribute="top" secondItem="h0W-ig-iWc" secondAttribute="bottom" constant="6" id="cLz-Xn-kte"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iMD-dX-9Qx" secondAttribute="bottom" constant="50.5" id="eai-aX-pRB"/>
