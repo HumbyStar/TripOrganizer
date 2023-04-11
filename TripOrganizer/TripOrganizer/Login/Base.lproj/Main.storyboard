@@ -12,6 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="42C-Y6-ctC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P3B-f7-Gfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController modalPresentationStyle="fullScreen" id="Bvj-Y2-z4M" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WYp-pC-fPN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -21,24 +22,13 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sNu-fI-FjF"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P3B-f7-Gfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1641" y="-2"/>
-        </scene>
-        <!--RecoverViewController-->
-        <scene sceneID="wB4-F3-mjJ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RecoverViewController" id="8TK-x1-dli" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="5xc-KM-LkU"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BiH-K1-l8s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-503" y="457"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +46,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="acessarButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5bi-KF-95d"/>
-                                    <segue destination="LMO-wo-D91" kind="presentation" id="YoZ-QJ-9Gk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1d-bh-LYk">
@@ -98,7 +87,8 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ah-EP-5Vn">
                                 <rect key="frame" x="30" y="344" width="315" height="40"/>
-                                <color key="backgroundColor" red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="yJm-Mb-yXq"/>
                                 </constraints>
@@ -107,7 +97,8 @@
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aaT-XT-xTR">
                                 <rect key="frame" x="30" y="294" width="315" height="40"/>
-                                <color key="backgroundColor" red="0.65490196078431373" green="0.65490196078431373" blue="0.65490196078431373" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QWk-Me-ldC"/>
                                 </constraints>
@@ -125,6 +116,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Esqueci minha senha">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="esqueciSenhatappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k8c-m6-fT4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbv-d6-7XD">
                                 <rect key="frame" x="195" y="390" width="150" height="11"/>
@@ -136,6 +130,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Não tenho uma conta">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerTappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0FP-HY-ew9"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ccr-yE-ZGO">
                                 <rect key="frame" x="78" y="114" width="218" height="150"/>
@@ -181,24 +178,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-503.19999999999999" y="-2.2488755622188905"/>
-        </scene>
-        <!--TabBarController-->
-        <scene sceneID="yBB-Fc-M1L">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TabBarController" id="LMO-wo-D91" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NJj-4v-Twc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="80" y="-98"/>
-        </scene>
-        <!--RegisterController-->
-        <scene sceneID="26a-ro-ouX">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RegisterController" id="fd0-Wi-Jgj" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="KOv-1K-LVg"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Im-NJ-n1e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75" y="85"/>
         </scene>
     </scenes>
     <resources>

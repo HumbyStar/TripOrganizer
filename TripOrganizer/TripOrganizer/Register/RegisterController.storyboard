@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,13 +11,13 @@
         <!--Register Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="RegisterController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterController" id="Y6W-OH-hqX" customClass="RegisterController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFR-GP-fkB">
-                                <rect key="frame" x="25" y="319" width="325" height="43"/>
+                                <rect key="frame" x="25" y="339" width="325" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="sKA-4H-kW3"/>
                                 </constraints>
@@ -24,7 +25,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dw-Yb-w0i">
-                                <rect key="frame" x="25" y="382" width="325" height="43"/>
+                                <rect key="frame" x="25" y="402" width="325" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="RFb-hB-Ls1"/>
                                 </constraints>
@@ -32,7 +33,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCh-RB-GFq">
-                                <rect key="frame" x="25" y="445" width="325" height="43"/>
+                                <rect key="frame" x="25" y="465" width="325" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="sYf-t2-hCv"/>
                                 </constraints>
@@ -40,7 +41,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCn-4b-BZh">
-                                <rect key="frame" x="25" y="528" width="325" height="43"/>
+                                <rect key="frame" x="25" y="548" width="325" height="43"/>
                                 <color key="backgroundColor" red="0.4470587969" green="0.4470587969" blue="0.4470587969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="9DQ-kW-EXt"/>
@@ -55,7 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGe-RH-2Qe">
-                                <rect key="frame" x="25" y="601" width="325" height="29.5"/>
+                                <rect key="frame" x="25" y="621" width="325" height="29.5"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Ja possui uma conta? Entre aqui">
@@ -66,7 +67,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triporganizer-logo" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-eV-Tnj">
-                                <rect key="frame" x="87.5" y="67" width="200" height="225"/>
+                                <rect key="frame" x="87.5" y="87" width="200" height="225"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="eHj-nX-oQU"/>
                                     <constraint firstAttribute="height" constant="225" id="yGM-T7-v0A"/>
