@@ -28,7 +28,7 @@ class RegisterController: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.backgroundColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1.0)
         registerButton.setTitleColor(.white, for: .normal)
-        
+        registerButton.isEnabled = false
         alreadyHaveAccount.setTitleColor(.black,  for: .normal)
     }
     
@@ -50,6 +50,7 @@ class RegisterController: UIViewController {
         nameTextField.layer.borderWidth = 2
         nameTextField.layer.cornerRadius = 10
         nameTextField.keyboardType = .default
+        nameTextField.autocorrectionType = .no
         
         emailTextField.autocorrectionType = .no
         emailTextField.placeholder = "  E-mail"
@@ -66,7 +67,7 @@ class RegisterController: UIViewController {
         passwordTextField.layer.borderWidth = 2
         passwordTextField.layer.cornerRadius = 10
         passwordTextField.keyboardType = .default
-        passwordTextField.isSecureTextEntry = true
+        //passwordTextField.isSecureTextEntry = true
         
         confirmPasswordTextField.autocorrectionType = .no
         confirmPasswordTextField.placeholder = "  Comfirmar Senha"
@@ -75,7 +76,7 @@ class RegisterController: UIViewController {
         confirmPasswordTextField.layer.borderWidth = 2
         confirmPasswordTextField.layer.cornerRadius = 10
         confirmPasswordTextField.keyboardType = .default
-        confirmPasswordTextField.isSecureTextEntry = true
+        //confirmPasswordTextField.isSecureTextEntry = true
         
     }
     
@@ -100,6 +101,12 @@ extension RegisterController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 2
+        
+        if textField.hasText == true && confirmPasswordTextField.text == passwordTextField.text {
+            registerButton.isEnabled = true
+        }else{
+            registerButton.isEnabled = false
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
