@@ -88,8 +88,10 @@ class FlightVC: UIViewController {
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = .zero
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
             
         }
+
     }
     
 }
