@@ -39,8 +39,6 @@
 		43780C9B29D5C9A1002072BF /* PlaningViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43780C9829D5C9A1002072BF /* PlaningViewController.storyboard */; };
 		43780C9F29D5C9B7002072BF /* AttractionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43780C9D29D5C9B7002072BF /* AttractionCell.xib */; };
 		43780CA029D5C9B7002072BF /* AttractionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780C9E29D5C9B7002072BF /* AttractionCell.swift */; };
-		43780CA429D5C9C5002072BF /* FlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43780CA229D5C9C5002072BF /* FlightTableViewCell.xib */; };
-		43780CA529D5C9C5002072BF /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780CA329D5C9C5002072BF /* FlightTableViewCell.swift */; };
 		43780CAC29D5CBAE002072BF /* AttractionInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780CA729D5CBAE002072BF /* AttractionInfoController.swift */; };
 		43780CAD29D5CBAE002072BF /* AttractionInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780CA929D5CBAE002072BF /* AttractionInfoCell.swift */; };
 		43780CAE29D5CBAE002072BF /* AttractionInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43780CAA29D5CBAE002072BF /* AttractionInfoCell.xib */; };
@@ -92,8 +90,6 @@
 		43780C9829D5C9A1002072BF /* PlaningViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlaningViewController.storyboard; sourceTree = "<group>"; };
 		43780C9D29D5C9B7002072BF /* AttractionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCell.xib; sourceTree = "<group>"; };
 		43780C9E29D5C9B7002072BF /* AttractionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionCell.swift; sourceTree = "<group>"; };
-		43780CA229D5C9C5002072BF /* FlightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
-		43780CA329D5C9C5002072BF /* FlightTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		43780CA729D5CBAE002072BF /* AttractionInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionInfoController.swift; sourceTree = "<group>"; };
 		43780CA929D5CBAE002072BF /* AttractionInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionInfoCell.swift; sourceTree = "<group>"; };
 		43780CAA29D5CBAE002072BF /* AttractionInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionInfoCell.xib; sourceTree = "<group>"; };
@@ -322,8 +318,6 @@
 		43780CA129D5C9C5002072BF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				43780CA229D5C9C5002072BF /* FlightTableViewCell.xib */,
-				43780CA329D5C9C5002072BF /* FlightTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -468,7 +462,6 @@
 				43780C9F29D5C9B7002072BF /* AttractionCell.xib in Resources */,
 				43780C8C29D5C8A9002072BF /* MenuCollectionViewCell.xib in Resources */,
 				43780C9B29D5C9A1002072BF /* PlaningViewController.storyboard in Resources */,
-				43780CA429D5C9C5002072BF /* FlightTableViewCell.xib in Resources */,
 				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
 				C41A0AF929D20697002DEEE8 /* CollectionViewCell.xib in Resources */,
 				43780CB729D5D0FB002072BF /* InfoRestaurantVC.storyboard in Resources */,
@@ -495,7 +488,6 @@
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
-				43780CA529D5C9C5002072BF /* FlightTableViewCell.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
 				C43E84E729CE2FE10032C279 /* InfoHoteisViewController.swift in Sources */,
 				43780CAC29D5CBAE002072BF /* AttractionInfoController.swift in Sources */,

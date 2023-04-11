@@ -36,7 +36,7 @@ class FlightVC: UIViewController {
         calendarOutGoingTextField.borderStyle = .none
         passengersTextField.borderStyle = .none
         
-        chooseADestinationLabel.text = "Vamos escolher um lugar de destino?"
+        chooseADestinationLabel.text = "Comece uma nova viagem!"
         
         flightOriginTextField.placeholder = "Escolha a origem"
         flightDestinationTextField.placeholder = "Escolha o destino"
@@ -50,8 +50,6 @@ class FlightVC: UIViewController {
         let atributos: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
         let textoComFonte = NSAttributedString(string: "Buscar passagens", attributes: atributos)
         ticketSearchButton.setAttributedTitle(textoComFonte, for: .normal)
-        
-        airTicketsLabel.text = "Passagens de avião"
         
         flightOriginView.layer.cornerRadius = 5
         flightOriginView.clipsToBounds = true
