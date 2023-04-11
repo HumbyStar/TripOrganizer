@@ -14,44 +14,68 @@ class RegisterController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var alreadyHaveAccount: UIButton!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configTextField()
+        configButton()
+        configProtocols()
     }
     
     private func configButton() {
         registerButton.clipsToBounds = true
-        registerButton.layer.cornerRadius = 20
-        registerButton.backgroundColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
+        registerButton.layer.cornerRadius = 10
+        registerButton.backgroundColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1.0)
         registerButton.setTitleColor(.white, for: .normal)
         
         alreadyHaveAccount.setTitleColor(.black,  for: .normal)
     }
     
-    func configTextField() {
+    private func configProtocols(){
+       
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+    }
+    
+    
+    private func configTextField() {
         
         nameTextField.autocorrectionType = .no
         nameTextField.placeholder = "  Nome Completo"
         nameTextField.clipsToBounds = true
-        nameTextField.layer.cornerRadius = 20
-        nameTextField.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
+        nameTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        nameTextField.layer.borderWidth = 2
+        nameTextField.layer.cornerRadius = 10
         nameTextField.keyboardType = .default
         
         emailTextField.autocorrectionType = .no
         emailTextField.placeholder = "  E-mail"
         emailTextField.clipsToBounds = true
-        emailTextField.layer.cornerRadius = 20
-        emailTextField.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
+        emailTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        emailTextField.layer.borderWidth = 2
+        emailTextField.layer.cornerRadius = 10
         emailTextField.keyboardType = .emailAddress
         
         passwordTextField.autocorrectionType = .no
         passwordTextField.placeholder = "  Senha"
         passwordTextField.clipsToBounds = true
-        passwordTextField.layer.cornerRadius = 20
-        passwordTextField.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
+        passwordTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        passwordTextField.layer.borderWidth = 2
+        passwordTextField.layer.cornerRadius = 10
         passwordTextField.keyboardType = .default
         passwordTextField.isSecureTextEntry = true
+        
+        confirmPasswordTextField.autocorrectionType = .no
+        confirmPasswordTextField.placeholder = "  Comfirmar Senha"
+        confirmPasswordTextField.clipsToBounds = true
+        confirmPasswordTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        confirmPasswordTextField.layer.borderWidth = 2
+        confirmPasswordTextField.layer.cornerRadius = 10
+        confirmPasswordTextField.keyboardType = .default
+        confirmPasswordTextField.isSecureTextEntry = true
         
     }
     
@@ -66,4 +90,20 @@ class RegisterController: UIViewController {
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension RegisterController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 3
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 2
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
 }

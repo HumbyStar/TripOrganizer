@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFR-GP-fkB">
-                                <rect key="frame" x="30" y="278" width="315" height="40"/>
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="30" y="281" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sKA-4H-kW3"/>
                                 </constraints>
@@ -26,8 +26,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dw-Yb-w0i">
-                                <rect key="frame" x="30" y="338" width="315" height="40"/>
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="30" y="341" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RFb-hB-Ls1"/>
                                 </constraints>
@@ -35,8 +35,8 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCh-RB-GFq">
-                                <rect key="frame" x="30" y="398" width="315" height="40"/>
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="30" y="401" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sYf-t2-hCv"/>
                                 </constraints>
@@ -44,10 +44,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCn-4b-BZh">
-                                <rect key="frame" x="30" y="548" width="315" height="43"/>
+                                <rect key="frame" x="30" y="551" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.4470587969" green="0.4470587969" blue="0.4470587969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="9DQ-kW-EXt"/>
+                                    <constraint firstAttribute="height" constant="40" id="9DQ-kW-EXt"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -64,7 +64,7 @@
                                     <constraint firstAttribute="height" constant="29.5" id="3MO-o0-kMr"/>
                                     <constraint firstAttribute="width" constant="325" id="AhY-57-vh6"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Ja possui uma conta? Entre aqui">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newLogo" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-eV-Tnj">
-                                <rect key="frame" x="100" y="20" width="175" height="231"/>
+                                <rect key="frame" x="100" y="20" width="175" height="234"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvo-zH-IW6">
                                 <rect key="frame" x="25" y="38" width="27" height="25"/>
@@ -91,8 +91,8 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-c1-GNU">
-                                <rect key="frame" x="30" y="458" width="315" height="40"/>
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="30" y="461" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.93333333730000001" green="0.93333333730000001" blue="0.93333333730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xk2-L0-1MP"/>
                                 </constraints>
@@ -132,6 +132,7 @@
                     <navigationItem key="navigationItem" id="iGO-38-nff"/>
                     <connections>
                         <outlet property="alreadyHaveAccount" destination="AGe-RH-2Qe" id="yiU-yZ-nH9"/>
+                        <outlet property="confirmPasswordTextField" destination="Xag-c1-GNU" id="5gO-Hi-3fa"/>
                         <outlet property="emailTextField" destination="4dw-Yb-w0i" id="yK6-4Q-ntj"/>
                         <outlet property="nameTextField" destination="AFR-GP-fkB" id="3yt-lo-PbB"/>
                         <outlet property="passwordTextField" destination="dCh-RB-GFq" id="2Fu-1B-3XV"/>
