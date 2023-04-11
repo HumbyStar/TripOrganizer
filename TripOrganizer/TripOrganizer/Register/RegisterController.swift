@@ -17,12 +17,19 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        configElements()
+        configTextField()
     }
     
+    private func configButton() {
+        registerButton.clipsToBounds = true
+        registerButton.layer.cornerRadius = 20
+        registerButton.backgroundColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
+        registerButton.setTitleColor(.white, for: .normal)
+        
+        alreadyHaveAccount.setTitleColor(.black,  for: .normal)
+    }
     
-    func configElements() {
+    func configTextField() {
         
         nameTextField.autocorrectionType = .no
         nameTextField.placeholder = "  Nome Completo"
@@ -45,13 +52,6 @@ class RegisterController: UIViewController {
         passwordTextField.backgroundColor = UIColor(red: 208/255, green: 208/255, blue: 208/255, alpha: 1.0)
         passwordTextField.keyboardType = .default
         passwordTextField.isSecureTextEntry = true
-        
-        registerButton.clipsToBounds = true
-        registerButton.layer.cornerRadius = 20
-        registerButton.backgroundColor = UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0)
-        registerButton.setTitleColor(.white, for: .normal)
-        
-        alreadyHaveAccount.setTitleColor(.black,  for: .normal)
         
     }
     
