@@ -9,6 +9,10 @@ import UIKit
 
 class FlightVC: UIViewController {
     
+    var cityName: [String] = ["Florianópolis", "Rio de Janeiro", "Fernando de Noronha", "Belo Horizonte", "Porto Alegre"]
+    var cityDescription: [String] = ["Conhecida por suas praias paradisíacas, Floripa também é famosa por sua culinária e por apresentar uma cultura vibrante.", "Famosa por suas praias, Cristo Redentor e pelo Pão de Açúcar. Também conhecida pelas grandes favelas e o empolgante Carnaval.", "Arquipélago reconhecido pelas suas praias pouco urbanizadas e por atividades como mergulho e snorkeling.", "Rodeada de montanhas, a cidade é conhecida pelo enorme Estádio Mineirão, a lagoa da Pampulha e o Conjunto Arquitetónico.", "Capital do estado de Rio Grande do Sul, no sul do Brasil. Na praça principal, a Praça Marechal Deodoro, encontra-se a Catedral."]
+    var cityImage: [String] = ["floripa", "rioDeJaneiro", "noronha", "bh", "pa"]
+    
     @IBOutlet weak var chooseADestinationLabel: UILabel!
     @IBOutlet weak var flightOriginView: UIView!
     @IBOutlet weak var flightOriginTextField: UITextField!
@@ -94,17 +98,17 @@ class FlightVC: UIViewController {
 extension FlightVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return cityImage.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlightScreenCollectionViewCell.identifier, for: indexPath) as? FlightScreenCollectionViewCell
-//        cell?.setupCell(image: images[indexPath.row], name: name[indexPath.row])
+        cell?.setupCell(cityName: cityName[indexPath.row], cityImage: cityImage[indexPath.row], cityDescription: cityDescription[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
     }
     
     

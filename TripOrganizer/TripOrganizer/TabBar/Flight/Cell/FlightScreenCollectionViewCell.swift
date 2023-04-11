@@ -21,14 +21,14 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // logoImageVIew.contentMode = .scaleAspectFit
+         cityImageView.contentMode = .scaleAspectFill
     }
     
     func setupCell(cityName: String, cityImage: String, cityDescription: String) {
        
         cityNameLabel.text = cityName
         cityDescriptionLabel.text = cityDescription
-        cityImageView.image = UIImage(named: cityName)
+        cityImageView.image = UIImage(named: cityImage)
     }
 
 }
