@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Procure um hotel de estadia" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
-                                <rect key="frame" x="16" y="82.666666666666671" width="358" height="56.000000000000014"/>
+                                <rect key="frame" x="16" y="57" width="358" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="uW7-u5-aFR"/>
                                 </constraints>
@@ -27,12 +27,6 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="wpz-4k-htJ"/>
                                 </connections>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caio estamos quase lá, digite onde deseja conhecer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buI-vs-cyT">
-                                <rect key="frame" x="66.333333333333343" y="62" width="257.33333333333326" height="13"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
-                                <color key="textColor" red="0.63137254901960782" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-f6-HQp">
                                 <rect key="frame" x="16" y="473.33333333333326" width="358" height="329.66666666666674"/>
                                 <subviews>
@@ -125,15 +119,14 @@
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xls-1V-ZE4">
-                                <rect key="frame" x="16" y="148.66666666666666" width="358" height="309.66666666666674"/>
+                                <rect key="frame" x="16" y="122.99999999999997" width="358" height="335.33333333333326"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.9529411793" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="buI-vs-cyT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4Hu-YP-iSw"/>
-                            <constraint firstItem="DY3-Ls-0Q8" firstAttribute="top" secondItem="buI-vs-cyT" secondAttribute="bottom" constant="7.5" id="MuQ-nq-hRR"/>
+                            <constraint firstItem="DY3-Ls-0Q8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Cfy-Ck-4Zt"/>
                             <constraint firstItem="xls-1V-ZE4" firstAttribute="top" secondItem="DY3-Ls-0Q8" secondAttribute="bottom" constant="10" id="Mw4-5e-8vb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xls-1V-ZE4" secondAttribute="trailing" constant="16" id="QhS-7F-P2v"/>
                             <constraint firstAttribute="trailing" secondItem="DY3-Ls-0Q8" secondAttribute="trailing" constant="16" id="aiw-UD-lJG"/>
@@ -142,12 +135,13 @@
                             <constraint firstItem="sHU-f6-HQp" firstAttribute="top" secondItem="xls-1V-ZE4" secondAttribute="bottom" constant="15" id="iso-OH-yvl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sHU-f6-HQp" secondAttribute="bottom" constant="7" id="itg-Qo-K6j"/>
                             <constraint firstItem="xls-1V-ZE4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ror-Tf-0Cx"/>
-                            <constraint firstItem="buI-vs-cyT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="vZT-d0-6mL"/>
                             <constraint firstItem="DY3-Ls-0Q8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="zxe-K0-OtS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="gjB-fu-2JS" id="ch3-a2-dSd"/>
+                        <outlet property="cvView" destination="sHU-f6-HQp" id="8ER-NG-Drp"/>
+                        <outlet property="hotelMapView" destination="xls-1V-ZE4" id="7hK-81-tQB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

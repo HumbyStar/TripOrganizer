@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      extrasFeatures()
+     // extrasFeatures()
     }
     
     private func extrasFeatures(){

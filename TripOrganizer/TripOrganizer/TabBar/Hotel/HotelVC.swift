@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class HotelVC: UIViewController {
     
@@ -15,6 +16,8 @@ class HotelVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var adicionarButton: UIButton!
+    @IBOutlet weak var hotelMapView: MKMapView!
+    @IBOutlet weak var cvView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -23,7 +26,19 @@ class HotelVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
+        configHotelMapView()
+        configView()
         
+    }
+    
+    private func configHotelMapView() {
+        hotelMapView.layer.cornerRadius = 12
+        hotelMapView.clipsToBounds = true
+    }
+    
+    private func configView() {
+        cvView.layer.cornerRadius = 12
+        cvView.clipsToBounds = true
     }
     
     private func configCollectionView() {
@@ -35,6 +50,8 @@ class HotelVC: UIViewController {
         }
         collectionView.register(HoteisCollectionViewCell.nib(), forCellWithReuseIdentifier: HoteisCollectionViewCell.identifier)
     }
+    
+    
     
     func configButton() {
         adicionarButton.layer.cornerRadius = 15
