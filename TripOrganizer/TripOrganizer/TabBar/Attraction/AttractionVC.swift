@@ -36,7 +36,7 @@ class AttractionVC: UIViewController {
         configCollectionView()
         configMapConstraints()
 //        configSearchBarStyle()
-//        configMapViewBorder()
+        configMapViewBorder()
         configDetailViewBorder()
 //        configMapViewShadow()
 //        configDetailViewShadow()
@@ -90,12 +90,12 @@ class AttractionVC: UIViewController {
 //        detailView.layer.masksToBounds = false
     //}
 //
-//    func configMapViewBorder() {
+   func configMapViewBorder() {
 //        mapView.layer.borderWidth = 3.0
 //        mapView.layer.borderColor = UIColor.white.cgColor
 //        mapView.clipsToBounds = true
-//        mapView.layer.cornerRadius = 15
-//    }
+       mapView.layer.cornerRadius = 12
+    }
 //
 //
 //    func configMapViewShadow() {

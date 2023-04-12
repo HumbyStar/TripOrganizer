@@ -33,9 +33,9 @@ class PerfilViewController: UIViewController {
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
-      //  let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController")
+        //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController")
         //navigationController?.pushViewController(ViewController(), animated: true)
-   
+        navigationController?.popToRootViewController(animated: true)
         
     }
     
