@@ -124,6 +124,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="power" catalog="system" title="  Sair"/>
                                 <connections>
                                     <action selector="logoutButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="kuD-K0-fWU"/>
+                                    <segue destination="UB7-h3-ebA" kind="show" id="Nnx-ZN-Hsh"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVX-Mv-ryb">
@@ -204,6 +205,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="68" y="-47.226386806596707"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="PGz-Zi-inc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="UB7-h3-ebA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="V9C-5Y-KMe"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ec-0I-CvW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="-48"/>
         </scene>
     </scenes>
     <resources>
