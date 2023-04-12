@@ -139,6 +139,7 @@
                         <outlet property="attractionNameLabel" destination="eVf-Ka-K8c" id="oQN-fF-qxJ"/>
                         <outlet property="collectionView" destination="J9O-3G-o3I" id="buX-6J-wCI"/>
                         <outlet property="detailView" destination="o14-IW-ZfX" id="mdn-I4-BUi"/>
+                        <outlet property="entranceFeeLabel" destination="h37-WY-j25" id="ODh-ua-XPf"/>
                         <outlet property="map" destination="PLn-RZ-hM1" id="gSi-6s-kft"/>
                         <outlet property="openingHoursLabel" destination="k5y-2D-KVG" id="9YZ-On-37F"/>
                         <outlet property="phoneLabel" destination="pYL-8r-ReW" id="QaO-XY-Neg"/>
