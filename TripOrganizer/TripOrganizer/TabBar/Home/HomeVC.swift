@@ -9,88 +9,80 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    //MARK: - Outleets
-    @IBOutlet weak var ivPhoto: UIImageView!
-    @IBOutlet weak var lbWelcome: UILabel!
-    @IBOutlet weak var viewInfos: UIView!
-    @IBOutlet weak var lbCheckUpdate: UILabel!
-    @IBOutlet weak var lbQuantityDays: UILabel!
-    @IBOutlet weak var lbAirplane: UILabel!
-    @IBOutlet weak var lbHotel: UILabel!
-    @IBOutlet weak var lbRestaurant: UILabel!
-    @IBOutlet weak var lbAttractions: UILabel!
-    @IBOutlet weak var lbTotalCoast: UILabel!
-    @IBOutlet weak var cvPlaces: UICollectionView!
-    
-    private let images: [String] = ["teste", "teste2", "teste3"]
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-    }
+    @IBOutlet var perfilButton: UIButton!
+    @IBOutlet var homeCollectionView: UICollectionView!
+    @IBOutlet var tripProgressView: UIProgressView!
 
+    
+    var imageList: [String] = ["circle", "engrenagem", "estrela"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-     // extrasFeatures()
+        navigationController?.isNavigationBarHidden = true
+        configCollectionview()
+        configProgressBar()
     }
     
-    private func extrasFeatures(){
-        cvPlaces.delegate = self
-        cvPlaces.dataSource = self
-        viewInfos.layer.borderWidth = 3
-        viewInfos.layer.borderColor = UIColor.white.cgColor
-        if let layout = cvPlaces.collectionViewLayout as? UICollectionViewFlowLayout {
-
-            layout.scrollDirection = .horizontal
+    private func configProgressBar() {
+        tripProgressView.transform = CGAffineTransform(scaleX: 1.0, y: 0.3)
+    }
+    
+    private func configCollectionview() {
+        homeCollectionView.delegate = self
+        homeCollectionView.dataSource = self
+        
+        if let layout = homeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .vertical
             layout.estimatedItemSize = .zero
+//            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         }
+        
+        homeCollectionView.register(AttractionCollectionViewCell.nib(), forCellWithReuseIdentifier: AttractionCollectionViewCell.identifier)
+        
+        homeCollectionView.register(RestaurantCollectionViewCell.nib(), forCellWithReuseIdentifier: RestaurantCollectionViewCell.identifier)
+        
+        homeCollectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
+        
+        homeCollectionView.showsVerticalScrollIndicator = false
     }
     
-    @IBAction func tapInPerfil(_ sender: UIButton) {
-        //Chamar perfilScreen
-        let perfilViewController = UIStoryboard(name: "PerfilViewController", bundle: nil).instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
-        
-//        let navigationController = UINavigationController(rootViewController: perfilViewController ?? UIViewController())
-        //navigationController.modalPresentationStyle = .fullScreen
-        //present(navigationController, animated: true)
-        navigationController?.pushViewController(perfilViewController ?? UIViewController(), animated: true)
+    
+    @IBAction func perfilButtonPressed(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "PerfilViewController", bundle: nil).instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
-    @IBAction func goToPlannerScreen(_ sender: UIButton) {
-        //Chamar plannerScreen
-        
-        let plainingViewController = UIStoryboard(name: "PlaningViewController", bundle: nil).instantiateViewController(withIdentifier: "PlaningViewController") as? PlaningViewController
-        
-        let navigationController = UINavigationController(rootViewController: plainingViewController ?? UIViewController())
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
-    }
     
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? HomeCollectionViewCell
-        cell?.ivPlaces.image = UIImage(named: images[indexPath.row])
-        return cell ?? UICollectionViewCell()
+        
+        if indexPath.row == 0 {
+            let cell: AttractionCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: AttractionCollectionViewCell.identifier, for: indexPath) as? AttractionCollectionViewCell
+            cell?.setupCell(placeType: "Lazer")
+            return cell ?? UICollectionViewCell()
+        } else if indexPath.row == 1 {
+            let cell: RestaurantCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: RestaurantCollectionViewCell.identifier, for: indexPath) as? RestaurantCollectionViewCell
+            cell?.setupCell(placeType: "Restaurante")
+            return cell ?? UICollectionViewCell()
+        } else {
+            let cell: HotelCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell
+            cell?.setupCell(placeType: "Hotel")
+            return cell ?? UICollectionViewCell()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = cvPlaces.bounds.height
-//        let width = cvPlaces.bounds.width
-        
-        return CGSize(width: 120, height: height)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let attractionInfoController = UIStoryboard(name: "AttractionInfoController", bundle: nil).instantiateViewController(withIdentifier: "AttractionInfoController") as? AttractionInfoController
-            
-        guard let attractionInfoController = attractionInfoController else {return}
-            
-        navigationController?.pushViewController(attractionInfoController, animated: true)
+        let width = homeCollectionView.bounds.width
+        let height = homeCollectionView.bounds.height * 0.6
+        return CGSize(width: width, height: height)
+
     }
     
 }

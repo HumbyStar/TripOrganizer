@@ -33,7 +33,6 @@
 		43780C8C29D5C8A9002072BF /* MenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43780C8A29D5C8A9002072BF /* MenuCollectionViewCell.xib */; };
 		43780C9029D5C943002072BF /* HoteisCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43780C8E29D5C943002072BF /* HoteisCollectionViewCell.xib */; };
 		43780C9129D5C943002072BF /* HoteisCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780C8F29D5C943002072BF /* HoteisCollectionViewCell.swift */; };
-		43780C9329D5C965002072BF /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780C9229D5C965002072BF /* HomeCollectionViewCell.swift */; };
 		43780C9929D5C9A1002072BF /* PlaningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780C9529D5C9A1002072BF /* PlaningViewController.swift */; };
 		43780C9A29D5C9A1002072BF /* PlaningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780C9729D5C9A1002072BF /* PlaningTableViewCell.swift */; };
 		43780C9B29D5C9A1002072BF /* PlaningViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43780C9829D5C9A1002072BF /* PlaningViewController.storyboard */; };
@@ -53,6 +52,14 @@
 		43BE0D2F29E5CA99001B5963 /* FlightScreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D2D29E5CA99001B5963 /* FlightScreenCollectionViewCell.xib */; };
 		43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BE0D3229E5E958001B5963 /* FlightTableViewCell.swift */; };
 		43BE0D3529E5E958001B5963 /* FlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D3329E5E958001B5963 /* FlightTableViewCell.xib */; };
+		43BE0D8E29E70C31001B5963 /* RestaurantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D8329E70C31001B5963 /* RestaurantCollectionViewCell.xib */; };
+		43BE0D8F29E70C31001B5963 /* RestaurantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BE0D8429E70C31001B5963 /* RestaurantCollectionViewCell.swift */; };
+		43BE0D9029E70C31001B5963 /* PlacesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BE0D8629E70C31001B5963 /* PlacesCollectionViewCell.swift */; };
+		43BE0D9129E70C31001B5963 /* PlacesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D8729E70C31001B5963 /* PlacesCollectionViewCell.xib */; };
+		43BE0D9229E70C31001B5963 /* HotelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D8929E70C31001B5963 /* HotelCollectionViewCell.xib */; };
+		43BE0D9329E70C31001B5963 /* HotelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BE0D8A29E70C31001B5963 /* HotelCollectionViewCell.swift */; };
+		43BE0D9429E70C31001B5963 /* AttractionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BE0D8C29E70C31001B5963 /* AttractionCollectionViewCell.swift */; };
+		43BE0D9529E70C31001B5963 /* AttractionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
 		C41A0AF829D20697002DEEE8 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */; };
@@ -90,7 +97,6 @@
 		43780C8A29D5C8A9002072BF /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		43780C8E29D5C943002072BF /* HoteisCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HoteisCollectionViewCell.xib; sourceTree = "<group>"; };
 		43780C8F29D5C943002072BF /* HoteisCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoteisCollectionViewCell.swift; sourceTree = "<group>"; };
-		43780C9229D5C965002072BF /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		43780C9529D5C9A1002072BF /* PlaningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaningViewController.swift; sourceTree = "<group>"; };
 		43780C9729D5C9A1002072BF /* PlaningTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaningTableViewCell.swift; sourceTree = "<group>"; };
 		43780C9829D5C9A1002072BF /* PlaningViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlaningViewController.storyboard; sourceTree = "<group>"; };
@@ -110,6 +116,14 @@
 		43BE0D2D29E5CA99001B5963 /* FlightScreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightScreenCollectionViewCell.xib; sourceTree = "<group>"; };
 		43BE0D3229E5E958001B5963 /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
 		43BE0D3329E5E958001B5963 /* FlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
+		43BE0D8329E70C31001B5963 /* RestaurantCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCollectionViewCell.xib; sourceTree = "<group>"; };
+		43BE0D8429E70C31001B5963 /* RestaurantCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionViewCell.swift; sourceTree = "<group>"; };
+		43BE0D8629E70C31001B5963 /* PlacesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesCollectionViewCell.swift; sourceTree = "<group>"; };
+		43BE0D8729E70C31001B5963 /* PlacesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlacesCollectionViewCell.xib; sourceTree = "<group>"; };
+		43BE0D8929E70C31001B5963 /* HotelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelCollectionViewCell.xib; sourceTree = "<group>"; };
+		43BE0D8A29E70C31001B5963 /* HotelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelCollectionViewCell.swift; sourceTree = "<group>"; };
+		43BE0D8C29E70C31001B5963 /* AttractionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionCollectionViewCell.swift; sourceTree = "<group>"; };
+		43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCollectionViewCell.xib; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
 		C41A0AF629D20697002DEEE8 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -147,7 +161,7 @@
 		0C111C1229BACD9000A0DCF4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				43780C9229D5C965002072BF /* HomeCollectionViewCell.swift */,
+				43BE0D8129E70C31001B5963 /* Cell */,
 				0C111C1329BACD9000A0DCF4 /* HomeVC.storyboard */,
 				0C111C1429BACD9000A0DCF4 /* HomeVC.swift */,
 			);
@@ -414,6 +428,53 @@
 			path = FlightScreen;
 			sourceTree = "<group>";
 		};
+		43BE0D8129E70C31001B5963 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8229E70C31001B5963 /* Restaurant */,
+				43BE0D8529E70C31001B5963 /* ImageCollectionViewCell */,
+				43BE0D8829E70C31001B5963 /* Hotel */,
+				43BE0D8B29E70C31001B5963 /* Attraction */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		43BE0D8229E70C31001B5963 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8329E70C31001B5963 /* RestaurantCollectionViewCell.xib */,
+				43BE0D8429E70C31001B5963 /* RestaurantCollectionViewCell.swift */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		43BE0D8529E70C31001B5963 /* ImageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8629E70C31001B5963 /* PlacesCollectionViewCell.swift */,
+				43BE0D8729E70C31001B5963 /* PlacesCollectionViewCell.xib */,
+			);
+			path = ImageCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		43BE0D8829E70C31001B5963 /* Hotel */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8929E70C31001B5963 /* HotelCollectionViewCell.xib */,
+				43BE0D8A29E70C31001B5963 /* HotelCollectionViewCell.swift */,
+			);
+			path = Hotel;
+			sourceTree = "<group>";
+		};
+		43BE0D8B29E70C31001B5963 /* Attraction */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8C29E70C31001B5963 /* AttractionCollectionViewCell.swift */,
+				43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */,
+			);
+			path = Attraction;
+			sourceTree = "<group>";
+		};
 		C41A0AF529D20678002DEEE8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,16 +567,20 @@
 				43780C8C29D5C8A9002072BF /* MenuCollectionViewCell.xib in Resources */,
 				43780C9B29D5C9A1002072BF /* PlaningViewController.storyboard in Resources */,
 				0C111C2C29BACD9000A0DCF4 /* AttractionVC.storyboard in Resources */,
+				43BE0D9229E70C31001B5963 /* HotelCollectionViewCell.xib in Resources */,
 				43BE0D3529E5E958001B5963 /* FlightTableViewCell.xib in Resources */,
 				C41A0AF929D20697002DEEE8 /* CollectionViewCell.xib in Resources */,
 				43780CB729D5D0FB002072BF /* InfoRestaurantVC.storyboard in Resources */,
 				43BE0D2B29E5CA74001B5963 /* SecondFlightScreenVC.storyboard in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightVC.storyboard in Resources */,
+				43BE0D9529E70C31001B5963 /* AttractionCollectionViewCell.xib in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantVC.storyboard in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
 				0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */,
 				43780CB829D5D0FB002072BF /* InfoRestaurantVCCell.xib in Resources */,
+				43BE0D8E29E70C31001B5963 /* RestaurantCollectionViewCell.xib in Resources */,
 				0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */,
+				43BE0D9129E70C31001B5963 /* PlacesCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,15 +598,18 @@
 				0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */,
 				0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */,
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
+				43BE0D9029E70C31001B5963 /* PlacesCollectionViewCell.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
 				C43E84E729CE2FE10032C279 /* InfoHoteisViewController.swift in Sources */,
 				43BE0D2929E5CA6A001B5963 /* SecondFlightScreenVC.swift in Sources */,
+				43BE0D9329E70C31001B5963 /* HotelCollectionViewCell.swift in Sources */,
 				43780CAC29D5CBAE002072BF /* AttractionInfoController.swift in Sources */,
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
+				43BE0D9429E70C31001B5963 /* AttractionCollectionViewCell.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
+				43BE0D8F29E70C31001B5963 /* RestaurantCollectionViewCell.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
-				43780C9329D5C965002072BF /* HomeCollectionViewCell.swift in Sources */,
 				43780CB629D5D0FB002072BF /* InfoRestaurantVC.swift in Sources */,
 				C41A0AF829D20697002DEEE8 /* CollectionViewCell.swift in Sources */,
 				43780C9929D5C9A1002072BF /* PlaningViewController.swift in Sources */,
