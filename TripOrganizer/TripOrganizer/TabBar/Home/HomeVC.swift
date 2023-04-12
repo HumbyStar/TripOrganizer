@@ -19,6 +19,11 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         configCollectionview()
+        configProgressBar()
+    }
+    
+    private func configProgressBar() {
+        tripProgressView.transform = CGAffineTransform(scaleX: 1.0, y: 0.3)
     }
     
     private func configCollectionview() {
@@ -69,7 +74,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = homeCollectionView.bounds.width
-        let height = homeCollectionView.bounds.height / 2
+        let height = homeCollectionView.bounds.height * 0.8
         return CGSize(width: width, height: height)
 
     }
