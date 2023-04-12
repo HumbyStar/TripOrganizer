@@ -15,6 +15,8 @@ class HomeVC: UIViewController {
     
     var restaurant: [String] = ["restaurante1", "restaurante2"]
     
+    var imageList: [String] = ["circle", "engrenagem", "estrela"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
