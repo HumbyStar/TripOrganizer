@@ -7,14 +7,14 @@
 
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
+class AttractionCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var placesCollectionView: UICollectionView!
     @IBOutlet var placeType: UILabel!
     
-    static let identifier: String = "HomeCollectionViewCell"
+    static let identifier: String = "AttractionCollectionViewCell"
     
-    var restaurant: [String] = ["restaurante1", "restaurante2"]
+    var attractionList: [String] = ["parque", "parque1", "1", "2", "3", "4", "5"]
     
     static public func nib() -> UINib{
         return UINib(nibName: identifier, bundle: nil)
@@ -47,14 +47,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
 }
 
-extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension AttractionCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return attractionList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PlacesCollectionViewCell? = placesCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell
+        cell?.setupCell(imageName: attractionList[indexPath.row])
         return cell ?? UICollectionViewCell()
         
     }
@@ -64,7 +65,4 @@ extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
 
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
 }

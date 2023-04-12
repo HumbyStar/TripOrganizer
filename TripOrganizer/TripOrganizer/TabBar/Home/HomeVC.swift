@@ -12,8 +12,7 @@ class HomeVC: UIViewController {
     @IBOutlet var perfilButton: UIButton!
     @IBOutlet var homeCollectionView: UICollectionView!
     @IBOutlet var tripProgressView: UIProgressView!
-    
-    var restaurant: [String] = ["restaurante1", "restaurante2"]
+
     
     var imageList: [String] = ["circle", "engrenagem", "estrela"]
     
@@ -38,7 +37,11 @@ class HomeVC: UIViewController {
 //            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         }
         
-        homeCollectionView.register(HomeCollectionViewCell.nib(), forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+        homeCollectionView.register(AttractionCollectionViewCell.nib(), forCellWithReuseIdentifier: AttractionCollectionViewCell.identifier)
+        
+        homeCollectionView.register(RestaurantCollectionViewCell.nib(), forCellWithReuseIdentifier: RestaurantCollectionViewCell.identifier)
+        
+        homeCollectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
         
         homeCollectionView.showsVerticalScrollIndicator = false
     }
@@ -60,15 +63,15 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.row == 0 {
-            let cell: HomeCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
+            let cell: AttractionCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: AttractionCollectionViewCell.identifier, for: indexPath) as? AttractionCollectionViewCell
             cell?.setupCell(placeType: "Lazer")
             return cell ?? UICollectionViewCell()
         } else if indexPath.row == 1 {
-            let cell: HomeCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
-            cell?.setupCell(placeType: "Restaurantes")
+            let cell: RestaurantCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: RestaurantCollectionViewCell.identifier, for: indexPath) as? RestaurantCollectionViewCell
+            cell?.setupCell(placeType: "Restaurante")
             return cell ?? UICollectionViewCell()
         } else {
-            let cell: HomeCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.identifier, for: indexPath) as? HomeCollectionViewCell
+            let cell: HotelCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell
             cell?.setupCell(placeType: "Hotel")
             return cell ?? UICollectionViewCell()
         }
