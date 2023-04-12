@@ -27,9 +27,9 @@ class MenuCollectionViewCell: UICollectionViewCell {
         
         // Initialization code
     }
-    func setupCell(image: String, valor:String){
+    func setupCell(image: String){ //valor:String
         fotoImageView.image = UIImage(named: image)
-        valorLabel.text = valor
+        //valorLabel.text = valor
         fotoImageView.layer.cornerRadius = 10
     }
     

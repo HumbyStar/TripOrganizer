@@ -16,11 +16,10 @@ class RestaurantVC: UIViewController {
     @IBOutlet weak var mapaRestauranteMapView: MKMapView!
     
     @IBOutlet weak var pesquisaRestauranteSearchBar: UISearchBar!
-    @IBOutlet weak var fulanoLabel: UILabel!
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
     var imagens:[String] = ["pratoDeComidaProjeto", "garrafaProjeto", "petiscoProjeto", "almocoProjeto"]
-    var valores:[String] = ["Valor: R$ 30,00", "Valor: R$ 50,00", "Valor: R$ 50,00", "Valor: R$ 35,00"]
+   // var valores:[String] = ["Valor: R$ 30,00", "Valor: R$ 50,00", "Valor: R$ 50,00", "Valor: R$ 35,00"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +45,11 @@ class RestaurantVC: UIViewController {
         
     }
     func configInformacaoRestauranteView(){
-        
+        informacaoRestauranteView.layer.cornerRadius = 12
     }
     
     func configmapaRestauranteMapView(){
-        
+        mapaRestauranteMapView.layer.cornerRadius = 12
         
     }
     
@@ -67,7 +66,7 @@ extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell
-        cell?.setupCell(image: imagens[indexPath.row], valor: valores[indexPath.row])
+        cell?.setupCell(image: imagens[indexPath.row])//, valor: valores[indexPath.row])
         cell?.layer.cornerRadius = 10
         return cell ?? UICollectionViewCell()
     }

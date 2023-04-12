@@ -12,7 +12,8 @@ class AttractionVC: UIViewController {
     
     let locationImagelist: [String] = ["1","2","3","4","5"]
 
-    @IBOutlet var mapView: UIView!
+    
+    @IBOutlet weak var mapView: UIView!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var map: MKMapView!
     @IBOutlet var collectionView: UICollectionView!
@@ -23,7 +24,7 @@ class AttractionVC: UIViewController {
     @IBOutlet var openingHoursLabel: UILabel!
     @IBOutlet var phoneLabel: UILabel!
     @IBOutlet var entranceFeeLabel: UILabel!
-    @IBOutlet var avaliationStarsImageView: UIImageView!
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +37,7 @@ class AttractionVC: UIViewController {
         configMapConstraints()
 //        configSearchBarStyle()
 //        configMapViewBorder()
-//        configDetailViewBorder()
+        configDetailViewBorder()
 //        configMapViewShadow()
 //        configDetailViewShadow()
 //        configSearchBarShadowBar()
@@ -53,7 +54,7 @@ class AttractionVC: UIViewController {
     public func configMapConstraints() {
         let heightConstraint = mapView.heightAnchor.constraint(equalToConstant: 270)
         heightConstraint.isActive = true
-
+        map.layer.cornerRadius = 12
         if UIDevice.current.userInterfaceIdiom == .phone {
             switch UIScreen.main.nativeBounds.height {
             case 1136: // iPhone SE (1st generation), iPhone 5, iPhone 5S, iPhone 5C
@@ -68,25 +69,26 @@ class AttractionVC: UIViewController {
                 heightConstraint.constant = 265
             default: // IPhone Pro Max
                 heightConstraint.constant = 318 // default value for other devices
-                // IPhone 14 pro?
+               // IPhone 14 pro?
             }
         }
     }
     
-//    func configDetailViewBorder() {
+    func configDetailViewBorder() {
 //      detailView.layer.borderWidth = 3.0 -> a borda fica por cima do botão.
 //        detailView.layer.borderColor = UIColor.white.cgColor
 //        detailView.clipsToBounds = true
-//        detailView.layer.cornerRadius = 15
-//    }
+        detailView.layer.cornerRadius = 12
+    }
 //
-//    func configDetailViewShadow() {
-//        detailView.layer.shadowColor = UIColor.black.cgColor
+  // func configDetailViewShadow() {
+       
+//detailView.layer.shadowColor = UIColor.black.cgColor
 //        detailView.layer.shadowOpacity = 0.5
 //        detailView.layer.shadowOffset = CGSize(width: 0, height: 2)
 //        detailView.layer.shadowRadius = 4
 //        detailView.layer.masksToBounds = false
-//    }
+    //}
 //
 //    func configMapViewBorder() {
 //        mapView.layer.borderWidth = 3.0

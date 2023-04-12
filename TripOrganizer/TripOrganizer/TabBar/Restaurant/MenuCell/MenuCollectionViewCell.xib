@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,25 +19,8 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garrafaProjeto" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-J6-wy2">
-                        <rect key="frame" x="2" y="2" width="85" height="115"/>
+                        <rect key="frame" x="0.0" y="0.0" width="89" height="143"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor: R$ 30,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbU-px-RAE">
-                        <rect key="frame" x="23" y="127" width="60" height="6"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="6" id="xUN-65-u5W"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N6W-uj-dmk">
-                        <rect key="frame" x="6" y="120.33333333333333" width="17" height="19.666666666666671"/>
-                        <color key="tintColor" red="0.44705885649999999" green="0.44705885649999999" blue="0.44705885649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="RBh-Hx-3JU"/>
-                            <constraint firstAttribute="width" constant="17" id="sOM-UR-5B4"/>
-                        </constraints>
                     </imageView>
                 </subviews>
             </view>
@@ -44,27 +28,19 @@
             <color key="backgroundColor" red="0.85098040100000005" green="0.85098040100000005" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <color key="tintColor" name="AccentColor"/>
             <constraints>
-                <constraint firstItem="zv8-J6-wy2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="SfN-62-nSG"/>
-                <constraint firstItem="N6W-uj-dmk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="UDk-GL-Qz7"/>
-                <constraint firstAttribute="trailing" secondItem="xbU-px-RAE" secondAttribute="trailing" constant="6" id="brb-wf-VYb"/>
-                <constraint firstItem="xbU-px-RAE" firstAttribute="top" secondItem="zv8-J6-wy2" secondAttribute="bottom" constant="10" id="fma-Of-jDr"/>
-                <constraint firstItem="xbU-px-RAE" firstAttribute="leading" secondItem="N6W-uj-dmk" secondAttribute="trailing" id="oGj-vh-IY2"/>
-                <constraint firstItem="zv8-J6-wy2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="oHP-zt-DWn"/>
-                <constraint firstAttribute="trailing" secondItem="zv8-J6-wy2" secondAttribute="trailing" constant="2" id="rNJ-Tl-olL"/>
-                <constraint firstItem="xbU-px-RAE" firstAttribute="centerY" secondItem="N6W-uj-dmk" secondAttribute="centerY" id="vre-X0-wT7"/>
-                <constraint firstAttribute="bottom" secondItem="xbU-px-RAE" secondAttribute="bottom" constant="10" id="xxZ-hl-8Cf"/>
+                <constraint firstAttribute="trailing" secondItem="zv8-J6-wy2" secondAttribute="trailing" id="3tf-KJ-8bo"/>
+                <constraint firstItem="zv8-J6-wy2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MqQ-tr-39h"/>
+                <constraint firstAttribute="bottom" secondItem="zv8-J6-wy2" secondAttribute="bottom" id="QMG-PT-uTf"/>
+                <constraint firstItem="zv8-J6-wy2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WlM-AX-iHP"/>
             </constraints>
             <size key="customSize" width="85" height="113"/>
             <connections>
-                <outlet property="figuraImageView" destination="N6W-uj-dmk" id="sOZ-bP-Nxb"/>
                 <outlet property="fotoImageView" destination="zv8-J6-wy2" id="w28-Bj-ZZT"/>
-                <outlet property="valorLabel" destination="xbU-px-RAE" id="WSg-8v-oL2"/>
             </connections>
             <point key="canvasLocation" x="69.465648854961827" y="41.197183098591552"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="garrafaProjeto" width="1000" height="1000"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
