@@ -74,7 +74,7 @@ extension HotelVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height = collectionView.bounds.height
-        return CGSize(width: 120, height: height - 20)
+        return CGSize(width: 140, height: height - 20)
     }
     
 }

@@ -36,7 +36,7 @@ class PerfilViewController: UIViewController {
         //let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController")
         //navigationController?.pushViewController(ViewController(), animated: true)
      //   navigationController?.popToRootViewController(animated: true)
-        
+       // tabBarController?.navigationController?.popToRootViewController(animated: true)
     }
     
 }
