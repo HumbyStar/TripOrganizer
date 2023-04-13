@@ -33,7 +33,8 @@ class RecoverViewController: UIViewController{
         emailTelaEsquecerSenhaTextField.delegate = self
         
         emailTelaEsquecerSenhaTextField.layer.borderWidth = 2
-        emailTelaEsquecerSenhaTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        emailTelaEsquecerSenhaTextField.layer.borderColor = UIColor.lightGray.cgColor
+//        emailTelaEsquecerSenhaTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
         emailTelaEsquecerSenhaTextField.clipsToBounds = true
         emailTelaEsquecerSenhaTextField.layer.cornerRadius = 10
         emailTelaEsquecerSenhaTextField.keyboardType = .emailAddress
@@ -42,7 +43,6 @@ class RecoverViewController: UIViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
     
 }
 
@@ -54,7 +54,7 @@ extension RecoverViewController: UITextFieldDelegate{
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 2
-        textField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        textField.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
