@@ -74,7 +74,7 @@
 		0C36EC4A29B6621E009550C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C36EC4D29B6621E009550C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C3AD1E429C3524800E7FE73 /* PerfilViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PerfilViewController.storyboard; path = TripOrganizer/TabBar/Perfil/PerfilViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		0C3AD1E429C3524800E7FE73 /* PerfilViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PerfilViewController.storyboard; path = TripOrganizer/TabBar/Perfil/View/Screen/PerfilViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassworld/View/Screen/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/View/Controller/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -210,8 +210,8 @@
 		0C3AD1EC29C3545200E7FE73 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
-				0C3AD1E429C3524800E7FE73 /* PerfilViewController.storyboard */,
-				0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */,
+				C43C4B3729EC664A0013D509 /* View */,
+				C43C4B3829EC66530013D509 /* ViewModel */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -661,6 +661,38 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B3729EC664A0013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B3B29EC666A0013D509 /* Controller */,
+				C43C4B3929EC665B0013D509 /* Screen */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B3829EC66530013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B3929EC665B0013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C3AD1E429C3524800E7FE73 /* PerfilViewController.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B3B29EC666A0013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
