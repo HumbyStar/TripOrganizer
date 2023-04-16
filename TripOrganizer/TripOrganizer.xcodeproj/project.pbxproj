@@ -76,8 +76,8 @@
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3AD1E429C3524800E7FE73 /* PerfilViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PerfilViewController.storyboard; path = TripOrganizer/TabBar/Perfil/PerfilViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
-		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassworld/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
-		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
+		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassworld/View/Screen/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/View/Controller/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		43780C8A29D5C8A9002072BF /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		43780C8E29D5C943002072BF /* HoteisCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HoteisCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -160,8 +160,9 @@
 		0C111C1C29BACD9000A0DCF4 /* Flight */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D2729E5CA35001B5963 /* SecondFlightsScreen */,
-				43BE0D3129E5E930001B5963 /* FlightScreen */,
+				C43C4B2629EC5FC90013D509 /* Cell */,
+				C43C4B2329EC5F9A0013D509 /* View */,
+				C43C4B2A29EC62F50013D509 /* ViewModel */,
 			);
 			path = Flight;
 			sourceTree = "<group>";
@@ -170,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				43780C9C29D5C9B7002072BF /* Cell */,
-				0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */,
-				0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */,
+				C43C4B1F29EC5ED50013D509 /* View */,
+				C43C4B2229EC5F090013D509 /* ViewModel */,
 			);
 			path = Attraction;
 			sourceTree = "<group>";
@@ -195,11 +196,12 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
-				0C61EB0629BBE10000F54F47 /* Resources */,
+				C43C4B1629EC5DD10013D509 /* Model */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
 				0C61EB0529BBDFEA00F54F47 /* Register */,
 				0C61EB0429BBDFD000F54F47 /* RecoverPassworld */,
 				0C61EB0729BBE13100F54F47 /* Login */,
+				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C36EC4F29B6621E009550C8 /* Info.plist */,
 			);
 			path = TripOrganizer;
@@ -217,8 +219,8 @@
 		0C61EB0429BBDFD000F54F47 /* RecoverPassworld */ = {
 			isa = PBXGroup;
 			children = (
-				0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */,
-				0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */,
+				C43C4B1729EC5E300013D509 /* View */,
+				C43C4B1829EC5E360013D509 /* ViewModel */,
 			);
 			path = RecoverPassworld;
 			sourceTree = "<group>";
@@ -226,8 +228,8 @@
 		0C61EB0529BBDFEA00F54F47 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				5050BCB529B8D9050019BB69 /* RegisterController.swift */,
-				5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */,
+				C43C4B1B29EC5E6D0013D509 /* View */,
+				C43C4B1E29EC5E990013D509 /* ViewModel */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -246,8 +248,8 @@
 		0C61EB0729BBE13100F54F47 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				0C36EC4729B6621C009550C8 /* Main.storyboard */,
-				0C36EC4529B6621C009550C8 /* ViewController.swift */,
+				C43C4B0F29EC5D050013D509 /* View */,
+				C43C4B1129EC5D2C0013D509 /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -302,9 +304,8 @@
 		43BE0D2729E5CA35001B5963 /* SecondFlightsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D3029E5E900001B5963 /* TableViewCell */,
-				43BE0D2829E5CA6A001B5963 /* SecondFlightScreenVC.swift */,
-				43BE0D2A29E5CA74001B5963 /* SecondFlightScreenVC.storyboard */,
+				C43C4B2829EC62810013D509 /* Screen */,
+				C43C4B2929EC628A0013D509 /* Controller */,
 			);
 			path = SecondFlightsScreen;
 			sourceTree = "<group>";
@@ -321,9 +322,8 @@
 		43BE0D3129E5E930001B5963 /* FlightScreen */ = {
 			isa = PBXGroup;
 			children = (
-				43780CA129D5C9C5002072BF /* CollectionCell */,
-				0C111C1D29BACD9000A0DCF4 /* FlightVC.storyboard */,
-				0C111C1E29BACD9000A0DCF4 /* FlightVC.swift */,
+				C43C4B2429EC5FA00013D509 /* Screen */,
+				C43C4B2529EC5FAB0013D509 /* Controller */,
 			);
 			path = FlightScreen;
 			sourceTree = "<group>";
@@ -373,6 +373,198 @@
 				43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */,
 			);
 			path = Attraction;
+			sourceTree = "<group>";
+		};
+		C43C4B0F29EC5D050013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B1429EC5DAD0013D509 /* Screen */,
+				C43C4B1029EC5D0F0013D509 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B1029EC5D0F0013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C36EC4529B6621C009550C8 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B1129EC5D2C0013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B1429EC5DAD0013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C36EC4729B6621C009550C8 /* Main.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B1629EC5DD10013D509 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C43C4B1729EC5E300013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B1929EC5E3E0013D509 /* Screen */,
+				C43C4B1A29EC5E460013D509 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B1829EC5E360013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B1929EC5E3E0013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B1A29EC5E460013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B1B29EC5E6D0013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B1C29EC5E740013D509 /* Screen */,
+				C43C4B1D29EC5E7D0013D509 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B1C29EC5E740013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B1D29EC5E7D0013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5050BCB529B8D9050019BB69 /* RegisterController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B1E29EC5E990013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B1F29EC5ED50013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B2029EC5EDD0013D509 /* Screen */,
+				C43C4B2129EC5EE30013D509 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B2029EC5EDD0013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B2129EC5EE30013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B2229EC5F090013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B2329EC5F9A0013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D3129E5E930001B5963 /* FlightScreen */,
+				43BE0D2729E5CA35001B5963 /* SecondFlightsScreen */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B2429EC5FA00013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1D29BACD9000A0DCF4 /* FlightVC.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B2529EC5FAB0013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1E29BACD9000A0DCF4 /* FlightVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B2629EC5FC90013D509 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D3029E5E900001B5963 /* TableViewCell */,
+				43780CA129D5C9C5002072BF /* CollectionCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C43C4B2829EC62810013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D2A29E5CA74001B5963 /* SecondFlightScreenVC.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B2929EC628A0013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D2829E5CA6A001B5963 /* SecondFlightScreenVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B2A29EC62F50013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
