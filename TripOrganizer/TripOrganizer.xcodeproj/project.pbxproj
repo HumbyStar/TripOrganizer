@@ -77,7 +77,7 @@
 		0C3AD1E429C3524800E7FE73 /* PerfilViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PerfilViewController.storyboard; path = TripOrganizer/TabBar/Perfil/View/Screen/PerfilViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassworld/View/Screen/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
-		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/View/Controller/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
+		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassworld/View/Screen/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		43780C8A29D5C8A9002072BF /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		43780C8E29D5C943002072BF /* HoteisCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HoteisCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -304,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B2829EC62810013D509 /* Screen */,
-				C43C4B2929EC628A0013D509 /* Controller */,
 			);
 			path = SecondFlightsScreen;
 			sourceTree = "<group>";
@@ -322,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B2429EC5FA00013D509 /* Screen */,
-				C43C4B2529EC5FAB0013D509 /* Controller */,
 			);
 			path = FlightScreen;
 			sourceTree = "<group>";
@@ -378,17 +376,8 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B1429EC5DAD0013D509 /* Screen */,
-				C43C4B1029EC5D0F0013D509 /* Controller */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B1029EC5D0F0013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0C36EC4529B6621C009550C8 /* ViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		C43C4B1129EC5D2C0013D509 /* ViewModel */ = {
@@ -402,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				0C36EC4729B6621C009550C8 /* Main.storyboard */,
+				0C36EC4529B6621C009550C8 /* ViewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -417,7 +407,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B1929EC5E3E0013D509 /* Screen */,
-				C43C4B1A29EC5E460013D509 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,23 +422,15 @@
 			isa = PBXGroup;
 			children = (
 				0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B1A29EC5E460013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		C43C4B1B29EC5E6D0013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				C43C4B1C29EC5E740013D509 /* Screen */,
-				C43C4B1D29EC5E7D0013D509 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -458,16 +439,9 @@
 			isa = PBXGroup;
 			children = (
 				5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B1D29EC5E7D0013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				5050BCB529B8D9050019BB69 /* RegisterController.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		C43C4B1E29EC5E990013D509 /* ViewModel */ = {
@@ -481,7 +455,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B2029EC5EDD0013D509 /* Screen */,
-				C43C4B2129EC5EE30013D509 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,16 +463,9 @@
 			isa = PBXGroup;
 			children = (
 				0C111C2029BACD9000A0DCF4 /* AttractionVC.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B2129EC5EE30013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		C43C4B2229EC5F090013D509 /* ViewModel */ = {
@@ -522,16 +488,9 @@
 			isa = PBXGroup;
 			children = (
 				0C111C1D29BACD9000A0DCF4 /* FlightVC.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B2529EC5FAB0013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1E29BACD9000A0DCF4 /* FlightVC.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		C43C4B2629EC5FC90013D509 /* Cell */ = {
@@ -547,16 +506,9 @@
 			isa = PBXGroup;
 			children = (
 				43BE0D2A29E5CA74001B5963 /* SecondFlightScreenVC.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B2929EC628A0013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				43BE0D2829E5CA6A001B5963 /* SecondFlightScreenVC.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		C43C4B2A29EC62F50013D509 /* ViewModel */ = {
@@ -570,7 +522,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B2C29EC63AA0013D509 /* Screen */,
-				C43C4B2D29EC63AF0013D509 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -579,16 +530,9 @@
 			isa = PBXGroup;
 			children = (
 				0C111C1A29BACD9000A0DCF4 /* HotelVC.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B2D29EC63AF0013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1B29BACD9000A0DCF4 /* HotelVC.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		C43C4B2E29EC63C30013D509 /* ViewModel */ = {
@@ -602,7 +546,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B3029EC63F70013D509 /* Screen */,
-				C43C4B3129EC63FE0013D509 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -611,16 +554,9 @@
 			isa = PBXGroup;
 			children = (
 				0C111C1629BACD9000A0DCF4 /* RestaurantVC.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B3129EC63FE0013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1729BACD9000A0DCF4 /* RestaurantVC.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		C43C4B3229EC64310013D509 /* ViewModel */ = {
@@ -633,7 +569,6 @@
 		C43C4B3329EC64760013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B3529EC64870013D509 /* Controller */,
 				C43C4B3429EC64810013D509 /* Screen */,
 			);
 			path = View;
@@ -643,16 +578,9 @@
 			isa = PBXGroup;
 			children = (
 				0C111C1329BACD9000A0DCF4 /* HomeVC.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B3529EC64870013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1429BACD9000A0DCF4 /* HomeVC.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		C43C4B3629EC64FD0013D509 /* ViewModel */ = {
@@ -689,7 +617,6 @@
 		C43C4B3C29EC66F70013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B3E29EC67080013D509 /* Controller */,
 				C43C4B3D29EC67030013D509 /* Screen */,
 			);
 			path = View;
@@ -699,16 +626,9 @@
 			isa = PBXGroup;
 			children = (
 				0C111C1829BACD9000A0DCF4 /* TabBarController.storyboard */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B3E29EC67080013D509 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C2229BACD9000A0DCF4 /* TabBarController.swift */,
 			);
-			path = Controller;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
