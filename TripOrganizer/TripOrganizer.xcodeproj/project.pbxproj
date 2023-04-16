@@ -257,8 +257,7 @@
 		0C61EB0829BBE14E00F54F47 /* TabBarFiles */ = {
 			isa = PBXGroup;
 			children = (
-				0C111C2229BACD9000A0DCF4 /* TabBarController.swift */,
-				0C111C1829BACD9000A0DCF4 /* TabBarController.storyboard */,
+				C43C4B3C29EC66F70013D509 /* View */,
 			);
 			path = TabBarFiles;
 			sourceTree = "<group>";
@@ -666,7 +665,6 @@
 		C43C4B3729EC664A0013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B3B29EC666A0013D509 /* Controller */,
 				C43C4B3929EC665B0013D509 /* Screen */,
 			);
 			path = View;
@@ -683,14 +681,32 @@
 			isa = PBXGroup;
 			children = (
 				0C3AD1E429C3524800E7FE73 /* PerfilViewController.storyboard */,
+				0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		C43C4B3B29EC666A0013D509 /* Controller */ = {
+		C43C4B3C29EC66F70013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */,
+				C43C4B3E29EC67080013D509 /* Controller */,
+				C43C4B3D29EC67030013D509 /* Screen */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B3D29EC67030013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1829BACD9000A0DCF4 /* TabBarController.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B3E29EC67080013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C2229BACD9000A0DCF4 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
