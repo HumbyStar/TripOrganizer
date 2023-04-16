@@ -131,8 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				43BE0D8129E70C31001B5963 /* Cell */,
-				0C111C1329BACD9000A0DCF4 /* HomeVC.storyboard */,
-				0C111C1429BACD9000A0DCF4 /* HomeVC.swift */,
+				C43C4B3329EC64760013D509 /* View */,
+				C43C4B3629EC64FD0013D509 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 		0C111C1529BACD9000A0DCF4 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
-				0C111C1629BACD9000A0DCF4 /* RestaurantVC.storyboard */,
-				0C111C1729BACD9000A0DCF4 /* RestaurantVC.swift */,
-				43780C8829D5C8A9002072BF /* MenuCell */,
+				43780C8829D5C8A9002072BF /* Cell */,
+				C43C4B2F29EC63EB0013D509 /* View */,
+				C43C4B3229EC64310013D509 /* ViewModel */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -150,9 +150,9 @@
 		0C111C1929BACD9000A0DCF4 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
-				0C111C1A29BACD9000A0DCF4 /* HotelVC.storyboard */,
-				0C111C1B29BACD9000A0DCF4 /* HotelVC.swift */,
 				43780C8D29D5C943002072BF /* Cell */,
+				C43C4B2B29EC63A30013D509 /* View */,
+				C43C4B2E29EC63C30013D509 /* ViewModel */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -263,14 +263,14 @@
 			path = TabBarFiles;
 			sourceTree = "<group>";
 		};
-		43780C8829D5C8A9002072BF /* MenuCell */ = {
+		43780C8829D5C8A9002072BF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */,
 				43780C8A29D5C8A9002072BF /* MenuCollectionViewCell.xib */,
 			);
-			name = MenuCell;
-			path = TripOrganizer/TabBar/Restaurant/MenuCell;
+			name = Cell;
+			path = TripOrganizer/TabBar/Restaurant/Cell;
 			sourceTree = SOURCE_ROOT;
 		};
 		43780C8D29D5C943002072BF /* Cell */ = {
@@ -331,10 +331,10 @@
 		43BE0D8129E70C31001B5963 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D8229E70C31001B5963 /* Restaurant */,
-				43BE0D8529E70C31001B5963 /* ImageCollectionViewCell */,
-				43BE0D8829E70C31001B5963 /* Hotel */,
 				43BE0D8B29E70C31001B5963 /* Attraction */,
+				43BE0D8229E70C31001B5963 /* Restaurant */,
+				43BE0D8829E70C31001B5963 /* Hotel */,
+				43BE0D8529E70C31001B5963 /* ImageCollectionViewCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -561,6 +561,102 @@
 			sourceTree = "<group>";
 		};
 		C43C4B2A29EC62F50013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B2B29EC63A30013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B2C29EC63AA0013D509 /* Screen */,
+				C43C4B2D29EC63AF0013D509 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B2C29EC63AA0013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1A29BACD9000A0DCF4 /* HotelVC.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B2D29EC63AF0013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1B29BACD9000A0DCF4 /* HotelVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B2E29EC63C30013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B2F29EC63EB0013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B3029EC63F70013D509 /* Screen */,
+				C43C4B3129EC63FE0013D509 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B3029EC63F70013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1629BACD9000A0DCF4 /* RestaurantVC.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B3129EC63FE0013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1729BACD9000A0DCF4 /* RestaurantVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B3229EC64310013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B3329EC64760013D509 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B3529EC64870013D509 /* Controller */,
+				C43C4B3429EC64810013D509 /* Screen */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C43C4B3429EC64810013D509 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1329BACD9000A0DCF4 /* HomeVC.storyboard */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C43C4B3529EC64870013D509 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C111C1429BACD9000A0DCF4 /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C43C4B3629EC64FD0013D509 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
