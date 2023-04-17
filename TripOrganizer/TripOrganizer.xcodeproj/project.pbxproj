@@ -138,7 +138,6 @@
 			children = (
 				43BE0D8129E70C31001B5963 /* Cell */,
 				C43C4B3329EC64760013D509 /* View */,
-				C43C4B3629EC64FD0013D509 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -148,7 +147,6 @@
 			children = (
 				43780C8829D5C8A9002072BF /* Cell */,
 				C43C4B2F29EC63EB0013D509 /* View */,
-				C43C4B3229EC64310013D509 /* ViewModel */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -158,7 +156,6 @@
 			children = (
 				43780C8D29D5C943002072BF /* Cell */,
 				C43C4B2B29EC63A30013D509 /* View */,
-				C43C4B2E29EC63C30013D509 /* ViewModel */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -168,7 +165,6 @@
 			children = (
 				C43C4B2629EC5FC90013D509 /* Cell */,
 				C43C4B2329EC5F9A0013D509 /* View */,
-				C43C4B2A29EC62F50013D509 /* ViewModel */,
 			);
 			path = Flight;
 			sourceTree = "<group>";
@@ -178,7 +174,6 @@
 			children = (
 				43780C9C29D5C9B7002072BF /* Cell */,
 				C43C4B1F29EC5ED50013D509 /* View */,
-				C43C4B2229EC5F090013D509 /* ViewModel */,
 			);
 			path = Attraction;
 			sourceTree = "<group>";
@@ -217,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B3729EC664A0013D509 /* View */,
-				C43C4B3829EC66530013D509 /* ViewModel */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -226,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B1729EC5E300013D509 /* View */,
-				C43C4B1829EC5E360013D509 /* ViewModel */,
 			);
 			path = RecoverPassworld;
 			sourceTree = "<group>";
@@ -235,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B1B29EC5E6D0013D509 /* View */,
-				C43C4B1E29EC5E990013D509 /* ViewModel */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -412,13 +404,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C43C4B1829EC5E360013D509 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C43C4B1929EC5E3E0013D509 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,13 +430,6 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		C43C4B1E29EC5E990013D509 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C43C4B1F29EC5ED50013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,13 +445,6 @@
 				0C111C2129BACD9000A0DCF4 /* AttractionVC.swift */,
 			);
 			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B2229EC5F090013D509 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C43C4B2329EC5F9A0013D509 /* View */ = {
@@ -512,13 +483,6 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		C43C4B2A29EC62F50013D509 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C43C4B2B29EC63A30013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,13 +498,6 @@
 				0C111C1B29BACD9000A0DCF4 /* HotelVC.swift */,
 			);
 			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B2E29EC63C30013D509 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C43C4B2F29EC63EB0013D509 /* View */ = {
@@ -560,13 +517,6 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		C43C4B3229EC64310013D509 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C43C4B3329EC64760013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,26 +534,12 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		C43C4B3629EC64FD0013D509 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C43C4B3729EC664A0013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				C43C4B3929EC665B0013D509 /* Screen */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B3829EC66530013D509 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C43C4B3929EC665B0013D509 /* Screen */ = {
