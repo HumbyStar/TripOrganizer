@@ -53,13 +53,6 @@ class RegisterController: UIViewController {
     
     private func configTextField() {
         
-   //     nameTextField.autocorrectionType = .no
-//        nameTextField.placeholder = "  Nome Completo"
-     //   nameTextField.clipsToBounds = true
-//        nameTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
-//        nameTextField.layer.borderWidth = 2
-//        nameTextField.layer.cornerRadius = 10
-//        nameTextField.keyboardType = .default
         configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: "Nome Completo")
         
 //        emailTextField.autocorrectionType = .no
@@ -78,7 +71,7 @@ class RegisterController: UIViewController {
 //        passwordTextField.layer.borderWidth = 2
 //        passwordTextField.layer.cornerRadius = 10
 //        passwordTextField.keyboardType = .default
-        //passwordTextField.isSecureTextEntry = true
+//        passwordTextField.isSecureTextEntry = true
         configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: "Senha")
         
 //        confirmPasswordTextField.autocorrectionType = .no
