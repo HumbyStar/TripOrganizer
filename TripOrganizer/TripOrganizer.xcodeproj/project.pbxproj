@@ -23,7 +23,6 @@
 		0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4329B6621C009550C8 /* SceneDelegate.swift */; };
 		0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4529B6621C009550C8 /* ViewController.swift */; };
 		0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4729B6621C009550C8 /* Main.storyboard */; };
-		0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
 		0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */; };
 		0C3AD1E529C3524800E7FE73 /* PerfilViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AD1E429C3524800E7FE73 /* PerfilViewController.storyboard */; };
 		0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AD1ED29C3546C00E7FE73 /* PerfilViewController.swift */; };
@@ -51,6 +50,10 @@
 		43BE0D9529E70C31001B5963 /* AttractionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */; };
+		C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4629ED9B950013D509 /* UIColor .swift */; };
+		C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
+		C43C4B4B29EDA2E20013D509 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4A29EDA2E20013D509 /* LoginModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,9 @@
 		43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCollectionViewCell.xib; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C43C4B4629ED9B950013D509 /* UIColor .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor .swift"; sourceTree = "<group>"; };
+		C43C4B4A29EDA2E20013D509 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +202,7 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B1629EC5DD10013D509 /* Model */,
+				C43C4B4529ED9B7D0013D509 /* Extension */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
 				0C61EB0529BBDFEA00F54F47 /* Register */,
 				0C61EB0429BBDFD000F54F47 /* RecoverPassworld */,
@@ -248,6 +254,7 @@
 		0C61EB0729BBE13100F54F47 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C43C4B4129ED77A30013D509 /* Model */,
 				C43C4B0F29EC5D050013D509 /* View */,
 				C43C4B1129EC5D2C0013D509 /* ViewModel */,
 			);
@@ -383,6 +390,7 @@
 		C43C4B1129EC5D2C0013D509 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -394,13 +402,6 @@
 				0C36EC4529B6621C009550C8 /* ViewController.swift */,
 			);
 			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B1629EC5DD10013D509 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		C43C4B1729EC5E300013D509 /* View */ = {
@@ -631,6 +632,23 @@
 			path = Screen;
 			sourceTree = "<group>";
 		};
+		C43C4B4129ED77A30013D509 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B4A29EDA2E20013D509 /* LoginModel.swift */,
+			);
+			name = Model;
+			path = ../Model;
+			sourceTree = "<group>";
+		};
+		C43C4B4529ED9B7D0013D509 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B4629ED9B950013D509 /* UIColor .swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -691,9 +709,9 @@
 			files = (
 				43BE0D2F29E5CA99001B5963 /* FlightScreenCollectionViewCell.xib in Resources */,
 				43780C9029D5C943002072BF /* HoteisCollectionViewCell.xib in Resources */,
+				C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */,
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
 				0C3AD1E529C3524800E7FE73 /* PerfilViewController.storyboard in Resources */,
-				0C36EC4B29B6621E009550C8 /* Assets.xcassets in Resources */,
 				5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */,
 				0C111C2729BACD9000A0DCF4 /* TabBarController.storyboard in Resources */,
 				0C111C2329BACD9000A0DCF4 /* HomeVC.storyboard in Resources */,
@@ -721,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */,
 				43780CA029D5C9B7002072BF /* AttractionCell.swift in Sources */,
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
 				0C111C2D29BACD9000A0DCF4 /* AttractionVC.swift in Sources */,
@@ -729,6 +748,8 @@
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				43BE0D9029E70C31001B5963 /* PlacesCollectionViewCell.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
+				C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */,
+				C43C4B4B29EDA2E20013D509 /* LoginModel.swift in Sources */,
 				43BE0D2929E5CA6A001B5963 /* SecondFlightScreenVC.swift in Sources */,
 				43BE0D9329E70C31001B5963 /* HotelCollectionViewCell.swift in Sources */,
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,

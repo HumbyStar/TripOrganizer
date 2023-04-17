@@ -8,14 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passWordTextField: UITextField!
     @IBOutlet weak var entrarButton: UIButton!
     @IBOutlet weak var entrarGoogleButton: UIButton!
     @IBOutlet weak var entrarIcloudButton: UIButton!
     
+    // chamar a viewModel - fazer isso para conseguir acessar as propriedades da ViewModel
+    var viewModel: LoginViewModel = LoginViewModel()
     
+    // tirar a navigationbar (Parte superior da tela)
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -25,22 +28,23 @@ class ViewController: UIViewController {
         configTextField()
         configButton()
     }
-    
+    // fazer uma navegação para a tela de recorver
     @IBAction func esqueciSenhatappedButton(_ sender: UIButton) {
         let vc = UIStoryboard(name: "RecoverViewController", bundle: nil).instantiateViewController(withIdentifier: "RecoverViewController") as? RecoverViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
-    
+    // fazer uma navegação para a tela de register
     @IBAction func registerTappedButton(_ sender: UIButton) {
         let vc = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as? RegisterController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
-    
+    // Ir para a tela TabBarController (Tela rootController da tabBar - Home)
     @IBAction func acessarButton(_ sender: Any) {
         let vc = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
+    // confuguração para adicionar uma sombra
     private func configShadowButton(button: UIButton) {
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.1
@@ -51,10 +55,11 @@ class ViewController: UIViewController {
         button.layer.rasterizationScale = UIScreen.main.scale
     }
     
+    // configurações para para o Botão
     private func configButton() {
         entrarButton.clipsToBounds = true
         entrarButton.layer.cornerRadius = 10
-//        entrarButton.isEnabled = false
+        entrarButton.isEnabled = false
         entrarGoogleButton.clipsToBounds = true
         entrarGoogleButton.layer.cornerRadius = 10
         entrarIcloudButton.clipsToBounds = true
@@ -62,6 +67,8 @@ class ViewController: UIViewController {
         configShadowButton(button: entrarGoogleButton)
         configShadowButton(button: entrarIcloudButton)
     }
+    
+    // Configurações que vou utilizar em outros textFields
     private func configTextFieldPadrao(textField: UITextField, keyboardType: UIKeyboardType = .emailAddress) {
         textField.layer.borderWidth = 2
         textField.layer.borderColor = UIColor.lightGray.cgColor
@@ -69,30 +76,22 @@ class ViewController: UIViewController {
         textField.layer.cornerRadius = 10
         textField.autocorrectionType = .no
         textField.keyboardType = keyboardType
+        
+    }
+    // eu chamo minha função "configTextFieldPadrao"
+    private func configTextField() {
+        configProtocol()
+//passWordTextField.isSecureTextEntry = true
+//passWordTextField.textContentType = .newPassword
+//passWordTextField.passwordRules = nil
+        // eu chamo minha função e falo qual textField é pra utilizar os parametros
+        configTextFieldPadrao(textField: emailTextField)
+        configTextFieldPadrao(textField: passWordTextField, keyboardType: .default)
     }
     
-    private func configTextField() {
+    private func configProtocol() {
         emailTextField.delegate = self
         passWordTextField.delegate = self
-        
-//        emailTextField.layer.borderWidth = 2
-//        emailTextField.layer.borderColor = UIColor.lightGray.cgColor
-//        emailTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
-//        emailTextField.clipsToBounds = true
-//        emailTextField.layer.cornerRadius = 10
-//        emailTextField.keyboardType = .emailAddress
-//        emailTextField.autocorrectionType = .no
-        configTextFieldPadrao(textField: emailTextField)
-        
-//        passWordTextField.layer.borderWidth = 2
-//        passWordTextField.layer.borderColor = UIColor.lightGray.cgColor
-//        passWordTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
-//        passWordTextField.clipsToBounds = true
-//        passWordTextField.layer.cornerRadius = 10
-//        passWordTextField.autocorrectionType = .no
-        passWordTextField.isSecureTextEntry = true
-//        passWordTextField.textContentType = .newPassword
-        configTextFieldPadrao(textField: passWordTextField, keyboardType: .default)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -104,16 +103,31 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 3
-        textField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        textField.layer.borderColor = UIColor.verde.cgColor
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 2
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-//        textField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        if let emailText = emailTextField.text, let passwordText = passWordTextField.text, !emailText.isEmpty && !passwordText.isEmpty {
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+            entrarButton.isEnabled = true
+        } else {
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+            entrarButton.isEnabled = false
+        }
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        // validação para quando clicar no botão retorno ele ir para o proximo textField
+        if textField == emailTextField {
+            passWordTextField.becomeFirstResponder()
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+        } else if textField == passWordTextField {
+            // Se desejar, pode chamar uma função para validar o login aqui
+            textField.resignFirstResponder()
+        }
+        return true
     }
 }
