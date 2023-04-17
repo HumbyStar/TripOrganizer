@@ -7,6 +7,6 @@
 
 import UIKit
 
-struct RecoverPasswordViewModel {
+class RecoverPasswordViewModel {
 
 }

@@ -12,7 +12,6 @@
         <!--Navigation Controller-->
         <scene sceneID="42C-Y6-ctC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P3B-f7-Gfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController modalPresentationStyle="fullScreen" id="Bvj-Y2-z4M" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WYp-pC-fPN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -22,6 +21,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sNu-fI-FjF"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P3B-f7-Gfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1641" y="-2"/>
         </scene>
@@ -111,7 +111,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="yWv-LI-pxf"/>
                                 </constraints>
-                                <color key="tintColor" red="0.47843140360000003" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Esqueci minha senha">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
@@ -129,6 +129,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Não tenho uma conta">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                    <color key="baseForegroundColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="registerTappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0FP-HY-ew9"/>
