@@ -8,7 +8,8 @@
 import UIKit
 
 class RecoverViewController: UIViewController{
-   
+    var viewModel: RecoverPasswordViewModel = RecoverPasswordViewModel()
+    
     @IBOutlet weak var recuperarSenhaButton: UIButton!
     @IBOutlet weak var emailTelaEsquecerSenhaTextField: UITextField!
     override func viewDidLoad() {
@@ -17,7 +18,7 @@ class RecoverViewController: UIViewController{
         configButton()
     }
     
-    
+   
     @IBAction func voltarButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
