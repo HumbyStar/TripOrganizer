@@ -50,6 +50,7 @@
 		43BE0D9529E70C31001B5963 /* AttractionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */; };
 		502A0B8A29EDBAC000458CBC /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A0B8929EDBAC000458CBC /* PerfilModel.swift */; };
 		502A0B8D29EDC0A700458CBC /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A0B8C29EDC0A600458CBC /* Alert.swift */; };
+		502A0B9029EDEB7300458CBC /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502A0B8F29EDEB7300458CBC /* PerfilViewModel.swift */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
 		C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */; };
@@ -105,6 +106,7 @@
 		43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCollectionViewCell.xib; sourceTree = "<group>"; };
 		502A0B8929EDBAC000458CBC /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
 		502A0B8C29EDC0A600458CBC /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		502A0B8F29EDEB7300458CBC /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
 		C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		0C3AD1EC29C3545200E7FE73 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
+				502A0B8E29EDEB5D00458CBC /* ViewModel */,
 				502A0B8829EDBAAF00458CBC /* Model */,
 				C43C4B3729EC664A0013D509 /* View */,
 			);
@@ -391,6 +394,14 @@
 				502A0B8C29EDC0A600458CBC /* Alert.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		502A0B8E29EDEB5D00458CBC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				502A0B8F29EDEB7300458CBC /* PerfilViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C43C4B0F29EC5D050013D509 /* View */ = {
@@ -723,6 +734,7 @@
 				0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */,
 				5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */,
 				43BE0D2E29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift in Sources */,
+				502A0B9029EDEB7300458CBC /* PerfilViewModel.swift in Sources */,
 				43780C8B29D5C8A9002072BF /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

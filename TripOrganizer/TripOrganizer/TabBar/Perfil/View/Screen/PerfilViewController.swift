@@ -20,6 +20,8 @@ class PerfilViewController: UIViewController {
     
     var alert: Alert?
     
+    var viewModel: PerfilViewModel = PerfilViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
@@ -37,7 +39,7 @@ class PerfilViewController: UIViewController {
     private func configTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
         textfield.autocorrectionType = .no
         textfield.clipsToBounds = true
-        textfield.layer.borderWidth = 2
+        textfield.layer.borderWidth = 3
         textfield.layer.borderColor = UIColor.lightGray.cgColor
         textfield.layer.cornerRadius = 10
         textfield.text = text
@@ -59,7 +61,20 @@ class PerfilViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        self.validateTextFields()
+        
+        viewModel.name = nameTextField.text ?? ""
+        viewModel.email = emailTextField.text ?? ""
+        viewModel.phone = phoneTextField.text ?? ""
+        viewModel.password = changePasswordTextField.text ?? ""
+        
+        if viewModel.validaTextField() {
+            self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
+        } else {
+            self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
+        }
+        
+        
+//        self.validateTextFields()
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
@@ -70,14 +85,14 @@ class PerfilViewController: UIViewController {
     }
     
     
-    private func validateTextFields() {
-        
-        if !nameTextField.hasText || !emailTextField.hasText || !phoneTextField.hasText || !changePasswordTextField.hasText {
-            self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
-        } else {
-            self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
-        }
-    }
+//    private func validateTextFields() {
+//
+//        if !nameTextField.hasText || !emailTextField.hasText || !phoneTextField.hasText || !changePasswordTextField.hasText {
+//            self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
+//        } else {
+//            self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
+//        }
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -89,7 +104,7 @@ extension PerfilViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         print(#function)
-        textField.layer.borderWidth = 2
+        textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.verde.cgColor
         
     }
@@ -97,10 +112,10 @@ extension PerfilViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if textField.hasText {
-            textField.layer.borderWidth = 2
+            textField.layer.borderWidth = 3
             textField.layer.borderColor = UIColor.lightGray.cgColor
         } else {
-            textField.layer.borderWidth = 2
+            textField.layer.borderWidth = 3
             textField.layer.borderColor = UIColor.red.cgColor
         }
         
