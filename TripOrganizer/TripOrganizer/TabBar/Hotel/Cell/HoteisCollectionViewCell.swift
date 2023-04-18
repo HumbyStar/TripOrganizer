@@ -9,9 +9,9 @@ import UIKit
 
 class HoteisCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var valoresLabel: UILabel!
+    
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var salvarImageView: UIImageView!
+    
     
     var data: [HotelModel] = []
     
