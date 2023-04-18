@@ -96,47 +96,78 @@ extension RegisterController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        if textField == nameTextField {
-            if textField.hasText {
-                nameTextField.layer.borderWidth = 2
-                nameTextField.layer.borderColor = UIColor.lightGray.cgColor
-            }
-            
+        // MARK: Essa validação faz com que caso o textField selecionado fica verde e caso saia do mesmo, volte a ficar em lightGray e que se todos os textField estiverem com textos abilitara o botal de resgistrar.
+        if nameTextField.hasText == true && emailTextField.hasText == true && passwordTextField.hasText == true && confirmPasswordTextField.hasText == true {
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+            registerButton.isEnabled = true
+        }else{
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+            registerButton.isEnabled = false
         }
-        //        if textField.hasText {
-        //            textField.layer.borderWidth = 2
-        //            textField.layer.borderColor = UIColor.lightGray.cgColor
-        //            registerButton.isEnabled = true
-        //        } else {
-        //            textField.layer.borderWidth = 1.5
-        //            textField.layer.borderColor = UIColor.red.cgColor
-        //            registerButton.isEnabled = false
-        //        }
-        //        validadeTextField()
-        //    }
+        // MARK: Essa validação tem o objetivo de fazer com que os textos do textField de senha e confirmar senha, teram que ser iguais, se nao for o textField confirmar senha ficara com uma borda vermelha e o botao de registrar não vai abilitar.
+        if textField == confirmPasswordTextField{
+            if confirmPasswordTextField.text == passwordTextField.text{
+                confirmPasswordTextField.layer.borderColor = UIColor.lightGray.cgColor
+                passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
+            }else{
+                confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+                registerButton.isEnabled = false
+            }
+        }
         
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            //        textField.resignFirstResponder()
+//        if confirmPasswordTextField.text == passwordTextField.text{
+//            registerButton.isEnabled = true
+//        }else{
+//            confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+//            registerButton.isEnabled = false
+//        }
+        
+    }
+            //        if textField == nameTextField {
+            //            if textField.hasText {
+            //                nameTextField.layer.borderWidth = 2
+            //                nameTextField.layer.borderColor = UIColor.lightGray.cgColor
+            //            }
+            //
+            //        }
+            //    }
+            //        if textField.hasText {
+            //            textField.layer.borderWidth = 2
+            //            textField.layer.borderColor = UIColor.lightGray.cgColor
+            //            registerButton.isEnabled = true
+            //        } else {
+            //            textField.layer.borderWidth = 1.5
+            //            textField.layer.borderColor = UIColor.red.cgColor
+            //            registerButton.isEnabled = false
+            //        }
+            //        validadeTextField()
+               //}
+            
+            func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
             if textField == nameTextField {
                 //MARK: quando eu clicar no return ele pular para o textField de Endereço
                 emailTextField.becomeFirstResponder()
-            }
-            if textField == emailTextField {
+                nameTextField.layer.borderWidth = 2
+                nameTextField.layer.borderColor = UIColor.lightGray.cgColor
+            }else if textField == emailTextField {
                 //MARK: Quando eu clicar no return ele pular paro o textField de senha
                 passwordTextField.becomeFirstResponder()
-            }
-            if textField == passwordTextField {
+                
+            }else if textField == passwordTextField {
                 //MARK: Quando eu clicar no return ele pular paro o textField de confirmar Senha
                 confirmPasswordTextField.becomeFirstResponder()
-            }
-            if textField == confirmPasswordTextField {
+                
+            }else{
                 //MARK: Quando eu clicar no return ele tem que
                 textField.resignFirstResponder()
                 confirmPasswordTextField.isEnabled = true
             }
             return true
+            
+            
         }
-        
     }
-}
+
