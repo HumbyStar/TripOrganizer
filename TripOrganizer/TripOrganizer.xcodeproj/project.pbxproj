@@ -50,6 +50,8 @@
 		43BE0D9529E70C31001B5963 /* AttractionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */; };
 		5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5050BCB529B8D9050019BB69 /* RegisterController.swift */; };
 		5050BCB829B8D92B0019BB69 /* RegisterController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */; };
+		50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB329EF214E0041ED71 /* Alert.swift */; };
+		50D5FBB729EF219B0041ED71 /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB629EF219B0041ED71 /* PerfilViewModel.swift */; };
 		886E229D29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E229C29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift */; };
 		886E22A029EDB3B100E70FF7 /* RecoverPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E229F29EDB3B100E70FF7 /* RecoverPasswordModel.swift */; };
 		C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */; };
@@ -107,6 +109,8 @@
 		43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCollectionViewCell.xib; sourceTree = "<group>"; };
 		5050BCB529B8D9050019BB69 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterController.storyboard; sourceTree = "<group>"; };
+		50D5FBB329EF214E0041ED71 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		50D5FBB629EF219B0041ED71 /* PerfilViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
 		886E229C29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModel.swift; sourceTree = "<group>"; };
 		886E229F29EDB3B100E70FF7 /* RecoverPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordModel.swift; sourceTree = "<group>"; };
 		C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				50D5FBB229EF214E0041ED71 /* Alert */,
 				C43C4B4529ED9B7D0013D509 /* Extension */,
 				0C111C1129BACD9000A0DCF4 /* TabBar */,
 				0C61EB0529BBDFEA00F54F47 /* Register */,
@@ -219,6 +224,7 @@
 		0C3AD1EC29C3545200E7FE73 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
+				50D5FBB529EF219B0041ED71 /* ViewModel */,
 				C43C4B3729EC664A0013D509 /* View */,
 			);
 			path = Perfil;
@@ -381,6 +387,23 @@
 				43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */,
 			);
 			path = Attraction;
+			sourceTree = "<group>";
+		};
+		50D5FBB229EF214E0041ED71 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				50D5FBB329EF214E0041ED71 /* Alert.swift */,
+			);
+			name = Alert;
+			path = TripOrganizer/Alert;
+			sourceTree = SOURCE_ROOT;
+		};
+		50D5FBB529EF219B0041ED71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				50D5FBB629EF219B0041ED71 /* PerfilViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		886E229B29EDB1DD00E70FF7 /* ViewModel */ = {
@@ -730,6 +753,7 @@
 				0C111C2429BACD9000A0DCF4 /* HomeVC.swift in Sources */,
 				C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */,
 				C43C4B4B29EDA2E20013D509 /* LoginModel.swift in Sources */,
+				50D5FBB729EF219B0041ED71 /* PerfilViewModel.swift in Sources */,
 				43BE0D2929E5CA6A001B5963 /* SecondFlightScreenVC.swift in Sources */,
 				43BE0D9329E70C31001B5963 /* HotelCollectionViewCell.swift in Sources */,
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
@@ -737,6 +761,7 @@
 				886E22A029EDB3B100E70FF7 /* RecoverPasswordModel.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				43BE0D8F29E70C31001B5963 /* RestaurantCollectionViewCell.swift in Sources */,
+				50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */,
 				C43C4B5129EDBA990013D509 /* RegisterModel.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
