@@ -62,13 +62,13 @@ class RegisterController: UIViewController {
         //        confirmPasswordTextField.isSecureTextEntry = true
     }
     
-    public func validadeTextField() {
-        if confirmPasswordTextField.text == passwordTextField.text {
-            registerButton.isEnabled = true
-        } else {
-            registerButton.isEnabled = false
-        }
-    }
+//    public func validadeTextField() {
+//        if confirmPasswordTextField.text == passwordTextField.text {
+//            registerButton.isEnabled = true
+//        } else {
+//            registerButton.isEnabled = false
+//        }
+//    }
     
     @IBAction func voltarButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -97,20 +97,21 @@ extension RegisterController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         // MARK: Essa validação faz com que caso o textField selecionado fica verde e caso saia do mesmo, volte a ficar em lightGray e que se todos os textField estiverem com textos abilitara o botal de resgistrar.
-        if nameTextField.hasText == true && emailTextField.hasText == true && confirmPasswordTextField.text == passwordTextField.text {
+        if nameTextField.hasText == true && emailTextField.hasText == true && passwordTextField.hasText == true && confirmPasswordTextField.hasText == true && confirmPasswordTextField.text == passwordTextField.text {
             textField.layer.borderWidth = 2
             textField.layer.borderColor = UIColor.lightGray.cgColor
-        }else{
+            registerButton.isEnabled = true
+        } else {
             textField.layer.borderWidth = 2
             textField.layer.borderColor = UIColor.lightGray.cgColor
-            registerButton.isEnabled = false
+//            registerButton.isEnabled = false
         }
         // MARK: Essa validação tem o objetivo de fazer com que os textos do textField de senha e confirmar senha, teram que ser iguais, se nao for o textField confirmar senha ficara com uma borda vermelha e o botao de registrar não vai abilitar.
-        if textField == confirmPasswordTextField {
+        if textField == confirmPasswordTextField || textField == passwordTextField {
             if confirmPasswordTextField.text == passwordTextField.text{
                 confirmPasswordTextField.layer.borderColor = UIColor.lightGray.cgColor
                 passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
-                registerButton.isEnabled = true
+                
             }else{
                 passwordTextField.layer.borderColor = UIColor.red.cgColor
                 confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
@@ -147,7 +148,6 @@ extension RegisterController: UITextFieldDelegate {
                //}
             
             func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//            textField.resignFirstResponder()
             if textField == nameTextField {
                 //MARK: quando eu clicar no return ele pular para o textField de Endereço
                 emailTextField.becomeFirstResponder()
