@@ -9,4 +9,5 @@ import Foundation
 
 struct HotelModel {
 
+    var room: String
 }
