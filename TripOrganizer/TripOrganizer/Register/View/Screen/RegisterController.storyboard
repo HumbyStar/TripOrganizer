@@ -65,7 +65,6 @@
                                 <rect key="frame" x="25" y="621" width="325" height="29.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29.5" id="3MO-o0-kMr"/>
-                                    <constraint firstAttribute="width" constant="325" id="AhY-57-vh6"/>
                                 </constraints>
                                 <color key="tintColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
