@@ -20,7 +20,7 @@ class PerfilViewController: UIViewController {
     
     var alert: Alert?
     
-    var viewModel: PerfilViewModel!
+    var viewModel: PerfilViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,30 +62,18 @@ class PerfilViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
-//        viewModel.name = nameTextField.text ?? ""
-//        viewModel.email = emailTextField.text ?? ""
-//        viewModel.phone = phoneTextField.text ?? ""
-//        viewModel.password = changePasswordTextField.text ?? ""
-        
         viewModel = PerfilViewModel(username: nameTextField.text ?? "",
                                     email: emailTextField.text ?? "",
                                     phone: phoneTextField.text ?? "",
                                     password: changePasswordTextField.text ?? "")
         
-        if viewModel.validateTextField() {
+        
+        if viewModel?.validateTextField() == true {
             self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
         } else {
             self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
         }
         
-        
-//        if viewModel.validateTextField2(){
-//            self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
-//        } else {
-//            self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
-//        }
-        
-//        self.validateTextFields()
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
@@ -95,15 +83,6 @@ class PerfilViewController: UIViewController {
        // tabBarController?.navigationController?.popToRootViewController(animated: true)
     }
     
-    
-//    private func validateTextFields() {
-//
-//        if !nameTextField.hasText || !emailTextField.hasText || !phoneTextField.hasText || !changePasswordTextField.hasText {
-//            self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
-//        } else {
-//            self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
-//        }
-//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
