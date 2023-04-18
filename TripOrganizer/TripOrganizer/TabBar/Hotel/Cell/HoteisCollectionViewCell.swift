@@ -9,9 +9,11 @@ import UIKit
 
 class HoteisCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var valoresLabel: UILabel!
+    
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var salvarImageView: UIImageView!
+    
+    
+    var data: [HotelModel] = []
     
     static let identifier = "HoteisCollectionViewCell"
     static func nib() -> UINib {
@@ -22,8 +24,9 @@ class HoteisCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-
-   // func setupCell(values: String) {
-   //     valoresLabel.text = values
-    //}
+    
+    func setupCell(data: HotelModel) {
+        imageView.image = UIImage(named: data.room)
+        
+    }
 }
