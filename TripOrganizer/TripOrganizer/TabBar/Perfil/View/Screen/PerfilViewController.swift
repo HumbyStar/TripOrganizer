@@ -20,7 +20,7 @@ class PerfilViewController: UIViewController {
     
     var alert: Alert?
     
-    var viewModel: PerfilViewModel = PerfilViewModel()
+    var viewModel: PerfilViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,17 +62,28 @@ class PerfilViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
-        viewModel.name = nameTextField.text ?? ""
-        viewModel.email = emailTextField.text ?? ""
-        viewModel.phone = phoneTextField.text ?? ""
-        viewModel.password = changePasswordTextField.text ?? ""
+//        viewModel.name = nameTextField.text ?? ""
+//        viewModel.email = emailTextField.text ?? ""
+//        viewModel.phone = phoneTextField.text ?? ""
+//        viewModel.password = changePasswordTextField.text ?? ""
         
-        if viewModel.validaTextField() {
+        viewModel = PerfilViewModel(username: nameTextField.text ?? "",
+                                    email: emailTextField.text ?? "",
+                                    phone: phoneTextField.text ?? "",
+                                    password: changePasswordTextField.text ?? "")
+        
+        if viewModel.validateTextField() {
             self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
         } else {
             self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
         }
         
+        
+//        if viewModel.validateTextField2(){
+//            self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
+//        } else {
+//            self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
+//        }
         
 //        self.validateTextFields()
     }
