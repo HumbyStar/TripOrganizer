@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterController: UIViewController {
-
+    
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -16,9 +16,11 @@ class RegisterController: UIViewController {
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var alreadyHaveAccount: UIButton!
     
+    var viewModel: RegisterViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = RegisterViewModel()
         configTextField()
         configButton()
         configProtocols()
@@ -27,7 +29,7 @@ class RegisterController: UIViewController {
     private func configButton() {
         registerButton.clipsToBounds = true
         registerButton.layer.cornerRadius = 10
-        registerButton.backgroundColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1.0)
+        registerButton.backgroundColor = UIColor.verde
         registerButton.setTitleColor(.white, for: .normal)
         registerButton.isEnabled = false
         alreadyHaveAccount.setTitleColor(.black,  for: .normal)
@@ -44,61 +46,29 @@ class RegisterController: UIViewController {
         textField.autocorrectionType = .no
         textField.clipsToBounds = true
         textField.layer.borderWidth = 2
-        textField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        textField.layer.borderColor = UIColor.verde.cgColor
         textField.layer.cornerRadius = 10
         textField.placeholder = placeHolder
         textField.layer.borderColor = borderColor.cgColor
         textField.keyboardType = keyboardType
+        textField.spellCheckingType = .no
     }
     
     private func configTextField() {
-        
-   //     nameTextField.autocorrectionType = .no
-//        nameTextField.placeholder = "  Nome Completo"
-     //   nameTextField.clipsToBounds = true
-//        nameTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
-//        nameTextField.layer.borderWidth = 2
-//        nameTextField.layer.cornerRadius = 10
-//        nameTextField.keyboardType = .default
         configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: "Nome Completo")
-        
-//        emailTextField.autocorrectionType = .no
-//        emailTextField.placeholder = "  E-mail"
-//        emailTextField.clipsToBounds = true
-//        emailTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
-//        emailTextField.layer.borderWidth = 2
-//        emailTextField.layer.cornerRadius = 10
-//        emailTextField.keyboardType = .emailAddress
         configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: "E-mail", keyboardType: .emailAddress)
-        
-//        passwordTextField.autocorrectionType = .no
-//        passwordTextField.placeholder = "  Senha"
-//        passwordTextField.clipsToBounds = true
-//        passwordTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
-//        passwordTextField.layer.borderWidth = 2
-//        passwordTextField.layer.cornerRadius = 10
-//        passwordTextField.keyboardType = .default
-        //passwordTextField.isSecureTextEntry = true
         configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: "Senha")
-        
-//        confirmPasswordTextField.autocorrectionType = .no
-//        confirmPasswordTextField.placeholder = "  Comfirmar Senha"
-//       confirmPasswordTextField.clipsToBounds = true
-//        confirmPasswordTextField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
-//        confirmPasswordTextField.layer.borderWidth = 2
-//        confirmPasswordTextField.layer.cornerRadius = 10
-//        confirmPasswordTextField.keyboardType = .default
-        //confirmPasswordTextField.isSecureTextEntry = true
         configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: "Confirmar Senha")
-        
+//        confirmPasswordTextField.isSecureTextEntry = true
+//        confirmPasswordTextField.isSecureTextEntry = true
     }
-    
     
     @IBAction func voltarButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+        
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
@@ -107,6 +77,7 @@ class RegisterController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+        
     }
 }
 
@@ -114,40 +85,51 @@ extension RegisterController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 3
-        textField.layer.borderColor = UIColor(red: 112/255, green: 156/255, blue: 149/255, alpha: 1).cgColor
+        textField.layer.borderColor = UIColor.verde.cgColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 2
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        if textField.hasText == true && confirmPasswordTextField.text == passwordTextField.text {
+        // MARK: Essa validação faz com que caso o textField selecionado fica verde e caso saia do mesmo, volte a ficar em lightGray e que se todos os textField estiverem com textos abilitara o botal de resgistrar.
+        if nameTextField.hasText == true && emailTextField.hasText == true && passwordTextField.hasText == true && confirmPasswordTextField.hasText == true && confirmPasswordTextField.text == passwordTextField.text {
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
             registerButton.isEnabled = true
-        }else{
-            registerButton.isEnabled = false
+        } else {
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = UIColor.lightGray.cgColor
+            //            registerButton.isEnabled = false
+        }
+        // MARK: Essa validação tem o objetivo de fazer com que os textos do textField de senha e confirmar senha, teram que ser iguais, se nao for o textField confirmar senha ficara com uma borda vermelha e o botao de registrar não vai abilitar.
+        if textField == confirmPasswordTextField || textField == passwordTextField {
+            if confirmPasswordTextField.text == passwordTextField.text {
+                confirmPasswordTextField.layer.borderColor = UIColor.lightGray.cgColor
+                passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
+            } else {
+                confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+                registerButton.isEnabled = false
+            }
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        if textField == nameTextField {
+            //MARK: quando eu clicar no return ele pular para o textField de Endereço
+            emailTextField.becomeFirstResponder()
+            
+        } else if textField == emailTextField {
+            //MARK: Quando eu clicar no return ele pular paro o textField de senha
+            passwordTextField.becomeFirstResponder()
+            
+        } else if textField == passwordTextField {
+            //MARK: Quando eu clicar no return ele pular paro o textField de confirmar Senha
+            confirmPasswordTextField.becomeFirstResponder()
+            
+        } else {
+            //MARK: Quando eu clicar no return ele tem que
+            textField.resignFirstResponder()
+        }
+        return true
+        
     }
 }
-//if textField == nameTextField {
-////MARK: quando eu clicar no return ele pular para o textField de Endereço
-//    nameTextField.becomeFirstResponder()
-//}
-//if textField == enderecoTextField {
-////MARK: Quando eu clicar no return ele pular paro o textField de senha
-//    enderecoTextField.becomeFirstResponder()
-//}
-//if textField == passwordTextField {
-////MARK: Quando eu clicar no return ele pular paro o textField de confirmar Senha
-//    passwordTextField.becomeFirstResponder()
-//}
-//if textField == confirmPasswordTextField {
-////MARK: Quando eu clicar no return ele tem que
-//    confirmPasswordTextField.resignFirstResponder()
-//    confirmPasswordTextField.isEnabled = true
-//}
-//return true
-//}
+

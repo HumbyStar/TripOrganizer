@@ -56,6 +56,8 @@
 		C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4629ED9B950013D509 /* UIColor .swift */; };
 		C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
 		C43C4B4B29EDA2E20013D509 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4A29EDA2E20013D509 /* LoginModel.swift */; };
+		C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */; };
+		C43C4B5129EDBA990013D509 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B5029EDBA990013D509 /* RegisterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,8 @@
 		C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C43C4B4629ED9B950013D509 /* UIColor .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor .swift"; sourceTree = "<group>"; };
 		C43C4B4A29EDA2E20013D509 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		C43C4B5029EDBA990013D509 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +237,9 @@
 		0C61EB0529BBDFEA00F54F47 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				C43C4B4F29EDBA6C0013D509 /* Model */,
 				C43C4B1B29EC5E6D0013D509 /* View */,
+				C43C4B4C29EDB9390013D509 /* ViewModel */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -607,6 +613,22 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		C43C4B4C29EDB9390013D509 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C43C4B4F29EDBA6C0013D509 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B5029EDBA990013D509 /* RegisterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -715,11 +737,13 @@
 				886E22A029EDB3B100E70FF7 /* RecoverPasswordModel.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				43BE0D8F29E70C31001B5963 /* RestaurantCollectionViewCell.swift in Sources */,
+				C43C4B5129EDBA990013D509 /* RegisterModel.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantVC.swift in Sources */,
 				886E229D29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift in Sources */,
 				43780C9129D5C943002072BF /* HoteisCollectionViewCell.swift in Sources */,
+				C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */,
 				0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */,
 				5050BCB629B8D9050019BB69 /* RegisterController.swift in Sources */,
 				43BE0D2E29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift in Sources */,
