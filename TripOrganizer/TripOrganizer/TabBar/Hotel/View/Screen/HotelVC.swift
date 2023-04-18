@@ -18,6 +18,7 @@ class HotelVC: UIViewController {
     
     var viewModel: HotelViewModel = HotelViewModel()
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var adicionarButton: UIButton!
     @IBOutlet weak var hotelMapView: MKMapView!
@@ -48,10 +49,11 @@ class HotelVC: UIViewController {
     private func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-        }
+        viewModel.configLayoutCollectionView(collectionView: collectionView)
+//        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+//            layout.scrollDirection = .horizontal
+//            layout.estimatedItemSize = .zero
+//        }
         collectionView.register(HoteisCollectionViewCell.nib(), forCellWithReuseIdentifier: HoteisCollectionViewCell.identifier)
     }
     
@@ -74,10 +76,10 @@ extension HotelVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         cell?.layer.cornerRadius = 10
         return cell ?? UICollectionViewCell()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let height = collectionView.bounds.height
-        return CGSize(width: 140, height: height - 20)
-    }
-    
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            let height = collectionView.bounds.height
+            return CGSize(width: 140, height: height - 20)
+        }
 }
+
+

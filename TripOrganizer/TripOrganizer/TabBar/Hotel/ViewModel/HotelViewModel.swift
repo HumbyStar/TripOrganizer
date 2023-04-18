@@ -8,7 +8,16 @@
 import UIKit
 
 class HotelViewModel {
-
+    
     var listRoom: [HotelModel] = [HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03"),HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03"),HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03")]
     
+    func configLayoutCollectionView(collectionView: UICollectionView){
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+            layout.estimatedItemSize = .zero
+            
+        }
+    }
+   
 }
