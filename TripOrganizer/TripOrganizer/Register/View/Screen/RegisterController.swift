@@ -16,10 +16,11 @@ class RegisterController: UIViewController {
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var alreadyHaveAccount: UIButton!
     
-    var viewModel: RegisterViewModel = RegisterViewModel()
+    var viewModel: RegisterViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = RegisterViewModel()
         configTextField()
         configButton()
         configProtocols()
@@ -57,9 +58,9 @@ class RegisterController: UIViewController {
         configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: "Nome Completo")
         configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: "E-mail", keyboardType: .emailAddress)
         configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: "Senha")
-//                confirmPasswordTextField.isSecureTextEntry = true
         configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: "Confirmar Senha")
-        //        confirmPasswordTextField.isSecureTextEntry = true
+//        confirmPasswordTextField.isSecureTextEntry = true
+//        confirmPasswordTextField.isSecureTextEntry = true
     }
     
     @IBAction func voltarButton(_ sender: Any) {
@@ -100,7 +101,7 @@ extension RegisterController: UITextFieldDelegate {
         }
         // MARK: Essa validação tem o objetivo de fazer com que os textos do textField de senha e confirmar senha, teram que ser iguais, se nao for o textField confirmar senha ficara com uma borda vermelha e o botao de registrar não vai abilitar.
         if textField == confirmPasswordTextField || textField == passwordTextField {
-            if confirmPasswordTextField.text == passwordTextField.text{
+            if confirmPasswordTextField.text == passwordTextField.text {
                 confirmPasswordTextField.layer.borderColor = UIColor.lightGray.cgColor
                 passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
             } else {
