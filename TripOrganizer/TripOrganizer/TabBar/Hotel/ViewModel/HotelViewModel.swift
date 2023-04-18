@@ -20,4 +20,9 @@ class HotelViewModel {
         }
     }
    
+    public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
+        return CGSize(width: 140, height: height - 20)
+    }
+    
+    
 }
