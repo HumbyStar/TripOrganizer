@@ -12,7 +12,7 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var restaurantCollectionView: UICollectionView!
     
-    var restaurantList: [String] = ["restaurante1", "restaurante2"]
+    var viewModel: RestaurantViewModel = RestaurantViewModel()
     
     static let identifier: String = "RestaurantCollectionViewCell"
     
@@ -49,12 +49,12 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
 extension RestaurantCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return restaurantList.count
+        viewModel.getRestautantListSize()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PlacesCollectionViewCell? = restaurantCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell
-        cell?.setupCell(imageName: Image(nameImages: restaurantList[indexPath.row]))
+        cell?.setupCell(imageName: viewModel.getImage(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
     
