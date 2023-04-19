@@ -21,6 +21,10 @@ class AttractionViewModel {
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = .zero
         }
-        
     }
+    
+    public func sizeForItem(IndexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
+        return CGSize(width: 140, height: height - 20)
+    }
+    
 }
