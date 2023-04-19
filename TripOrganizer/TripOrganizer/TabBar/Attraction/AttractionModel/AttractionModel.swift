@@ -9,4 +9,5 @@ import Foundation
 
 struct AttractionModel {
 
+    let name: String
 }

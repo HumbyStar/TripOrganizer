@@ -10,8 +10,9 @@ import MapKit
 
 class AttractionVC: UIViewController {
     
-    let locationImagelist: [String] = ["1","2","3","4","5"]
-
+    
+    let viewModel: AttractionViewModel = AttractionViewModel()
+    
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var map: MKMapView!
@@ -63,13 +64,13 @@ class AttractionVC: UIViewController {
 extension AttractionVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return locationImagelist.count
+        return viewModel.locationImagelist.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: AttractionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell
-        cell?.setupCell(imageName: locationImagelist[indexPath.row])
+        cell?.setupCell(imageName:viewModel.locationImagelist[indexPath.row] )
         return cell ?? UICollectionViewCell()
     }
     

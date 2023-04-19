@@ -23,8 +23,8 @@ class AttractionCell: UICollectionViewCell {
         attractionImageView.contentMode = .scaleAspectFill
     }
     
-    func setupCell(imageName: String) {
-        self.attractionImageView.image = UIImage(named: imageName)
+    func setupCell(imageName: AttractionModel) {
+        self.attractionImageView.image = UIImage(named: imageName.name)
     }
 
 }
