@@ -48,15 +48,8 @@ class AttractionVC: UIViewController {
     func configCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-        }
-        
+        viewModel.configLayoutCollectionView(collectionView: collectionView)
         collectionView.register(AttractionCell.nib(), forCellWithReuseIdentifier: AttractionCell.identifier)
-        
         collectionView.backgroundColor = .clear
     }
 }
