@@ -42,6 +42,7 @@ class RegisterController: UIViewController {
         confirmPasswordTextField.delegate = self
     }
     
+    
     private func configTextFieldPadrao(textField: UITextField,borderColor: UIColor , placeHolder: String, keyboardType: UIKeyboardType = .default) {
         textField.autocorrectionType = .no
         textField.clipsToBounds = true
@@ -52,6 +53,7 @@ class RegisterController: UIViewController {
         textField.layer.borderColor = borderColor.cgColor
         textField.keyboardType = keyboardType
         textField.spellCheckingType = .no
+        nameTextField.autocapitalizationType = .words
     }
     
     private func configTextField() {

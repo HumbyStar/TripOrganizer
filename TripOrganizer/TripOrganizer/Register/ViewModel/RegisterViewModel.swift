@@ -5,10 +5,9 @@
 //  Created by Gabriel Mors  on 17/04/23.
 //
 
-import UIKit
+import Foundation
 
 class RegisterViewModel {
    
-    
     
 }
