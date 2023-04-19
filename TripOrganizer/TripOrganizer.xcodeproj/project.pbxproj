@@ -65,7 +65,8 @@
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
 		C4619CE129F02AFF00530196 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE029F02AFF00530196 /* HomeModel.swift */; };
 		C4619CE529F04FA200530196 /* attractionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE429F04FA200530196 /* attractionCellViewModel.swift */; };
-		C4619CE929F0624D00530196 /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE829F0624D00530196 /* RestaurantViewModel.swift */; };
+		C4619CE929F0624D00530196 /* RestaurantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE829F0624D00530196 /* RestaurantCellViewModel.swift */; };
+		C4619CEE29F0803300530196 /* HotelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CED29F0803300530196 /* HotelCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,7 +130,8 @@
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C4619CE029F02AFF00530196 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		C4619CE429F04FA200530196 /* attractionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attractionCellViewModel.swift; sourceTree = "<group>"; };
-		C4619CE829F0624D00530196 /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
+		C4619CE829F0624D00530196 /* RestaurantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCellViewModel.swift; sourceTree = "<group>"; };
+		C4619CED29F0803300530196 /* HotelCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +162,8 @@
 		0C111C1229BACD9000A0DCF4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D8129E70C31001B5963 /* Cell */,
 				C4619CDF29F02AEB00530196 /* Model */,
+				43BE0D8129E70C31001B5963 /* Cell */,
 				C43C4B3329EC64760013D509 /* View */,
 				C4619CDC29F02AA400530196 /* ViewModel */,
 			);
@@ -389,8 +391,8 @@
 		43BE0D8829E70C31001B5963 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
-				C4619CEB29F0704A00530196 /* ViewModel */,
 				C4619CEA29F0704100530196 /* Screen */,
+				C4619CEB29F0704A00530196 /* ViewModel */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -728,7 +730,7 @@
 		C4619CE729F05FB100530196 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				C4619CE829F0624D00530196 /* RestaurantViewModel.swift */,
+				C4619CE829F0624D00530196 /* RestaurantCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -745,6 +747,7 @@
 		C4619CEB29F0704A00530196 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C4619CED29F0803300530196 /* HotelCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -851,7 +854,7 @@
 				C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */,
 				C4619CE529F04FA200530196 /* attractionCellViewModel.swift in Sources */,
 				886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */,
-				C4619CE929F0624D00530196 /* RestaurantViewModel.swift in Sources */,
+				C4619CE929F0624D00530196 /* RestaurantCellViewModel.swift in Sources */,
 				43780CA029D5C9B7002072BF /* AttractionCell.swift in Sources */,
 				C4619CE129F02AFF00530196 /* HomeModel.swift in Sources */,
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
@@ -869,6 +872,7 @@
 				0C3AD1EE29C3546C00E7FE73 /* PerfilViewController.swift in Sources */,
 				43BE0D9429E70C31001B5963 /* AttractionCollectionViewCell.swift in Sources */,
 				C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */,
+				C4619CEE29F0803300530196 /* HotelCellViewModel.swift in Sources */,
 				886E22A029EDB3B100E70FF7 /* RecoverPasswordModel.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				43BE0D8F29E70C31001B5963 /* RestaurantCollectionViewCell.swift in Sources */,

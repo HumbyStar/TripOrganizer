@@ -10,6 +10,7 @@ import UIKit
 class PlacesCollectionViewCell: UICollectionViewCell {
 
     static let identifier: String = "PlacesCollectionViewCell"
+    
     static public func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }

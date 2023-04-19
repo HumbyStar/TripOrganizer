@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RestaurantViewModel {
+class RestaurantCellViewModel {
     
     private var restaurantList: [Image] = [Image(nameImages: "restaurante1"), Image(nameImages: "restaurante2")]
     

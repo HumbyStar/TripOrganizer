@@ -12,7 +12,7 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var restaurantCollectionView: UICollectionView!
     
-    var viewModel: RestaurantViewModel = RestaurantViewModel()
+    var viewModel: RestaurantCellViewModel = RestaurantCellViewModel()
     
     static let identifier: String = "RestaurantCollectionViewCell"
     
