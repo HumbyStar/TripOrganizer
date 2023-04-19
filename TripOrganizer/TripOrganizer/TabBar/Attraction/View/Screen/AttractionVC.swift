@@ -11,7 +11,7 @@ import MapKit
 class AttractionVC: UIViewController {
     
     
-    let viewModel: AttractionViewModel = AttractionViewModel()
+  public let viewModel: AttractionViewModel = AttractionViewModel()
     
     
     @IBOutlet var searchBar: UISearchBar!
@@ -38,14 +38,13 @@ class AttractionVC: UIViewController {
 
     }
     
-    
-    func roundedBorder() {
+    private func roundedBorder() {
         detailView.layer.cornerRadius = 12
         map.layer.cornerRadius = 12
     }
     
     
-    func configCollectionView() {
+private func configCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         viewModel.configLayoutCollectionView(collectionView: collectionView)
@@ -57,13 +56,13 @@ class AttractionVC: UIViewController {
 extension AttractionVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.locationImagelist.count
+        return viewModel.getLocationImagelist()
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: AttractionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell
-        cell?.setupCell(imageName:viewModel.locationImagelist[indexPath.row] )
+        cell?.setupCell(imageName: viewModel.getLocationImageListCellForItemAt(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
    

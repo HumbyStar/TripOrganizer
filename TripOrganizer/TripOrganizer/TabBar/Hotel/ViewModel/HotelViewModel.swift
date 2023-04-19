@@ -9,9 +9,17 @@ import UIKit
 
 class HotelViewModel {
     
-    var listRoom: [HotelModel] = [HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03"),HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03"),HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03")]
+  private  var listRoom: [HotelModel] = [HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03"),HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03"),HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03")]
     
-    func configLayoutCollectionView(collectionView: UICollectionView){
+    public func getListRoom() -> Int{
+        listRoom.count
+    }
+    
+    public func getListRoomCellForItemAt(index: Int) -> HotelModel{
+        listRoom[index]
+    }
+    
+    public func configLayoutCollectionView(collectionView: UICollectionView){
         
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal

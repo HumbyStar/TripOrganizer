@@ -9,11 +9,19 @@ import UIKit
 
 class AttractionViewModel {
 
-    let locationImagelist: [AttractionModel] = [AttractionModel(name:"1"),
+   private let locationImagelist: [AttractionModel] = [AttractionModel(name:"1"),
                                                 AttractionModel(name:"2"),
                                                 AttractionModel(name:"3"),
                                                 AttractionModel(name:"4"),
                                                 AttractionModel(name:"5")]
+    
+    public func getLocationImagelist() -> Int{
+        locationImagelist.count
+    }
+    
+    public func getLocationImageListCellForItemAt(index: Int) -> AttractionModel{
+        locationImagelist[index]
+    }
     
    public func configLayoutCollectionView(collectionView: UICollectionView){
         

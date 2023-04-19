@@ -11,9 +11,9 @@ class AttractionCell: UICollectionViewCell {
     
     @IBOutlet var attractionImageView: UIImageView!
     
-    static let identifier: String = "AttractionCell"
+  public static let identifier: String = "AttractionCell"
     
-    static func nib() -> UINib {
+ public static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
 
@@ -23,7 +23,7 @@ class AttractionCell: UICollectionViewCell {
         attractionImageView.contentMode = .scaleAspectFill
     }
     
-    func setupCell(imageName: AttractionModel) {
+   public func setupCell(imageName: AttractionModel) {
         self.attractionImageView.image = UIImage(named: imageName.name)
     }
 

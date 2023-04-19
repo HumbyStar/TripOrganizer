@@ -22,14 +22,14 @@ class RecoverViewController: UIViewController{
     @IBAction func voltarButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    func configButton(){
+   private func configButton(){
         
         recuperarSenhaButton.layer.cornerRadius = 10
         recuperarSenhaButton.clipsToBounds = true
         recuperarSenhaButton.isEnabled = false
         
     }
-    func configTextField(){
+   private func configTextField(){
        // Assinando o Protocolo do textField.
         emailTelaEsquecerSenhaTextField.delegate = self
     

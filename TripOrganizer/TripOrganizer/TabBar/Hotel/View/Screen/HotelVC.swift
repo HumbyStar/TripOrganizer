@@ -16,7 +16,7 @@ class HotelVC: UIViewController {
     
     //var listValues: [String] = ["Diárias a partir R$130","Diárias a partir R$140","Diárias a partir R$150","Diárias a partir R$160","Diárias a partir R$170","Diárias a partir R$180","Diárias a partir R$190","Diárias a partir R$200","Diárias a partir R$170","Diárias a partir R$170","Diárias a partir R$170","Diárias a partir R$170","Diárias a partir R$170","Diárias a partir R$170","Diárias a partir R$170","Diárias a partir R$170"]
     
-    var viewModel: HotelViewModel = HotelViewModel()
+   public var viewModel: HotelViewModel = HotelViewModel()
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -59,7 +59,7 @@ class HotelVC: UIViewController {
     
     
     
-    func configButton() {
+    public func configButton() {
         adicionarButton.layer.cornerRadius = 15
     }
 }
@@ -67,12 +67,12 @@ class HotelVC: UIViewController {
 extension HotelVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.listRoom.count
+        return viewModel.getListRoom()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HoteisCollectionViewCell.identifier, for: indexPath) as? HoteisCollectionViewCell
-        cell?.setupCell(data: viewModel.listRoom[indexPath.row])
+        cell?.setupCell(data: viewModel.getListRoomCellForItemAt(index: indexPath.row))
         cell?.layer.cornerRadius = 10
         return cell ?? UICollectionViewCell()
     }

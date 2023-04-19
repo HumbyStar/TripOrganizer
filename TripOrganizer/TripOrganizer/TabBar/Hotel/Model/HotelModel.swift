@@ -9,5 +9,5 @@ import Foundation
 
 struct HotelModel {
 
-    var room: String
+  public  var room: String
 }

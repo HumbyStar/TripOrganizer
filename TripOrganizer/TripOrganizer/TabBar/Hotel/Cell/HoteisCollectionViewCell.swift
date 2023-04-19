@@ -13,7 +13,7 @@ class HoteisCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     
-    var data: [HotelModel] = []
+   public var data: [HotelModel] = []
     
     static let identifier = "HoteisCollectionViewCell"
     static func nib() -> UINib {
@@ -25,7 +25,7 @@ class HoteisCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setupCell(data: HotelModel) {
+   public func setupCell(data: HotelModel) {
         imageView.image = UIImage(named: data.room)
         
     }

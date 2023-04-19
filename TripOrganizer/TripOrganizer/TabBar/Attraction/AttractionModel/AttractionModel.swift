@@ -9,5 +9,5 @@ import Foundation
 
 struct AttractionModel {
 
-    let name: String
+  public  let name: String
 }
