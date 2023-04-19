@@ -14,12 +14,12 @@ class AttractionCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "AttractionCollectionViewCell"
     
-    var attractionList: [String] = ["parque", "parque1", "1", "2", "3", "4", "5"]
-    
     static public func nib() -> UINib{
         return UINib(nibName: identifier, bundle: nil)
     }
-
+    
+    var viewModel: attractionCellViewModel = attractionCellViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configCollectionview()
@@ -36,7 +36,6 @@ class AttractionCollectionViewCell: UICollectionViewCell {
         }
         
         placesCollectionView.register(PlacesCollectionViewCell.nib(), forCellWithReuseIdentifier: PlacesCollectionViewCell.identifier)
-        
         placesCollectionView.showsHorizontalScrollIndicator = false
     }
     
@@ -50,19 +49,19 @@ class AttractionCollectionViewCell: UICollectionViewCell {
 extension AttractionCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return attractionList.count
+        return viewModel.getAttractionListSize()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: PlacesCollectionViewCell? = placesCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell
-        cell?.setupCell(imageName: attractionList[indexPath.row])
-        return cell ?? UICollectionViewCell()
-        
+        if let cell: PlacesCollectionViewCell = placesCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell {
+            cell.setupCell(imageName: viewModel.getImage(index: indexPath.row))
+            return cell
+        }
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width * 0.7, height: collectionView.frame.height)
-
     }
     
 }

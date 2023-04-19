@@ -64,6 +64,7 @@
 		C43C4B5129EDBA990013D509 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B5029EDBA990013D509 /* RegisterModel.swift */; };
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
 		C4619CE129F02AFF00530196 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE029F02AFF00530196 /* HomeModel.swift */; };
+		C4619CE529F04FA200530196 /* attractionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE429F04FA200530196 /* attractionCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		C43C4B5029EDBA990013D509 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C4619CE029F02AFF00530196 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		C4619CE429F04FA200530196 /* attractionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attractionCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,8 +370,8 @@
 		43BE0D8229E70C31001B5963 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D8329E70C31001B5963 /* RestaurantCollectionViewCell.xib */,
-				43BE0D8429E70C31001B5963 /* RestaurantCollectionViewCell.swift */,
+				C4619CE729F05FB100530196 /* ViewModel */,
+				C4619CE629F05EBB00530196 /* Screen */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -395,8 +397,8 @@
 		43BE0D8B29E70C31001B5963 /* Attraction */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D8C29E70C31001B5963 /* AttractionCollectionViewCell.swift */,
-				43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */,
+				C4619CE329F04EEE00530196 /* ViewModel */,
+				C4619CE229F04EE100530196 /* Screen */,
 			);
 			path = Attraction;
 			sourceTree = "<group>";
@@ -696,6 +698,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C4619CE229F04EE100530196 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8D29E70C31001B5963 /* AttractionCollectionViewCell.xib */,
+				43BE0D8C29E70C31001B5963 /* AttractionCollectionViewCell.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C4619CE329F04EEE00530196 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C4619CE429F04FA200530196 /* attractionCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C4619CE629F05EBB00530196 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8329E70C31001B5963 /* RestaurantCollectionViewCell.xib */,
+				43BE0D8429E70C31001B5963 /* RestaurantCollectionViewCell.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C4619CE729F05FB100530196 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -787,6 +822,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */,
+				C4619CE529F04FA200530196 /* attractionCellViewModel.swift in Sources */,
 				886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */,
 				43780CA029D5C9B7002072BF /* AttractionCell.swift in Sources */,
 				C4619CE129F02AFF00530196 /* HomeModel.swift in Sources */,

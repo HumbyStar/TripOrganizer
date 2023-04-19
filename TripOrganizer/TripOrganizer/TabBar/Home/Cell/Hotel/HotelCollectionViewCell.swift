@@ -55,7 +55,7 @@ extension HotelCollectionViewCell: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PlacesCollectionViewCell? = hotelCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell
-        cell?.setupCell(imageName: hotelList[indexPath.row])
+        cell?.setupCell(imageName: Image(nameImages: hotelList[indexPath.row]))
         return cell ?? UICollectionViewCell()
     }
     

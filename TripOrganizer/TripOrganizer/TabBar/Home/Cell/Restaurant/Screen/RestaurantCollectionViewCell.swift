@@ -12,9 +12,9 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var restaurantCollectionView: UICollectionView!
     
-    static let identifier: String = "RestaurantCollectionViewCell"
-    
     var restaurantList: [String] = ["restaurante1", "restaurante2"]
+    
+    static let identifier: String = "RestaurantCollectionViewCell"
     
     static public func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
@@ -54,7 +54,7 @@ extension RestaurantCollectionViewCell: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PlacesCollectionViewCell? = restaurantCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell
-        cell?.setupCell(imageName: restaurantList[indexPath.row])
+        cell?.setupCell(imageName: Image(nameImages: restaurantList[indexPath.row]))
         return cell ?? UICollectionViewCell()
     }
     
