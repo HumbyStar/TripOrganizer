@@ -75,6 +75,7 @@ class ViewController: UIViewController {
         textField.clipsToBounds = true
         textField.layer.cornerRadius = 10
         textField.autocorrectionType = .no
+        textField.spellCheckingType = .no
         textField.keyboardType = keyboardType
         
     }
