@@ -65,6 +65,7 @@
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
 		C4619CE129F02AFF00530196 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE029F02AFF00530196 /* HomeModel.swift */; };
 		C4619CE529F04FA200530196 /* attractionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE429F04FA200530196 /* attractionCellViewModel.swift */; };
+		C4619CE929F0624D00530196 /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CE829F0624D00530196 /* RestaurantViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C4619CE029F02AFF00530196 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		C4619CE429F04FA200530196 /* attractionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attractionCellViewModel.swift; sourceTree = "<group>"; };
+		C4619CE829F0624D00530196 /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -727,6 +729,7 @@
 		C4619CE729F05FB100530196 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C4619CE829F0624D00530196 /* RestaurantViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */,
 				C4619CE529F04FA200530196 /* attractionCellViewModel.swift in Sources */,
 				886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */,
+				C4619CE929F0624D00530196 /* RestaurantViewModel.swift in Sources */,
 				43780CA029D5C9B7002072BF /* AttractionCell.swift in Sources */,
 				C4619CE129F02AFF00530196 /* HomeModel.swift in Sources */,
 				0C111C2B29BACD9000A0DCF4 /* FlightVC.swift in Sources */,
