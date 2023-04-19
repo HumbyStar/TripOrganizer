@@ -9,5 +9,10 @@ import UIKit
 
 class HomeViewModel {
 
+//    private var listCell: [String] = []
+    
+    public func homeNumberOfItemsInSection() -> Int {
+        3
+    }
     
 }

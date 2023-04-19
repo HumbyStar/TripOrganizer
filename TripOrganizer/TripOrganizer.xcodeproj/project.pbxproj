@@ -372,8 +372,8 @@
 		43BE0D8229E70C31001B5963 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
-				C4619CE729F05FB100530196 /* ViewModel */,
 				C4619CE629F05EBB00530196 /* Screen */,
+				C4619CE729F05FB100530196 /* ViewModel */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -381,8 +381,7 @@
 		43BE0D8529E70C31001B5963 /* ImageCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D8629E70C31001B5963 /* PlacesCollectionViewCell.swift */,
-				43BE0D8729E70C31001B5963 /* PlacesCollectionViewCell.xib */,
+				C4619CEC29F0708800530196 /* Screen */,
 			);
 			path = ImageCollectionViewCell;
 			sourceTree = "<group>";
@@ -390,8 +389,8 @@
 		43BE0D8829E70C31001B5963 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D8929E70C31001B5963 /* HotelCollectionViewCell.xib */,
-				43BE0D8A29E70C31001B5963 /* HotelCollectionViewCell.swift */,
+				C4619CEB29F0704A00530196 /* ViewModel */,
+				C4619CEA29F0704100530196 /* Screen */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -399,8 +398,8 @@
 		43BE0D8B29E70C31001B5963 /* Attraction */ = {
 			isa = PBXGroup;
 			children = (
-				C4619CE329F04EEE00530196 /* ViewModel */,
 				C4619CE229F04EE100530196 /* Screen */,
+				C4619CE329F04EEE00530196 /* ViewModel */,
 			);
 			path = Attraction;
 			sourceTree = "<group>";
@@ -732,6 +731,31 @@
 				C4619CE829F0624D00530196 /* RestaurantViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C4619CEA29F0704100530196 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8929E70C31001B5963 /* HotelCollectionViewCell.xib */,
+				43BE0D8A29E70C31001B5963 /* HotelCollectionViewCell.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C4619CEB29F0704A00530196 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C4619CEC29F0708800530196 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				43BE0D8729E70C31001B5963 /* PlacesCollectionViewCell.xib */,
+				43BE0D8629E70C31001B5963 /* PlacesCollectionViewCell.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
