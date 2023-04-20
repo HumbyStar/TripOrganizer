@@ -28,15 +28,8 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     private func configCollectionView() {
         restaurantCollectionView.delegate = self
         restaurantCollectionView.dataSource = self
-        
-        if let layout = restaurantCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        }
-        
+        viewModel.configureLayout(collectionView: restaurantCollectionView)
         restaurantCollectionView.register(PlacesCollectionViewCell.nib(), forCellWithReuseIdentifier: PlacesCollectionViewCell.identifier)
-        
         restaurantCollectionView.showsHorizontalScrollIndicator = false
     }
     
