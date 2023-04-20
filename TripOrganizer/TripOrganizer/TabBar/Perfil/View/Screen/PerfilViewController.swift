@@ -26,6 +26,8 @@ class PerfilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification: )), name: UIResponder.keyboardWillHideNotification, object: nil)
         configProfileImage()
         configTextFieldDelegates()
         configTextFields()
@@ -52,12 +54,13 @@ class PerfilViewController: UIViewController {
     private func configTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
         textfield.autocorrectionType = .no
         textfield.clipsToBounds = true
-        textfield.layer.borderWidth = 3
+        textfield.layer.borderWidth = 2
         textfield.layer.borderColor = UIColor.lightGray.cgColor
         textfield.layer.cornerRadius = 10
         textfield.text = text
         textfield.keyboardType = keyboardType
         textfield.isSecureTextEntry = isSecure
+        textfield.spellCheckingType = .no
     }
     
     private func configTextFields() {
@@ -68,7 +71,6 @@ class PerfilViewController: UIViewController {
 
     }
     
-    
     @IBAction func changeProfileImageButtonPressed(_ sender: UIButton) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -76,7 +78,24 @@ class PerfilViewController: UIViewController {
         picker.allowsEditing = true
         present(picker, animated: true)
     }
-    
+
+    @objc func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let keyboardHeight = keyboardSize.height
+        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
+
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame.origin.y = -keyboardHeight + tabBarHeight
+
+        }
+    }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame.origin.y = 0
+        }
+        
+    }
     
     @IBAction func exitButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
