@@ -28,13 +28,7 @@ class AttractionCollectionViewCell: UICollectionViewCell {
     private func configCollectionview() {
         placesCollectionView.delegate = self
         placesCollectionView.dataSource = self
-        
-        if let layout = placesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        }
-        
+        viewModel.configureLayout(collectionView: placesCollectionView)
         placesCollectionView.register(PlacesCollectionViewCell.nib(), forCellWithReuseIdentifier: PlacesCollectionViewCell.identifier)
         placesCollectionView.showsHorizontalScrollIndicator = false
     }
