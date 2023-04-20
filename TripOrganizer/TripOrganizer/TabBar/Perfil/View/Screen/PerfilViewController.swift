@@ -27,7 +27,6 @@ class PerfilViewController: UIViewController {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
         configProfileImage()
-        configImageConstraints()
         configTextFieldDelegates()
         configTextFields()
     }
@@ -43,40 +42,6 @@ class PerfilViewController: UIViewController {
         self.emailTextField.delegate = self
         self.phoneTextField.delegate = self
         self.changePasswordTextField.delegate = self
-    }
-    
-    public func configImageConstraints() {
-        let heightConstraint = profileImageView.heightAnchor.constraint(equalToConstant: 170)
-        heightConstraint.isActive = true
-        let widthConstraint = profileImageView.widthAnchor.constraint(equalToConstant: 170)
-        widthConstraint.isActive = true
-        
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            switch UIScreen.main.nativeBounds.height {
-            case 1136: // iPhone SE (1st generation), iPhone 5, iPhone 5S, iPhone 5C
-                heightConstraint.constant = 100
-                widthConstraint.constant = 100
-            case 1334, 1920, 2208: // iPhone 6, 6S, 7, 8, SE (2nd generation)
-                heightConstraint.constant = 130
-                widthConstraint.constant = 130
-            case 2436, 2688, 1792: // iPhone X, XS, XR, 11 Pro, 12 mini, 11, 12
-                heightConstraint.constant = 200
-                widthConstraint.constant = 200
-            case 2778: // IPhone 14 Plus
-                heightConstraint.constant = 300
-                widthConstraint.constant = 300
-            case 2532: // iPhone 14
-                heightConstraint.constant = 250
-                widthConstraint.constant = 250
-            case 2556: // IPhone 14 Pro
-                heightConstraint.constant = 250
-                widthConstraint.constant = 250
-            default: // IPhone Pro Max
-                heightConstraint.constant = 300
-                widthConstraint.constant = 300 // fallback value for other devices
-                
-            }
-        }
     }
     
     private func configProfileImage() {
