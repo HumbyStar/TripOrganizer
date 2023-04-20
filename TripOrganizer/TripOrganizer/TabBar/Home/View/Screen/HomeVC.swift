@@ -13,8 +13,8 @@ class HomeVC: UIViewController {
     @IBOutlet var homeCollectionView: UICollectionView!
     @IBOutlet var tripProgressView: UIProgressView!
 
-    
-    var imageList: [String] = ["circle", "engrenagem", "estrela"]
+//    var imageList: [String] = ["circle", "engrenagem", "estrela"]
+    var viewModel: HomeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +38,8 @@ class HomeVC: UIViewController {
         }
         
         homeCollectionView.register(AttractionCollectionViewCell.nib(), forCellWithReuseIdentifier: AttractionCollectionViewCell.identifier)
-        
         homeCollectionView.register(RestaurantCollectionViewCell.nib(), forCellWithReuseIdentifier: RestaurantCollectionViewCell.identifier)
-        
         homeCollectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
-        
         homeCollectionView.showsVerticalScrollIndicator = false
     }
     
@@ -51,18 +48,15 @@ class HomeVC: UIViewController {
         let vc = UIStoryboard(name: "PerfilViewController", bundle: nil).instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
-    
-    
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        viewModel.homeNumberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         if indexPath.row == 0 {
             let cell: AttractionCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: AttractionCollectionViewCell.identifier, for: indexPath) as? AttractionCollectionViewCell
             cell?.setupCell(placeType: "Lazer")

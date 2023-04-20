@@ -11,11 +11,11 @@ class HotelCollectionViewCell: UICollectionViewCell {
     
     static let identifier: String = "HotelCollectionViewCell"
     
-    var hotelList: [String] = ["imagehotel", "hotel1", "hotel2"]
-    
     static public func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
     }
+    
+    var viewModel: HotelCellViewModel = HotelCellViewModel()
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var hotelCollectionView: UICollectionView!
@@ -28,15 +28,8 @@ class HotelCollectionViewCell: UICollectionViewCell {
     private func configCollectionView() {
         hotelCollectionView.delegate = self
         hotelCollectionView.dataSource = self
-        
-        if let layout = hotelCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        }
-        
+        viewModel.configureLayout(collectionView: hotelCollectionView)
         hotelCollectionView.register(PlacesCollectionViewCell.nib(), forCellWithReuseIdentifier: PlacesCollectionViewCell.identifier)
-        
         hotelCollectionView.showsHorizontalScrollIndicator = false
     }
     
@@ -50,12 +43,12 @@ class HotelCollectionViewCell: UICollectionViewCell {
 extension HotelCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hotelList.count
+        viewModel.hotelNumberOfItemsInSection()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PlacesCollectionViewCell? = hotelCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell
-        cell?.setupCell(imageName: hotelList[indexPath.row])
+        cell?.setupCell(imageName: viewModel.hotelCellForItemAt(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
     

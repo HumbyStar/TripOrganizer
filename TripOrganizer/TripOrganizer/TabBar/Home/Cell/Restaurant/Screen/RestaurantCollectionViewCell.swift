@@ -12,9 +12,9 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var restaurantCollectionView: UICollectionView!
     
-    static let identifier: String = "RestaurantCollectionViewCell"
+    var viewModel: RestaurantCellViewModel = RestaurantCellViewModel()
     
-    var restaurantList: [String] = ["restaurante1", "restaurante2"]
+    static let identifier: String = "RestaurantCollectionViewCell"
     
     static public func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
@@ -28,15 +28,8 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     private func configCollectionView() {
         restaurantCollectionView.delegate = self
         restaurantCollectionView.dataSource = self
-        
-        if let layout = restaurantCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        }
-        
+        viewModel.configureLayout(collectionView: restaurantCollectionView)
         restaurantCollectionView.register(PlacesCollectionViewCell.nib(), forCellWithReuseIdentifier: PlacesCollectionViewCell.identifier)
-        
         restaurantCollectionView.showsHorizontalScrollIndicator = false
     }
     
@@ -49,12 +42,12 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
 extension RestaurantCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return restaurantList.count
+        viewModel.getRestautantListSize()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: PlacesCollectionViewCell? = restaurantCollectionView.dequeueReusableCell(withReuseIdentifier: PlacesCollectionViewCell.identifier, for: indexPath) as? PlacesCollectionViewCell
-        cell?.setupCell(imageName: restaurantList[indexPath.row])
+        cell?.setupCell(imageName: viewModel.getImage(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
     
