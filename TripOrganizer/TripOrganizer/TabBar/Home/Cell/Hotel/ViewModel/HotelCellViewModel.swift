@@ -5,7 +5,7 @@
 //  Created by Gabriel Mors  on 19/04/23.
 //
 
-import Foundation
+import UIKit
 
 class HotelCellViewModel {
     
@@ -17,5 +17,14 @@ class HotelCellViewModel {
     
     public func hotelCellForItemAt(index: Int) -> Image {
         hotelList[index]
+    }
+    
+    public func configureLayout(collectionView: UICollectionView) {
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+            layout.estimatedItemSize = .zero
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        }
+        
     }
 }

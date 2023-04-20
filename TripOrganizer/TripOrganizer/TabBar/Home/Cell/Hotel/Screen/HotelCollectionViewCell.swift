@@ -28,13 +28,7 @@ class HotelCollectionViewCell: UICollectionViewCell {
     private func configCollectionView() {
         hotelCollectionView.delegate = self
         hotelCollectionView.dataSource = self
-        
-        if let layout = hotelCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        }
-        
+        viewModel.configureLayout(collectionView: hotelCollectionView)
         hotelCollectionView.register(PlacesCollectionViewCell.nib(), forCellWithReuseIdentifier: PlacesCollectionViewCell.identifier)
         hotelCollectionView.showsHorizontalScrollIndicator = false
     }
