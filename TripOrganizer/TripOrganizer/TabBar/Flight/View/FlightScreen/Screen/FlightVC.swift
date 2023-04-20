@@ -99,12 +99,12 @@ class FlightVC: UIViewController {
 extension FlightVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cityImage.count
+        return viewModel.listObject.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlightScreenCollectionViewCell.identifier, for: indexPath) as? FlightScreenCollectionViewCell
-        cell?.setupCell(cityName: cityName[indexPath.row], cityImage: cityImage[indexPath.row], cityDescription: cityDescription[indexPath.row])
+        cell?.setupCell(cityObject: viewModel.listObject[indexPath.row])
         return cell ?? UICollectionViewCell()
     }
     
