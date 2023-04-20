@@ -17,10 +17,12 @@ class RegisterController: UIViewController {
     @IBOutlet var alreadyHaveAccount: UIButton!
     
     var viewModel: RegisterViewModel?
+    var alert: Alert?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = RegisterViewModel()
+        alert = Alert(controller: self)
         configTextField()
         configButton()
         configProtocols()
@@ -42,6 +44,7 @@ class RegisterController: UIViewController {
         confirmPasswordTextField.delegate = self
     }
     
+    
     private func configTextFieldPadrao(textField: UITextField,borderColor: UIColor , placeHolder: String, keyboardType: UIKeyboardType = .default) {
         textField.autocorrectionType = .no
         textField.clipsToBounds = true
@@ -52,6 +55,7 @@ class RegisterController: UIViewController {
         textField.layer.borderColor = borderColor.cgColor
         textField.keyboardType = keyboardType
         textField.spellCheckingType = .no
+        nameTextField.autocapitalizationType = .words
     }
     
     private func configTextField() {
@@ -59,16 +63,23 @@ class RegisterController: UIViewController {
         configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: "E-mail", keyboardType: .emailAddress)
         configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: "Senha")
         configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: "Confirmar Senha")
-//        confirmPasswordTextField.isSecureTextEntry = true
-//        confirmPasswordTextField.isSecureTextEntry = true
     }
     
     @IBAction func voltarButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-        
+        if nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && confirmPasswordTextField.hasText {
+            if confirmPasswordTextField.text == passwordTextField.text {
+                alert?.createAlert(title: "TripOrganizer", message: "Cadastro efetuado com sucesso!", completion: {
+                    self.navigationController?.popToRootViewController(animated: true)
+                })
+            } else {
+                alert?.createAlert(title: "TripOrganizer", message: "Ambas as senha devem ser iguais!")
+                confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+            }
+        }
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
@@ -90,7 +101,7 @@ extension RegisterController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         // MARK: Essa validação faz com que caso o textField selecionado fica verde e caso saia do mesmo, volte a ficar em lightGray e que se todos os textField estiverem com textos abilitara o botal de resgistrar.
-        if nameTextField.hasText == true && emailTextField.hasText == true && passwordTextField.hasText == true && confirmPasswordTextField.hasText == true && confirmPasswordTextField.text == passwordTextField.text {
+        if nameTextField.hasText == true && emailTextField.hasText == true && passwordTextField.hasText == true && confirmPasswordTextField.hasText == true {
             textField.layer.borderWidth = 2
             textField.layer.borderColor = UIColor.lightGray.cgColor
             registerButton.isEnabled = true
@@ -104,9 +115,6 @@ extension RegisterController: UITextFieldDelegate {
             if confirmPasswordTextField.text == passwordTextField.text {
                 confirmPasswordTextField.layer.borderColor = UIColor.lightGray.cgColor
                 passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
-            } else {
-                confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
-                registerButton.isEnabled = false
             }
         }
     }
