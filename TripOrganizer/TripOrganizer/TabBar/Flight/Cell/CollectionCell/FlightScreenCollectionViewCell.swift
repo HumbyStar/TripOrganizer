@@ -26,9 +26,9 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
         cityImageView.clipsToBounds = true
     }
     
-    func setupCell(cityName: String, cityImage: String, cityDescription: String) {
+    func setupCell(cityName: FlightViewModel, cityImage: FlightViewModel, cityDescription: FlightViewModel) {
        
-        cityNameLabel.text = cityName
+        cityNameLabel.text = cityName.cityName
         cityDescriptionLabel.text = cityDescription
         cityImageView.image = UIImage(named: cityImage)
     }

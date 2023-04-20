@@ -9,4 +9,10 @@ import Foundation
 
 struct FlightModel {
 
+    public let cityNameObject: String
+    
+    public let cityDescriptionObject: String
+    
+    public let cityImageObject: String
+    
 }
