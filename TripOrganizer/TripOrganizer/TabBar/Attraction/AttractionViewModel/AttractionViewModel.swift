@@ -24,8 +24,7 @@ class AttractionViewModel {
     }
     
    public func configLayoutCollectionView(collectionView: UICollectionView){
-        
-       if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = .zero
         }

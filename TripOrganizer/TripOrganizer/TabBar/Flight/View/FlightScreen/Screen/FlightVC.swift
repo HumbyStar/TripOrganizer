@@ -85,12 +85,7 @@ class FlightVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(FlightScreenCollectionViewCell.nib(), forCellWithReuseIdentifier: FlightScreenCollectionViewCell.identifier)
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-            
-        }
+        viewModel.getConfigLayoutCollectionView(collectionView: collectionView)
 
     }
     
@@ -99,17 +94,18 @@ class FlightVC: UIViewController {
 extension FlightVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.listObject.count
+        return viewModel.getListObject()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlightScreenCollectionViewCell.identifier, for: indexPath) as? FlightScreenCollectionViewCell
-        cell?.setupCell(cityObject: viewModel.listObject[indexPath.row])
+        cell?.setupCell(cityObject: viewModel.getListObjectCellForItemAt(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width * 0.8, height: collectionView.frame.size.height)
+        viewModel.sizeForItem(IndexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, collectionView: collectionView)
+        //return CGSize(width: collectionView.frame.size.width * 0.8, height: collectionView.frame.size.height)
     }
     
     
