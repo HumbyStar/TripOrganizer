@@ -13,9 +13,9 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cityImageView: UIImageView!
     @IBOutlet weak var cityDescriptionLabel: UILabel!
     
-    static let identifier: String = "FlightScreenCollectionViewCell"
+   public static let identifier: String = "FlightScreenCollectionViewCell"
     
-    static func nib() -> UINib {
+   public static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
     }
 
@@ -26,7 +26,7 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
         cityImageView.clipsToBounds = true
     }
     
-    func setupCell(cityObject: FlightModel) {
+   public func setupCell(cityObject: FlightModel) {
         cityNameLabel.text = cityObject.cityNameObject
         cityDescriptionLabel.text = cityObject.cityDescriptionObject
         cityImageView.image = UIImage(named: cityObject.cityImageObject)

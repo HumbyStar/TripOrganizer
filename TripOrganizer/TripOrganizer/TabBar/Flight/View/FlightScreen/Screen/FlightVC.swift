@@ -81,7 +81,7 @@ class FlightVC: UIViewController {
         
     }
     
-    func configCollectionView() {
+   private func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(FlightScreenCollectionViewCell.nib(), forCellWithReuseIdentifier: FlightScreenCollectionViewCell.identifier)
