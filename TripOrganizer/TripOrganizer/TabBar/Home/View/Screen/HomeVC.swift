@@ -21,10 +21,31 @@ class HomeVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
         configCollectionview()
         configProgressBar()
+        changeProfileImageNotification()
+        circularProfileButton()
+    }
+    
+    @objc func profileImageSelected(_ notification: Notification) {
+        if let selectedImage = notification.object as? UIImage {
+            self.perfilButton.setImage(selectedImage, for: .normal)
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("ProfileImageSelected"), object: nil)
+    }
+    
+    private func changeProfileImageNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(profileImageSelected(_:)), name: Notification.Name("ProfileImageSelected"), object: nil)
     }
     
     private func configProgressBar() {
         tripProgressView.transform = CGAffineTransform(scaleX: 1.0, y: 0.3)
+    }
+    
+    private func circularProfileButton() {
+        perfilButton.clipsToBounds = true
+        perfilButton.layer.cornerRadius = perfilButton.frame.height / 2
     }
     
     private func configCollectionview() {
@@ -80,3 +101,4 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
 }
+

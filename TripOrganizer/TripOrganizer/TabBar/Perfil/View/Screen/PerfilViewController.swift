@@ -112,7 +112,6 @@ class PerfilViewController: UIViewController {
     
     @IBAction func exitButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
-        
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -187,6 +186,9 @@ extension PerfilViewController: UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         profileImageView.image = info[.originalImage] as? UIImage
+        if let selectedImage = info[.originalImage] as? UIImage {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ProfileImageSelected") , object: selectedImage)
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }
