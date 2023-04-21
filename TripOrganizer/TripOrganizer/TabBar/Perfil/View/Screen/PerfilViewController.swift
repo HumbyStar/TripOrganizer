@@ -23,6 +23,8 @@ class PerfilViewController: UIViewController {
     
     var viewModel: PerfilViewModel?
     
+    var activeTextField : UITextField? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
@@ -80,21 +82,32 @@ class PerfilViewController: UIViewController {
     }
 
     @objc func keyboardWillShow(notification: Notification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        let keyboardHeight = keyboardSize.height
         let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            // if keyboard size is not available for some reason, dont do anything
+           return
+        }
 
-        UIView.animate(withDuration: 0.3) {
-            self.view.frame.origin.y = -keyboardHeight + tabBarHeight
-
+        var shouldMoveViewUp = false
+        
+        // if active text field is not nil
+        if let activeTextField = activeTextField {
+            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+            let topOfKeyboard = self.view.frame.height - keyboardSize.height
+            
+            if bottomOfTextField > topOfKeyboard {
+                shouldMoveViewUp = true
+            }
+        }
+        
+        if(shouldMoveViewUp) {
+            self.view.frame.origin.y = 0 - keyboardSize.height + tabBarHeight
         }
     }
 
     @objc func keyboardWillHide(notification: Notification) {
-        UIView.animate(withDuration: 0.3) {
-            self.view.frame.origin.y = 0
-        }
-        
+        self.view.frame.origin.y = 0
     }
     
     @IBAction func exitButtonPressed(_ sender: UIButton) {
@@ -111,9 +124,9 @@ class PerfilViewController: UIViewController {
         
         
         if viewModel?.validateTextField() == true {
-            self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
+            self.alert?.createAlert(title: "Trip Organizer", message: "Informações salvas com sucesso.")
         } else {
-            self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
+            self.alert?.createAlert(title: "Trip Organizer", message: "É necessário preencher todos os campos.")
         }
         
     }
@@ -135,9 +148,10 @@ class PerfilViewController: UIViewController {
 extension PerfilViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(#function)
         textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.verde.cgColor
+        
+        self.activeTextField = textField
         
     }
     
@@ -151,6 +165,7 @@ extension PerfilViewController: UITextFieldDelegate {
             textField.layer.borderColor = UIColor.red.cgColor
         }
         
+        self.activeTextField = nil
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
