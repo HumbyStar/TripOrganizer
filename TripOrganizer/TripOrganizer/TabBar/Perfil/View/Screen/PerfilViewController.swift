@@ -17,16 +17,28 @@ class PerfilViewController: UIViewController {
     @IBOutlet var changePasswordTextField: UITextField!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var exitButton: UIButton!
+    @IBOutlet var changeProfileImageButton: UIButton!
     
     var alert: Alert?
     
     var viewModel: PerfilViewModel?
     
+    var activeTextField : UITextField? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification: )), name: UIResponder.keyboardWillHideNotification, object: nil)
+        configProfileImage()
         configTextFieldDelegates()
         configTextFields()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        profileImageView.layer.cornerRadius = min(profileImageView.frame.width, profileImageView.frame.height) / 2
+        profileImageView.clipsToBounds = true
     }
     
     private func configTextFieldDelegates() {
@@ -36,15 +48,21 @@ class PerfilViewController: UIViewController {
         self.changePasswordTextField.delegate = self
     }
     
+    private func configProfileImage() {
+        profileImageView.layer.borderWidth = 3
+        profileImageView.layer.borderColor = UIColor.white.cgColor
+    }
+    
     private func configTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
         textfield.autocorrectionType = .no
         textfield.clipsToBounds = true
-        textfield.layer.borderWidth = 3
+        textfield.layer.borderWidth = 2
         textfield.layer.borderColor = UIColor.lightGray.cgColor
         textfield.layer.cornerRadius = 10
         textfield.text = text
         textfield.keyboardType = keyboardType
         textfield.isSecureTextEntry = isSecure
+        textfield.spellCheckingType = .no
     }
     
     private func configTextFields() {
@@ -53,6 +71,43 @@ class PerfilViewController: UIViewController {
         configTextField(textfield: phoneTextField, text: "(13) 99234-8734", keyboardType: .numbersAndPunctuation, isSecure: false)
         configTextField(textfield: changePasswordTextField, text: "12345678", keyboardType: .default, isSecure: true)
 
+    }
+    
+    @IBAction func changeProfileImageButtonPressed(_ sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+
+    @objc func keyboardWillShow(notification: Notification) {
+        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            // if keyboard size is not available for some reason, dont do anything
+           return
+        }
+
+        var shouldMoveViewUp = false
+        
+        // if active text field is not nil
+        if let activeTextField = activeTextField {
+            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+            let topOfKeyboard = self.view.frame.height - keyboardSize.height
+            
+            if bottomOfTextField > topOfKeyboard {
+                shouldMoveViewUp = true
+            }
+        }
+        
+        if(shouldMoveViewUp) {
+            self.view.frame.origin.y = 0 - keyboardSize.height + tabBarHeight
+        }
+    }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        self.view.frame.origin.y = 0
     }
     
     @IBAction func exitButtonPressed(_ sender: UIButton) {
@@ -69,9 +124,9 @@ class PerfilViewController: UIViewController {
         
         
         if viewModel?.validateTextField() == true {
-            self.alert?.createAlert(title: "Informações salvas.", message: "Informações salvas com sucesso.")
+            self.alert?.createAlert(title: "Trip Organizer", message: "Informações salvas com sucesso.")
         } else {
-            self.alert?.createAlert(title: "Preencha todos os campos.", message: "É necessário preencher todos os campos.")
+            self.alert?.createAlert(title: "Trip Organizer", message: "É necessário preencher todos os campos.")
         }
         
     }
@@ -93,9 +148,10 @@ class PerfilViewController: UIViewController {
 extension PerfilViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print(#function)
         textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.verde.cgColor
+        
+        self.activeTextField = textField
         
     }
     
@@ -109,6 +165,7 @@ extension PerfilViewController: UITextFieldDelegate {
             textField.layer.borderColor = UIColor.red.cgColor
         }
         
+        self.activeTextField = nil
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -123,5 +180,13 @@ extension PerfilViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+
+extension PerfilViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        profileImageView.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
     }
 }
