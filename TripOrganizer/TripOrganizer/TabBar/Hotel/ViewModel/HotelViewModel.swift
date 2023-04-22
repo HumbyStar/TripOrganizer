@@ -9,14 +9,14 @@ import UIKit
 
 class HotelViewModel {
     
-  private  var listRoom: [HotelModel] = [HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03"),HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03"),HotelModel(room: "quarto01"), HotelModel(room: "quarto02"), HotelModel(room: "quarto03")]
+  private  var listRoom: [HotelModel] = [HotelModel(room: ["quarto01","quarto02","quarto03","quarto01","quarto02","quarto03","quarto01","quarto02","quarto03"],nomeHotel: "Chatolamour", avaliacoes: "Avaliações", telefoneHotel: "Telefone: (41) 3243-3430", enderecoHotel: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", horarioHotel: "Horario: abre as 12:00 ")]
     
     public func getListRoom() -> Int{
         listRoom.count
     }
     
     public func getListRoomCellForItemAt(index: Int) -> HotelModel{
-        listRoom[index]
+        listRoom[index].room
     }
     
     public func configLayoutCollectionView(collectionView: UICollectionView){

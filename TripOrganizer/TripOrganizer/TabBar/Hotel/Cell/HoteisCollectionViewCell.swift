@@ -25,8 +25,8 @@ class HoteisCollectionViewCell: UICollectionViewCell {
         
     }
     
-   public func setupCell(data: HotelModel) {
-        imageView.image = UIImage(named: data.room)
+   public func setupCell(data: HotelModel){
+       imageView.image = UIImage(named: data.room)
         
     }
 }
