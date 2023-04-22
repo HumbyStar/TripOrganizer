@@ -15,7 +15,6 @@ class SecondFlightScreenVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configTableView()
     }
     
