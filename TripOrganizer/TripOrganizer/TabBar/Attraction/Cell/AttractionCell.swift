@@ -24,7 +24,7 @@ class AttractionCell: UICollectionViewCell {
     }
     
    public func setupCell(imageName: AttractionModel) {
-        self.attractionImageView.image = UIImage(named: imageName.name)
+        self.attractionImageView.image = UIImage(named: imageName.imageAttraction)
     }
 
 }
