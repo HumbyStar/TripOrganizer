@@ -11,13 +11,14 @@ class SecondFlightScreenVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    public let viewModel: SecondFlightViewModel = SecondFlightViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configTableView()
     }
     
-    func configTableView() {
+   private func configTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(FlightTableViewCell.nib(), forCellReuseIdentifier: FlightTableViewCell.identifier)
@@ -33,7 +34,7 @@ class SecondFlightScreenVC: UIViewController {
 
 extension SecondFlightScreenVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getNumberOfRowsInSection()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,11 +48,12 @@ extension SecondFlightScreenVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 230
+        return viewModel.getHeightForRowAt()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.getDidSelectRowAt(tableView: tableView, indexPath: indexPath)
+        //tableView.deselectRow(at: indexPath, animated: true)
         }
     
 }

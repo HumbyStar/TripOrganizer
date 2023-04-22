@@ -54,6 +54,9 @@
 		50D5FBB729EF219B0041ED71 /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB629EF219B0041ED71 /* PerfilViewModel.swift */; };
 		8814475F29F036F000AC429A /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814475E29F036F000AC429A /* AttractionViewModel.swift */; };
 		8814476229F0371C00AC429A /* AttractionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476129F0371C00AC429A /* AttractionModel.swift */; };
+		8814476829F0CC9300AC429A /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476729F0CC9300AC429A /* FlightModel.swift */; };
+		8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476A29F0CEAD00AC429A /* FlightViewModel.swift */; };
+		8814476D29F0CEC900AC429A /* SecondFlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476C29F0CEC900AC429A /* SecondFlightViewModel.swift */; };
 		886E229D29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E229C29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift */; };
 		886E22A029EDB3B100E70FF7 /* RecoverPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E229F29EDB3B100E70FF7 /* RecoverPasswordModel.swift */; };
 		886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E22C229EEF29D00E70FF7 /* HotelModel.swift */; };
@@ -122,6 +125,9 @@
 		50D5FBB629EF219B0041ED71 /* PerfilViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
 		8814475E29F036F000AC429A /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
 		8814476129F0371C00AC429A /* AttractionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionModel.swift; sourceTree = "<group>"; };
+		8814476729F0CC9300AC429A /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+		8814476A29F0CEAD00AC429A /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
+		8814476C29F0CEC900AC429A /* SecondFlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlightViewModel.swift; sourceTree = "<group>"; };
 		886E229C29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModel.swift; sourceTree = "<group>"; };
 		886E229F29EDB3B100E70FF7 /* RecoverPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordModel.swift; sourceTree = "<group>"; };
 		886E22C229EEF29D00E70FF7 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
@@ -197,6 +203,9 @@
 		0C111C1C29BACD9000A0DCF4 /* Flight */ = {
 			isa = PBXGroup;
 			children = (
+				8814476929F0CE3500AC429A /* SecondFlightViewModel */,
+				8814476629F0CC7100AC429A /* FlightModel */,
+				8814476329F0CC2800AC429A /* FlightViewModel */,
 				C43C4B2629EC5FC90013D509 /* Cell */,
 				C43C4B2329EC5F9A0013D509 /* View */,
 			);
@@ -443,6 +452,30 @@
 				8814476129F0371C00AC429A /* AttractionModel.swift */,
 			);
 			path = AttractionModel;
+			sourceTree = "<group>";
+		};
+		8814476329F0CC2800AC429A /* FlightViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8814476A29F0CEAD00AC429A /* FlightViewModel.swift */,
+			);
+			path = FlightViewModel;
+			sourceTree = "<group>";
+		};
+		8814476629F0CC7100AC429A /* FlightModel */ = {
+			isa = PBXGroup;
+			children = (
+				8814476729F0CC9300AC429A /* FlightModel.swift */,
+			);
+			path = FlightModel;
+			sourceTree = "<group>";
+		};
+		8814476929F0CE3500AC429A /* SecondFlightViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8814476C29F0CEC900AC429A /* SecondFlightViewModel.swift */,
+			);
+			path = SecondFlightViewModel;
 			sourceTree = "<group>";
 		};
 		886E229B29EDB1DD00E70FF7 /* ViewModel */ = {
@@ -899,9 +932,12 @@
 				0C111C2929BACD9000A0DCF4 /* HotelVC.swift in Sources */,
 				43BE0D8F29E70C31001B5963 /* RestaurantCollectionViewCell.swift in Sources */,
 				50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */,
+				8814476829F0CC9300AC429A /* FlightModel.swift in Sources */,
 				C43C4B5129EDBA990013D509 /* RegisterModel.swift in Sources */,
 				8814476229F0371C00AC429A /* AttractionModel.swift in Sources */,
+				8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
+				8814476D29F0CEC900AC429A /* SecondFlightViewModel.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantVC.swift in Sources */,

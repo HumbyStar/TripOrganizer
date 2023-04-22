@@ -9,9 +9,9 @@ import UIKit
 
 class FlightVC: UIViewController {
     
-    var cityName: [String] = ["Florianópolis", "Rio de Janeiro", "Fernando de Noronha", "Belo Horizonte", "Porto Alegre"]
-    var cityDescription: [String] = ["Conhecida por suas praias paradisíacas, Floripa também é famosa por sua culinária e por apresentar uma cultura vibrante.", "Famosa por suas praias, Cristo Redentor e pelo Pão de Açúcar. Também conhecida pelas grandes favelas e o Carnaval.", "Arquipélago reconhecido pelas suas praias pouco urbanizadas e por atividades como mergulho e snorkeling.", "Rodeada de montanhas, a cidade é conhecida pelo enorme Estádio Mineirão e a lagoa da Pampulha.", "Capital do estado de Rio Grande do Sul, no sul do Brasil. Na praça principal, a Praça Marechal Deodoro, encontra-se a Catedral."]
-    var cityImage: [String] = ["floripa", "rioDeJaneiro", "noronha", "bh", "pa"]
+    
+    
+    var viewModel: FlightViewModel = FlightViewModel()
     
     @IBOutlet weak var chooseADestinationLabel: UILabel!
     @IBOutlet weak var flightOriginView: UIView!
@@ -81,16 +81,11 @@ class FlightVC: UIViewController {
         
     }
     
-    func configCollectionView() {
+   private func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(FlightScreenCollectionViewCell.nib(), forCellWithReuseIdentifier: FlightScreenCollectionViewCell.identifier)
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
-            layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-            
-        }
+        viewModel.getConfigLayoutCollectionView(collectionView: collectionView)
 
     }
     
@@ -99,17 +94,18 @@ class FlightVC: UIViewController {
 extension FlightVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cityImage.count
+        return viewModel.getListObject()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlightScreenCollectionViewCell.identifier, for: indexPath) as? FlightScreenCollectionViewCell
-        cell?.setupCell(cityName: cityName[indexPath.row], cityImage: cityImage[indexPath.row], cityDescription: cityDescription[indexPath.row])
+        cell?.setupCell(cityObject: viewModel.getListObjectCellForItemAt(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width * 0.8, height: collectionView.frame.size.height)
+        viewModel.sizeForItem(IndexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, collectionView: collectionView)
+        //return CGSize(width: collectionView.frame.size.width * 0.8, height: collectionView.frame.size.height)
     }
     
     
