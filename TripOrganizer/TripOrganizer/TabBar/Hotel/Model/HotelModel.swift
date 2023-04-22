@@ -9,7 +9,7 @@ import Foundation
 
 struct HotelModel {
 
-  public  let room: [String]
+  public  let room: String
     
     public let nomeHotel: String
     

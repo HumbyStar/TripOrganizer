@@ -15,6 +15,8 @@ class HoteisCollectionViewCell: UICollectionViewCell {
     
    public var data: [HotelModel] = []
     
+    
+    
     static let identifier = "HoteisCollectionViewCell"
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
