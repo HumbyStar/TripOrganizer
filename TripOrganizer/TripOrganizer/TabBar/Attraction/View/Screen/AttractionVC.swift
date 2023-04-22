@@ -14,6 +14,7 @@ class AttractionVC: UIViewController {
   public let viewModel: AttractionViewModel = AttractionViewModel()
     
     
+    @IBOutlet weak var assessmentsAttractionLabel: UILabel!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var map: MKMapView!
     @IBOutlet var collectionView: UICollectionView!

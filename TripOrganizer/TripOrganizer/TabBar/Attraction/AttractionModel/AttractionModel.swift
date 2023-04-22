@@ -9,6 +9,17 @@ import Foundation
 
 struct AttractionModel {
 
-  public  let name: String
+  public  let imageAttraction: String
     
+    public let assessments: String
+    
+    public let attractionName: String
+    
+    public let attractionAdress: String
+    
+    public let openingHours: String
+    
+    public let phone: String
+    
+    public let entranceFee: String
 }

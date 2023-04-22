@@ -135,6 +135,7 @@
                     </view>
                     <connections>
                         <outlet property="addAttractionButton" destination="TBb-Fx-bvz" id="wU2-cd-EcI"/>
+                        <outlet property="assessmentsAttractionLabel" destination="ims-98-vC7" id="X7C-MZ-SmB"/>
                         <outlet property="attractionAdressLabel" destination="EVO-Zj-FsQ" id="f4D-5R-DKr"/>
                         <outlet property="attractionNameLabel" destination="eVf-Ka-K8c" id="oQN-fF-qxJ"/>
                         <outlet property="collectionView" destination="J9O-3G-o3I" id="buX-6J-wCI"/>

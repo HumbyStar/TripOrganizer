@@ -9,11 +9,10 @@ import UIKit
 
 class AttractionViewModel {
 
-   private let locationImagelist: [AttractionModel] = [AttractionModel(name:"1"),
-                                                AttractionModel(name:"2"),
-                                                AttractionModel(name:"3"),
-                                                AttractionModel(name:"4"),
-                                                AttractionModel(name:"5")]
+   private let locationImagelist: [AttractionModel] = [AttractionModel(imageAttraction:"1", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
+                                                       AttractionModel(imageAttraction:"1", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
+                                                       AttractionModel(imageAttraction:"1", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
+                                                       AttractionModel(imageAttraction:"1", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),]
     
     public func getLocationImagelist() -> Int{
         locationImagelist.count
