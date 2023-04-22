@@ -19,6 +19,11 @@ class HotelVC: UIViewController {
    public var viewModel: HotelViewModel = HotelViewModel()
     
     
+    @IBOutlet weak var telefoneLabel: UILabel!
+    @IBOutlet weak var horarioHotelLabel: UILabel!
+    @IBOutlet weak var enderecoHotelLabel: UILabel!
+    @IBOutlet weak var avaliacoesLabel: UILabel!
+    @IBOutlet weak var nomeHotelLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var adicionarButton: UIButton!
     @IBOutlet weak var hotelMapView: MKMapView!

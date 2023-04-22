@@ -134,9 +134,14 @@
                     </view>
                     <connections>
                         <outlet property="adicionarButton" destination="WJx-Mt-kLU" id="YN4-qA-AFw"/>
+                        <outlet property="avaliacoesLabel" destination="bvT-rh-uuw" id="QaF-pc-pWJ"/>
                         <outlet property="collectionView" destination="gjB-fu-2JS" id="ch3-a2-dSd"/>
                         <outlet property="cvView" destination="sHU-f6-HQp" id="8ER-NG-Drp"/>
+                        <outlet property="enderecoHotelLabel" destination="2IU-2u-fBc" id="bz0-I7-hId"/>
+                        <outlet property="horarioHotelLabel" destination="nvr-IS-zhN" id="bwh-iB-D8S"/>
                         <outlet property="hotelMapView" destination="xls-1V-ZE4" id="7hK-81-tQB"/>
+                        <outlet property="nomeHotelLabel" destination="gTJ-Yf-Mvs" id="B5f-PY-M5F"/>
+                        <outlet property="telefoneLabel" destination="3lA-Es-FyI" id="a3N-o9-DX2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

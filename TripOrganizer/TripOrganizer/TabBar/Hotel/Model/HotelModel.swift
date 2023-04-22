@@ -10,4 +10,6 @@ import Foundation
 struct HotelModel {
 
   public  var room: String
+    
+    
 }
