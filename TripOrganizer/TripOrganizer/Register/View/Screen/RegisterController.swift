@@ -15,6 +15,8 @@ class RegisterController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var alreadyHaveAccount: UIButton!
+    @IBOutlet weak var exibSenhaButton: UIButton!
+    @IBOutlet weak var exibConfirSenhaButton: UIButton!
     
     var viewModel: RegisterViewModel?
     var alert: Alert?
@@ -64,6 +66,29 @@ class RegisterController: UIViewController {
         configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: "Senha")
         configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: "Confirmar Senha")
     }
+    
+    
+    @IBAction func tappedExibSenhaButton(_ sender: Any) {
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        
+        if passwordTextField.isSecureTextEntry {
+            exibSenhaButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        } else {
+            exibSenhaButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
+    }
+    
+    
+    @IBAction func tappedExibconfirSenhaButton(_ sender: Any) {
+        confirmPasswordTextField.isSecureTextEntry = !confirmPasswordTextField.isSecureTextEntry
+        
+        if confirmPasswordTextField.isSecureTextEntry {
+            exibConfirSenhaButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        } else {
+            exibConfirSenhaButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        }
+    }
+    
     
     @IBAction func voltarButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
