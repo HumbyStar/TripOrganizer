@@ -16,9 +16,12 @@ class RestaurantVC: UIViewController {
     @IBOutlet weak var mapaRestauranteMapView: MKMapView!
     @IBOutlet weak var pesquisaRestauranteSearchBar: UISearchBar!
     @IBOutlet weak var menuCollectionView: UICollectionView!
-    
-//    var imagens:[String] = ["pratoDeComidaProjeto", "garrafaProjeto", "petiscoProjeto", "almocoProjeto"]
-//   // var valores:[String] = ["Valor: R$ 30,00", "Valor: R$ 50,00", "Valor: R$ 50,00", "Valor: R$ 35,00"]
+    @IBOutlet weak var lbAdress: UILabel!
+    @IBOutlet weak var lbHour: UILabel!
+    @IBOutlet weak var lbCellphone: UILabel!
+    @IBOutlet weak var lbRating: UILabel!
+    @IBOutlet weak var lbPlace: UILabel!
+
     
     //MARK: - Variables
     private var restaurantViewModel = RestaurantViewModel()
@@ -31,6 +34,7 @@ class RestaurantVC: UIViewController {
         configInformacaoRestauranteView()
         configmapaRestauranteMapView()
         restaurantViewModel.loadRestaurants()
+        setupUI()
     }
     
     
@@ -50,10 +54,21 @@ class RestaurantVC: UIViewController {
     
     func configmapaRestauranteMapView(){
         mapaRestauranteMapView.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 12)
-        
     }
     
+    func setupUI(){
+        let restaurant = restaurantViewModel.cellForRow()[0]
+        lbAdress.text = "Endereço: \(restaurant.restaurantAdress)"
+        lbHour.text = "Horário: \(restaurant.restaurantHour)"
+        lbCellphone.text = "Telefone: \(restaurant.restarauntCellphone)"
+        lbRating.text = "Avaliações - \(restaurant.restaurantRating)"
+        lbPlace.text = restaurant.restaurantName
     }
+    
+    @IBAction func addedRestaurant(_ sender: UIButton) {
+        
+    }
+}
 
 extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -63,7 +78,7 @@ extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell
         let images = restaurantViewModel.getRestarauntImages(indexPath: indexPath)
-        cell?.setupCell(image: images[indexPath.row])cell?.fotoImageView.image = UIImage(named: "\(images[indexPath.row])")
+        cell?.setupCell(image: images[indexPath.row])
         cell?.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 10)
         return cell ?? UICollectionViewCell()
     }

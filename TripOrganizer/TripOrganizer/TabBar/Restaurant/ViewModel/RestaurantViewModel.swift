@@ -22,11 +22,12 @@ class RestaurantViewModel {
     }
     
     public func numberOfRows() -> Int {
-        return restaurants.count
+        return 5
     }
     
     public func getRestarauntImages(indexPath: IndexPath) -> [String] {
-        return restaurants[indexPath.row].restaurantImages
+        let restaurant = restaurants[0]
+        return restaurant.restaurantImages
     }
     
     public func getCornerRadius(value: CGFloat) -> CGFloat {
