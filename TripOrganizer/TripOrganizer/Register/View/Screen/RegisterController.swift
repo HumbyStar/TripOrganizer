@@ -17,6 +17,8 @@ class RegisterController: UIViewController {
     @IBOutlet var alreadyHaveAccount: UIButton!
     @IBOutlet weak var exibSenhaButton: UIButton!
     @IBOutlet weak var exibConfirSenhaButton: UIButton!
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var confirmPasswordView: UIView!
     
     var viewModel: RegisterViewModel?
     var alert: Alert?
@@ -28,6 +30,20 @@ class RegisterController: UIViewController {
         configTextField()
         configButton()
         configProtocols()
+        configViews()
+        
+
+    }
+    
+    private func configViews() {
+        passwordView.backgroundColor = .clear
+        passwordView.layer.cornerRadius = 10
+        passwordView.layer.borderWidth = 2
+        passwordView.layer.borderColor = UIColor.lightGray.cgColor
+        confirmPasswordView.backgroundColor = .clear
+        confirmPasswordView.layer.cornerRadius = 10
+        confirmPasswordView.layer.borderWidth = 2
+        confirmPasswordView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     private func configButton() {
@@ -47,10 +63,17 @@ class RegisterController: UIViewController {
     }
     
     
-    private func configTextFieldPadrao(textField: UITextField,borderColor: UIColor , placeHolder: String, keyboardType: UIKeyboardType = .default) {
+    private func configTextFieldPadrao(textField: UITextField, borderColor: UIColor , placeHolder: String, keyboardType: UIKeyboardType = .default) {
         textField.autocorrectionType = .no
         textField.clipsToBounds = true
-        textField.layer.borderWidth = 2
+        if textField == passwordTextField || textField == confirmPasswordTextField {
+            textField.layer.borderWidth = 0
+            textField.borderStyle = .none
+        } else {
+            textField.layer.borderWidth = 2
+        }
+    
+       // textField.borderStyle = .none
         textField.layer.borderColor = UIColor.verde.cgColor
         textField.layer.cornerRadius = 10
         textField.placeholder = placeHolder
@@ -58,6 +81,7 @@ class RegisterController: UIViewController {
         textField.keyboardType = keyboardType
         textField.spellCheckingType = .no
         nameTextField.autocapitalizationType = .words
+       
     }
     
     private func configTextField() {
@@ -122,6 +146,18 @@ extension RegisterController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.verde.cgColor
+        
+        if textField == passwordTextField {
+            passwordView.layer.borderWidth = 3
+            passwordView.layer.borderColor = UIColor.verde.cgColor
+            textField.layer.borderWidth = .zero
+            textField.borderStyle = .none
+        } else if textField == confirmPasswordTextField {
+            confirmPasswordView.layer.borderWidth = 3
+            confirmPasswordView.layer.borderColor = UIColor.verde.cgColor
+            textField.layer.borderWidth = .zero
+            textField.borderStyle = .none
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -133,6 +169,14 @@ extension RegisterController: UITextFieldDelegate {
         } else {
             textField.layer.borderWidth = 2
             textField.layer.borderColor = UIColor.lightGray.cgColor
+            passwordView.layer.borderWidth = 2
+            passwordView.layer.borderColor = UIColor.lightGray.cgColor
+            passwordTextField.layer.borderWidth = .zero
+            passwordTextField.borderStyle = .none
+            confirmPasswordView.layer.borderWidth = 2
+            confirmPasswordView.layer.borderColor = UIColor.lightGray.cgColor
+            confirmPasswordTextField.layer.borderWidth = .zero
+            confirmPasswordTextField.borderStyle = .none
             //            registerButton.isEnabled = false
         }
         // MARK: Essa validação tem o objetivo de fazer com que os textos do textField de senha e confirmar senha, teram que ser iguais, se nao for o textField confirmar senha ficara com uma borda vermelha e o botao de registrar não vai abilitar.
