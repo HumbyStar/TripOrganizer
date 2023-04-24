@@ -10,19 +10,27 @@ import UIKit
 class HomeVC: UIViewController {
     
     @IBOutlet var perfilButton: UIButton!
-    @IBOutlet var homeCollectionView: UICollectionView!
+    @IBOutlet var homeTableview: UITableView!
     @IBOutlet var tripProgressView: UIProgressView!
 
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
+    var tripList: [Trip] = []
+    var emptyLabel: UILabel!
+    var addTripVC: AddTripViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        configCollectionview()
+        configTableView()
+        emptyTableViewLabel()
         configProgressBar()
         changeProfileImageNotification()
         circularProfileButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateTableView()
     }
     
     @objc func profileImageSelected(_ notification: Notification) {
@@ -48,20 +56,33 @@ class HomeVC: UIViewController {
         perfilButton.layer.cornerRadius = perfilButton.frame.height / 2
     }
     
-    private func configCollectionview() {
-        homeCollectionView.delegate = self
-        homeCollectionView.dataSource = self
-        
-        if let layout = homeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .vertical
-            layout.estimatedItemSize = .zero
-//            layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    func emptyTableViewLabel() {
+        emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: homeTableview.bounds.size.width, height: homeTableview.bounds.size.height))
+        emptyLabel.text = "Não há viagens para exibir, crie uma nova viagem clicando no botão acima."
+        emptyLabel.textColor = UIColor.gray
+        emptyLabel.textAlignment = .center
+        homeTableview.backgroundView = emptyLabel
+        homeTableview.separatorStyle = .none
+        emptyLabel.numberOfLines = .zero
+    }
+    
+    func updateTableView() {
+        if tripList.count == 0 {
+            homeTableview.separatorStyle = .none
+            homeTableview.backgroundView?.isHidden = false
+        } else {
+            homeTableview.separatorStyle = .singleLine
+            homeTableview.backgroundView?.isHidden = true
         }
-        
-        homeCollectionView.register(AttractionCollectionViewCell.nib(), forCellWithReuseIdentifier: AttractionCollectionViewCell.identifier)
-        homeCollectionView.register(RestaurantCollectionViewCell.nib(), forCellWithReuseIdentifier: RestaurantCollectionViewCell.identifier)
-        homeCollectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
-        homeCollectionView.showsVerticalScrollIndicator = false
+        homeTableview.reloadData()
+    }
+    
+    private func configTableView() {
+        homeTableview.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        homeTableview.separatorInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
+        homeTableview.delegate = self
+        homeTableview.dataSource = self
+        homeTableview.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.indentifier)
     }
     
     
@@ -69,36 +90,49 @@ class HomeVC: UIViewController {
         let vc = UIStoryboard(name: "PerfilViewController", bundle: nil).instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
+    
+    @IBAction func addTripButtonPressed(_ sender: UIButton) {
+        let vc: AddTripViewController? = UIStoryboard(name: "AddTripViewController", bundle: nil).instantiateViewController(withIdentifier: "AddTripViewController") as? AddTripViewController
+        vc?.delegate(delegate: self)
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
 }
 
-extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.homeNumberOfItemsInSection()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: CustomTableViewCell? = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.indentifier, for: indexPath) as? CustomTableViewCell
+        cell?.setupCell(trip: tripList[indexPath.row])
+        return cell ?? UITableViewCell()
+        
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 0 {
-            let cell: AttractionCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: AttractionCollectionViewCell.identifier, for: indexPath) as? AttractionCollectionViewCell
-            cell?.setupCell(placeType: "Lazer")
-            return cell ?? UICollectionViewCell()
-        } else if indexPath.row == 1 {
-            let cell: RestaurantCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: RestaurantCollectionViewCell.identifier, for: indexPath) as? RestaurantCollectionViewCell
-            cell?.setupCell(placeType: "Restaurante")
-            return cell ?? UICollectionViewCell()
-        } else {
-            let cell: HotelCollectionViewCell? = homeCollectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell
-            cell?.setupCell(placeType: "Hotel")
-            return cell ?? UICollectionViewCell()
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tripList.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc: TripPlanViewController? = UIStoryboard(name: "TripPlanViewController", bundle: nil).instantiateViewController(withIdentifier: "TripPlanViewController") as? TripPlanViewController
+        vc?.placeNameReceived = tripList[indexPath.row].tripName
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tripList.remove(at: indexPath.row)
+            updateTableView()
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = homeCollectionView.bounds.width
-        let height = homeCollectionView.bounds.height * 0.6
-        return CGSize(width: width, height: height)
+}
 
+extension HomeVC: AddTripviewControllerDelegate {
+    func sendTrip(trip: Trip) {
+        self.tripList.append(trip)
     }
-    
 }
 
