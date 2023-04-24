@@ -16,8 +16,10 @@ class HomeVC: UIViewController {
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
     var tripList: [Trip] = []
+    var tripImages: [String] = ["trip1", "trip2"]
     var emptyLabel: UILabel!
     var addTripVC: AddTripViewController?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +84,7 @@ class HomeVC: UIViewController {
         homeTableview.separatorInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
         homeTableview.delegate = self
         homeTableview.dataSource = self
-        homeTableview.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.indentifier)
+        homeTableview.register(HomeTableViewCell.nib(), forCellReuseIdentifier: HomeTableViewCell.indentifier)
     }
     
     
@@ -101,8 +103,9 @@ class HomeVC: UIViewController {
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CustomTableViewCell? = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.indentifier, for: indexPath) as? CustomTableViewCell
+        let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.indentifier, for: indexPath) as? HomeTableViewCell
         cell?.setupCell(trip: tripList[indexPath.row])
+        cell?.placeImageView.image = UIImage(named: tripImages[indexPath.row])
         return cell ?? UITableViewCell()
         
     }

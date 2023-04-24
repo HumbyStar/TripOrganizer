@@ -13,9 +13,13 @@ protocol AddTripviewControllerDelegate {
 
 class AddTripViewController: UIViewController {
     
+    var alert: Alert?
+    
+    @IBOutlet var tripNameTextField: UITextField!
     @IBOutlet var addTripButton: UIButton!
     @IBOutlet var startDate: UIDatePicker!
     @IBOutlet var finishDate: UIDatePicker!
+    @IBOutlet var backButton: UIButton!
     
     var startDateString: String?
     var finishDateString: String?
@@ -26,12 +30,12 @@ class AddTripViewController: UIViewController {
         self.delegate = delegate
     }
     
-    @IBOutlet var tripNameTextField: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.alert = Alert(controller: self)
         configTripNameTextField()
         configAddTripButton()
+        configBackButton()
         navigationController?.navigationBar.tintColor = .white
     }
     
@@ -44,6 +48,11 @@ class AddTripViewController: UIViewController {
     func configAddTripButton() {
         addTripButton.clipsToBounds = true
         addTripButton.layer.cornerRadius = 16
+    }
+    
+    func configBackButton() {
+        backButton.setImage(UIImage(named: "back")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backButton.tintColor = .white
     }
     
     @IBAction func startDateAction(_ sender: UIDatePicker) {
@@ -66,12 +75,19 @@ class AddTripViewController: UIViewController {
     }
     
     
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
     @IBAction func addTripButtonPressed(_ sender: UIButton) {
         
-        if let name = tripNameTextField.text {
+        if tripNameTextField.hasText {
+            guard let name = tripNameTextField.text else { return }
             self.delegate?.sendTrip(trip: Trip(tripName: name, startDate: startDateString ?? "", finishDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
+        } else {
+            self.alert?.createAlert(title: "Trip Organizer", message: "Sua viagem deve conter um nome!")
         }
-
     }
 }

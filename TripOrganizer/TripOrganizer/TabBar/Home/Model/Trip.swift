@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Trip {
     var tripName: String
