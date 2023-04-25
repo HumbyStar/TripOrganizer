@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
         UIColor.logoOrange
     ]
     
-    var progressBar: Float = 0.5
+    var progressBar: Float = 0
 
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
