@@ -36,6 +36,7 @@ class AddTripViewController: UIViewController {
         configTripNameTextField()
         configAddTripButton()
         configBackButton()
+        configStartDate()
         navigationController?.navigationBar.tintColor = .white
     }
     
@@ -53,6 +54,10 @@ class AddTripViewController: UIViewController {
     func configBackButton() {
         backButton.setImage(UIImage(named: "back")?.withRenderingMode(.alwaysTemplate), for: .normal)
         backButton.tintColor = .white
+    }
+    
+    func configStartDate() {
+//        startDate
     }
     
     @IBAction func startDateAction(_ sender: UIDatePicker) {
