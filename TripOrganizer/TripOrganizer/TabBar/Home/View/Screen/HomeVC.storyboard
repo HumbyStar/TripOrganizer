@@ -207,8 +207,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Uv6-3A-mwP"/>
                     <connections>
+                        <outlet property="attractionImageView" destination="ekm-od-Agf" id="Qm4-h9-pj7"/>
                         <outlet property="homeTableview" destination="nk6-PB-UXu" id="EvG-SE-OB5"/>
+                        <outlet property="hotelImageView" destination="v6v-iI-AW0" id="mDg-yM-kdu"/>
                         <outlet property="perfilButton" destination="Lfo-pM-fqs" id="p5w-pV-FrU"/>
+                        <outlet property="restaurantImageView" destination="fEB-CU-chj" id="mHO-Qk-6bu"/>
+                        <outlet property="ticketImageView" destination="Sva-vn-dG4" id="u1b-sP-j8e"/>
                         <outlet property="tripProgressView" destination="GPE-JB-nnr" id="25C-dX-zB6"/>
                     </connections>
                 </viewController>
