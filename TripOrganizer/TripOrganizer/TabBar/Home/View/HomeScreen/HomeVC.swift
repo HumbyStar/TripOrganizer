@@ -20,7 +20,7 @@ class HomeVC: UIViewController {
 
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
-    var tripList: [AddTripModel] = []
+//    var tripList: [AddTripModel] = []
     var emptyLabel: UILabel!
     var addTripVC: AddTripViewController?
     
@@ -73,7 +73,7 @@ class HomeVC: UIViewController {
     }
     
     func updateTableView() {
-        if tripList.count == 0 {
+        if viewModel.tripListSize == 0 {
             homeTableview.separatorStyle = .none
             homeTableview.backgroundView?.isHidden = false
         } else {
@@ -113,14 +113,13 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         
         let color = cellColors[indexPath.row % cellColors.count]
         cell?.backgroundColor = color
-        cell?.setupCell(trip: tripList[indexPath.row])
-        cell?.placeImageView.image = UIImage(named: viewModel.tripImages[indexPath.row])
+        cell?.setupCell(trip: viewModel.getListForCell(index: indexPath.row))
+        cell?.placeImageView.image = UIImage(named: viewModel.getListTripImages(index: indexPath.row))
         return cell ?? UITableViewCell()
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tripList.count
+        viewModel.tripListSize
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -129,22 +128,22 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc: TripPlanViewController? = UIStoryboard(name: "TripPlanViewController", bundle: nil).instantiateViewController(withIdentifier: "TripPlanViewController") as? TripPlanViewController
-        vc?.placeNameReceived = tripList[indexPath.row].tripName
+        vc?.placeNameReceived = viewModel.getTripList(index: indexPath.row).tripName
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            tripList.remove(at: indexPath.row)
+            viewModel.remove(index: indexPath.row)
             updateTableView()
         }
     }
-    
+
 }
 
 extension HomeVC: AddTripviewControllerDelegate {
     func sendTrip(trip: AddTripModel) {
-        self.tripList.append(trip)
+        viewModel.append(trip: trip)
     }
 }
 

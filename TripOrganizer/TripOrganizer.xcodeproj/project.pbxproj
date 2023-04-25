@@ -794,8 +794,8 @@
 		C4CC788129F854050055DC8A /* HomeCell */ = {
 			isa = PBXGroup;
 			children = (
-				509DCC0729F6FC0C002F04B0 /* HomeTableViewCell.swift */,
 				509DCC0929F6FC17002F04B0 /* HomeTableViewCell.xib */,
+				509DCC0729F6FC0C002F04B0 /* HomeTableViewCell.swift */,
 			);
 			path = HomeCell;
 			sourceTree = "<group>";
