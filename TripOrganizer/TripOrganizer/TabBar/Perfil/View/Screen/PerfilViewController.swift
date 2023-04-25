@@ -50,7 +50,7 @@ class PerfilViewController: UIViewController {
     
     private func configProfileImage() {
         profileImageView.layer.borderWidth = 3
-        profileImageView.layer.borderColor = UIColor.white.cgColor
+        profileImageView.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
     private func configTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
