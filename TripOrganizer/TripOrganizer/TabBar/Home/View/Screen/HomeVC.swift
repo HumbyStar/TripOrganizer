@@ -12,6 +12,11 @@ class HomeVC: UIViewController {
     @IBOutlet var perfilButton: UIButton!
     @IBOutlet var homeTableview: UITableView!
     @IBOutlet var tripProgressView: UIProgressView!
+    
+    let cellColors = [
+        UIColor.logoGreen,
+        UIColor.logoOrange
+    ]
 
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
@@ -106,6 +111,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.indentifier, for: indexPath) as? HomeTableViewCell
+        
+        let color = cellColors[indexPath.row % cellColors.count]
+        cell?.backgroundColor = color
+        
         cell?.setupCell(trip: tripList[indexPath.row])
         cell?.placeImageView.image = UIImage(named: tripImages[indexPath.row])
         return cell ?? UITableViewCell()

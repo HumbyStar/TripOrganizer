@@ -49,7 +49,7 @@ class RegisterController: UIViewController {
     private func configButton() {
         registerButton.clipsToBounds = true
         registerButton.layer.cornerRadius = 10
-        registerButton.backgroundColor = UIColor.verde
+        registerButton.backgroundColor = UIColor.logoGreen
         registerButton.setTitleColor(.white, for: .normal)
         registerButton.isEnabled = false
         alreadyHaveAccount.setTitleColor(.black,  for: .normal)
@@ -74,7 +74,7 @@ class RegisterController: UIViewController {
         }
     
        // textField.borderStyle = .none
-        textField.layer.borderColor = UIColor.verde.cgColor
+        textField.layer.borderColor = UIColor.logoGreen.cgColor
         textField.layer.cornerRadius = 10
         textField.placeholder = placeHolder
         textField.layer.borderColor = borderColor.cgColor
@@ -145,16 +145,16 @@ extension RegisterController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 3
-        textField.layer.borderColor = UIColor.verde.cgColor
+        textField.layer.borderColor = UIColor.logoGreen.cgColor
         
         if textField == passwordTextField {
             passwordView.layer.borderWidth = 3
-            passwordView.layer.borderColor = UIColor.verde.cgColor
+            passwordView.layer.borderColor = UIColor.logoGreen.cgColor
             textField.layer.borderWidth = .zero
             textField.borderStyle = .none
         } else if textField == confirmPasswordTextField {
             confirmPasswordView.layer.borderWidth = 3
-            confirmPasswordView.layer.borderColor = UIColor.verde.cgColor
+            confirmPasswordView.layer.borderColor = UIColor.logoGreen.cgColor
             textField.layer.borderWidth = .zero
             textField.borderStyle = .none
         }

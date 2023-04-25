@@ -105,7 +105,7 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 3
-        textField.layer.borderColor = UIColor.verde.cgColor
+        textField.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
