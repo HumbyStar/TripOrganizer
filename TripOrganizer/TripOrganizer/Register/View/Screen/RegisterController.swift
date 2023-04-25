@@ -22,17 +22,18 @@ class RegisterController: UIViewController {
     
     var viewModel: RegisterViewModel?
     var alert: Alert?
+    var activeTextField : UITextField? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = RegisterViewModel()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification: )), name: UIResponder.keyboardWillHideNotification, object: nil)
         alert = Alert(controller: self)
         configTextField()
         configButton()
         configProtocols()
         configViews()
-        
-
     }
     
     private func configViews() {
@@ -92,6 +93,35 @@ class RegisterController: UIViewController {
     }
     
     
+    @objc func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            // if keyboard size is not available for some reason, dont do anything
+           return
+        }
+
+        var shouldMoveViewUp = false
+        
+        // if active text field is not nil
+        if let activeTextField = activeTextField {
+            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+            let topOfKeyboard = self.view.frame.height - keyboardSize.height
+            
+            if bottomOfTextField > topOfKeyboard {
+                shouldMoveViewUp = true
+            }
+        }
+        
+        if(shouldMoveViewUp) {
+            self.view.frame.origin.y = 0 - keyboardSize.height
+        }
+    }
+
+    @objc func keyboardWillHide(notification: Notification) {
+        self.view.frame.origin.y = 0
+    }
+    
+    
+    
     @IBAction func tappedExibSenhaButton(_ sender: Any) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
@@ -145,6 +175,7 @@ class RegisterController: UIViewController {
 extension RegisterController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
         textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.logoGreen.cgColor
         
@@ -159,6 +190,8 @@ extension RegisterController: UITextFieldDelegate {
             textField.layer.borderWidth = .zero
 //            textField.borderStyle = .none
         }
+        
+        self.activeTextField = textField
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -184,9 +217,12 @@ extension RegisterController: UITextFieldDelegate {
             }
         }
         
+        self.activeTextField = nil
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
         if textField == nameTextField {
             //MARK: quando eu clicar no return ele pular para o textField de Endereço
             emailTextField.becomeFirstResponder()
