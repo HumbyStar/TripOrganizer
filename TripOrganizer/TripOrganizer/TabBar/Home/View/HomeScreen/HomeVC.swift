@@ -20,8 +20,7 @@ class HomeVC: UIViewController {
 
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
-    var tripList: [Trip] = []
-    var tripImages: [String] = ["trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3"]
+    var tripList: [AddTrip] = []
     var emptyLabel: UILabel!
     var addTripVC: AddTripViewController?
     
@@ -114,9 +113,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         
         let color = cellColors[indexPath.row % cellColors.count]
         cell?.backgroundColor = color
-        
         cell?.setupCell(trip: tripList[indexPath.row])
-        cell?.placeImageView.image = UIImage(named: tripImages[indexPath.row])
+        cell?.placeImageView.image = UIImage(named: viewModel.tripImages[indexPath.row])
         return cell ?? UITableViewCell()
         
     }
@@ -145,7 +143,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeVC: AddTripviewControllerDelegate {
-    func sendTrip(trip: Trip) {
+    func sendTrip(trip: AddTrip) {
         self.tripList.append(trip)
     }
 }

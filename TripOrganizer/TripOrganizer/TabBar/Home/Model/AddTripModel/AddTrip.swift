@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct Trip {
+struct AddTrip {
     var tripName: String
     var startDate: String
     var finishDate: String

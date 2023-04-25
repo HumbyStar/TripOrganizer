@@ -16,13 +16,13 @@ class TripPlanViewController: UIViewController {
     
     var placeNameReceived: String?
     
-    var placeList: [Place] = [Place(placeName: "Coliseum", placeImageName: "teste3"),
-                              Place(placeName: "Paris", placeImageName: "teste2"),
-                              Place(placeName: "Restaurante", placeImageName: "restaurante1"),
-                              Place(placeName: "Restaurante", placeImageName: "restaurante2"),
-                              Place(placeName: "Hotel", placeImageName: "hotel1"),
-                              Place(placeName: "Hotel", placeImageName: "hotel2"),
-                              Place(placeName: "Hotel", placeImageName: "imagehotel")
+    var placeList: [TripPlan] = [TripPlan(placeName: "Coliseum", placeImageName: "teste3"),
+                              TripPlan(placeName: "Paris", placeImageName: "teste2"),
+                              TripPlan(placeName: "Restaurante", placeImageName: "restaurante1"),
+                              TripPlan(placeName: "Restaurante", placeImageName: "restaurante2"),
+                              TripPlan(placeName: "Hotel", placeImageName: "hotel1"),
+                              TripPlan(placeName: "Hotel", placeImageName: "hotel2"),
+                              TripPlan(placeName: "Hotel", placeImageName: "imagehotel")
                             
     ]
     

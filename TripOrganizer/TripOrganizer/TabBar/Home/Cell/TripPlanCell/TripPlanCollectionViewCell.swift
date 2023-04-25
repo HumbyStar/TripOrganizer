@@ -30,7 +30,7 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         layer.masksToBounds = false
     }
     
-    public func setupCell(place: Place) {
+    public func setupCell(place: TripPlan) {
         placeNameLabel.text = place.placeName
         placeImageView.image = UIImage(named: place.placeImageName)
     }
