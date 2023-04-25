@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MZr-ZB-ff2">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Trip View Controller-->
+        <scene sceneID="A14-vs-EHc">
+            <objects>
+                <viewController storyboardIdentifier="AddTripViewController" id="MZr-ZB-ff2" customClass="AddTripViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u2h-di-vBe">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Viagem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StF-ib-Y77">
+                                <rect key="frame" x="35" y="139" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pG5-QQ-cQp">
+                                <rect key="frame" x="30" y="168" width="370" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2Yp-yU-rE8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRQ-T0-Sfq">
+                                <rect key="frame" x="50" y="321.33333333333331" width="330" height="45"/>
+                                <color key="backgroundColor" red="0.87058823529999996" green="0.46666666670000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="QGV-J1-rLo"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Adicionar Viagem">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addTripButtonPressed:" destination="MZr-ZB-ff2" eventType="touchUpInside" id="WFs-Rf-3bJ"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="s4H-4W-vlL">
+                                <rect key="frame" x="182.66666666666663" y="223" width="176.33333333333337" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="DRp-k5-WrO"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="startDateAction:" destination="MZr-ZB-ff2" eventType="valueChanged" id="GWs-MK-Q2W"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de partida:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCm-6F-7WW">
+                                <rect key="frame" x="35.000000000000007" y="233" width="127.66666666666669" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de retorno:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLH-CE-eih">
+                                <rect key="frame" x="35" y="264" width="129.66666666666666" height="20.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="zea-ma-Mvk">
+                                <rect key="frame" x="182.66666666666663" y="264" width="176.33333333333337" height="34"/>
+                                <connections>
+                                    <action selector="finishDateAction:" destination="MZr-ZB-ff2" eventType="valueChanged" id="rzz-Ff-WJ1"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdf-Vp-For">
+                                <rect key="frame" x="5" y="59" width="95" height="38"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back" title="voltar">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="MZr-ZB-ff2" eventType="touchUpInside" id="SDl-8R-r42"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3mu-hT-l9y"/>
+                        <color key="backgroundColor" red="0.43921568989999998" green="0.60784316059999999" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="s4H-4W-vlL" firstAttribute="height" secondItem="zea-ma-Mvk" secondAttribute="height" multiplier="1.02941" id="0hu-br-Udd"/>
+                            <constraint firstItem="iRQ-T0-Sfq" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="50" id="5sI-ok-1Bk"/>
+                            <constraint firstItem="pG5-QQ-cQp" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="30" id="6IN-xA-I7V"/>
+                            <constraint firstItem="zea-ma-Mvk" firstAttribute="top" secondItem="s4H-4W-vlL" secondAttribute="bottom" constant="6" id="6vu-wE-o6j"/>
+                            <constraint firstItem="3mu-hT-l9y" firstAttribute="trailing" secondItem="iRQ-T0-Sfq" secondAttribute="trailing" constant="50" id="C9r-PT-5sm"/>
+                            <constraint firstItem="3mu-hT-l9y" firstAttribute="trailing" secondItem="s4H-4W-vlL" secondAttribute="trailing" constant="71" id="Doi-fp-mVs"/>
+                            <constraint firstItem="tCm-6F-7WW" firstAttribute="top" secondItem="pG5-QQ-cQp" secondAttribute="bottom" constant="20" id="GSO-CA-kze"/>
+                            <constraint firstItem="3mu-hT-l9y" firstAttribute="trailing" secondItem="pG5-QQ-cQp" secondAttribute="trailing" constant="30" id="IRw-2F-DBH"/>
+                            <constraint firstItem="s4H-4W-vlL" firstAttribute="leading" secondItem="tCm-6F-7WW" secondAttribute="trailing" constant="20" id="JHR-9j-6kX"/>
+                            <constraint firstItem="s4H-4W-vlL" firstAttribute="top" secondItem="pG5-QQ-cQp" secondAttribute="bottom" constant="10" id="LFA-CU-UbG"/>
+                            <constraint firstItem="iRQ-T0-Sfq" firstAttribute="top" secondItem="zea-ma-Mvk" secondAttribute="bottom" constant="23.333333333333371" id="R4x-fA-wVW"/>
+                            <constraint firstItem="jLH-CE-eih" firstAttribute="top" secondItem="tCm-6F-7WW" secondAttribute="bottom" constant="10" id="SBt-cl-hRQ"/>
+                            <constraint firstItem="s4H-4W-vlL" firstAttribute="leading" secondItem="zea-ma-Mvk" secondAttribute="leading" id="TNr-t6-EeH"/>
+                            <constraint firstItem="Mdf-Vp-For" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="5" id="Zpe-RX-eHh"/>
+                            <constraint firstItem="Mdf-Vp-For" firstAttribute="top" secondItem="3mu-hT-l9y" secondAttribute="top" id="ajn-jG-w7J"/>
+                            <constraint firstItem="tCm-6F-7WW" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="35" id="d1j-cg-tVJ"/>
+                            <constraint firstItem="pG5-QQ-cQp" firstAttribute="top" secondItem="StF-ib-Y77" secondAttribute="bottom" constant="8" symbolic="YES" id="iCh-QJ-UUM"/>
+                            <constraint firstItem="StF-ib-Y77" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="35" id="jEH-Ue-2MJ"/>
+                            <constraint firstItem="StF-ib-Y77" firstAttribute="top" secondItem="3mu-hT-l9y" secondAttribute="top" constant="80" id="rXd-Z9-Z1G"/>
+                            <constraint firstItem="jLH-CE-eih" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="35" id="woS-eR-har"/>
+                            <constraint firstItem="s4H-4W-vlL" firstAttribute="trailing" secondItem="zea-ma-Mvk" secondAttribute="trailing" id="yrV-Ba-9js"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addTripButton" destination="iRQ-T0-Sfq" id="gQW-PF-igM"/>
+                        <outlet property="backButton" destination="Mdf-Vp-For" id="YaB-QF-EmY"/>
+                        <outlet property="finishDate" destination="zea-ma-Mvk" id="a9g-8o-e5Y"/>
+                        <outlet property="startDate" destination="s4H-4W-vlL" id="ZuC-Na-Y4G"/>
+                        <outlet property="tripNameTextField" destination="pG5-QQ-cQp" id="Wm6-k1-5HX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXj-qg-IxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3842" y="-21"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="24" height="24"/>
+    </resources>
+</document>
