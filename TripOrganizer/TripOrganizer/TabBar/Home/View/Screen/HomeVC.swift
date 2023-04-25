@@ -9,6 +9,18 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var tappedTicketView: UIView!
+    @IBOutlet weak var tappedHotelView: UIView!
+    @IBOutlet weak var tappedRestaurantView: UIView!
+    @IBOutlet weak var tappedAttractionView: UIView!
+    
+    
+    @IBOutlet weak var ticketImageView: UIImageView!
+    @IBOutlet weak var hotelImageView: UIImageView!
+    @IBOutlet weak var restaurantImageView: UIImageView!
+    @IBOutlet weak var attractionImageView: UIImageView!
+    
+    
     @IBOutlet var perfilButton: UIButton!
     @IBOutlet var homeTableview: UITableView!
     @IBOutlet var tripProgressView: UIProgressView!
@@ -17,6 +29,8 @@ class HomeVC: UIViewController {
         UIColor.logoGreen,
         UIColor.logoOrange
     ]
+    
+    var progressBar: Float = 0
 
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
@@ -34,7 +48,84 @@ class HomeVC: UIViewController {
         configProgressBar()
         changeProfileImageNotification()
         circularProfileButton()
+        configImagesViews()
     }
+    
+    private func configImagesViews() {
+        let imageViews = [tappedTicketView, tappedHotelView, tappedRestaurantView, tappedAttractionView]
+        
+        for imageView in imageViews {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)))
+            imageView?.addGestureRecognizer(tapGesture)
+            imageView?.isUserInteractionEnabled = true
+        }
+    }
+
+    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
+       
+        guard let imageView = sender.view else { return }
+        
+         switch imageView {
+         case tappedTicketView:
+             switch ticketImageView.image {
+             case UIImage(systemName: "square.fill"):
+                 ticketImageView.image = UIImage(systemName: "checkmark.square.fill")
+                progressBar += 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+             case UIImage(systemName: "checkmark.square.fill"):
+                 ticketImageView.image = UIImage(systemName: "square.fill")
+                 progressBar -= 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             default:
+                 break
+             }
+         case tappedHotelView:
+             switch hotelImageView.image {
+             case UIImage(systemName: "square.fill"):
+                 hotelImageView.image = UIImage(systemName: "checkmark.square.fill")
+                 progressBar += 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             case UIImage(systemName: "checkmark.square.fill"):
+                 hotelImageView.image = UIImage(systemName: "square.fill")
+                 progressBar -= 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             default:
+                 break
+             }
+             
+         case tappedRestaurantView:
+             switch restaurantImageView.image {
+             case UIImage(systemName: "square.fill"):
+                 restaurantImageView.image = UIImage(systemName: "checkmark.square.fill")
+                 progressBar += 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             case UIImage(systemName: "checkmark.square.fill"):
+                 restaurantImageView.image = UIImage(systemName: "square.fill")
+                 progressBar -= 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             default:
+                 break
+             }
+             
+         case tappedAttractionView:
+             switch attractionImageView.image {
+             case UIImage(systemName: "square.fill"):
+                 attractionImageView.image = UIImage(systemName: "checkmark.square.fill")
+                 progressBar += 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             case UIImage(systemName: "checkmark.square.fill"):
+                 attractionImageView.image = UIImage(systemName: "square.fill")
+                 progressBar -= 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             default:
+                 break
+             }
+             
+         default:
+             break
+         }
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         updateTableView()
