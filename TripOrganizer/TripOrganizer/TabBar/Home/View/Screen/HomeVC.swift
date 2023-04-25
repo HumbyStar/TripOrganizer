@@ -9,6 +9,12 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var tappedTicketView: UIView!
+    @IBOutlet weak var tappedHotelView: UIView!
+    @IBOutlet weak var tappedRestaurantView: UIView!
+    @IBOutlet weak var tappedAttractionView: UIView!
+    
+    
     @IBOutlet weak var ticketImageView: UIImageView!
     @IBOutlet weak var hotelImageView: UIImageView!
     @IBOutlet weak var restaurantImageView: UIImageView!
@@ -46,7 +52,7 @@ class HomeVC: UIViewController {
     }
     
     private func configImagesViews() {
-        let imageViews = [ticketImageView, hotelImageView, restaurantImageView, attractionImageView]
+        let imageViews = [tappedTicketView, tappedHotelView, tappedRestaurantView, tappedAttractionView]
         
         for imageView in imageViews {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)))
@@ -57,10 +63,10 @@ class HomeVC: UIViewController {
 
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
        
-        guard let imageView = sender.view as? UIImageView else { return }
+        guard let imageView = sender.view else { return }
         
          switch imageView {
-         case ticketImageView:
+         case tappedTicketView:
              switch ticketImageView.image {
              case UIImage(systemName: "square.fill"):
                  ticketImageView.image = UIImage(systemName: "checkmark.square.fill")
@@ -73,7 +79,7 @@ class HomeVC: UIViewController {
              default:
                  break
              }
-         case hotelImageView:
+         case tappedHotelView:
              switch hotelImageView.image {
              case UIImage(systemName: "square.fill"):
                  hotelImageView.image = UIImage(systemName: "checkmark.square.fill")
@@ -87,7 +93,7 @@ class HomeVC: UIViewController {
                  break
              }
              
-         case restaurantImageView:
+         case tappedRestaurantView:
              switch restaurantImageView.image {
              case UIImage(systemName: "square.fill"):
                  restaurantImageView.image = UIImage(systemName: "checkmark.square.fill")
@@ -101,7 +107,7 @@ class HomeVC: UIViewController {
                  break
              }
              
-         case attractionImageView:
+         case tappedAttractionView:
              switch attractionImageView.image {
              case UIImage(systemName: "square.fill"):
                  attractionImageView.image = UIImage(systemName: "checkmark.square.fill")
