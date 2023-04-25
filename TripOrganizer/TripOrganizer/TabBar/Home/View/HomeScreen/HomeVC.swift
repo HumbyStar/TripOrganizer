@@ -20,7 +20,7 @@ class HomeVC: UIViewController {
 
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
-    var tripList: [AddTrip] = []
+    var tripList: [AddTripModel] = []
     var emptyLabel: UILabel!
     var addTripVC: AddTripViewController?
     
@@ -143,7 +143,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeVC: AddTripviewControllerDelegate {
-    func sendTrip(trip: AddTrip) {
+    func sendTrip(trip: AddTripModel) {
         self.tripList.append(trip)
     }
 }

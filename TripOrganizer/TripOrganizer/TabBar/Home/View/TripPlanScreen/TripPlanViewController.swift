@@ -15,20 +15,12 @@ class TripPlanViewController: UIViewController {
     @IBOutlet var backButton: UIButton!
     
     var placeNameReceived: String?
-    
-    var placeList: [TripPlan] = [TripPlan(placeName: "Coliseum", placeImageName: "teste3"),
-                              TripPlan(placeName: "Paris", placeImageName: "teste2"),
-                              TripPlan(placeName: "Restaurante", placeImageName: "restaurante1"),
-                              TripPlan(placeName: "Restaurante", placeImageName: "restaurante2"),
-                              TripPlan(placeName: "Hotel", placeImageName: "hotel1"),
-                              TripPlan(placeName: "Hotel", placeImageName: "hotel2"),
-                              TripPlan(placeName: "Hotel", placeImageName: "imagehotel")
-                            
-    ]
+    var viewModel: TripPlanViewModel = TripPlanViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
+        configProtocol()
         navigationController?.navigationBar.tintColor = .white
         tripNameLabel.text = placeNameReceived
     }
@@ -38,10 +30,13 @@ class TripPlanViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
     
-    private func configCollectionView() {
+    private func configProtocol() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+    }
+    
+    private func configCollectionView() {
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .vertical
             layout.estimatedItemSize = .zero
             layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
@@ -58,14 +53,14 @@ class TripPlanViewController: UIViewController {
 
 extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: TripPlanCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: TripPlanCollectionViewCell.identifier, for: indexPath) as? TripPlanCollectionViewCell
-        cell?.setupCell(place: placeList[indexPath.row])
-        return cell ?? UICollectionViewCell()
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.getNumberList()
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return placeList.count
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: TripPlanCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: TripPlanCollectionViewCell.identifier, for: indexPath) as? TripPlanCollectionViewCell
+        cell?.setupCell(place: viewModel.getListItens(index: indexPath.row))
+        return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -44,7 +44,7 @@ class HomeTableViewCell: UITableViewCell {
         self.placeImageView.layer.cornerRadius = 8
     }
     
-    public func setupCell(trip: AddTrip) {
+    public func setupCell(trip: AddTripModel) {
         tripNameLabel.text = trip.tripName
         startDateLabel.text = trip.startDate
         finishDateLabel.text = trip.finishDate
