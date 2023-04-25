@@ -126,7 +126,8 @@ class RegisterController: UIViewController {
                 })
             } else {
                 alert?.createAlert(title: "TripOrganizer", message: "Ambas as senha devem ser iguais!")
-                confirmPasswordTextField.layer.borderColor = UIColor.red.cgColor
+                confirmPasswordView.layer.borderColor = UIColor.red.cgColor
+                passwordView.layer.borderColor = UIColor.red.cgColor
             }
         }
     }
@@ -151,41 +152,38 @@ extension RegisterController: UITextFieldDelegate {
             passwordView.layer.borderWidth = 3
             passwordView.layer.borderColor = UIColor.logoGreen.cgColor
             textField.layer.borderWidth = .zero
-            textField.borderStyle = .none
+//            textField.borderStyle = .none
         } else if textField == confirmPasswordTextField {
             confirmPasswordView.layer.borderWidth = 3
             confirmPasswordView.layer.borderColor = UIColor.logoGreen.cgColor
             textField.layer.borderWidth = .zero
-            textField.borderStyle = .none
+//            textField.borderStyle = .none
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         // MARK: Essa validação faz com que caso o textField selecionado fica verde e caso saia do mesmo, volte a ficar em lightGray e que se todos os textField estiverem com textos abilitara o botal de resgistrar.
-        if nameTextField.hasText == true && emailTextField.hasText == true && passwordTextField.hasText == true && confirmPasswordTextField.hasText == true {
-            textField.layer.borderWidth = 2
-            textField.layer.borderColor = UIColor.lightGray.cgColor
+        
+        textField.layer.borderWidth = 2
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        passwordView.layer.borderWidth = 2
+        passwordView.layer.borderColor = UIColor.lightGray.cgColor
+        confirmPasswordView.layer.borderWidth = 2
+        confirmPasswordView.layer.borderColor = UIColor.lightGray.cgColor
+        passwordTextField.layer.borderWidth = .zero
+        confirmPasswordTextField.layer.borderWidth = .zero
+        
+        
+        if nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && confirmPasswordTextField.hasText {
             registerButton.isEnabled = true
-        } else {
-            textField.layer.borderWidth = 2
-            textField.layer.borderColor = UIColor.lightGray.cgColor
-            passwordView.layer.borderWidth = 2
-            passwordView.layer.borderColor = UIColor.lightGray.cgColor
-            passwordTextField.layer.borderWidth = .zero
-            passwordTextField.borderStyle = .none
-            confirmPasswordView.layer.borderWidth = 2
-            confirmPasswordView.layer.borderColor = UIColor.lightGray.cgColor
-            confirmPasswordTextField.layer.borderWidth = .zero
-            confirmPasswordTextField.borderStyle = .none
-            //            registerButton.isEnabled = false
-        }
-        // MARK: Essa validação tem o objetivo de fazer com que os textos do textField de senha e confirmar senha, teram que ser iguais, se nao for o textField confirmar senha ficara com uma borda vermelha e o botao de registrar não vai abilitar.
-        if textField == confirmPasswordTextField || textField == passwordTextField {
-            if confirmPasswordTextField.text == passwordTextField.text {
-                confirmPasswordTextField.layer.borderColor = UIColor.lightGray.cgColor
-                passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
+            if passwordTextField.text != confirmPasswordTextField.text {
+                passwordView.layer.borderWidth = 2
+                passwordView.layer.borderColor = UIColor.red.cgColor
+                confirmPasswordView.layer.borderWidth = 2
+                confirmPasswordView.layer.borderColor = UIColor.red.cgColor
             }
         }
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
