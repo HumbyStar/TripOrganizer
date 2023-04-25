@@ -16,7 +16,7 @@ class HomeVC: UIViewController {
 //    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
     var tripList: [Trip] = []
-    var tripImages: [String] = ["trip1", "trip2", "trip3"]
+    var tripImages: [String] = ["trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3"]
     var emptyLabel: UILabel!
     var addTripVC: AddTripViewController?
     
