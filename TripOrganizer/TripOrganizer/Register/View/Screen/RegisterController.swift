@@ -73,8 +73,7 @@ class RegisterController: UIViewController {
         } else {
             textField.layer.borderWidth = 2
         }
-    
-       // textField.borderStyle = .none
+        
         textField.layer.borderColor = UIColor.logoGreen.cgColor
         textField.layer.cornerRadius = 10
         textField.placeholder = placeHolder
@@ -82,7 +81,7 @@ class RegisterController: UIViewController {
         textField.keyboardType = keyboardType
         textField.spellCheckingType = .no
         nameTextField.autocapitalizationType = .words
-       
+        
     }
     
     private func configTextField() {
@@ -95,13 +94,12 @@ class RegisterController: UIViewController {
     
     @objc func keyboardWillShow(notification: Notification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            // if keyboard size is not available for some reason, dont do anything
-           return
+            
+            return
         }
-
+        
         var shouldMoveViewUp = false
         
-        // if active text field is not nil
         if let activeTextField = activeTextField {
             let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
             let topOfKeyboard = self.view.frame.height - keyboardSize.height
@@ -115,7 +113,7 @@ class RegisterController: UIViewController {
             self.view.frame.origin.y = 0 - keyboardSize.height
         }
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         self.view.frame.origin.y = 0
     }
@@ -183,12 +181,10 @@ extension RegisterController: UITextFieldDelegate {
             passwordView.layer.borderWidth = 3
             passwordView.layer.borderColor = UIColor.logoGreen.cgColor
             textField.layer.borderWidth = .zero
-//            textField.borderStyle = .none
         } else if textField == confirmPasswordTextField {
             confirmPasswordView.layer.borderWidth = 3
             confirmPasswordView.layer.borderColor = UIColor.logoGreen.cgColor
             textField.layer.borderWidth = .zero
-//            textField.borderStyle = .none
         }
         
         self.activeTextField = textField

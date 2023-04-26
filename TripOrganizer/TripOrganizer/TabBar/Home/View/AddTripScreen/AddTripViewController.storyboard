@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MZr-ZB-ff2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MZr-ZB-ff2">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -114,8 +115,11 @@
                     <connections>
                         <outlet property="addTripButton" destination="iRQ-T0-Sfq" id="gQW-PF-igM"/>
                         <outlet property="backButton" destination="Mdf-Vp-For" id="YaB-QF-EmY"/>
-                        <outlet property="finishDate" destination="zea-ma-Mvk" id="a9g-8o-e5Y"/>
-                        <outlet property="startDate" destination="s4H-4W-vlL" id="ZuC-Na-Y4G"/>
+                        <outlet property="departureDateLabel" destination="tCm-6F-7WW" id="auG-O1-JZr"/>
+                        <outlet property="departureDatePicker" destination="s4H-4W-vlL" id="ZuC-Na-Y4G"/>
+                        <outlet property="returnDateLabel" destination="jLH-CE-eih" id="XhV-L5-ukS"/>
+                        <outlet property="returnDatePicker" destination="zea-ma-Mvk" id="a9g-8o-e5Y"/>
+                        <outlet property="tripNameLabel" destination="StF-ib-Y77" id="cXs-eM-bIY"/>
                         <outlet property="tripNameTextField" destination="pG5-QQ-cQp" id="Wm6-k1-5HX"/>
                     </connections>
                 </viewController>

@@ -9,9 +9,25 @@ import UIKit
 
 class HomeViewModel {
 
-    private var tripImages: [String] = ["trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3", "trip1", "trip2", "trip3"]
+    private var tripImages: [String] = ["trip1",
+                                        "trip2",
+                                        "trip3",
+                                        "trip1",
+                                        "trip2",
+                                        "trip3",
+                                        "trip1",
+                                        "trip2",
+                                        "trip3",
+                                        "trip1",
+                                        "trip2",
+                                        "trip3",
+                                        "trip1",
+                                        "trip2",
+                                        "trip3",
+                                        "trip1",
+                                        "trip2",
+                                        "trip3"]
     
-//    private var listCell: [String] = []
     
     private var tripList: [AddTripModel] = []
     

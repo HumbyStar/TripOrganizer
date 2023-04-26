@@ -11,19 +11,19 @@ import MapKit
 class AttractionVC: UIViewController {
     
     
-  public let viewModel: AttractionViewModel = AttractionViewModel()
+    public let viewModel: AttractionViewModel = AttractionViewModel()
     
     
-    @IBOutlet weak var assessmentsAttractionLabel: UILabel!
+    @IBOutlet weak var attractionRatingLabel: UILabel!
     @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var map: MKMapView!
+    @IBOutlet var attractionMapView: MKMapView!
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var detailView: UIView!
+    @IBOutlet var attractionInfoView: UIView!
     @IBOutlet var addAttractionButton: UIButton!
     @IBOutlet var attractionNameLabel: UILabel!
     @IBOutlet var attractionAdressLabel: UILabel!
     @IBOutlet var openingHoursLabel: UILabel!
-    @IBOutlet var phoneLabel: UILabel!
+    @IBOutlet var attractionPhoneNumberLabel: UILabel!
     @IBOutlet var entranceFeeLabel: UILabel!
     
     
@@ -36,16 +36,16 @@ class AttractionVC: UIViewController {
         super.viewDidLoad()
         configCollectionView()
         roundedBorder()
-
+        
     }
     
     private func roundedBorder() {
-        detailView.layer.cornerRadius = 12
-        map.layer.cornerRadius = 12
+        attractionInfoView.layer.cornerRadius = 12
+        attractionMapView.layer.cornerRadius = 12
     }
     
     
-private func configCollectionView() {
+    private func configCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         viewModel.configLayoutCollectionView(collectionView: collectionView)
@@ -66,11 +66,10 @@ extension AttractionVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         cell?.setupCell(imageName: viewModel.getLocationImageListCellForItemAt(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
-   
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         viewModel.sizeForItem(IndexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
         
     }
-    
     
 }

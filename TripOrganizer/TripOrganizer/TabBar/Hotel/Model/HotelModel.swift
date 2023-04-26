@@ -8,16 +8,10 @@
 import Foundation
 
 struct HotelModel {
-
-  public  let room: String
-    
-    public let nomeHotel: String
-    
-    public let avaliacoes: String
-    
-    public let telefoneHotel: String
-    
-    public let enderecoHotel: String
-    
-    public let horarioHotel: String
+    public let room: String
+    public let name: String
+    public let ratings: String
+    public let phoneNumber: String
+    public let address: String
+    public let openingHours: String
 }

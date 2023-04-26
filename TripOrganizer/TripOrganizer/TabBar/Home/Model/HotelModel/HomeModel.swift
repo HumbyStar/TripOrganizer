@@ -8,6 +8,6 @@
 import Foundation
 
 struct Image {
-    var nameImages: String
+    var imageNames: String
 }
 

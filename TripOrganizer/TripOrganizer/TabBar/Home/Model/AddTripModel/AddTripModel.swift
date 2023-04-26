@@ -10,7 +10,7 @@ import UIKit
 
 struct AddTripModel {
     var tripName: String
-    var startDate: String
-    var finishDate: String
+    var departureDate: String
+    var returnDate: String
 }
 

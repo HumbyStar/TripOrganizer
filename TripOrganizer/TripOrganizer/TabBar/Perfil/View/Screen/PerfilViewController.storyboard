@@ -191,11 +191,15 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="weO-sO-xgk" id="IUB-3x-XoJ"/>
+                        <outlet property="changePasswordLabel" destination="Ru2-QH-MG7" id="U1C-4d-pQW"/>
                         <outlet property="changePasswordTextField" destination="m47-J2-Erx" id="d2R-eH-hxv"/>
                         <outlet property="changeProfileImageButton" destination="B4P-wh-A1F" id="bUd-ne-7CG"/>
+                        <outlet property="emailLabel" destination="RRn-dY-9MQ" id="UOf-LK-dIx"/>
                         <outlet property="emailTextField" destination="hND-hI-lYv" id="LUQ-Yr-owz"/>
                         <outlet property="exitButton" destination="iMD-dX-9Qx" id="MfC-Zp-dBu"/>
+                        <outlet property="nameLabel" destination="n4k-Kz-Baz" id="Jpt-ZX-3j3"/>
                         <outlet property="nameTextField" destination="h0W-ig-iWc" id="YYo-Cz-mK6"/>
+                        <outlet property="phoneLabel" destination="yQv-Nc-THm" id="8PZ-a5-5tx"/>
                         <outlet property="phoneTextField" destination="5Y7-dG-mGj" id="1om-T6-85g"/>
                         <outlet property="profileImageView" destination="hLk-dj-xHe" id="lVi-qM-7dq"/>
                         <outlet property="saveButton" destination="AKS-Zw-ewm" id="hdE-eQ-B2J"/>
@@ -203,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-511.19999999999999" y="-48.125937031484263"/>
+            <point key="canvasLocation" x="-626" y="-50"/>
         </scene>
     </scenes>
     <resources>

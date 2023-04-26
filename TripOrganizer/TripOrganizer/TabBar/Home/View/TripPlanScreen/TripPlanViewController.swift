@@ -9,7 +9,7 @@ import UIKit
 
 class TripPlanViewController: UIViewController {
 
-    @IBOutlet var placeImageView: UIImageView!
+    @IBOutlet var tripImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var tripNameLabel: UILabel!
     @IBOutlet var backButton: UIButton!
@@ -19,9 +19,9 @@ class TripPlanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configCollectionView()
-        configProtocol()
         navigationController?.navigationBar.tintColor = .white
+        configCollectionView()
+        configCollectionViewProtocol()
         tripNameLabel.text = placeNameReceived
     }
     
@@ -30,7 +30,7 @@ class TripPlanViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
     
-    private func configProtocol() {
+    private func configCollectionViewProtocol() {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -59,7 +59,7 @@ extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: TripPlanCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: TripPlanCollectionViewCell.identifier, for: indexPath) as? TripPlanCollectionViewCell
-        cell?.setupCell(place: viewModel.getListItens(index: indexPath.row))
+        cell?.setupCell(place: viewModel.getItemList(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
     

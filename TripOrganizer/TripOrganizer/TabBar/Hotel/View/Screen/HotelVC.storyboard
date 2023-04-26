@@ -75,6 +75,9 @@
                                         <state key="normal" title="Adicionar" image="plus.circle.fill" catalog="system">
                                             <color key="titleColor" red="0.43921568989999998" green="0.60784316059999999" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addHotelButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cTV-d2-ZvQ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chatolamour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTJ-Yf-Mvs">
                                         <rect key="frame" x="10" y="8" width="105" height="21"/>
@@ -133,15 +136,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adicionarButton" destination="WJx-Mt-kLU" id="YN4-qA-AFw"/>
-                        <outlet property="avaliacoesLabel" destination="bvT-rh-uuw" id="QaF-pc-pWJ"/>
+                        <outlet property="addButton" destination="WJx-Mt-kLU" id="YN4-qA-AFw"/>
                         <outlet property="collectionView" destination="gjB-fu-2JS" id="ch3-a2-dSd"/>
-                        <outlet property="cvView" destination="sHU-f6-HQp" id="8ER-NG-Drp"/>
-                        <outlet property="enderecoHotelLabel" destination="2IU-2u-fBc" id="bz0-I7-hId"/>
-                        <outlet property="horarioHotelLabel" destination="nvr-IS-zhN" id="bwh-iB-D8S"/>
+                        <outlet property="hotelAddressLabel" destination="2IU-2u-fBc" id="bz0-I7-hId"/>
+                        <outlet property="hotelInfoView" destination="sHU-f6-HQp" id="8ER-NG-Drp"/>
                         <outlet property="hotelMapView" destination="xls-1V-ZE4" id="7hK-81-tQB"/>
-                        <outlet property="nomeHotelLabel" destination="gTJ-Yf-Mvs" id="B5f-PY-M5F"/>
-                        <outlet property="telefoneLabel" destination="3lA-Es-FyI" id="a3N-o9-DX2"/>
+                        <outlet property="hotelNameLabel" destination="gTJ-Yf-Mvs" id="B5f-PY-M5F"/>
+                        <outlet property="hotelOpeningHoursLabel" destination="nvr-IS-zhN" id="bwh-iB-D8S"/>
+                        <outlet property="hotelPhoneNumberLabel" destination="3lA-Es-FyI" id="a3N-o9-DX2"/>
+                        <outlet property="hotelRatingLabel" destination="bvT-rh-uuw" id="QaF-pc-pWJ"/>
+                        <outlet property="searchBar" destination="DY3-Ls-0Q8" id="XVQ-Ku-1Qr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

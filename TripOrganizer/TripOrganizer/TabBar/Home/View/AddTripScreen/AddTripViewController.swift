@@ -17,10 +17,13 @@ class AddTripViewController: UIViewController {
     var viewModel: AddTripViewModel = AddTripViewModel()
     var alert: Alert?
     
+    @IBOutlet var returnDateLabel: UILabel!
+    @IBOutlet var departureDateLabel: UILabel!
+    @IBOutlet var tripNameLabel: UILabel!
     @IBOutlet var tripNameTextField: UITextField!
     @IBOutlet var addTripButton: UIButton!
-    @IBOutlet var startDate: UIDatePicker!
-    @IBOutlet var finishDate: UIDatePicker!
+    @IBOutlet var departureDatePicker: UIDatePicker!
+    @IBOutlet var returnDatePicker: UIDatePicker!
     @IBOutlet var backButton: UIButton!
     
     var startDateString: String?
@@ -38,29 +41,25 @@ class AddTripViewController: UIViewController {
         configTripNameTextField()
         configAddTripButton()
         configBackButton()
-        configStartDate()
         navigationController?.navigationBar.tintColor = .white
     }
     
-    func configTripNameTextField() {
+    private func configTripNameTextField() {
         tripNameTextField.clipsToBounds = true
         tripNameTextField.layer.cornerRadius = 16
         tripNameTextField.borderStyle = .roundedRect
     }
     
-    func configAddTripButton() {
+    private func configAddTripButton() {
         addTripButton.clipsToBounds = true
         addTripButton.layer.cornerRadius = 16
     }
     
-    func configBackButton() {
+    private func configBackButton() {
         backButton.setImage(UIImage(named: "back")?.withRenderingMode(.alwaysTemplate), for: .normal)
         backButton.tintColor = .white
     }
     
-    func configStartDate() {
-//        startDate
-    }
     
     @IBAction func startDateAction(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -91,11 +90,10 @@ class AddTripViewController: UIViewController {
         
         if tripNameTextField.hasText {
             guard let name = tripNameTextField.text else { return }
-            self.delegate?.sendTrip(trip: AddTripModel(tripName: name, startDate: startDateString ?? "", finishDate: finishDateString ?? ""))
+            self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
         } else {
             self.alert?.createAlert(title: "Trip Organizer", message: "Sua viagem deve conter um nome!")
-//            viewModel.getAlert()
         }
     }
 }

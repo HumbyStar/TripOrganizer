@@ -13,7 +13,7 @@ class RestaurantViewModel {
     
     public func loadRestaurants() {
         restaurants = [
-            Restaurant(restaurantName: "Polignano a Mare", restaurantAdress: "70044 Bari, Itália", restaurantHour: "Aberto", restarauntCellphone: " (+39) 080-4252300", restaurantRating: 4.6,restaurantImages: ["restaurant1.1", "restaurant1.2","restaurant1.3","restaurant1.4","restaurant1.5"]),
+            Restaurant(restaurantName: "Polignano a Mare", restaurantAdress: "70044 Bari, Itália", restaurantOpeningHours: "Aberto", restarauntPhoneNumber: " (+39) 080-4252300", restaurantRating: 4.6,restaurantImages: ["restaurant1.1", "restaurant1.2","restaurant1.3","restaurant1.4","restaurant1.5"]),
         ]
     }
     
@@ -25,7 +25,7 @@ class RestaurantViewModel {
         return 5
     }
     
-    public func getRestarauntImages(indexPath: IndexPath) -> [String] {
+    public func getRestaurantImages(indexPath: IndexPath) -> [String] {
         let restaurant = restaurants[0]
         return restaurant.restaurantImages
     }

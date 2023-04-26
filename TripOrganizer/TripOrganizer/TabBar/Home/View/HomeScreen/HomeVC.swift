@@ -9,21 +9,20 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet var appNameLabel: UILabel!
+    @IBOutlet var greetingLabel: UILabel!
     @IBOutlet weak var tappedTicketView: UIView!
     @IBOutlet weak var tappedHotelView: UIView!
     @IBOutlet weak var tappedRestaurantView: UIView!
     @IBOutlet weak var tappedAttractionView: UIView!
-    
-    
     @IBOutlet weak var ticketImageView: UIImageView!
     @IBOutlet weak var hotelImageView: UIImageView!
     @IBOutlet weak var restaurantImageView: UIImageView!
     @IBOutlet weak var attractionImageView: UIImageView!
-    
-    
     @IBOutlet var perfilButton: UIButton!
-    @IBOutlet var homeTableview: UITableView!
+    @IBOutlet var homeTableView: UITableView!
     @IBOutlet var tripProgressView: UIProgressView!
+    @IBOutlet var addTripButton: UIButton!
     
     let cellColors = [
         UIColor.logoGreen,
@@ -31,10 +30,7 @@ class HomeVC: UIViewController {
     ]
     
     var progressBar: Float = 0
-
-//    var imageList: [String] = ["circle", "engrenagem", "estrela"]
     var viewModel: HomeViewModel = HomeViewModel()
-//    var tripList: [AddTripModel] = []
     var emptyLabel: UILabel!
     var addTripVC: AddTripViewController?
     
@@ -153,35 +149,35 @@ class HomeVC: UIViewController {
         perfilButton.layer.cornerRadius = perfilButton.frame.height / 2
     }
     
-    func emptyTableViewLabel() {
-        emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: homeTableview.bounds.size.width, height: homeTableview.bounds.size.height))
+    private func emptyTableViewLabel() {
+        emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: homeTableView.bounds.size.width, height: homeTableView.bounds.size.height))
         emptyLabel.text = "Não há viagens para exibir, crie uma nova viagem clicando no botão acima."
         emptyLabel.textColor = UIColor.gray
         emptyLabel.textAlignment = .center
-        homeTableview.backgroundView = emptyLabel
-        homeTableview.separatorStyle = .none
+        homeTableView.backgroundView = emptyLabel
+        homeTableView.separatorStyle = .none
         emptyLabel.numberOfLines = .zero
     }
     
-    func updateTableView() {
+    private func updateTableView() {
         if viewModel.tripListSize == 0 {
-            homeTableview.separatorStyle = .none
-            homeTableview.backgroundView?.isHidden = false
+            homeTableView.separatorStyle = .none
+            homeTableView.backgroundView?.isHidden = false
         } else {
-            homeTableview.separatorStyle = .singleLine
-            homeTableview.backgroundView?.isHidden = true
+            homeTableView.separatorStyle = .singleLine
+            homeTableView.backgroundView?.isHidden = true
         }
-        homeTableview.reloadData()
+        homeTableView.reloadData()
     }
     
     private func configTableView() {
-        homeTableview.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-        homeTableview.separatorInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
-        homeTableview.delegate = self
-        homeTableview.dataSource = self
-        homeTableview.register(HomeTableViewCell.nib(), forCellReuseIdentifier: HomeTableViewCell.indentifier)
-        homeTableview.layer.cornerRadius = 12
-        homeTableview.clipsToBounds = true
+        homeTableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        homeTableView.separatorInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
+        homeTableView.register(HomeTableViewCell.nib(), forCellReuseIdentifier: HomeTableViewCell.indentifier)
+        homeTableView.layer.cornerRadius = 12
+        homeTableView.clipsToBounds = true
     }
     
     

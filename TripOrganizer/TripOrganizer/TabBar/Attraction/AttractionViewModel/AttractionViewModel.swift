@@ -8,12 +8,12 @@
 import UIKit
 
 class AttractionViewModel {
-
-   private let locationImagelist: [AttractionModel] = [AttractionModel(imageAttraction:"1", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
-                                                       AttractionModel(imageAttraction:"2", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
-                                                       AttractionModel(imageAttraction:"3", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
-                                                       AttractionModel(imageAttraction:"4", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
-                                                       AttractionModel(imageAttraction:"5", assessments: "Avaliações", attractionName: "Praça do Japão", attractionAdress: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phone: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito")]
+    
+    private let locationImagelist: [AttractionModel] = [AttractionModel(attractionImage:"1", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
+                                                        AttractionModel(attractionImage:"2", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
+                                                        AttractionModel(attractionImage:"3", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
+                                                        AttractionModel(attractionImage:"4", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
+                                                        AttractionModel(attractionImage:"5", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito")]
     
     public func getLocationImagelist() -> Int{
         locationImagelist.count
@@ -23,7 +23,7 @@ class AttractionViewModel {
         locationImagelist[index]
     }
     
-   public func configLayoutCollectionView(collectionView: UICollectionView){
+    public func configLayoutCollectionView(collectionView: UICollectionView){
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = .zero

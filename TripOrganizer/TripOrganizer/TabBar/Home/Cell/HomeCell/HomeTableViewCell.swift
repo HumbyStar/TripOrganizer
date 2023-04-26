@@ -11,15 +11,14 @@ class HomeTableViewCell: UITableViewCell {
 
     @IBOutlet var tripNameLabel: UILabel!
     @IBOutlet var placeImageView: UIImageView!
-    @IBOutlet var startDateLabel: UILabel!
-    @IBOutlet var finishDateLabel: UILabel!
+    @IBOutlet var departureDateLabel: UILabel!
+    @IBOutlet var returnDateLabel: UILabel!
     
     static let indentifier: String = String(describing: HomeTableViewCell.self)
     
     static public func nib() -> UINib {
         return UINib(nibName: self.indentifier, bundle: nil)
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,8 +45,8 @@ class HomeTableViewCell: UITableViewCell {
     
     public func setupCell(trip: AddTripModel) {
         tripNameLabel.text = trip.tripName
-        startDateLabel.text = trip.startDate
-        finishDateLabel.text = trip.finishDate
+        departureDateLabel.text = trip.departureDate
+        returnDateLabel.text = trip.returnDate
     }
     
 }
