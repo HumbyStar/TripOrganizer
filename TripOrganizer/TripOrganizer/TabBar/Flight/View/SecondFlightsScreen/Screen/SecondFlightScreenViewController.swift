@@ -55,6 +55,8 @@ extension SecondFlightScreenViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.getDidSelectRowAt(tableView: tableView, indexPath: indexPath)
-        alert?.createAlert(title: "", message: "Voo adicionado com sucesso a sua lista de viagem!")
+        alert?.createAlert(title: "", message: "Voo adicionado com sucesso a sua lista de viagem!") { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        }
     }
 }
