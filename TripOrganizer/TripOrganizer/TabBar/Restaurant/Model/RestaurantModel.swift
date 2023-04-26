@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Restaurant {
+struct RestaurantModel {
     public let restaurantName: String
     public let restaurantAdress: String
     public let restaurantOpeningHours: String

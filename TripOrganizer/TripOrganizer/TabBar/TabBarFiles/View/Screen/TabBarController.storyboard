@@ -28,50 +28,50 @@
             </objects>
             <point key="canvasLocation" x="897" y="-52"/>
         </scene>
-        <!--HomeVC-->
+        <!--HomeViewController-->
         <scene sceneID="GxG-84-vAY">
             <objects>
-                <viewControllerPlaceholder storyboardName="HomeVC" referencedIdentifier="HomeVC" id="vLw-D5-Hft" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HomeViewController" referencedIdentifier="HomeViewController" id="vLw-D5-Hft" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KkX-i3-io1"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e64-f1-qTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-51" y="-1189"/>
         </scene>
-        <!--HotelVC-->
+        <!--HotelViewController-->
         <scene sceneID="aLU-H2-jtI">
             <objects>
-                <viewControllerPlaceholder storyboardName="HotelVC" referencedIdentifier="HotelVC" id="rbE-uc-KYc" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HotelViewController" referencedIdentifier="HotelViewController" id="rbE-uc-KYc" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="tOj-ww-iz5"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5Z-3o-geu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1459" y="-1189"/>
         </scene>
-        <!--FlightVC-->
+        <!--FlightViewController-->
         <scene sceneID="nnK-tY-O10">
             <objects>
-                <viewControllerPlaceholder storyboardName="FlightVC" referencedIdentifier="FlightVC" id="e2Y-xn-2eX" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="FlightViewController" referencedIdentifier="FlightViewController" id="e2Y-xn-2eX" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="d92-rO-YCS"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLS-Dj-cvZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="724" y="-1189"/>
         </scene>
-        <!--AttractionVC-->
+        <!--AttractionViewController-->
         <scene sceneID="rBa-11-DfV">
             <objects>
-                <viewControllerPlaceholder storyboardName="AttractionVC" referencedIdentifier="AttractionVC" id="7d8-tY-tPV" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AttractionViewController" referencedIdentifier="AttractionViewController" id="7d8-tY-tPV" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="0Us-tw-It8"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSH-xQ-S6i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3109" y="-1189"/>
         </scene>
-        <!--RestaurantVC-->
+        <!--RestaurantViewController-->
         <scene sceneID="haG-bc-g4e">
             <objects>
-                <viewControllerPlaceholder storyboardName="RestaurantVC" referencedIdentifier="RestaurantVC" id="ESk-0s-okZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="RestaurantViewController" referencedIdentifier="RestaurantViewController" id="ESk-0s-okZ" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="EJE-Wa-f49"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3UG-Wc-XqI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

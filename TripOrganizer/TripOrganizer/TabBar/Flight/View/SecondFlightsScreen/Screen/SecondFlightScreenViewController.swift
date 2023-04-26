@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondFlightScreenVC: UIViewController {
+class SecondFlightScreenViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -34,7 +34,7 @@ class SecondFlightScreenVC: UIViewController {
     
 }
 
-extension SecondFlightScreenVC: UITableViewDelegate, UITableViewDataSource {
+extension SecondFlightScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getNumberOfRowsInSection()
     }

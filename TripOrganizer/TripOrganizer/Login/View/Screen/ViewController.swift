@@ -9,11 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var appLogoImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var entrarButton: UIButton!
-    @IBOutlet weak var entrarGoogleButton: UIButton!
-    @IBOutlet weak var entrarIcloudButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginWithGoogleButton: UIButton!
+    @IBOutlet weak var loginWithIcloudButton: UIButton!
+    @IBOutlet var forgotPasswordButton: UIButton!
+    @IBOutlet var dontHaveAnAccountButton: UIButton!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var eyeButton: UIButton!
     
@@ -30,9 +33,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTextField()
-        configButton()
-        configView()
+        configButtons()
+        configPasswordView()
     }
+    
     // fazer uma navegação para a tela de recorver
     @IBAction func esqueciSenhatappedButton(_ sender: UIButton) {
         let vc = UIStoryboard(name: "RecoverViewController", bundle: nil).instantiateViewController(withIdentifier: "RecoverViewController") as? RecoverViewController
@@ -46,7 +50,7 @@ class ViewController: UIViewController {
     // Ir para a tela TabBarController (Tela rootController da tabBar - Home)
     @IBAction func acessarButton(_ sender: Any) {
         let vc = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
-        entrarButton.isEnabled = false
+        loginButton.isEnabled = false
         emailTextField.text = ""
         passwordTextField.text = ""
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
@@ -64,22 +68,22 @@ class ViewController: UIViewController {
     }
     
     // configurações para para o Botão
-    private func configButton() {
-        entrarButton.clipsToBounds = true
-        entrarButton.layer.cornerRadius = 10
-        entrarButton.isEnabled = false
-        entrarGoogleButton.clipsToBounds = true
-        entrarGoogleButton.layer.cornerRadius = 10
-        entrarIcloudButton.clipsToBounds = true
-        entrarIcloudButton.layer.cornerRadius = 10
-        configShadowButton(button: entrarGoogleButton)
-        configShadowButton(button: entrarIcloudButton)
+    private func configButtons() {
+        loginButton.clipsToBounds = true
+        loginButton.layer.cornerRadius = 10
+        loginButton.isEnabled = false
+        loginWithGoogleButton.clipsToBounds = true
+        loginWithGoogleButton.layer.cornerRadius = 10
+        loginWithIcloudButton.clipsToBounds = true
+        loginWithIcloudButton.layer.cornerRadius = 10
+        configShadowButton(button: loginWithGoogleButton)
+        configShadowButton(button: loginWithIcloudButton)
         eyeButton.tintColor = .lightGray
         eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         
     }
     
-    private func configView() {
+    private func configPasswordView() {
         passwordView.backgroundColor = .clear
         passwordView.layer.cornerRadius = 10
         passwordView.clipsToBounds = true
@@ -147,9 +151,9 @@ extension ViewController: UITextFieldDelegate {
         passwordView.layer.borderColor = UIColor.lightGray.cgColor
         
         if emailTextField.hasText && passwordTextField.hasText {
-            entrarButton.isEnabled = true
+            loginButton.isEnabled = true
         } else {
-            entrarButton.isEnabled = false
+            loginButton.isEnabled = false
         }
     }
     

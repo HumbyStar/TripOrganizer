@@ -14,9 +14,9 @@ class RegisterController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet var registerButton: UIButton!
-    @IBOutlet var alreadyHaveAccount: UIButton!
-    @IBOutlet weak var exibSenhaButton: UIButton!
-    @IBOutlet weak var exibConfirSenhaButton: UIButton!
+    @IBOutlet var alreadyHaveAccountButton: UIButton!
+    @IBOutlet weak var showPasswordButton: UIButton!
+    @IBOutlet weak var showConfirmPasswordButton: UIButton!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var confirmPasswordView: UIView!
     
@@ -53,7 +53,7 @@ class RegisterController: UIViewController {
         registerButton.backgroundColor = UIColor.logoGreen
         registerButton.setTitleColor(.white, for: .normal)
         registerButton.isEnabled = false
-        alreadyHaveAccount.setTitleColor(.black,  for: .normal)
+        alreadyHaveAccountButton.setTitleColor(.black,  for: .normal)
     }
     
     private func configProtocols(){
@@ -124,9 +124,9 @@ class RegisterController: UIViewController {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
         if passwordTextField.isSecureTextEntry {
-            exibSenhaButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         } else {
-            exibSenhaButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
         }
     }
     
@@ -135,9 +135,9 @@ class RegisterController: UIViewController {
         confirmPasswordTextField.isSecureTextEntry = !confirmPasswordTextField.isSecureTextEntry
         
         if confirmPasswordTextField.isSecureTextEntry {
-            exibConfirSenhaButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         } else {
-            exibConfirSenhaButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
         }
     }
     

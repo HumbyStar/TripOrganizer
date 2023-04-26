@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class RestaurantVC: UIViewController {
+class RestaurantViewController: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var addButton: UIButton!
@@ -75,7 +75,7 @@ class RestaurantVC: UIViewController {
     }
 }
 
-extension RestaurantVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return restaurantViewModel.numberOfRows()
     }

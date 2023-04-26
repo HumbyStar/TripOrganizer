@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PerfilViewController: UIViewController {
+class ProfileViewController: UIViewController {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
@@ -24,7 +24,7 @@ class PerfilViewController: UIViewController {
     @IBOutlet var changeProfileImageButton: UIButton!
     
     var alert: Alert?
-    var viewModel: PerfilViewModel?
+    var viewModel: ProfileViewModel?
     var activeTextField : UITextField? = nil
     
     override func viewDidLoad() {
@@ -118,7 +118,7 @@ class PerfilViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
-        viewModel = PerfilViewModel(username: nameTextField.text ?? "",
+        viewModel = ProfileViewModel(username: nameTextField.text ?? "",
                                     email: emailTextField.text ?? "",
                                     phone: phoneTextField.text ?? "",
                                     password: changePasswordTextField.text ?? "")
@@ -145,7 +145,7 @@ class PerfilViewController: UIViewController {
     
 }
 
-extension PerfilViewController: UITextFieldDelegate {
+extension ProfileViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 3
@@ -182,7 +182,7 @@ extension PerfilViewController: UITextFieldDelegate {
     }
 }
 
-extension PerfilViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         profileImageView.image = info[.originalImage] as? UIImage
