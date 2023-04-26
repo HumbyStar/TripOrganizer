@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var eyeButton: UIButton!
     
+    var isEyeOpen = false
+    
     // chamar a viewModel - fazer isso para conseguir acessar as propriedades da ViewModel
     var viewModel: LoginViewModel = LoginViewModel()
     
@@ -87,22 +89,18 @@ class ViewController: UIViewController {
     }
     
     // Configurações que vou utilizar em outros textFields
-    private func configTextFieldPadrao(textField: UITextField, keyboardType: UIKeyboardType = .emailAddress) {
-        textField.layer.borderWidth = 2
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-        textField.clipsToBounds = true
-        textField.layer.cornerRadius = 10
-        textField.autocorrectionType = .no
-        textField.spellCheckingType = .no
-        textField.keyboardType = keyboardType
-        
-    }
-    // eu chamo minha função "configTextFieldPadrao"
     private func configTextField() {
         configProtocol()
-        configTextFieldPadrao(textField: emailTextField)
+        emailTextField.layer.borderWidth = 2
+        emailTextField.layer.borderColor = UIColor.lightGray.cgColor
+        emailTextField.clipsToBounds = true
+        emailTextField.layer.cornerRadius = 10
+        emailTextField.autocorrectionType = .no
+        emailTextField.spellCheckingType = .no
+        emailTextField.keyboardType = .emailAddress
         passwordTextField.isSecureTextEntry = true
         passwordTextField.borderStyle = .none
+        
     }
     
     private func configProtocol() {
@@ -112,43 +110,53 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-        
     }
-    
     
     @IBAction func tappedEyeButton(_ sender: UIButton) {
+        if isEyeOpen {
+            eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            passwordTextField.isSecureTextEntry = true
+            isEyeOpen = false
+        } else {
+            eyeButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            passwordTextField.isSecureTextEntry = false
+            isEyeOpen = true
+        }
+        
     }
-    
     
 }
 
 extension ViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 3
-        textField.layer.borderColor = UIColor.logoGreen.cgColor
+        if textField == emailTextField {
+            emailTextField.layer.borderWidth = 3
+            emailTextField.layer.borderColor = UIColor.logoGreen.cgColor
+        } else {
+            passwordView.layer.borderWidth = 3
+            passwordView.layer.borderColor = UIColor.logoGreen.cgColor
+        }
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let emailText = emailTextField.text, let passwordText = passwordTextField.text, !emailText.isEmpty && !passwordText.isEmpty {
-            textField.layer.borderWidth = 2
-            textField.layer.borderColor = UIColor.lightGray.cgColor
+        emailTextField.layer.borderWidth = 2
+        emailTextField.layer.borderColor = UIColor.lightGray.cgColor
+        passwordView.layer.borderWidth = 2
+        passwordView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        if emailTextField.hasText && passwordTextField.hasText {
             entrarButton.isEnabled = true
         } else {
-            textField.layer.borderWidth = 2
-            textField.layer.borderColor = UIColor.lightGray.cgColor
             entrarButton.isEnabled = false
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // validação para quando clicar no botão retorno ele ir para o proximo textField
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
-            textField.layer.borderWidth = 2
-            textField.layer.borderColor = UIColor.lightGray.cgColor
-        } else if textField == passwordTextField {
-            // Se desejar, pode chamar uma função para validar o login aqui
+        } else {
             textField.resignFirstResponder()
         }
         return true

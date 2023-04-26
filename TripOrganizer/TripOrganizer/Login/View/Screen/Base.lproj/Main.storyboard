@@ -139,13 +139,12 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAE-Uo-Q6A">
-                                        <rect key="frame" x="280" y="12" width="27" height="18"/>
+                                        <rect key="frame" x="280" y="11" width="27" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="27" id="AtP-RD-Gwl"/>
                                             <constraint firstAttribute="height" constant="20.5" id="bBx-9X-AaE"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" backgroundImage="eye.slash.fill" catalog="system"/>
                                         <connections>
                                             <action selector="tappedEyeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="woc-aW-idd"/>
                                         </connections>
@@ -211,7 +210,6 @@
     </scenes>
     <resources>
         <image name="apple.logo" catalog="system" width="105" height="128"/>
-        <image name="eye.slash.fill" catalog="system" width="128" height="85"/>
         <image name="google2" width="16" height="16"/>
         <image name="newLogo" width="455" height="549"/>
         <systemColor name="systemBackgroundColor">
