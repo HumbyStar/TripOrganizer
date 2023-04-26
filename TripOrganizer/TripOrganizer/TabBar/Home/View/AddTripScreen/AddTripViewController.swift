@@ -8,11 +8,13 @@
 import UIKit
 
 protocol AddTripviewControllerDelegate {
-    func sendTrip(trip: Trip)
+    
+    func sendTrip(trip: AddTripModel)
 }
 
 class AddTripViewController: UIViewController {
     
+    var viewModel: AddTripViewModel = AddTripViewModel()
     var alert: Alert?
     
     @IBOutlet var tripNameTextField: UITextField!
@@ -89,10 +91,11 @@ class AddTripViewController: UIViewController {
         
         if tripNameTextField.hasText {
             guard let name = tripNameTextField.text else { return }
-            self.delegate?.sendTrip(trip: Trip(tripName: name, startDate: startDateString ?? "", finishDate: finishDateString ?? ""))
+            self.delegate?.sendTrip(trip: AddTripModel(tripName: name, startDate: startDateString ?? "", finishDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
         } else {
             self.alert?.createAlert(title: "Trip Organizer", message: "Sua viagem deve conter um nome!")
+//            viewModel.getAlert()
         }
     }
 }

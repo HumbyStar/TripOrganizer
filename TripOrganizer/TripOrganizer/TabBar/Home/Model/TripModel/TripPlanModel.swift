@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Place {
+struct TripPlanModel {
     var placeName: String
     var placeImageName: String
 //    var placeAddress: String?
