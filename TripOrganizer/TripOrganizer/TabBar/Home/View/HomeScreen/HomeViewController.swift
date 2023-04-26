@@ -175,7 +175,7 @@ class HomeViewController: UIViewController {
         homeTableView.separatorInset = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
         homeTableView.delegate = self
         homeTableView.dataSource = self
-        homeTableView.register(HomeTableViewCell.nib(), forCellReuseIdentifier: HomeTableViewCell.indentifier)
+        homeTableView.register(HomeTableViewCell.nib(), forCellReuseIdentifier: HomeTableViewCell.identifier)
         homeTableView.layer.cornerRadius = 12
         homeTableView.clipsToBounds = true
     }
@@ -196,7 +196,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.indentifier, for: indexPath) as? HomeTableViewCell
+        let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
         
         let color = cellColors[indexPath.row % cellColors.count]
         cell?.backgroundColor = color

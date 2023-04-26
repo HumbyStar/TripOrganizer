@@ -117,25 +117,15 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        
-        viewModel = ProfileViewModel(username: nameTextField.text ?? "",
-                                    email: emailTextField.text ?? "",
-                                    phone: phoneTextField.text ?? "",
-                                    password: changePasswordTextField.text ?? "")
-        
-        
-        if viewModel?.validateTextField() == true {
-            self.alert?.createAlert(title: "Trip Organizer", message: "Informações salvas com sucesso.")
-        } else {
-            self.alert?.createAlert(title: "Trip Organizer", message: "É necessário preencher todos os campos.")
-        }
+        alert?.createAlert(title: "", message: "Dados alterados com sucesso !", completion: {
+            self.navigationController?.popViewController(animated: true)
+        })
         
     }
     
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         tabBarController?.navigationController?.popToRootViewController(animated: true)
-        
     }
     
     
@@ -183,7 +173,6 @@ extension ProfileViewController: UITextFieldDelegate {
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         profileImageView.image = info[.originalImage] as? UIImage
         if let selectedImage = info[.originalImage] as? UIImage {

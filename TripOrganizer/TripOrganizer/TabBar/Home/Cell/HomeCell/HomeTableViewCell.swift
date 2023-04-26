@@ -14,10 +14,10 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet var departureDateLabel: UILabel!
     @IBOutlet var returnDateLabel: UILabel!
     
-    static let indentifier: String = String(describing: HomeTableViewCell.self)
+    static let identifier: String = String(describing: HomeTableViewCell.self)
     
     static public func nib() -> UINib {
-        return UINib(nibName: self.indentifier, bundle: nil)
+        return UINib(nibName: self.identifier, bundle: nil)
     }
     
     override func awakeFromNib() {

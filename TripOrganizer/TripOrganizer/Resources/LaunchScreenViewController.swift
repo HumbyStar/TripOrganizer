@@ -14,7 +14,7 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        view.backgroundColor = UIColor.logoCinza
+        view.backgroundColor = UIColor.logoGray
         
         // MARK: ANIMAÇÃO DA IMAGEM COM DURAÇÃO, DELAY E ALTERAÇÃO DA COR DO BACKGROUND:
         logoImageView.alpha = 0

@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
     
     private func setupTabBar() {
         tabBar.isTranslucent = false
-        tabBar.tintColor = UIColor.init(red: 81/255, green: 157/255, blue: 149/255, alpha: 1.0)
+        tabBar.tintColor = UIColor.tabColor
         
         let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithDefaultBackground()
@@ -26,16 +26,19 @@ class TabBarController: UITabBarController {
         
         guard let items = tabBar.items else { return }
 
-        items[0].image = UIImage(systemName: "house.fill")
+        //MARK: - Tab Bar Itens
         items[0].title = "Home"
-        items[1].image = UIImage(systemName: "airplane")
         items[1].title = "Voos"
-        items[2].image = UIImage(systemName: "bed.double.fill")
         items[2].title = "Hotel"
-        items[3].image = UIImage(systemName: "fork.knife")
         items[3].title = "Restaurante"
-        items[4].image = UIImage(systemName: "heart.fill")
         items[4].title = "Lazer"
+        
+        //MARK: - Tab bar Images
+        items[0].image = UIImage(systemName: "house.fill")
+        items[1].image = UIImage(systemName: "airplane")
+        items[2].image = UIImage(systemName: "bed.double.fill")
+        items[3].image = UIImage(systemName: "fork.knife")
+        items[4].image = UIImage(systemName: "heart.fill")
         
     }
 }

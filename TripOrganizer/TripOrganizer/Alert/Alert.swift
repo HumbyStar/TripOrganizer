@@ -8,7 +8,6 @@
 import UIKit
 
 class Alert {
-    
     var controller: UIViewController?
     
     init(controller: UIViewController? = nil) {
@@ -17,10 +16,10 @@ class Alert {
     
     public func createAlert(title: String, message: String, completion: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .cancel) { acao in
+        let confirmAction = UIAlertAction(title: "OK", style: .cancel) { acao in
             completion?()
         }
-        alertController.addAction(ok)
+        alertController.addAction(confirmAction)
         self.controller?.present(alertController, animated: true)
     }
 }
