@@ -7,8 +7,7 @@
 
 import UIKit
 
-protocol AddTripviewControllerDelegate {
-    
+protocol AddTripviewControllerDelegate: AnyObject {
     func sendTrip(trip: AddTripModel)
 }
 
@@ -29,7 +28,7 @@ class AddTripViewController: UIViewController {
     var startDateString: String?
     var finishDateString: String?
     
-    var delegate: AddTripviewControllerDelegate?
+    weak var delegate: AddTripviewControllerDelegate?
     
     public func delegate(delegate: AddTripviewControllerDelegate) {
         self.delegate = delegate
@@ -60,7 +59,6 @@ class AddTripViewController: UIViewController {
         backButton.tintColor = .white
     }
     
-    
     @IBAction func startDateAction(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -69,7 +67,6 @@ class AddTripViewController: UIViewController {
         let formattedDate = dateFormatter.string(from: selectedDate)
         self.startDateString = formattedDate
     }
-    
     
     @IBAction func finishDateAction(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -80,16 +77,13 @@ class AddTripViewController: UIViewController {
         self.finishDateString = formattedDate
     }
     
-    
     @IBAction func backButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
-    
     @IBAction func addTripButtonPressed(_ sender: UIButton) {
-        
         if tripNameTextField.hasText {
-            guard let name = tripNameTextField.text else { return }
+            guard let name = tripNameTextField.text else {return}
             self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
         } else {

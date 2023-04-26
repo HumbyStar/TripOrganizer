@@ -160,7 +160,7 @@ class HomeViewController: UIViewController {
     }
     
     private func updateTableView() {
-        if viewModel.tripListSize == 0 {
+        if viewModel.tripNumberOfRows == 0 {
             homeTableView.separatorStyle = .none
             homeTableView.backgroundView?.isHidden = false
         } else {
@@ -206,7 +206,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.tripListSize
+        viewModel.tripNumberOfRows
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -230,7 +230,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: AddTripviewControllerDelegate {
     func sendTrip(trip: AddTripModel) {
-        viewModel.append(trip: trip)
+        viewModel.appendTripToList(trip: trip)
     }
 }
 

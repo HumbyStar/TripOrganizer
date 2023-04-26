@@ -31,7 +31,7 @@ class HomeViewModel {
     
     private var tripList: [AddTripModel] = []
     
-    var tripListSize: Int {
+    var tripNumberOfRows: Int {
         tripList.count
     }
     
@@ -53,7 +53,7 @@ class HomeViewModel {
         tripList.remove(at: index)
     }
     
-    public func append(trip: AddTripModel) {
+    public func appendTripToList(trip: AddTripModel) {
         tripList.append(trip)
     }
 }

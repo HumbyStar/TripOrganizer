@@ -10,6 +10,7 @@ import UIKit
 class RecoverViewController: UIViewController{
     
     var viewModel: RecoverPasswordViewModel = RecoverPasswordViewModel()
+    var alert: Alert?
     
     @IBOutlet var appLogoImageView: UIImageView!
     @IBOutlet weak var recoverPasswordButton: UIButton!
@@ -17,12 +18,13 @@ class RecoverViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        alert = Alert(controller: self)
         configTextField()
         configButton()
     }
     
    
-    @IBAction func voltarButton(_ sender: Any) {
+    @IBAction func tapToBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
    
@@ -33,10 +35,7 @@ class RecoverViewController: UIViewController{
     }
     
    private func configTextField(){
-       // Assinando o Protocolo do textField.
         emailTextField.delegate = self
-    
-        // Configurando o textField.
         emailTextField.layer.borderWidth = 2
         emailTextField.layer.borderColor = UIColor.lightGray.cgColor
         emailTextField.clipsToBounds = true
@@ -50,10 +49,10 @@ class RecoverViewController: UIViewController{
     }
     
     @IBAction func recoverPasswordButtonPressed(_ sender: UIButton) {
-        
-        
+        alert?.createAlert(title: "", message: "Um Email de instrução foi enviado para sua caixa de entrada", completion: {
+            self.navigationController?.popViewController(animated: true)
+        })
     }
-    
 }
 
 extension RecoverViewController: UITextFieldDelegate{
@@ -62,10 +61,11 @@ extension RecoverViewController: UITextFieldDelegate{
         textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.logoGreen.cgColor
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 2
         textField.layer.borderColor = UIColor.lightGray.cgColor
-        // MARK Essa validação faz com que se tiver um text no textField ele a abilita o botao, caso não tiver ele estará desabilitado.
+        
         if textField.hasText == true {
             recoverPasswordButton.isEnabled = true
         }else{
@@ -74,10 +74,7 @@ extension RecoverViewController: UITextFieldDelegate{
    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Faz com que a tecla "return" abaixe o teclado.
         textField.resignFirstResponder()
     }
-    
-    
 }
 
