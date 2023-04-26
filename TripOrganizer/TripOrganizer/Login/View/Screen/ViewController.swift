@@ -10,10 +10,12 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passWordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var entrarButton: UIButton!
     @IBOutlet weak var entrarGoogleButton: UIButton!
     @IBOutlet weak var entrarIcloudButton: UIButton!
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var eyeButton: UIButton!
     
     // chamar a viewModel - fazer isso para conseguir acessar as propriedades da ViewModel
     var viewModel: LoginViewModel = LoginViewModel()
@@ -27,6 +29,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configTextField()
         configButton()
+        configView()
     }
     // fazer uma navegação para a tela de recorver
     @IBAction func esqueciSenhatappedButton(_ sender: UIButton) {
@@ -43,7 +46,7 @@ class ViewController: UIViewController {
         let vc = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
         entrarButton.isEnabled = false
         emailTextField.text = ""
-        passWordTextField.text = ""
+        passwordTextField.text = ""
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
@@ -69,6 +72,18 @@ class ViewController: UIViewController {
         entrarIcloudButton.layer.cornerRadius = 10
         configShadowButton(button: entrarGoogleButton)
         configShadowButton(button: entrarIcloudButton)
+        eyeButton.tintColor = .lightGray
+        eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        
+    }
+    
+    private func configView() {
+        passwordView.backgroundColor = .clear
+        passwordView.layer.cornerRadius = 10
+        passwordView.clipsToBounds = true
+        passwordView.layer.borderWidth = 2
+        passwordView.layer.borderColor = UIColor.lightGray.cgColor
+        
     }
     
     // Configurações que vou utilizar em outros textFields
@@ -85,23 +100,26 @@ class ViewController: UIViewController {
     // eu chamo minha função "configTextFieldPadrao"
     private func configTextField() {
         configProtocol()
-//passWordTextField.isSecureTextEntry = true
-//passWordTextField.textContentType = .newPassword
-//passWordTextField.passwordRules = nil
-        // eu chamo minha função e falo qual textField é pra utilizar os parametros
         configTextFieldPadrao(textField: emailTextField)
-        configTextFieldPadrao(textField: passWordTextField, keyboardType: .default)
+        passwordTextField.isSecureTextEntry = true
+        passwordTextField.borderStyle = .none
     }
     
     private func configProtocol() {
         emailTextField.delegate = self
-        passWordTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         
     }
+    
+    
+    @IBAction func tappedEyeButton(_ sender: UIButton) {
+    }
+    
+    
 }
 
 extension ViewController: UITextFieldDelegate {
@@ -112,7 +130,7 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let emailText = emailTextField.text, let passwordText = passWordTextField.text, !emailText.isEmpty && !passwordText.isEmpty {
+        if let emailText = emailTextField.text, let passwordText = passwordTextField.text, !emailText.isEmpty && !passwordText.isEmpty {
             textField.layer.borderWidth = 2
             textField.layer.borderColor = UIColor.lightGray.cgColor
             entrarButton.isEnabled = true
@@ -126,10 +144,10 @@ extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // validação para quando clicar no botão retorno ele ir para o proximo textField
         if textField == emailTextField {
-            passWordTextField.becomeFirstResponder()
+            passwordTextField.becomeFirstResponder()
             textField.layer.borderWidth = 2
             textField.layer.borderColor = UIColor.lightGray.cgColor
-        } else if textField == passWordTextField {
+        } else if textField == passwordTextField {
             // Se desejar, pode chamar uma função para validar o login aqui
             textField.resignFirstResponder()
         }
