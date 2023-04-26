@@ -41,6 +41,9 @@ class ViewController: UIViewController {
     // Ir para a tela TabBarController (Tela rootController da tabBar - Home)
     @IBAction func acessarButton(_ sender: Any) {
         let vc = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
+        entrarButton.isEnabled = false
+        emailTextField.text = ""
+        passWordTextField.text = ""
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
