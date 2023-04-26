@@ -77,7 +77,7 @@
                     <connections>
                         <outlet property="backButton" destination="rke-Vn-aBM" id="Nma-UC-rE2"/>
                         <outlet property="collectionView" destination="iMb-cL-xnS" id="ngX-f5-HFt"/>
-                        <outlet property="placeImageView" destination="i0D-vQ-lU4" id="4ho-GL-Kev"/>
+                        <outlet property="tripImageView" destination="i0D-vQ-lU4" id="4ho-GL-Kev"/>
                         <outlet property="tripNameLabel" destination="9Wa-wr-7l4" id="ZDj-L3-0ID"/>
                     </connections>
                 </viewController>

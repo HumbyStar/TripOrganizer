@@ -9,6 +9,10 @@ import UIKit
 
 class PerfilViewController: UIViewController {
     
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var phoneLabel: UILabel!
+    @IBOutlet var changePasswordLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var nameTextField: UITextField!
@@ -20,9 +24,7 @@ class PerfilViewController: UIViewController {
     @IBOutlet var changeProfileImageButton: UIButton!
     
     var alert: Alert?
-    
     var viewModel: PerfilViewModel?
-    
     var activeTextField : UITextField? = nil
     
     override func viewDidLoad() {
@@ -53,7 +55,7 @@ class PerfilViewController: UIViewController {
         profileImageView.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
-    private func configTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
+    private func configDefaultTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
         textfield.autocorrectionType = .no
         textfield.clipsToBounds = true
         textfield.layer.borderWidth = 2
@@ -66,10 +68,10 @@ class PerfilViewController: UIViewController {
     }
     
     private func configTextFields() {
-        configTextField(textfield: nameTextField, text: "Caio Fabrini", keyboardType: .default, isSecure: false)
-        configTextField(textfield: emailTextField, text: "caio.fabrini@backfrontacademy.com.br", keyboardType: .emailAddress, isSecure: false)
-        configTextField(textfield: phoneTextField, text: "(13) 99234-8734", keyboardType: .numbersAndPunctuation, isSecure: false)
-        configTextField(textfield: changePasswordTextField, text: "12345678", keyboardType: .default, isSecure: true)
+        configDefaultTextField(textfield: nameTextField, text: "Caio Fabrini", keyboardType: .default, isSecure: false)
+        configDefaultTextField(textfield: emailTextField, text: "caio.fabrini@backfrontacademy.com.br", keyboardType: .emailAddress, isSecure: false)
+        configDefaultTextField(textfield: phoneTextField, text: "(13) 99234-8734", keyboardType: .numbersAndPunctuation, isSecure: false)
+        configDefaultTextField(textfield: changePasswordTextField, text: "12345678", keyboardType: .default, isSecure: true)
 
     }
     
@@ -85,13 +87,11 @@ class PerfilViewController: UIViewController {
         let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
         
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            // if keyboard size is not available for some reason, dont do anything
            return
         }
 
         var shouldMoveViewUp = false
         
-        // if active text field is not nil
         if let activeTextField = activeTextField {
             let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
             let topOfKeyboard = self.view.frame.height - keyboardSize.height
@@ -110,9 +110,11 @@ class PerfilViewController: UIViewController {
         self.view.frame.origin.y = 0
     }
     
+    
     @IBAction func exitButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+    
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
@@ -129,6 +131,7 @@ class PerfilViewController: UIViewController {
         }
         
     }
+    
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         tabBarController?.navigationController?.popToRootViewController(animated: true)
@@ -149,7 +152,6 @@ extension PerfilViewController: UITextFieldDelegate {
         textField.layer.borderColor = UIColor.logoGreen.cgColor
         
         self.activeTextField = textField
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

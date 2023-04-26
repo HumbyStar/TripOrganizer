@@ -97,7 +97,7 @@
                 <outlet property="placeNameLabel" destination="1X3-hS-r2w" id="Fdl-Zu-C8K"/>
                 <outlet property="placePhoneLabel" destination="XJW-jM-C0Q" id="mQg-37-mz1"/>
             </connections>
-            <point key="canvasLocation" x="-329.00763358778624" y="-19.366197183098592"/>
+            <point key="canvasLocation" x="-410" y="-21"/>
         </collectionViewCell>
     </objects>
     <resources>

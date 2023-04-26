@@ -85,9 +85,9 @@ class ViewController: UIViewController {
     // eu chamo minha função "configTextFieldPadrao"
     private func configTextField() {
         configProtocol()
-//passWordTextField.isSecureTextEntry = true
-//passWordTextField.textContentType = .newPassword
-//passWordTextField.passwordRules = nil
+        //passWordTextField.isSecureTextEntry = true
+        //passWordTextField.textContentType = .newPassword
+        //passWordTextField.passwordRules = nil
         // eu chamo minha função e falo qual textField é pra utilizar os parametros
         configTextFieldPadrao(textField: emailTextField)
         configTextFieldPadrao(textField: passWordTextField, keyboardType: .default)

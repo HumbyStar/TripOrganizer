@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MenuCollectionViewCell" customModule="TripOrganizer" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="89" height="143"/>
+            <rect key="frame" x="0.0" y="0.0" width="203" height="211"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="89" height="143"/>
+                <rect key="frame" x="0.0" y="0.0" width="203" height="211"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garrafaProjeto" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-J6-wy2">
-                        <rect key="frame" x="0.0" y="0.0" width="89" height="143"/>
+                        <rect key="frame" x="0.0" y="0.0" width="203" height="211"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
                     </imageView>
                 </subviews>
@@ -33,11 +33,11 @@
                 <constraint firstAttribute="bottom" secondItem="zv8-J6-wy2" secondAttribute="bottom" id="QMG-PT-uTf"/>
                 <constraint firstItem="zv8-J6-wy2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WlM-AX-iHP"/>
             </constraints>
-            <size key="customSize" width="85" height="113"/>
+            <size key="customSize" width="199" height="181"/>
             <connections>
-                <outlet property="fotoImageView" destination="zv8-J6-wy2" id="w28-Bj-ZZT"/>
+                <outlet property="menuItemImageView" destination="zv8-J6-wy2" id="w28-Bj-ZZT"/>
             </connections>
-            <point key="canvasLocation" x="69.465648854961827" y="41.197183098591552"/>
+            <point key="canvasLocation" x="156.4885496183206" y="17.253521126760564"/>
         </collectionViewCell>
     </objects>
     <resources>

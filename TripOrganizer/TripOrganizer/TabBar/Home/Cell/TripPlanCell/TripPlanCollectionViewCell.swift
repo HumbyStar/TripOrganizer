@@ -29,18 +29,27 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 4
         layer.masksToBounds = false
     }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        configCellLayout()
+        configCellItemsLayout()
+    }
+    
     
     public func setupCell(place: TripPlanModel) {
         placeNameLabel.text = place.placeName
         placeImageView.image = UIImage(named: place.placeImageName)
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    private func configCellLayout() {
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.white.cgColor
         self.clipsToBounds = true
         self.layer.cornerRadius = 16
+    }
+    
+    private func configCellItemsLayout() {
         placeImageView.clipsToBounds = true
         placeImageView.layer.cornerRadius = 20
         openingHoursLabel.clipsToBounds = true
@@ -52,5 +61,4 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         openingHoursLabel.backgroundColor = UIColor(red: 112/255, green: 155/255, blue: 149/255, alpha: 1.0)
         closingHoursLabel.backgroundColor = UIColor(red: 112/255, green: 155/255, blue: 149/255, alpha: 1.0)
     }
-    
 }

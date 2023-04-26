@@ -8,7 +8,7 @@
 import UIKit
 
 class SecondFlightScreenVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     public let viewModel: SecondFlightViewModel = SecondFlightViewModel()
@@ -18,7 +18,7 @@ class SecondFlightScreenVC: UIViewController {
         configTableView()
     }
     
-   private func configTableView() {
+    private func configTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(FlightTableViewCell.nib(), forCellReuseIdentifier: FlightTableViewCell.identifier)
@@ -27,9 +27,8 @@ class SecondFlightScreenVC: UIViewController {
         tableView.clipsToBounds = true
         tableView.layer.cornerRadius = 12
         tableView.showsVerticalScrollIndicator = false
-        
     }
-
+    
 }
 
 extension SecondFlightScreenVC: UITableViewDelegate, UITableViewDataSource {
@@ -53,7 +52,5 @@ extension SecondFlightScreenVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.getDidSelectRowAt(tableView: tableView, indexPath: indexPath)
-        //tableView.deselectRow(at: indexPath, animated: true)
-        }
-    
+    }
 }

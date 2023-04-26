@@ -8,10 +8,10 @@
 import Foundation
 
 struct Restaurant {
-    let restaurantName: String
-    let restaurantAdress: String
-    let restaurantHour: String
-    let restarauntCellphone: String
-    let restaurantRating: Double
-    let restaurantImages: [String]
+    public let restaurantName: String
+    public let restaurantAdress: String
+    public let restaurantOpeningHours: String
+    public let restarauntPhoneNumber: String
+    public let restaurantRating: Double
+    public let restaurantImages: [String]
 }
