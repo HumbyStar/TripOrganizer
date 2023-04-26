@@ -96,35 +96,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-Te-OV8">
-                                <rect key="frame" x="30" y="390" width="148" height="11"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="11" id="yWv-LI-pxf"/>
-                                </constraints>
-                                <color key="tintColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Esqueci minha senha">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="esqueciSenhatappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k8c-m6-fT4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbv-d6-7XD">
-                                <rect key="frame" x="195" y="390" width="150" height="11"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="11" id="PM2-sI-43t"/>
-                                </constraints>
-                                <color key="tintColor" red="0.47843140360000003" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Não tenho uma conta">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                    <color key="baseForegroundColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="registerTappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0FP-HY-ew9"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fm4-r4-Y4U">
+                                <rect key="frame" x="30" y="384" width="315" height="28"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-Te-OV8">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="28"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="tintColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Esqueci minha senha"/>
+                                        <connections>
+                                            <action selector="esqueciSenhatappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k8c-m6-fT4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbv-d6-7XD">
+                                        <rect key="frame" x="189" y="0.0" width="126" height="28"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="tintColor" red="0.47843140360000003" green="0.47058826679999999" blue="0.47058826679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Não tenho uma conta">
+                                            <color key="titleColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerTappedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0FP-HY-ew9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ccr-yE-ZGO">
                                 <rect key="frame" x="78" y="94" width="218" height="170"/>
                             </imageView>
@@ -173,21 +173,19 @@
                             <constraint firstItem="GlW-bi-QRd" firstAttribute="top" secondItem="a1d-bh-LYk" secondAttribute="bottom" constant="15" id="8GC-jW-SZd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GlW-bi-QRd" secondAttribute="trailing" constant="30" id="BYY-L4-OSf"/>
                             <constraint firstItem="GlW-bi-QRd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Ctk-Lq-zGf"/>
-                            <constraint firstItem="Lbv-d6-7XD" firstAttribute="top" secondItem="2rH-50-HKL" secondAttribute="bottom" constant="6" id="DDa-ok-2ck"/>
-                            <constraint firstItem="bjz-zO-erX" firstAttribute="top" secondItem="VNy-Te-OV8" secondAttribute="bottom" constant="29" id="DRm-ir-3Mw"/>
-                            <constraint firstItem="VNy-Te-OV8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="EkF-QR-LwJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fm4-r4-Y4U" secondAttribute="trailing" constant="30" id="LA9-Na-iSK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ccr-yE-ZGO" secondAttribute="trailing" constant="79" id="MKL-tU-ei0"/>
                             <constraint firstItem="2rH-50-HKL" firstAttribute="top" secondItem="aaT-XT-xTR" secondAttribute="bottom" constant="8" id="O3h-a8-02G"/>
                             <constraint firstItem="aaT-XT-xTR" firstAttribute="top" secondItem="ccr-yE-ZGO" secondAttribute="bottom" constant="30" id="Qk7-C1-KZf"/>
+                            <constraint firstItem="Fm4-r4-Y4U" firstAttribute="top" secondItem="2rH-50-HKL" secondAttribute="bottom" id="Svy-Hz-NsO"/>
+                            <constraint firstItem="bjz-zO-erX" firstAttribute="top" secondItem="2rH-50-HKL" secondAttribute="bottom" constant="46" id="UDl-ZV-V3O"/>
                             <constraint firstItem="a1d-bh-LYk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="VKP-eJ-fIU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aaT-XT-xTR" secondAttribute="trailing" constant="30" id="WtI-GZ-NAv"/>
-                            <constraint firstItem="VNy-Te-OV8" firstAttribute="top" secondItem="2rH-50-HKL" secondAttribute="bottom" constant="6" id="a03-FT-Mc0"/>
                             <constraint firstItem="bjz-zO-erX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="crN-Xc-vsc"/>
                             <constraint firstItem="ccr-yE-ZGO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="dmQ-z1-GBB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bjz-zO-erX" secondAttribute="trailing" constant="30" id="eqA-uQ-VAS"/>
-                            <constraint firstItem="bjz-zO-erX" firstAttribute="top" secondItem="Lbv-d6-7XD" secondAttribute="bottom" constant="29" id="gn4-jA-e1r"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2rH-50-HKL" secondAttribute="trailing" constant="30" id="lgv-P6-lK8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lbv-d6-7XD" secondAttribute="trailing" constant="30" id="vWd-W2-oxu"/>
+                            <constraint firstItem="Fm4-r4-Y4U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="xhV-dV-fuI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a1d-bh-LYk" secondAttribute="trailing" constant="30" id="zhh-38-QqC"/>
                             <constraint firstItem="a1d-bh-LYk" firstAttribute="top" secondItem="bjz-zO-erX" secondAttribute="bottom" constant="46" id="znD-hN-k77"/>
                         </constraints>
