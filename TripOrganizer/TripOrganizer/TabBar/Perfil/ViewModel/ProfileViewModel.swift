@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PerfilViewModel {
+class ProfileViewModel {
     
     var username: String
     var email: String

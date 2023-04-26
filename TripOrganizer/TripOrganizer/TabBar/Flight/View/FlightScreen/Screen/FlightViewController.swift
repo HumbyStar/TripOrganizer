@@ -7,9 +7,7 @@
 
 import UIKit
 
-class FlightVC: UIViewController {
-    
-    
+class FlightViewController: UIViewController {
     
     var viewModel: FlightViewModel = FlightViewModel()
     
@@ -36,7 +34,7 @@ class FlightVC: UIViewController {
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
         
-        let vc: SecondFlightScreenVC? = UIStoryboard(name: "SecondFlightScreenVC", bundle: nil).instantiateViewController(withIdentifier: "SecondFlightScreenVC") as? SecondFlightScreenVC
+        let vc: SecondFlightScreenViewController? = UIStoryboard(name: "SecondFlightScreenViewController", bundle: nil).instantiateViewController(withIdentifier: "SecondFlightScreenViewController") as? SecondFlightScreenViewController
         vc?.modalPresentationStyle = .automatic
         present(vc ?? UIViewController(), animated: true)
         
@@ -91,7 +89,7 @@ class FlightVC: UIViewController {
     
 }
 
-extension FlightVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension FlightViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getListObject()
@@ -105,9 +103,8 @@ extension FlightVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         viewModel.sizeForItem(IndexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, collectionView: collectionView)
-        //return CGSize(width: collectionView.frame.size.width * 0.8, height: collectionView.frame.size.height)
+
     }
-    
     
 }
 

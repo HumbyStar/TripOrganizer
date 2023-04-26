@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class AttractionVC: UIViewController {
+class AttractionViewController: UIViewController {
     
     
     public let viewModel: AttractionViewModel = AttractionViewModel()
@@ -36,7 +36,6 @@ class AttractionVC: UIViewController {
         super.viewDidLoad()
         configCollectionView()
         roundedBorder()
-        
     }
     
     private func roundedBorder() {
@@ -54,7 +53,7 @@ class AttractionVC: UIViewController {
     }
 }
 
-extension AttractionVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getLocationImagelist()

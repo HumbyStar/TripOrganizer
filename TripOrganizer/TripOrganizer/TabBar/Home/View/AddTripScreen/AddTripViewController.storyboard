@@ -75,12 +75,10 @@
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdf-Vp-For">
-                                <rect key="frame" x="5" y="59" width="95" height="38"/>
+                                <rect key="frame" x="15" y="59" width="51" height="34.333333333333343"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="back" title="voltar">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left.fill" catalog="system"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="MZr-ZB-ff2" eventType="touchUpInside" id="SDl-8R-r42"/>
                                 </connections>
@@ -102,7 +100,7 @@
                             <constraint firstItem="iRQ-T0-Sfq" firstAttribute="top" secondItem="zea-ma-Mvk" secondAttribute="bottom" constant="23.333333333333371" id="R4x-fA-wVW"/>
                             <constraint firstItem="jLH-CE-eih" firstAttribute="top" secondItem="tCm-6F-7WW" secondAttribute="bottom" constant="10" id="SBt-cl-hRQ"/>
                             <constraint firstItem="s4H-4W-vlL" firstAttribute="leading" secondItem="zea-ma-Mvk" secondAttribute="leading" id="TNr-t6-EeH"/>
-                            <constraint firstItem="Mdf-Vp-For" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="5" id="Zpe-RX-eHh"/>
+                            <constraint firstItem="Mdf-Vp-For" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="15" id="Zpe-RX-eHh"/>
                             <constraint firstItem="Mdf-Vp-For" firstAttribute="top" secondItem="3mu-hT-l9y" secondAttribute="top" id="ajn-jG-w7J"/>
                             <constraint firstItem="tCm-6F-7WW" firstAttribute="leading" secondItem="3mu-hT-l9y" secondAttribute="leading" constant="35" id="d1j-cg-tVJ"/>
                             <constraint firstItem="pG5-QQ-cQp" firstAttribute="top" secondItem="StF-ib-Y77" secondAttribute="bottom" constant="8" symbolic="YES" id="iCh-QJ-UUM"/>
@@ -129,6 +127,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="24" height="24"/>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="104"/>
     </resources>
 </document>

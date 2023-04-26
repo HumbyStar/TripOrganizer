@@ -9,15 +9,15 @@ import UIKit
 
 class RestaurantViewModel {
     
-    private var restaurants: [Restaurant] = []
+    private var restaurants: [RestaurantModel] = []
     
     public func loadRestaurants() {
         restaurants = [
-            Restaurant(restaurantName: "Polignano a Mare", restaurantAdress: "70044 Bari, Itália", restaurantOpeningHours: "Aberto", restarauntPhoneNumber: " (+39) 080-4252300", restaurantRating: 4.6,restaurantImages: ["restaurant1.1", "restaurant1.2","restaurant1.3","restaurant1.4","restaurant1.5"]),
+            RestaurantModel(restaurantName: "Polignano a Mare", restaurantAdress: "70044 Bari, Itália", restaurantOpeningHours: "Aberto", restarauntPhoneNumber: " (+39) 080-4252300", restaurantRating: 4.6,restaurantImages: ["restaurant1.1", "restaurant1.2","restaurant1.3","restaurant1.4","restaurant1.5"]),
         ]
     }
     
-    public func cellForRow() -> [Restaurant] {
+    public func cellForRow() -> [RestaurantModel] {
         return restaurants
     }
     

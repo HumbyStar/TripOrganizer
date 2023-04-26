@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeViewController: UIViewController {
     
     @IBOutlet var appNameLabel: UILabel!
     @IBOutlet var greetingLabel: UILabel!
@@ -182,7 +182,7 @@ class HomeVC: UIViewController {
     
     
     @IBAction func perfilButtonPressed(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "PerfilViewController", bundle: nil).instantiateViewController(withIdentifier: "PerfilViewController") as? PerfilViewController
+        let vc = UIStoryboard(name: "ProfileViewController", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
@@ -193,7 +193,7 @@ class HomeVC: UIViewController {
     }
 }
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.indentifier, for: indexPath) as? HomeTableViewCell
@@ -228,7 +228,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
 }
 
-extension HomeVC: AddTripviewControllerDelegate {
+extension HomeViewController: AddTripviewControllerDelegate {
     func sendTrip(trip: AddTripModel) {
         viewModel.append(trip: trip)
     }

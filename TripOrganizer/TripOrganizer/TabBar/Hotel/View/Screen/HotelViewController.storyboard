@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HotelVC-->
+        <!--Hotel View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController restorationIdentifier="HotelVC" storyboardIdentifier="HotelVC" id="Y6W-OH-hqX" customClass="HotelVC" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="HotelViewController" storyboardIdentifier="HotelViewController" id="Y6W-OH-hqX" customClass="HotelViewController" customModule="TripOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

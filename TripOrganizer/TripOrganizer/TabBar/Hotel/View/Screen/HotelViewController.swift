@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class HotelVC: UIViewController {
+class HotelViewController: UIViewController {
     
     
     public var viewModel: HotelViewModel = HotelViewModel()
@@ -50,8 +50,9 @@ class HotelVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         viewModel.configLayoutCollectionView(collectionView: collectionView)
-        collectionView.register(HoteisCollectionViewCell.nib(), forCellWithReuseIdentifier: HoteisCollectionViewCell.identifier)
+        collectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
     }
+    
     
     public func configAddButton() {
         addButton.layer.cornerRadius = 15
@@ -64,14 +65,14 @@ class HotelVC: UIViewController {
     
 }
 
-extension HotelVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getRoomList()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HoteisCollectionViewCell.identifier, for: indexPath) as? HoteisCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell
         cell?.setupCell(data: viewModel.getRoomListCellForItemAt(index: indexPath.row))
         cell?.layer.cornerRadius = 10
         return cell ?? UICollectionViewCell()

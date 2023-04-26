@@ -7,14 +7,14 @@
 
 import UIKit
 
-class HoteisCollectionViewCell: UICollectionViewCell {
+class HotelCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var imageView: UIImageView!
     
     public var data: [HotelModel] = []
     
-    static let identifier = "HoteisCollectionViewCell"
+    static let identifier = "HotelCollectionViewCell"
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
