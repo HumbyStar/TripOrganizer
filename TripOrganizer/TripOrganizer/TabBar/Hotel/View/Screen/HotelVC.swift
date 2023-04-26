@@ -10,9 +10,9 @@ import MapKit
 
 class HotelVC: UIViewController {
     
-    
     public var viewModel: HotelViewModel = HotelViewModel()
     
+    var alert: Alert?
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var hotelPhoneNumberLabel: UILabel!
@@ -30,6 +30,7 @@ class HotelVC: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.alert = Alert(controller: self)
         super.viewDidLoad()
         configCollectionView()
         configHotelMapView()
@@ -58,8 +59,7 @@ class HotelVC: UIViewController {
     }
     
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
-        
-        
+        alert?.createAlert(title: "", message: "Hotel adicionado com sucesso a sua lista de viagem!")
     }
     
 }

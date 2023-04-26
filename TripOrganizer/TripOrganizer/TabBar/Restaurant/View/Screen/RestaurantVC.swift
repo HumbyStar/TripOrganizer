@@ -22,21 +22,21 @@ class RestaurantVC: UIViewController {
     @IBOutlet weak var restaurantRatingLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     
+    var alert: Alert?
     
     //MARK: - Variables
     private var restaurantViewModel = RestaurantViewModel()
     
-    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.alert = Alert(controller: self)
         configMenuCollectionView()
         configRestaurantInfoView()
         configRestaurantMapView()
         restaurantViewModel.loadRestaurants()
         setupUI()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -71,7 +71,7 @@ class RestaurantVC: UIViewController {
     }
     
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
-        
+        alert?.createAlert(title: "", message: "Restaurante adicionado com sucesso a sua lista de viagem!")
     }
 }
 

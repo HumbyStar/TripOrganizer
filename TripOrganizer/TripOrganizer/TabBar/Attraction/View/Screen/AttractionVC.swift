@@ -13,6 +13,7 @@ class AttractionVC: UIViewController {
     
     public let viewModel: AttractionViewModel = AttractionViewModel()
     
+    var alert: Alert?
     
     @IBOutlet weak var attractionRatingLabel: UILabel!
     @IBOutlet var searchBar: UISearchBar!
@@ -34,6 +35,7 @@ class AttractionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.alert = Alert(controller: self)
         configCollectionView()
         roundedBorder()
         
@@ -51,6 +53,10 @@ class AttractionVC: UIViewController {
         viewModel.configLayoutCollectionView(collectionView: collectionView)
         collectionView.register(AttractionCell.nib(), forCellWithReuseIdentifier: AttractionCell.identifier)
         collectionView.backgroundColor = .clear
+    }
+    
+    @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
+        alert?.createAlert(title: "", message: "Lazer adicionado com sucesso a sua lista de viagem!")
     }
 }
 

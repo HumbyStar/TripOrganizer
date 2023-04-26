@@ -11,10 +11,13 @@ class SecondFlightScreenVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var alert: Alert?
+    
     public let viewModel: SecondFlightViewModel = SecondFlightViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.alert = Alert(controller: self)
         configTableView()
     }
     
@@ -52,5 +55,6 @@ extension SecondFlightScreenVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.getDidSelectRowAt(tableView: tableView, indexPath: indexPath)
+        alert?.createAlert(title: "", message: "Voo adicionado com sucesso a sua lista de viagem!")
     }
 }

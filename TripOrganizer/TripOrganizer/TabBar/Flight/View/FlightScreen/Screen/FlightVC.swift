@@ -9,8 +9,6 @@ import UIKit
 
 class FlightVC: UIViewController {
     
-    
-    
     var viewModel: FlightViewModel = FlightViewModel()
     
     @IBOutlet weak var chooseADestinationLabel: UILabel!
@@ -107,7 +105,5 @@ extension FlightVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         viewModel.sizeForItem(IndexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, collectionView: collectionView)
         //return CGSize(width: collectionView.frame.size.width * 0.8, height: collectionView.frame.size.height)
     }
-    
-    
 }
 

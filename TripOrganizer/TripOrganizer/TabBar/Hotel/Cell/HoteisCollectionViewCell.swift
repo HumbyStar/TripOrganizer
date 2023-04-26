@@ -9,7 +9,6 @@ import UIKit
 
 class HoteisCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var imageView: UIImageView!
     
     public var data: [HotelModel] = []
