@@ -36,6 +36,8 @@
 		43780C9129D5C943002072BF /* HoteisCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780C8F29D5C943002072BF /* HoteisCollectionViewCell.swift */; };
 		43780C9F29D5C9B7002072BF /* AttractionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43780C9D29D5C9B7002072BF /* AttractionCell.xib */; };
 		43780CA029D5C9B7002072BF /* AttractionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43780C9E29D5C9B7002072BF /* AttractionCell.swift */; };
+		43893F9429F98ECB009788E7 /* LaunchScreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43893F9329F98ECB009788E7 /* LaunchScreenViewController.storyboard */; };
+		43893F9629F98EE4009788E7 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43893F9529F98EE4009788E7 /* LaunchScreenViewController.swift */; };
 		43BE0D2929E5CA6A001B5963 /* SecondFlightScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BE0D2829E5CA6A001B5963 /* SecondFlightScreenVC.swift */; };
 		43BE0D2B29E5CA74001B5963 /* SecondFlightScreenVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BE0D2A29E5CA74001B5963 /* SecondFlightScreenVC.storyboard */; };
 		43BE0D2E29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BE0D2C29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift */; };
@@ -110,6 +112,8 @@
 		43780C8F29D5C943002072BF /* HoteisCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoteisCollectionViewCell.swift; sourceTree = "<group>"; };
 		43780C9D29D5C9B7002072BF /* AttractionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttractionCell.xib; sourceTree = "<group>"; };
 		43780C9E29D5C9B7002072BF /* AttractionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionCell.swift; sourceTree = "<group>"; };
+		43893F9329F98ECB009788E7 /* LaunchScreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenViewController.storyboard; sourceTree = "<group>"; };
+		43893F9529F98EE4009788E7 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		43BE0D2829E5CA6A001B5963 /* SecondFlightScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlightScreenVC.swift; sourceTree = "<group>"; };
 		43BE0D2A29E5CA74001B5963 /* SecondFlightScreenVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SecondFlightScreenVC.storyboard; sourceTree = "<group>"; };
 		43BE0D2C29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightScreenCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -314,6 +318,8 @@
 				0C36EC4329B6621C009550C8 /* SceneDelegate.swift */,
 				0C36EC4A29B6621E009550C8 /* Assets.xcassets */,
 				0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */,
+				43893F9329F98ECB009788E7 /* LaunchScreenViewController.storyboard */,
+				43893F9529F98EE4009788E7 /* LaunchScreenViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -913,6 +919,7 @@
 				0C111C2829BACD9000A0DCF4 /* HotelVC.storyboard in Resources */,
 				0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */,
 				0C36EC4929B6621C009550C8 /* Main.storyboard in Resources */,
+				43893F9429F98ECB009788E7 /* LaunchScreenViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -955,6 +962,7 @@
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
 				8814476D29F0CEC900AC429A /* SecondFlightViewModel.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
+				43893F9629F98EE4009788E7 /* LaunchScreenViewController.swift in Sources */,
 				886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */,
 				0C2037A829F0A328001BE709 /* Restaurant.swift in Sources */,
 				C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */,

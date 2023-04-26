@@ -18,4 +18,8 @@ extension UIColor {
         UIColor(red: 222/255, green: 120/255, blue: 65/255, alpha: 1.0)
     }
     
+    static var logoCinza: UIColor {
+        UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+    }
+    
 }
