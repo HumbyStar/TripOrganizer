@@ -43,7 +43,7 @@ class HomeViewModel {
         return tripList[index]
     }
     
-    public func remove(index: Int) {
+    public func removeTrip(index: Int) {
         tripList.remove(at: index)
     }
     

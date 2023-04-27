@@ -220,7 +220,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.remove(index: indexPath.row)
+            viewModel.removeTrip(index: indexPath.row)
             updateTableView()
         }
     }
