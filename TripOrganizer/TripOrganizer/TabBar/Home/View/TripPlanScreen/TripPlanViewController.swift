@@ -58,7 +58,7 @@ extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: TripPlanCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: TripPlanCollectionViewCell.identifier, for: indexPath) as? TripPlanCollectionViewCell
-        cell?.setupCell(place: viewModel.getItemList(index: indexPath.row))
+        cell?.setupCell(place: viewModel.getPlaceList(index: indexPath.row))
         return cell ?? UICollectionViewCell()
     }
     

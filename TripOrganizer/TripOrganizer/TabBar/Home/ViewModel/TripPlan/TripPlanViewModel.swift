@@ -19,7 +19,7 @@ class TripPlanViewModel {
                                               
     ]
     
-    public func getItemList(index: Int) -> TripPlanModel {
+    public func getPlaceList(index: Int) -> TripPlanModel {
         placeList[index]
     }
     

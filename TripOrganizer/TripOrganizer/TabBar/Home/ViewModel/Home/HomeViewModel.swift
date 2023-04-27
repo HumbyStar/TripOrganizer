@@ -39,12 +39,6 @@ class HomeViewModel {
         tripImages[index]
     }
     
-    
-    public func getListForCell(index: Int) -> AddTripModel {
-        tripList[index]
-    }
-    
-    
     public func getTripList(index: Int) -> AddTripModel {
         return tripList[index]
     }

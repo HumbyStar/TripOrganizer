@@ -32,7 +32,6 @@ class HomeViewController: UIViewController {
     var progressBar: Float = 0
     var viewModel: HomeViewModel = HomeViewModel()
     var emptyLabel: UILabel!
-    var addTripVC: AddTripViewController?
     
     
     override func viewDidLoad() {
@@ -200,7 +199,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         let color = cellColors[indexPath.row % cellColors.count]
         cell?.backgroundColor = color
-        cell?.setupCell(trip: viewModel.getListForCell(index: indexPath.row))
+        cell?.setupCell(trip: viewModel.getTripList(index: indexPath.row))
         cell?.placeImageView.image = UIImage(named: viewModel.getListTripImages(index: indexPath.row))
         return cell ?? UITableViewCell()
     }

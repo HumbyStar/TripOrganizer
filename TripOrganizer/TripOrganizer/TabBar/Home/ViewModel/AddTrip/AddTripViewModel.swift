@@ -9,11 +9,4 @@ import UIKit
 
 class AddTripViewModel {
     
-    var alert: Alert?
-    
-//    func getAlert() {
-//        self.alert?.createAlert(title: "Trip Organizer", message: "Sua viagem deve conter um nome!")
-//    }
-
-    
 }
