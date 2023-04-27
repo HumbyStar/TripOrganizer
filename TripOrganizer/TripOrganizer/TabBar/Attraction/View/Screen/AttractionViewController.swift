@@ -57,6 +57,10 @@ class AttractionViewController: UIViewController {
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
         alert?.createAlert(title: "", message: "Lazer adicionado com sucesso a sua lista de viagem!")
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
 extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

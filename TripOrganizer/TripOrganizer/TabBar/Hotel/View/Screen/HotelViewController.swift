@@ -63,6 +63,10 @@ class HotelViewController: UIViewController {
         alert?.createAlert(title: "", message: "Hotel adicionado com sucesso a sua lista de viagem!")
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
 }
 
 extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -82,6 +86,7 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         return viewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
         
     }
+    
 }
 
 

@@ -73,6 +73,11 @@ class RestaurantViewController: UIViewController {
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: "", message: "Restaurante adicionado com sucesso a sua lista de viagem!")
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
 }
 
 extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
