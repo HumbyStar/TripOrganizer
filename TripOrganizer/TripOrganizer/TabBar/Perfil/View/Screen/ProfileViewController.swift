@@ -25,13 +25,10 @@ class ProfileViewController: UIViewController {
     
     var alert: Alert?
     var viewModel: ProfileViewModel?
-    var activeTextField : UITextField? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification: )), name: UIResponder.keyboardWillHideNotification, object: nil)
         configProfileImage()
         configTextFieldDelegates()
         configTextFields()
@@ -82,33 +79,6 @@ class ProfileViewController: UIViewController {
         picker.allowsEditing = true
         present(picker, animated: true)
     }
-
-    @objc func keyboardWillShow(notification: Notification) {
-        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
-        
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-           return
-        }
-
-        var shouldMoveViewUp = false
-        
-        if let activeTextField = activeTextField {
-            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
-            let topOfKeyboard = self.view.frame.height - keyboardSize.height
-            
-            if bottomOfTextField > topOfKeyboard {
-                shouldMoveViewUp = true
-            }
-        }
-        
-        if(shouldMoveViewUp) {
-            self.view.frame.origin.y = 0 - keyboardSize.height + tabBarHeight
-        }
-    }
-
-    @objc func keyboardWillHide(notification: Notification) {
-        self.view.frame.origin.y = 0
-    }
     
     
     @IBAction func exitButtonPressed(_ sender: UIButton) {
@@ -141,7 +111,6 @@ extension ProfileViewController: UITextFieldDelegate {
         textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.logoGreen.cgColor
         
-        self.activeTextField = textField
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -154,7 +123,6 @@ extension ProfileViewController: UITextFieldDelegate {
             textField.layer.borderColor = UIColor.red.cgColor
         }
         
-        self.activeTextField = nil
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -22,13 +22,10 @@ class RegisterController: UIViewController {
     
     var viewModel: RegisterViewModel?
     var alert: Alert?
-    var activeTextField : UITextField? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = RegisterViewModel()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification: )), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification: )), name: UIResponder.keyboardWillHideNotification, object: nil)
         alert = Alert(controller: self)
         configTextField()
         configButton()
@@ -81,7 +78,6 @@ class RegisterController: UIViewController {
         textField.keyboardType = keyboardType
         textField.spellCheckingType = .no
         nameTextField.autocapitalizationType = .words
-        
     }
     
     private func configTextField() {
@@ -89,33 +85,6 @@ class RegisterController: UIViewController {
         configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: "E-mail", keyboardType: .emailAddress)
         configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: "Senha")
         configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: "Confirmar Senha")
-    }
-    
-    
-    @objc func keyboardWillShow(notification: Notification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            
-            return
-        }
-        
-        var shouldMoveViewUp = false
-        
-        if let activeTextField = activeTextField {
-            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
-            let topOfKeyboard = self.view.frame.height - keyboardSize.height
-            
-            if bottomOfTextField > topOfKeyboard {
-                shouldMoveViewUp = true
-            }
-        }
-        
-        if(shouldMoveViewUp) {
-            self.view.frame.origin.y = 0 - keyboardSize.height
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: Notification) {
-        self.view.frame.origin.y = 0
     }
     
     
@@ -187,7 +156,6 @@ extension RegisterController: UITextFieldDelegate {
             textField.layer.borderWidth = .zero
         }
         
-        self.activeTextField = textField
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -213,7 +181,6 @@ extension RegisterController: UITextFieldDelegate {
             }
         }
         
-        self.activeTextField = nil
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
