@@ -70,9 +70,7 @@
 		C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */; };
 		C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4629ED9B950013D509 /* UIColor .swift */; };
 		C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
-		C43C4B4B29EDA2E20013D509 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4A29EDA2E20013D509 /* LoginModel.swift */; };
 		C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */; };
-		C43C4B5129EDBA990013D509 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B5029EDBA990013D509 /* RegisterModel.swift */; };
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
 		C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */; };
 		C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */; };
@@ -101,10 +99,10 @@
 		0C36EC4A29B6621E009550C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C36EC4D29B6621E009550C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileViewController.storyboard; path = TripOrganizer/TabBar/Perfil/View/Screen/ProfileViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileViewController.storyboard; path = TripOrganizer/Modules/TabBar/Perfil/View/ProfileViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C3AD1ED29C3546C00E7FE73 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/RecoverPassword/View/Screen/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
-		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/RecoverPassword/View/Screen/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
+		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/Modules/RecoverPassword/View/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
+		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/Modules/RecoverPassword/View/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		43780C8A29D5C8A9002072BF /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		43780C8E29D5C943002072BF /* HotelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotelCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -146,9 +144,7 @@
 		9B70FBC1E46219888EE81715 /* Pods_TripOrganizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripOrganizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C43C4B4629ED9B950013D509 /* UIColor .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor .swift"; sourceTree = "<group>"; };
-		C43C4B4A29EDA2E20013D509 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		C43C4B5029EDBA990013D509 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanViewModel.swift; sourceTree = "<group>"; };
 		C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
@@ -176,6 +172,9 @@
 				0C111C1929BACD9000A0DCF4 /* Hotel */,
 				0C111C1C29BACD9000A0DCF4 /* Flight */,
 				0C111C1F29BACD9000A0DCF4 /* Attraction */,
+				C4CC787C29F851CE0055DC8A /* TripPlan */,
+				C4CC787D29F851FE0055DC8A /* AddTrip */,
+				43BE0D2729E5CA35001B5963 /* Tickets */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -183,10 +182,9 @@
 		0C111C1229BACD9000A0DCF4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D8129E70C31001B5963 /* Cell */,
-				C4619CDF29F02AEB00530196 /* Model */,
 				C43C4B3329EC64760013D509 /* View */,
 				C4619CDC29F02AA400530196 /* ViewModel */,
+				43BE0D8129E70C31001B5963 /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -194,10 +192,9 @@
 		0C111C1529BACD9000A0DCF4 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
-				0C2037A929F0A32E001BE709 /* Model */,
+				C43C4B2F29EC63EB0013D509 /* View */,
 				0C2037A429F0A20C001BE709 /* ViewModel */,
 				43780C8829D5C8A9002072BF /* Cell */,
-				C43C4B2F29EC63EB0013D509 /* View */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -205,10 +202,9 @@
 		0C111C1929BACD9000A0DCF4 /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
-				886E22C429EEF2CF00E70FF7 /* ViewModel */,
-				886E22C129EEF27800E70FF7 /* Model */,
-				43780C8D29D5C943002072BF /* Cell */,
 				C43C4B2B29EC63A30013D509 /* View */,
+				886E22C429EEF2CF00E70FF7 /* ViewModel */,
+				43780C8D29D5C943002072BF /* Cell */,
 			);
 			path = Hotel;
 			sourceTree = "<group>";
@@ -216,9 +212,7 @@
 		0C111C1C29BACD9000A0DCF4 /* Flight */ = {
 			isa = PBXGroup;
 			children = (
-				8814476929F0CE3500AC429A /* SecondFlightViewModel */,
-				8814476629F0CC7100AC429A /* FlightModel */,
-				8814476329F0CC2800AC429A /* FlightViewModel */,
+				8814476329F0CC2800AC429A /* ViewModel */,
 				C43C4B2629EC5FC90013D509 /* Cell */,
 				C43C4B2329EC5F9A0013D509 /* View */,
 			);
@@ -228,12 +222,64 @@
 		0C111C1F29BACD9000A0DCF4 /* Attraction */ = {
 			isa = PBXGroup;
 			children = (
-				8814476029F036FE00AC429A /* AttractionModel */,
-				8814475D29F036B000AC429A /* AttractionViewModel */,
-				43780C9C29D5C9B7002072BF /* Cell */,
 				C43C4B1F29EC5ED50013D509 /* View */,
+				8814475D29F036B000AC429A /* ViewModel */,
+				43780C9C29D5C9B7002072BF /* Cell */,
 			);
 			path = Attraction;
+			sourceTree = "<group>";
+		};
+		0C188F8D2A06C4ED00820586 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0C188F8E2A06C56E00820586 /* LaunchScreen */,
+				0C61EB0729BBE13100F54F47 /* Login */,
+				0C61EB0529BBDFEA00F54F47 /* Register */,
+				0C61EB0429BBDFD000F54F47 /* RecoverPassword */,
+				0C111C1129BACD9000A0DCF4 /* TabBar */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0C188F8E2A06C56E00820586 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5084C69429F9A5A000858135 /* LaunchScreenViewController.storyboard */,
+				5084C69229F9A59600858135 /* LaunchScreenViewController.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		0C188F902A06C80500820586 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				886E22C229EEF29D00E70FF7 /* HotelModel.swift */,
+				0C2037A729F0A328001BE709 /* RestaurantModel.swift */,
+				50CEEDBA29F70DC9002548B5 /* TripPlanModel.swift */,
+				8814476729F0CC9300AC429A /* FlightModel.swift */,
+				509DCC0B29F6FC58002F04B0 /* AddTripModel.swift */,
+				8814476129F0371C00AC429A /* AttractionModel.swift */,
+			);
+			name = Model;
+			path = Resources/Model;
+			sourceTree = "<group>";
+		};
+		0C188F912A06CA9100820586 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				509DCC1729F6FD72002F04B0 /* TripPlanViewController.storyboard */,
+				509DCC1529F6FD6A002F04B0 /* TripPlanViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C188F922A06CADD00820586 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				509DCC1329F6FD64002F04B0 /* AddTripViewController.storyboard */,
+				509DCC1129F6FD5B002F04B0 /* AddTripViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0C2037A429F0A20C001BE709 /* ViewModel */ = {
@@ -242,14 +288,6 @@
 				0C2037A529F0A21D001BE709 /* RestaurantViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0C2037A929F0A32E001BE709 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0C2037A729F0A328001BE709 /* RestaurantModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		0C36EC3529B6621C009550C8 = {
@@ -273,13 +311,11 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				0C61EB0629BBE10000F54F47 /* Resources */,
+				0C188F902A06C80500820586 /* Model */,
 				50D5FBB229EF214E0041ED71 /* Alert */,
 				C43C4B4529ED9B7D0013D509 /* Extension */,
-				0C111C1129BACD9000A0DCF4 /* TabBar */,
-				0C61EB0529BBDFEA00F54F47 /* Register */,
-				0C61EB0429BBDFD000F54F47 /* RecoverPassword */,
-				0C61EB0729BBE13100F54F47 /* Login */,
-				0C61EB0629BBE10000F54F47 /* Resources */,
+				0C188F8D2A06C4ED00820586 /* Modules */,
 				0C36EC4F29B6621E009550C8 /* Info.plist */,
 			);
 			path = TripOrganizer;
@@ -306,7 +342,6 @@
 		0C61EB0529BBDFEA00F54F47 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B4F29EDBA6C0013D509 /* Model */,
 				C43C4B1B29EC5E6D0013D509 /* View */,
 				C43C4B4C29EDB9390013D509 /* ViewModel */,
 			);
@@ -316,8 +351,6 @@
 		0C61EB0629BBE10000F54F47 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5084C69429F9A5A000858135 /* LaunchScreenViewController.storyboard */,
-				5084C69229F9A59600858135 /* LaunchScreenViewController.swift */,
 				0C36EC4129B6621C009550C8 /* AppDelegate.swift */,
 				0C36EC4329B6621C009550C8 /* SceneDelegate.swift */,
 				0C36EC4A29B6621E009550C8 /* Assets.xcassets */,
@@ -329,7 +362,6 @@
 		0C61EB0729BBE13100F54F47 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B4129ED77A30013D509 /* Model */,
 				C43C4B0F29EC5D050013D509 /* View */,
 				C43C4B1129EC5D2C0013D509 /* ViewModel */,
 			);
@@ -350,7 +382,6 @@
 				88968ADC3E56DBA6B04D857F /* Pods-TripOrganizer.debug.xcconfig */,
 				4654E5B6F2BB9EBC4AFE6769 /* Pods-TripOrganizer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -361,7 +392,7 @@
 				43780C8A29D5C8A9002072BF /* MenuCollectionViewCell.xib */,
 			);
 			name = Cell;
-			path = TripOrganizer/TabBar/Restaurant/Cell;
+			path = TripOrganizer/Modules/TabBar/Restaurant/Cell;
 			sourceTree = SOURCE_ROOT;
 		};
 		43780C8D29D5C943002072BF /* Cell */ = {
@@ -371,7 +402,7 @@
 				43780C8F29D5C943002072BF /* HotelCollectionViewCell.swift */,
 			);
 			name = Cell;
-			path = TripOrganizer/TabBar/Hotel/Cell;
+			path = TripOrganizer/Modules/TabBar/Hotel/Cell;
 			sourceTree = SOURCE_ROOT;
 		};
 		43780C9C29D5C9B7002072BF /* Cell */ = {
@@ -392,12 +423,13 @@
 			path = CollectionCell;
 			sourceTree = "<group>";
 		};
-		43BE0D2729E5CA35001B5963 /* SecondFlightsScreen */ = {
+		43BE0D2729E5CA35001B5963 /* Tickets */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B2829EC62810013D509 /* Screen */,
+				8814476929F0CE3500AC429A /* SecondFlightViewModel */,
+				C43C4B2829EC62810013D509 /* View */,
 			);
-			path = SecondFlightsScreen;
+			path = Tickets;
 			sourceTree = "<group>";
 		};
 		43BE0D3029E5E900001B5963 /* TableViewCell */ = {
@@ -409,19 +441,11 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		43BE0D3129E5E930001B5963 /* FlightScreen */ = {
-			isa = PBXGroup;
-			children = (
-				C43C4B2429EC5FA00013D509 /* Screen */,
-			);
-			path = FlightScreen;
-			sourceTree = "<group>";
-		};
 		43BE0D8129E70C31001B5963 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C4CC788129F854050055DC8A /* HomeCell */,
-				C4CC788229F8552C0055DC8A /* TripPlanCell */,
+				509DCC0929F6FC17002F04B0 /* HomeTableViewCell.xib */,
+				509DCC0729F6FC0C002F04B0 /* HomeTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -443,36 +467,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		8814475D29F036B000AC429A /* AttractionViewModel */ = {
+		8814475D29F036B000AC429A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				8814475E29F036F000AC429A /* AttractionViewModel.swift */,
 			);
-			path = AttractionViewModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		8814476029F036FE00AC429A /* AttractionModel */ = {
-			isa = PBXGroup;
-			children = (
-				8814476129F0371C00AC429A /* AttractionModel.swift */,
-			);
-			path = AttractionModel;
-			sourceTree = "<group>";
-		};
-		8814476329F0CC2800AC429A /* FlightViewModel */ = {
+		8814476329F0CC2800AC429A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				8814476A29F0CEAD00AC429A /* FlightViewModel.swift */,
 			);
-			path = FlightViewModel;
-			sourceTree = "<group>";
-		};
-		8814476629F0CC7100AC429A /* FlightModel */ = {
-			isa = PBXGroup;
-			children = (
-				8814476729F0CC9300AC429A /* FlightModel.swift */,
-			);
-			path = FlightModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8814476929F0CE3500AC429A /* SecondFlightViewModel */ = {
@@ -491,14 +499,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		886E22C129EEF27800E70FF7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				886E22C229EEF29D00E70FF7 /* HotelModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		886E22C429EEF2CF00E70FF7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,7 +510,8 @@
 		C43C4B0F29EC5D050013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B1429EC5DAD0013D509 /* Screen */,
+				0C36EC4729B6621C009550C8 /* Main.storyboard */,
+				0C36EC4529B6621C009550C8 /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -523,82 +524,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		C43C4B1429EC5DAD0013D509 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				0C36EC4729B6621C009550C8 /* Main.storyboard */,
-				0C36EC4529B6621C009550C8 /* ViewController.swift */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
 		C43C4B1729EC5E300013D509 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C43C4B1929EC5E3E0013D509 /* Screen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B1929EC5E3E0013D509 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
 				0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */,
 				0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */,
 			);
-			path = Screen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B1B29EC5E6D0013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B1C29EC5E740013D509 /* Screen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B1C29EC5E740013D509 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				5050BCB729B8D92B0019BB69 /* RegisterController.storyboard */,
 				5050BCB529B8D9050019BB69 /* RegisterController.swift */,
 			);
-			path = Screen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B1F29EC5ED50013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B2029EC5EDD0013D509 /* Screen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B2029EC5EDD0013D509 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C2029BACD9000A0DCF4 /* AttractionViewController.storyboard */,
 				0C111C2129BACD9000A0DCF4 /* AttractionViewController.swift */,
 			);
-			path = Screen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B2329EC5F9A0013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D3129E5E930001B5963 /* FlightScreen */,
-				43BE0D2729E5CA35001B5963 /* SecondFlightsScreen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B2429EC5FA00013D509 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1D29BACD9000A0DCF4 /* FlightViewController.storyboard */,
 				0C111C1E29BACD9000A0DCF4 /* FlightViewController.swift */,
 			);
-			path = Screen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B2629EC5FC90013D509 /* Cell */ = {
@@ -610,109 +569,58 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		C43C4B2829EC62810013D509 /* Screen */ = {
+		C43C4B2829EC62810013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				43BE0D2A29E5CA74001B5963 /* SecondFlightScreenViewController.storyboard */,
 				43BE0D2829E5CA6A001B5963 /* SecondFlightScreenViewController.swift */,
 			);
-			path = Screen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B2B29EC63A30013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B2C29EC63AA0013D509 /* Screen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B2C29EC63AA0013D509 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1A29BACD9000A0DCF4 /* HotelViewController.storyboard */,
 				0C111C1B29BACD9000A0DCF4 /* HotelViewController.swift */,
 			);
-			path = Screen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B2F29EC63EB0013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B3029EC63F70013D509 /* Screen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B3029EC63F70013D509 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1629BACD9000A0DCF4 /* RestaurantViewController.storyboard */,
 				0C111C1729BACD9000A0DCF4 /* RestaurantViewController.swift */,
 			);
-			path = Screen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B3329EC64760013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B3429EC64810013D509 /* HomeScreen */,
-				C4CC787C29F851CE0055DC8A /* TripPlanScreen */,
-				C4CC787D29F851FE0055DC8A /* AddTripScreen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B3429EC64810013D509 /* HomeScreen */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1329BACD9000A0DCF4 /* HomeViewController.storyboard */,
 				0C111C1429BACD9000A0DCF4 /* HomeViewController.swift */,
 			);
-			path = HomeScreen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B3729EC664A0013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B3929EC665B0013D509 /* Screen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B3929EC665B0013D509 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */,
 				0C3AD1ED29C3546C00E7FE73 /* ProfileViewController.swift */,
 			);
-			path = Screen;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B3C29EC66F70013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C43C4B3D29EC67030013D509 /* Screen */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C43C4B3D29EC67030013D509 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
 				0C111C1829BACD9000A0DCF4 /* TabBarController.storyboard */,
 				0C111C2229BACD9000A0DCF4 /* TabBarController.swift */,
 			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		C43C4B4129ED77A30013D509 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C43C4B4A29EDA2E20013D509 /* LoginModel.swift */,
-			);
-			name = Model;
-			path = ../Model;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C43C4B4529ED9B7D0013D509 /* Extension */ = {
@@ -731,107 +639,56 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		C43C4B4F29EDBA6C0013D509 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C43C4B5029EDBA990013D509 /* RegisterModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		C4619CDC29F02AA400530196 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C4CC787E29F8532E0055DC8A /* Home */,
-				C4CC787F29F853410055DC8A /* TripPlan */,
-				C4CC788029F8534D0055DC8A /* AddTrip */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		C4619CDF29F02AEB00530196 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C4CC788529F862010055DC8A /* TripModel */,
-				C4CC788629F8620C0055DC8A /* AddTripModel */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C4CC787C29F851CE0055DC8A /* TripPlanScreen */ = {
-			isa = PBXGroup;
-			children = (
-				509DCC1729F6FD72002F04B0 /* TripPlanViewController.storyboard */,
-				509DCC1529F6FD6A002F04B0 /* TripPlanViewController.swift */,
-			);
-			path = TripPlanScreen;
-			sourceTree = "<group>";
-		};
-		C4CC787D29F851FE0055DC8A /* AddTripScreen */ = {
-			isa = PBXGroup;
-			children = (
-				509DCC1329F6FD64002F04B0 /* AddTripViewController.storyboard */,
-				509DCC1129F6FD5B002F04B0 /* AddTripViewController.swift */,
-			);
-			path = AddTripScreen;
-			sourceTree = "<group>";
-		};
-		C4CC787E29F8532E0055DC8A /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				C4619CDD29F02ACC00530196 /* HomeViewModel.swift */,
 			);
-			path = Home;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		C4CC787F29F853410055DC8A /* TripPlan */ = {
+		C4CC787C29F851CE0055DC8A /* TripPlan */ = {
 			isa = PBXGroup;
 			children = (
-				C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */,
+				0C188F912A06CA9100820586 /* View */,
+				C4CC788529F862010055DC8A /* ViewModel */,
+				C4CC788229F8552C0055DC8A /* Cell */,
 			);
 			path = TripPlan;
 			sourceTree = "<group>";
 		};
-		C4CC788029F8534D0055DC8A /* AddTrip */ = {
+		C4CC787D29F851FE0055DC8A /* AddTrip */ = {
 			isa = PBXGroup;
 			children = (
-				C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */,
+				0C188F922A06CADD00820586 /* View */,
+				C4CC788629F8620C0055DC8A /* ViewModel */,
 			);
 			path = AddTrip;
 			sourceTree = "<group>";
 		};
-		C4CC788129F854050055DC8A /* HomeCell */ = {
-			isa = PBXGroup;
-			children = (
-				509DCC0929F6FC17002F04B0 /* HomeTableViewCell.xib */,
-				509DCC0729F6FC0C002F04B0 /* HomeTableViewCell.swift */,
-			);
-			path = HomeCell;
-			sourceTree = "<group>";
-		};
-		C4CC788229F8552C0055DC8A /* TripPlanCell */ = {
+		C4CC788229F8552C0055DC8A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				509DCC0F29F6FD20002F04B0 /* TripPlanCollectionViewCell.xib */,
 				509DCC0D29F6FD1A002F04B0 /* TripPlanCollectionViewCell.swift */,
 			);
-			path = TripPlanCell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		C4CC788529F862010055DC8A /* TripModel */ = {
+		C4CC788529F862010055DC8A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				50CEEDBA29F70DC9002548B5 /* TripPlanModel.swift */,
+				C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */,
 			);
-			path = TripModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		C4CC788629F8620C0055DC8A /* AddTripModel */ = {
+		C4CC788629F8620C0055DC8A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				509DCC0B29F6FC58002F04B0 /* AddTripModel.swift */,
+				C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */,
 			);
-			path = AddTripModel;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DE48C0D50D17FFC537CE7C89 /* Frameworks */ = {
@@ -990,7 +847,6 @@
 				509DCC0C29F6FC58002F04B0 /* AddTripModel.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeViewController.swift in Sources */,
 				C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */,
-				C43C4B4B29EDA2E20013D509 /* LoginModel.swift in Sources */,
 				50D5FBB729EF219B0041ED71 /* ProfileViewModel.swift in Sources */,
 				0C2037A629F0A21D001BE709 /* RestaurantViewModel.swift in Sources */,
 				43BE0D2929E5CA6A001B5963 /* SecondFlightScreenViewController.swift in Sources */,
@@ -1001,7 +857,6 @@
 				0C111C2929BACD9000A0DCF4 /* HotelViewController.swift in Sources */,
 				50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */,
 				8814476829F0CC9300AC429A /* FlightModel.swift in Sources */,
-				C43C4B5129EDBA990013D509 /* RegisterModel.swift in Sources */,
 				8814476229F0371C00AC429A /* AttractionModel.swift in Sources */,
 				8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
