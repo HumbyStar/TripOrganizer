@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterController: UIViewController {
+class RegisterViewController: UIViewController {
     
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
@@ -20,12 +20,10 @@ class RegisterController: UIViewController {
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var confirmPasswordView: UIView!
     
-    var viewModel: RegisterViewModel?
     var alert: Alert?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = RegisterViewModel()
         alert = Alert(controller: self)
         configTextField()
         configButton()
@@ -89,7 +87,7 @@ class RegisterController: UIViewController {
     
     
     
-    @IBAction func tappedExibSenhaButton(_ sender: Any) {
+    @IBAction func tapToShowPassword(_ sender: Any) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
         if passwordTextField.isSecureTextEntry {
@@ -100,7 +98,7 @@ class RegisterController: UIViewController {
     }
     
     
-    @IBAction func tappedExibconfirSenhaButton(_ sender: Any) {
+    @IBAction func tapToShowConfirmPassword(_ sender: Any) {
         confirmPasswordTextField.isSecureTextEntry = !confirmPasswordTextField.isSecureTextEntry
         
         if confirmPasswordTextField.isSecureTextEntry {
@@ -110,8 +108,7 @@ class RegisterController: UIViewController {
         }
     }
     
-    
-    @IBAction func voltarButton(_ sender: Any) {
+    @IBAction func tapToBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
@@ -135,11 +132,10 @@ class RegisterController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-        
     }
 }
 
-extension RegisterController: UITextFieldDelegate {
+extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -159,7 +155,6 @@ extension RegisterController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        // MARK: Essa validação faz com que caso o textField selecionado fica verde e caso saia do mesmo, volte a ficar em lightGray e que se todos os textField estiverem com textos abilitara o botal de resgistrar.
         
         textField.layer.borderWidth = 2
         textField.layer.borderColor = UIColor.lightGray.cgColor
@@ -170,7 +165,6 @@ extension RegisterController: UITextFieldDelegate {
         passwordTextField.layer.borderWidth = .zero
         confirmPasswordTextField.layer.borderWidth = .zero
         
-        
         if nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && confirmPasswordTextField.hasText {
             registerButton.isEnabled = true
             if passwordTextField.text != confirmPasswordTextField.text {
@@ -180,30 +174,22 @@ extension RegisterController: UITextFieldDelegate {
                 confirmPasswordView.layer.borderColor = UIColor.red.cgColor
             }
         }
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-        if textField == nameTextField {
-            //MARK: quando eu clicar no return ele pular para o textField de Endereço
+        switch textField {
+        case nameTextField:
             emailTextField.becomeFirstResponder()
-            
-        } else if textField == emailTextField {
-            //MARK: Quando eu clicar no return ele pular paro o textField de senha
+        case emailTextField:
             passwordTextField.becomeFirstResponder()
-            
-        } else if textField == passwordTextField {
-            //MARK: Quando eu clicar no return ele pular paro o textField de confirmar Senha
+        case passwordTextField:
             confirmPasswordTextField.becomeFirstResponder()
-            
-        } else {
-            //MARK: Quando eu clicar no return ele tem que
+        default:
             textField.resignFirstResponder()
         }
         return true
-        
     }
 }
 

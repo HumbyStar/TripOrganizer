@@ -9,13 +9,13 @@ import UIKit
 
 class TripPlanViewModel {
     
-    private var placeList: [TripPlanModel] = [TripPlanModel(placeName: "Coliseum", placeImageName: "teste3"),
-                                              TripPlanModel(placeName: "Paris", placeImageName: "teste2"),
-                                              TripPlanModel(placeName: "Restaurante", placeImageName: "restaurante1"),
-                                              TripPlanModel(placeName: "Restaurante", placeImageName: "restaurante2"),
-                                              TripPlanModel(placeName: "Hotel", placeImageName: "hotel1"),
-                                              TripPlanModel(placeName: "Hotel", placeImageName: "hotel2"),
-                                              TripPlanModel(placeName: "Hotel", placeImageName: "imagehotel")
+    private var placeList: [TripPlanModel] = [TripPlanModel(name: "Coliseum", images: "teste3"),
+                                              TripPlanModel(name: "Paris", images: "teste2"),
+                                              TripPlanModel(name: "Restaurante", images: "restaurante1"),
+                                              TripPlanModel(name: "Restaurante", images: "restaurante2"),
+                                              TripPlanModel(name: "Hotel", images: "hotel1"),
+                                              TripPlanModel(name: "Hotel", images: "hotel2"),
+                                              TripPlanModel(name: "Hotel", images: "imagehotel")
                                               
     ]
     

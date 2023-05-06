@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 struct AddTripModel {
-    var tripName: String
-    var departureDate: String
-    var returnDate: String
+    public let tripName: String
+    public let departureDate: String
+    public let returnDate: String
 }
 

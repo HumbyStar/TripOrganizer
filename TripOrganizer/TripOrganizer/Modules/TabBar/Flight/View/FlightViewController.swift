@@ -34,9 +34,9 @@ class FlightViewController: UIViewController {
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
         
-        let vc: SecondFlightScreenViewController? = UIStoryboard(name: "SecondFlightScreenViewController", bundle: nil).instantiateViewController(withIdentifier: "SecondFlightScreenViewController") as? SecondFlightScreenViewController
-        vc?.modalPresentationStyle = .automatic
-        present(vc ?? UIViewController(), animated: true)
+        let viewController: TicketsViewController? = UIStoryboard(name: "TicketsViewController", bundle: nil).instantiateViewController(withIdentifier: "TicketsViewController") as? TicketsViewController
+        viewController?.modalPresentationStyle = .automatic
+        present(viewController ?? UIViewController(), animated: true)
         
     }
     

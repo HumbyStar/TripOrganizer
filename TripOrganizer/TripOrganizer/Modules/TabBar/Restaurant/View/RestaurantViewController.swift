@@ -63,11 +63,11 @@ class RestaurantViewController: UIViewController {
     
     func setupUI(){
         let restaurant = restaurantViewModel.cellForRow()[0]
-        restaurantAddressLabel.text = "Endereço: \(restaurant.restaurantAdress)"
-        restaurantOpeningHoursLabel.text = "Horário: \(restaurant.restaurantOpeningHours)"
-        restaurantPhoneNumberLabel.text = "Telefone: \(restaurant.restarauntPhoneNumber)"
-        restaurantRatingLabel.text = "Avaliações - \(restaurant.restaurantRating)"
-        restaurantNameLabel.text = restaurant.restaurantName
+        restaurantAddressLabel.text = "Endereço: \(restaurant.address)"
+        restaurantOpeningHoursLabel.text = "Horário: \(restaurant.openingHours)"
+        restaurantPhoneNumberLabel.text = "Telefone: \(restaurant.phoneNumber)"
+        restaurantRatingLabel.text = "Avaliações - \(restaurant.rating)"
+        restaurantNameLabel.text = restaurant.name
     }
     
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {

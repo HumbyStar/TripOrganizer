@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondFlightViewModel {
+class TicketsViewModel {
     
     private var listObjectSecondFlightScreen: [FlightModel] = [FlightModel(cityNameObject: "Florianópolis", cityDescriptionObject: "Conhecida por suas praias paradisíacas, Floripa também é famosa por sua culinária e por apresentar uma cultura vibrante.", cityImageObject: "floripa", ticketPrice: "", tripDuration: "",tripStartTime: "", tripEndTime: "" ,locateOrigin: "", locateDestination: "" ),
                                                                FlightModel(cityNameObject: "Rio de Janeiro", cityDescriptionObject: "Famosa por suas praias, Cristo Redentor e pelo Pão de Açúcar. Também conhecida pelas grandes favelas e o Carnaval.", cityImageObject:  "rioDeJaneiro", ticketPrice: "", tripDuration: "",tripStartTime: "", tripEndTime: "" ,locateOrigin: "", locateDestination: "" ),

@@ -8,6 +8,6 @@
 import Foundation
 
 struct TripPlanModel {
-    var placeName: String
-    var placeImageName: String
+    public let name: String
+    public let images: String
 }

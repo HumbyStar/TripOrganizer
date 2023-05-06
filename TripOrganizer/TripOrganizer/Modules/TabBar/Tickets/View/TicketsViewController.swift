@@ -7,13 +7,13 @@
 
 import UIKit
 
-class SecondFlightScreenViewController: UIViewController {
+class TicketsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     var alert: Alert?
     
-    public let viewModel: SecondFlightViewModel = SecondFlightViewModel()
+    public let viewModel: TicketsViewModel = TicketsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class SecondFlightScreenViewController: UIViewController {
     
 }
 
-extension SecondFlightScreenViewController: UITableViewDelegate, UITableViewDataSource {
+extension TicketsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getNumberOfRowsInSection()
     }

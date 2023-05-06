@@ -21,11 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var eyeButton: UIButton!
     
     var isEyeOpen = false
-    
-    // chamar a viewModel - fazer isso para conseguir acessar as propriedades da ViewModel
     var viewModel: LoginViewModel = LoginViewModel()
     
-    // tirar a navigationbar (Parte superior da tela)
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -35,20 +32,22 @@ class ViewController: UIViewController {
         configTextField()
         configButtons()
         configPasswordView()
+        
+        emailTextField.text = "abc@gmail.com"
+        passwordTextField.text = "123456"
     }
     
-    // fazer uma navegação para a tela de recorver
-    @IBAction func esqueciSenhatappedButton(_ sender: UIButton) {
+    @IBAction func tapToRecoverPassword(_ sender: UIButton) {
         let vc = UIStoryboard(name: "RecoverViewController", bundle: nil).instantiateViewController(withIdentifier: "RecoverViewController") as? RecoverViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
-    // fazer uma navegação para a tela de register
-    @IBAction func registerTappedButton(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "RegisterController", bundle: nil).instantiateViewController(withIdentifier: "RegisterController") as? RegisterController
+
+    @IBAction func tapToRegister(_ sender: UIButton) {
+        let vc = UIStoryboard(name: "RegisterViewController", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
-    // Ir para a tela TabBarController (Tela rootController da tabBar - Home)
-    @IBAction func acessarButton(_ sender: Any) {
+    
+    @IBAction func tapToLogin(_ sender: Any) {
         let vc = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
         loginButton.isEnabled = false
         emailTextField.text = ""
@@ -56,7 +55,6 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
-    // confuguração para adicionar uma sombra
     private func configShadowButton(button: UIButton) {
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.1
@@ -67,7 +65,6 @@ class ViewController: UIViewController {
         button.layer.rasterizationScale = UIScreen.main.scale
     }
     
-    // configurações para para o Botão
     private func configButtons() {
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = 10
@@ -92,7 +89,6 @@ class ViewController: UIViewController {
         
     }
     
-    // Configurações que vou utilizar em outros textFields
     private func configTextField() {
         configProtocol()
         emailTextField.layer.borderWidth = 2
@@ -126,9 +122,7 @@ class ViewController: UIViewController {
             passwordTextField.isSecureTextEntry = false
             isEyeOpen = true
         }
-        
     }
-    
 }
 
 extension ViewController: UITextFieldDelegate {

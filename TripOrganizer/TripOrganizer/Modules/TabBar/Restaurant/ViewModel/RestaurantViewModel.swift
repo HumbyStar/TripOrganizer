@@ -13,7 +13,7 @@ class RestaurantViewModel {
     
     public func loadRestaurants() {
         restaurants = [
-            RestaurantModel(restaurantName: "Polignano a Mare", restaurantAdress: "70044 Bari, Itália", restaurantOpeningHours: "Aberto", restarauntPhoneNumber: " (+39) 080-4252300", restaurantRating: 4.6,restaurantImages: ["restaurant1.1", "restaurant1.2","restaurant1.3","restaurant1.4","restaurant1.5"]),
+            RestaurantModel(name: "Polignano a Mare", address: "70044 Bari, Itália", openingHours: "Aberto", phoneNumber: " (+39) 080-4252300", rating: 4.6,images: ["restaurant1.1", "restaurant1.2","restaurant1.3","restaurant1.4","restaurant1.5"]),
         ]
     }
     
@@ -27,7 +27,7 @@ class RestaurantViewModel {
     
     public func getRestaurantImages(indexPath: IndexPath) -> [String] {
         let restaurant = restaurants[0]
-        return restaurant.restaurantImages
+        return restaurant.images
     }
     
     public func getCornerRadius(value: CGFloat) -> CGFloat {

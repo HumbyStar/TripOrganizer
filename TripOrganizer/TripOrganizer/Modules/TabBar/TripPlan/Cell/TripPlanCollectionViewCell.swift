@@ -38,8 +38,8 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
     
     
     public func setupCell(place: TripPlanModel) {
-        placeNameLabel.text = place.placeName
-        placeImageView.image = UIImage(named: place.placeImageName)
+        placeNameLabel.text = place.name
+        placeImageView.image = UIImage(named: place.images)
     }
     
     private func configCellLayout() {

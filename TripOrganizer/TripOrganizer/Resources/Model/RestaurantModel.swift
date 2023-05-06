@@ -8,10 +8,10 @@
 import Foundation
 
 struct RestaurantModel {
-    public let restaurantName: String
-    public let restaurantAdress: String
-    public let restaurantOpeningHours: String
-    public let restarauntPhoneNumber: String
-    public let restaurantRating: Double
-    public let restaurantImages: [String]
+    public let name: String
+    public let address: String
+    public let openingHours: String
+    public let phoneNumber: String
+    public let rating: Double
+    public let images: [String]
 }
