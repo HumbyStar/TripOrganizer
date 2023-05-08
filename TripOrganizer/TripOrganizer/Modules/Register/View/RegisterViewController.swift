@@ -60,15 +60,14 @@ class RegisterViewController: UIViewController {
     
     
     private func configTextFieldPadrao(textField: UITextField, borderColor: UIColor , placeHolder: String, keyboardType: UIKeyboardType = .default) {
-        textField.autocorrectionType = .no
-        textField.clipsToBounds = true
         if textField == passwordTextField || textField == confirmPasswordTextField {
             textField.layer.borderWidth = 0
             textField.borderStyle = .none
         } else {
             textField.layer.borderWidth = 2
         }
-        
+        textField.autocorrectionType = .no
+        textField.clipsToBounds = true
         textField.layer.borderColor = UIColor.logoGreen.cgColor
         textField.layer.cornerRadius = 10
         textField.placeholder = placeHolder
@@ -113,17 +112,9 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        if nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && confirmPasswordTextField.hasText {
-            if confirmPasswordTextField.text == passwordTextField.text {
-                alert?.createAlert(title: "TripOrganizer", message: "Cadastro efetuado com sucesso!", completion: {
-                    self.navigationController?.popToRootViewController(animated: true)
-                })
-            } else {
-                alert?.createAlert(title: "TripOrganizer", message: "Ambas as senha devem ser iguais!")
-                confirmPasswordView.layer.borderColor = UIColor.red.cgColor
-                passwordView.layer.borderColor = UIColor.red.cgColor
-            }
-        }
+        alert?.createAlert(title: "TripOrganizer", message: "Cadastro efetuado com sucesso!", completion: {
+            self.navigationController?.popToRootViewController(animated: true)
+        })
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
@@ -139,40 +130,66 @@ extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        textField.layer.borderWidth = 3
-        textField.layer.borderColor = UIColor.logoGreen.cgColor
-        
-        if textField == passwordTextField {
-            passwordView.layer.borderWidth = 3
-            passwordView.layer.borderColor = UIColor.logoGreen.cgColor
-            textField.layer.borderWidth = .zero
-        } else if textField == confirmPasswordTextField {
-            confirmPasswordView.layer.borderWidth = 3
-            confirmPasswordView.layer.borderColor = UIColor.logoGreen.cgColor
-            textField.layer.borderWidth = .zero
+        switch textField {
+            case confirmPasswordTextField:
+                confirmPasswordView.layer.borderWidth = 2
+                confirmPasswordView.layer.borderColor = UIColor.logoGreen.cgColor
+            case passwordTextField:
+                passwordView.layer.borderWidth = 2
+                passwordView.layer.borderColor = UIColor.logoGreen.cgColor
+            default:
+                textField.layer.borderWidth = 2
+                textField.layer.borderColor = UIColor.logoGreen.cgColor
         }
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        textField.layer.borderWidth = 2
-        textField.layer.borderColor = UIColor.lightGray.cgColor
-        passwordView.layer.borderWidth = 2
-        passwordView.layer.borderColor = UIColor.lightGray.cgColor
-        confirmPasswordView.layer.borderWidth = 2
-        confirmPasswordView.layer.borderColor = UIColor.lightGray.cgColor
-        passwordTextField.layer.borderWidth = .zero
-        confirmPasswordTextField.layer.borderWidth = .zero
+        guard let nameValue = nameTextField.text,
+              let emailValue = emailTextField.text,
+              let passwordValue = passwordTextField.text,
+              let confirmPasswordValue = confirmPasswordTextField.text
+        else {return}
         
+        switch textField {
+            
+        case nameTextField:
+            if nameValue.isEmpty {
+                textField.layer.borderColor = UIColor.red.cgColor
+            } else {
+                textField.layer.borderWidth = 1
+                textField.layer.borderColor = UIColor.lightGray.cgColor
+            }
+           
+        case emailTextField:
+            if emailValue.isEmpty || ((!emailValue.contains("@")) || (!emailValue.contains(".com"))) {
+                textField.layer.borderColor = UIColor.red.cgColor
+            } else {
+                textField.layer.borderWidth = 1
+                textField.layer.borderColor = UIColor.lightGray.cgColor
+            }
+            
+        case passwordTextField:
+            if passwordValue.isEmpty || passwordValue.count < 6 {
+                passwordView.layer.borderColor = UIColor.red.cgColor
+            } else {
+                passwordView.layer.borderWidth = 1
+                passwordView.layer.borderColor = UIColor.gray.cgColor
+            }
+            
+        default:
+            if confirmPasswordValue.isEmpty || textField.text != passwordTextField.text {
+                confirmPasswordView.layer.borderColor = UIColor.red.cgColor
+            } else {
+                passwordView.layer.borderWidth = 1
+                passwordView.layer.borderColor = UIColor.gray.cgColor
+            }
+        }
+    
         if nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && confirmPasswordTextField.hasText {
             registerButton.isEnabled = true
-            if passwordTextField.text != confirmPasswordTextField.text {
-                passwordView.layer.borderWidth = 2
-                passwordView.layer.borderColor = UIColor.red.cgColor
-                confirmPasswordView.layer.borderWidth = 2
-                confirmPasswordView.layer.borderColor = UIColor.red.cgColor
-            }
+        } else {
+            registerButton.isEnabled = false
         }
     }
     
