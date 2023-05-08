@@ -20,7 +20,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var confirmPasswordView: UIView!
     
-    var alert: Alert?
+    private var alert: Alert?
+    private let viewModel = RegisterViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,7 +155,7 @@ extension RegisterViewController: UITextFieldDelegate {
         switch textField {
             
         case nameTextField:
-            if nameValue.isEmpty {
+            if viewModel.validateName(nameValue) {
                 textField.layer.borderColor = UIColor.red.cgColor
             } else {
                 textField.layer.borderWidth = 1
@@ -162,7 +163,7 @@ extension RegisterViewController: UITextFieldDelegate {
             }
            
         case emailTextField:
-            if emailValue.isEmpty || ((!emailValue.contains("@")) || (!emailValue.contains(".com"))) {
+            if viewModel.validateEmail(emailValue) {
                 textField.layer.borderColor = UIColor.red.cgColor
             } else {
                 textField.layer.borderWidth = 1
@@ -170,7 +171,7 @@ extension RegisterViewController: UITextFieldDelegate {
             }
             
         case passwordTextField:
-            if passwordValue.isEmpty || passwordValue.count < 6 {
+            if viewModel.validatePassword(passwordValue) {
                 passwordView.layer.borderColor = UIColor.red.cgColor
             } else {
                 passwordView.layer.borderWidth = 1
@@ -178,15 +179,15 @@ extension RegisterViewController: UITextFieldDelegate {
             }
             
         default:
-            if confirmPasswordValue.isEmpty || textField.text != passwordTextField.text {
+            if viewModel.validateConfirmPassword(confirmPasswordValue) {
                 confirmPasswordView.layer.borderColor = UIColor.red.cgColor
             } else {
-                passwordView.layer.borderWidth = 1
-                passwordView.layer.borderColor = UIColor.gray.cgColor
+                confirmPasswordView.layer.borderWidth = 1
+                confirmPasswordView.layer.borderColor = UIColor.gray.cgColor
             }
         }
     
-        if nameTextField.hasText && emailTextField.hasText && passwordTextField.hasText && confirmPasswordTextField.hasText {
+        if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
             registerButton.isEnabled = true
         } else {
             registerButton.isEnabled = false
