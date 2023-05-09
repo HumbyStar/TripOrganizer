@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Lottie
 
 class FlightViewController: UIViewController {
     
     var viewModel: FlightViewModel = FlightViewModel()
+    
+    private let loadingAnimationView: LottieAnimationView = LottieAnimationView()
     
     @IBOutlet weak var chooseADestinationLabel: UILabel!
     @IBOutlet weak var flightOriginView: UIView!
@@ -36,10 +39,23 @@ class FlightViewController: UIViewController {
         
         let viewController: TicketsViewController? = UIStoryboard(name: "TicketsViewController", bundle: nil).instantiateViewController(withIdentifier: "TicketsViewController") as? TicketsViewController
         viewController?.modalPresentationStyle = .automatic
-        present(viewController ?? UIViewController(), animated: true)
+        self.configLoadingAnimation()
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.present(viewController ?? UIViewController(), animated: true)
+        }
     }
     
+    private func configLoadingAnimation() {
+        loadingAnimationView.animation = LottieAnimation.named("103343-airplane-loader-animation.json")
+        loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        loadingAnimationView.center = view.center
+        loadingAnimationView.backgroundColor = .clear
+        loadingAnimationView.contentMode = .scaleAspectFit
+        loadingAnimationView.loopMode = .playOnce
+        loadingAnimationView.play()
+        self.view.addSubview(loadingAnimationView)
+    }
     
     private func configElements() {
         
