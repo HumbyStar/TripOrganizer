@@ -9,8 +9,8 @@ import UIKit
 
 class RecoverViewController: UIViewController{
     
-    var viewModel: RecoverPasswordViewModel = RecoverPasswordViewModel()
-    var alert: Alert?
+    private var alert: Alert?
+    private let viewModel = RecoverPasswordViewModel()
     
     @IBOutlet var appLogoImageView: UIImageView!
     @IBOutlet weak var recoverPasswordButton: UIButton!
@@ -23,18 +23,17 @@ class RecoverViewController: UIViewController{
         configButton()
     }
     
-   
+    
     @IBAction func tapToBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-   
+    
     private func configButton(){
         recoverPasswordButton.layer.cornerRadius = 10
         recoverPasswordButton.clipsToBounds = true
-        recoverPasswordButton.isEnabled = false
     }
     
-   private func configTextField(){
+    private func configTextField(){
         emailTextField.delegate = self
         emailTextField.layer.borderWidth = 2
         emailTextField.layer.borderColor = UIColor.lightGray.cgColor
@@ -49,9 +48,16 @@ class RecoverViewController: UIViewController{
     }
     
     @IBAction func recoverPasswordButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: "Um Email de instrução foi enviado para sua caixa de entrada", completion: {
-            self.navigationController?.popViewController(animated: true)
-        })
+        guard let emailValue = emailTextField.text else {return}
+        if viewModel.validateConfirmEmail(emailValue) {
+            alert?.createAlert(title: viewModel.titleError, message: viewModel.messageError , completion: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        } else {
+            alert?.createAlert(title: viewModel.titleSucess, message: viewModel.messageSuccess , completion: {
+                self.navigationController?.popViewController(animated: true)
+            })
+        }
     }
 }
 
@@ -65,13 +71,7 @@ extension RecoverViewController: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 2
         textField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        if textField.hasText == true {
-            recoverPasswordButton.isEnabled = true
-        }else{
-            recoverPasswordButton.isEnabled = false
-        }
-   }
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
