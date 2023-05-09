@@ -56,6 +56,7 @@
 		509DCC1429F6FD64002F04B0 /* AddTripViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509DCC1329F6FD64002F04B0 /* AddTripViewController.storyboard */; };
 		509DCC1629F6FD6A002F04B0 /* TripPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509DCC1529F6FD6A002F04B0 /* TripPlanViewController.swift */; };
 		509DCC1829F6FD72002F04B0 /* TripPlanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509DCC1729F6FD72002F04B0 /* TripPlanViewController.storyboard */; };
+		50B4E3192A0AA59A00FBA434 /* 98742-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 50B4E3182A0AA59A00FBA434 /* 98742-loading.json */; };
 		50CEEDBB29F70DC9002548B5 /* TripPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CEEDBA29F70DC9002548B5 /* TripPlanModel.swift */; };
 		50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB329EF214E0041ED71 /* Alert.swift */; };
 		50D5FBB729EF219B0041ED71 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB629EF219B0041ED71 /* ProfileViewModel.swift */; };
@@ -129,6 +130,7 @@
 		509DCC1329F6FD64002F04B0 /* AddTripViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddTripViewController.storyboard; sourceTree = "<group>"; };
 		509DCC1529F6FD6A002F04B0 /* TripPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripPlanViewController.swift; sourceTree = "<group>"; };
 		509DCC1729F6FD72002F04B0 /* TripPlanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TripPlanViewController.storyboard; sourceTree = "<group>"; };
+		50B4E3182A0AA59A00FBA434 /* 98742-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "98742-loading.json"; sourceTree = "<group>"; };
 		50CEEDBA29F70DC9002548B5 /* TripPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanModel.swift; sourceTree = "<group>"; };
 		50D5FBB329EF214E0041ED71 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		50D5FBB629EF219B0041ED71 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				50B4E3182A0AA59A00FBA434 /* 98742-loading.json */,
 				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C188F902A06C80500820586 /* Model */,
 				50D5FBB229EF214E0041ED71 /* Alert */,
@@ -778,6 +781,7 @@
 				43BE0D3529E5E958001B5963 /* FlightTableViewCell.xib in Resources */,
 				43BE0D2B29E5CA74001B5963 /* TicketsViewController.storyboard in Resources */,
 				0C111C2A29BACD9000A0DCF4 /* FlightViewController.storyboard in Resources */,
+				50B4E3192A0AA59A00FBA434 /* 98742-loading.json in Resources */,
 				0C111C2529BACD9000A0DCF4 /* RestaurantViewController.storyboard in Resources */,
 				0C111C2829BACD9000A0DCF4 /* HotelViewController.storyboard in Resources */,
 				0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */,

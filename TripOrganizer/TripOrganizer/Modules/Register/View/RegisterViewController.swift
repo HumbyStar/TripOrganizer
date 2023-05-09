@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class RegisterViewController: UIViewController {
     
@@ -22,6 +23,8 @@ class RegisterViewController: UIViewController {
     
     private var alert: Alert?
     private let viewModel = RegisterViewModel()
+    
+    private let loadingAnimationView: LottieAnimationView = LottieAnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +88,15 @@ class RegisterViewController: UIViewController {
         configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: "Confirmar Senha")
     }
     
+    private func configLoadingAnimation() {
+        loadingAnimationView.animation = LottieAnimation.named("98742-loading")
+        loadingAnimationView.frame = view.bounds
+        loadingAnimationView.backgroundColor = .white
+        loadingAnimationView.contentMode = .scaleAspectFit
+        loadingAnimationView.loopMode = .playOnce
+        loadingAnimationView.play()
+        self.view.addSubview(loadingAnimationView)
+    }
     
     
     @IBAction func tapToShowPassword(_ sender: Any) {
@@ -114,7 +126,11 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: "TripOrganizer", message: "Cadastro efetuado com sucesso!", completion: {
-            self.navigationController?.popToRootViewController(animated: true)
+            self.configLoadingAnimation()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         })
     }
     
