@@ -315,8 +315,7 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
-				50A7F15E2A0ABFDA007A0431 /* 103343-airplane-loader-animation.json */,
-				50B4E3182A0AA59A00FBA434 /* 98742-loading.json */,
+				50A7F1602A0AC426007A0431 /* Animations */,
 				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C188F902A06C80500820586 /* Model */,
 				50D5FBB229EF214E0041ED71 /* Alert */,
@@ -454,6 +453,15 @@
 				509DCC0729F6FC0C002F04B0 /* HomeTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		50A7F1602A0AC426007A0431 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				50A7F15E2A0ABFDA007A0431 /* 103343-airplane-loader-animation.json */,
+				50B4E3182A0AA59A00FBA434 /* 98742-loading.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		50D5FBB229EF214E0041ED71 /* Alert */ = {

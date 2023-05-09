@@ -124,14 +124,21 @@ class RegisterViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    private func removeLoadingAnimation() {
+        loadingAnimationView.removeFromSuperview()
+    }
+    
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "TripOrganizer", message: "Cadastro efetuado com sucesso!", completion: {
-            self.configLoadingAnimation()
+        
+        self.configLoadingAnimation()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.removeLoadingAnimation()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.alert?.createAlert(title: "TripOrganizer", message: "Cadastro efetuado com sucesso!", completion: {
                 self.navigationController?.popToRootViewController(animated: true)
-            }
-        })
+            })
+        }
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
