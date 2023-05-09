@@ -43,7 +43,9 @@ class FlightViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.present(viewController ?? UIViewController(), animated: true)
+            self.removeLoadingAnimation()
         }
+        
     }
     
     private func configLoadingAnimation() {
@@ -55,6 +57,10 @@ class FlightViewController: UIViewController {
         loadingAnimationView.loopMode = .playOnce
         loadingAnimationView.play()
         self.view.addSubview(loadingAnimationView)
+    }
+    
+    private func removeLoadingAnimation() {
+        loadingAnimationView.removeFromSuperview()
     }
     
     private func configElements() {
