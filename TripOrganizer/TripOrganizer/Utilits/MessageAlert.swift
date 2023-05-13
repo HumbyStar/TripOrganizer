@@ -19,6 +19,7 @@ enum MessageAlert: String {
     case saveDataProfile = "data_changed_successfully"
     case addSuccessFlight = "flight_added_successfully"
     case emailOrPaswordError = "invalid_email_password"
+    case registerDataInvalid = "error_register_tap"
     
     var localized: String {
         return NSLocalizedString(self.rawValue, comment: "")

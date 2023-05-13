@@ -123,7 +123,7 @@ class RegisterViewController: UIViewController {
                 self.navigationController?.popToRootViewController(animated: true)
             })
         } else {
-            alert?.createAlert(title:MessageAlert.titleError.localized, message: "Os dados estão vazios ou inválidos")
+            alert?.createAlert(title:MessageAlert.titleError.localized, message: MessageAlert.registerDataInvalid.localized)
         }
     }
     

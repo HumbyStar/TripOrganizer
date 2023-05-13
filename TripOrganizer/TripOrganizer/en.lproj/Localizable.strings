@@ -25,6 +25,7 @@
 "invalid_email_password" = "Os campos não pode estar vazios e os dados precisam ser válidos";
 "data_changed_successfully" = "Dados alterados com sucesso!";
 "flight_added_successfully" = "Voo adicionado com sucesso à sua lista de viagem!";
+"error_register_tap" = "Os dados estão vazios ou inválidos";
 
 "title_button_forgetPassword" = "Esqueci minha senha";
 "title_button_create_account" = "Não tenho uma conta";
