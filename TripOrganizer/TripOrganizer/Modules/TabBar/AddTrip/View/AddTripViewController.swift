@@ -57,7 +57,7 @@ class AddTripViewController: UIViewController {
     }
     
     private func configBackButton() {
-        backButton.setImage(UIImage(systemName: "arrowshape.turn.up.left.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backButton.setImage(UIImage(systemName: ImagesAssets.goBack.rawValue)?.withRenderingMode(.alwaysTemplate), for: .normal)
         backButton.tintColor = .white
     }
     

@@ -17,6 +17,5 @@ enum messageAlert: String {
     case titleError = "Erro"
     case messageError = "O email digitado não é valido"
     case saveDataProfile = "Dados alterados com sucesso!"
-    case square = "square.fill"
-    case squareCheck = "checkmark.square.fill"
+    
 }

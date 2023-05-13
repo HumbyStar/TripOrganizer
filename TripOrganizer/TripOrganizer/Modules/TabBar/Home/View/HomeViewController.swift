@@ -66,12 +66,12 @@ class HomeViewController: UIViewController {
          switch imageView {
          case tappedTicketView:
              switch ticketImageView.image {
-             case UIImage(systemName: messageAlert.square.rawValue):
-                 ticketImageView.image = UIImage(systemName: messageAlert.squareCheck.rawValue)
+             case UIImage(systemName: ImagesAssets.square.rawValue):
+                 ticketImageView.image = UIImage(systemName: ImagesAssets.squareCheck.rawValue)
                 progressBar += 0.25
                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: messageAlert.squareCheck.rawValue):
-                 ticketImageView.image = UIImage(systemName: messageAlert.square.rawValue)
+             case UIImage(systemName: ImagesAssets.squareCheck.rawValue):
+                 ticketImageView.image = UIImage(systemName: ImagesAssets.square.rawValue)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -79,12 +79,12 @@ class HomeViewController: UIViewController {
              }
          case tappedHotelView:
              switch hotelImageView.image {
-             case UIImage(systemName: messageAlert.square.rawValue):
-                 hotelImageView.image = UIImage(systemName: messageAlert.squareCheck.rawValue)
+             case UIImage(systemName: ImagesAssets.square.rawValue):
+                 hotelImageView.image = UIImage(systemName: ImagesAssets.squareCheck.rawValue)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: messageAlert.squareCheck.rawValue):
-                 hotelImageView.image = UIImage(systemName: messageAlert.square.rawValue)
+             case UIImage(systemName: ImagesAssets.squareCheck.rawValue):
+                 hotelImageView.image = UIImage(systemName: ImagesAssets.square.rawValue)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -93,12 +93,12 @@ class HomeViewController: UIViewController {
              
          case tappedRestaurantView:
              switch restaurantImageView.image {
-             case UIImage(systemName: messageAlert.square.rawValue):
-                 restaurantImageView.image = UIImage(systemName: messageAlert.squareCheck.rawValue)
+             case UIImage(systemName: ImagesAssets.square.rawValue):
+                 restaurantImageView.image = UIImage(systemName: ImagesAssets.squareCheck.rawValue)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: messageAlert.squareCheck.rawValue):
-                 restaurantImageView.image = UIImage(systemName: messageAlert.square.rawValue)
+             case UIImage(systemName: ImagesAssets.squareCheck.rawValue):
+                 restaurantImageView.image = UIImage(systemName: ImagesAssets.square.rawValue)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -107,12 +107,12 @@ class HomeViewController: UIViewController {
              
          case tappedAttractionView:
              switch attractionImageView.image {
-             case UIImage(systemName: messageAlert.square.rawValue):
-                 attractionImageView.image = UIImage(systemName: messageAlert.squareCheck.rawValue)
+             case UIImage(systemName: ImagesAssets.square.rawValue):
+                 attractionImageView.image = UIImage(systemName: ImagesAssets.squareCheck.rawValue)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: messageAlert.squareCheck.rawValue):
-                 attractionImageView.image = UIImage(systemName: messageAlert.square.rawValue)
+             case UIImage(systemName: ImagesAssets.squareCheck.rawValue):
+                 attractionImageView.image = UIImage(systemName: ImagesAssets.square.rawValue)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:

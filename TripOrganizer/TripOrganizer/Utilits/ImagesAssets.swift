@@ -15,5 +15,7 @@ enum ImagesAssets: String {
     case hotel = "bed.double.fill"
     case restaurant = "fork.knife"
     case attraction = "heart.fill"
-    
+    case square = "square.fill"
+    case squareCheck = "checkmark.square.fill"
+    case goBack = "arrowshape.turn.up.left.fill"
 }
