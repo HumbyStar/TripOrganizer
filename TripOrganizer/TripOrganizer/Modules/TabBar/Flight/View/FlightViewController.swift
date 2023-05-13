@@ -12,6 +12,7 @@ class FlightViewController: UIViewController {
     
     var viewModel: FlightViewModel = FlightViewModel()
     
+    private let animationView = UIView()
     private let loadingAnimationView: LottieAnimationView = LottieAnimationView()
     
     @IBOutlet weak var chooseADestinationLabel: UILabel!
@@ -49,18 +50,23 @@ class FlightViewController: UIViewController {
     }
     
     private func configLoadingAnimation() {
+        animationView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
+        animationView.frame = UIScreen.main.bounds
+        animationView.center = view.center
         loadingAnimationView.animation = LottieAnimation.named("103343-airplane-loader-animation.json")
         loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+//        loadingAnimationView.frame = view.bounds
         loadingAnimationView.center = view.center
         loadingAnimationView.backgroundColor = .clear
         loadingAnimationView.contentMode = .scaleAspectFit
         loadingAnimationView.loopMode = .playOnce
         loadingAnimationView.play()
-        self.view.addSubview(loadingAnimationView)
+        animationView.addSubview(loadingAnimationView)
+        self.view.addSubview(animationView)
     }
     
     private func removeLoadingAnimation() {
-        loadingAnimationView.removeFromSuperview()
+        animationView.removeFromSuperview()
     }
     
     private func configElements() {
