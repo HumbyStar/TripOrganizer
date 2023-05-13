@@ -19,7 +19,7 @@ class RegisterViewModel {
     }
     
     func validateEmail(_ email: String) -> Bool {
-        if email.isEmpty || ((!email.contains("@")) || (!email.contains(".com"))) {
+        if email.isEmpty || ((!email.contains(contains.aroba.rawValue)) || (!email.contains(contains.ponto.rawValue))) {
             return true
         } else {
             return false

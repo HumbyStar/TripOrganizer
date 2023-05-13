@@ -91,7 +91,7 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: messageAlert.saveDataProfile.rawValue, completion: {
+        alert?.createAlert(title: messageAlert.titleEmpty.rawValue, message: messageAlert.saveDataProfile.rawValue, completion: {
             self.navigationController?.popViewController(animated: true)
         })
         

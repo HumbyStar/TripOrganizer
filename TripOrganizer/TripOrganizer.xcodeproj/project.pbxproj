@@ -76,6 +76,7 @@
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
 		C4B9A0BA2A0FD42B005A7AFF /* PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */; };
 		C4B9A0BD2A0FDB19005A7AFF /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */; };
+		C4B9A0C12A0FF049005A7AFF /* containsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0C02A0FF049005A7AFF /* containsTextField.swift */; };
 		C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */; };
 		C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -154,6 +155,7 @@
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolder.swift; sourceTree = "<group>"; };
 		C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
+		C4B9A0C02A0FF049005A7AFF /* containsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = containsTextField.swift; sourceTree = "<group>"; };
 		C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanViewModel.swift; sourceTree = "<group>"; };
 		C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -341,8 +343,8 @@
 		0C61EB0429BBDFD000F54F47 /* RecoverPassword */ = {
 			isa = PBXGroup;
 			children = (
-				886E229B29EDB1DD00E70FF7 /* ViewModel */,
 				C43C4B1729EC5E300013D509 /* View */,
+				886E229B29EDB1DD00E70FF7 /* ViewModel */,
 			);
 			path = RecoverPassword;
 			sourceTree = "<group>";
@@ -396,8 +398,8 @@
 		43780C8829D5C8A9002072BF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */,
 				43780C8A29D5C8A9002072BF /* MenuCollectionViewCell.xib */,
+				43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */,
 			);
 			name = Cell;
 			path = TripOrganizer/Modules/TabBar/Restaurant/Cell;
@@ -655,6 +657,7 @@
 				0C5058292A0FBF720069A884 /* ImagesAssets.swift */,
 				C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */,
 				C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */,
+				C4B9A0C02A0FF049005A7AFF /* containsTextField.swift */,
 			);
 			path = Utilits;
 			sourceTree = "<group>";
@@ -888,6 +891,7 @@
 				886E229D29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift in Sources */,
 				43780C9129D5C943002072BF /* HotelCollectionViewCell.swift in Sources */,
 				C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */,
+				C4B9A0C12A0FF049005A7AFF /* containsTextField.swift in Sources */,
 				8814475F29F036F000AC429A /* AttractionViewModel.swift in Sources */,
 				0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */,
 				5050BCB629B8D9050019BB69 /* RegisterViewController.swift in Sources */,

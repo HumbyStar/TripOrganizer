@@ -8,6 +8,11 @@
 import UIKit
 import MapKit
 
+enum messageAlertHotel: String {
+    case title = ""
+    case addHotel = "Hotel adicionado com sucesso a sua lista de viagem!"
+}
+
 class HotelViewController: UIViewController {
     
     public var viewModel: HotelViewModel = HotelViewModel()
@@ -60,7 +65,7 @@ class HotelViewController: UIViewController {
     }
     
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: "Hotel adicionado com sucesso a sua lista de viagem!")
+        alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -8,6 +8,7 @@
 import Foundation
 
 enum messageAlert: String {
+    case titleEmpty = "" 
     case title = "TripOrganizer"
     case message = "Cadastro Efetuado com sucesso!"
     case titleSucess = "Sucesso"

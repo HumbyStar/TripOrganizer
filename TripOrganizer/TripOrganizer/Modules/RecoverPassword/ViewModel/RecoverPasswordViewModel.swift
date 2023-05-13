@@ -14,6 +14,6 @@ class RecoverPasswordViewModel {
     let messageError = messageAlert.messageError.rawValue
     
     func validateConfirmEmail(_ email: String) -> Bool {
-        return email.isEmpty || (!email.contains("@") || !email.contains(".com"))
+        return email.isEmpty || (!email.contains(contains.aroba.rawValue) || !email.contains(contains.ponto.rawValue))
     }
 }

@@ -11,7 +11,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var menuItemImageView: UIImageView!
     
-    static let identifier: String = "MenuCollectionViewCell"
+    static let identifier: String = String(describing: MenuCollectionViewCell.self)
     
     static func nib() -> UINib {
         return UINib.init(nibName: identifier, bundle: nil)

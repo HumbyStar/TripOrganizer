@@ -12,8 +12,8 @@ enum progressBarImage: String {
     case squareCheck = "checkmark.square.fill"
 }
 
-enum emptyText {
-    
+enum emptyText: String {
+    case empty = "Não há viagens para exibir, crie uma nova viagem clicando no botão acima."
 }
 
 class HomeViewController: UIViewController {
@@ -159,7 +159,7 @@ class HomeViewController: UIViewController {
     
     private func emptyTableViewLabel() {
         emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: homeTableView.bounds.size.width, height: homeTableView.bounds.size.height))
-        emptyLabel.text = "Não há viagens para exibir, crie uma nova viagem clicando no botão acima."
+        emptyLabel.text = emptyText.empty.rawValue
         emptyLabel.textColor = UIColor.gray
         emptyLabel.textAlignment = .center
         homeTableView.backgroundView = emptyLabel
