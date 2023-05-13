@@ -582,8 +582,8 @@
 		C43C4B2829EC62810013D509 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D2829E5CA6A001B5963 /* TicketsViewController.swift */,
 				43BE0D2A29E5CA74001B5963 /* TicketsViewController.storyboard */,
+				43BE0D2829E5CA6A001B5963 /* TicketsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

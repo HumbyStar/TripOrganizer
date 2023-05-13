@@ -17,5 +17,5 @@ enum messageAlert: String {
     case titleError = "Erro"
     case messageError = "O email digitado não é valido"
     case saveDataProfile = "Dados alterados com sucesso!"
-    
+    case addSucessFlight = "Voo adicionado com sucesso a sua lista de viagem!"
 }
