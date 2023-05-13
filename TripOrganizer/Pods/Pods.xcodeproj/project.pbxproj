@@ -133,7 +133,6 @@
 		79BA015FDFCF437C46817514DCAD9040 /* DotLottieAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C2E9458901F1EB5D87F6F8279B612D /* DotLottieAnimation.swift */; };
 		79EAAB18931D49567C8B31C02C221E47 /* ImageCompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7336F7711318080696E1B6DE6890AA51 /* ImageCompositionLayer.swift */; };
 		7A330F14FB2D0F85B0CA184988539CE0 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D47C20944E91B6BE7D26856AB82849 /* Rectangle.swift */; };
-		7A7B2CF0984B4AB695E82204B6F31382 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EE7213A1DED9ED59D95869B147D3C998 /* README.md */; };
 		7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AB5EA327CBF5BC3560D73269229478 /* IQNSArray+Sort.swift */; };
 		7B29A449F0B8E0B85E2EEB1AA3C3AB17 /* CompositionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC841AA0CAADA95D6140E8C4D88C3C /* CompositionLayer.swift */; };
 		7E0A977922E5488DA400BE5111D7658E /* SizeValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F0799F41834B24E19E0C80079AF19 /* SizeValueProvider.swift */; };
@@ -167,7 +166,7 @@
 		9B908E14E4B7B87BD1A121734B90E5CA /* Archive+BackingConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FB68E9799C10F4B58394BDF3A411B7 /* Archive+BackingConfiguration.swift */; };
 		9C63B8970E3E9F5482B970C302FF7218 /* StrokeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE8C5F9969F4663F685131545320B0 /* StrokeRenderer.swift */; };
 		9CEF669C79739B104AC3C607611D5FB2 /* Pods-TripOrganizer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7711655E35FBC2C3DFCA6EB34CEF34BC /* Pods-TripOrganizer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D0247698460C41BE8021E613BBA2364 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */; };
+		9D0247698460C41BE8021E613BBA2364 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9E1E83BE2FCE3247D6E774BCA3FD917E /* InfiniteOpaqueAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2697AC7FB0F66410A00EB3A7E39EBDA5 /* InfiniteOpaqueAnimationLayer.swift */; };
 		A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E7810C1E398CC3AD330CF4263A641 /* IQKeyboardManager+UIKeyboardNotification.swift */; };
 		A522A29943A319FF42D4BF4B38638DF7 /* CompatibilityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479D7799EFF50AAE52553CDD82DD9A36 /* CompatibilityTracker.swift */; };
@@ -1281,7 +1280,6 @@
 				304E1903431AD7624D27EBA8F613F1D1 /* PreCompLayer.swift in Sources */,
 				DD92310954B5A5C6FCB890487F0F2707 /* PreCompLayerModel.swift in Sources */,
 				0158C295477EB1FD0845CE16456CCF2C /* PreCompositionLayer.swift in Sources */,
-				7A7B2CF0984B4AB695E82204B6F31382 /* README.md in Sources */,
 				7A330F14FB2D0F85B0CA184988539CE0 /* Rectangle.swift in Sources */,
 				E74B197353488146EF26B63D1DD98806 /* RectangleAnimation.swift in Sources */,
 				2588CE3E69AA5B90795D56C0CF690169 /* RectNode.swift in Sources */,
