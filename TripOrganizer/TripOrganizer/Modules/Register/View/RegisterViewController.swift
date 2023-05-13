@@ -79,13 +79,11 @@ class RegisterViewController: UIViewController {
     }
     
     private func configTextField() {
-        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: "Nome Completo")
-        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: "E-mail", keyboardType: .emailAddress)
-        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: "Senha")
-        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: "Confirmar Senha")
+        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: placeHolders.name.rawValue)
+        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: placeHolders.email.rawValue, keyboardType: .emailAddress)
+        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: placeHolders.password.rawValue)
+        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: placeHolders.confirPassword.rawValue)
     }
-    
-    
     
     @IBAction func tapToShowPassword(_ sender: Any) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry

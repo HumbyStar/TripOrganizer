@@ -74,6 +74,7 @@
 		C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
 		C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */; };
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
+		C4B9A0BA2A0FD42B005A7AFF /* PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */; };
 		C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */; };
 		C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -150,6 +151,7 @@
 		C43C4B4629ED9B950013D509 /* UIColor .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor .swift"; sourceTree = "<group>"; };
 		C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolder.swift; sourceTree = "<group>"; };
 		C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanViewModel.swift; sourceTree = "<group>"; };
 		C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -633,6 +635,7 @@
 				C43C4B4629ED9B950013D509 /* UIColor .swift */,
 				0C5058272A0FB8FB0069A884 /* RoutesView.swift */,
 				0C5058292A0FBF720069A884 /* ImagesAssets.swift */,
+				C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -869,6 +872,7 @@
 				8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
 				8814476D29F0CEC900AC429A /* TicketsViewModel.swift in Sources */,
+				C4B9A0BA2A0FD42B005A7AFF /* PlaceHolder.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				5084C69329F9A59600858135 /* LaunchScreenViewController.swift in Sources */,
 				886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */,
