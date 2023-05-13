@@ -8,10 +8,10 @@
 import UIKit
 
 class RecoverPasswordViewModel {
-    let titleSucess = "Sucesso"
-    let messageSuccess = "Um Email de instrução foi enviado para sua caixa de entrada"
-    let titleError = "Erro"
-    let messageError = "O email digitado não é valido"
+    let titleSucess = messageAlert.titleSucess.rawValue
+    let messageSuccess = messageAlert.messageSuccess.rawValue
+    let titleError = messageAlert.titleError.rawValue
+    let messageError = messageAlert.messageError.rawValue
     
     func validateConfirmEmail(_ email: String) -> Bool {
         return email.isEmpty || (!email.contains("@") || !email.contains(".com"))

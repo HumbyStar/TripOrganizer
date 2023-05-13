@@ -75,6 +75,7 @@
 		C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */; };
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
 		C4B9A0BA2A0FD42B005A7AFF /* PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */; };
+		C4B9A0BD2A0FDB19005A7AFF /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */; };
 		C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */; };
 		C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -152,6 +153,7 @@
 		C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolder.swift; sourceTree = "<group>"; };
+		C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanViewModel.swift; sourceTree = "<group>"; };
 		C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,10 +319,10 @@
 		0C36EC4029B6621C009550C8 /* TripOrganizer */ = {
 			isa = PBXGroup;
 			children = (
+				C4B9A0BB2A0FDA09005A7AFF /* Utilits */,
 				0C61EB0629BBE10000F54F47 /* Resources */,
 				0C188F902A06C80500820586 /* Model */,
 				50D5FBB229EF214E0041ED71 /* Alert */,
-				C43C4B4529ED9B7D0013D509 /* Extension */,
 				0C188F8D2A06C4ED00820586 /* Modules */,
 				0C36EC4F29B6621E009550C8 /* Info.plist */,
 			);
@@ -629,17 +631,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C43C4B4529ED9B7D0013D509 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				C43C4B4629ED9B950013D509 /* UIColor .swift */,
-				0C5058272A0FB8FB0069A884 /* RoutesView.swift */,
-				0C5058292A0FBF720069A884 /* ImagesAssets.swift */,
-				C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		C43C4B4C29EDB9390013D509 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,6 +645,18 @@
 				C4619CDD29F02ACC00530196 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C4B9A0BB2A0FDA09005A7AFF /* Utilits */ = {
+			isa = PBXGroup;
+			children = (
+				C43C4B4629ED9B950013D509 /* UIColor .swift */,
+				0C5058272A0FB8FB0069A884 /* RoutesView.swift */,
+				0C5058292A0FBF720069A884 /* ImagesAssets.swift */,
+				C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */,
+				C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */,
+			);
+			path = Utilits;
 			sourceTree = "<group>";
 		};
 		C4CC787C29F851CE0055DC8A /* TripPlan */ = {
@@ -847,6 +850,7 @@
 				C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */,
 				509DCC0829F6FC0C002F04B0 /* HomeTableViewCell.swift in Sources */,
 				886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */,
+				C4B9A0BD2A0FDB19005A7AFF /* MessageAlert.swift in Sources */,
 				43780CA029D5C9B7002072BF /* AttractionCell.swift in Sources */,
 				509DCC1229F6FD5B002F04B0 /* AddTripViewController.swift in Sources */,
 				0C111C2B29BACD9000A0DCF4 /* FlightViewController.swift in Sources */,

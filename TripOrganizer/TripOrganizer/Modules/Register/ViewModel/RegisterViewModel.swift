@@ -9,8 +9,8 @@ import Foundation
 
 class RegisterViewModel {
     
-    let title = "TripOrganizer"
-    let message = "Cadastro Efetuado com sucesso!"
+    let title = messageAlert.title.rawValue
+    let message = messageAlert.message.rawValue
     
     private var passwordData = ""
     
