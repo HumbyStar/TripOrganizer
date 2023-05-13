@@ -12,6 +12,7 @@ class Routes {
     static let RegisterViewController = "RegisterViewController"
     static let TabBarController = "TabBarController"
     static let Main = "Main"
+    static let profileViewController = "ProfileViewController"
 }
 
 
