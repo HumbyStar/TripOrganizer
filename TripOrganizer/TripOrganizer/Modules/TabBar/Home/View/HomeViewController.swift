@@ -12,6 +12,10 @@ enum progressBarImage: String {
     case squareCheck = "checkmark.square.fill"
 }
 
+enum emptyText {
+    
+}
+
 class HomeViewController: UIViewController {
     
     @IBOutlet var appNameLabel: UILabel!
@@ -186,12 +190,12 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func perfilButtonPressed(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "ProfileViewController", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController
+        let vc = UIStoryboard(name: Routes.profileViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.profileViewController) as? ProfileViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func addTripButtonPressed(_ sender: UIButton) {
-        let vc: AddTripViewController? = UIStoryboard(name: "AddTripViewController", bundle: nil).instantiateViewController(withIdentifier: "AddTripViewController") as? AddTripViewController
+        let vc: AddTripViewController? = UIStoryboard(name: Routes.addTripViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.addTripViewController) as? AddTripViewController
         vc?.delegate(delegate: self)
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
@@ -218,7 +222,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc: TripPlanViewController? = UIStoryboard(name: "TripPlanViewController", bundle: nil).instantiateViewController(withIdentifier: "TripPlanViewController") as? TripPlanViewController
+        let vc: TripPlanViewController? = UIStoryboard(name: Routes.tripPlanViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.tripPlanViewController) as? TripPlanViewController
         vc?.placeNameReceived = viewModel.getTripList(index: indexPath.row).tripName
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }

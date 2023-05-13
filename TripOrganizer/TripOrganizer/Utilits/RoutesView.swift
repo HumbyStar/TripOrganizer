@@ -13,6 +13,8 @@ class Routes {
     static let TabBarController = "TabBarController"
     static let Main = "Main"
     static let profileViewController = "ProfileViewController"
+    static let addTripViewController = "AddTripViewController"
+    static let tripPlanViewController = "TripPlanViewController"
 }
 
 
