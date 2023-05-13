@@ -55,7 +55,6 @@ class FlightViewController: UIViewController {
         animationView.center = view.center
         loadingAnimationView.animation = LottieAnimation.named("103343-airplane-loader-animation.json")
         loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-//        loadingAnimationView.frame = view.bounds
         loadingAnimationView.center = view.center
         loadingAnimationView.backgroundColor = .clear
         loadingAnimationView.contentMode = .scaleAspectFit
