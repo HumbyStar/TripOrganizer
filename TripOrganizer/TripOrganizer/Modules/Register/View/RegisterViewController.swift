@@ -48,7 +48,6 @@ class RegisterViewController: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.backgroundColor = UIColor.logoGreen
         registerButton.setTitleColor(.white, for: .normal)
-        registerButton.isEnabled = false
         registerButton.setTitle(ButtonTitle.register.localized, for: .normal)
         alreadyHaveAccountButton.setTitle(ButtonTitle.alreadyHaveAccount.localized, for: .normal)
     }
@@ -112,9 +111,20 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title:MessageAlert.title.localized, message: MessageAlert.message.localized, completion: {
-            self.navigationController?.popToRootViewController(animated: true)
-        })
+        
+        guard let nameValue = nameTextField.text,
+              let emailValue = emailTextField.text,
+              let passwordValue = passwordTextField.text,
+              let confirmPasswordValue = confirmPasswordTextField.text
+        else {return}
+        
+        if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
+            alert?.createAlert(title:MessageAlert.title.localized, message: MessageAlert.message.localized, completion: {
+                self.navigationController?.popToRootViewController(animated: true)
+            })
+        } else {
+            alert?.createAlert(title:MessageAlert.titleError.localized, message: "Os dados estão vazios ou inválidos")
+        }
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
@@ -157,15 +167,15 @@ extension RegisterViewController: UITextFieldDelegate {
             if viewModel.validateName(nameValue) {
                 textField.layer.borderColor = UIColor.red.cgColor
             } else {
-                textField.layer.borderWidth = 1
+                textField.layer.borderWidth = 2
                 textField.layer.borderColor = UIColor.lightGray.cgColor
             }
-           
+            
         case emailTextField:
             if viewModel.validateEmail(emailValue) {
                 textField.layer.borderColor = UIColor.red.cgColor
             } else {
-                textField.layer.borderWidth = 1
+                textField.layer.borderWidth = 2
                 textField.layer.borderColor = UIColor.lightGray.cgColor
             }
             
@@ -173,23 +183,22 @@ extension RegisterViewController: UITextFieldDelegate {
             if viewModel.validatePassword(passwordValue) {
                 passwordView.layer.borderColor = UIColor.red.cgColor
             } else {
-                passwordView.layer.borderWidth = 1
+                passwordView.layer.borderWidth = 2
                 passwordView.layer.borderColor = UIColor.gray.cgColor
+            }
+            if viewModel.validateConfirmPassword(confirmPasswordValue) {
+                confirmPasswordView.layer.borderColor = UIColor.red.cgColor
+            } else {
+                confirmPasswordView.layer.borderColor = UIColor.gray.cgColor
             }
             
         default:
             if viewModel.validateConfirmPassword(confirmPasswordValue) {
                 confirmPasswordView.layer.borderColor = UIColor.red.cgColor
             } else {
-                confirmPasswordView.layer.borderWidth = 1
+                confirmPasswordView.layer.borderWidth = 2
                 confirmPasswordView.layer.borderColor = UIColor.gray.cgColor
             }
-        }
-    
-        if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
-            registerButton.isEnabled = true
-        } else {
-            registerButton.isEnabled = false
         }
     }
     
