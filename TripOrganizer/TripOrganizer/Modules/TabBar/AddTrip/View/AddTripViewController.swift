@@ -11,6 +11,8 @@ protocol AddTripviewControllerDelegate: AnyObject {
     func sendTrip(trip: AddTripModel)
 }
 
+
+
 class AddTripViewController: UIViewController {
     
     var viewModel: AddTripViewModel = AddTripViewModel()
@@ -87,7 +89,7 @@ class AddTripViewController: UIViewController {
             self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
         } else {
-            self.alert?.createAlert(title: "Trip Organizer", message: "Sua viagem deve conter um nome!")
+            self.alert?.createAlert(title: messageAlert.titleEmpty.rawValue, message: messageAlert.messageEmpty.rawValue)
         }
     }
 }
