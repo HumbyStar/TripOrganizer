@@ -332,8 +332,8 @@
 		0C3AD1EC29C3545200E7FE73 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
-				50D5FBB529EF219B0041ED71 /* ViewModel */,
 				C43C4B3729EC664A0013D509 /* View */,
+				50D5FBB529EF219B0041ED71 /* ViewModel */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";

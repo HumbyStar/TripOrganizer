@@ -132,11 +132,11 @@ class HomeViewController: UIViewController {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name("ProfileImageSelected"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name(ProfileImageSelected.profileImage.rawValue), object: nil)
     }
     
     private func changeProfileImageNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(profileImageSelected(_:)), name: Notification.Name("ProfileImageSelected"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(profileImageSelected(_:)), name: Notification.Name(ProfileImageSelected.profileImage.rawValue), object: nil)
     }
     
     private func configProgressBar() {

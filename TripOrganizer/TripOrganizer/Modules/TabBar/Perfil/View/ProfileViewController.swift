@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum ProfileImageSelected: String {
+    case profileImage = "ProfileImageSelected"
+}
+
 class ProfileViewController: UIViewController {
     
     @IBOutlet var nameLabel: UILabel!
@@ -87,7 +91,7 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: "Dados alterados com sucesso !", completion: {
+        alert?.createAlert(title: "", message: messageAlert.saveDataProfile.rawValue, completion: {
             self.navigationController?.popViewController(animated: true)
         })
         
@@ -144,7 +148,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         profileImageView.image = info[.originalImage] as? UIImage
         if let selectedImage = info[.originalImage] as? UIImage {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ProfileImageSelected") , object: selectedImage)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: ProfileImageSelected.profileImage.rawValue) , object: selectedImage)
         }
         self.dismiss(animated: true, completion: nil)
     }
