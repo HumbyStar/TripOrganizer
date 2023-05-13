@@ -42,11 +42,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9DQ-kW-EXt"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Registrar">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="..."/>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="c3y-Cx-fIK"/>
                                 </connections>
@@ -56,11 +55,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29.5" id="3MO-o0-kMr"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                 <color key="tintColor" red="0.87058818339999999" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Ja possui uma conta? Entre aqui">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="..."/>
                                 <connections>
                                     <action selector="alreadyHaveAccountPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UTH-P3-A2H"/>
                                 </connections>

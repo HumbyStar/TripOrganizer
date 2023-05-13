@@ -7,10 +7,6 @@
 
 import UIKit
 
-enum textFieldEmpty: String {
-    case email = ""
-}
-
 class ViewController: UIViewController {
     
     @IBOutlet var appLogoImageView: UIImageView!
@@ -18,19 +14,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginWithGoogleButton: UIButton!
-    @IBOutlet weak var loginWithIcloudButton: UIButton!
-    @IBOutlet var forgotPasswordButton: UIButton!
-    @IBOutlet var dontHaveAnAccountButton: UIButton!
+    @IBOutlet weak var loginWithAppleButton: UIButton!
+    @IBOutlet var recoverButton: UIButton!
+    @IBOutlet var registerButton: UIButton!
     @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var eyeButton: UIButton!
     
-    var isEyeOpen = false
+   
     var viewModel: LoginViewModel = LoginViewModel()
+    private var alert: Alert?
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configTextField()
@@ -39,27 +36,36 @@ class ViewController: UIViewController {
         
         emailTextField.text = "abc@gmail.com"
         passwordTextField.text = "123456"
+        alert = Alert(controller: self)
     }
     
     @IBAction func tapToRecoverPassword(_ sender: UIButton) {
-        let vc = UIStoryboard(name: Routes.RecoverViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.RecoverViewController) as? RecoverViewController
+        let vc = UIStoryboard(name: RoutesIdentifier.RecoverViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.RecoverViewController) as? RecoverViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 
     @IBAction func tapToRegister(_ sender: UIButton) {
-        let vc = UIStoryboard(name: Routes.RegisterViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.RegisterViewController) as? RegisterViewController
+        let vc = UIStoryboard(name: RoutesIdentifier.RegisterViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.RegisterViewController) as? RegisterViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func tapToLogin(_ sender: Any) {
-        let vc = UIStoryboard(name: Routes.TabBarController, bundle: nil).instantiateViewController(withIdentifier: Routes.TabBarController) as? TabBarController
-        resetTextField()
-        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+        
+        let validateEmail = viewModel.validateEmail(emailTextField.text ?? "")
+        let validatePassword = viewModel.validatePassword(passwordTextField.text ?? "")
+        
+        if validateEmail && validatePassword {
+            let viewController = UIStoryboard(name: RoutesIdentifier.TabBarController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.TabBarController) as? TabBarController
+            resetTextField()
+            navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
+        } else {
+            alert?.createAlert(title: MessageAlert.titleError.localized, message: MessageAlert.emailOrPaswordError.localized)
+        }
+        
     }
     
     private func resetTextField() {
-        loginButton.isEnabled = false
-        emailTextField.text = textFieldEmpty.email.rawValue
+        emailTextField.text = ""
         passwordTextField.text = ""
     }
     
@@ -76,13 +82,19 @@ class ViewController: UIViewController {
     private func configButtons() {
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = 10
-        loginButton.isEnabled = false
+        loginButton.setTitle(ButtonTitle.loginSuccess.localized, for: .normal)
         loginWithGoogleButton.clipsToBounds = true
         loginWithGoogleButton.layer.cornerRadius = 10
-        loginWithIcloudButton.clipsToBounds = true
-        loginWithIcloudButton.layer.cornerRadius = 10
+        loginWithGoogleButton.setTitle(ButtonTitle.loginGoogle.localized, for: .normal)
+        loginWithAppleButton.clipsToBounds = true
+        loginWithAppleButton.layer.cornerRadius = 10
+        loginWithAppleButton.setTitle(ButtonTitle.loginApple.localized, for: .normal)
+        recoverButton.setTitle(ButtonTitle.forgetPassword.localized, for: .normal)
+        recoverButton.setTitleColor(.logoTextOrange, for: .normal)
+        registerButton.setTitle(ButtonTitle.createAccount.localized, for: .normal)
+        registerButton.setTitleColor(.logoTextOrange, for: .normal)
         configShadowButton(button: loginWithGoogleButton)
-        configShadowButton(button: loginWithIcloudButton)
+        configShadowButton(button: loginWithAppleButton)
         eyeButton.tintColor = .lightGray
         eyeButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
         
@@ -106,6 +118,8 @@ class ViewController: UIViewController {
         emailTextField.autocorrectionType = .no
         emailTextField.spellCheckingType = .no
         emailTextField.keyboardType = .emailAddress
+        emailTextField.placeholder = TextfieldPlaceholder.email.localized
+        passwordTextField.placeholder = TextfieldPlaceholder.password.localized
         passwordTextField.isSecureTextEntry = true
         passwordTextField.borderStyle = .none
         
@@ -121,14 +135,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tappedEyeButton(_ sender: UIButton) {
-        if isEyeOpen {
+        if viewModel.isEyeOpen {
             eyeButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
             passwordTextField.isSecureTextEntry = true
-            isEyeOpen = false
+            viewModel.isEyeOpen = false
         } else {
             eyeButton.setImage(UIImage(systemName: ImagesAssets.eyes.rawValue), for: .normal)
             passwordTextField.isSecureTextEntry = false
-            isEyeOpen = true
+            viewModel.isEyeOpen = true
         }
     }
 }
@@ -151,12 +165,6 @@ extension ViewController: UITextFieldDelegate {
         emailTextField.layer.borderColor = UIColor.lightGray.cgColor
         passwordView.layer.borderWidth = 2
         passwordView.layer.borderColor = UIColor.lightGray.cgColor
-        
-        if emailTextField.hasText && passwordTextField.hasText {
-            loginButton.isEnabled = true
-        } else {
-            loginButton.isEnabled = false
-        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

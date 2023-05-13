@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Routes {
+class RoutesIdentifier {
     static let RecoverViewController = "RecoverViewController"
     static let RegisterViewController = "RegisterViewController"
     static let TabBarController = "TabBarController"

@@ -55,7 +55,7 @@ extension TicketsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.getDidSelectRowAt(tableView: tableView, indexPath: indexPath)
-        alert?.createAlert(title: messageAlert.titleEmpty.rawValue, message: messageAlert.addSucessFlight.rawValue) { [weak self] in
+        alert?.createAlert(title: "", message: MessageAlert.addSuccessFlight.localized) { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         }
     }

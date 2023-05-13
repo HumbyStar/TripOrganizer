@@ -7,15 +7,20 @@
 
 import Foundation
 
-enum messageAlert: String {
-    case titleEmpty = "" 
-    case title = "TripOrganizer"
-    case messageEmpty = "Sua viagem deve conter um nome!"
-    case message = "Cadastro Efetuado com sucesso!"
-    case titleSucess = "Sucesso"
-    case messageSuccess = "Um Email de instrução foi enviado para sua caixa de entrada"
-    case titleError = "Erro"
-    case messageError = "O email digitado não é valido"
-    case saveDataProfile = "Dados alterados com sucesso!"
-    case addSucessFlight = "Voo adicionado com sucesso a sua lista de viagem!"
+enum MessageAlert: String {
+    case title = "title_success"
+    case titleConfirm = "confirm_title"
+    case tripEmpty = "trip_name_empty"
+    case message = "registration_success"
+    case titleSuccess = "success_title"
+    case messageSuccess = "instruction_email_sent"
+    case titleError = "error_title"
+    case messageError = "invalid_email"
+    case saveDataProfile = "data_changed_successfully"
+    case addSuccessFlight = "flight_added_successfully"
+    case emailOrPaswordError = "invalid_email_password"
+    
+    var localized: String {
+        return NSLocalizedString(self.rawValue, comment: "")
+    }
 }

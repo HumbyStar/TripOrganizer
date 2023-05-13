@@ -49,7 +49,8 @@ class RegisterViewController: UIViewController {
         registerButton.backgroundColor = UIColor.logoGreen
         registerButton.setTitleColor(.white, for: .normal)
         registerButton.isEnabled = false
-        alreadyHaveAccountButton.setTitleColor(.black,  for: .normal)
+        registerButton.setTitle(ButtonTitle.register.localized, for: .normal)
+        alreadyHaveAccountButton.setTitle(ButtonTitle.alreadyHaveAccount.localized, for: .normal)
     }
     
     private func configProtocols(){
@@ -79,10 +80,10 @@ class RegisterViewController: UIViewController {
     }
     
     private func configTextField() {
-        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: placeHolders.name.rawValue)
-        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: placeHolders.email.rawValue, keyboardType: .emailAddress)
-        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: placeHolders.password.rawValue)
-        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: placeHolders.confirPassword.rawValue)
+        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.name.localized)
+        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.email.localized, keyboardType: .emailAddress)
+        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.password.localized)
+        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.confirPassword.localized)
     }
     
     @IBAction func tapToShowPassword(_ sender: Any) {
@@ -111,7 +112,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: viewModel.title, message: viewModel.message, completion: {
+        alert?.createAlert(title:MessageAlert.title.localized, message: MessageAlert.message.localized, completion: {
             self.navigationController?.popToRootViewController(animated: true)
         })
     }

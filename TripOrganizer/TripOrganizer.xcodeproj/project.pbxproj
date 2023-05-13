@@ -28,8 +28,11 @@
 		0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */; };
 		0C3AD1E529C3524800E7FE73 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */; };
 		0C3AD1EE29C3546C00E7FE73 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AD1ED29C3546C00E7FE73 /* ProfileViewController.swift */; };
-		0C5058282A0FB8FB0069A884 /* RoutesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5058272A0FB8FB0069A884 /* RoutesView.swift */; };
+		0C5058282A0FB8FB0069A884 /* RoutesIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5058272A0FB8FB0069A884 /* RoutesIdentifier.swift */; };
 		0C50582A2A0FBF720069A884 /* ImagesAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5058292A0FBF720069A884 /* ImagesAssets.swift */; };
+		0C5058682A100EF10069A884 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C50586A2A100EF10069A884 /* Localizable.strings */; };
+		0C50586C2A1025630069A884 /* ButtonTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50586B2A1025630069A884 /* ButtonTitle.swift */; };
+		0C50586E2A1025F40069A884 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C50586D2A1025F40069A884 /* TextLabel.swift */; };
 		0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */; };
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		1627E546E75C9391F7D32CC0 /* Pods_TripOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B70FBC1E46219888EE81715 /* Pods_TripOrganizer.framework */; };
@@ -74,9 +77,9 @@
 		C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
 		C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */; };
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
-		C4B9A0BA2A0FD42B005A7AFF /* PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */; };
+		C4B9A0BA2A0FD42B005A7AFF /* TextfieldPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0B92A0FD42B005A7AFF /* TextfieldPlaceholder.swift */; };
 		C4B9A0BD2A0FDB19005A7AFF /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */; };
-		C4B9A0C12A0FF049005A7AFF /* containsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0C02A0FF049005A7AFF /* containsTextField.swift */; };
+		C4B9A0C12A0FF049005A7AFF /* SpecialCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B9A0C02A0FF049005A7AFF /* SpecialCharacters.swift */; };
 		C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */; };
 		C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -106,8 +109,11 @@
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileViewController.storyboard; path = TripOrganizer/Modules/TabBar/Perfil/View/ProfileViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C3AD1ED29C3546C00E7FE73 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0C5058272A0FB8FB0069A884 /* RoutesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesView.swift; sourceTree = "<group>"; };
+		0C5058272A0FB8FB0069A884 /* RoutesIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesIdentifier.swift; sourceTree = "<group>"; };
 		0C5058292A0FBF720069A884 /* ImagesAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAssets.swift; sourceTree = "<group>"; };
+		0C5058692A100EF10069A884 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0C50586B2A1025630069A884 /* ButtonTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitle.swift; sourceTree = "<group>"; };
+		0C50586D2A1025F40069A884 /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
 		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/Modules/RecoverPassword/View/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/Modules/RecoverPassword/View/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -153,9 +159,9 @@
 		C43C4B4629ED9B950013D509 /* UIColor .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor .swift"; sourceTree = "<group>"; };
 		C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolder.swift; sourceTree = "<group>"; };
+		C4B9A0B92A0FD42B005A7AFF /* TextfieldPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldPlaceholder.swift; sourceTree = "<group>"; };
 		C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
-		C4B9A0C02A0FF049005A7AFF /* containsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = containsTextField.swift; sourceTree = "<group>"; };
+		C4B9A0C02A0FF049005A7AFF /* SpecialCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialCharacters.swift; sourceTree = "<group>"; };
 		C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanViewModel.swift; sourceTree = "<group>"; };
 		C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -327,6 +333,7 @@
 				50D5FBB229EF214E0041ED71 /* Alert */,
 				0C188F8D2A06C4ED00820586 /* Modules */,
 				0C36EC4F29B6621E009550C8 /* Info.plist */,
+				0C50586A2A100EF10069A884 /* Localizable.strings */,
 			);
 			path = TripOrganizer;
 			sourceTree = "<group>";
@@ -653,11 +660,13 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B4629ED9B950013D509 /* UIColor .swift */,
-				0C5058272A0FB8FB0069A884 /* RoutesView.swift */,
+				0C5058272A0FB8FB0069A884 /* RoutesIdentifier.swift */,
 				0C5058292A0FBF720069A884 /* ImagesAssets.swift */,
-				C4B9A0B92A0FD42B005A7AFF /* PlaceHolder.swift */,
+				C4B9A0B92A0FD42B005A7AFF /* TextfieldPlaceholder.swift */,
 				C4B9A0BC2A0FDB19005A7AFF /* MessageAlert.swift */,
-				C4B9A0C02A0FF049005A7AFF /* containsTextField.swift */,
+				C4B9A0C02A0FF049005A7AFF /* SpecialCharacters.swift */,
+				0C50586B2A1025630069A884 /* ButtonTitle.swift */,
+				0C50586D2A1025F40069A884 /* TextLabel.swift */,
 			);
 			path = Utilits;
 			sourceTree = "<group>";
@@ -787,6 +796,7 @@
 				43780C9F29D5C9B7002072BF /* AttractionCell.xib in Resources */,
 				509DCC1829F6FD72002F04B0 /* TripPlanViewController.storyboard in Resources */,
 				509DCC0A29F6FC17002F04B0 /* HomeTableViewCell.xib in Resources */,
+				0C5058682A100EF10069A884 /* Localizable.strings in Resources */,
 				43780C8C29D5C8A9002072BF /* MenuCollectionViewCell.xib in Resources */,
 				5084C69529F9A5A000858135 /* LaunchScreenViewController.storyboard in Resources */,
 				0C111C2C29BACD9000A0DCF4 /* AttractionViewController.storyboard in Resources */,
@@ -849,7 +859,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C5058282A0FB8FB0069A884 /* RoutesView.swift in Sources */,
+				0C5058282A0FB8FB0069A884 /* RoutesIdentifier.swift in Sources */,
 				C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */,
 				509DCC0829F6FC0C002F04B0 /* HomeTableViewCell.swift in Sources */,
 				886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */,
@@ -878,8 +888,9 @@
 				8814476229F0371C00AC429A /* AttractionModel.swift in Sources */,
 				8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
+				0C50586C2A1025630069A884 /* ButtonTitle.swift in Sources */,
 				8814476D29F0CEC900AC429A /* TicketsViewModel.swift in Sources */,
-				C4B9A0BA2A0FD42B005A7AFF /* PlaceHolder.swift in Sources */,
+				C4B9A0BA2A0FD42B005A7AFF /* TextfieldPlaceholder.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				5084C69329F9A59600858135 /* LaunchScreenViewController.swift in Sources */,
 				886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */,
@@ -891,8 +902,9 @@
 				886E229D29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift in Sources */,
 				43780C9129D5C943002072BF /* HotelCollectionViewCell.swift in Sources */,
 				C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */,
-				C4B9A0C12A0FF049005A7AFF /* containsTextField.swift in Sources */,
+				C4B9A0C12A0FF049005A7AFF /* SpecialCharacters.swift in Sources */,
 				8814475F29F036F000AC429A /* AttractionViewModel.swift in Sources */,
+				0C50586E2A1025F40069A884 /* TextLabel.swift in Sources */,
 				0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */,
 				5050BCB629B8D9050019BB69 /* RegisterViewController.swift in Sources */,
 				43BE0D2E29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift in Sources */,
@@ -917,6 +929,14 @@
 				0C36EC4D29B6621E009550C8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0C50586A2A100EF10069A884 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C5058692A100EF10069A884 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

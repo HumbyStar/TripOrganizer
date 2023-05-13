@@ -44,7 +44,7 @@ class FlightViewController: UIViewController {
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
         
-        let viewController: TicketsViewController? = UIStoryboard(name: Routes.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.ticketsViewController) as? TicketsViewController
+        let viewController: TicketsViewController? = UIStoryboard(name: RoutesIdentifier.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.ticketsViewController) as? TicketsViewController
         viewController?.modalPresentationStyle = .automatic
         present(viewController ?? UIViewController(), animated: true)
         

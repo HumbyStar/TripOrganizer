@@ -9,9 +9,6 @@ import Foundation
 
 class RegisterViewModel {
     
-    let title = messageAlert.title.rawValue
-    let message = messageAlert.message.rawValue
-    
     private var passwordData = ""
     
     func validateName(_ name: String) -> Bool {
@@ -19,7 +16,7 @@ class RegisterViewModel {
     }
     
     func validateEmail(_ email: String) -> Bool {
-        if email.isEmpty || ((!email.contains(contains.aroba.rawValue)) || (!email.contains(contains.ponto.rawValue))) {
+        if email.isEmpty || ((!email.contains(SpecialCharacters.at.localized)) || (!email.contains(SpecialCharacters.dot.localized))) {
             return true
         } else {
             return false

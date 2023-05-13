@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  TripOrganizer
+
+  Created by Humberto Rodrigues on 13/05/23.
+  
+*/
+
+"name_placeholder" = "Nome Completo";
+"email_placeholder" = "Email";
+"password_placeholder" = "Senha";
+"confirm_password_placeholder" = "Confirmar Senha";
+
+"at_symbol" = "@";
+"dot_com" = ".com";
+
+"title_success" = "Sucesso";
+"trip_name_empty" = "Sua viagem deve ter um nome!";
+"registration_success" = "Cadastro Efetuado com sucesso!";
+"success_title" = "Sucesso";
+"instruction_email_sent" = "Um email de instrução foi enviado para sua caixa de entrada";
+"error_title" = "Erro";
+"confirm_title" = "Ok";
+"invalid_email" = "O email digitado não é válido";
+"invalid_email_password" = "Os campos não pode estar vazios e os dados precisam ser válidos";
+"data_changed_successfully" = "Dados alterados com sucesso!";
+"flight_added_successfully" = "Voo adicionado com sucesso à sua lista de viagem!";
+
+"title_button_forgetPassword" = "Esqueci minha senha";
+"title_button_create_account" = "Não tenho uma conta";
+"title_button_login_success" = "Entrar";
+"title_button_login_google" = "Continuar com google";
+"title_button_login_apple" = "Continuar com apple";
+"title_button_register" = "Registrar";
+"title_button_already_have_account" = "Ja possui uma conta? Entre aqui";
+"title_button_tap_to_register" = "Recuperar senha";
+
+"text_confirm_email_label" = "Confirme o seu email de cadastro para o envio de uma nova senha temporária";
+
+
+
+
+
+

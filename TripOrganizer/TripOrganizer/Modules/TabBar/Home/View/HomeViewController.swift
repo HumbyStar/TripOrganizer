@@ -185,12 +185,12 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func perfilButtonPressed(_ sender: UIButton) {
-        let vc = UIStoryboard(name: Routes.profileViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.profileViewController) as? ProfileViewController
+        let vc = UIStoryboard(name: RoutesIdentifier.profileViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.profileViewController) as? ProfileViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func addTripButtonPressed(_ sender: UIButton) {
-        let vc: AddTripViewController? = UIStoryboard(name: Routes.addTripViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.addTripViewController) as? AddTripViewController
+        let vc: AddTripViewController? = UIStoryboard(name: RoutesIdentifier.addTripViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.addTripViewController) as? AddTripViewController
         vc?.delegate(delegate: self)
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
@@ -217,7 +217,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc: TripPlanViewController? = UIStoryboard(name: Routes.tripPlanViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.tripPlanViewController) as? TripPlanViewController
+        let vc: TripPlanViewController? = UIStoryboard(name: RoutesIdentifier.tripPlanViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.tripPlanViewController) as? TripPlanViewController
         vc?.placeNameReceived = viewModel.getTripList(index: indexPath.row).tripName
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }

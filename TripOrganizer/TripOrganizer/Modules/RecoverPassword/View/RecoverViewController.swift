@@ -15,12 +15,14 @@ class RecoverViewController: UIViewController{
     @IBOutlet var appLogoImageView: UIImageView!
     @IBOutlet weak var recoverPasswordButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         alert = Alert(controller: self)
         configTextField()
         configButton()
+        configLabel()
     }
     
     
@@ -31,6 +33,11 @@ class RecoverViewController: UIViewController{
     private func configButton(){
         recoverPasswordButton.layer.cornerRadius = 10
         recoverPasswordButton.clipsToBounds = true
+        recoverPasswordButton.setTitle(ButtonTitle.tapToRegister.localized, for: .normal)
+    }
+    
+    private func configLabel(){
+        descriptionLabel.text = TextLabel.confirmEmailDescription.localized
     }
     
     private func configTextField(){
@@ -41,6 +48,7 @@ class RecoverViewController: UIViewController{
         emailTextField.layer.cornerRadius = 10
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocorrectionType = .no
+        emailTextField.placeholder = TextfieldPlaceholder.email.localized
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -50,11 +58,9 @@ class RecoverViewController: UIViewController{
     @IBAction func recoverPasswordButtonPressed(_ sender: UIButton) {
         guard let emailValue = emailTextField.text else {return}
         if viewModel.validateConfirmEmail(emailValue) {
-            alert?.createAlert(title: viewModel.titleError, message: viewModel.messageError , completion: {
-                self.navigationController?.popViewController(animated: true)
-            })
+            alert?.createAlert(title: MessageAlert.titleError.localized, message: MessageAlert.messageError.localized)
         } else {
-            alert?.createAlert(title: viewModel.titleSucess, message: viewModel.messageSuccess , completion: {
+            alert?.createAlert(title: MessageAlert.titleSuccess.localized, message: MessageAlert.messageSuccess.localized , completion: {
                 self.navigationController?.popViewController(animated: true)
             })
         }
