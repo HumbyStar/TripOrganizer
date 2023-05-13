@@ -11,7 +11,7 @@ class AttractionCell: UICollectionViewCell {
     
     @IBOutlet var attractionImageView: UIImageView!
     
-    public static let identifier: String = "AttractionCell"
+    public static let identifier: String = String(describing: AttractionCell.self)
     
     public static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)

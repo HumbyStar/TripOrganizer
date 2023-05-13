@@ -427,8 +427,8 @@
 		43780CA129D5C9C5002072BF /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D2C29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift */,
 				43BE0D2D29E5CA99001B5963 /* FlightScreenCollectionViewCell.xib */,
+				43BE0D2C29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift */,
 			);
 			path = CollectionCell;
 			sourceTree = "<group>";
@@ -445,8 +445,8 @@
 		43BE0D3029E5E900001B5963 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				43BE0D3229E5E958001B5963 /* FlightTableViewCell.swift */,
 				43BE0D3329E5E958001B5963 /* FlightTableViewCell.xib */,
+				43BE0D3229E5E958001B5963 /* FlightTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";

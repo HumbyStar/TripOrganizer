@@ -8,8 +8,12 @@
 import UIKit
 import MapKit
 
+enum messageAttraction: String {
+    case titleEmpty = ""
+    case message = "Lazer adicionado com sucesso a sua lista de viagem!"
+}
+
 class AttractionViewController: UIViewController {
-    
     
     public let viewModel: AttractionViewModel = AttractionViewModel()
     
@@ -26,8 +30,6 @@ class AttractionViewController: UIViewController {
     @IBOutlet var openingHoursLabel: UILabel!
     @IBOutlet var attractionPhoneNumberLabel: UILabel!
     @IBOutlet var entranceFeeLabel: UILabel!
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -55,7 +57,7 @@ class AttractionViewController: UIViewController {
     }
     
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: "Lazer adicionado com sucesso a sua lista de viagem!")
+        alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

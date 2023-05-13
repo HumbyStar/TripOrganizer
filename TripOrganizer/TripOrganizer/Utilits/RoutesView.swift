@@ -15,7 +15,7 @@ class Routes {
     static let profileViewController = "ProfileViewController"
     static let addTripViewController = "AddTripViewController"
     static let tripPlanViewController = "TripPlanViewController"
-    
+    static let ticketsViewController = "TicketsViewController"
 }
 
 

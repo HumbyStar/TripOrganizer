@@ -13,7 +13,7 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cityImageView: UIImageView!
     @IBOutlet weak var cityDescriptionLabel: UILabel!
     
-    public static let identifier: String = "FlightScreenCollectionViewCell"
+    public static let identifier: String = String(describing: FlightScreenCollectionViewCell.self)
     
     public static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)

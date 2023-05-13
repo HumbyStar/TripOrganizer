@@ -7,6 +7,16 @@
 
 import UIKit
 
+enum placeHolderFlight: String {
+    case titleLabel = "Comece uma nova viagem!"
+    case flightOrigin = "Escolha a origem"
+    case flightDestination = "Escolha o destino"
+    case calendarOnGoing = "Ida"
+    case calendarOutGoing = "Retorno"
+    case passengers = "Quantos passageiros?"
+    case titleButton = "Buscar passagens"
+}
+
 class FlightViewController: UIViewController {
     
     var viewModel: FlightViewModel = FlightViewModel()
@@ -34,7 +44,7 @@ class FlightViewController: UIViewController {
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
         
-        let viewController: TicketsViewController? = UIStoryboard(name: "TicketsViewController", bundle: nil).instantiateViewController(withIdentifier: "TicketsViewController") as? TicketsViewController
+        let viewController: TicketsViewController? = UIStoryboard(name: Routes.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.ticketsViewController) as? TicketsViewController
         viewController?.modalPresentationStyle = .automatic
         present(viewController ?? UIViewController(), animated: true)
         
@@ -49,19 +59,19 @@ class FlightViewController: UIViewController {
         calendarOutGoingTextField.borderStyle = .none
         passengersTextField.borderStyle = .none
         
-        chooseADestinationLabel.text = "Comece uma nova viagem!"
+        chooseADestinationLabel.text = placeHolderFlight.titleLabel.rawValue
         
-        flightOriginTextField.placeholder = "Escolha a origem"
-        flightDestinationTextField.placeholder = "Escolha o destino"
+        flightOriginTextField.placeholder = placeHolderFlight.flightOrigin.rawValue
+        flightDestinationTextField.placeholder = placeHolderFlight.flightDestination.rawValue
         
-        calendarOnGoingTextField.placeholder = "Ida"
-        calendarOutGoingTextField.placeholder = "Retorno"
+        calendarOnGoingTextField.placeholder = placeHolderFlight.calendarOnGoing.rawValue
+        calendarOutGoingTextField.placeholder = placeHolderFlight.calendarOutGoing.rawValue
         
-        passengersTextField.placeholder = "Quantos passageiros?"
+        passengersTextField.placeholder = placeHolderFlight.passengers.rawValue
         
         let font = UIFont.systemFont(ofSize: 15)
         let atributos: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
-        let textoComFonte = NSAttributedString(string: "Buscar passagens", attributes: atributos)
+        let textoComFonte = NSAttributedString(string: placeHolderFlight.titleButton.rawValue, attributes: atributos)
         ticketSearchButton.setAttributedTitle(textoComFonte, for: .normal)
         
         flightOriginView.layer.cornerRadius = 5

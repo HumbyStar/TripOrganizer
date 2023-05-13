@@ -8,6 +8,11 @@
 import UIKit
 import MapKit
 
+enum addRestautant: String {
+    case titleEmpty = ""
+    case message = "Restaurante adicionado com sucesso a sua lista de viagem!"
+}
+
 class RestaurantViewController: UIViewController {
     
     //MARK: - IBOutlets
@@ -71,7 +76,7 @@ class RestaurantViewController: UIViewController {
     }
     
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: "Restaurante adicionado com sucesso a sua lista de viagem!")
+        alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

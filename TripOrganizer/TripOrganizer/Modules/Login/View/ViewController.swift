@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum textFieldEmpty: String {
+    case email = ""
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet var appLogoImageView: UIImageView!
@@ -55,7 +59,7 @@ class ViewController: UIViewController {
     
     private func resetTextField() {
         loginButton.isEnabled = false
-        emailTextField.text = ""
+        emailTextField.text = textFieldEmpty.email.rawValue
         passwordTextField.text = ""
     }
     

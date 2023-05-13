@@ -9,7 +9,7 @@ import UIKit
 
 class FlightTableViewCell: UITableViewCell {
     
-    public static let identifier: String = "FlightTableViewCell"
+    public static let identifier: String = String(describing: FlightTableViewCell.self)
     
     public static func nib() -> UINib {
         return UINib(nibName: self.identifier, bundle: nil)
