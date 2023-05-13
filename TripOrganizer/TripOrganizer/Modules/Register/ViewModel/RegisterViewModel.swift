@@ -9,6 +9,9 @@ import Foundation
 
 class RegisterViewModel {
     
+    let title = "TripOrganizer"
+    let message = "Cadastro Efetuado com sucesso!"
+    
     private var passwordData = ""
     
     func validateName(_ name: String) -> Bool {

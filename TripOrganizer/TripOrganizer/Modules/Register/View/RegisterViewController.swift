@@ -91,9 +91,9 @@ class RegisterViewController: UIViewController {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
         if passwordTextField.isSecureTextEntry {
-            showPasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
         } else {
-            showPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: ImagesAssets.eyes.rawValue), for: .normal)
         }
     }
     
@@ -102,9 +102,9 @@ class RegisterViewController: UIViewController {
         confirmPasswordTextField.isSecureTextEntry = !confirmPasswordTextField.isSecureTextEntry
         
         if confirmPasswordTextField.isSecureTextEntry {
-            showConfirmPasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
         } else {
-            showConfirmPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: ImagesAssets.eyes.rawValue), for: .normal)
         }
     }
     
@@ -113,7 +113,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "TripOrganizer", message: "Cadastro efetuado com sucesso!", completion: {
+        alert?.createAlert(title: viewModel.title, message: viewModel.message, completion: {
             self.navigationController?.popToRootViewController(animated: true)
         })
     }

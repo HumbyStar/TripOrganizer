@@ -38,21 +38,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapToRecoverPassword(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "RecoverViewController", bundle: nil).instantiateViewController(withIdentifier: "RecoverViewController") as? RecoverViewController
+        let vc = UIStoryboard(name: Routes.RecoverViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.RecoverViewController) as? RecoverViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 
     @IBAction func tapToRegister(_ sender: UIButton) {
-        let vc = UIStoryboard(name: "RegisterViewController", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController
+        let vc = UIStoryboard(name: Routes.RegisterViewController, bundle: nil).instantiateViewController(withIdentifier: Routes.RegisterViewController) as? RegisterViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func tapToLogin(_ sender: Any) {
-        let vc = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as? TabBarController
+        let vc = UIStoryboard(name: Routes.TabBarController, bundle: nil).instantiateViewController(withIdentifier: Routes.TabBarController) as? TabBarController
+        resetTextField()
+        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+    }
+    
+    private func resetTextField() {
         loginButton.isEnabled = false
         emailTextField.text = ""
         passwordTextField.text = ""
-        navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     private func configShadowButton(button: UIButton) {
@@ -76,7 +80,7 @@ class ViewController: UIViewController {
         configShadowButton(button: loginWithGoogleButton)
         configShadowButton(button: loginWithIcloudButton)
         eyeButton.tintColor = .lightGray
-        eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        eyeButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
         
     }
     
@@ -114,11 +118,11 @@ class ViewController: UIViewController {
     
     @IBAction func tappedEyeButton(_ sender: UIButton) {
         if isEyeOpen {
-            eyeButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+            eyeButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
             passwordTextField.isSecureTextEntry = true
             isEyeOpen = false
         } else {
-            eyeButton.setImage(UIImage(systemName: "eye"), for: .normal)
+            eyeButton.setImage(UIImage(systemName: ImagesAssets.eyes.rawValue), for: .normal)
             passwordTextField.isSecureTextEntry = false
             isEyeOpen = true
         }

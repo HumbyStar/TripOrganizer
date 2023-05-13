@@ -7,6 +7,14 @@
 
 import UIKit
 
+enum TabBarTitles: String {
+    case home = "Home"
+    case airplane = "Voos"
+    case hotel = "Hotel"
+    case restaurant = "Restaurante"
+    case attraction = "Lazer"
+}
+
 class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
@@ -27,18 +35,18 @@ class TabBarController: UITabBarController {
         guard let items = tabBar.items else { return }
 
         //MARK: - Tab Bar Itens
-        items[0].title = "Home"
-        items[1].title = "Voos"
-        items[2].title = "Hotel"
-        items[3].title = "Restaurante"
-        items[4].title = "Lazer"
+        items[0].title = TabBarTitles.home.rawValue
+        items[1].title = TabBarTitles.airplane.rawValue
+        items[2].title = TabBarTitles.hotel.rawValue
+        items[3].title = TabBarTitles.restaurant.rawValue
+        items[4].title = TabBarTitles.attraction.rawValue
         
         //MARK: - Tab bar Images
-        items[0].image = UIImage(systemName: "house.fill")
-        items[1].image = UIImage(systemName: "airplane")
-        items[2].image = UIImage(systemName: "bed.double.fill")
-        items[3].image = UIImage(systemName: "fork.knife")
-        items[4].image = UIImage(systemName: "heart.fill")
+        items[0].image = UIImage(systemName: ImagesAssets.home.rawValue)
+        items[1].image = UIImage(systemName: ImagesAssets.airplane.rawValue)
+        items[2].image = UIImage(systemName: ImagesAssets.hotel.rawValue)
+        items[3].image = UIImage(systemName: ImagesAssets.restaurant.rawValue)
+        items[4].image = UIImage(systemName: ImagesAssets.attraction.rawValue)
         
     }
 }

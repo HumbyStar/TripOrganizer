@@ -28,6 +28,8 @@
 		0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4C29B6621E009550C8 /* LaunchScreen.storyboard */; };
 		0C3AD1E529C3524800E7FE73 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */; };
 		0C3AD1EE29C3546C00E7FE73 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AD1ED29C3546C00E7FE73 /* ProfileViewController.swift */; };
+		0C5058282A0FB8FB0069A884 /* RoutesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5058272A0FB8FB0069A884 /* RoutesView.swift */; };
+		0C50582A2A0FBF720069A884 /* ImagesAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5058292A0FBF720069A884 /* ImagesAssets.swift */; };
 		0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */; };
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		1627E546E75C9391F7D32CC0 /* Pods_TripOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B70FBC1E46219888EE81715 /* Pods_TripOrganizer.framework */; };
@@ -101,6 +103,8 @@
 		0C36EC4F29B6621E009550C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileViewController.storyboard; path = TripOrganizer/Modules/TabBar/Perfil/View/ProfileViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C3AD1ED29C3546C00E7FE73 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0C5058272A0FB8FB0069A884 /* RoutesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesView.swift; sourceTree = "<group>"; };
+		0C5058292A0FBF720069A884 /* ImagesAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesAssets.swift; sourceTree = "<group>"; };
 		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/Modules/RecoverPassword/View/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/Modules/RecoverPassword/View/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -627,6 +631,8 @@
 			isa = PBXGroup;
 			children = (
 				C43C4B4629ED9B950013D509 /* UIColor .swift */,
+				0C5058272A0FB8FB0069A884 /* RoutesView.swift */,
+				0C5058292A0FBF720069A884 /* ImagesAssets.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -834,6 +840,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C5058282A0FB8FB0069A884 /* RoutesView.swift in Sources */,
 				C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */,
 				509DCC0829F6FC0C002F04B0 /* HomeTableViewCell.swift in Sources */,
 				886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */,
@@ -846,6 +853,7 @@
 				0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */,
 				509DCC0C29F6FC58002F04B0 /* AddTripModel.swift in Sources */,
 				0C111C2429BACD9000A0DCF4 /* HomeViewController.swift in Sources */,
+				0C50582A2A0FBF720069A884 /* ImagesAssets.swift in Sources */,
 				C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */,
 				50D5FBB729EF219B0041ED71 /* ProfileViewModel.swift in Sources */,
 				0C2037A629F0A21D001BE709 /* RestaurantViewModel.swift in Sources */,
