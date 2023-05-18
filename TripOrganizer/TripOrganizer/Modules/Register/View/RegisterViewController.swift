@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
     
@@ -22,6 +23,8 @@ class RegisterViewController: UIViewController {
     
     private var alert: Alert?
     private let viewModel = RegisterViewModel()
+    private var auth: Auth?
+    private var firestore: Firestore?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,8 @@ class RegisterViewController: UIViewController {
         configButton()
         configProtocols()
         configViews()
+        self.auth = Auth.auth()
+        self.firestore = Firestore.firestore()
     }
     
     private func configViews() {
@@ -85,6 +90,25 @@ class RegisterViewController: UIViewController {
         configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.confirPassword.localized)
     }
     
+    func registerNewUser() {
+        
+        guard let emailValid = emailTextField.text, let passwordValid = passwordTextField.text else {return}
+        self.auth?.createUser(withEmail: emailValid, password: passwordValid, completion: { result, error in
+            if error != nil {
+                self.alert?.createAlert(title: "Atenção", message: "Erro ao cadastrar")
+            } else {
+                if let idUser = result?.user.uid {
+                    self.firestore?.collection("usuários").document(idUser).setData([
+                        "name": self.nameTextField.text ?? "",
+                        "email": self.emailTextField.text ?? "",
+                        "id": idUser
+                    ])
+                }
+                self.alert?.createAlert(title: MessageAlert.titleSuccess.localized, message: MessageAlert.message.localized)
+            }
+        })
+    }
+    
     @IBAction func tapToShowPassword(_ sender: Any) {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
@@ -120,6 +144,8 @@ class RegisterViewController: UIViewController {
         
         if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
             alert?.createAlert(title:MessageAlert.title.localized, message: MessageAlert.message.localized, completion: {
+                
+                self.registerNewUser()
                 self.navigationController?.popToRootViewController(animated: true)
             })
         } else {
