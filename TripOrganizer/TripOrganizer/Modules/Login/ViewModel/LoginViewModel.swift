@@ -20,6 +20,6 @@ class LoginViewModel {
     }
     
     func validatePassword(_ password: String) -> Bool {
-        return !(password.isEmpty) || !(password.count < 6)
+        return !(password.count < 6)
     }
 }
