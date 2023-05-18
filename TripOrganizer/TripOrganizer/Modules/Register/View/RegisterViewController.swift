@@ -136,7 +136,9 @@ class RegisterViewController: UIViewController {
             self.removeLoadingAnimation()
             
             self.alert?.createAlert(title: "TripOrganizer", message: "Cadastro efetuado com sucesso!", completion: {
-                self.navigationController?.popToRootViewController(animated: true)
+//                self.navigationController?.popToRootViewController(animated: true)
+                let homeVC: HomeViewController? = UIStoryboard(name: "HomeViewController", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+                self.navigationController?.pushViewController(homeVC ?? UIViewController(), animated: true)
             })
         }
     }
