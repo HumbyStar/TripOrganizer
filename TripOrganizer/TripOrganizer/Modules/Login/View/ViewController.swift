@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
    
     var viewModel: LoginViewModel = LoginViewModel()
     private var alert: Alert?
+    private var auth: Auth?
+    private var firestore: Firestore?
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -33,9 +36,8 @@ class ViewController: UIViewController {
         configTextField()
         configButtons()
         configPasswordView()
-        
-        emailTextField.text = "abc@gmail.com"
-        passwordTextField.text = "123456"
+        auth = Auth.auth()
+        firestore = Firestore.firestore()
         alert = Alert(controller: self)
     }
     
@@ -55,13 +57,29 @@ class ViewController: UIViewController {
         let validatePassword = viewModel.validatePassword(passwordTextField.text ?? "")
         
         if validateEmail && validatePassword {
-            let viewController = UIStoryboard(name: RoutesIdentifier.TabBarController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.TabBarController) as? TabBarController
-            resetTextField()
-            navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
+            validateFieldToLogin()
         } else {
             alert?.createAlert(title: MessageAlert.titleError.localized, message: MessageAlert.emailOrPaswordError.localized)
         }
         
+    }
+    
+    private func validateFieldToLogin() {
+        self.auth?.signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: { user, error in
+            if error != nil {
+                self.alert?.createAlert(title: "Atenção", message: "Dados incorretos")
+            } else {
+                if user == nil {
+                    self.alert?.createAlert(title: "Atenção", message: "Tivemos um problema inesperado, tente novamente mais tarde")
+                } else {
+                    self.alert?.createAlert(title: "", message: "Login efetuado com sucesso",completion: {
+                        let viewController = UIStoryboard(name: RoutesIdentifier.TabBarController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.TabBarController) as? TabBarController
+                        self.resetTextField()
+                        self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
+                    })
+                }
+            }
+        })
     }
     
     private func resetTextField() {
