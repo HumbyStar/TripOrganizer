@@ -19,7 +19,6 @@
 		0C111C2C29BACD9000A0DCF4 /* AttractionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C111C2029BACD9000A0DCF4 /* AttractionViewController.storyboard */; };
 		0C111C2D29BACD9000A0DCF4 /* AttractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C2129BACD9000A0DCF4 /* AttractionViewController.swift */; };
 		0C111C2E29BACD9000A0DCF4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C111C2229BACD9000A0DCF4 /* TabBarController.swift */; };
-		0C1DA9B32A16CBB500C4AC1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DA9B22A16CBB500C4AC1B /* GoogleService-Info.plist */; };
 		0C1DA9B62A16CC3500C4AC1B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1DA9B52A16CC3500C4AC1B /* FirebaseAnalytics */; };
 		0C1DA9B82A16CC3500C4AC1B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1DA9B72A16CC3500C4AC1B /* FirebaseAnalyticsOnDeviceConversion */; };
 		0C1DA9BA2A16CC3500C4AC1B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1DA9B92A16CC3500C4AC1B /* FirebaseAnalyticsSwift */; };
@@ -47,6 +46,7 @@
 		0C1DA9E62A16CC3500C4AC1B /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1DA9E52A16CC3500C4AC1B /* FirebaseRemoteConfigSwift */; };
 		0C1DA9E82A16CC3500C4AC1B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1DA9E72A16CC3500C4AC1B /* FirebaseStorage */; };
 		0C1DA9EA2A16CC3500C4AC1B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1DA9E92A16CC3500C4AC1B /* FirebaseStorageCombine-Community */; };
+		0C1DA9EC2A17E00800C4AC1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DA9EB2A17E00800C4AC1B /* GoogleService-Info.plist */; };
 		0C2037A629F0A21D001BE709 /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2037A529F0A21D001BE709 /* RestaurantViewModel.swift */; };
 		0C2037A829F0A328001BE709 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2037A729F0A328001BE709 /* RestaurantModel.swift */; };
 		0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4129B6621C009550C8 /* AppDelegate.swift */; };
@@ -125,7 +125,7 @@
 		0C111C2029BACD9000A0DCF4 /* AttractionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AttractionViewController.storyboard; sourceTree = "<group>"; };
 		0C111C2129BACD9000A0DCF4 /* AttractionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttractionViewController.swift; sourceTree = "<group>"; };
 		0C111C2229BACD9000A0DCF4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		0C1DA9B22A16CBB500C4AC1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/TripOrganizer GooglePlist/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0C1DA9EB2A17E00800C4AC1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C2037A529F0A21D001BE709 /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
 		0C2037A729F0A328001BE709 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		0C36EC3E29B6621C009550C8 /* TripOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -389,7 +389,7 @@
 				50D5FBB229EF214E0041ED71 /* Alert */,
 				0C188F8D2A06C4ED00820586 /* Modules */,
 				0C36EC4F29B6621E009550C8 /* Info.plist */,
-				0C1DA9B22A16CBB500C4AC1B /* GoogleService-Info.plist */,
+				0C1DA9EB2A17E00800C4AC1B /* GoogleService-Info.plist */,
 				0C50586A2A100EF10069A884 /* Localizable.strings */,
 			);
 			path = TripOrganizer;
@@ -874,7 +874,7 @@
 			files = (
 				43BE0D2F29E5CA99001B5963 /* FlightScreenCollectionViewCell.xib in Resources */,
 				43780C9029D5C943002072BF /* HotelCollectionViewCell.xib in Resources */,
-				0C1DA9B32A16CBB500C4AC1B /* GoogleService-Info.plist in Resources */,
+				0C1DA9EC2A17E00800C4AC1B /* GoogleService-Info.plist in Resources */,
 				C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */,
 				509DCC1029F6FD20002F04B0 /* TripPlanCollectionViewCell.xib in Resources */,
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
