@@ -8,5 +8,6 @@ target 'TripOrganizer' do
   # Pods for TripOrganizer
 
 pod 'IQKeyboardManagerSwift'
+pod 'lottie-ios'
 
 end

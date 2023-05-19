@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 enum placeHolderFlight: String {
     case titleLabel = "Comece uma nova viagem!"
@@ -20,6 +21,9 @@ enum placeHolderFlight: String {
 class FlightViewController: UIViewController {
     
     var viewModel: FlightViewModel = FlightViewModel()
+    
+    private let animationView = UIView()
+    private let loadingAnimationView: LottieAnimationView = LottieAnimationView()
     
     @IBOutlet weak var chooseADestinationLabel: UILabel!
     @IBOutlet weak var flightOriginView: UIView!
@@ -46,10 +50,33 @@ class FlightViewController: UIViewController {
         
         let viewController: TicketsViewController? = UIStoryboard(name: RoutesIdentifier.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.ticketsViewController) as? TicketsViewController
         viewController?.modalPresentationStyle = .automatic
-        present(viewController ?? UIViewController(), animated: true)
+        self.configLoadingAnimation()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.present(viewController ?? UIViewController(), animated: true)
+            self.removeLoadingAnimation()
+        }
         
     }
     
+    private func configLoadingAnimation() {
+        animationView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
+        animationView.frame = UIScreen.main.bounds
+        animationView.center = view.center
+        loadingAnimationView.animation = LottieAnimation.named("103343-airplane-loader-animation.json")
+        loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        loadingAnimationView.center = view.center
+        loadingAnimationView.backgroundColor = .clear
+        loadingAnimationView.contentMode = .scaleAspectFit
+        loadingAnimationView.loopMode = .playOnce
+        loadingAnimationView.play()
+        animationView.addSubview(loadingAnimationView)
+        self.view.addSubview(animationView)
+    }
+    
+    private func removeLoadingAnimation() {
+        animationView.removeFromSuperview()
+    }
     
     private func configElements() {
         
