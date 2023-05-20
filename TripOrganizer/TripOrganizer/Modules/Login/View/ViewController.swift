@@ -42,12 +42,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapToRecoverPassword(_ sender: UIButton) {
-        let vc = UIStoryboard(name: RoutesIdentifier.RecoverViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.RecoverViewController) as? RecoverViewController
+        let vc = UIStoryboard(name: String.RecoverViewController, bundle: nil).instantiateViewController(withIdentifier: String.RecoverViewController) as? RecoverViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 
     @IBAction func tapToRegister(_ sender: UIButton) {
-        let vc = UIStoryboard(name: RoutesIdentifier.RegisterViewController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.RegisterViewController) as? RegisterViewController
+        let vc = UIStoryboard(name: String.RegisterViewController, bundle: nil).instantiateViewController(withIdentifier: String.RegisterViewController) as? RegisterViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
                     self.alert?.createAlert(title: "Atenção", message: "Tivemos um problema inesperado, tente novamente mais tarde")
                 } else {
                     self.alert?.createAlert(title: "", message: "Login efetuado com sucesso",completion: {
-                        let viewController = UIStoryboard(name: RoutesIdentifier.TabBarController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.TabBarController) as? TabBarController
+                        let viewController = UIStoryboard(name: String.TabBarController, bundle: nil).instantiateViewController(withIdentifier: String.TabBarController) as? TabBarController
                         self.resetTextField()
                         self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
                     })
