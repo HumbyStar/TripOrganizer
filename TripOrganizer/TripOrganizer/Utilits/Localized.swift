@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     
-    //MARK: Screens identifier
+    //MARK: Routes identifier
     static let RecoverViewController = "RecoverViewController"
     static let RegisterViewController = "RegisterViewController"
     static let TabBarController = "TabBarController"
@@ -20,7 +20,7 @@ extension String {
     static let ticketsViewController = "TicketsViewController"
     
     //MARK: Message for alerts
-    static let title = "title_success".localized
+//    static let title = "title_success".localized
     static let titleConfirm = "confirm_title".localized
     static let tripEmpty = "trip_name_empty".localized
     static let message = "registration_success".localized

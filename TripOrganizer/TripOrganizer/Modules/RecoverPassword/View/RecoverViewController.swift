@@ -33,11 +33,11 @@ class RecoverViewController: UIViewController{
     private func configButton(){
         recoverPasswordButton.layer.cornerRadius = 10
         recoverPasswordButton.clipsToBounds = true
-        recoverPasswordButton.setTitle(ButtonTitle.tapToRegister.localized, for: .normal)
+        recoverPasswordButton.setTitle(String.tapToRegister.localized, for: .normal)
     }
     
     private func configLabel(){
-        descriptionLabel.text = TextLabel.confirmEmailDescription.localized
+        descriptionLabel.text = String.confirmEmailDescription.localized
     }
     
     private func configTextField(){
@@ -48,7 +48,7 @@ class RecoverViewController: UIViewController{
         emailTextField.layer.cornerRadius = 10
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocorrectionType = .no
-        emailTextField.placeholder = TextfieldPlaceholder.email.localized
+        emailTextField.placeholder = String.email.localized
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -58,9 +58,9 @@ class RecoverViewController: UIViewController{
     @IBAction func recoverPasswordButtonPressed(_ sender: UIButton) {
         guard let emailValue = emailTextField.text else {return}
         if viewModel.validateConfirmEmail(emailValue) {
-            alert?.createAlert(title: MessageAlert.titleError.localized, message: MessageAlert.messageError.localized)
+            alert?.createAlert(title: String.titleError.localized, message: String.messageError.localized)
         } else {
-            alert?.createAlert(title: MessageAlert.titleSuccess.localized, message: MessageAlert.messageSuccess.localized , completion: {
+            alert?.createAlert(title: String.titleSuccess.localized, message: String.messageSuccess.localized , completion: {
                 self.navigationController?.popViewController(animated: true)
             })
         }

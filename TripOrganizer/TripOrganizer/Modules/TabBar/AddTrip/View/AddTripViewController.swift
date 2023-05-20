@@ -57,7 +57,7 @@ class AddTripViewController: UIViewController {
     }
     
     private func configBackButton() {
-        backButton.setImage(UIImage(systemName: ImagesAssets.goBack.rawValue)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backButton.setImage(UIImage(systemName: String.goBack)?.withRenderingMode(.alwaysTemplate), for: .normal)
         backButton.tintColor = .white
     }
     
@@ -89,7 +89,7 @@ class AddTripViewController: UIViewController {
             self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
         } else {
-            self.alert?.createAlert(title: "", message: MessageAlert.tripEmpty.localized)
+            self.alert?.createAlert(title: "", message: String.tripEmpty.localized)
         }
     }
 }

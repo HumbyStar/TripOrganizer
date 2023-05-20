@@ -53,8 +53,8 @@ class RegisterViewController: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.backgroundColor = UIColor.logoGreen
         registerButton.setTitleColor(.white, for: .normal)
-        registerButton.setTitle(ButtonTitle.register.localized, for: .normal)
-        alreadyHaveAccountButton.setTitle(ButtonTitle.alreadyHaveAccount.localized, for: .normal)
+        registerButton.setTitle(String.register, for: .normal)
+        alreadyHaveAccountButton.setTitle(String.alreadyHaveAccount, for: .normal)
     }
     
     private func configProtocols(){
@@ -84,10 +84,10 @@ class RegisterViewController: UIViewController {
     }
     
     private func configTextField() {
-        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.name.localized)
-        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.email.localized, keyboardType: .emailAddress)
-        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.password.localized)
-        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: TextfieldPlaceholder.confirPassword.localized)
+        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: String.name)
+        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: String.email, keyboardType: .emailAddress)
+        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: String.password)
+        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: String.confirPassword)
     }
     
     func registerNewUser() {
@@ -104,7 +104,7 @@ class RegisterViewController: UIViewController {
                         "id": idUser
                     ])
                 }
-                self.alert?.createAlert(title: MessageAlert.titleSuccess.localized, message: MessageAlert.message.localized)
+                self.alert?.createAlert(title: String.titleSuccess, message: String.message)
             }
         })
     }
@@ -113,9 +113,9 @@ class RegisterViewController: UIViewController {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
         if passwordTextField.isSecureTextEntry {
-            showPasswordButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
         } else {
-            showPasswordButton.setImage(UIImage(systemName: ImagesAssets.eyes.rawValue), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: String.eyes), for: .normal)
         }
     }
     
@@ -124,9 +124,9 @@ class RegisterViewController: UIViewController {
         confirmPasswordTextField.isSecureTextEntry = !confirmPasswordTextField.isSecureTextEntry
         
         if confirmPasswordTextField.isSecureTextEntry {
-            showConfirmPasswordButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
         } else {
-            showConfirmPasswordButton.setImage(UIImage(systemName: ImagesAssets.eyes.rawValue), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: String.eyes), for: .normal)
         }
     }
     
@@ -143,13 +143,13 @@ class RegisterViewController: UIViewController {
         else {return}
         
         if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
-            alert?.createAlert(title:MessageAlert.title.localized, message: MessageAlert.message.localized, completion: {
+            alert?.createAlert(title: String.titleSuccess, message: String.message, completion: {
                 
                 self.registerNewUser()
                 self.navigationController?.popToRootViewController(animated: true)
             })
         } else {
-            alert?.createAlert(title:MessageAlert.titleError.localized, message: MessageAlert.registerDataInvalid.localized)
+            alert?.createAlert(title: String.titleError, message: String.registerDataInvalid)
         }
     }
     

@@ -14,7 +14,7 @@
 "at_symbol" = "@";
 "dot_com" = ".com";
 
-"title_success" = "Sucesso";
+//"title_success" = "Sucesso";
 "trip_name_empty" = "Sua viagem deve ter um nome!";
 "registration_success" = "Cadastro Efetuado com sucesso!";
 "success_title" = "Sucesso";

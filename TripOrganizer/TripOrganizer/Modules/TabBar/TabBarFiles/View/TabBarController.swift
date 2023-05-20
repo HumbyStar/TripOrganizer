@@ -42,11 +42,11 @@ class TabBarController: UITabBarController {
         items[4].title = TabBarTitles.attraction.rawValue
         
         //MARK: - Tab bar Images
-        items[0].image = UIImage(systemName: ImagesAssets.home.rawValue)
-        items[1].image = UIImage(systemName: ImagesAssets.airplane.rawValue)
-        items[2].image = UIImage(systemName: ImagesAssets.hotel.rawValue)
-        items[3].image = UIImage(systemName: ImagesAssets.restaurant.rawValue)
-        items[4].image = UIImage(systemName: ImagesAssets.attraction.rawValue)
+        items[0].image = UIImage(systemName: String.home)
+        items[1].image = UIImage(systemName: String.airplane)
+        items[2].image = UIImage(systemName: String.hotel)
+        items[3].image = UIImage(systemName: String.restaurant)
+        items[4].image = UIImage(systemName: String.attraction)
         
     }
 }

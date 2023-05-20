@@ -16,7 +16,7 @@ class RegisterViewModel {
     }
     
     func validateEmail(_ email: String) -> Bool {
-        if email.isEmpty || ((!email.contains(SpecialCharacters.at.localized)) || (!email.contains(SpecialCharacters.dot.localized))) {
+        if email.isEmpty || ((!email.contains(String.at.localized)) || (!email.contains(String.dot.localized))) {
             return true
         } else {
             return false

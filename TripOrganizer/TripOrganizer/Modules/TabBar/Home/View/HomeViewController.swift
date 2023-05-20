@@ -66,12 +66,12 @@ class HomeViewController: UIViewController {
          switch imageView {
          case tappedTicketView:
              switch ticketImageView.image {
-             case UIImage(systemName: ImagesAssets.square.rawValue):
-                 ticketImageView.image = UIImage(systemName: ImagesAssets.squareCheck.rawValue)
+             case UIImage(systemName: String.square):
+                 ticketImageView.image = UIImage(systemName: String.squareCheck)
                 progressBar += 0.25
                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: ImagesAssets.squareCheck.rawValue):
-                 ticketImageView.image = UIImage(systemName: ImagesAssets.square.rawValue)
+             case UIImage(systemName: String.squareCheck):
+                 ticketImageView.image = UIImage(systemName: String.square)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -79,12 +79,12 @@ class HomeViewController: UIViewController {
              }
          case tappedHotelView:
              switch hotelImageView.image {
-             case UIImage(systemName: ImagesAssets.square.rawValue):
-                 hotelImageView.image = UIImage(systemName: ImagesAssets.squareCheck.rawValue)
+             case UIImage(systemName: String.square.localized):
+                 hotelImageView.image = UIImage(systemName: String.squareCheck)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: ImagesAssets.squareCheck.rawValue):
-                 hotelImageView.image = UIImage(systemName: ImagesAssets.square.rawValue)
+             case UIImage(systemName: String.squareCheck):
+                 hotelImageView.image = UIImage(systemName: String.square)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -93,12 +93,12 @@ class HomeViewController: UIViewController {
              
          case tappedRestaurantView:
              switch restaurantImageView.image {
-             case UIImage(systemName: ImagesAssets.square.rawValue):
-                 restaurantImageView.image = UIImage(systemName: ImagesAssets.squareCheck.rawValue)
+             case UIImage(systemName: String.square):
+                 restaurantImageView.image = UIImage(systemName: String.squareCheck)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: ImagesAssets.squareCheck.rawValue):
-                 restaurantImageView.image = UIImage(systemName: ImagesAssets.square.rawValue)
+             case UIImage(systemName: String.squareCheck):
+                 restaurantImageView.image = UIImage(systemName: String.square)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -107,12 +107,12 @@ class HomeViewController: UIViewController {
              
          case tappedAttractionView:
              switch attractionImageView.image {
-             case UIImage(systemName: ImagesAssets.square.rawValue):
-                 attractionImageView.image = UIImage(systemName: ImagesAssets.squareCheck.rawValue)
+             case UIImage(systemName: String.square):
+                 attractionImageView.image = UIImage(systemName: String.squareCheck)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: ImagesAssets.squareCheck.rawValue):
-                 attractionImageView.image = UIImage(systemName: ImagesAssets.square.rawValue)
+             case UIImage(systemName: String.squareCheck):
+                 attractionImageView.image = UIImage(systemName: String.square)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
