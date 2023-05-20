@@ -194,6 +194,7 @@ class HomeViewController: UIViewController {
         vc?.delegate(delegate: self)
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
+
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -205,6 +206,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.backgroundColor = color
         cell?.setupCell(trip: viewModel.getTripList(index: indexPath.row))
         cell?.placeImageView.image = UIImage(named: viewModel.getListTripImages(index: indexPath.row))
+        
         return cell ?? UITableViewCell()
     }
     
@@ -228,7 +230,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             updateTableView()
         }
     }
-
 }
 
 extension HomeViewController: AddTripviewControllerDelegate {
