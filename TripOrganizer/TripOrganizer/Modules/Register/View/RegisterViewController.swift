@@ -149,7 +149,7 @@ class RegisterViewController: UIViewController {
                 let tabBarController = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
                 tabBarController.modalPresentationStyle = .fullScreen
                 self.present(tabBarController, animated: true) {
-                    tabBarController.selectedIndex = 0 // Índice da tela inicial
+                    tabBarController.selectedIndex = 0
                 }
             })
         } else {
