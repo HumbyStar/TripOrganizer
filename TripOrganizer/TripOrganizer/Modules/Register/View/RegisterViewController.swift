@@ -53,8 +53,8 @@ class RegisterViewController: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.backgroundColor = UIColor.logoGreen
         registerButton.setTitleColor(.white, for: .normal)
-        registerButton.setTitle(String.titleButtonRegister, for: .normal)
-        alreadyHaveAccountButton.setTitle(String.titleButtonAlreadyHaveAccount, for: .normal)
+        registerButton.setTitle(String.registerButtonTitle, for: .normal)
+        alreadyHaveAccountButton.setTitle(String.alreadyHaveAccountButtonTitle, for: .normal)
     }
     
     private func configProtocols(){
@@ -84,10 +84,10 @@ class RegisterViewController: UIViewController {
     }
     
     private func configTextField() {
-        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: String.name)
-        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: String.email, keyboardType: .emailAddress)
-        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: String.password)
-        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: String.confirPassword)
+        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: String.namePlaceholder)
+        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: String.emailPlaceholder, keyboardType: .emailAddress)
+        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: String.passwordPlaceholder)
+        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: String.confirmPasswordPlaceholder)
     }
     
     func registerNewUser() {
@@ -104,7 +104,7 @@ class RegisterViewController: UIViewController {
                         "id": idUser
                     ])
                 }
-                self.alert?.createAlert(title: String.titleSuccess, message: String.message)
+                self.alert?.createAlert(title: String.successTitle, message: String.registrationSuccessMessage)
             }
         })
     }
@@ -115,7 +115,7 @@ class RegisterViewController: UIViewController {
         if passwordTextField.isSecureTextEntry {
             showPasswordButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
         } else {
-            showPasswordButton.setImage(UIImage(systemName: String.eyes), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: String.eye), for: .normal)
         }
     }
     
@@ -126,7 +126,7 @@ class RegisterViewController: UIViewController {
         if confirmPasswordTextField.isSecureTextEntry {
             showConfirmPasswordButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
         } else {
-            showConfirmPasswordButton.setImage(UIImage(systemName: String.eyes), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: String.eye), for: .normal)
         }
     }
     
@@ -143,13 +143,13 @@ class RegisterViewController: UIViewController {
         else {return}
         
         if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
-            alert?.createAlert(title: String.titleSuccess, message: String.message, completion: {
+            alert?.createAlert(title: String.successTitle, message: String.registrationSuccessMessage, completion: {
                 
                 self.registerNewUser()
                 self.navigationController?.popToRootViewController(animated: true)
             })
         } else {
-            alert?.createAlert(title: String.titleError, message: String.registerDataInvalid)
+            alert?.createAlert(title: String.errorTitle, message: String.registerTapError)
         }
     }
     

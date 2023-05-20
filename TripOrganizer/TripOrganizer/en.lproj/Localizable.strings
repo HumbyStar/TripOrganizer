@@ -1,49 +1,43 @@
+// Registro
+"registration.name_placeholder" = "Nome Completo";
+"registration.email_placeholder" = "Email";
+"registration.password_placeholder" = "Senha";
+"registration.confirm_password_placeholder" = "Confirmar Senha";
+"registration.success_message" = "Cadastro Efetuado com sucesso!";
 
-"name_placeholder" = "Nome Completo";
-"email_placeholder" = "Email";
-"password_placeholder" = "Senha";
-"confirm_password_placeholder" = "Confirmar Senha";
+// Erros
+"error.trip_name_empty" = "Sua viagem deve ter um nome!";
+"error.invalid_email" = "O email digitado não é válido";
+"error.invalid_email_password" = "Os campos não podem estar vazios e os dados precisam ser válidos";
+"error.data_changed_successfully" = "Dados alterados com sucesso!";
+"error.flight_added_successfully" = "Voo adicionado com sucesso à sua lista de viagem!";
+"error.register_tap" = "Os dados estão vazios ou inválidos";
 
-"at_symbol" = "@";
-"dot_com" = ".com";
+// Títulos de botões
+"button.title_forget_password" = "Esqueci minha senha";
+"button.title_create_account" = "Não tenho uma conta";
+"button.title_login_success" = "Entrar";
+"button.title_login_google" = "Continuar com Google";
+"button.title_login_apple" = "Continuar com Apple";
+"button.title_register" = "Registrar";
+"button.title_already_have_account" = "Já possui uma conta? Entre aqui";
+"button.title_tap_to_register" = "Recuperar senha";
+"button.title_change_image" = "Alterar imagem";
+"button.title_save" = "Salvar";
+"button.title_exit" = "Sair";
 
-"trip_name_empty" = "Sua viagem deve ter um nome!";
-"registration_success" = "Cadastro Efetuado com sucesso!";
-"success_title" = "Sucesso";
-"instruction_email_sent" = "Um email de instrução foi enviado para sua caixa de entrada";
-"error_title" = "Erro";
-"confirm_title" = "Ok";
-"invalid_email" = "O email digitado não é válido";
-"invalid_email_password" = "Os campos não pode estar vazios e os dados precisam ser válidos";
-"data_changed_successfully" = "Dados alterados com sucesso!";
-"flight_added_successfully" = "Voo adicionado com sucesso à sua lista de viagem!";
-"error_register_tap" = "Os dados estão vazios ou inválidos";
+// Perfil
+"profile.title_name" = "Nome";
+"profile.title_email" = "E-mail";
+"profile.title_phone" = "Telefone";
+"profile.title_change_password" = "Senha";
+"profile.name_placeholder" = "Caio Fabrini";
+"profile.email_placeholder" = "caio.fabrini@backfrontacademy.com.br";
+"profile.phone_placeholder" = "(00) 99212-3456";
 
-"title_button_forgetPassword" = "Esqueci minha senha";
-"title_button_create_account" = "Não tenho uma conta";
-"title_button_login_success" = "Entrar";
-"title_button_login_google" = "Continuar com google";
-"title_button_login_apple" = "Continuar com apple";
-"title_button_register" = "Registrar";
-"title_button_already_have_account" = "Ja possui uma conta? Entre aqui";
-"title_button_tap_to_register" = "Recuperar senha";
-"button_title_change_image" = "Alterar imagem";
-"save_button_title" = "Salvar";
-"exit_button_title" = "Sair";
-
-
-"title_name_profile" = "Name";
-"tile_email_profile" = "E-mail";
-"title_phone_profile" = "Telefone";
-"title_change_password_profile" = "Senha";
-"name_placeholder_profile" = "Caio Fabrini";
-"email_placeholder_profile" = "caio.fabrini@backfrontacademy.com.br";
-"title_phone_profile_user" = "(00) 99212-3456";
-
-"text_confirm_email_label" = "Confirme o seu email de cadastro para o envio de uma nova senha temporária";
-
-
-
-
-
-
+// Outros
+"misc.confirm_email_label" = "Confirme o seu email de cadastro para o envio de uma nova senha temporária";
+"misc.success_title" = "Sucesso";
+"misc.instruction_email_sent" = "Um email de instrução foi enviado para sua caixa de entrada";
+"misc.error_title" = "Erro";
+"misc.confirm_title" = "Ok";
