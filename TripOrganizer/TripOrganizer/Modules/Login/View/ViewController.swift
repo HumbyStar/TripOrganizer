@@ -100,16 +100,16 @@ class ViewController: UIViewController {
     private func configButtons() {
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = 10
-        loginButton.setTitle(String.loginSuccess, for: .normal)
+        loginButton.setTitle(String.titleButtonLoginSuccess, for: .normal)
         loginWithGoogleButton.clipsToBounds = true
         loginWithGoogleButton.layer.cornerRadius = 10
-        loginWithGoogleButton.setTitle(String.loginGoogle, for: .normal)
+        loginWithGoogleButton.setTitle(String.titleButtonLoginGoogle, for: .normal)
         loginWithAppleButton.clipsToBounds = true
         loginWithAppleButton.layer.cornerRadius = 10
-        loginWithAppleButton.setTitle(String.loginApple, for: .normal)
-        recoverButton.setTitle(String.forgetPassword, for: .normal)
+        loginWithAppleButton.setTitle(String.titleButtonLogin_apple, for: .normal)
+        recoverButton.setTitle(String.titleButtonForgetPassword, for: .normal)
         recoverButton.setTitleColor(.logoTextOrange, for: .normal)
-        registerButton.setTitle(String.createAccount, for: .normal)
+        registerButton.setTitle(String.titleButtonForgetPassword, for: .normal)
         registerButton.setTitleColor(.logoTextOrange, for: .normal)
         configShadowButton(button: loginWithGoogleButton)
         configShadowButton(button: loginWithAppleButton)

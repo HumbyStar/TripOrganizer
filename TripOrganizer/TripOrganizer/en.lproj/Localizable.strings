@@ -14,6 +14,7 @@
 "at_symbol" = "@";
 "dot_com" = ".com";
 
+
 //"title_success" = "Sucesso";
 "trip_name_empty" = "Sua viagem deve ter um nome!";
 "registration_success" = "Cadastro Efetuado com sucesso!";
@@ -27,6 +28,7 @@
 "flight_added_successfully" = "Voo adicionado com sucesso à sua lista de viagem!";
 "error_register_tap" = "Os dados estão vazios ou inválidos";
 
+
 "title_button_forgetPassword" = "Esqueci minha senha";
 "title_button_create_account" = "Não tenho uma conta";
 "title_button_login_success" = "Entrar";
@@ -35,6 +37,16 @@
 "title_button_register" = "Registrar";
 "title_button_already_have_account" = "Ja possui uma conta? Entre aqui";
 "title_button_tap_to_register" = "Recuperar senha";
+"button_title_change_image" = "Alterar imagem";
+"save_button_title" = "Salvar";
+"exit_button_title" = "Sair";
+
+"title_name_profile" = "Name";
+"tile_email_profile" = "E-mail";
+"title_phone_profile" = "Telefone";
+"title_change_password_profile" = "Senha";
+"name_placeholder_profile" = "Caio Fabrini";
+"email_placeholder_profile" = "caio.fabrini@backfrontacademy.com.br";
 
 "text_confirm_email_label" = "Confirme o seu email de cadastro para o envio de uma nova senha temporária";
 

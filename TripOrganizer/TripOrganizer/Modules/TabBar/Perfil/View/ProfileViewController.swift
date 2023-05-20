@@ -36,6 +36,8 @@ class ProfileViewController: UIViewController {
         configProfileImage()
         configTextFieldDelegates()
         configTextFields()
+        configLabel()
+        configButton()
     }
     
     override func viewDidLayoutSubviews() {
@@ -69,11 +71,23 @@ class ProfileViewController: UIViewController {
     }
     
     private func configTextFields() {
-        configDefaultTextField(textfield: nameTextField, text: "Caio Fabrini", keyboardType: .default, isSecure: false)
-        configDefaultTextField(textfield: emailTextField, text: "caio.fabrini@backfrontacademy.com.br", keyboardType: .emailAddress, isSecure: false)
+        configDefaultTextField(textfield: nameTextField, text: String.namePlaceholderProfile.localized, keyboardType: .default, isSecure: false)
+        configDefaultTextField(textfield: emailTextField, text: String.emailPlaceholderProfile.localized, keyboardType: .emailAddress, isSecure: false)
         configDefaultTextField(textfield: phoneTextField, text: "(13) 99234-8734", keyboardType: .numbersAndPunctuation, isSecure: false)
         configDefaultTextField(textfield: changePasswordTextField, text: "12345678", keyboardType: .default, isSecure: true)
-
+    }
+    
+    private func configLabel() {
+        nameLabel.text = String.titleNameProfile.localized
+        emailLabel.text = String.tileEmailProfile.localized
+        phoneLabel.text = String.titlePhoneProfile.localized
+        changePasswordLabel.text = String.titleChangePasswordProfile.localized
+    }
+    
+    private func configButton() {
+        changeProfileImageButton.setTitle(String.buttonTitleChangeImage.localized, for: .normal)
+        saveButton.setTitle(String.saveButtonTitle.localized, for: .normal)
+        exitButton.setTitle(String.exitButtonTitle.localized, for: .normal)
     }
     
     @IBAction func changeProfileImageButtonPressed(_ sender: UIButton) {
@@ -83,7 +97,6 @@ class ProfileViewController: UIViewController {
         picker.allowsEditing = true
         present(picker, animated: true)
     }
-    
     
     @IBAction func exitButtonPressed(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)

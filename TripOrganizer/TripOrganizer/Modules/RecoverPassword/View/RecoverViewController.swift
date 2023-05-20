@@ -33,7 +33,7 @@ class RecoverViewController: UIViewController{
     private func configButton(){
         recoverPasswordButton.layer.cornerRadius = 10
         recoverPasswordButton.clipsToBounds = true
-        recoverPasswordButton.setTitle(String.tapToRegister.localized, for: .normal)
+        recoverPasswordButton.setTitle(String.titleButtonTapToRegister.localized, for: .normal)
     }
     
     private func configLabel(){

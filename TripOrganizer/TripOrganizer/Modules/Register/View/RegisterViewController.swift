@@ -53,8 +53,8 @@ class RegisterViewController: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.backgroundColor = UIColor.logoGreen
         registerButton.setTitleColor(.white, for: .normal)
-        registerButton.setTitle(String.register, for: .normal)
-        alreadyHaveAccountButton.setTitle(String.alreadyHaveAccount, for: .normal)
+        registerButton.setTitle(String.titleButtonRegister, for: .normal)
+        alreadyHaveAccountButton.setTitle(String.titleButtonAlreadyHaveAccount, for: .normal)
     }
     
     private func configProtocols(){

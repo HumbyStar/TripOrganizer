@@ -19,6 +19,19 @@ extension String {
     static let tripPlanViewController = "TripPlanViewController"
     static let ticketsViewController = "TicketsViewController"
     
+    //MARK: System Images
+    static let blockedEye = "eye.slash.fill"
+    static let eyes = "eye"
+    static let home = "house.fill"
+    static let airplane = "airplane"
+    static let hotel = "bed.double.fill"
+    static let restaurant = "fork.knife"
+    static let attraction = "heart.fill"
+    static let square = "square.fill"
+    static let squareCheck = "checkmark.square.fill"
+    static let goBack = "arrowshape.turn.up.left.fill"
+    
+    
     //MARK: Message for alerts
 //    static let title = "title_success".localized
     static let titleConfirm = "confirm_title".localized
@@ -33,27 +46,25 @@ extension String {
     static let emailOrPaswordError = "invalid_email_password".localized
     static let registerDataInvalid = "error_register_tap".localized
     
-    //MARK: Images
-    static let blockedEye = "eye.slash.fill".localized
-    static let eyes = "eye".localized
-    static let home = "house.fill".localized
-    static let airplane = "airplane".localized
-    static let hotel = "bed.double.fill".localized
-    static let restaurant = "fork.knife".localized
-    static let attraction = "heart.fill".localized
-    static let square = "square.fill".localized
-    static let squareCheck = "checkmark.square.fill".localized
-    static let goBack = "arrowshape.turn.up.left.fill".localized
+    //MARK: Button titles
+    static let titleButtonForgetPassword = "title_button_forgetPassword".localized
+    static let titleButtonCreateAccount = "title_button_create_account".localized
+    static let titleButtonLoginSuccess = "title_button_login_success".localized
+    static let titleButtonLoginGoogle = "title_button_login_google".localized
+    static let titleButtonLogin_apple = "title_button_login_apple".localized
+    static let titleButtonRegister = "title_button_register".localized
+    static let titleButtonAlreadyHaveAccount = "title_button_already_have_account".localized
+    static let titleButtonTapToRegister = "title_button_tap_to_register".localized
+    static let buttonTitleChangeImage = "button_title_change_image"
+    static let saveButtonTitle = "save_button_title"
+    static let exitButtonTitle = "exit_button_title"
     
-    //MARK: Login screen element titles
-    static let forgetPassword = "title_button_forgetPassword".localized
-    static let createAccount = "title_button_create_account".localized
-    static let loginSuccess = "title_button_login_success".localized
-    static let loginGoogle = "title_button_login_google".localized
-    static let loginApple = "title_button_login_apple".localized
-    static let register = "title_button_register".localized
-    static let alreadyHaveAccount = "title_button_already_have_account".localized
-    static let tapToRegister = "title_button_tap_to_register".localized
+    //MARK: Label titles
+    static let titleNameProfile = "title_name_profile".localized
+    static let tileEmailProfile = "tile_email_profile".localized
+    static let titlePhoneProfile = "title_phone_profile".localized
+    static let titleChangePasswordProfile = "title_change_password_profile".localized
+    
     //MARK: Title label of confirmEmailDescription
     static let confirmEmailDescription = "text_confirm_email_label".localized
     
@@ -66,7 +77,8 @@ extension String {
     static let email = "email_placeholder".localized
     static let password = "password_placeholder".localized
     static let confirPassword = "confirm_password_placeholder".localized
-    
+    static let namePlaceholderProfile = "name_placeholder_profile".localized
+    static let emailPlaceholderProfile = "email_placeholder_profile".localized
     
     
     
