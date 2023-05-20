@@ -73,8 +73,8 @@ class ProfileViewController: UIViewController {
     private func configTextFields() {
         configDefaultTextField(textfield: nameTextField, text: String.namePlaceholderProfile.localized, keyboardType: .default, isSecure: false)
         configDefaultTextField(textfield: emailTextField, text: String.emailPlaceholderProfile.localized, keyboardType: .emailAddress, isSecure: false)
-        configDefaultTextField(textfield: phoneTextField, text: "(13) 99234-8734", keyboardType: .numbersAndPunctuation, isSecure: false)
-        configDefaultTextField(textfield: changePasswordTextField, text: "12345678", keyboardType: .default, isSecure: true)
+        configDefaultTextField(textfield: phoneTextField, text: String.titlePhoneProfileUser.localized, keyboardType: .numbersAndPunctuation, isSecure: false)
+        configDefaultTextField(textfield: changePasswordTextField, text: String.titleChangePasswordProfile.localized, keyboardType: .default, isSecure: true)
     }
     
     private func configLabel() {

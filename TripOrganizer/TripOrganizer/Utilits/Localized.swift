@@ -33,7 +33,6 @@ extension String {
     
     
     //MARK: Message for alerts
-//    static let title = "title_success".localized
     static let titleConfirm = "confirm_title".localized
     static let tripEmpty = "trip_name_empty".localized
     static let message = "registration_success".localized
@@ -59,11 +58,12 @@ extension String {
     static let saveButtonTitle = "save_button_title"
     static let exitButtonTitle = "exit_button_title"
     
-    //MARK: Label titles
+    //MARK: titles
     static let titleNameProfile = "title_name_profile".localized
     static let tileEmailProfile = "tile_email_profile".localized
     static let titlePhoneProfile = "title_phone_profile".localized
     static let titleChangePasswordProfile = "title_change_password_profile".localized
+    static let titlePhoneProfileUser = "title_phone_profile_user"
     
     //MARK: Title label of confirmEmailDescription
     static let confirmEmailDescription = "text_confirm_email_label".localized
