@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         if validateEmail && validatePassword {
             validateFieldToLogin()
         } else {
-            alert?.createAlert(title: MessageAlert.titleError.localized, message: MessageAlert.emailOrPaswordError.localized)
+            alert?.createAlert(title: String.titleError, message: String.emailOrPaswordError)
         }
         
     }
@@ -100,21 +100,21 @@ class ViewController: UIViewController {
     private func configButtons() {
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = 10
-        loginButton.setTitle(ButtonTitle.loginSuccess.localized, for: .normal)
+        loginButton.setTitle(String.loginSuccess, for: .normal)
         loginWithGoogleButton.clipsToBounds = true
         loginWithGoogleButton.layer.cornerRadius = 10
-        loginWithGoogleButton.setTitle(ButtonTitle.loginGoogle.localized, for: .normal)
+        loginWithGoogleButton.setTitle(String.loginGoogle, for: .normal)
         loginWithAppleButton.clipsToBounds = true
         loginWithAppleButton.layer.cornerRadius = 10
-        loginWithAppleButton.setTitle(ButtonTitle.loginApple.localized, for: .normal)
-        recoverButton.setTitle(ButtonTitle.forgetPassword.localized, for: .normal)
+        loginWithAppleButton.setTitle(String.loginApple, for: .normal)
+        recoverButton.setTitle(String.forgetPassword, for: .normal)
         recoverButton.setTitleColor(.logoTextOrange, for: .normal)
-        registerButton.setTitle(ButtonTitle.createAccount.localized, for: .normal)
+        registerButton.setTitle(String.createAccount, for: .normal)
         registerButton.setTitleColor(.logoTextOrange, for: .normal)
         configShadowButton(button: loginWithGoogleButton)
         configShadowButton(button: loginWithAppleButton)
         eyeButton.tintColor = .lightGray
-        eyeButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
+        eyeButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
         
     }
     
@@ -136,8 +136,8 @@ class ViewController: UIViewController {
         emailTextField.autocorrectionType = .no
         emailTextField.spellCheckingType = .no
         emailTextField.keyboardType = .emailAddress
-        emailTextField.placeholder = TextfieldPlaceholder.email.localized
-        passwordTextField.placeholder = TextfieldPlaceholder.password.localized
+        emailTextField.placeholder = String.email.localized
+        passwordTextField.placeholder = String.password.localized
         passwordTextField.isSecureTextEntry = true
         passwordTextField.borderStyle = .none
         
@@ -154,11 +154,11 @@ class ViewController: UIViewController {
     
     @IBAction func tappedEyeButton(_ sender: UIButton) {
         if viewModel.isEyeOpen {
-            eyeButton.setImage(UIImage(systemName: ImagesAssets.blockedEye.rawValue), for: .normal)
+            eyeButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
             passwordTextField.isSecureTextEntry = true
             viewModel.isEyeOpen = false
         } else {
-            eyeButton.setImage(UIImage(systemName: ImagesAssets.eyes.rawValue), for: .normal)
+            eyeButton.setImage(UIImage(systemName: String.eyes), for: .normal)
             passwordTextField.isSecureTextEntry = false
             viewModel.isEyeOpen = true
         }
