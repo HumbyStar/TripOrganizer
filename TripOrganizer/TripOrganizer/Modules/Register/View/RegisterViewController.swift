@@ -141,16 +141,21 @@ class RegisterViewController: UIViewController {
               let passwordValue = passwordTextField.text,
               let confirmPasswordValue = confirmPasswordTextField.text
         else {return}
-        
+
         if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
             alert?.createAlert(title:MessageAlert.title.localized, message: MessageAlert.message.localized, completion: {
                 
                 self.registerNewUser()
-                self.navigationController?.popToRootViewController(animated: true)
+                let tabBarController = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+                tabBarController.modalPresentationStyle = .fullScreen
+                self.present(tabBarController, animated: true) {
+                    tabBarController.selectedIndex = 0 // Índice da tela inicial
+                }
             })
         } else {
             alert?.createAlert(title:MessageAlert.titleError.localized, message: MessageAlert.registerDataInvalid.localized)
         }
+        
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
