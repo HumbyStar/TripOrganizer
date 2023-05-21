@@ -25,7 +25,6 @@ class RecoverViewController: UIViewController{
         configLabel()
     }
     
-    
     @IBAction func tapToBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -33,11 +32,11 @@ class RecoverViewController: UIViewController{
     private func configButton(){
         recoverPasswordButton.layer.cornerRadius = 10
         recoverPasswordButton.clipsToBounds = true
-        recoverPasswordButton.setTitle(String.tapToRegisterButtonTitle.localized, for: .normal)
+        recoverPasswordButton.setTitle(String.tapToRegisterButtonTitle, for: .normal)
     }
     
     private func configLabel(){
-        descriptionLabel.text = String.confirmEmailDescription.localized
+        descriptionLabel.text = String.confirmEmailDescription
     }
     
     private func configTextField(){
@@ -48,7 +47,7 @@ class RecoverViewController: UIViewController{
         emailTextField.layer.cornerRadius = 10
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocorrectionType = .no
-        emailTextField.placeholder = String.emailPlaceholder.localized
+        emailTextField.placeholder = String.emailPlaceholder
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
