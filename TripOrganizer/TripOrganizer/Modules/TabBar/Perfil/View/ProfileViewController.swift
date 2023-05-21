@@ -102,24 +102,19 @@ class ProfileViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: "", message: String.saveButtonTitle.localized, completion: {
             self.navigationController?.popViewController(animated: true)
         })
-        
     }
-    
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         tabBarController?.navigationController?.popToRootViewController(animated: true)
     }
     
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
 }
 
 extension ProfileViewController: UITextFieldDelegate {
@@ -127,7 +122,6 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.logoGreen.cgColor
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -152,7 +146,6 @@ extension ProfileViewController: UITextFieldDelegate {
         } else if textField == phoneTextField {
             changePasswordTextField.becomeFirstResponder()
         }
-        
         return true
     }
 }

@@ -32,7 +32,7 @@ class RecoverViewController: UIViewController{
     private func configButton(){
         recoverPasswordButton.layer.cornerRadius = 10
         recoverPasswordButton.clipsToBounds = true
-        recoverPasswordButton.setTitle(String.tapToRegisterButtonTitle, for: .normal)
+        recoverPasswordButton.setTitle(String.tapToRegisterButtonTitle.localized, for: .normal)
     }
     
     private func configLabel(){
@@ -47,7 +47,7 @@ class RecoverViewController: UIViewController{
         emailTextField.layer.cornerRadius = 10
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocorrectionType = .no
-        emailTextField.placeholder = String.emailPlaceholder
+        emailTextField.placeholder = String.emailPlaceholder.localized
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
