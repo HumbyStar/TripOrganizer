@@ -89,7 +89,7 @@ class AddTripViewController: UIViewController {
             self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
         } else {
-            self.alert?.createAlert(title: "", message: String.tripEmpty.localized)
+            self.alert?.createAlert(title: "", message: String.tripNameEmpty.localized)
         }
     }
 }

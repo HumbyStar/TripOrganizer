@@ -12,7 +12,7 @@ class LoginViewModel {
     var isEyeOpen = false
     
     func validateEmail(_ email: String) -> Bool {
-        if email.isEmpty || ((!email.contains(String.at.localized)) || (!email.contains(String.dot.localized))) {
+        if email.isEmpty || ((!email.contains("@")) || (!email.contains(".com"))) {
             return false
         } else {
             return true

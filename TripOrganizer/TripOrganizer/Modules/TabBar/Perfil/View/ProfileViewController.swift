@@ -73,19 +73,19 @@ class ProfileViewController: UIViewController {
     private func configTextFields() {
         configDefaultTextField(textfield: nameTextField, text: String.namePlaceholderProfile.localized, keyboardType: .default, isSecure: false)
         configDefaultTextField(textfield: emailTextField, text: String.emailPlaceholderProfile.localized, keyboardType: .emailAddress, isSecure: false)
-        configDefaultTextField(textfield: phoneTextField, text: String.titlePhoneProfileUser.localized, keyboardType: .numbersAndPunctuation, isSecure: false)
-        configDefaultTextField(textfield: changePasswordTextField, text: String.titleChangePasswordProfile.localized, keyboardType: .default, isSecure: true)
+        configDefaultTextField(textfield: phoneTextField, text: String.phoneProfileUserTitle.localized, keyboardType: .numbersAndPunctuation, isSecure: false)
+        configDefaultTextField(textfield: changePasswordTextField, text: String.changePasswordProfileTitle.localized, keyboardType: .default, isSecure: true)
     }
     
     private func configLabel() {
-        nameLabel.text = String.titleNameProfile.localized
-        emailLabel.text = String.tileEmailProfile.localized
-        phoneLabel.text = String.titlePhoneProfile.localized
-        changePasswordLabel.text = String.titleChangePasswordProfile.localized
+        nameLabel.text = String.nameProfileTitle.localized
+        emailLabel.text = String.emailProfileTitle.localized
+        phoneLabel.text = String.phoneProfileTitle.localized
+        changePasswordLabel.text = String.changePasswordProfileTitle.localized
     }
     
     private func configButton() {
-        changeProfileImageButton.setTitle(String.buttonTitleChangeImage.localized, for: .normal)
+        changeProfileImageButton.setTitle(String.changeImageButtonTitle.localized, for: .normal)
         saveButton.setTitle(String.saveButtonTitle.localized, for: .normal)
         exitButton.setTitle(String.exitButtonTitle.localized, for: .normal)
     }
@@ -104,7 +104,7 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: String.saveDataProfile.localized, completion: {
+        alert?.createAlert(title: "", message: String.saveButtonTitle.localized, completion: {
             self.navigationController?.popViewController(animated: true)
         })
         
