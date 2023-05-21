@@ -67,12 +67,12 @@ class ViewController: UIViewController {
     private func validateFieldToLogin() {
         self.auth?.signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: { user, error in
             if error != nil {
-                self.alert?.createAlert(title: "Atenção", message: "Dados incorretos")
+                self.alert?.createAlert(title: String.attention.localized, message: String.invalidData.localized)
             } else {
                 if user == nil {
-                    self.alert?.createAlert(title: "Atenção", message: "Tivemos um problema inesperado, tente novamente mais tarde")
+                    self.alert?.createAlert(title: String.attention.localized, message: String.loginErroMessage.localized)
                 } else {
-                    self.alert?.createAlert(title: "", message: "Login efetuado com sucesso",completion: {
+                    self.alert?.createAlert(title: "", message: String.LogInSuccessfullyMessage.localized,completion: {
                         let viewController = UIStoryboard(name: String.tabBarController, bundle: nil).instantiateViewController(withIdentifier: String.tabBarController) as? TabBarController
                         self.resetTextField()
                         self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)

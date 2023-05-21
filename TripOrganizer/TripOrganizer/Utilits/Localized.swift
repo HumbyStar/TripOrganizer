@@ -40,9 +40,13 @@ extension String {
     static let errorTitle = "misc.error_title".localized
     static let invalidEmail = "error.invalid_email".localized
     static let invalidEmailPassword = "error.invalid_email_password".localized
-    static let dataChangedSuccessfully = "error.data_changed_successfully".localized
-    static let flightAddedSuccessfully = "error.flight_added_successfully".localized
+    static let dataChangedSuccessfully = "misc.data_changed_successfully".localized
+    static let flightAddedSuccessfully = "misc.flight_added_successfully".localized
     static let registerTapError = "error.register_tap".localized
+    static let attention = "erro.attention".localized
+    static let invalidData = "erro.invalid_data".localized
+    static let loginErroMessage = "erro.login_message".localized
+    static let LogInSuccessfullyMessage = "misc.log_successfully".localized
     
     //MARK: Button titles
     static let forgetPasswordButtonTitle = "button.title_forget_password".localized
