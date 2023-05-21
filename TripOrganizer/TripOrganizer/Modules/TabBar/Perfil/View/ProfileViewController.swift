@@ -78,8 +78,8 @@ class ProfileViewController: UIViewController {
     }
     
     private func configLabel() {
-        nameLabel.text = String.nameProfileTitle.localized
-        emailLabel.text = String.emailProfileTitle.localized
+        nameLabel.text = String.nameTitle.localized
+        emailLabel.text = String.emailTitle.localized
         phoneLabel.text = String.phoneProfileTitle.localized
         changePasswordLabel.text = String.changePasswordProfileTitle.localized
     }

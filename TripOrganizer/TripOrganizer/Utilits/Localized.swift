@@ -43,10 +43,11 @@ extension String {
     static let dataChangedSuccessfully = "misc.data_changed_successfully".localized
     static let flightAddedSuccessfully = "misc.flight_added_successfully".localized
     static let registerTapError = "error.register_tap".localized
-    static let attention = "erro.attention".localized
-    static let invalidData = "erro.invalid_data".localized
-    static let loginErroMessage = "erro.login_message".localized
+    static let attention = "error.attention".localized
+    static let invalidData = "error.invalid_data".localized
+    static let loginErroMessage = "error.login_message".localized
     static let LogInSuccessfullyMessage = "misc.log_successfully".localized
+    static let registrationErrorMessage = "registration.error_message".localized
     
     //MARK: Button titles
     static let forgetPasswordButtonTitle = "button.title_forget_password".localized
@@ -61,15 +62,15 @@ extension String {
     static let saveButtonTitle = "button.title_save".localized
     static let exitButtonTitle = "button.title_exit".localized
     
-    //MARK: Titles
-    static let nameProfileTitle = "profile.title_name".localized
-    static let emailProfileTitle = "profile.title_email".localized
+    //MARK: Title label
+    static let confirmEmailDescription = "misc.confirm_email_label".localized
+    static let nameTitle = "title.name".localized
+    static let emailTitle = "title.email".localized
     static let phoneProfileTitle = "profile.title_phone".localized
     static let changePasswordProfileTitle = "profile.title_change_password".localized
     static let phoneProfileUserTitle = "profile.phone_placeholder".localized
-    
-    //MARK: Title label of confirmEmailDescription
-    static let confirmEmailDescription = "misc.confirm_email_label".localized
+    static let id = "id".localized
+    static let users = "title.users".localized
     
     //MARK: Symbols
     static let atSymbol = "at_symbol".localized

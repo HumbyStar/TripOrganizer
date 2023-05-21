@@ -1,29 +1,30 @@
-// Registro
+// Register
 "registration.name_placeholder" = "Nome Completo";
 "registration.email_placeholder" = "Email";
 "registration.password_placeholder" = "Senha";
 "registration.confirm_password_placeholder" = "Confirmar Senha";
 "registration.success_message" = "Cadastro Efetuado com sucesso!";
 
-// Erros
+// Error
 "error.trip_name_empty" = "Sua viagem deve ter um nome!";
 "error.invalid_email" = "O email digitado não é válido";
 "error.invalid_email_password" = "Os campos não podem estar vazios e os dados precisam ser válidos";
 "error.register_tap" = "Os dados estão vazios ou inválidos";
 "misc.error_title" = "Erro";
 "misc.confirm_email_label" = "Confirme o seu email de cadastro para o envio de uma nova senha temporária";
-"erro.attention" = "Atenção";
-"erro.invalid_data" = "Dados incorretos";
-"erro.login_message" = "Tivemos um problema inesperado, tente novamente mais tarde";
+"error.attention" = "Atenção";
+"error.invalid_data" = "Dados incorretos";
+"error.login_message" = "Tivemos um problema inesperado, tente novamente mais tarde";
+"registration.error_message" = "Erro ao cadastrar";
 
-// Sucesso
+// Success
 "misc.success_title" = "Sucesso";
 "misc.flight_added_successfully" = "Voo adicionado com sucesso à sua lista de viagem!";
 "misc.data_changed_successfully" = "Dados alterados com sucesso!";
 "misc.instruction_email_sent" = "Um email de instrução foi enviado para sua caixa de entrada";
 "misc.log_successfully" = "Login efetuado com sucesso";
 
-// Títulos de botões
+// button titles
 "button.title_forget_password" = "Esqueci minha senha";
 "button.title_create_account" = "Não tenho uma conta";
 "button.title_login_success" = "Entrar";
@@ -36,7 +37,8 @@
 "button.title_save" = "Salvar";
 "button.title_exit" = "Sair";
 
-// Perfil
+
+// Label
 "profile.title_name" = "Nome";
 "profile.title_email" = "E-mail";
 "profile.title_phone" = "Telefone";
@@ -44,7 +46,7 @@
 "profile.name_placeholder" = "Caio Fabrini";
 "profile.email_placeholder" = "caio.fabrini@backfrontacademy.com.br";
 "profile.phone_placeholder" = "(00) 99212-3456";
-
+"title.users" = "usuários";
 
 // Symbols
 "at_symbol" = "@";
@@ -52,3 +54,4 @@
 
 // Outros
 "misc.confirm_title" = "Ok";
+"id" = "id";
