@@ -47,7 +47,6 @@ class AttractionViewController: UIViewController {
         attractionMapView.layer.cornerRadius = 12
     }
     
-    
     private func configCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -73,14 +72,14 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: AttractionCell? = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell
-        cell?.setupCell(imageName: viewModel.getLocationImageListCellForItemAt(index: indexPath.row))
-        return cell ?? UICollectionViewCell()
+        guard let cell: AttractionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell else {
+            return UICollectionViewCell()
+        }
+        cell.setupCell(imageName: viewModel.getLocationImageListCellForItemAt(index: indexPath.row))
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         viewModel.sizeForItem(IndexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
-        
     }
-    
 }

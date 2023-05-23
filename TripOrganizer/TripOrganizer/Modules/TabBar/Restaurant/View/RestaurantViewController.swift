@@ -101,11 +101,13 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
-        cell?.setupCell(image: images[indexPath.row])
-        cell?.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 10)
-        return cell ?? UICollectionViewCell()
+        cell.setupCell(image: images[indexPath.row])
+        cell.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 10)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

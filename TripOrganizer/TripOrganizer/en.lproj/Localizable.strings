@@ -64,6 +64,10 @@
 "flight.calendarOnGoing_placeholder" = "Ida";
 "flight.alendarOutGoing_placeholder" = "Retorno";
 "flight.passengers_placeholder" = "Quantos passageiros?";
+"label.title_popular_Destinations" = "Se inspire em nossos destinos populares:";
+"label.title_new_flight" = "Nome da viagem";
+"label.title_departure_date" = "Data de partida:";
+"label.title_return_date" = "Data de retorno";
 
 // Symbols
 "at_symbol" = "@";

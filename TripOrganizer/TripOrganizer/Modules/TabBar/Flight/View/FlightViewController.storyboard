@@ -269,13 +269,13 @@
                         <outlet property="calendarOutGoingView" destination="g9A-L9-wfX" id="Sa2-V7-X0p"/>
                         <outlet property="chooseADestinationLabel" destination="jo9-KK-We7" id="CEk-Y7-34O"/>
                         <outlet property="collectionView" destination="Iuh-JW-Wk0" id="QDu-L3-6WO"/>
-                        <outlet property="descriptionLabel" destination="rqU-4j-FLD" id="J6p-Mt-G7m"/>
                         <outlet property="flightDestinationTextField" destination="1pK-Lb-gyR" id="TnG-4p-Wm0"/>
                         <outlet property="flightDestinationView" destination="ZL6-le-EW3" id="ZAK-bR-KIr"/>
                         <outlet property="flightOriginTextField" destination="KSf-JC-SCj" id="cf8-TZ-lkZ"/>
                         <outlet property="flightOriginView" destination="QIp-dX-yw5" id="atl-Gn-mNa"/>
                         <outlet property="passengersTextField" destination="ghR-Ys-60T" id="kPc-yg-FOx"/>
                         <outlet property="passengersView" destination="3Tl-bG-bts" id="Gfz-jJ-jrc"/>
+                        <outlet property="popularDestinationsLabel" destination="rqU-4j-FLD" id="J6p-Mt-G7m"/>
                         <outlet property="ticketSearchButton" destination="6uR-KI-aRO" id="d2B-y8-9Rp"/>
                     </connections>
                 </viewController>

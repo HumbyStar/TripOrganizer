@@ -17,7 +17,7 @@ class FlightViewModel {
     
     
     public func getListObject() -> Int{
-        return listObject.count
+        return listObject.endIndex
     }
     
     

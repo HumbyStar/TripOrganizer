@@ -39,10 +39,17 @@ class AddTripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
+        configLabel()
         configTripNameTextField()
         configAddTripButton()
         configBackButton()
         navigationController?.navigationBar.tintColor = .white
+    }
+    
+    private func configLabel() {
+        tripNameLabel.text = String.nameOfFlight.localized
+        departureDateLabel.text = String.departureDateFlight.localized
+        returnDateLabel.text = String.returnDateFlight.localized
     }
     
     private func configTripNameTextField() {
@@ -52,6 +59,7 @@ class AddTripViewController: UIViewController {
     }
     
     private func configAddTripButton() {
+        addTripButton.setTitle(String.addTripButtonTitle.localized, for: .normal)
         addTripButton.clipsToBounds = true
         addTripButton.layer.cornerRadius = 16
     }

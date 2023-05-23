@@ -25,7 +25,7 @@ class TripPlanViewModel {
     
     
     public func getNumberList() -> Int {
-        return placeList.count
+        return placeList.endIndex
     }
     
 }

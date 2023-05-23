@@ -31,7 +31,6 @@ class TicketsViewController: UIViewController {
         tableView.layer.cornerRadius = 12
         tableView.showsVerticalScrollIndicator = false
     }
-    
 }
 
 extension TicketsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -40,13 +39,14 @@ extension TicketsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: FlightTableViewCell.identifier, for: indexPath) as? FlightTableViewCell
-        cell?.layer.borderWidth = 0.5
-        cell?.layer.borderColor = UIColor.lightGray.cgColor
-        cell?.clipsToBounds = true
-        cell?.layer.cornerRadius = 12
-        return cell ?? UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FlightTableViewCell.identifier, for: indexPath) as? FlightTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.clipsToBounds = true
+        cell.layer.cornerRadius = 12
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

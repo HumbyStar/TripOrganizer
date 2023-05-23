@@ -25,7 +25,6 @@ class TripPlanViewController: UIViewController {
         tripNameLabel.text = placeNameReceived
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
@@ -57,9 +56,11 @@ extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: TripPlanCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: TripPlanCollectionViewCell.identifier, for: indexPath) as? TripPlanCollectionViewCell
-        cell?.setupCell(place: viewModel.getPlaceList(index: indexPath.row))
-        return cell ?? UICollectionViewCell()
+        guard let cell: TripPlanCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: TripPlanCollectionViewCell.identifier, for: indexPath) as? TripPlanCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.setupCell(place: viewModel.getPlaceList(index: indexPath.row))
+        return cell 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

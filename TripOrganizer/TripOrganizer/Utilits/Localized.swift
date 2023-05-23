@@ -87,7 +87,10 @@ extension String {
     static let timeTitle = "label.title_time".localized
     static let phoneTitle = "label.title_phone".localized
     static let accommodationTitle = "Label.title_accommodation".localized
-    
+    static let popularDestinationsTitle = "label.title_popular_Destinations".localized
+    static let nameOfFlight = "label.title_new_flight".localized
+    static let departureDateFlight = "label.title_departure_date".localized
+    static let returnDateFlight = "label.title_return_date".localized
     
     //MARK: Symbols
     static let atSymbol = "at_symbol".localized
