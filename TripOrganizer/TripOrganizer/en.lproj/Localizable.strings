@@ -38,15 +38,14 @@
 "button.title_exit" = "Sair";
 "button.title_add_trip" = "+ Adicionar viagem";
 "button.add_title" = "Adicionar";
+"button.add_flight" = "Buscar passagens";
 
 // Label
-"profile.title_name" = "Nome";
-"profile.title_email" = "E-mail";
-"profile.title_phone" = "Telefone";
-"profile.title_change_password" = "Senha";
+"label.title_name" = "Nome";
+"label.title_email" = "E-mail";
+"label.title_phone" = "Telefone";
+"label.title_change_password" = "Senha";
 "profile.name_placeholder" = "Caio Fabrini";
-"profile.email_placeholder" = "caio.fabrini@backfrontacademy.com.br";
-"profile.phone_placeholder" = "(00) 99212-3456";
 "hotel.search_placeholder" = "Procure um hotel de estadia";
 "restaurant.search_placeholder" = "Procure um restaurante para visitar";
 "title.users" = "usuários";
@@ -59,6 +58,12 @@
 "label.title_time" = "Horário:";
 "label.title_phone" = "Telefone:";
 "Label.title_accommodation" = "Hospedagem";
+"flight.label_title" = "Comece uma nova viagem!";
+"flight.origin_placeholder" = "Escolha a origem";
+"flight.destination_placeholder" = "Escolha o destino";
+"flight.calendarOnGoing_placeholder" = "Ida";
+"flight.alendarOutGoing_placeholder" = "Retorno";
+"flight.passengers_placeholder" = "Quantos passageiros?";
 
 // Symbols
 "at_symbol" = "@";

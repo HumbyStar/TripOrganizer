@@ -8,14 +8,8 @@
 import UIKit
 import Lottie
 
-enum placeHolderFlight: String {
-    case titleLabel = "Comece uma nova viagem!"
-    case flightOrigin = "Escolha a origem"
-    case flightDestination = "Escolha o destino"
-    case calendarOnGoing = "Ida"
-    case calendarOutGoing = "Retorno"
-    case passengers = "Quantos passageiros?"
-    case titleButton = "Buscar passagens"
+enum animate: String {
+    case named = "103343-airplane-loader-animation.json"
 }
 
 class FlightViewController: UIViewController {
@@ -42,7 +36,10 @@ class FlightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configElements()
+        configUIView()
+        configTextField()
+        configLabel()
+        configButton()
         configCollectionView()
     }
     
@@ -63,7 +60,7 @@ class FlightViewController: UIViewController {
         animationView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
         animationView.frame = UIScreen.main.bounds
         animationView.center = view.center
-        loadingAnimationView.animation = LottieAnimation.named("103343-airplane-loader-animation.json")
+        loadingAnimationView.animation = LottieAnimation.named(animate.named.rawValue)
         loadingAnimationView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         loadingAnimationView.center = view.center
         loadingAnimationView.backgroundColor = .clear
@@ -78,29 +75,34 @@ class FlightViewController: UIViewController {
         animationView.removeFromSuperview()
     }
     
-    private func configElements() {
-        
+    private func configTextField() {
         flightOriginTextField.borderStyle = .none
+        flightOriginTextField.placeholder = String.originPlaceholderFight.localized
+        flightDestinationTextField.placeholder = String.destinationPlaceholderFlight.localized
         flightDestinationTextField.borderStyle = .none
         calendarOnGoingTextField.borderStyle = .none
+        calendarOnGoingTextField.placeholder = String.calendarOnGoingPlaceholderFlight.localized
+        calendarOutGoingTextField.placeholder = String.calendarOutGoingPlaceholderFlight.localized
         calendarOutGoingTextField.borderStyle = .none
         passengersTextField.borderStyle = .none
-        
-        chooseADestinationLabel.text = placeHolderFlight.titleLabel.rawValue
-        
-        flightOriginTextField.placeholder = placeHolderFlight.flightOrigin.rawValue
-        flightDestinationTextField.placeholder = placeHolderFlight.flightDestination.rawValue
-        
-        calendarOnGoingTextField.placeholder = placeHolderFlight.calendarOnGoing.rawValue
-        calendarOutGoingTextField.placeholder = placeHolderFlight.calendarOutGoing.rawValue
-        
-        passengersTextField.placeholder = placeHolderFlight.passengers.rawValue
-        
+        passengersTextField.placeholder = String.passengersPlaceholderFlight.localized
+    }
+    
+    private func configButton() {
+        ticketSearchButton.setTitle(String.addFlight.localized, for: .normal)
+        ticketSearchButton.layer.cornerRadius = 5
+        ticketSearchButton.clipsToBounds = true
         let font = UIFont.systemFont(ofSize: 15)
         let atributos: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
-        let textoComFonte = NSAttributedString(string: placeHolderFlight.titleButton.rawValue, attributes: atributos)
+        let textoComFonte = NSAttributedString(string: String.addFlight.localized, attributes: atributos)
         ticketSearchButton.setAttributedTitle(textoComFonte, for: .normal)
-        
+    }
+    
+    private func configLabel() {
+        chooseADestinationLabel.text = String.titleLabelFight.localized
+    }
+    
+    private func configUIView() {
         flightOriginView.layer.cornerRadius = 5
         flightOriginView.clipsToBounds = true
         flightDestinationView.layer.cornerRadius = 5
@@ -111,9 +113,6 @@ class FlightViewController: UIViewController {
         calendarOutGoingView.clipsToBounds = true
         passengersView.layer.cornerRadius = 5
         passengersView.clipsToBounds = true
-        ticketSearchButton.layer.cornerRadius = 5
-        ticketSearchButton.clipsToBounds = true
-        
     }
     
    private func configCollectionView() {
@@ -121,7 +120,6 @@ class FlightViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(FlightScreenCollectionViewCell.nib(), forCellWithReuseIdentifier: FlightScreenCollectionViewCell.identifier)
         viewModel.getConfigLayoutCollectionView(collectionView: collectionView)
-
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

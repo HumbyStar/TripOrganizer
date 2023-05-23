@@ -63,13 +63,14 @@ extension String {
     static let exitButtonTitle = "button.title_exit".localized
     static let addTripButtonTitle = "button.title_add_trip".localized
     static let addButtonTitle = "button.add_title".localized
+    static let addFlight = "button.add_flight".localized
     
     //MARK: Title label
     static let confirmEmailDescription = "misc.confirm_email_label".localized
-    static let nameTitle = "title.name".localized
-    static let emailTitle = "title.email".localized
-    static let phoneProfileTitle = "profile.title_phone".localized
-    static let changePasswordProfileTitle = "profile.title_change_password".localized
+    static let nameTitle = "label.title_name".localized
+    static let emailTitle = "label.title_email".localized
+    static let phoneProfileTitle = "label.title_phone".localized
+    static let changePasswordProfileTitle = "label.title_change_password".localized
     static let phoneProfileUserTitle = "profile.phone_placeholder".localized
     static let id = "id".localized
     static let users = "title.users".localized
@@ -97,15 +98,16 @@ extension String {
     static let emailPlaceholder = "registration.email_placeholder".localized
     static let passwordPlaceholder = "registration.password_placeholder".localized
     static let confirmPasswordPlaceholder = "registration.confirm_password_placeholder".localized
-    static let namePlaceholderProfile = "profile.name_placeholder".localized
-    static let emailPlaceholderProfile = "profile.email_placeholder".localized
     static let searchPlaceholderHotel = "hotel.search_placeholder".localized
     static let searchPlaceholderRestaurant = "restaurant.search_placeholder".localized
+    static let titleLabelFight = "flight.label_title".localized
+    static let originPlaceholderFight = "flight.origin_placeholder".localized
+    static let destinationPlaceholderFlight = "flight.destination_placeholder".localized
+    static let calendarOnGoingPlaceholderFlight = "flight.calendarOnGoing_placeholder".localized
+    static let calendarOutGoingPlaceholderFlight = "flight.alendarOutGoing_placeholder".localized
+    static let passengersPlaceholderFlight = "flight.passengers_placeholder".localized
     
-    
-    
-    
-    
+
     
     
     
