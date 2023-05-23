@@ -40,6 +40,8 @@ class HotelViewController: UIViewController {
         configCollectionView()
         configHotelMapView()
         configHotelInfoView()
+        configSearchBar()
+        configButton()
     }
     
     private func configHotelMapView() {
@@ -59,8 +61,12 @@ class HotelViewController: UIViewController {
         collectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
     }
     
+    private func configSearchBar() {
+        searchBar.placeholder = String.searchPlaceholderHotel.localized
+    }
     
-    public func configAddButton() {
+    private func configButton() {
+        addButton.setTitle(String.addButtonTitle.localized, for: .normal)
         addButton.layer.cornerRadius = 15
     }
     

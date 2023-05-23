@@ -62,6 +62,7 @@ extension String {
     static let saveButtonTitle = "button.title_save".localized
     static let exitButtonTitle = "button.title_exit".localized
     static let addTripButtonTitle = "button.title_add_trip".localized
+    static let addButtonTitle = "button.add_title".localized
     
     //MARK: Title label
     static let confirmEmailDescription = "misc.confirm_email_label".localized
@@ -79,6 +80,7 @@ extension String {
     static let titleHotelView = "title.hotel_view".localized
     static let titleRestaurantView = "title.restaurant_view".localized
     static let titleAttractionView = "title.attraction_view".localized
+    static let MenuRestaurantTitle = "title.restaurant_menu".localized
     
     //MARK: Symbols
     static let atSymbol = "at_symbol".localized
@@ -91,8 +93,8 @@ extension String {
     static let confirmPasswordPlaceholder = "registration.confirm_password_placeholder".localized
     static let namePlaceholderProfile = "profile.name_placeholder".localized
     static let emailPlaceholderProfile = "profile.email_placeholder".localized
-    
-    
+    static let searchPlaceholderHotel = "hotel.search_placeholder".localized
+    static let searchPlaceholderRestaurant = "restaurant.search_placeholder".localized
     
     
     

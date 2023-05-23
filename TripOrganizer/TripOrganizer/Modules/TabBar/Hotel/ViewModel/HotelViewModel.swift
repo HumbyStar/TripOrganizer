@@ -19,7 +19,7 @@ class HotelViewModel {
     
     
     public func getRoomList() -> Int{
-        roomList.count
+        roomList.endIndex
     }
     
     public func getRoomListCellForItemAt(index: Int) -> HotelModel{

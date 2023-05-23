@@ -26,6 +26,7 @@ class RestaurantViewController: UIViewController {
     @IBOutlet weak var restaurantPhoneNumberLabel: UILabel!
     @IBOutlet weak var restaurantRatingLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var cardapioLabel: UILabel!
     
     var alert: Alert?
     
@@ -40,6 +41,8 @@ class RestaurantViewController: UIViewController {
         configRestaurantInfoView()
         configRestaurantMapView()
         restaurantViewModel.loadRestaurants()
+        configButton()
+        configTitles()
         setupUI()
     }
     
@@ -61,12 +64,20 @@ class RestaurantViewController: UIViewController {
         restaurantInfoView.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 12)
     }
     
+    private func configButton() {
+        addButton.setTitle(String.addButtonTitle.localized, for: .normal)
+    }
     
-    func configRestaurantMapView(){
+    private func configTitles() {
+        cardapioLabel.text = String.MenuRestaurantTitle.localized
+        pesquisaRestauranteSearchBar.placeholder = String.searchPlaceholderRestaurant.localized
+    }
+    
+    private func configRestaurantMapView(){
         mapaRestauranteMapView.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 12)
     }
     
-    func setupUI(){
+    private func setupUI(){
         let restaurant = restaurantViewModel.cellForRow()[0]
         restaurantAddressLabel.text = "Endereço: \(restaurant.address)"
         restaurantOpeningHoursLabel.text = "Horário: \(restaurant.openingHours)"
