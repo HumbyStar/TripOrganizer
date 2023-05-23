@@ -91,6 +91,7 @@ extension String {
     static let nameOfFlight = "label.title_new_flight".localized
     static let departureDateFlight = "label.title_departure_date".localized
     static let returnDateFlight = "label.title_return_date".localized
+    static let entranceFeeLabelAttractionLabel = "title.entrance_free".localized
     
     //MARK: Symbols
     static let atSymbol = "at_symbol".localized
@@ -109,7 +110,7 @@ extension String {
     static let calendarOnGoingPlaceholderFlight = "flight.calendarOnGoing_placeholder".localized
     static let calendarOutGoingPlaceholderFlight = "flight.alendarOutGoing_placeholder".localized
     static let passengersPlaceholderFlight = "flight.passengers_placeholder".localized
-    
+    static let searchPlaceholderAttraction = "attraction.search_placeholder".localized
 
     
     

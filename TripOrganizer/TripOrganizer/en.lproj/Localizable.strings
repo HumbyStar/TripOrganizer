@@ -68,6 +68,8 @@
 "label.title_new_flight" = "Nome da viagem";
 "label.title_departure_date" = "Data de partida:";
 "label.title_return_date" = "Data de retorno";
+"attraction.search_placeholder" = "Procure por um ponto turístico";
+"title.entrance_free" = "Taxa de Entrada: Gratuito";
 
 // Symbols
 "at_symbol" = "@";

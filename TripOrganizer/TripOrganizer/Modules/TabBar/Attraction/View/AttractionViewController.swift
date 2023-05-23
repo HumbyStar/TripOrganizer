@@ -26,6 +26,7 @@ class AttractionViewController: UIViewController {
     @IBOutlet var attractionInfoView: UIView!
     @IBOutlet var addAttractionButton: UIButton!
     @IBOutlet var attractionNameLabel: UILabel!
+    @IBOutlet weak var assessmentLabel: UILabel!
     @IBOutlet var attractionAdressLabel: UILabel!
     @IBOutlet var openingHoursLabel: UILabel!
     @IBOutlet var attractionPhoneNumberLabel: UILabel!
@@ -38,6 +39,9 @@ class AttractionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
+        configSearch()
+        configButton()
+        configLabel()
         configCollectionView()
         roundedBorder()
     }
@@ -45,6 +49,22 @@ class AttractionViewController: UIViewController {
     private func roundedBorder() {
         attractionInfoView.layer.cornerRadius = 12
         attractionMapView.layer.cornerRadius = 12
+    }
+    
+    private func configSearch() {
+        searchBar.placeholder = String.searchPlaceholderAttraction.localized
+    }
+    
+    private func configButton() {
+        addAttractionButton.setTitle(String.addButtonTitle.localized, for: .normal)
+    }
+    
+    private func configLabel() {
+        assessmentLabel.text = String.assessmentsTitle.localized
+        attractionAdressLabel.text = String.addressTitle.localized
+        attractionPhoneNumberLabel.text = String.phoneTitle.localized
+        openingHoursLabel.text = String.timeTitle.localized
+        entranceFeeLabel.text = String.entranceFeeLabelAttractionLabel.localized
     }
     
     private func configCollectionView() {
