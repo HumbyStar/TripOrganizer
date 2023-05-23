@@ -32,7 +32,7 @@ class HomeViewModel {
     private var tripList: [AddTripModel] = []
     
     var tripNumberOfRows: Int {
-        tripList.count
+        tripList.endIndex
     }
     
     public func getListTripImages(index: Int) -> String {

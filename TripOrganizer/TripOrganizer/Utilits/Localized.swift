@@ -111,9 +111,8 @@ extension String {
     static let calendarOutGoingPlaceholderFlight = "flight.alendarOutGoing_placeholder".localized
     static let passengersPlaceholderFlight = "flight.passengers_placeholder".localized
     static let searchPlaceholderAttraction = "attraction.search_placeholder".localized
-
-    
-    
+    static let namePlaceholderProfile = "profile.name_text".localized
+    static let emailPlaceholderProfile = "prifile.email_exemple".localized
     
     var localized: String {
         return NSLocalizedString(self, comment: "")

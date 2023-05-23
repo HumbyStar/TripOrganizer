@@ -71,6 +71,8 @@ class ProfileViewController: UIViewController {
     }
     
     private func configTextFields() {
+        configDefaultTextField(textfield: nameTextField, text: String.namePlaceholderProfile.localized, keyboardType: .default, isSecure: false)
+        configDefaultTextField(textfield: emailTextField, text: String.emailPlaceholderProfile.localized, keyboardType: .emailAddress, isSecure: false)
         configDefaultTextField(textfield: phoneTextField, text: String.phoneProfileUserTitle.localized, keyboardType: .numbersAndPunctuation, isSecure: false)
         configDefaultTextField(textfield: changePasswordTextField, text: String.changePasswordProfileTitle.localized, keyboardType: .default, isSecure: true)
     }
@@ -101,7 +103,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: String.saveButtonTitle.localized, completion: {
+        alert?.createAlert(title: "", message: String.dataChangedSuccessfully.localized, completion: {
             self.navigationController?.popViewController(animated: true)
         })
     }

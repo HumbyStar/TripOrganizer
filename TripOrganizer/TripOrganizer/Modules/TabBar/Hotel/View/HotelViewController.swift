@@ -97,10 +97,12 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell
-        cell?.setupCell(data: viewModel.getRoomListCellForItemAt(index: indexPath.row))
-        cell?.layer.cornerRadius = 10
-        return cell ?? UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.setupCell(data: viewModel.getRoomListCellForItemAt(index: indexPath.row))
+        cell.layer.cornerRadius = 10
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

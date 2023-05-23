@@ -212,13 +212,14 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: HomeTableViewCell? = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell
-        
+        guard let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else {
+            return UITableViewCell()
+        }
         let color = cellColors[indexPath.row % cellColors.count]
-        cell?.backgroundColor = color
-        cell?.setupCell(trip: viewModel.getTripList(index: indexPath.row))
-        cell?.placeImageView.image = UIImage(named: viewModel.getListTripImages(index: indexPath.row))
-        return cell ?? UITableViewCell()
+        cell.backgroundColor = color
+        cell.setupCell(trip: viewModel.getTripList(index: indexPath.row))
+        cell.placeImageView.image = UIImage(named: viewModel.getListTripImages(index: indexPath.row))
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
