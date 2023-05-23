@@ -61,6 +61,7 @@ extension String {
     static let changeImageButtonTitle = "button.title_change_image".localized
     static let saveButtonTitle = "button.title_save".localized
     static let exitButtonTitle = "button.title_exit".localized
+    static let addTripButtonTitle = "button.title_add_trip".localized
     
     //MARK: Title label
     static let confirmEmailDescription = "misc.confirm_email_label".localized
@@ -71,6 +72,13 @@ extension String {
     static let phoneProfileUserTitle = "profile.phone_placeholder".localized
     static let id = "id".localized
     static let users = "title.users".localized
+    static let TripTitle = "label.title_trip".localized
+    static let welcomeLabelTitle = "label.tile_welcome".localized
+    static let changeProgressTitle = "label.title_change_Progress".localized
+    static let titleTicketView = "title.ticket_view".localized
+    static let titleHotelView = "title.hotel_view".localized
+    static let titleRestaurantView = "title.restaurant_view".localized
+    static let titleAttractionView = "title.attraction_view".localized
     
     //MARK: Symbols
     static let atSymbol = "at_symbol".localized

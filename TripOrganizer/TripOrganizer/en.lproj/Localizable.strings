@@ -36,7 +36,7 @@
 "button.title_change_image" = "Alterar imagem";
 "button.title_save" = "Salvar";
 "button.title_exit" = "Sair";
-
+"button.title_add_trip" = "+ Adicionar viagem";
 
 // Label
 "profile.title_name" = "Nome";
@@ -47,6 +47,9 @@
 "profile.email_placeholder" = "caio.fabrini@backfrontacademy.com.br";
 "profile.phone_placeholder" = "(00) 99212-3456";
 "title.users" = "usuários";
+"label.title_trip" = "TripOrganizer";
+"label.tile_welcome" = "Olá, Fulano! Está pronto para organizar a sua viagem e facilitar a sua jornada?";
+"label.title_change_Progress" = "Altere aqui o seu progresso atual:";
 
 // Symbols
 "at_symbol" = "@";
@@ -55,3 +58,11 @@
 // Outros
 "misc.confirm_title" = "Ok";
 "id" = "id";
+"title.ticket_view" = "Passagem";
+"title.hotel_view" = "Hotel";
+"title.restaurant_view" = "Restaurante";
+"title.attraction_view" = "Lazer";
+
+
+
+

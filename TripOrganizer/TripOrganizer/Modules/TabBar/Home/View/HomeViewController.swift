@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var appNameLabel: UILabel!
     @IBOutlet var greetingLabel: UILabel!
+    @IBOutlet weak var changeProgressLabel: UILabel!
     @IBOutlet weak var tappedTicketView: UIView!
     @IBOutlet weak var tappedHotelView: UIView!
     @IBOutlet weak var tappedRestaurantView: UIView!
@@ -42,6 +43,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         configTableView()
+        configLabel()
+        configButton()
         emptyTableViewLabel()
         configProgressBar()
         changeProfileImageNotification()
@@ -150,6 +153,16 @@ class HomeViewController: UIViewController {
     private func circularProfileButton() {
         perfilButton.clipsToBounds = true
         perfilButton.layer.cornerRadius = perfilButton.frame.height / 2
+    }
+    
+    private func configLabel() {
+        appNameLabel.text = String.TripTitle.localized
+        greetingLabel.text = String.welcomeLabelTitle.localized
+        changeProgressLabel.text = String.changeProgressTitle.localized
+    }
+    
+    private func configButton() {
+        addTripButton.setTitle(String.addTripButtonTitle.localized, for: .normal)
     }
     
     private func emptyTableViewLabel() {
