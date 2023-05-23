@@ -54,6 +54,11 @@
 "label.tile_welcome" = "Olá, Fulano! Está pronto para organizar a sua viagem e facilitar a sua jornada?";
 "label.title_change_Progress" = "Altere aqui o seu progresso atual:";
 "title.restaurant_menu" = "Cardápio:";
+"label.title_assessments" = "avaliações";
+"label.title_address" = "Endereço:";
+"label.title_time" = "Horário:";
+"label.title_phone" = "Telefone:";
+
 
 // Symbols
 "at_symbol" = "@";

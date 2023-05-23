@@ -81,6 +81,12 @@ extension String {
     static let titleRestaurantView = "title.restaurant_view".localized
     static let titleAttractionView = "title.attraction_view".localized
     static let MenuRestaurantTitle = "title.restaurant_menu".localized
+    static let assessmentsTitle = "label.title_assessments".localized
+    static let addressTitle = "label.title_address".localized
+    static let timeTitle = "label.title_time".localized
+    static let phoneTitle = "label.title_phone".localized
+    
+    
     
     //MARK: Symbols
     static let atSymbol = "at_symbol".localized

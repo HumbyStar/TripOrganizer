@@ -56,20 +56,20 @@
                                         <color key="textColor" red="0.15396149980000001" green="0.15396149980000001" blue="0.15396149980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4R-xD-NE1">
-                                        <rect key="frame" x="8" y="51" width="278" height="11"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4R-xD-NE1">
+                                        <rect key="frame" x="8" y="51" width="9" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horario: abre as 12:00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtU-HF-njQ">
-                                        <rect key="frame" x="8" y="65" width="101" height="11"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtU-HF-njQ">
+                                        <rect key="frame" x="8" y="65" width="9" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone: (41) 3243-3430 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-Zg-znt">
-                                        <rect key="frame" x="8" y="80" width="117" height="11"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-Zg-znt">
+                                        <rect key="frame" x="8" y="80" width="9" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -85,8 +85,8 @@
                                             <action selector="addRestaurantButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6U6-0X-FC5"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliações" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J65-go-2Dg">
-                                        <rect key="frame" x="10" y="30" width="64" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J65-go-2Dg">
+                                        <rect key="frame" x="10" y="30" width="11.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.78823530669999997" green="0.78823530669999997" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="highlightedColor" red="0.78823530669999997" green="0.78823530669999997" blue="0.79607844350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -137,16 +137,16 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="u5Y-E9-hlc" id="l1z-US-JYm"/>
-                        <outlet property="cardapioLabel" destination="vNc-Fn-fWu" id="7Xt-cn-Smn"/>
-                        <outlet property="mapaRestauranteMapView" destination="8b7-1q-S0N" id="Zrw-l2-5Wl"/>
                         <outlet property="menuCollectionView" destination="izv-be-YaA" id="tuh-bi-51x"/>
-                        <outlet property="pesquisaRestauranteSearchBar" destination="qvI-Wk-zli" id="cfV-yf-XPM"/>
+                        <outlet property="menuLabel" destination="vNc-Fn-fWu" id="7Xt-cn-Smn"/>
                         <outlet property="restaurantAddressLabel" destination="n4R-xD-NE1" id="r5E-Eh-Rx3"/>
                         <outlet property="restaurantInfoView" destination="OKB-rP-i9z" id="HuI-9N-oRZ"/>
+                        <outlet property="restaurantMapView" destination="8b7-1q-S0N" id="Zrw-l2-5Wl"/>
                         <outlet property="restaurantNameLabel" destination="iPe-PM-rMM" id="Lbz-gV-V6G"/>
                         <outlet property="restaurantOpeningHoursLabel" destination="mtU-HF-njQ" id="04V-iX-NCW"/>
                         <outlet property="restaurantPhoneNumberLabel" destination="Tqf-Zg-znt" id="Bet-fm-mr8"/>
                         <outlet property="restaurantRatingLabel" destination="J65-go-2Dg" id="2cG-mA-N2X"/>
+                        <outlet property="searchBar" destination="qvI-Wk-zli" id="cfV-yf-XPM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
