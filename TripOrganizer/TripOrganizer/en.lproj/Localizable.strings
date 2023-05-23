@@ -58,7 +58,7 @@
 "label.title_address" = "Endereço:";
 "label.title_time" = "Horário:";
 "label.title_phone" = "Telefone:";
-
+"Label.title_accommodation" = "Hospedagem";
 
 // Symbols
 "at_symbol" = "@";

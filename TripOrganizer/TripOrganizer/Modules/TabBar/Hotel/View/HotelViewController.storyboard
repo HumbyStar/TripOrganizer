@@ -32,7 +32,7 @@
                                 <rect key="frame" x="16" y="345" width="343" height="315"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2IU-2u-fBc">
-                                        <rect key="frame" x="8" y="51" width="278" height="11"/>
+                                        <rect key="frame" x="8" y="51" width="327" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -94,6 +94,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2IU-2u-fBc" secondAttribute="trailing" constant="8" id="8It-vI-t9T"/>
                                     <constraint firstItem="bvT-rh-uuw" firstAttribute="top" secondItem="gTJ-Yf-Mvs" secondAttribute="bottom" constant="1" id="9T9-fh-Tyv"/>
                                     <constraint firstItem="WJx-Mt-kLU" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="5" id="Aq1-Wa-txj"/>
                                     <constraint firstItem="gTJ-Yf-Mvs" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="8" id="BhI-2b-mAW"/>
@@ -104,7 +105,7 @@
                                     <constraint firstItem="nvr-IS-zhN" firstAttribute="top" secondItem="2IU-2u-fBc" secondAttribute="bottom" constant="3" id="NuY-eo-IQ8"/>
                                     <constraint firstAttribute="trailing" secondItem="gjB-fu-2JS" secondAttribute="trailing" constant="11" id="YLL-08-J5M"/>
                                     <constraint firstItem="3lA-Es-FyI" firstAttribute="top" secondItem="nvr-IS-zhN" secondAttribute="bottom" constant="4" id="a6f-E0-kDR"/>
-                                    <constraint firstAttribute="bottom" secondItem="gjB-fu-2JS" secondAttribute="bottom" constant="10" id="e4a-4s-3NH"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gjB-fu-2JS" secondAttribute="bottom" constant="10" id="e4a-4s-3NH"/>
                                     <constraint firstItem="nvr-IS-zhN" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="epp-65-afb"/>
                                     <constraint firstItem="2IU-2u-fBc" firstAttribute="top" secondItem="bvT-rh-uuw" secondAttribute="bottom" constant="5" id="gcC-ub-zUo"/>
                                     <constraint firstItem="gjB-fu-2JS" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="11" id="kpZ-Zb-GTs"/>
@@ -136,6 +137,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accommodationLabel" destination="eJI-kv-blR" id="AOr-tA-r7M"/>
                         <outlet property="addButton" destination="WJx-Mt-kLU" id="YN4-qA-AFw"/>
                         <outlet property="collectionView" destination="gjB-fu-2JS" id="ch3-a2-dSd"/>
                         <outlet property="hotelAddressLabel" destination="2IU-2u-fBc" id="bz0-I7-hId"/>

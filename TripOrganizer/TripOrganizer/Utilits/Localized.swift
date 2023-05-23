@@ -85,7 +85,7 @@ extension String {
     static let addressTitle = "label.title_address".localized
     static let timeTitle = "label.title_time".localized
     static let phoneTitle = "label.title_phone".localized
-    
+    static let accommodationTitle = "Label.title_accommodation".localized
     
     
     //MARK: Symbols

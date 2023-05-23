@@ -21,7 +21,6 @@ class HotelCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     public func setupCell(data: HotelModel){

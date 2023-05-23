@@ -17,7 +17,6 @@ class HotelViewModel {
                                           HotelModel(room: "quarto03", name: "Chatolamour", ratings: "Avaliações", phoneNumber: "Telefone: (41) 3243-3430", address: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", openingHours: "Horario: abre as 12:00 ")]
     
     
-    
     public func getRoomList() -> Int{
         roomList.endIndex
     }

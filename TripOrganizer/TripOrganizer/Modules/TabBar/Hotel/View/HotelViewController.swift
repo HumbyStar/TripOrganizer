@@ -29,6 +29,7 @@ class HotelViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var hotelMapView: MKMapView!
     @IBOutlet weak var hotelInfoView: UIView!
+    @IBOutlet weak var accommodationLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -42,6 +43,7 @@ class HotelViewController: UIViewController {
         configHotelInfoView()
         configSearchBar()
         configButton()
+        setupUI()
     }
     
     private func configHotelMapView() {
@@ -68,6 +70,14 @@ class HotelViewController: UIViewController {
     private func configButton() {
         addButton.setTitle(String.addButtonTitle.localized, for: .normal)
         addButton.layer.cornerRadius = 15
+    }
+    
+    private func setupUI(){
+        hotelRatingLabel.text = String.assessmentsTitle.localized
+        hotelAddressLabel.text = String.addressTitle.localized
+        hotelOpeningHoursLabel.text = String.timeTitle.localized
+        hotelPhoneNumberLabel.text = String.phoneTitle.localized
+        accommodationLabel.text = String.accommodationTitle.localized
     }
     
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
