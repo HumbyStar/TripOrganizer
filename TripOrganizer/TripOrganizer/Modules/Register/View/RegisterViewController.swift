@@ -146,10 +146,10 @@ class RegisterViewController: UIViewController {
             alert?.createAlert(title:MessageAlert.title.localized, message: MessageAlert.message.localized, completion: {
                 
                 self.registerNewUser()
-                let tabBarController = UIStoryboard(name: "TabBarController", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
-                tabBarController.modalPresentationStyle = .fullScreen
-                self.present(tabBarController, animated: true) {
-                    tabBarController.selectedIndex = 0
+                let tabBarController = UIStoryboard(name: RoutesIdentifier.TabBarController, bundle: nil).instantiateViewController(withIdentifier: RoutesIdentifier.TabBarController) as? UITabBarController
+                tabBarController?.modalPresentationStyle = .fullScreen
+                self.present(tabBarController ?? UITabBarController(), animated: true) {
+                    tabBarController?.selectedIndex = 0
                 }
             })
         } else {
