@@ -59,7 +59,7 @@ class RestaurantViewController: UIViewController {
     }
     
     private func configSearch() {
-        searchBar.placeholder = String.searchPlaceholderRestaurant.localized
+        searchBar.placeholder = Localized.searchPlaceholderRestaurant.localized
     }
     
     private func configRestaurantInfoView(){
@@ -67,7 +67,7 @@ class RestaurantViewController: UIViewController {
     }
     
     private func configButton() {
-        addButton.setTitle(String.addButtonTitle.localized, for: .normal)
+        addButton.setTitle(Localized.addButtonTitle.localized, for: .normal)
     }
     
     private func configRestaurantMapView(){
@@ -76,13 +76,13 @@ class RestaurantViewController: UIViewController {
     
     private func setupUI(){
         let restaurant = restaurantViewModel.cellForRow()[0]
-        restaurantAddressLabel.text = String.addressTitle.localized + restaurant.address
-        restaurantOpeningHoursLabel.text = String.timeTitle.localized + restaurant.openingHours
-        restaurantPhoneNumberLabel.text = String.phoneTitle.localized + restaurant.phoneNumber
-        restaurantRatingLabel.text = String.assessmentsTitle + String(restaurant.rating)
+        restaurantAddressLabel.text = Localized.addressTitle.localized + restaurant.address
+        restaurantOpeningHoursLabel.text = Localized.timeTitle.localized + restaurant.openingHours
+        restaurantPhoneNumberLabel.text = Localized.phoneTitle.localized + restaurant.phoneNumber
+        restaurantRatingLabel.text = Localized.assessmentsTitle + String(restaurant.rating)
         restaurantNameLabel.text = restaurant.name
-        menuLabel.text = String.menuRestaurantTitle.localized
-        restaurantRatingLabel.text = String.assessmentsTitle.localized
+        menuLabel.text = Localized.menuRestaurantTitle.localized
+        restaurantRatingLabel.text = Localized.assessmentsTitle.localized
     }
     
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {

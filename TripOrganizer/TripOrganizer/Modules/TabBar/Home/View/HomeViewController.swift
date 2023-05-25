@@ -69,12 +69,12 @@ class HomeViewController: UIViewController {
          switch imageView {
          case tappedTicketView:
              switch ticketImageView.image {
-             case UIImage(systemName: String.square):
-                 ticketImageView.image = UIImage(systemName: String.squareCheck)
+             case UIImage(systemName: Localized.square):
+                 ticketImageView.image = UIImage(systemName: Localized.squareCheck)
                 progressBar += 0.25
                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: String.squareCheck):
-                 ticketImageView.image = UIImage(systemName: String.square)
+             case UIImage(systemName: Localized.squareCheck):
+                 ticketImageView.image = UIImage(systemName: Localized.square)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -82,12 +82,12 @@ class HomeViewController: UIViewController {
              }
          case tappedHotelView:
              switch hotelImageView.image {
-             case UIImage(systemName: String.square.localized):
-                 hotelImageView.image = UIImage(systemName: String.squareCheck)
+             case UIImage(systemName: Localized.square.localized):
+                 hotelImageView.image = UIImage(systemName: Localized.squareCheck)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: String.squareCheck):
-                 hotelImageView.image = UIImage(systemName: String.square)
+             case UIImage(systemName: Localized.squareCheck):
+                 hotelImageView.image = UIImage(systemName: Localized.square)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -96,12 +96,12 @@ class HomeViewController: UIViewController {
              
          case tappedRestaurantView:
              switch restaurantImageView.image {
-             case UIImage(systemName: String.square):
-                 restaurantImageView.image = UIImage(systemName: String.squareCheck)
+             case UIImage(systemName: Localized.square):
+                 restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: String.squareCheck):
-                 restaurantImageView.image = UIImage(systemName: String.square)
+             case UIImage(systemName: Localized.squareCheck):
+                 restaurantImageView.image = UIImage(systemName: Localized.square)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -110,12 +110,12 @@ class HomeViewController: UIViewController {
              
          case tappedAttractionView:
              switch attractionImageView.image {
-             case UIImage(systemName: String.square):
-                 attractionImageView.image = UIImage(systemName: String.squareCheck)
+             case UIImage(systemName: Localized.square):
+                 attractionImageView.image = UIImage(systemName: Localized.squareCheck)
                  progressBar += 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: String.squareCheck):
-                 attractionImageView.image = UIImage(systemName: String.square)
+             case UIImage(systemName: Localized.squareCheck):
+                 attractionImageView.image = UIImage(systemName: Localized.square)
                  progressBar -= 0.25
                  tripProgressView.setProgress(progressBar, animated: true)
              default:
@@ -156,13 +156,13 @@ class HomeViewController: UIViewController {
     }
     
     private func configLabel() {
-        appNameLabel.text = String.tripTitle.localized
-        greetingLabel.text = String.welcomeLabelTitle.localized
-        changeProgressLabel.text = String.changeProgressTitle.localized
+        appNameLabel.text = Localized.tripTitle.localized
+        greetingLabel.text = Localized.welcomeLabelTitle.localized
+        changeProgressLabel.text = Localized.changeProgressTitle.localized
     }
     
     private func configButton() {
-        addTripButton.setTitle(String.addTripButtonTitle.localized, for: .normal)
+        addTripButton.setTitle(Localized.addTripButtonTitle.localized, for: .normal)
     }
     
     private func emptyTableViewLabel() {
@@ -198,12 +198,12 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func perfilButtonPressed(_ sender: UIButton) {
-        let vc = UIStoryboard(name: String.profileViewController, bundle: nil).instantiateViewController(withIdentifier: String.profileViewController) as? ProfileViewController
+        let vc = UIStoryboard(name: Localized.profileViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.profileViewController) as? ProfileViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
     @IBAction func addTripButtonPressed(_ sender: UIButton) {
-        let vc: AddTripViewController? = UIStoryboard(name: String.addTripViewController, bundle: nil).instantiateViewController(withIdentifier: String.addTripViewController) as? AddTripViewController
+        let vc: AddTripViewController? = UIStoryboard(name: Localized.addTripViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.addTripViewController) as? AddTripViewController
         vc?.delegate(delegate: self)
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
@@ -231,7 +231,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc: TripPlanViewController? = UIStoryboard(name: String.tripPlanViewController, bundle: nil).instantiateViewController(withIdentifier: String.tripPlanViewController) as? TripPlanViewController
+        let vc: TripPlanViewController? = UIStoryboard(name: Localized.tripPlanViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.tripPlanViewController) as? TripPlanViewController
         vc?.placeNameReceived = viewModel.getTripList(index: indexPath.row).tripName
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }

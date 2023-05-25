@@ -21,7 +21,7 @@ class LaunchScreenViewController: UIViewController {
         }) {(_) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 
-                let storyBoard = UIStoryboard(name: String.main, bundle: nil)
+                let storyBoard = UIStoryboard(name: Localized.main, bundle: nil)
                 let viewController = storyBoard.instantiateInitialViewController()
                 
                 guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

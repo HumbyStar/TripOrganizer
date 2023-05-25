@@ -64,20 +64,20 @@ class HotelViewController: UIViewController {
     }
     
     private func configSearchBar() {
-        searchBar.placeholder = String.searchPlaceholderHotel.localized
+        searchBar.placeholder = Localized.searchPlaceholderHotel.localized
     }
     
     private func configButton() {
-        addButton.setTitle(String.addButtonTitle.localized, for: .normal)
+        addButton.setTitle(Localized.addButtonTitle.localized, for: .normal)
         addButton.layer.cornerRadius = 15
     }
     
     private func setupUI(){
-        hotelRatingLabel.text = String.assessmentsTitle.localized
-        hotelAddressLabel.text = String.addressTitle.localized
-        hotelOpeningHoursLabel.text = String.timeTitle.localized
-        hotelPhoneNumberLabel.text = String.phoneTitle.localized
-        accommodationLabel.text = String.accommodationTitle.localized
+        hotelRatingLabel.text = Localized.assessmentsTitle.localized
+        hotelAddressLabel.text = Localized.addressTitle.localized
+        hotelOpeningHoursLabel.text = Localized.timeTitle.localized
+        hotelPhoneNumberLabel.text = Localized.phoneTitle.localized
+        accommodationLabel.text = Localized.accommodationTitle.localized
     }
     
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {

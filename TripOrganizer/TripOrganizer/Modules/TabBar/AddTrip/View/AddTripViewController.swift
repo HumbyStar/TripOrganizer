@@ -47,9 +47,9 @@ class AddTripViewController: UIViewController {
     }
     
     private func configLabel() {
-        tripNameLabel.text = String.nameOfFlight.localized
-        departureDateLabel.text = String.departureDateFlight.localized
-        returnDateLabel.text = String.returnDateFlight.localized
+        tripNameLabel.text = Localized.nameOfFlight.localized
+        departureDateLabel.text = Localized.departureDateFlight.localized
+        returnDateLabel.text = Localized.returnDateFlight.localized
     }
     
     private func configTripNameTextField() {
@@ -59,13 +59,13 @@ class AddTripViewController: UIViewController {
     }
     
     private func configAddTripButton() {
-        addTripButton.setTitle(String.addTripButtonTitle.localized, for: .normal)
+        addTripButton.setTitle(Localized.addTripButtonTitle.localized, for: .normal)
         addTripButton.clipsToBounds = true
         addTripButton.layer.cornerRadius = 16
     }
     
     private func configBackButton() {
-        backButton.setImage(UIImage(systemName: String.goBack)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        backButton.setImage(UIImage(systemName: Localized.goBack)?.withRenderingMode(.alwaysTemplate), for: .normal)
         backButton.tintColor = .white
     }
     
@@ -97,7 +97,7 @@ class AddTripViewController: UIViewController {
             self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
         } else {
-            self.alert?.createAlert(title: "", message: String.tripNameEmpty.localized)
+            self.alert?.createAlert(title: "", message: Localized.tripNameEmpty.localized)
         }
     }
 }

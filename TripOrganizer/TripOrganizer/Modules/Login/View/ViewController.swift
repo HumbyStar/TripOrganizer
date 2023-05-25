@@ -42,12 +42,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapToRecoverPassword(_ sender: UIButton) {
-        let vc = UIStoryboard(name: String.recoverViewController, bundle: nil).instantiateViewController(withIdentifier: String.recoverViewController) as? RecoverViewController
+        let vc = UIStoryboard(name: Localized.recoverViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.recoverViewController) as? RecoverViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
 
     @IBAction func tapToRegister(_ sender: UIButton) {
-        let vc = UIStoryboard(name: String.registerViewController, bundle: nil).instantiateViewController(withIdentifier: String.registerViewController) as? RegisterViewController
+        let vc = UIStoryboard(name: Localized.registerViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.registerViewController) as? RegisterViewController
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
     
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         if validateEmail && validatePassword {
             validateFieldToLogin()
         } else {
-            alert?.createAlert(title: String.errorTitle, message: String.invalidEmailPassword)
+            alert?.createAlert(title: Localized.errorTitle, message: Localized.invalidEmailPassword)
         }
         
     }
@@ -67,13 +67,13 @@ class ViewController: UIViewController {
     private func validateFieldToLogin() {
         self.auth?.signIn(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "", completion: { user, error in
             if error != nil {
-                self.alert?.createAlert(title: String.attention.localized, message: String.invalidData.localized)
+                self.alert?.createAlert(title: Localized.attention.localized, message: Localized.invalidData.localized)
             } else {
                 if user == nil {
-                    self.alert?.createAlert(title: String.attention.localized, message: String.loginErroMessage.localized)
+                    self.alert?.createAlert(title: Localized.attention.localized, message: Localized.loginErroMessage.localized)
                 } else {
-                    self.alert?.createAlert(title: "", message: String.logInSuccessfullyMessage.localized,completion: {
-                        let viewController = UIStoryboard(name: String.tabBarController, bundle: nil).instantiateViewController(withIdentifier: String.tabBarController) as? TabBarController
+                    self.alert?.createAlert(title: "", message: Localized.logInSuccessfullyMessage.localized,completion: {
+                        let viewController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? TabBarController
                         self.resetTextField()
                         self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
                     })
@@ -100,21 +100,21 @@ class ViewController: UIViewController {
     private func configButtons() {
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = 10
-        loginButton.setTitle(String.loginSuccessButtonTitle.localized, for: .normal)
+        loginButton.setTitle(Localized.loginSuccessButtonTitle.localized, for: .normal)
         loginWithGoogleButton.clipsToBounds = true
         loginWithGoogleButton.layer.cornerRadius = 10
-        loginWithGoogleButton.setTitle(String.loginGoogleButtonTitle.localized, for: .normal)
+        loginWithGoogleButton.setTitle(Localized.loginGoogleButtonTitle.localized, for: .normal)
         loginWithAppleButton.clipsToBounds = true
         loginWithAppleButton.layer.cornerRadius = 10
-        loginWithAppleButton.setTitle(String.loginAppleButtonTitle.localized, for: .normal)
-        recoverButton.setTitle(String.forgetPasswordButtonTitle, for: .normal)
+        loginWithAppleButton.setTitle(Localized.loginAppleButtonTitle.localized, for: .normal)
+        recoverButton.setTitle(Localized.forgetPasswordButtonTitle, for: .normal)
         recoverButton.setTitleColor(.logoTextOrange, for: .normal)
-        registerButton.setTitle(String.createAccountButtonTitle.localized, for: .normal)
+        registerButton.setTitle(Localized.createAccountButtonTitle.localized, for: .normal)
         registerButton.setTitleColor(.logoTextOrange, for: .normal)
         configShadowButton(button: loginWithGoogleButton)
         configShadowButton(button: loginWithAppleButton)
         eyeButton.tintColor = .lightGray
-        eyeButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
+        eyeButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
         
     }
     
@@ -136,8 +136,8 @@ class ViewController: UIViewController {
         emailTextField.autocorrectionType = .no
         emailTextField.spellCheckingType = .no
         emailTextField.keyboardType = .emailAddress
-        emailTextField.placeholder = String.emailPlaceholder.localized
-        passwordTextField.placeholder = String.passwordPlaceholder.localized
+        emailTextField.placeholder = Localized.emailPlaceholder.localized
+        passwordTextField.placeholder = Localized.passwordPlaceholder.localized
         passwordTextField.isSecureTextEntry = true
         passwordTextField.borderStyle = .none
         
@@ -154,11 +154,11 @@ class ViewController: UIViewController {
     
     @IBAction func tappedEyeButton(_ sender: UIButton) {
         if viewModel.isEyeOpen {
-            eyeButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
+            eyeButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
             passwordTextField.isSecureTextEntry = true
             viewModel.isEyeOpen = false
         } else {
-            eyeButton.setImage(UIImage(systemName: String.eye), for: .normal)
+            eyeButton.setImage(UIImage(systemName: Localized.eye), for: .normal)
             passwordTextField.isSecureTextEntry = false
             viewModel.isEyeOpen = true
         }

@@ -52,19 +52,19 @@ class AttractionViewController: UIViewController {
     }
     
     private func configSearch() {
-        searchBar.placeholder = String.searchPlaceholderAttraction.localized
+        searchBar.placeholder = Localized.searchPlaceholderAttraction.localized
     }
     
     private func configButton() {
-        addAttractionButton.setTitle(String.addButtonTitle.localized, for: .normal)
+        addAttractionButton.setTitle(Localized.addButtonTitle.localized, for: .normal)
     }
     
     private func configLabel() {
-        assessmentLabel.text = String.assessmentsTitle.localized
-        attractionAdressLabel.text = String.addressTitle.localized
-        attractionPhoneNumberLabel.text = String.phoneTitle.localized
-        openingHoursLabel.text = String.timeTitle.localized
-        entranceFeeLabel.text = String.entranceFeeLabelAttractionLabel.localized
+        assessmentLabel.text = Localized.assessmentsTitle.localized
+        attractionAdressLabel.text = Localized.addressTitle.localized
+        attractionPhoneNumberLabel.text = Localized.phoneTitle.localized
+        openingHoursLabel.text = Localized.timeTitle.localized
+        entranceFeeLabel.text = Localized.entranceFeeLabelAttractionLabel.localized
     }
     
     private func configCollectionView() {

@@ -53,8 +53,8 @@ class RegisterViewController: UIViewController {
         registerButton.layer.cornerRadius = 10
         registerButton.backgroundColor = UIColor.logoGreen
         registerButton.setTitleColor(.white, for: .normal)
-        registerButton.setTitle(String.registerButtonTitle.localized, for: .normal)
-        alreadyHaveAccountButton.setTitle(String.alreadyHaveAccountButtonTitle.localized, for: .normal)
+        registerButton.setTitle(Localized.registerButtonTitle.localized, for: .normal)
+        alreadyHaveAccountButton.setTitle(Localized.alreadyHaveAccountButtonTitle.localized, for: .normal)
     }
     
     private func configProtocols(){
@@ -84,10 +84,10 @@ class RegisterViewController: UIViewController {
     }
     
     private func configTextField() {
-        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: String.namePlaceholder.localized)
-        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: String.emailPlaceholder.localized, keyboardType: .emailAddress)
-        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: String.passwordPlaceholder.localized)
-        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: String.confirmPasswordPlaceholder.localized)
+        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: Localized.namePlaceholder.localized)
+        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: Localized.emailPlaceholder.localized, keyboardType: .emailAddress)
+        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: Localized.passwordPlaceholder.localized)
+        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: Localized.confirmPasswordPlaceholder.localized)
     }
     
     func registerNewUser() {
@@ -95,16 +95,16 @@ class RegisterViewController: UIViewController {
         guard let emailValid = emailTextField.text, let passwordValid = passwordTextField.text else {return}
         self.auth?.createUser(withEmail: emailValid, password: passwordValid, completion: { result, error in
             if error != nil {
-                self.alert?.createAlert(title: String.attention.localized, message: String.registrationErrorMessage.localized)
+                self.alert?.createAlert(title: Localized.attention.localized, message: Localized.registrationErrorMessage.localized)
             } else {
                 if let idUser = result?.user.uid {
-                    self.firestore?.collection(String.users.localized).document(idUser).setData([
-                        String.nameTitle: self.nameTextField.text ?? "",
-                        String.emailTitle: self.emailTextField.text ?? "",
-                        String.id.localized: idUser
+                    self.firestore?.collection(Localized.users.localized).document(idUser).setData([
+                        Localized.nameTitle: self.nameTextField.text ?? "",
+                        Localized.emailTitle: self.emailTextField.text ?? "",
+                        Localized.id.localized: idUser
                     ])
                 }
-                self.alert?.createAlert(title: String.successTitle.localized, message: String.registrationSuccessMessage.localized)
+                self.alert?.createAlert(title: Localized.successTitle.localized, message: Localized.registrationSuccessMessage.localized)
             }
         })
     }
@@ -113,9 +113,9 @@ class RegisterViewController: UIViewController {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         
         if passwordTextField.isSecureTextEntry {
-            showPasswordButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
         } else {
-            showPasswordButton.setImage(UIImage(systemName: String.eye), for: .normal)
+            showPasswordButton.setImage(UIImage(systemName: Localized.eye), for: .normal)
         }
     }
     
@@ -124,9 +124,9 @@ class RegisterViewController: UIViewController {
         confirmPasswordTextField.isSecureTextEntry = !confirmPasswordTextField.isSecureTextEntry
         
         if confirmPasswordTextField.isSecureTextEntry {
-            showConfirmPasswordButton.setImage(UIImage(systemName: String.blockedEye), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
         } else {
-            showConfirmPasswordButton.setImage(UIImage(systemName: String.eye), for: .normal)
+            showConfirmPasswordButton.setImage(UIImage(systemName: Localized.eye), for: .normal)
         }
     }
     
@@ -143,13 +143,13 @@ class RegisterViewController: UIViewController {
         else {return}
         
         if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
-            alert?.createAlert(title: String.successTitle.localized, message: String.registrationSuccessMessage.localized, completion: {
+            alert?.createAlert(title: Localized.successTitle.localized, message: Localized.registrationSuccessMessage.localized, completion: {
                 
                 self.registerNewUser()
                 self.navigationController?.popToRootViewController(animated: true)
             })
         } else {
-            alert?.createAlert(title: String.errorTitle.localized, message: String.registerTapError.localized)
+            alert?.createAlert(title: Localized.errorTitle.localized, message: Localized.registerTapError.localized)
         }
     }
     

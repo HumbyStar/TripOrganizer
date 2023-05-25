@@ -9,6 +9,6 @@ import UIKit
 
 class RecoverPasswordViewModel {
     func validateConfirmEmail(_ email: String) -> Bool {
-        return email.isEmpty || (!email.contains(String.atSymbol.localized) || !email.contains(String.dotCom.localized))
+        return email.isEmpty || (!email.contains(Localized.atSymbol.localized) || !email.contains(Localized.dotCom.localized))
     }
 }

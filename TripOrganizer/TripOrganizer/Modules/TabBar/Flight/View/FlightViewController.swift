@@ -45,7 +45,7 @@ class FlightViewController: UIViewController {
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
         
-        let viewController: TicketsViewController? = UIStoryboard(name: String.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: String.ticketsViewController) as? TicketsViewController
+        let viewController: TicketsViewController? = UIStoryboard(name: Localized.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.ticketsViewController) as? TicketsViewController
         viewController?.modalPresentationStyle = .automatic
         self.configLoadingAnimation()
         
@@ -77,30 +77,30 @@ class FlightViewController: UIViewController {
     
     private func configTextField() {
         flightOriginTextField.borderStyle = .none
-        flightOriginTextField.placeholder = String.originPlaceholderFight.localized
-        flightDestinationTextField.placeholder = String.destinationPlaceholderFlight.localized
+        flightOriginTextField.placeholder = Localized.originPlaceholderFight.localized
+        flightDestinationTextField.placeholder = Localized.destinationPlaceholderFlight.localized
         flightDestinationTextField.borderStyle = .none
         calendarOnGoingTextField.borderStyle = .none
-        calendarOnGoingTextField.placeholder = String.calendarOnGoingPlaceholderFlight.localized
-        calendarOutGoingTextField.placeholder = String.calendarOutGoingPlaceholderFlight.localized
+        calendarOnGoingTextField.placeholder = Localized.calendarOnGoingPlaceholderFlight.localized
+        calendarOutGoingTextField.placeholder = Localized.calendarOutGoingPlaceholderFlight.localized
         calendarOutGoingTextField.borderStyle = .none
         passengersTextField.borderStyle = .none
-        passengersTextField.placeholder = String.passengersPlaceholderFlight.localized
+        passengersTextField.placeholder = Localized.passengersPlaceholderFlight.localized
     }
     
     private func configButton() {
-        ticketSearchButton.setTitle(String.addFlight.localized, for: .normal)
+        ticketSearchButton.setTitle(Localized.addFlight.localized, for: .normal)
         ticketSearchButton.layer.cornerRadius = 5
         ticketSearchButton.clipsToBounds = true
         let font = UIFont.systemFont(ofSize: 15)
         let atributos: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
-        let textoComFonte = NSAttributedString(string: String.addFlight.localized, attributes: atributos)
+        let textoComFonte = NSAttributedString(string: Localized.addFlight.localized, attributes: atributos)
         ticketSearchButton.setAttributedTitle(textoComFonte, for: .normal)
     }
     
     private func configLabel() {
-        chooseADestinationLabel.text = String.titleLabelFight.localized
-        popularDestinationsLabel.text = String.popularDestinationsTitle.localized
+        chooseADestinationLabel.text = Localized.titleLabelFight.localized
+        popularDestinationsLabel.text = Localized.popularDestinationsTitle.localized
     }
     
     private func configUIView() {

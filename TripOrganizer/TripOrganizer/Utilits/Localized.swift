@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+class Localized {
     
     //MARK: Routes identifier
     static let recoverViewController = "RecoverViewController"
@@ -114,13 +114,15 @@ extension String {
     static let searchPlaceholderRestaurant = "restaurant.search_placeholder".localized
     static let titleLabelFight = "flight.label_title".localized
     
-    var localized: String {
-        return NSLocalizedString(self, comment: "")
-    }
-    
     // MARK: - Private Helper Function
     private static func localized(_ key: String) -> String {
         return NSLocalizedString(key, comment: "")
+    }
+}
+
+extension String {
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
     }
     
 }

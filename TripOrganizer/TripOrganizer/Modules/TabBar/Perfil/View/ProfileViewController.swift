@@ -71,23 +71,23 @@ class ProfileViewController: UIViewController {
     }
     
     private func configTextFields() {
-        configDefaultTextField(textfield: nameTextField, text: String.namePlaceholderProfile.localized, keyboardType: .default, isSecure: false)
-        configDefaultTextField(textfield: emailTextField, text: String.emailPlaceholderProfile.localized, keyboardType: .emailAddress, isSecure: false)
-        configDefaultTextField(textfield: phoneTextField, text: String.phoneProfileUserTitle.localized, keyboardType: .numbersAndPunctuation, isSecure: false)
-        configDefaultTextField(textfield: changePasswordTextField, text: String.changePasswordProfileTitle.localized, keyboardType: .default, isSecure: true)
+        configDefaultTextField(textfield: nameTextField, text: Localized.namePlaceholderProfile.localized, keyboardType: .default, isSecure: false)
+        configDefaultTextField(textfield: emailTextField, text: Localized.emailPlaceholderProfile.localized, keyboardType: .emailAddress, isSecure: false)
+        configDefaultTextField(textfield: phoneTextField, text: Localized.phoneProfileUserTitle.localized, keyboardType: .numbersAndPunctuation, isSecure: false)
+        configDefaultTextField(textfield: changePasswordTextField, text: Localized.changePasswordProfileTitle.localized, keyboardType: .default, isSecure: true)
     }
     
     private func configLabel() {
-        nameLabel.text = String.nameTitle.localized
-        emailLabel.text = String.emailTitle.localized
-        phoneLabel.text = String.phoneProfileTitle.localized
-        changePasswordLabel.text = String.changePasswordProfileTitle.localized
+        nameLabel.text = Localized.nameTitle.localized
+        emailLabel.text = Localized.emailTitle.localized
+        phoneLabel.text = Localized.phoneProfileTitle.localized
+        changePasswordLabel.text = Localized.changePasswordProfileTitle.localized
     }
     
     private func configButton() {
-        changeProfileImageButton.setTitle(String.changeImageButtonTitle.localized, for: .normal)
-        saveButton.setTitle(String.saveButtonTitle.localized, for: .normal)
-        exitButton.setTitle(String.exitButtonTitle.localized, for: .normal)
+        changeProfileImageButton.setTitle(Localized.changeImageButtonTitle.localized, for: .normal)
+        saveButton.setTitle(Localized.saveButtonTitle.localized, for: .normal)
+        exitButton.setTitle(Localized.exitButtonTitle.localized, for: .normal)
     }
     
     @IBAction func changeProfileImageButtonPressed(_ sender: UIButton) {
@@ -103,7 +103,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        alert?.createAlert(title: "", message: String.dataChangedSuccessfully.localized, completion: {
+        alert?.createAlert(title: "", message: Localized.dataChangedSuccessfully.localized, completion: {
             self.navigationController?.popViewController(animated: true)
         })
     }
