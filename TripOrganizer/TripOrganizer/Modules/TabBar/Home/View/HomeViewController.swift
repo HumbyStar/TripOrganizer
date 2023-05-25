@@ -156,7 +156,7 @@ class HomeViewController: UIViewController {
     }
     
     private func configLabel() {
-        appNameLabel.text = String.TripTitle.localized
+        appNameLabel.text = String.tripTitle.localized
         greetingLabel.text = String.welcomeLabelTitle.localized
         changeProgressLabel.text = String.changeProgressTitle.localized
     }

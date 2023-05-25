@@ -72,7 +72,7 @@ class ViewController: UIViewController {
                 if user == nil {
                     self.alert?.createAlert(title: String.attention.localized, message: String.loginErroMessage.localized)
                 } else {
-                    self.alert?.createAlert(title: "", message: String.LogInSuccessfullyMessage.localized,completion: {
+                    self.alert?.createAlert(title: "", message: String.logInSuccessfullyMessage.localized,completion: {
                         let viewController = UIStoryboard(name: String.tabBarController, bundle: nil).instantiateViewController(withIdentifier: String.tabBarController) as? TabBarController
                         self.resetTextField()
                         self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)

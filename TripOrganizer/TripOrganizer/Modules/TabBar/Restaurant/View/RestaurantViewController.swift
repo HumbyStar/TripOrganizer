@@ -81,7 +81,7 @@ class RestaurantViewController: UIViewController {
         restaurantPhoneNumberLabel.text = String.phoneTitle.localized + restaurant.phoneNumber
         restaurantRatingLabel.text = String.assessmentsTitle + String(restaurant.rating)
         restaurantNameLabel.text = restaurant.name
-        menuLabel.text = String.MenuRestaurantTitle.localized
+        menuLabel.text = String.menuRestaurantTitle.localized
         restaurantRatingLabel.text = String.assessmentsTitle.localized
     }
     
