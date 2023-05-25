@@ -20,6 +20,11 @@ class HomeTableViewCell: UITableViewCell {
         return UINib(nibName: self.identifier, bundle: nil)
     }
     
+    override func layoutSubviews() {
+        self.layer.cornerRadius = 8
+        self.contentView.layer.cornerRadius = 8
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configCellLayout()
