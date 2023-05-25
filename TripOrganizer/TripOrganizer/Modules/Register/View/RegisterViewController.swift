@@ -137,20 +137,24 @@ class RegisterViewController: UIViewController {
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         
         guard let nameValue = nameTextField.text,
-              let emailValue = emailTextField.text,
-              let passwordValue = passwordTextField.text,
-              let confirmPasswordValue = confirmPasswordTextField.text
-        else {return}
-        
-        if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
-            alert?.createAlert(title: Localized.successTitle.localized, message: Localized.registrationSuccessMessage.localized, completion: {
-                
-                self.registerNewUser()
-                self.navigationController?.popToRootViewController(animated: true)
-            })
-        } else {
-            alert?.createAlert(title: Localized.errorTitle.localized, message: Localized.registerTapError.localized)
-        }
+                      let emailValue = emailTextField.text,
+                      let passwordValue = passwordTextField.text,
+                      let confirmPasswordValue = confirmPasswordTextField.text
+                else {return}
+
+                if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
+                    alert?.createAlert(title: Localized.successTitle, message: Localized.registrationSuccessMessage, completion: {
+                        
+                        self.registerNewUser()
+                        let tabBarController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? UITabBarController
+                        tabBarController?.modalPresentationStyle = .fullScreen
+                        self.present(tabBarController ?? UITabBarController(), animated: true) {
+                            tabBarController?.selectedIndex = 0
+                        }
+                    })
+                } else {
+                    alert?.createAlert(title: Localized.errorTitle, message: Localized.registrationErrorMessage)
+                }
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
