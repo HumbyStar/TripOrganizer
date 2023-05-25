@@ -20,15 +20,15 @@ class HomeTableViewCell: UITableViewCell {
         return UINib(nibName: self.identifier, bundle: nil)
     }
     
+    override func layoutSubviews() {
+        self.layer.cornerRadius = 8
+        self.contentView.layer.cornerRadius = 8
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configCellLayout()
         self.configImageView()
-    }
-    
-    override func layoutSubviews() {
-        self.layer.cornerRadius = 8
-        self.contentView.layer.cornerRadius = 8
     }
     
     private func configCellLayout() {
@@ -43,6 +43,7 @@ class HomeTableViewCell: UITableViewCell {
         self.layer.shadowRadius = 4
         self.layer.masksToBounds = false
     }
+    
     
     private func configImageView() {
         self.placeImageView.clipsToBounds = true

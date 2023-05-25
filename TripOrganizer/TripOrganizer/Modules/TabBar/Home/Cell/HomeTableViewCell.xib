@@ -56,13 +56,18 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="departureDateLabel" destination="Nde-FR-JZ9" id="jMK-qM-MsQ"/>
                 <outlet property="placeImageView" destination="nOW-9c-EMf" id="0Dv-EC-Clv"/>
                 <outlet property="returnDateLabel" destination="jlH-e9-KdS" id="Jo2-6h-wJT"/>
                 <outlet property="tripNameLabel" destination="Arb-XK-tWe" id="4h6-JE-VJr"/>
             </connections>
-            <point key="canvasLocation" x="-391" y="-39"/>
+            <point key="canvasLocation" x="-392.36641221374043" y="-39.436619718309863"/>
         </tableViewCell>
     </objects>
     <resources>
