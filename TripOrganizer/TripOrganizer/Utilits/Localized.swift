@@ -118,6 +118,7 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
     
+    // MARK: - Private Helper Function
     private static func localized(_ key: String) -> String {
         return NSLocalizedString(key, comment: "")
     }
