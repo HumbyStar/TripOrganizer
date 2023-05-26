@@ -147,10 +147,6 @@ class RegisterViewController: UIViewController {
 
                         self.registerNewUser()
                         let tabBarController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? UITabBarController
-                        self.present(tabBarController ?? UITabBarController(), animated: true) {
-                            tabBarController?.modalPresentationStyle = .fullScreen
-                            tabBarController?.selectedIndex = 0
-                        }
                         self.navigationController?.pushViewController(tabBarController ?? UITabBarController(), animated: true)
                     })
                 } else {
