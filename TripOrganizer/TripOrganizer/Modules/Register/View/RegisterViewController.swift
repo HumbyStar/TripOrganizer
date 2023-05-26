@@ -104,7 +104,6 @@ class RegisterViewController: UIViewController {
                         Localized.id.localized: idUser
                     ])
                 }
-                self.alert?.createAlert(title: Localized.successTitle.localized, message: Localized.registrationSuccessMessage.localized)
             }
         })
     }
