@@ -144,13 +144,14 @@ class RegisterViewController: UIViewController {
 
                 if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
                     alert?.createAlert(title: Localized.successTitle, message: Localized.registrationSuccessMessage, completion: {
-                        
+
                         self.registerNewUser()
                         let tabBarController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? UITabBarController
-                        tabBarController?.modalPresentationStyle = .fullScreen
                         self.present(tabBarController ?? UITabBarController(), animated: true) {
+                            tabBarController?.modalPresentationStyle = .fullScreen
                             tabBarController?.selectedIndex = 0
                         }
+                        self.navigationController?.pushViewController(tabBarController ?? UITabBarController(), animated: true)
                     })
                 } else {
                     alert?.createAlert(title: Localized.errorTitle, message: Localized.registrationErrorMessage)
