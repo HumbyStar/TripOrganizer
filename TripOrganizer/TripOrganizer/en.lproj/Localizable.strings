@@ -57,7 +57,7 @@
 "label.title_address" = "Endereço:";
 "label.title_time" = "Horário:";
 "label.title_phone" = "Telefone";
-"Label.title_accommodation" = "Hospedagem";
+"Label.title_accommodation" = "Hospedagem:";
 "flight.label_title" = "Comece uma nova viagem!";
 "flight.origin_placeholder" = "Escolha a origem";
 "flight.destination_placeholder" = "Escolha o destino";

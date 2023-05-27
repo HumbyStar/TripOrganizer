@@ -32,7 +32,7 @@
                                 <rect key="frame" x="16" y="345" width="343" height="315"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVO-Zj-FsQ">
-                                        <rect key="frame" x="8" y="51" width="44.5" height="11"/>
+                                        <rect key="frame" x="8" y="51" width="327" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -95,6 +95,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EVO-Zj-FsQ" secondAttribute="trailing" constant="8" id="1u7-6Q-T6K"/>
                                     <constraint firstItem="EVO-Zj-FsQ" firstAttribute="top" secondItem="ims-98-vC7" secondAttribute="bottom" constant="5" id="1ua-hW-GuB"/>
                                     <constraint firstItem="eVf-Ka-K8c" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="8" id="A7X-hX-2sV"/>
                                     <constraint firstAttribute="trailing" secondItem="TBb-Fx-bvz" secondAttribute="trailing" constant="8" id="B7t-Cf-QN0"/>
