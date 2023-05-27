@@ -70,6 +70,10 @@
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJx-Mt-kLU">
                                         <rect key="frame" x="239" y="5" width="96" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="RZF-FG-r38"/>
+                                            <constraint firstAttribute="height" constant="22" id="mS0-JH-Ud2"/>
+                                        </constraints>
                                         <color key="tintColor" red="0.43921568989999998" green="0.60784316059999999" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Adicionar" image="plus.circle.fill" catalog="system">
@@ -80,7 +84,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chatolamour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTJ-Yf-Mvs">
-                                        <rect key="frame" x="10" y="8" width="105" height="21"/>
+                                        <rect key="frame" x="10" y="8" width="221" height="21"/>
                                         <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="17"/>
                                         <color key="textColor" red="0.87058818339999999" green="0.46666663889999999" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -103,6 +107,7 @@
                                     <constraint firstAttribute="width" secondItem="sHU-f6-HQp" secondAttribute="height" multiplier="49:45" id="HuI-IM-Hpw"/>
                                     <constraint firstItem="eJI-kv-blR" firstAttribute="top" secondItem="3lA-Es-FyI" secondAttribute="bottom" constant="9" id="NBz-Lj-wkH"/>
                                     <constraint firstItem="nvr-IS-zhN" firstAttribute="top" secondItem="2IU-2u-fBc" secondAttribute="bottom" constant="3" id="NuY-eo-IQ8"/>
+                                    <constraint firstItem="WJx-Mt-kLU" firstAttribute="leading" secondItem="gTJ-Yf-Mvs" secondAttribute="trailing" constant="8" id="VgG-y8-rnb"/>
                                     <constraint firstAttribute="trailing" secondItem="gjB-fu-2JS" secondAttribute="trailing" constant="11" id="YLL-08-J5M"/>
                                     <constraint firstItem="3lA-Es-FyI" firstAttribute="top" secondItem="nvr-IS-zhN" secondAttribute="bottom" constant="4" id="a6f-E0-kDR"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gjB-fu-2JS" secondAttribute="bottom" constant="10" id="e4a-4s-3NH"/>
