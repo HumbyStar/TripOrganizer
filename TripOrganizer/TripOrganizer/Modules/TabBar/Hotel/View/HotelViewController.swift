@@ -15,7 +15,7 @@ enum messageAlertHotel: String {
 
 class HotelViewController: UIViewController {
     
-    public var viewModel: HotelViewModel = HotelViewModel()
+    public var hotelViewModel: HotelViewModel = HotelViewModel()
     
     var alert: Alert?
     
@@ -47,19 +47,17 @@ class HotelViewController: UIViewController {
     }
     
     private func configHotelMapView() {
-        hotelMapView.layer.cornerRadius = 12
-        hotelMapView.clipsToBounds = true
+        hotelMapView.layer.cornerRadius = hotelViewModel.getCornerRadius(value: 12)
     }
     
     private func configHotelInfoView() {
-        hotelInfoView.layer.cornerRadius = 12
-        hotelInfoView.clipsToBounds = true
+        hotelInfoView.layer.cornerRadius = hotelViewModel.getCornerRadius(value: 12)
     }
     
     private func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        viewModel.configLayoutCollectionView(collectionView: collectionView)
+        hotelViewModel.configLayoutCollectionView(collectionView: collectionView)
         collectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
     }
     
@@ -69,7 +67,7 @@ class HotelViewController: UIViewController {
     
     private func configButton() {
         addButton.setTitle(Localized.addButtonTitle.localized, for: .normal)
-        addButton.layer.cornerRadius = 15
+        addButton.layer.cornerRadius = hotelViewModel.getCornerRadius(value: 15)
     }
     
     private func setupUI(){
@@ -93,20 +91,24 @@ class HotelViewController: UIViewController {
 extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getRoomList()
+        return hotelViewModel.getRoomList()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(data: viewModel.getRoomListCellForItemAt(index: indexPath.row))
-        cell.layer.cornerRadius = 10
+        cell.setupCell(data: hotelViewModel.getRoomListCellForItemAt(index: indexPath.row))
+        cell.layer.cornerRadius = hotelViewModel.getCornerRadius(value: 10)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return viewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
+        let width = hotelViewModel.getCollectionViewWidth(width: 140)
+        let height = collectionView.bounds.height
+        let newHeight = hotelViewModel.getCollectionViewSize(height: height, extraNumber: 20)
+        
+        return CGSize(width: width, height: newHeight)
         
     }
     

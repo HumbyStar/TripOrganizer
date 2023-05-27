@@ -15,7 +15,7 @@ enum messageAttraction: String {
 
 class AttractionViewController: UIViewController {
     
-    public let viewModel: AttractionViewModel = AttractionViewModel()
+    public let attractionViewModel: AttractionViewModel = AttractionViewModel()
     
     var alert: Alert?
     
@@ -47,8 +47,8 @@ class AttractionViewController: UIViewController {
     }
     
     private func roundedBorder() {
-        attractionInfoView.layer.cornerRadius = 12
-        attractionMapView.layer.cornerRadius = 12
+        attractionMapView.layer.cornerRadius = attractionViewModel.getCornerRadius(value: 12)
+        attractionInfoView.layer.cornerRadius = attractionViewModel.getCornerRadius(value: 12)
     }
     
     private func configSearch() {
@@ -70,7 +70,7 @@ class AttractionViewController: UIViewController {
     private func configCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        viewModel.configLayoutCollectionView(collectionView: collectionView)
+        attractionViewModel.configLayoutCollectionView(collectionView: collectionView)
         collectionView.register(AttractionCell.nib(), forCellWithReuseIdentifier: AttractionCell.identifier)
         collectionView.backgroundColor = .clear
     }
@@ -87,7 +87,7 @@ class AttractionViewController: UIViewController {
 extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getLocationImagelist()
+        return attractionViewModel.getLocationImagelist()
     }
     
     
@@ -95,11 +95,15 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell: AttractionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(imageName: viewModel.getLocationImageListCellForItemAt(index: indexPath.row))
+        cell.setupCell(imageName: attractionViewModel.getLocationImageListCellForItemAt(index: indexPath.row))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        viewModel.sizeForItem(IndexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
+        let width = attractionViewModel.getCollectionViewWidth(width: 140)
+        let height = collectionView.bounds.height
+        let newHeight = attractionViewModel.getCollectionViewSize(height: height, extraNumber: 20)
+        
+        return CGSize(width: width, height: newHeight)
     }
 }

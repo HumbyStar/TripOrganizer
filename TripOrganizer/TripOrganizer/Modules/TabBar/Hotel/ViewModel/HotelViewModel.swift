@@ -33,8 +33,16 @@ class HotelViewModel {
         }
     }
     
-    public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
-        return CGSize(width: 140, height: height - 20)
+    public func getCornerRadius(value: CGFloat) -> CGFloat {
+        return value
+    }
+    
+    public func getCollectionViewSize(height: CGFloat, extraNumber: CGFloat) -> Double {
+        return height - extraNumber
+    }
+    
+    public func getCollectionViewWidth(width: CGFloat) -> Double {
+        return width
     }
     
 }
