@@ -19,6 +19,7 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        menuItemImageView.contentMode = .scaleAspectFill
     }
     
     func setupCell(image: String){

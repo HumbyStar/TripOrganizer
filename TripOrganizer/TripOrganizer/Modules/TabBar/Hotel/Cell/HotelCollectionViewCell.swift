@@ -21,6 +21,7 @@ class HotelCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        imageView.contentMode = .scaleAspectFill
     }
     
     public func setupCell(data: HotelModel){

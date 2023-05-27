@@ -13,16 +13,14 @@ enum ProfileImageSelected: String {
 
 class ProfileViewController: UIViewController {
     
+    public var profileViewModel: ProfileViewModel = ProfileViewModel()
+    
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
-    @IBOutlet var phoneLabel: UILabel!
-    @IBOutlet var changePasswordLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var phoneTextField: UITextField!
-    @IBOutlet var changePasswordTextField: UITextField!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var exitButton: UIButton!
     @IBOutlet var changeProfileImageButton: UIButton!
@@ -42,15 +40,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        profileImageView.layer.cornerRadius = min(profileImageView.frame.width, profileImageView.frame.height) / 2
-        profileImageView.clipsToBounds = true
+        profileViewModel.getCircleBorderImageView(profileImageView: profileImageView)
     }
     
     private func configTextFieldDelegates() {
         self.nameTextField.delegate = self
         self.emailTextField.delegate = self
-        self.phoneTextField.delegate = self
-        self.changePasswordTextField.delegate = self
+        
     }
     
     private func configProfileImage() {
@@ -73,15 +69,12 @@ class ProfileViewController: UIViewController {
     private func configTextFields() {
         configDefaultTextField(textfield: nameTextField, text: Localized.namePlaceholderProfile.localized, keyboardType: .default, isSecure: false)
         configDefaultTextField(textfield: emailTextField, text: Localized.emailPlaceholderProfile.localized, keyboardType: .emailAddress, isSecure: false)
-        configDefaultTextField(textfield: phoneTextField, text: Localized.phoneProfileUserTitle.localized, keyboardType: .numbersAndPunctuation, isSecure: false)
-        configDefaultTextField(textfield: changePasswordTextField, text: Localized.changePasswordProfileTitle.localized, keyboardType: .default, isSecure: true)
     }
     
     private func configLabel() {
         nameLabel.text = Localized.nameTitle.localized
         emailLabel.text = Localized.emailTitle.localized
-        phoneLabel.text = Localized.phoneProfileTitle.localized
-        changePasswordLabel.text = Localized.changePasswordProfileTitle.localized
+
     }
     
     private func configButton() {
@@ -137,14 +130,10 @@ extension ProfileViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
         if textField == nameTextField {
             emailTextField.becomeFirstResponder()
         } else if textField == emailTextField {
-            phoneTextField.becomeFirstResponder()
-        } else if textField == phoneTextField {
-            changePasswordTextField.becomeFirstResponder()
+            textField.resignFirstResponder()
         }
         return true
     }
