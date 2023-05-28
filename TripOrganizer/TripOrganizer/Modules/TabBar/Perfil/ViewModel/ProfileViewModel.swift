@@ -14,6 +14,22 @@ class ProfileViewModel {
         profileImageView.layer.cornerRadius = min(profileImageView.frame.width, profileImageView.frame.height) / 2
         profileImageView.clipsToBounds = true
     }
+
+    public func getBorderWidth(value: CGFloat) -> CGFloat {
+        return value
+    }
     
+    public func getCornerRadius(value: CGFloat) -> CGFloat {
+        return value
+    }
+   
+    public func getConfigTextFieldDidEndEditing(textField: UITextField, nameTextField: UITextField, emailTextField: UITextField) -> Bool {
+        if textField == nameTextField {
+            emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 }
 

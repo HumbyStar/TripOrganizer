@@ -13,7 +13,6 @@ enum ProfileImageSelected: String {
 
 class ProfileViewController: UIViewController {
     
-    public var profileViewModel: ProfileViewModel = ProfileViewModel()
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
@@ -26,7 +25,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var changeProfileImageButton: UIButton!
     
     var alert: Alert?
-    var viewModel: ProfileViewModel?
+    var profileViewModel: ProfileViewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,16 +49,16 @@ class ProfileViewController: UIViewController {
     }
     
     private func configProfileImage() {
-        profileImageView.layer.borderWidth = 3
+        profileImageView.layer.borderWidth = profileViewModel.getBorderWidth(value: 3)
         profileImageView.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
     private func configDefaultTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
         textfield.autocorrectionType = .no
         textfield.clipsToBounds = true
-        textfield.layer.borderWidth = 2
+        textfield.layer.borderWidth = profileViewModel.getBorderWidth(value: 2)
         textfield.layer.borderColor = UIColor.lightGray.cgColor
-        textfield.layer.cornerRadius = 10
+        textfield.layer.cornerRadius = profileViewModel.getCornerRadius(value: 10)
         textfield.text = text
         textfield.keyboardType = keyboardType
         textfield.isSecureTextEntry = isSecure
@@ -113,38 +112,32 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 3
+        textField.layer.borderWidth = profileViewModel.getBorderWidth(value: 3)
         textField.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if textField.hasText {
-            textField.layer.borderWidth = 3
+            textField.layer.borderWidth = profileViewModel.getBorderWidth(value: 3)
             textField.layer.borderColor = UIColor.lightGray.cgColor
         } else {
-            textField.layer.borderWidth = 3
+            textField.layer.borderWidth = profileViewModel.getBorderWidth(value: 3)
             textField.layer.borderColor = UIColor.red.cgColor
         }
         
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == nameTextField {
-            emailTextField.becomeFirstResponder()
-        } else if textField == emailTextField {
-            textField.resignFirstResponder()
-        }
-        return true
+        profileViewModel.getConfigTextFieldDidEndEditing(textField: textField, nameTextField: nameTextField, emailTextField: emailTextField)
     }
 }
-
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        profileImageView.image = info[.originalImage] as? UIImage
-        if let selectedImage = info[.originalImage] as? UIImage {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: ProfileImageSelected.profileImage.rawValue) , object: selectedImage)
+    extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            profileImageView.image = info[.originalImage] as? UIImage
+            if let selectedImage = info[.originalImage] as? UIImage {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: ProfileImageSelected.profileImage.rawValue) , object: selectedImage)
+            }
+            self.dismiss(animated: true, completion: nil)
         }
-        self.dismiss(animated: true, completion: nil)
     }
-}
