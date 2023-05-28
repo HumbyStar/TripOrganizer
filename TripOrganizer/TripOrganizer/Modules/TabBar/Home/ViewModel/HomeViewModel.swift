@@ -50,7 +50,7 @@ class HomeViewModel {
     public func appendTripToList(trip: AddTripModel) {
         tripList.append(trip)
     }
-    
+        
    private var progressBar: Float = 0
     
     public func progressBarLogic(sender: UITapGestureRecognizer,tappedTicketView: UIView , ticketImageView: UIImageView, tripProgressView: UIProgressView, tappedHotelView: UIView, hotelImageView: UIImageView, tappedRestaurantView: UIView, restaurantImageView: UIImageView, tappedAttractionView: UIView, attractionImageView: UIImageView ){

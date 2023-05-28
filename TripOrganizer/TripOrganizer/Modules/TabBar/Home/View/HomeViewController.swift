@@ -29,15 +29,9 @@ class HomeViewController: UIViewController {
     @IBOutlet var tripProgressView: UIProgressView!
     @IBOutlet var addTripButton: UIButton!
     
-    let cellColors = [
-        UIColor.logoGreen,
-        UIColor.logoOrange
-    ]
     
     
     var viewModel: HomeViewModel = HomeViewModel()
-    var emptyLabel: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,6 +96,7 @@ class HomeViewController: UIViewController {
     }
     
     private func emptyTableViewLabel() {
+    var emptyLabel : UILabel
         emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: homeTableView.bounds.size.width, height: homeTableView.bounds.size.height))
         emptyLabel.text = emptyText.empty.rawValue
         emptyLabel.textColor = UIColor.gray
@@ -151,7 +146,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else {
             return UITableViewCell()
         }
-        let color = cellColors[indexPath.row % cellColors.count]
+        let cellColors = [
+            UIColor.logoGreen,
+            UIColor.logoOrange
+        ]
+        let color: UIColor = cellColors[indexPath.row % cellColors.count]
         cell.backgroundColor = color
         cell.setupCell(trip: viewModel.getTripList(index: indexPath.row))
         cell.placeImageView.image = UIImage(named: viewModel.getListTripImages(index: indexPath.row))

@@ -30,10 +30,6 @@ class AttractionViewModel {
         }
     }
     
-    public func getCornerRadius(value: CGFloat) -> CGFloat {
-        return value
-    }
-    
     public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
             return CGSize(width: 140, height: height - 20)
         }
