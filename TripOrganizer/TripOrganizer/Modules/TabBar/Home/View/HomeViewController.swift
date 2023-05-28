@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
         UIColor.logoOrange
     ]
     
-    var progressBar: Float = 0
+    
     var viewModel: HomeViewModel = HomeViewModel()
     var emptyLabel: UILabel!
     
@@ -63,68 +63,7 @@ class HomeViewController: UIViewController {
     }
 
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
-       
-        guard let imageView = sender.view else { return }
-        
-         switch imageView {
-         case tappedTicketView:
-             switch ticketImageView.image {
-             case UIImage(systemName: Localized.square):
-                 ticketImageView.image = UIImage(systemName: Localized.squareCheck)
-                progressBar += 0.25
-                tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: Localized.squareCheck):
-                 ticketImageView.image = UIImage(systemName: Localized.square)
-                 progressBar -= 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             default:
-                 break
-             }
-         case tappedHotelView:
-             switch hotelImageView.image {
-             case UIImage(systemName: Localized.square.localized):
-                 hotelImageView.image = UIImage(systemName: Localized.squareCheck)
-                 progressBar += 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: Localized.squareCheck):
-                 hotelImageView.image = UIImage(systemName: Localized.square)
-                 progressBar -= 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             default:
-                 break
-             }
-             
-         case tappedRestaurantView:
-             switch restaurantImageView.image {
-             case UIImage(systemName: Localized.square):
-                 restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
-                 progressBar += 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: Localized.squareCheck):
-                 restaurantImageView.image = UIImage(systemName: Localized.square)
-                 progressBar -= 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             default:
-                 break
-             }
-             
-         case tappedAttractionView:
-             switch attractionImageView.image {
-             case UIImage(systemName: Localized.square):
-                 attractionImageView.image = UIImage(systemName: Localized.squareCheck)
-                 progressBar += 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: Localized.squareCheck):
-                 attractionImageView.image = UIImage(systemName: Localized.square)
-                 progressBar -= 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             default:
-                 break
-             }
-             
-         default:
-             break
-         }
+        viewModel.progressBarLogic(sender: sender, tappedTicketView: tappedTicketView, ticketImageView: ticketImageView, tripProgressView: tripProgressView, tappedHotelView: tappedHotelView, hotelImageView: hotelImageView, tappedRestaurantView: tappedRestaurantView, restaurantImageView: restaurantImageView, tappedAttractionView: tappedAttractionView, attractionImageView: attractionImageView)
     }
     
     
