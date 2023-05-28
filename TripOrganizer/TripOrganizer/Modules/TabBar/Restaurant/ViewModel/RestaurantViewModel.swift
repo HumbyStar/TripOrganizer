@@ -30,17 +30,17 @@ class RestaurantViewModel {
         return restaurant.images
     }
     
-    public func getCornerRadius(value: CGFloat) -> CGFloat {
-        return value
+    public func  getCornerRadiusCell() -> CGFloat {
+        return 10
     }
     
-    public func getCollectionViewSize(height: CGFloat, extraNumber: CGFloat) -> Double {
-        return height - extraNumber
+    public func getCornerRadiusImageViewMap() -> CGFloat {
+        return 12
     }
     
-    public func getCollectionViewWidth(width: CGFloat) -> Double {
-        return width
-    }
+    public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
+            return CGSize(width: 140, height: height - 20)
+        }
     
     public func getCollectionViewLayout(collection: UICollectionView) {
         if let layout = collection.collectionViewLayout as? UICollectionViewFlowLayout{

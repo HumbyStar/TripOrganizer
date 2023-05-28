@@ -49,16 +49,16 @@ class ProfileViewController: UIViewController {
     }
     
     private func configProfileImage() {
-        profileImageView.layer.borderWidth = profileViewModel.getBorderWidth(value: 3)
+        profileImageView.layer.borderWidth = profileViewModel.getBorderWidthProfileImage()
         profileImageView.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
     private func configDefaultTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
         textfield.autocorrectionType = .no
         textfield.clipsToBounds = true
-        textfield.layer.borderWidth = profileViewModel.getBorderWidth(value: 2)
+        textfield.layer.borderWidth = profileViewModel.getBorderWidthDefaultTextField()
         textfield.layer.borderColor = UIColor.lightGray.cgColor
-        textfield.layer.cornerRadius = profileViewModel.getCornerRadius(value: 10)
+        textfield.layer.cornerRadius = profileViewModel.getCornerRadiusTextField()
         textfield.text = text
         textfield.keyboardType = keyboardType
         textfield.isSecureTextEntry = isSecure
@@ -112,17 +112,17 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = profileViewModel.getBorderWidth(value: 3)
+        textField.layer.borderWidth = profileViewModel.getBorderWidthTextField()
         textField.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if textField.hasText {
-            textField.layer.borderWidth = profileViewModel.getBorderWidth(value: 3)
+            textField.layer.borderWidth = profileViewModel.getBorderWidthTextField()
             textField.layer.borderColor = UIColor.lightGray.cgColor
         } else {
-            textField.layer.borderWidth = profileViewModel.getBorderWidth(value: 3)
+            textField.layer.borderWidth = profileViewModel.getBorderWidthTextField()
             textField.layer.borderColor = UIColor.red.cgColor
         }
         

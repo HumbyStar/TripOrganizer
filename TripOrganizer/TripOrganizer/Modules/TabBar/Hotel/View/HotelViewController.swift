@@ -47,11 +47,11 @@ class HotelViewController: UIViewController {
     }
     
     private func configHotelMapView() {
-        hotelMapView.layer.cornerRadius = hotelViewModel.getCornerRadius(value: 12)
+        hotelMapView.layer.cornerRadius = hotelViewModel.getCornerRadiusImageViewMap()
     }
     
     private func configHotelInfoView() {
-        hotelInfoView.layer.cornerRadius = hotelViewModel.getCornerRadius(value: 12)
+        hotelInfoView.layer.cornerRadius = hotelViewModel.getCornerRadiusImageViewMap()
     }
     
     private func configCollectionView() {
@@ -67,7 +67,7 @@ class HotelViewController: UIViewController {
     
     private func configButton() {
         addButton.setTitle(Localized.addButtonTitle.localized, for: .normal)
-        addButton.layer.cornerRadius = hotelViewModel.getCornerRadius(value: 15)
+        addButton.layer.cornerRadius = hotelViewModel.getCornerRadiusButton()
     }
     
     private func setupUI(){
@@ -99,16 +99,13 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         cell.setupCell(data: hotelViewModel.getRoomListCellForItemAt(index: indexPath.row))
-        cell.layer.cornerRadius = hotelViewModel.getCornerRadius(value: 10)
+        cell.layer.cornerRadius = hotelViewModel.getCornerRadiusCell()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = hotelViewModel.getCollectionViewWidth(width: 140)
-        let height = collectionView.bounds.height
-        let newHeight = hotelViewModel.getCollectionViewSize(height: height, extraNumber: 20)
-        
-        return CGSize(width: width, height: newHeight)
+        return hotelViewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
+
         
     }
     

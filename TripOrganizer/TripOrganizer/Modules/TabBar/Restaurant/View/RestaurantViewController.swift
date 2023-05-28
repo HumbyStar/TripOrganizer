@@ -63,7 +63,7 @@ class RestaurantViewController: UIViewController {
     }
     
     private func configRestaurantInfoView(){
-        restaurantInfoView.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 12)
+        restaurantInfoView.layer.cornerRadius = restaurantViewModel.getCornerRadiusImageViewMap()
     }
     
     private func configButton() {
@@ -71,7 +71,7 @@ class RestaurantViewController: UIViewController {
     }
     
     private func configRestaurantMapView(){
-        restaurantMapView.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 12)
+        restaurantMapView.layer.cornerRadius = restaurantViewModel.getCornerRadiusImageViewMap()
     }
     
     private func setupUI(){
@@ -106,16 +106,12 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         }
         let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
         cell.setupCell(image: images[indexPath.row])
-        cell.layer.cornerRadius = restaurantViewModel.getCornerRadius(value: 10)
+        cell.layer.cornerRadius = restaurantViewModel.getCornerRadiusCell()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = restaurantViewModel.getCollectionViewWidth(width: 140)
-        let height = collectionView.bounds.height
-        let newHeight = restaurantViewModel.getCollectionViewSize(height: height, extraNumber: 20)
-        
-        return CGSize(width: width, height: newHeight)
+        return restaurantViewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
     }
     
 }

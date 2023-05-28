@@ -34,12 +34,15 @@ class AttractionViewModel {
         return value
     }
     
-    public func getCollectionViewSize(height: CGFloat, extraNumber: CGFloat) -> Double {
-        return height - extraNumber
+    public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
+            return CGSize(width: 140, height: height - 20)
+        }
+    
+    public func  getCornerRadiusCell() -> CGFloat {
+        return 10
     }
     
-    public func getCollectionViewWidth(width: CGFloat) -> Double {
-        return width
+    public func getCornerRadius()-> CGFloat {
+       return 12
     }
-    
 }
