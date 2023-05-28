@@ -33,17 +33,6 @@ class HotelViewModel {
         }
     }
     
-    public func  getCornerRadiusCell() -> CGFloat {
-        return 10
-    }
-    public func  getCornerRadiusButton() -> CGFloat {
-        return 15
-    }
-    
-    public func getCornerRadiusImageViewMap() -> CGFloat {
-        return 12
-    }
-    
     public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
             return CGSize(width: 140, height: height - 20)
         }

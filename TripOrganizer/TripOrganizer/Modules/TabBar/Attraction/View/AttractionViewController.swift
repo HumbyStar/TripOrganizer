@@ -47,8 +47,8 @@ class AttractionViewController: UIViewController {
     }
     
     private func roundedBorder() {
-        attractionMapView.layer.cornerRadius = attractionViewModel.getCornerRadius()
-        attractionInfoView.layer.cornerRadius = attractionViewModel.getCornerRadius()
+        attractionMapView.layer.cornerRadius = 12
+        attractionInfoView.layer.cornerRadius = 12
     }
     
     private func configSearch() {
@@ -96,7 +96,7 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionViewCell()
         }
         cell.setupCell(imageName: attractionViewModel.getLocationImageListCellForItemAt(index: indexPath.row))
-        cell.layer.cornerRadius = attractionViewModel.getCornerRadiusCell()
+        cell.layer.cornerRadius = 10
         return cell
     }
     

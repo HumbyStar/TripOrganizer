@@ -66,15 +66,12 @@ class HomeViewController: UIViewController {
         viewModel.progressBarLogic(sender: sender, tappedTicketView: tappedTicketView, ticketImageView: ticketImageView, tripProgressView: tripProgressView, tappedHotelView: tappedHotelView, hotelImageView: hotelImageView, tappedRestaurantView: tappedRestaurantView, restaurantImageView: restaurantImageView, tappedAttractionView: tappedAttractionView, attractionImageView: attractionImageView)
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         updateTableView()
     }
     
     @objc func profileImageSelected(_ notification: Notification) {
-        if let selectedImage = notification.object as? UIImage {
-            self.perfilButton.setImage(selectedImage, for: .normal)
-        }
+        viewModel.getProfileImageSelected(notification: notification, perfilButton: perfilButton)
     }
     
     deinit {

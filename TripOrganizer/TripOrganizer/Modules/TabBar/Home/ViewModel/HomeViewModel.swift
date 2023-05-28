@@ -119,4 +119,10 @@ class HomeViewModel {
          }
     }
     
+    public func getProfileImageSelected(notification: Notification, perfilButton: UIButton){
+        if let selectedImage = notification.object as? UIImage {
+            perfilButton.setImage(selectedImage, for: .normal)
+        }
+    }
+    
 }

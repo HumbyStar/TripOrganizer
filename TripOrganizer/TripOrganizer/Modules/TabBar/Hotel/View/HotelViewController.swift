@@ -47,11 +47,13 @@ class HotelViewController: UIViewController {
     }
     
     private func configHotelMapView() {
-        hotelMapView.layer.cornerRadius = hotelViewModel.getCornerRadiusImageViewMap()
+        hotelMapView.clipsToBounds = true
+        hotelMapView.layer.cornerRadius = 12
     }
     
     private func configHotelInfoView() {
-        hotelInfoView.layer.cornerRadius = hotelViewModel.getCornerRadiusImageViewMap()
+        hotelInfoView.clipsToBounds = true
+        hotelInfoView.layer.cornerRadius = 12
     }
     
     private func configCollectionView() {
@@ -67,7 +69,7 @@ class HotelViewController: UIViewController {
     
     private func configButton() {
         addButton.setTitle(Localized.addButtonTitle.localized, for: .normal)
-        addButton.layer.cornerRadius = hotelViewModel.getCornerRadiusButton()
+        addButton.layer.cornerRadius = 15
     }
     
     private func setupUI(){
@@ -99,7 +101,7 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         cell.setupCell(data: hotelViewModel.getRoomListCellForItemAt(index: indexPath.row))
-        cell.layer.cornerRadius = hotelViewModel.getCornerRadiusCell()
+        cell.layer.cornerRadius = 10
         return cell
     }
     
