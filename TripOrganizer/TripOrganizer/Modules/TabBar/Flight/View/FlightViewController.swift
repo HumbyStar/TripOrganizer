@@ -83,6 +83,7 @@ class FlightViewController: UIViewController {
     }
     
     private func configTextField(textField: UITextField) {
+        textField.delegate = self
         textField.borderStyle = .none
         flightOriginTextField.placeholder = Localized.originPlaceholderFight.localized
         flightDestinationTextField.placeholder = Localized.destinationPlaceholderFlight.localized
@@ -132,8 +133,8 @@ class FlightViewController: UIViewController {
     }
 }
 
-extension FlightViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-  
+extension FlightViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getListObject()
     }
@@ -148,8 +149,11 @@ extension FlightViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         viewModel.sizeForItem(IndexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, collectionView: collectionView)
-
+        
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        viewModel.getValidationTextFieldShouldReturn(textField: textField, flightOriginTextField: flightOriginTextField, flightDestinationTextField: flightDestinationTextField, calendarOnGoingTextField: calendarOnGoingTextField, calendarOutGoingTextField: calendarOutGoingTextField, passengersTextField: passengersTextField)
+        
+    }
 }
-

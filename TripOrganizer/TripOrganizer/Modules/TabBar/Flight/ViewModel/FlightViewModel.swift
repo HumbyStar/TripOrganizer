@@ -37,4 +37,18 @@ class FlightViewModel {
         }
     }
     
+    public func getValidationTextFieldShouldReturn(textField: UITextField,flightOriginTextField: UITextField,flightDestinationTextField: UITextField, calendarOnGoingTextField: UITextField, calendarOutGoingTextField: UITextField, passengersTextField: UITextField )-> Bool {
+        if textField == flightOriginTextField {
+            flightDestinationTextField.becomeFirstResponder()
+        } else if textField == flightDestinationTextField {
+            calendarOnGoingTextField.becomeFirstResponder()
+        } else if textField == calendarOnGoingTextField {
+            calendarOutGoingTextField.becomeFirstResponder()
+        } else if textField == calendarOutGoingTextField{
+            passengersTextField.becomeFirstResponder()
+        } else if textField == passengersTextField{
+           passengersTextField.resignFirstResponder()
+        }
+        return true
+    }
 }
