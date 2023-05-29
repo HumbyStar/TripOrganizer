@@ -19,11 +19,14 @@ class TicketsViewController: UIViewController {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
         configTableView()
+        configProtocolsTableView()
     }
     
-    private func configTableView() {
+    private func configProtocolsTableView(){
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    private func configTableView() {
         tableView.register(FlightTableViewCell.nib(), forCellReuseIdentifier: FlightTableViewCell.identifier)
         tableView.separatorStyle = .singleLine
         tableView.separatorColor = UIColor.black
@@ -35,7 +38,7 @@ class TicketsViewController: UIViewController {
 
 extension TicketsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getNumberOfRowsInSection()
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,7 +57,7 @@ extension TicketsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.getDidSelectRowAt(tableView: tableView, indexPath: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
         alert?.createAlert(title: "", message: Localized.flightAddedSuccessfully.localized) { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         }

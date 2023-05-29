@@ -19,16 +19,8 @@ class TicketsViewModel {
         return listObjectSecondFlightScreen[index]
     }
     
-    public func getNumberOfRowsInSection() -> Int{
-        return 10
-    }
-    
     public func getHeightForRowAt() -> CGFloat{
         return 230
-    }
-    
-    public func getDidSelectRowAt(tableView: UITableView, indexPath: IndexPath) -> Void{
-        return tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

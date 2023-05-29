@@ -12,6 +12,16 @@ class RegisterViewModel {
     
     private var passwordData = ""
     
+    public func getValidationtapToShowPasswordAndConfirmPassword(textField: UITextField, button: UIButton){
+        textField.isSecureTextEntry = !textField.isSecureTextEntry
+        
+        if textField.isSecureTextEntry {
+            button.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
+        } else {
+            button.setImage(UIImage(systemName: Localized.eye), for: .normal)
+        }
+    }
+    
     func validateName(_ name: String) -> Bool {
         return name.isEmpty
     }

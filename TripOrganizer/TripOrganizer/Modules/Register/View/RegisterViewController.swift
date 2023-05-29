@@ -106,24 +106,12 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func tapToShowPassword(_ sender: Any) {
-        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
-        
-        if passwordTextField.isSecureTextEntry {
-            showPasswordButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
-        } else {
-            showPasswordButton.setImage(UIImage(systemName: Localized.eye), for: .normal)
-        }
+        viewModel.getValidationtapToShowPasswordAndConfirmPassword(textField: passwordTextField, button: showPasswordButton)
     }
     
     
     @IBAction func tapToShowConfirmPassword(_ sender: Any) {
-        confirmPasswordTextField.isSecureTextEntry = !confirmPasswordTextField.isSecureTextEntry
-        
-        if confirmPasswordTextField.isSecureTextEntry {
-            showConfirmPasswordButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
-        } else {
-            showConfirmPasswordButton.setImage(UIImage(systemName: Localized.eye), for: .normal)
-        }
+        viewModel.getValidationtapToShowPasswordAndConfirmPassword(textField: confirmPasswordTextField, button: showConfirmPasswordButton)
     }
     
     @IBAction func tapToBack(_ sender: Any) {
