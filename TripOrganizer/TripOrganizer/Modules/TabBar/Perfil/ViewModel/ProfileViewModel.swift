@@ -15,25 +15,7 @@ class ProfileViewModel {
         profileImageView.clipsToBounds = true
     }
     
-    public func getBorderWidthProfileImage() -> CGFloat {
-    return 3
-    }
-    
-    public func getBorderWidthDefaultTextField()-> CGFloat {
-        return 2
-    }
-    
-    public func getBorderWidthTextField()-> CGFloat{
-        return 3
-    }
-   
-    public func getCornerRadiusTextField() -> CGFloat {
-    return 10
-    }
-
-    
-    
-    public func getConfigTextFieldDidEndEditing(textField: UITextField, nameTextField: UITextField, emailTextField: UITextField) -> Bool {
+    public func getConfigTextFielShouldReturn(textField: UITextField, nameTextField: UITextField, emailTextField: UITextField) -> Bool {
         if textField == nameTextField {
             emailTextField.becomeFirstResponder()
         } else if textField == emailTextField {

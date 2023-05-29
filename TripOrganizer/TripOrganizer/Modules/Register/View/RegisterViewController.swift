@@ -32,20 +32,17 @@ class RegisterViewController: UIViewController {
         configTextField()
         configButton()
         configProtocols()
-        configViews()
+        configViews(view: passwordView)
+        configViews(view: confirmPasswordView)
         self.auth = Auth.auth()
         self.firestore = Firestore.firestore()
     }
     
-    private func configViews() {
-        passwordView.backgroundColor = .clear
-        passwordView.layer.cornerRadius = 10
-        passwordView.layer.borderWidth = 2
-        passwordView.layer.borderColor = UIColor.lightGray.cgColor
-        confirmPasswordView.backgroundColor = .clear
-        confirmPasswordView.layer.cornerRadius = 10
-        confirmPasswordView.layer.borderWidth = 2
-        confirmPasswordView.layer.borderColor = UIColor.lightGray.cgColor
+    private func configViews(view: UIView) {
+        view.backgroundColor = .clear
+        view.layer.cornerRadius = 10
+        view.layer.borderWidth = 2
+        view.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     private func configButton() {
@@ -65,7 +62,7 @@ class RegisterViewController: UIViewController {
     }
     
     
-    private func configTextFieldPadrao(textField: UITextField, borderColor: UIColor , placeHolder: String, keyboardType: UIKeyboardType = .default) {
+    private func configTextFieldStandard(textField: UITextField, borderColor: UIColor , placeHolder: String, keyboardType: UIKeyboardType = .default) {
         if textField == passwordTextField || textField == confirmPasswordTextField {
             textField.layer.borderWidth = 0
             textField.borderStyle = .none
@@ -84,10 +81,10 @@ class RegisterViewController: UIViewController {
     }
     
     private func configTextField() {
-        configTextFieldPadrao(textField: nameTextField, borderColor: .lightGray, placeHolder: Localized.namePlaceholder.localized)
-        configTextFieldPadrao(textField: emailTextField, borderColor: .lightGray, placeHolder: Localized.emailPlaceholder.localized, keyboardType: .emailAddress)
-        configTextFieldPadrao(textField: passwordTextField, borderColor: .lightGray, placeHolder: Localized.passwordPlaceholder.localized)
-        configTextFieldPadrao(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: Localized.confirmPasswordPlaceholder.localized)
+        configTextFieldStandard(textField: nameTextField, borderColor: .lightGray, placeHolder: Localized.namePlaceholder.localized)
+        configTextFieldStandard(textField: emailTextField, borderColor: .lightGray, placeHolder: Localized.emailPlaceholder.localized, keyboardType: .emailAddress)
+        configTextFieldStandard(textField: passwordTextField, borderColor: .lightGray, placeHolder: Localized.passwordPlaceholder.localized)
+        configTextFieldStandard(textField: confirmPasswordTextField, borderColor: .lightGray, placeHolder: Localized.confirmPasswordPlaceholder.localized)
     }
     
     func registerNewUser() {
@@ -229,19 +226,7 @@ extension RegisterViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        
-        switch textField {
-        case nameTextField:
-            emailTextField.becomeFirstResponder()
-        case emailTextField:
-            passwordTextField.becomeFirstResponder()
-        case passwordTextField:
-            confirmPasswordTextField.becomeFirstResponder()
-        default:
-            textField.resignFirstResponder()
-        }
-        return true
+        viewModel.getConfigTextFieldShouldReturn(textField: textField, nameTextField: nameTextField, emailTextField: emailTextField, passwordTextField: passwordTextField, confirmPasswordTextField: confirmPasswordTextField)
     }
 }
 

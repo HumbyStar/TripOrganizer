@@ -49,16 +49,16 @@ class ProfileViewController: UIViewController {
     }
     
     private func configProfileImage() {
-        profileImageView.layer.borderWidth = profileViewModel.getBorderWidthProfileImage()
+        profileImageView.layer.borderWidth = 3
         profileImageView.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
     private func configDefaultTextField(textfield: UITextField, text: String, keyboardType: UIKeyboardType, isSecure: Bool) {
         textfield.autocorrectionType = .no
         textfield.clipsToBounds = true
-        textfield.layer.borderWidth = profileViewModel.getBorderWidthDefaultTextField()
+        textfield.layer.borderWidth = 2
         textfield.layer.borderColor = UIColor.lightGray.cgColor
-        textfield.layer.cornerRadius = profileViewModel.getCornerRadiusTextField()
+        textfield.layer.cornerRadius = 10
         textfield.text = text
         textfield.keyboardType = keyboardType
         textfield.isSecureTextEntry = isSecure
@@ -112,24 +112,24 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = profileViewModel.getBorderWidthTextField()
+        textField.layer.borderWidth = 3
         textField.layer.borderColor = UIColor.logoGreen.cgColor
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if textField.hasText {
-            textField.layer.borderWidth = profileViewModel.getBorderWidthTextField()
+            textField.layer.borderWidth = 3
             textField.layer.borderColor = UIColor.lightGray.cgColor
         } else {
-            textField.layer.borderWidth = profileViewModel.getBorderWidthTextField()
+            textField.layer.borderWidth = 3
             textField.layer.borderColor = UIColor.red.cgColor
         }
         
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        profileViewModel.getConfigTextFieldDidEndEditing(textField: textField, nameTextField: nameTextField, emailTextField: emailTextField)
+        profileViewModel.getConfigTextFielShouldReturn(textField: textField, nameTextField: nameTextField, emailTextField: emailTextField)
     }
 }
     extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

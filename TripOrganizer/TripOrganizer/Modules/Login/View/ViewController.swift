@@ -151,14 +151,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tappedEyeButton(_ sender: UIButton) {
-        viewModel.getValidationTappedEyeButton(eyeButton: eyeButton, passwordTextField: passwordTextField)
+        if viewModel.isEyeOpen {
+            eyeButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
+            passwordTextField.isSecureTextEntry = true
+            viewModel.isEyeOpen = false
+        } else {
+            eyeButton.setImage(UIImage(systemName: Localized.eye), for: .normal)
+            passwordTextField.isSecureTextEntry = false
+            viewModel.isEyeOpen = true
+        }
     }
 }
 
 extension ViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        viewModel.getTextFieldDidBeginEditing(textField: textField, emailTextField: emailTextField, passwordView: passwordView)
+        if textField == emailTextField {
+            emailTextField.layer.borderWidth = 3
+            emailTextField.layer.borderColor = UIColor.logoGreen.cgColor
+        } else {
+            passwordView.layer.borderWidth = 3
+            passwordView.layer.borderColor = UIColor.logoGreen.cgColor
+        }
         
     }
     

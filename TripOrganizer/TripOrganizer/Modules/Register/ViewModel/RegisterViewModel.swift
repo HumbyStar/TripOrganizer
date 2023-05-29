@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class RegisterViewModel {
     
@@ -35,4 +36,21 @@ class RegisterViewModel {
     func validateForms(name: String, email: String, password: String, confirmPassword: String) -> Bool {
         return (!validateName(name) && !validateEmail(email) && !validatePassword(password) && !validateConfirmPassword(confirmPassword))
     }
+    
+    public func getConfigTextFieldShouldReturn(textField: UITextField, nameTextField: UITextField, emailTextField: UITextField, passwordTextField: UITextField, confirmPasswordTextField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        
+        switch textField {
+        case nameTextField:
+            emailTextField.becomeFirstResponder()
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            confirmPasswordTextField.becomeFirstResponder()
+        default:
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
 }
