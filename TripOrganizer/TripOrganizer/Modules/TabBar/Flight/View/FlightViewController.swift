@@ -36,8 +36,8 @@ class FlightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configUIView()
-        configTextField()
+        configUIViewCornerRadius()
+        configTextFieldBorderStyle()
         configLabel()
         configButton()
         configCollectionView()
@@ -74,17 +74,20 @@ class FlightViewController: UIViewController {
     private func removeLoadingAnimation() {
         animationView.removeFromSuperview()
     }
+    private func configTextFieldBorderStyle(){
+        configTextField(textField:flightOriginTextField)
+        configTextField(textField:flightDestinationTextField)
+        configTextField(textField:calendarOnGoingTextField)
+        configTextField(textField:calendarOutGoingTextField)
+        configTextField(textField:passengersTextField)
+    }
     
-    private func configTextField() {
-        flightOriginTextField.borderStyle = .none
+    private func configTextField(textField: UITextField) {
+        textField.borderStyle = .none
         flightOriginTextField.placeholder = Localized.originPlaceholderFight.localized
         flightDestinationTextField.placeholder = Localized.destinationPlaceholderFlight.localized
-        flightDestinationTextField.borderStyle = .none
-        calendarOnGoingTextField.borderStyle = .none
         calendarOnGoingTextField.placeholder = Localized.calendarOnGoingPlaceholderFlight.localized
         calendarOutGoingTextField.placeholder = Localized.calendarOutGoingPlaceholderFlight.localized
-        calendarOutGoingTextField.borderStyle = .none
-        passengersTextField.borderStyle = .none
         passengersTextField.placeholder = Localized.passengersPlaceholderFlight.localized
     }
     
@@ -103,17 +106,18 @@ class FlightViewController: UIViewController {
         popularDestinationsLabel.text = Localized.popularDestinationsTitle.localized
     }
     
-    private func configUIView() {
-        flightOriginView.layer.cornerRadius = 5
-        flightOriginView.clipsToBounds = true
-        flightDestinationView.layer.cornerRadius = 5
-        flightDestinationView.clipsToBounds = true
-        calendarOnGoingView.layer.cornerRadius = 5
-        calendarOnGoingView.clipsToBounds = true
-        calendarOutGoingView.layer.cornerRadius = 5
-        calendarOutGoingView.clipsToBounds = true
-        passengersView.layer.cornerRadius = 5
-        passengersView.clipsToBounds = true
+    private func configUIViewCornerRadius(){
+        configUIView(view: flightOriginView)
+        configUIView(view: flightDestinationView)
+        configUIView(view: calendarOnGoingView)
+        configUIView(view: calendarOutGoingView)
+        configUIView(view: passengersView)
+    }
+    
+    private func configUIView(view: UIView) {
+        view.layer.cornerRadius = 5
+        view.clipsToBounds = true
+        
     }
     
    private func configCollectionView() {

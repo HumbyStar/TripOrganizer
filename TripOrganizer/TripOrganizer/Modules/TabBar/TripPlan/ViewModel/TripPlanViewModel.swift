@@ -23,9 +23,21 @@ class TripPlanViewModel {
         placeList[index]
     }
     
+    public func configLayoutCollectionView(collectionView: UICollectionView){
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .vertical
+            layout.estimatedItemSize = .zero
+            layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+            layout.minimumLineSpacing = 30
+        }
+    }
     
     public func getNumberList() -> Int {
         return placeList.endIndex
     }
+    
+    public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat, view: UIView) -> CGSize {
+            return CGSize(width: view.frame.width - 70, height: 150)
+        }
     
 }

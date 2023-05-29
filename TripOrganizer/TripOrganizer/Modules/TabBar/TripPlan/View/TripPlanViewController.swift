@@ -35,12 +35,7 @@ class TripPlanViewController: UIViewController {
     }
     
     private func configCollectionView() {
-        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .vertical
-            layout.estimatedItemSize = .zero
-            layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-            layout.minimumLineSpacing = 30
-        }
+        viewModel.configLayoutCollectionView(collectionView: collectionView)
         collectionView.register(TripPlanCollectionViewCell.nib(), forCellWithReuseIdentifier: TripPlanCollectionViewCell.identifier)
     }
     
@@ -64,6 +59,6 @@ extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 70, height: 150)
+        return viewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, view: view)
     }
 }

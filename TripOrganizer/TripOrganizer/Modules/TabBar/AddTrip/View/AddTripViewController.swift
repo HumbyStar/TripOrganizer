@@ -15,7 +15,7 @@ protocol AddTripviewControllerDelegate: AnyObject {
 
 class AddTripViewController: UIViewController {
     
-    var viewModel: AddTripViewModel = AddTripViewModel()
+    let viewModel: AddTripViewModel = AddTripViewModel()
     var alert: Alert?
     
     @IBOutlet var returnDateLabel: UILabel!

@@ -22,5 +22,7 @@ class TicketsViewModel {
     public func getHeightForRowAt() -> CGFloat{
         return 230
     }
-    
+    public func getNumberOfRowsInSection() -> Int {
+        return 10
+    }
 }
