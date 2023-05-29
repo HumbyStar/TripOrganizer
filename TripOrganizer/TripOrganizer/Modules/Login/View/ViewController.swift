@@ -34,7 +34,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTextField()
-        configButtons()
+        configButtons(button: loginWithGoogleButton)
+        configButtons(button: loginWithAppleButton)
+        configButtons(button: loginButton)
         configPasswordView()
         auth = Auth.auth()
         firestore = Firestore.firestore()
@@ -97,15 +99,11 @@ class ViewController: UIViewController {
         button.layer.rasterizationScale = UIScreen.main.scale
     }
     
-    private func configButtons() {
-        loginButton.clipsToBounds = true
-        loginButton.layer.cornerRadius = 10
+    private func configButtons(button: UIButton) {
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 10
         loginButton.setTitle(Localized.loginSuccessButtonTitle.localized, for: .normal)
-        loginWithGoogleButton.clipsToBounds = true
-        loginWithGoogleButton.layer.cornerRadius = 10
         loginWithGoogleButton.setTitle(Localized.loginGoogleButtonTitle.localized, for: .normal)
-        loginWithAppleButton.clipsToBounds = true
-        loginWithAppleButton.layer.cornerRadius = 10
         loginWithAppleButton.setTitle(Localized.loginAppleButtonTitle.localized, for: .normal)
         recoverButton.setTitle(Localized.forgetPasswordButtonTitle, for: .normal)
         recoverButton.setTitleColor(.logoTextOrange, for: .normal)
@@ -168,13 +166,7 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == emailTextField {
-            emailTextField.layer.borderWidth = 3
-            emailTextField.layer.borderColor = UIColor.logoGreen.cgColor
-        } else {
-            passwordView.layer.borderWidth = 3
-            passwordView.layer.borderColor = UIColor.logoGreen.cgColor
-        }
+        viewModel.getTextFieldDidBeginEditing(textField: textField, emailTextField: emailTextField, passwordView: passwordView)
         
     }
     
