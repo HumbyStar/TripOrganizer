@@ -1,0 +1,49 @@
+{
+    "restaurants": [
+        {
+            "name": "Polignano a Mare",
+            "address": "70044 Bari, Itály",
+            "openingHours": "Aberto",
+            "phoneNumber": "(+39) 080-4252300",
+            "rating": 4.6,
+            "images": [
+                "restaurant1.1",
+                "restaurant1.2",
+                "restaurant1.3",
+                "restaurant1.4",
+                "restaurant1.5"
+            ]
+        }
+    ],
+    "hotels": [
+        {
+            "room": [
+                    "quarto01",
+                    "quarto02",
+                    "quarto03"
+            ],
+            "name": "Chatolamour",
+            "ratings": "Avaliações",
+            "phoneNumber": "Telefone: (41) 3243-3430",
+            "address": "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020",
+            "openingHours": "Horario: abre as 12:00"
+        }
+    ],
+    "attractions": [
+        {
+            "images": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+            ],
+            "ratings": "Avaliações",
+            "name": "Praça do Japão",
+            "address": "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020",
+            "openingHours": "Horario: abre as 12:00",
+            "phoneNumber": "Telefone: (41)2344-7498",
+            "entranceFee": "Taxa de Entrada: Gratuito"
+        }
+    ]
+}

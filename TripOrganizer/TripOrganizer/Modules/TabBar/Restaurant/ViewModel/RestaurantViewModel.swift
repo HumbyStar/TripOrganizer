@@ -9,24 +9,27 @@ import UIKit
 
 class RestaurantViewModel {
     
-    private var restaurants: [RestaurantModel] = []
+    private var restaurantList: [RestaurantModel] = []
+    private var placeService: PlaceService = PlaceService()
     
-    public func loadRestaurants() {
-        restaurants = [
-            RestaurantModel(name: "Polignano a Mare", address: "70044 Bari, Itália", openingHours: "Aberto", phoneNumber: " (+39) 080-4252300", rating: 4.6,images: ["restaurant1.1", "restaurant1.2","restaurant1.3","restaurant1.4","restaurant1.5"]),
-        ]
+    public func fetchRestaurants() {
+        placeService.getPlaceDataJson { data, error in
+            if error == nil {
+                self.restaurantList = data?.restaurants ?? []
+            }
+        }
     }
     
-    public func cellForRow() -> [RestaurantModel] {
-        return restaurants
+    public func getRestaurantList() -> [RestaurantModel] {
+        return restaurantList
     }
     
-    public func numberOfRows() -> Int {
+    public func numberOfItens() -> Int {
         return 5
     }
     
     public func getRestaurantImages(indexPath: IndexPath) -> [String] {
-        let restaurant = restaurants[0]
+        let restaurant = restaurantList[0]
         return restaurant.images
     }
     

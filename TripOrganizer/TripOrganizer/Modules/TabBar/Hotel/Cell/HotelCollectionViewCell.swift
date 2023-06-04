@@ -24,7 +24,8 @@ class HotelCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
     }
     
-    public func setupCell(data: HotelModel){
-        imageView.image = UIImage(named: data.room)
+    func setupCell(image: String){
+        imageView.image = UIImage(named: image)
+        imageView.layer.cornerRadius = 10
     }
 }

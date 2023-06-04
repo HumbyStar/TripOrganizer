@@ -39,6 +39,7 @@ class AttractionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
+        self.attractionViewModel.fetchAttractions()
         configSearch()
         configButton()
         configLabel()
@@ -87,7 +88,7 @@ class AttractionViewController: UIViewController {
 extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return attractionViewModel.getLocationImagelist()
+        return attractionViewModel.numberOfItens()
     }
     
     
@@ -95,7 +96,8 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell: AttractionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(imageName: attractionViewModel.getLocationImageListCellForItemAt(index: indexPath.row))
+        let images = attractionViewModel.getAttractionImages(indexPath: indexPath)
+        cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }

@@ -38,6 +38,7 @@ class HotelViewController: UIViewController {
     override func viewDidLoad() {
         self.alert = Alert(controller: self)
         super.viewDidLoad()
+        hotelViewModel.fetchHotels()
         configCollectionView()
         configHotelMapView()
         configHotelInfoView()
@@ -93,14 +94,15 @@ class HotelViewController: UIViewController {
 extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hotelViewModel.getRoomList()
+        return hotelViewModel.numberOfItens()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(data: hotelViewModel.getRoomListCellForItemAt(index: indexPath.row))
+        let images = hotelViewModel.getHotelImages(indexPath: indexPath)
+        cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }

@@ -7,13 +7,9 @@
 
 import Foundation
 
-struct AttractionModel {
-    
-    public let attractionImage: String
-    public let ratings: String
-    public let name: String
-    public let address: String
-    public let openingHours: String
-    public let phoneNumber: String
-    public let entranceFee: String
+// MARK: - Attraction
+struct AttractionModel: Codable {
+    let images: [String]
+    let ratings, name, address, openingHours: String
+    let phoneNumber, entranceFee: String
 }

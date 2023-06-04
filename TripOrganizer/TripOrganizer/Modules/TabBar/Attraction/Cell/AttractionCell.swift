@@ -22,8 +22,9 @@ class AttractionCell: UICollectionViewCell {
         attractionImageView.contentMode = .scaleAspectFill
     }
     
-    public func setupCell(imageName: AttractionModel) {
-        self.attractionImageView.image = UIImage(named: imageName.attractionImage)
+    func setupCell(image: String){
+        attractionImageView.image = UIImage(named: image)
+        attractionImageView.layer.cornerRadius = 10
     }
     
 }

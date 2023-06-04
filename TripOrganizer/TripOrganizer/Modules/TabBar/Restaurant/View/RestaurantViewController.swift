@@ -40,7 +40,7 @@ class RestaurantViewController: UIViewController {
         configMenuCollectionView()
         configRestaurantInfoView()
         configRestaurantMapView()
-        restaurantViewModel.loadRestaurants()
+        restaurantViewModel.fetchRestaurants()
         configButton()
         configSearch()
         setupUI()
@@ -75,7 +75,7 @@ class RestaurantViewController: UIViewController {
     }
     
     private func setupUI(){
-        let restaurant = restaurantViewModel.cellForRow()[0]
+        let restaurant = restaurantViewModel.getRestaurantList()[0]
         restaurantAddressLabel.text = Localized.addressTitle.localized + restaurant.address
         restaurantOpeningHoursLabel.text = Localized.timeTitle.localized + restaurant.openingHours
         restaurantPhoneNumberLabel.text = Localized.phoneTitle.localized + restaurant.phoneNumber
@@ -97,7 +97,7 @@ class RestaurantViewController: UIViewController {
 
 extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return restaurantViewModel.numberOfRows()
+        return restaurantViewModel.numberOfItens()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

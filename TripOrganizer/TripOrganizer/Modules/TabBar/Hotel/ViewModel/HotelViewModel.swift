@@ -9,27 +9,34 @@ import UIKit
 
 class HotelViewModel {
     
-    private var roomList: [HotelModel] = [HotelModel(room: "quarto01",name: "Chatolamour", ratings: "Avaliações", phoneNumber: "Telefone: (41) 3243-3430", address: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", openingHours: "Horario: abre as 12:00 "),HotelModel(room: "quarto02", name: "Chatolamour", ratings: "Avaliações", phoneNumber: "Telefone: (41) 3243-3430", address: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", openingHours: "Horario: abre as 12:00 "),
-                                          HotelModel(room: "quarto02", name: "Chatolamour", ratings: "Avaliações", phoneNumber: "Telefone: (41) 3243-3430", address: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", openingHours: "Horario: abre as 12:00 "),
-                                          HotelModel(room: "quarto03", name: "Chatolamour", ratings: "Avaliações", phoneNumber: "Telefone: (41) 3243-3430", address: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", openingHours: "Horario: abre as 12:00 "),
-                                          HotelModel(room: "quarto01", name: "Chatolamour", ratings: "Avaliações", phoneNumber: "Telefone: (41) 3243-3430", address: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", openingHours: "Horario: abre as 12:00 "),
-                                          HotelModel(room: "quarto02", name: "Chatolamour", ratings: "Avaliações", phoneNumber: "Telefone: (41) 3243-3430", address: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", openingHours: "Horario: abre as 12:00 "),
-                                          HotelModel(room: "quarto03", name: "Chatolamour", ratings: "Avaliações", phoneNumber: "Telefone: (41) 3243-3430", address: "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020", openingHours: "Horario: abre as 12:00 ")]
-    
-    
-    public func getRoomList() -> Int{
-        roomList.endIndex
+    private var hotelList: [HotelModel] = []
+    private var placeService: PlaceService = PlaceService()
+
+    public func fetchHotels() {
+        placeService.getPlaceDataJson { data, error in
+            if error == nil {
+                self.hotelList = data?.hotels ?? []
+            }
+        }
     }
     
-    public func getRoomListCellForItemAt(index: Int) -> HotelModel{
-        roomList[index]
+    public func getHotelList() -> [HotelModel]{
+        return hotelList
+    }
+    
+    public func numberOfItens() -> Int {
+        return 3
+    }
+    
+    public func getHotelImages(indexPath: IndexPath) -> [String] {
+        let hotel = hotelList[0]
+        return hotel.room
     }
     
     public func configLayoutCollectionView(collectionView: UICollectionView){
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
             layout.estimatedItemSize = .zero
-            
         }
     }
     

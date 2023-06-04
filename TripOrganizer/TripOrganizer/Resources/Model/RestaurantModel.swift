@@ -7,11 +7,9 @@
 
 import Foundation
 
-struct RestaurantModel {
-    public let name: String
-    public let address: String
-    public let openingHours: String
-    public let phoneNumber: String
-    public let rating: Double
-    public let images: [String]
+// MARK: - Restaurant
+struct RestaurantModel: Codable {
+    let name, address, openingHours, phoneNumber: String
+    let rating: Double
+    let images: [String]
 }

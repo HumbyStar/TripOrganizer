@@ -9,18 +9,28 @@ import UIKit
 
 class AttractionViewModel {
     
-    private let locationImagelist: [AttractionModel] = [AttractionModel(attractionImage:"1", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
-                                                        AttractionModel(attractionImage:"2", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
-                                                        AttractionModel(attractionImage:"3", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
-                                                        AttractionModel(attractionImage:"4", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito"),
-                                                        AttractionModel(attractionImage:"5", ratings: "Avaliações", name: "Praça do Japão", address: "Avenida Silva Jardim, 2487 - Agua Verde", openingHours: "Horário: Abre as 12:00", phoneNumber: "Telefone: (41)2344-7498", entranceFee: "Taxa de Entrada: Gratuito")]
+    private var attractionList: [AttractionModel] = []
+    private var placeService: PlaceService = PlaceService()
     
-    public func getLocationImagelist() -> Int{
-        locationImagelist.count
+    public func fetchAttractions() {
+        placeService.getPlaceDataJson { data, error in
+            if error == nil {
+                self.attractionList = data?.attractions ?? []
+            }
+        }
     }
     
-    public func getLocationImageListCellForItemAt(index: Int) -> AttractionModel{
-        locationImagelist[index]
+    public func getAttractionList() -> [AttractionModel] {
+        return attractionList
+    }
+    
+    public func numberOfItens() -> Int {
+        return 5
+    }
+    
+    public func getAttractionImages(indexPath: IndexPath) -> [String] {
+        let attraction = attractionList[0]
+        return attraction.images
     }
     
     public func configLayoutCollectionView(collectionView: UICollectionView){
