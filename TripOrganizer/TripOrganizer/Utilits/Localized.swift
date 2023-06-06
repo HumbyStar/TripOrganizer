@@ -114,10 +114,6 @@ class Localized {
     static let searchPlaceholderRestaurant = "restaurant.search_placeholder".localized
     static let titleLabelFight = "flight.label_title".localized
     
-    // MARK: - Private Helper Function
-    private static func localized(_ key: String) -> String {
-        return NSLocalizedString(key, comment: "")
-    }
 }
 
 extension String {
