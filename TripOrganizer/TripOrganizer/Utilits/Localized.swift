@@ -104,6 +104,7 @@ class Localized {
     static let destinationPlaceholderFlight = "flight.destination_placeholder".localized
     static let emailPlaceholder = "registration.email_placeholder".localized
     static let emailPlaceholderProfile = "prifile.email_exemple".localized
+    static let emailAlreadyExist = "registration.newaccount_error".localized
     static let namePlaceholder = "registration.name_placeholder".localized
     static let namePlaceholderProfile = "profile.name_text".localized
     static let originPlaceholderFight = "flight.origin_placeholder".localized

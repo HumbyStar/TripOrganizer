@@ -92,7 +92,7 @@ class RegisterViewController: UIViewController {
         guard let emailValid = emailTextField.text, let passwordValid = passwordTextField.text else {return}
         self.auth?.createUser(withEmail: emailValid, password: passwordValid, completion: { result, error in
             if error != nil {
-                self.alert?.createAlert(title: Localized.attention.localized, message: Localized.registrationErrorMessage.localized)
+                self.alert?.createAlert(title: Localized.errorTitle.localized, message: Localized.emailAlreadyExist)
             } else {
                 if let idUser = result?.user.uid {
                     self.firestore?.collection(Localized.users.localized).document(idUser).setData([
@@ -101,8 +101,17 @@ class RegisterViewController: UIViewController {
                         Localized.id.localized: idUser
                     ])
                 }
+                self.alert?.createAlert(title: Localized.successTitle.localized, message: Localized.registrationSuccessMessage.localized,completion: {
+                    self.login()
+                })
             }
         })
+    }
+    
+    func login() {
+        let tabBarController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? UITabBarController
+        self.navigationController?.pushViewController(tabBarController ?? UITabBarController(), animated: true)
+        
     }
     
     @IBAction func tapToShowPassword(_ sender: Any) {
@@ -126,16 +135,11 @@ class RegisterViewController: UIViewController {
                       let confirmPasswordValue = confirmPasswordTextField.text
                 else {return}
 
-                if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
-                    alert?.createAlert(title: Localized.successTitle, message: Localized.registrationSuccessMessage, completion: {
-
-                        self.registerNewUser()
-                        let tabBarController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? UITabBarController
-                        self.navigationController?.pushViewController(tabBarController ?? UITabBarController(), animated: true)
-                    })
-                } else {
-                    alert?.createAlert(title: Localized.errorTitle, message: Localized.registrationErrorMessage)
-                }
+        if viewModel.validateForms(name: nameValue, email: emailValue, password: passwordValue, confirmPassword: confirmPasswordValue) {
+            self.registerNewUser()
+        } else {
+            self.alert?.createAlert(title: Localized.attention.localized, message: Localized.registrationErrorMessage.localized)
+        }
     }
     
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {

@@ -4,6 +4,7 @@
 "registration.password_placeholder" = "Senha";
 "registration.confirm_password_placeholder" = "Confirmar Senha";
 "registration.success_message" = "Cadastro Efetuado com sucesso!";
+"registration.newaccount_error" = "Email já cadastrado";
 
 // Error
 "error.trip_name_empty" = "Sua viagem deve ter um nome!";
