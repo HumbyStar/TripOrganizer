@@ -811,6 +811,7 @@
 				0C36EC3B29B6621C009550C8 /* Frameworks */,
 				0C36EC3C29B6621C009550C8 /* Resources */,
 				965B5232F2ED7E7EE5ECA21F /* [CP] Embed Pods Frameworks */,
+				409538271217EA99CDF9C68C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -924,6 +925,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		409538271217EA99CDF9C68C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripOrganizer/Pods-TripOrganizer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TripOrganizer/Pods-TripOrganizer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TripOrganizer/Pods-TripOrganizer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		965B5232F2ED7E7EE5ECA21F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

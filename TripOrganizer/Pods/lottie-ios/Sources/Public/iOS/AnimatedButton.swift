@@ -37,7 +37,7 @@ open class AnimatedButton: AnimatedControl {
     let _ = super.beginTracking(touch, with: event)
     let touchEvent = UIControl.Event.touchDown
     if let playrange = rangesForEvents[touchEvent.rawValue] {
-      loadingAnimationView.play(fromProgress: playrange.from, toProgress: playrange.to, loopMode: LottieLoopMode.playOnce)
+      animationView.play(fromProgress: playrange.from, toProgress: playrange.to, loopMode: LottieLoopMode.playOnce)
     }
     return true
   }
@@ -52,7 +52,7 @@ open class AnimatedButton: AnimatedControl {
     }
 
     if let playrange = rangesForEvents[touchEvent.rawValue] {
-      loadingAnimationView.play(fromProgress: playrange.from, toProgress: playrange.to, loopMode: LottieLoopMode.playOnce)
+      animationView.play(fromProgress: playrange.from, toProgress: playrange.to, loopMode: LottieLoopMode.playOnce)
     }
   }
 
@@ -71,8 +71,8 @@ open class AnimatedButton: AnimatedControl {
   /// Sets the play range for the given UIControlEvent.
   public func setPlayRange(fromMarker fromName: String, toMarker toName: String, event: UIControl.Event) {
     if
-      let start = loadingAnimationView.progressTime(forMarker: fromName),
-      let end = loadingAnimationView.progressTime(forMarker: toName)
+      let start = animationView.progressTime(forMarker: fromName),
+      let end = animationView.progressTime(forMarker: toName)
     {
       rangesForEvents[event.rawValue] = (from: start, to: end)
     }

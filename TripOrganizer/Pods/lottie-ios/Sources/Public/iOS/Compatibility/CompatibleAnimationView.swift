@@ -136,7 +136,7 @@ public final class CompatibleAnimationView: UIView {
     compatibleAnimation: CompatibleAnimation,
     compatibleRenderingEngineOption: CompatibleRenderingEngineOption)
   {
-    loadingAnimationView = LottieAnimationView(
+    animationView = LottieAnimationView(
       animation: compatibleAnimation.animation,
       configuration: CompatibleRenderingEngineOption.generateLottieConfiguration(compatibleRenderingEngineOption))
     self.compatibleAnimation = compatibleAnimation
@@ -155,7 +155,7 @@ public final class CompatibleAnimationView: UIView {
   /// URL using the given rendering engine configuration.
   @objc
   public init(url: URL, compatibleRenderingEngineOption: CompatibleRenderingEngineOption) {
-    loadingAnimationView = LottieAnimationView(
+    animationView = LottieAnimationView(
       url: url,
       closure: { _ in },
       configuration: CompatibleRenderingEngineOption.generateLottieConfiguration(compatibleRenderingEngineOption))
@@ -175,11 +175,11 @@ public final class CompatibleAnimationView: UIView {
   @objc
   public init(data: Data, compatibleRenderingEngineOption: CompatibleRenderingEngineOption) {
     if let animation = try? LottieAnimation.from(data: data) {
-      loadingAnimationView = LottieAnimationView(
+      animationView = LottieAnimationView(
         animation: animation,
         configuration: CompatibleRenderingEngineOption.generateLottieConfiguration(compatibleRenderingEngineOption))
     } else {
-      loadingAnimationView = LottieAnimationView(
+      animationView = LottieAnimationView(
         configuration: CompatibleRenderingEngineOption.generateLottieConfiguration(compatibleRenderingEngineOption))
     }
     super.init(frame: .zero)
@@ -188,7 +188,7 @@ public final class CompatibleAnimationView: UIView {
 
   @objc
   public override init(frame: CGRect) {
-    loadingAnimationView = LottieAnimationView()
+    animationView = LottieAnimationView()
     super.init(frame: frame)
     commonInit()
   }
@@ -202,90 +202,90 @@ public final class CompatibleAnimationView: UIView {
   @objc
   public var compatibleAnimation: CompatibleAnimation? {
     didSet {
-      loadingAnimationView.animation = compatibleAnimation?.animation
+      animationView.animation = compatibleAnimation?.animation
     }
   }
 
   @objc
   public var loopAnimationCount: CGFloat = 0 {
     didSet {
-      loadingAnimationView.loopMode = loopAnimationCount == -1 ? .loop : .repeat(Float(loopAnimationCount))
+      animationView.loopMode = loopAnimationCount == -1 ? .loop : .repeat(Float(loopAnimationCount))
     }
   }
 
   @objc
   public var compatibleDictionaryTextProvider: CompatibleDictionaryTextProvider? {
     didSet {
-      loadingAnimationView.textProvider = compatibleDictionaryTextProvider?.textProvider ?? DefaultTextProvider()
+      animationView.textProvider = compatibleDictionaryTextProvider?.textProvider ?? DefaultTextProvider()
     }
   }
 
   @objc
   public override var contentMode: UIView.ContentMode {
-    set { loadingAnimationView.contentMode = newValue }
-    get { loadingAnimationView.contentMode }
+    set { animationView.contentMode = newValue }
+    get { animationView.contentMode }
   }
 
   @objc
   public var shouldRasterizeWhenIdle: Bool {
-    set { loadingAnimationView.shouldRasterizeWhenIdle = newValue }
-    get { loadingAnimationView.shouldRasterizeWhenIdle }
+    set { animationView.shouldRasterizeWhenIdle = newValue }
+    get { animationView.shouldRasterizeWhenIdle }
   }
 
   @objc
   public var currentProgress: CGFloat {
-    set { loadingAnimationView.currentProgress = newValue }
-    get { loadingAnimationView.currentProgress }
+    set { animationView.currentProgress = newValue }
+    get { animationView.currentProgress }
   }
 
   @objc
   public var duration: CGFloat {
-    loadingAnimationView.animation?.duration ?? 0.0
+    animationView.animation?.duration ?? 0.0
   }
 
   @objc
   public var currentTime: TimeInterval {
-    set { loadingAnimationView.currentTime = newValue }
-    get { loadingAnimationView.currentTime }
+    set { animationView.currentTime = newValue }
+    get { animationView.currentTime }
   }
 
   @objc
   public var currentFrame: CGFloat {
-    set { loadingAnimationView.currentFrame = newValue }
-    get { loadingAnimationView.currentFrame }
+    set { animationView.currentFrame = newValue }
+    get { animationView.currentFrame }
   }
 
   @objc
   public var realtimeAnimationFrame: CGFloat {
-    loadingAnimationView.realtimeAnimationFrame
+    animationView.realtimeAnimationFrame
   }
 
   @objc
   public var realtimeAnimationProgress: CGFloat {
-    loadingAnimationView.realtimeAnimationProgress
+    animationView.realtimeAnimationProgress
   }
 
   @objc
   public var animationSpeed: CGFloat {
-    set { loadingAnimationView.animationSpeed = newValue }
-    get { loadingAnimationView.animationSpeed }
+    set { animationView.animationSpeed = newValue }
+    get { animationView.animationSpeed }
   }
 
   @objc
   public var respectAnimationFrameRate: Bool {
-    set { loadingAnimationView.respectAnimationFrameRate = newValue }
-    get { loadingAnimationView.respectAnimationFrameRate }
+    set { animationView.respectAnimationFrameRate = newValue }
+    get { animationView.respectAnimationFrameRate }
   }
 
   @objc
   public var isAnimationPlaying: Bool {
-    loadingAnimationView.isAnimationPlaying
+    animationView.isAnimationPlaying
   }
 
   @objc
   public var backgroundMode: CompatibleBackgroundBehavior {
     get {
-      switch loadingAnimationView.backgroundBehavior {
+      switch animationView.backgroundBehavior {
       case .stop:
         return .stop
       case .pause:
@@ -301,15 +301,15 @@ public final class CompatibleAnimationView: UIView {
     set {
       switch newValue {
       case .stop:
-        loadingAnimationView.backgroundBehavior = .stop
+        animationView.backgroundBehavior = .stop
       case .pause:
-        loadingAnimationView.backgroundBehavior = .pause
+        animationView.backgroundBehavior = .pause
       case .pauseAndRestore:
-        loadingAnimationView.backgroundBehavior = .pauseAndRestore
+        animationView.backgroundBehavior = .pauseAndRestore
       case .forceFinish:
-        loadingAnimationView.backgroundBehavior = .forceFinish
+        animationView.backgroundBehavior = .forceFinish
       case .continuePlaying:
-        loadingAnimationView.backgroundBehavior = .continuePlaying
+        animationView.backgroundBehavior = .continuePlaying
       }
     }
   }
@@ -321,7 +321,7 @@ public final class CompatibleAnimationView: UIView {
 
   @objc
   public func play(completion: ((Bool) -> Void)?) {
-    loadingAnimationView.play(completion: completion)
+    animationView.play(completion: completion)
   }
 
   /// Note: When calling this code from Objective-C, the method signature is
@@ -332,7 +332,7 @@ public final class CompatibleAnimationView: UIView {
     toProgress: CGFloat,
     completion: ((Bool) -> Void)? = nil)
   {
-    loadingAnimationView.play(
+    animationView.play(
       fromProgress: fromProgress,
       toProgress: toProgress,
       loopMode: nil,
@@ -347,7 +347,7 @@ public final class CompatibleAnimationView: UIView {
     toFrame: CGFloat,
     completion: ((Bool) -> Void)? = nil)
   {
-    loadingAnimationView.play(
+    animationView.play(
       fromFrame: fromFrame,
       toFrame: toFrame,
       loopMode: nil,
@@ -362,7 +362,7 @@ public final class CompatibleAnimationView: UIView {
     toMarker: String,
     completion: ((Bool) -> Void)? = nil)
   {
-    loadingAnimationView.play(
+    animationView.play(
       fromMarker: fromMarker,
       toMarker: toMarker,
       completion: completion)
@@ -373,29 +373,29 @@ public final class CompatibleAnimationView: UIView {
     marker: String,
     completion: ((Bool) -> Void)? = nil)
   {
-    loadingAnimationView.play(
+    animationView.play(
       marker: marker,
       completion: completion)
   }
 
   @objc
   public func stop() {
-    loadingAnimationView.stop()
+    animationView.stop()
   }
 
   @objc
   public func pause() {
-    loadingAnimationView.pause()
+    animationView.pause()
   }
 
   @objc
   public func reloadImages() {
-    loadingAnimationView.reloadImages()
+    animationView.reloadImages()
   }
 
   @objc
   public func forceDisplayUpdate() {
-    loadingAnimationView.forceDisplayUpdate()
+    animationView.forceDisplayUpdate()
   }
 
   @objc
@@ -404,14 +404,14 @@ public final class CompatibleAnimationView: UIView {
     atFrame: CGFloat)
     -> Any?
   {
-    loadingAnimationView.getValue(
+    animationView.getValue(
       for: keypath.animationKeypath,
       atFrame: atFrame)
   }
 
   @objc
   public func logHierarchyKeypaths() {
-    loadingAnimationView.logHierarchyKeypaths()
+    animationView.logHierarchyKeypaths()
   }
 
   @objc
@@ -435,12 +435,12 @@ public final class CompatibleAnimationView: UIView {
     }
 
     let valueProvider = ColorValueProvider(LottieColor(r: Double(red), g: Double(green), b: Double(blue), a: Double(alpha)))
-    loadingAnimationView.setValueProvider(valueProvider, keypath: keypath.animationKeypath)
+    animationView.setValueProvider(valueProvider, keypath: keypath.animationKeypath)
   }
 
   @objc
   public func getColorValue(for keypath: CompatibleAnimationKeypath, atFrame: CGFloat) -> UIColor? {
-    let value = loadingAnimationView.getValue(for: keypath.animationKeypath, atFrame: atFrame)
+    let value = animationView.getValue(for: keypath.animationKeypath, atFrame: atFrame)
     guard let colorValue = value as? LottieColor else {
       return nil;
     }
@@ -457,7 +457,7 @@ public final class CompatibleAnimationView: UIView {
     _ subview: AnimationSubview,
     forLayerAt keypath: CompatibleAnimationKeypath)
   {
-    loadingAnimationView.addSubview(
+    animationView.addSubview(
       subview,
       forLayerAt: keypath.animationKeypath)
   }
@@ -468,7 +468,7 @@ public final class CompatibleAnimationView: UIView {
     toLayerAt keypath: CompatibleAnimationKeypath?)
     -> CGRect
   {
-    loadingAnimationView.convert(
+    animationView.convert(
       rect,
       toLayerAt: keypath?.animationKeypath) ?? .zero
   }
@@ -479,41 +479,41 @@ public final class CompatibleAnimationView: UIView {
     toLayerAt keypath: CompatibleAnimationKeypath?)
     -> CGPoint
   {
-    loadingAnimationView.convert(
+    animationView.convert(
       point,
       toLayerAt: keypath?.animationKeypath) ?? .zero
   }
 
   @objc
   public func progressTime(forMarker named: String) -> CGFloat {
-    loadingAnimationView.progressTime(forMarker: named) ?? 0
+    animationView.progressTime(forMarker: named) ?? 0
   }
 
   @objc
   public func frameTime(forMarker named: String) -> CGFloat {
-    loadingAnimationView.frameTime(forMarker: named) ?? 0
+    animationView.frameTime(forMarker: named) ?? 0
   }
 
   @objc
   public func durationFrameTime(forMarker named: String) -> CGFloat {
-    loadingAnimationView.durationFrameTime(forMarker: named) ?? 0
+    animationView.durationFrameTime(forMarker: named) ?? 0
   }
 
   // MARK: Private
 
-  private let loadingAnimationView: LottieAnimationView
+  private let animationView: LottieAnimationView
 
   private func commonInit() {
     setUpViews()
   }
 
   private func setUpViews() {
-    loadingAnimationView.translatesAutoresizingMaskIntoConstraints = false
-    addSubview(loadingAnimationView)
-    loadingAnimationView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-    loadingAnimationView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-    loadingAnimationView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    loadingAnimationView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    animationView.translatesAutoresizingMaskIntoConstraints = false
+    addSubview(animationView)
+    animationView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+    animationView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    animationView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    animationView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
   }
 }
 

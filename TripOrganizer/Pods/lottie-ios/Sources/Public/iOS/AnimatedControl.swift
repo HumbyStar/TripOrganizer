@@ -34,7 +34,7 @@ open class AnimatedControl: UIControl {
     animation: LottieAnimation,
     configuration: LottieConfiguration = .shared)
   {
-    loadingAnimationView = LottieAnimationView(
+    animationView = LottieAnimationView(
       animation: animation,
       configuration: configuration)
 
@@ -43,13 +43,13 @@ open class AnimatedControl: UIControl {
   }
 
   public init() {
-    loadingAnimationView = LottieAnimationView()
+    animationView = LottieAnimationView()
     super.init(frame: .zero)
     commonInit()
   }
 
   required public init?(coder aDecoder: NSCoder) {
-    loadingAnimationView = LottieAnimationView()
+    animationView = LottieAnimationView()
     super.init(coder: aDecoder)
     commonInit()
   }
@@ -77,7 +77,7 @@ open class AnimatedControl: UIControl {
   }
 
   open override var intrinsicContentSize: CGSize {
-    loadingAnimationView.intrinsicContentSize
+    animationView.intrinsicContentSize
   }
 
   open override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -105,13 +105,13 @@ open class AnimatedControl: UIControl {
   // MARK: Public
 
   /// The animation view in which the animation is rendered.
-  public let loadingAnimationView: LottieAnimationView
+  public let animationView: LottieAnimationView
 
   /// The animation backing the animated control.
   public var animation: LottieAnimation? {
     didSet {
-      loadingAnimationView.animation = animation
-      loadingAnimationView.bounds = animation?.bounds ?? .zero
+      animationView.animation = animation
+      animationView.bounds = animation?.bounds ?? .zero
       setNeedsLayout()
       updateForState()
       animationDidSet()
@@ -120,8 +120,8 @@ open class AnimatedControl: UIControl {
 
   /// The speed of the animation playback. Defaults to 1
   public var animationSpeed: CGFloat {
-    set { loadingAnimationView.animationSpeed = newValue }
-    get { loadingAnimationView.animationSpeed }
+    set { animationView.animationSpeed = newValue }
+    get { animationView.animationSpeed }
   }
 
   /// Sets which Animation Layer should be visible for the given state.
@@ -132,7 +132,7 @@ open class AnimatedControl: UIControl {
 
   /// Sets a ValueProvider for the specified keypath
   public func setValueProvider(_ valueProvider: AnyValueProvider, keypath: AnimationKeypath) {
-    loadingAnimationView.setValueProvider(valueProvider, keypath: keypath)
+    animationView.setValueProvider(valueProvider, keypath: keypath)
   }
 
   // MARK: Internal
@@ -140,7 +140,7 @@ open class AnimatedControl: UIControl {
   var stateMap: [UInt: String] = [:]
 
   func updateForState() {
-    guard let animationLayer = loadingAnimationView.animationLayer else { return }
+    guard let animationLayer = animationView.animationLayer else { return }
     if
       let layerName = stateMap[state.rawValue],
       let stateLayer = animationLayer.layer(for: AnimationKeypath(keypath: layerName))
@@ -159,17 +159,17 @@ open class AnimatedControl: UIControl {
   // MARK: Private
 
   private func commonInit() {
-    loadingAnimationView.clipsToBounds = false
+    animationView.clipsToBounds = false
     clipsToBounds = true
-    loadingAnimationView.translatesAutoresizingMaskIntoConstraints = false
-    loadingAnimationView.backgroundBehavior = .forceFinish
-    addSubview(loadingAnimationView)
-    loadingAnimationView.contentMode = .scaleAspectFit
-    loadingAnimationView.isUserInteractionEnabled = false
-    loadingAnimationView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-    loadingAnimationView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-    loadingAnimationView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-    loadingAnimationView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+    animationView.translatesAutoresizingMaskIntoConstraints = false
+    animationView.backgroundBehavior = .forceFinish
+    addSubview(animationView)
+    animationView.contentMode = .scaleAspectFit
+    animationView.isUserInteractionEnabled = false
+    animationView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+    animationView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    animationView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+    animationView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
   }
 }
 #endif
