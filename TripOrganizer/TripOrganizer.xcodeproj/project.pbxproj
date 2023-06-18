@@ -57,6 +57,7 @@
 		0C3AD1E529C3524800E7FE73 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */; };
 		0C3AD1EE29C3546C00E7FE73 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AD1ED29C3546C00E7FE73 /* ProfileViewController.swift */; };
 		0C5058682A100EF10069A884 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C50586A2A100EF10069A884 /* Localizable.strings */; };
+		0C5484F22A3E807900AEF9D9 /* MKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5484F12A3E807900AEF9D9 /* MKPointAnnotation.swift */; };
 		0C61EB0129BBDF9900F54F47 /* RecoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */; };
 		0C61EB0329BBDFA300F54F47 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */; };
 		1627E546E75C9391F7D32CC0 /* Pods_TripOrganizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B70FBC1E46219888EE81715 /* Pods_TripOrganizer.framework */; };
@@ -137,6 +138,7 @@
 		0C3AD1E429C3524800E7FE73 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileViewController.storyboard; path = TripOrganizer/Modules/TabBar/Perfil/View/ProfileViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C3AD1ED29C3546C00E7FE73 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0C5058692A100EF10069A884 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0C5484F12A3E807900AEF9D9 /* MKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPointAnnotation.swift; sourceTree = "<group>"; };
 		0C61EB0029BBDF9900F54F47 /* RecoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RecoverViewController.storyboard; path = TripOrganizer/Modules/RecoverPassword/View/RecoverViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		0C61EB0229BBDFA300F54F47 /* RecoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecoverViewController.swift; path = TripOrganizer/Modules/RecoverPassword/View/RecoverViewController.swift; sourceTree = SOURCE_ROOT; };
 		43780C8929D5C8A9002072BF /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -743,6 +745,7 @@
 			children = (
 				C43C4B4629ED9B950013D509 /* UIColor .swift */,
 				C4F9A2382A193166004EA00E /* Localized.swift */,
+				0C5484F12A3E807900AEF9D9 /* MKPointAnnotation.swift */,
 			);
 			path = Utilits;
 			sourceTree = "<group>";
@@ -1019,6 +1022,7 @@
 				8814476D29F0CEC900AC429A /* TicketsViewModel.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				5084C69329F9A59600858135 /* LaunchScreenViewController.swift in Sources */,
+				0C5484F22A3E807900AEF9D9 /* MKPointAnnotation.swift in Sources */,
 				886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */,
 				50A0E3702A2CED29002F82F3 /* PlaceService.swift in Sources */,
 				0C2037A829F0A328001BE709 /* RestaurantModel.swift in Sources */,
