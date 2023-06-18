@@ -24,6 +24,7 @@ class HotelViewController: UIViewController {
     @IBOutlet weak var hotelMapView: MKMapView!
     @IBOutlet weak var hotelInfoView: UIView!
     @IBOutlet weak var accommodationLabel: UILabel!
+    @IBOutlet weak var viewInfoDetail: NSLayoutConstraint!
     
     public var viewModel: HotelViewModel = HotelViewModel()
     var alert: Alert?
@@ -54,6 +55,14 @@ class HotelViewController: UIViewController {
             self?.hotelMapView.addAnnotations(annotations)
             self?.hotelMapView.showAnnotations(annotations, animated: true)
         }
+        
+        viewModel.alertHandler = {
+            self.alert?.createAlert(title: "Erro", message: "Não existe informações do lugar selecionado")
+        }
+        
+//        viewModel.completion = {
+//            if self.view
+//        }
     }
     
     private func configHotelMapView() {
@@ -162,7 +171,7 @@ extension HotelViewController: MKMapViewDelegate {
             filter.type = .establishment
             let stringFinal = "Hotel,\(placeName)"
             
-            viewModel.findDetails(value: stringFinal, filter: filter)
+            viewModel.searchEstabilishment(value: stringFinal, filter: filter)
         }
     }
 }

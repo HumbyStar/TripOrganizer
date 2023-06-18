@@ -16,6 +16,10 @@ class HotelViewModel {
     
     public var regionUpdaterHandler: ((MKCoordinateRegion) -> Void)?
     public var annotationUpdateHandler: (([MKPointAnnotation]) -> Void)?
+    public var alertHandler: (() -> Void)?
+    public var completion: (() -> Void)?
+    
+    var placeClient = GMSPlacesClient.shared()
    
 
     public func fetchHotels() {
@@ -86,8 +90,45 @@ class HotelViewModel {
         }
     }
     
-    public func findDetails(value: String, filter: GMSAutocompleteFilter){
+    public func searchEstabilishment(value: String, filter: GMSAutocompleteFilter){
+        placeClient.findAutocompletePredictions(fromQuery: value, filter: filter, sessionToken: nil) { results, error in
+            guard error == nil else {
+                print("Erro ao tentar recuperar informações dos locais ao redor \(error?.localizedDescription ?? "")")
+                return
+            }
+            
+            guard let results = results else{
+                print("Nenhuma sugestão de lugar encontrada")
+                return
+            }
+            
+            guard let firstResult = results.first else {
+                print("Não existe lugar disponível")
+                self.alertHandler?()
+                return
+            }
         
+            self.findHotelDetails(placeID: firstResult.placeID)
+        }
+    }
+    
+    public func findHotelDetails(placeID: String){
+        let field: GMSPlaceField = .all
+        
+        placeClient.fetchPlace(fromPlaceID: placeID, placeFields: field, sessionToken: nil) { localDetails, error in
+            guard error == nil else {
+                print("Erro ao recuperar o local")
+                return
+            }
+            
+            guard let localDetails = localDetails else {
+                print("Erro, não possível recuperar os detalhes dos lugares na lista")
+                return
+            }
+            
+            //TODO comunicar com a viewController para realizar as animações
+            self.completion?()
+        }
     }
     
 }
