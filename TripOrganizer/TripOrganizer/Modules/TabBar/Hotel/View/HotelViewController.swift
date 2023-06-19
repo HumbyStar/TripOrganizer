@@ -19,13 +19,25 @@ class HotelViewController: UIViewController {
     @IBOutlet weak var hotelAddressLabel: UILabel!
     @IBOutlet weak var hotelRatingLabel: UILabel!
     @IBOutlet weak var hotelNameLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var hotelMapView: MKMapView!
     @IBOutlet weak var hotelInfoView: UIView!
     @IBOutlet weak var accommodationLabel: UILabel!
-    @IBOutlet weak var viewInfoDetail: NSLayoutConstraint!
+    @IBOutlet weak var viewInfoHeight: NSLayoutConstraint!
     @IBOutlet weak var infoToSearchLabel: UILabel!
+    
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .clear
+        collectionView.delaysContentTouches = false
+        collectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
+        return collectionView
+    }()
     
     public var viewModel: HotelViewModel = HotelViewModel()
     var alert: Alert?
@@ -66,7 +78,7 @@ class HotelViewController: UIViewController {
         viewModel.completion = { [weak self] localDetail in
             guard let self = self else {return}
             
-            if self.viewInfoDetail.constant == 153 {
+            if self.viewInfoHeight.constant == 153 {
                 self.displayDetailsScreen(local: localDetail)
                 self.showView(check: true)
                 self.updateCollectionView()
@@ -83,9 +95,10 @@ class HotelViewController: UIViewController {
             self.hotelRatingLabel.alpha = 0
             self.hotelAddressLabel.alpha = 0
             self.hotelPhoneNumberLabel.alpha = 0
-            //self.lbLocalPhotos.alpha = 0
-            //self.lbOpen.alpha = 0
+            self.hotelOpeningHoursLabel.alpha = 0
+            self.accommodationLabel.alpha = 0
             self.collectionView.alpha = 0
+            self.addButton.alpha = 0
         } completion: { _ in
             UIView.animate(withDuration: 0.4) {
                 self.displayDetailsScreen(local: infoPlace)
@@ -93,26 +106,36 @@ class HotelViewController: UIViewController {
                 self.hotelRatingLabel.alpha = 1
                 self.hotelAddressLabel.alpha = 1
                 self.hotelPhoneNumberLabel.alpha = 1
-                //self.lbLocalPhotos.alpha = 1
-                //self.lbOpen.alpha = 1
+                self.hotelOpeningHoursLabel.alpha = 1
+                self.accommodationLabel.alpha = 1
                 self.collectionView.alpha = 1
+                self.addButton.alpha = 1
             }
         }
     }
     
-    private func updateCollectionView() {
-        configCollectionView()
+    private func updateCollectionView() { 
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        hotelInfoView.addSubview(collectionView)
+        
+        collectionView.topAnchor.constraint(equalTo: accommodationLabel.bottomAnchor, constant: 10).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: hotelInfoView.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: hotelInfoView.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: hotelInfoView.bottomAnchor).isActive = true
+        
         viewModel.fetchHotels()
     }
     
     private func showView(check: Bool) {
         if check {
-            self.viewInfoDetail.constant = 315
+            self.viewInfoHeight.constant = 315
         } else {
-            self.viewInfoDetail.constant = 153
+            self.viewInfoHeight.constant = 153
         }
         
         UIView.animate(withDuration: 0.8) {
+            self.hotelInfoView.backgroundColor = .white
             self.hotelInfoView.alpha = 1
             self.infoToSearchLabel.alpha = 0
             self.hotelInfoView.layoutIfNeeded()
@@ -151,13 +174,6 @@ class HotelViewController: UIViewController {
     private func configHotelInfoView() {
         hotelInfoView.clipsToBounds = true
         hotelInfoView.layer.cornerRadius = 12
-    }
-    
-    private func configCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        viewModel.configLayoutCollectionView(collectionView: collectionView)
-        collectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
     }
     
     private func configSearchBar() {
@@ -220,8 +236,10 @@ extension HotelViewController: UISearchBarDelegate {
                 self.infoToSearchLabel.alpha = 0
             } completion: {_ in
                 UIView.animate(withDuration: 0.5) {
-                    self.infoToSearchLabel.text = "Digite em um icone para ver os detalhes"
-                    self.infoToSearchLabel.alpha = 1
+                    if self.hotelInfoView.alpha == 0 {
+                        self.infoToSearchLabel.text = "Digite em um icone para ver os detalhes"
+                        self.infoToSearchLabel.alpha = 1
+                    }
                 }
             }
             self.hotelMapView.removeAnnotations(self.hotelMapView.annotations)
