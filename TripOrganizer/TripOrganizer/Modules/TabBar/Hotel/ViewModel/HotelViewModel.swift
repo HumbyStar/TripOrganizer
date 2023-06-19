@@ -17,7 +17,7 @@ class HotelViewModel {
     public var regionUpdaterHandler: ((MKCoordinateRegion) -> Void)?
     public var annotationUpdateHandler: (([MKPointAnnotation]) -> Void)?
     public var alertHandler: (() -> Void)?
-    public var completion: (() -> Void)?
+    public var completion: ((GMSPlace) -> Void)?
     
     var placeClient = GMSPlacesClient.shared()
    
@@ -127,8 +127,37 @@ class HotelViewModel {
             }
             
             //TODO comunicar com a viewController para realizar as animações
-            self.completion?()
+            self.completion?(localDetails)
         }
+    }
+    
+    public func checkLocalHour(dataHour: GMSPlaceOpenStatus) -> String {
+        switch dataHour {
+        case .open:
+            return "Funcionamento - Estabelecimento Aberto"
+        case .closed:
+            return "Funcionamento - Estabelecimento Fechado"
+        case .unknown:
+            return "Funcionamento - Dado indisponível"
+        @unknown default:
+            return "Funcionamento - Dado indisponível"
+        }
+    }
+    
+    public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]) -> [UIImage] {
+        var localPhotos = [UIImage]()
+        for photo in photos {
+            placeClient.loadPlacePhoto(photo) { image, error in
+                guard error == nil else {
+                    print("Erro ao recuperar imagem")
+                    return
+                }
+                
+                guard let image = image else {return}
+                localPhotos.append(image)
+            }
+        }
+        return localPhotos
     }
     
 }

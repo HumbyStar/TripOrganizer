@@ -25,20 +25,22 @@ class HotelViewController: UIViewController {
     @IBOutlet weak var hotelInfoView: UIView!
     @IBOutlet weak var accommodationLabel: UILabel!
     @IBOutlet weak var viewInfoDetail: NSLayoutConstraint!
+    @IBOutlet weak var infoToSearchLabel: UILabel!
     
     public var viewModel: HotelViewModel = HotelViewModel()
     var alert: Alert?
+    var localPhotos: [UIImage] = []
     
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
     }
     
     override func viewDidLoad() {
         self.alert = Alert(controller: self)
         super.viewDidLoad()
-        viewModel.fetchHotels()
-        configCollectionView()
+        hotelMapView.delegate = self
         configHotelMapView()
         configHotelInfoView()
         configSearchBar()
@@ -51,6 +53,7 @@ class HotelViewController: UIViewController {
         }
         
         viewModel.annotationUpdateHandler = {[weak self] (annotations) in
+            print(annotations)
             self?.hotelMapView.removeAnnotations(self?.hotelMapView.annotations ?? [])
             self?.hotelMapView.addAnnotations(annotations)
             self?.hotelMapView.showAnnotations(annotations, animated: true)
@@ -60,9 +63,84 @@ class HotelViewController: UIViewController {
             self.alert?.createAlert(title: "Erro", message: "Não existe informações do lugar selecionado")
         }
         
-//        viewModel.completion = {
-//            if self.view
-//        }
+        viewModel.completion = { [weak self] localDetail in
+            guard let self = self else {return}
+            
+            if self.viewInfoDetail.constant == 153 {
+                self.displayDetailsScreen(local: localDetail)
+                self.showView(check: true)
+                self.updateCollectionView()
+            } else {
+                self.changePlaceAnimated(infoPlace: localDetail)
+            }
+        }
+        
+    }
+    
+    private func changePlaceAnimated(infoPlace: GMSPlace) {
+        UIView.animate(withDuration: 0.6) {
+            self.hotelNameLabel.alpha = 0
+            self.hotelRatingLabel.alpha = 0
+            self.hotelAddressLabel.alpha = 0
+            self.hotelPhoneNumberLabel.alpha = 0
+            //self.lbLocalPhotos.alpha = 0
+            //self.lbOpen.alpha = 0
+            self.collectionView.alpha = 0
+        } completion: { _ in
+            UIView.animate(withDuration: 0.4) {
+                self.displayDetailsScreen(local: infoPlace)
+                self.hotelNameLabel.alpha = 1
+                self.hotelRatingLabel.alpha = 1
+                self.hotelAddressLabel.alpha = 1
+                self.hotelPhoneNumberLabel.alpha = 1
+                //self.lbLocalPhotos.alpha = 1
+                //self.lbOpen.alpha = 1
+                self.collectionView.alpha = 1
+            }
+        }
+    }
+    
+    private func updateCollectionView() {
+        configCollectionView()
+        viewModel.fetchHotels()
+    }
+    
+    private func showView(check: Bool) {
+        if check {
+            self.viewInfoDetail.constant = 315
+        } else {
+            self.viewInfoDetail.constant = 153
+        }
+        
+        UIView.animate(withDuration: 0.8) {
+            self.hotelInfoView.alpha = 1
+            self.infoToSearchLabel.alpha = 0
+            self.hotelInfoView.layoutIfNeeded()
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func displayDetailsScreen(local: GMSPlace) {
+        hotelNameLabel.text = local.name
+        hotelAddressLabel.text = local.formattedAddress
+        
+        if local.phoneNumber != nil {
+            hotelPhoneNumberLabel.text = "Contato: \(local.phoneNumber ?? "")"
+        } else {
+            hotelPhoneNumberLabel.text = "Contato: Indisponível"
+        }
+        
+        hotelRatingLabel.text = "Avaliações - \(local.rating)"
+
+        hotelOpeningHoursLabel.text = viewModel.checkLocalHour(dataHour: local.isOpen())
+        
+        guard let photos = local.photos else {
+            print("Não foi possível recuperar fotos")
+            return
+        }
+        localPhotos.removeAll()
+        localPhotos = viewModel.loadLocalPhotos(photos: photos)
+        self.collectionView.reloadData()
     }
     
     private func configHotelMapView() {
@@ -138,6 +216,14 @@ extension HotelViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         viewModel.findHotel(typed: searchBar.text)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            UIView.animate(withDuration: 0.5) {
+                self.infoToSearchLabel.alpha = 0
+            } completion: {_ in
+                UIView.animate(withDuration: 0.5) {
+                    self.infoToSearchLabel.text = "Digite em um icone para ver os detalhes"
+                    self.infoToSearchLabel.alpha = 1
+                }
+            }
             self.hotelMapView.removeAnnotations(self.hotelMapView.annotations)
             self.viewModel.buildMKPoints(region: self.hotelMapView.region)
         }
@@ -146,31 +232,34 @@ extension HotelViewController: UISearchBarDelegate {
 
 extension HotelViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard annotation is MKPointAnnotation else {return nil}
-        
+        guard annotation is MKPointAnnotation else {
+           return nil
+        }
+
         let identifier = "Annotation"
-        
+
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        
+
         if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
             annotationView?.tintColor = .orange
         } else {
             annotationView?.annotation = annotation
         }
-        
+
+
         return annotationView
     }
-    
+
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? MKPointAnnotation {
             let placeName = annotation.title ?? ""
-            
+
             let filter = GMSAutocompleteFilter()
             filter.type = .establishment
             let stringFinal = "Hotel,\(placeName)"
-            
+
             viewModel.searchEstabilishment(value: stringFinal, filter: filter)
         }
     }
