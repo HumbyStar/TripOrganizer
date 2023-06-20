@@ -100,6 +100,9 @@
 		886E229D29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E229C29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift */; };
 		886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E22C229EEF29D00E70FF7 /* HotelModel.swift */; };
 		886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E22C529EEF33600E70FF7 /* HotelViewModel.swift */; };
+		C4096D162A423A1D00C7906A /* FlightData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4096D152A423A1D00C7906A /* FlightData.swift */; };
+		C4096D182A423B5400C7906A /* FlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4096D172A423B5400C7906A /* FlightService.swift */; };
+		C4096D1A2A42419E00C7906A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4096D192A42419E00C7906A /* Error.swift */; };
 		C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */; };
 		C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4629ED9B950013D509 /* UIColor .swift */; };
 		C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
@@ -182,6 +185,9 @@
 		886E22C529EEF33600E70FF7 /* HotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModel.swift; sourceTree = "<group>"; };
 		88968ADC3E56DBA6B04D857F /* Pods-TripOrganizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripOrganizer.debug.xcconfig"; path = "Target Support Files/Pods-TripOrganizer/Pods-TripOrganizer.debug.xcconfig"; sourceTree = "<group>"; };
 		9B70FBC1E46219888EE81715 /* Pods_TripOrganizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripOrganizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4096D152A423A1D00C7906A /* FlightData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightData.swift; sourceTree = "<group>"; };
+		C4096D172A423B5400C7906A /* FlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightService.swift; sourceTree = "<group>"; };
+		C4096D192A42419E00C7906A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C43C4B4629ED9B950013D509 /* UIColor .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor .swift"; sourceTree = "<group>"; };
 		C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -328,6 +334,7 @@
 				509DCC0B29F6FC58002F04B0 /* AddTripModel.swift */,
 				8814476129F0371C00AC429A /* AttractionModel.swift */,
 				50A0E3712A2CED60002F82F3 /* PlacesData.swift */,
+				C4096D152A423A1D00C7906A /* FlightData.swift */,
 			);
 			name = Model;
 			path = Resources/Model;
@@ -536,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				50A0E36F2A2CED29002F82F3 /* PlaceService.swift */,
+				C4096D172A423B5400C7906A /* FlightService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -743,6 +751,7 @@
 			children = (
 				C43C4B4629ED9B950013D509 /* UIColor .swift */,
 				C4F9A2382A193166004EA00E /* Localized.swift */,
+				C4096D192A42419E00C7906A /* Error.swift */,
 			);
 			path = Utilits;
 			sourceTree = "<group>";
@@ -1012,9 +1021,12 @@
 				43780C9129D5C943002072BF /* HotelCollectionViewCell.swift in Sources */,
 				C43C4B4E29EDB95F0013D509 /* RegisterViewModel.swift in Sources */,
 				8814475F29F036F000AC429A /* AttractionViewModel.swift in Sources */,
+				C4096D162A423A1D00C7906A /* FlightData.swift in Sources */,
 				0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */,
 				5050BCB629B8D9050019BB69 /* RegisterViewController.swift in Sources */,
+				C4096D182A423B5400C7906A /* FlightService.swift in Sources */,
 				43BE0D2E29E5CA99001B5963 /* FlightScreenCollectionViewCell.swift in Sources */,
+				C4096D1A2A42419E00C7906A /* Error.swift in Sources */,
 				43780C8B29D5C8A9002072BF /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

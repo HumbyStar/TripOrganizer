@@ -17,7 +17,7 @@ class PlaceService {
                 let placeData: PlacesData = try JSONDecoder().decode(PlacesData.self, from: data)
                 completion(placeData, nil)
             } catch {
-                completion(nil, error)
+                completion(nil, Error.errorURLRequest(error))
             }
         }
     }
