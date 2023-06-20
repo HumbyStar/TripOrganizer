@@ -124,7 +124,7 @@ class HotelViewController: UIViewController {
         collectionView.trailingAnchor.constraint(equalTo: hotelInfoView.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: hotelInfoView.bottomAnchor).isActive = true
         
-        viewModel.fetchHotels()
+        //viewModel.fetchHotels()
     }
     
     private func showView(check: Bool) {
@@ -161,8 +161,8 @@ class HotelViewController: UIViewController {
             print("Não foi possível recuperar fotos")
             return
         }
-        localPhotos.removeAll()
-        localPhotos = viewModel.loadLocalPhotos(photos: photos)
+        
+        viewModel.loadLocalPhotos(photos: photos)
         self.collectionView.reloadData()
     }
     
@@ -206,15 +206,15 @@ class HotelViewController: UIViewController {
 extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItens()
+        return viewModel.localPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let images = viewModel.getHotelImages(indexPath: indexPath)
-        cell.setupCell(image: images[indexPath.row])
+        //let images = viewModel.getHotelImages(indexPath: indexPath)
+        cell.setupCell(image: viewModel.localPhotos[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }

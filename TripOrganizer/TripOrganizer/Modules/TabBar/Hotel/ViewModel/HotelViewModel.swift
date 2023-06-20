@@ -20,7 +20,7 @@ class HotelViewModel {
     public var completion: ((GMSPlace) -> Void)?
     
     var placeClient = GMSPlacesClient.shared()
-   
+    var localPhotos = [UIImage]()
 
     public func fetchHotels() {
         placeService.getPlaceDataJson { data, error in
@@ -36,6 +36,10 @@ class HotelViewModel {
     
     public func numberOfItens() -> Int {
         return 3
+    }
+    
+    public func resetHotelList() {
+        hotelList = []
     }
     
     public func getHotelImages(indexPath: IndexPath) -> [String] {
@@ -144,8 +148,10 @@ class HotelViewModel {
         }
     }
     
-    public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]) -> [UIImage] {
-        var localPhotos = [UIImage]()
+    public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]) {
+        self.localPhotos.removeAll()
+        
+        
         for photo in photos {
             placeClient.loadPlacePhoto(photo) { image, error in
                 guard error == nil else {
@@ -154,10 +160,11 @@ class HotelViewModel {
                 }
                 
                 guard let image = image else {return}
-                localPhotos.append(image)
+                self.localPhotos.append(image)
             }
+            //print(localPhotos.count)
         }
-        return localPhotos
+        print(localPhotos.count)
     }
     
 }
