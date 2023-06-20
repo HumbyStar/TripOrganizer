@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -175,7 +176,20 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="183.96946564885496" y="96.126760563380287"/>
+            <connections>
+                <outlet property="TravelDurationReturnTripLabel" destination="cqf-Cx-gdm" id="RrD-PE-dFw"/>
+                <outlet property="arrivalPlaceLabel" destination="zye-cB-8j1" id="2xc-Pw-a30"/>
+                <outlet property="arrivalPlaceReturnTripLabel" destination="Ki8-Uc-lYQ" id="HN3-T3-Mvv"/>
+                <outlet property="arrivalTimeLabel" destination="m7l-68-0Do" id="chj-ep-I3j"/>
+                <outlet property="arrivalTimeReturnTripLabel" destination="6gS-UW-sJL" id="q37-fn-Mcj"/>
+                <outlet property="departurePlaceLabel" destination="Ssb-aX-omA" id="aml-ZS-TNm"/>
+                <outlet property="departurePlaceReturnTripLabel" destination="H5B-Tm-de4" id="tDR-Jo-pJt"/>
+                <outlet property="departureTimeLabel" destination="T5S-9s-khE" id="dP7-kQ-eyB"/>
+                <outlet property="departureTimeReturnTripLabel" destination="2o1-CI-in6" id="92y-k5-GEX"/>
+                <outlet property="flightPriceLabel" destination="G2c-OD-jn5" id="iON-S5-OVR"/>
+                <outlet property="travelDurationLabel" destination="bpv-WU-NBx" id="Euw-lS-i7Z"/>
+            </connections>
+            <point key="canvasLocation" x="183.96946564885496" y="95.774647887323951"/>
         </tableViewCell>
     </objects>
     <resources>
