@@ -26,6 +26,11 @@ class HotelViewController: UIViewController {
     @IBOutlet weak var viewInfoHeight: NSLayoutConstraint!
     @IBOutlet weak var infoToSearchLabel: UILabel!
     
+    public var viewModel: HotelViewModel = HotelViewModel()
+    
+    var alert: Alert?
+    var localPhotos: [UIImage] = []
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -38,12 +43,7 @@ class HotelViewController: UIViewController {
         collectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
         return collectionView
     }()
-    
-    public var viewModel: HotelViewModel = HotelViewModel()
-    var alert: Alert?
-    var localPhotos: [UIImage] = []
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
         
@@ -85,6 +85,11 @@ class HotelViewController: UIViewController {
             } else {
                 self.changePlaceAnimated(infoPlace: localDetail)
             }
+        }
+        
+        viewModel.updateCollectionView = {
+            self.viewModel.isLoading = false
+            self.collectionView.reloadData()
         }
         
     }
@@ -206,25 +211,31 @@ class HotelViewController: UIViewController {
 extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.localPhotos.count
+        return viewModel.isLoading ? viewModel.skeletonCount : viewModel.localPhotos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell else {
             return UICollectionViewCell()
         }
+
         //let images = viewModel.getHotelImages(indexPath: indexPath)
-        cell.setupCell(image: viewModel.localPhotos[indexPath.row])
         cell.layer.cornerRadius = 10
+        
+        
+        if viewModel.isLoading {
+            cell.showSkeleton()
+        } else {
+            cell.hideSkeleton()
+            cell.setupCell(image: viewModel.localPhotos[indexPath.row])
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return viewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
-
-        
     }
-    
 }
 
 extension HotelViewController: UISearchBarDelegate {
@@ -273,11 +284,13 @@ extension HotelViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? MKPointAnnotation {
             let placeName = annotation.title ?? ""
-
+            let regionTyped = searchBar.text
+            
             let filter = GMSAutocompleteFilter()
             filter.type = .establishment
-            let stringFinal = "Hotel,\(placeName)"
+            let stringFinal = "Hotel,\(placeName),\(regionTyped ?? "")"
 
+            viewModel.isLoading = true
             viewModel.searchEstabilishment(value: stringFinal, filter: filter)
         }
     }

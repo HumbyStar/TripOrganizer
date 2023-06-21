@@ -18,9 +18,12 @@ class HotelViewModel {
     public var annotationUpdateHandler: (([MKPointAnnotation]) -> Void)?
     public var alertHandler: (() -> Void)?
     public var completion: ((GMSPlace) -> Void)?
+    public var updateCollectionView: (() -> Void)?
     
     var placeClient = GMSPlacesClient.shared()
     var localPhotos = [UIImage]()
+    var isLoading = false
+    var skeletonCount = 0
 
     public func fetchHotels() {
         placeService.getPlaceDataJson { data, error in
@@ -129,8 +132,7 @@ class HotelViewModel {
                 print("Erro, não possível recuperar os detalhes dos lugares na lista")
                 return
             }
-            
-            //TODO comunicar com a viewController para realizar as animações
+
             self.completion?(localDetails)
         }
     }
@@ -149,22 +151,26 @@ class HotelViewModel {
     }
     
     public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]) {
+        skeletonCount = photos.count
         self.localPhotos.removeAll()
-        
+        let dispatchGroup = DispatchGroup()
         
         for photo in photos {
+            dispatchGroup.enter()
             placeClient.loadPlacePhoto(photo) { image, error in
-                guard error == nil else {
-                    print("Erro ao recuperar imagem")
-                    return
+                if let image = image, error == nil {
+                    self.localPhotos.append(image)
+                } else {
+                    print("Ocorreu um erro para recuperar a imagem")
                 }
                 
-                guard let image = image else {return}
-                self.localPhotos.append(image)
+                
+                dispatchGroup.leave()
             }
-            //print(localPhotos.count)
         }
-        print(localPhotos.count)
+        dispatchGroup.notify(queue: .main) {
+            self.updateCollectionView?()
+        }
     }
     
 }
