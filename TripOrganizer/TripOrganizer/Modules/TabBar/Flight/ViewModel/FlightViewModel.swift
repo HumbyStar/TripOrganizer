@@ -9,7 +9,8 @@ import UIKit
 
 class FlightViewModel {
     
-    private var flightService: FlightService = FlightService()
+    private var service: FlightService = FlightService()
+    private var ticketList: [Ticket]?
     private var listObject: [FlightModel] = [FlightModel(cityNameObject: "Florianópolis", cityDescriptionObject: "Conhecida por suas praias     paradisíacas,                                    Floripa também é famosa por sua culinária e por apresentar uma cultura     vibrante.",cityImageObject: "floripa" ),
                                              FlightModel(cityNameObject: "Rio de Janeiro", cityDescriptionObject: "Famosa por suas praias, Cristo Redentor e pelo Pão de Açúcar. Também conhecida pelas grandes favelas e o Carnaval.", cityImageObject:  "rioDeJaneiro"),
                                              FlightModel(cityNameObject: "Fernando de Noronha", cityDescriptionObject: "Arquipélago reconhecido pelas suas praias pouco urbanizadas e por atividades como mergulho e snorkeling.", cityImageObject:  "noronha" ),
@@ -51,5 +52,26 @@ class FlightViewModel {
         return true
     }
     
-    
+    public func fetchRequest(origin: String, destination: String, date: String, numberOfPassengers: String, returnDate: String) {
+
+        let urlString = "https://skyscanner50.p.rapidapi.com/api/v1/searchFlights?origin=\(origin)&destination=\(destination)&date=\(date)&adults=\(numberOfPassengers)&currency=BRL&countryCode=US&market=en-US&returnDate=\(returnDate)"
+            
+        service.getFlight(url: urlString) { flights, error in
+            debugPrint(flights)
+            if error != nil {
+                
+            } else {
+                self.ticketList = flights?.data
+            }
+        }
+        
+        
+//        service.getFlight(url: urlString) { flights, error in
+//            if error != nil {
+//
+//            } else {
+//                self.ticketList = flights?.status
+//            }
+//        }
+    }
 }

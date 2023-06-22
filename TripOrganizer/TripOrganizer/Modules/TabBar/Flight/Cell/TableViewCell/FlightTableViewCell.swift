@@ -53,12 +53,12 @@ class FlightTableViewCell: UITableViewCell {
     }
     
     public func setupCell(data: Ticket) {
-        departureTimeLabel.text = data.legs[0].departure
-        arrivalTimeLabel.text = data.legs[0].arrival
-        departurePlaceLabel.text = data.legs[0].departure
-        arrivalPlaceLabel.text = data.legs[0]
-        travelDurationLabel.text = data.travelDuration
-        flightPriceLabel.text = data.flightPrice
+//        departureTimeLabel.text = data.legs[0].departure
+//        arrivalTimeLabel.text = data.legs[0].arrival
+//        departurePlaceLabel.text = data.legs[0].departure
+//        arrivalPlaceLabel.text = data.legs[0]
+//        travelDurationLabel.text = data.travelDuration
+//        flightPriceLabel.text = data.flightPrice
         
     }
 }

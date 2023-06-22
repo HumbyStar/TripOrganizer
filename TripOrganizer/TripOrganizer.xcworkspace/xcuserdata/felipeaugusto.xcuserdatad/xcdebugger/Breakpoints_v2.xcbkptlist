@@ -3,4 +3,148 @@
    uuid = "3510E7BA-4F18-4A21-B32B-258F9EC7A266"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FF71481-0B64-49B5-8C6F-59D2EF2B4B61"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TripOrganizer/Service/FlightService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getFlight(url:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1FF71481-0B64-49B5-8C6F-59D2EF2B4B61 - 4378d4749e47a3b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TripOrganizer.FlightService.getFlight(url: Swift.String, completion: (Swift.Optional&lt;TripOrganizer.TicketsModel&gt;, Swift.Optional&lt;TripOrganizer.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TripOrganizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeaugusto/Desktop/TripOrganizer/TripOrganizer/TripOrganizer/Service/FlightService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1252">
+               </Location>
+               <Location
+                  uuid = "1FF71481-0B64-49B5-8C6F-59D2EF2B4B61 - 4378d4749e47a3b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TripOrganizer.FlightService.getFlight(url: Swift.String, completion: (Swift.Optional&lt;TripOrganizer.TicketsModel&gt;, Swift.Optional&lt;TripOrganizer.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TripOrganizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeaugusto/Desktop/TripOrganizer/TripOrganizer/TripOrganizer/Service/FlightService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1132">
+               </Location>
+               <Location
+                  uuid = "1FF71481-0B64-49B5-8C6F-59D2EF2B4B61 - 4378d4749e47a3b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TripOrganizer.FlightService.getFlight(url: Swift.String, completion: (Swift.Optional&lt;TripOrganizer.TicketsModel&gt;, Swift.Optional&lt;TripOrganizer.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TripOrganizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeaugusto/Desktop/TripOrganizer/TripOrganizer/TripOrganizer/Service/FlightService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D14DCAD-2296-4FA3-BA61-AC1410275C04"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TripOrganizer/Service/FlightService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getFlight(url:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1D14DCAD-2296-4FA3-BA61-AC1410275C04 - 4378d4749e47a316"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TripOrganizer.FlightService.getFlight(url: Swift.String, completion: (Swift.Optional&lt;TripOrganizer.TicketsModel&gt;, Swift.Optional&lt;TripOrganizer.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TripOrganizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeaugusto/Desktop/TripOrganizer/TripOrganizer/TripOrganizer/Service/FlightService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "2832">
+               </Location>
+               <Location
+                  uuid = "1D14DCAD-2296-4FA3-BA61-AC1410275C04 - 4378d4749e47a316"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TripOrganizer.FlightService.getFlight(url: Swift.String, completion: (Swift.Optional&lt;TripOrganizer.TicketsModel&gt;, Swift.Optional&lt;TripOrganizer.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TripOrganizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeaugusto/Desktop/TripOrganizer/TripOrganizer/TripOrganizer/Service/FlightService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "2572">
+               </Location>
+               <Location
+                  uuid = "1D14DCAD-2296-4FA3-BA61-AC1410275C04 - 4378d4749e47a316"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TripOrganizer.FlightService.getFlight(url: Swift.String, completion: (Swift.Optional&lt;TripOrganizer.TicketsModel&gt;, Swift.Optional&lt;TripOrganizer.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TripOrganizer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/felipeaugusto/Desktop/TripOrganizer/TripOrganizer/TripOrganizer/Service/FlightService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "2640">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E846ED4-EC9C-49F8-835B-4C77F06FCF65"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TripOrganizer/Modules/TabBar/Flight/ViewModel/FlightViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "fetchRequest(origin:destination:date:numberOfPassengers:returnDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

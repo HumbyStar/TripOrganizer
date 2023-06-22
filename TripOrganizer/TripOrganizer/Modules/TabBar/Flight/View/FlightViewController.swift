@@ -44,15 +44,18 @@ class FlightViewController: UIViewController {
     }
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
-        
         let viewController: TicketsViewController? = UIStoryboard(name: Localized.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.ticketsViewController) as? TicketsViewController
-        viewController?.modalPresentationStyle = .automatic
-        self.configLoadingAnimation()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.present(viewController ?? UIViewController(), animated: true)
-            self.removeLoadingAnimation()
-        }
+        viewModel.fetchRequest(origin: flightOriginTextField.text ?? "", destination: flightDestinationTextField.text ?? "", date: calendarOnGoingTextField.text ?? "", numberOfPassengers: passengersTextField.text ?? "", returnDate: calendarOutGoingTextField.text ?? "")
+        
+        viewController?.modalPresentationStyle = .automatic
+        self.present(viewController ?? UIViewController(), animated: true)
+        //        self.configLoadingAnimation()
+        
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        //            self.present(viewController ?? UIViewController(), animated: true)
+        //            self.removeLoadingAnimation()
+//    }
         
     }
     
@@ -118,7 +121,6 @@ class FlightViewController: UIViewController {
     private func configUIView(view: UIView) {
         view.layer.cornerRadius = 5
         view.clipsToBounds = true
-        
     }
     
    private func configCollectionView() {
