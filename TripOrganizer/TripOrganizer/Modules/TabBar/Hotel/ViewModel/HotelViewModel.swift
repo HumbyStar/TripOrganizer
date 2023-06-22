@@ -14,21 +14,24 @@ class HotelViewModel {
     private var hotelList: [HotelModel] = []
     private var placeService: PlaceService = PlaceService()
     
-    public var regionUpdaterHandler: ((MKCoordinateRegion) -> Void)?
-    public var annotationUpdateHandler: (([MKPointAnnotation]) -> Void)?
+    public var isLoading = false
+    public var skeletonCount = 0
+    public var isUsingMockData = false
+    public var localPhotos = [UIImage]()
     public var alertHandler: (() -> Void)?
     public var completion: ((GMSPlace) -> Void)?
     public var updateCollectionView: (() -> Void)?
+    public var placeClient = GMSPlacesClient.shared()
+    public var regionUpdaterHandler: ((MKCoordinateRegion) -> Void)?
+    public var annotationUpdateHandler: (([MKPointAnnotation]) -> Void)?
     
-    var placeClient = GMSPlacesClient.shared()
-    var localPhotos = [UIImage]()
-    var isLoading = false
-    var skeletonCount = 0
-
     public func fetchHotels() {
         placeService.getPlaceDataJson { data, error in
-            if error == nil {
+            if let error = error {
+                print("Erro ao recuperar os dados mockados:\(error.localizedDescription)")
+            } else {
                 self.hotelList = data?.hotels ?? []
+                self.isUsingMockData = true
             }
         }
     }
@@ -43,11 +46,6 @@ class HotelViewModel {
     
     public func resetHotelList() {
         hotelList = []
-    }
-    
-    public func getHotelImages(indexPath: IndexPath) -> [String] {
-        let hotel = hotelList[0]
-        return hotel.room
     }
     
     public func configLayoutCollectionView(collectionView: UICollectionView){
@@ -101,17 +99,13 @@ class HotelViewModel {
         placeClient.findAutocompletePredictions(fromQuery: value, filter: filter, sessionToken: nil) { results, error in
             guard error == nil else {
                 print("Erro ao tentar recuperar informações dos locais ao redor \(error?.localizedDescription ?? "")")
+                self.fetchHotels()
                 return
             }
             
-            guard let results = results else{
+            guard let results = results, let firstResult = results.first else{
                 print("Nenhuma sugestão de lugar encontrada")
-                return
-            }
-            
-            guard let firstResult = results.first else {
-                print("Não existe lugar disponível")
-                self.alertHandler?()
+                self.fetchHotels()
                 return
             }
         
@@ -125,14 +119,17 @@ class HotelViewModel {
         placeClient.fetchPlace(fromPlaceID: placeID, placeFields: field, sessionToken: nil) { localDetails, error in
             guard error == nil else {
                 print("Erro ao recuperar o local")
+                self.fetchHotels()
                 return
             }
             
             guard let localDetails = localDetails else {
                 print("Erro, não possível recuperar os detalhes dos lugares na lista")
+                self.fetchHotels()
                 return
             }
 
+            self.isUsingMockData = false
             self.completion?(localDetails)
         }
     }

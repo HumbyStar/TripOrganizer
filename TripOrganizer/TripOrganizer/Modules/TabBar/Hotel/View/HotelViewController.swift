@@ -70,11 +70,7 @@ class HotelViewController: UIViewController {
             self?.hotelMapView.addAnnotations(annotations)
             self?.hotelMapView.showAnnotations(annotations, animated: true)
         }
-        
-        viewModel.alertHandler = {
-            self.alert?.createAlert(title: "Erro", message: "Não existe informações do lugar selecionado")
-        }
-        
+    
         viewModel.completion = { [weak self] localDetail in
             guard let self = self else {return}
             
@@ -128,8 +124,6 @@ class HotelViewController: UIViewController {
         collectionView.leadingAnchor.constraint(equalTo: hotelInfoView.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: hotelInfoView.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: hotelInfoView.bottomAnchor).isActive = true
-        
-        //viewModel.fetchHotels()
     }
     
     private func showView(check: Bool) {
@@ -211,7 +205,12 @@ class HotelViewController: UIViewController {
 extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.isLoading ? viewModel.skeletonCount : viewModel.localPhotos.count
+        if viewModel.isUsingMockData {
+            return viewModel.numberOfItens()
+        } else {
+            return viewModel.isLoading ? viewModel.skeletonCount : viewModel.localPhotos.count
+        }
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -222,14 +221,20 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         //let images = viewModel.getHotelImages(indexPath: indexPath)
         cell.layer.cornerRadius = 10
         
-        
-        if viewModel.isLoading {
-            cell.showSkeleton()
+        if viewModel.isUsingMockData {
+            let hotel = viewModel.getHotelList()[indexPath.row]
+            if let image = UIImage(named: hotel.room[indexPath.row]) {
+                cell.setupCell(image: image)
+            }
         } else {
-            cell.hideSkeleton()
-            cell.setupCell(image: viewModel.localPhotos[indexPath.row])
+            if viewModel.isLoading {
+                cell.showSkeleton()
+            } else {
+                cell.hideSkeleton()
+                cell.setupCell(image: viewModel.localPhotos[indexPath.row])
+            }
         }
-        
+
         return cell
     }
     
