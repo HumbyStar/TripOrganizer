@@ -9,9 +9,10 @@ import UIKit
 
 class TicketsViewModel {
     
-    var ticketList: [Ticket] = []
-    
+    private var ticketList: [Ticket] = []
+    private var service: FlightService = FlightService()
     private var listObjectSecondFlightScreen: [FlightModel] = []
+    
     
     public func getListObjectSecondFlightScreenCellForItemAt(index: Int) -> FlightModel{
         return listObjectSecondFlightScreen[index]
@@ -20,6 +21,7 @@ class TicketsViewModel {
     public func getHeightForRowAt() -> CGFloat{
         return 230
     }
+    
     public func getNumberOfRowsInSection() -> Int {
         return 10
     }

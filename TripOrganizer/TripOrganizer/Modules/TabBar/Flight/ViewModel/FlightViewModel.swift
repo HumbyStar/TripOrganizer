@@ -9,7 +9,6 @@ import UIKit
 
 protocol FlightModelProtocol: AnyObject {
     func showTicketsViewController()
-    func sendTicketList(ticketList: [Ticket])
 }
 
 class FlightViewModel {
@@ -72,9 +71,9 @@ class FlightViewModel {
                 
             } else {
                 self.ticketList = flights?.data
-                self.delegate?.sendTicketList(ticketList: self.ticketList ?? [])
                 self.delegate?.showTicketsViewController()
             }
         }
     }
 }
+
