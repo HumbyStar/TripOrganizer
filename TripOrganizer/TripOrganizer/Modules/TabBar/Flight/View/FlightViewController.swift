@@ -36,6 +36,7 @@ class FlightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate(delegate: self)
         configUIViewCornerRadius()
         configTextFieldBorderStyle()
         configLabel()
@@ -44,18 +45,14 @@ class FlightViewController: UIViewController {
     }
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
-        let viewController: TicketsViewController? = UIStoryboard(name: Localized.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.ticketsViewController) as? TicketsViewController
-        
         viewModel.fetchRequest(origin: flightOriginTextField.text ?? "", destination: flightDestinationTextField.text ?? "", date: calendarOnGoingTextField.text ?? "", numberOfPassengers: passengersTextField.text ?? "", returnDate: calendarOutGoingTextField.text ?? "")
         
-        viewController?.modalPresentationStyle = .automatic
-        self.present(viewController ?? UIViewController(), animated: true)
-        //        self.configLoadingAnimation()
+                self.configLoadingAnimation()
         
         //        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
         //            self.present(viewController ?? UIViewController(), animated: true)
         //            self.removeLoadingAnimation()
-//    }
+        //    }
         
     }
     
@@ -68,7 +65,7 @@ class FlightViewController: UIViewController {
         loadingAnimationView.center = view.center
         loadingAnimationView.backgroundColor = .clear
         loadingAnimationView.contentMode = .scaleAspectFit
-        loadingAnimationView.loopMode = .playOnce
+        loadingAnimationView.loopMode = .loop
         loadingAnimationView.play()
         animationView.addSubview(loadingAnimationView)
         self.view.addSubview(animationView)
@@ -123,7 +120,7 @@ class FlightViewController: UIViewController {
         view.clipsToBounds = true
     }
     
-   private func configCollectionView() {
+    private func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(FlightScreenCollectionViewCell.nib(), forCellWithReuseIdentifier: FlightScreenCollectionViewCell.identifier)
@@ -157,5 +154,16 @@ extension FlightViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         viewModel.getValidationTextFieldShouldReturn(textField: textField, flightOriginTextField: flightOriginTextField, flightDestinationTextField: flightDestinationTextField, calendarOnGoingTextField: calendarOnGoingTextField, calendarOutGoingTextField: calendarOutGoingTextField, passengersTextField: passengersTextField)
         
+    }
+}
+
+extension FlightViewController: FlightModelProtocol {
+    func showTicketsViewController() {
+        DispatchQueue.main.async {
+            self.removeLoadingAnimation()
+            let viewController: TicketsViewController? = UIStoryboard(name: Localized.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.ticketsViewController) as? TicketsViewController
+            viewController?.modalPresentationStyle = .automatic
+            self.present(viewController ?? UIViewController(), animated: true)
+        }
     }
 }

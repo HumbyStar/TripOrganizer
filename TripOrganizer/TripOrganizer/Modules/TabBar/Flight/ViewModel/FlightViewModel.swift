@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol FlightModelProtocol: AnyObject {
+    func showTicketsViewController()
+    func sendTicketList(ticketList: [Ticket])
+}
+
 class FlightViewModel {
+    
+    var delegate: FlightModelProtocol?
+    
+    public func delegate(delegate: FlightModelProtocol) {
+        self.delegate = delegate
+    }
     
     private var service: FlightService = FlightService()
     private var ticketList: [Ticket]?
@@ -57,21 +68,13 @@ class FlightViewModel {
         let urlString = "https://skyscanner50.p.rapidapi.com/api/v1/searchFlights?origin=\(origin)&destination=\(destination)&date=\(date)&adults=\(numberOfPassengers)&currency=BRL&countryCode=US&market=en-US&returnDate=\(returnDate)"
             
         service.getFlight(url: urlString) { flights, error in
-            debugPrint(flights)
             if error != nil {
                 
             } else {
                 self.ticketList = flights?.data
+                self.delegate?.sendTicketList(ticketList: self.ticketList ?? [])
+                self.delegate?.showTicketsViewController()
             }
         }
-        
-        
-//        service.getFlight(url: urlString) { flights, error in
-//            if error != nil {
-//
-//            } else {
-//                self.ticketList = flights?.status
-//            }
-//        }
     }
 }

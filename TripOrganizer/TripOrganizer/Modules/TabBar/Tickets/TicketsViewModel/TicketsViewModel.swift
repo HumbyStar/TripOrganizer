@@ -9,6 +9,8 @@ import UIKit
 
 class TicketsViewModel {
     
+    var ticketList: [Ticket] = []
+    
     private var listObjectSecondFlightScreen: [FlightModel] = []
     
     public func getListObjectSecondFlightScreenCellForItemAt(index: Int) -> FlightModel{

@@ -29,9 +29,9 @@ class FlightService {
         URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
             guard let dataResult = data else { return }
             
-            let json = try? JSONSerialization.jsonObject(with: dataResult, options: [])
-            print(json)
-            
+//            let json = try? JSONSerialization.jsonObject(with: dataResult, options: [])
+//            print(json)
+//            
             guard let response = response as? HTTPURLResponse else { return }
             
             if response.statusCode == 200 {
@@ -51,20 +51,4 @@ class FlightService {
     }
 }
 
-    
-    
-    //            DispatchQueue.main.async {
-    //                if let error {
-    //                    completion(.failure(Error.errorURLRequest(error)))
-    //                } else {
-    //                    guard let data = data else { return }
-    //                    do {
-    //                        let data: TicketsModel = try JSONDecoder().decode(TicketsModel.self, from: data)
-    //                        completion(.success(data))
-    //                    } catch let error {
-    //                        completion(.failure(Error.errorURLRequest(error)))
-    //                    }
-    //                }
-    //            }
-    
 
