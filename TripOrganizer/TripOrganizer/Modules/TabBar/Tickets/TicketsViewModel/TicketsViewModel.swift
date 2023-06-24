@@ -22,7 +22,8 @@ class TicketsViewModel {
         return 230
     }
     
-    public func getNumberOfRowsInSection() -> Int {
-        return 10
+    var getNumberOfRowsInSection: Int {
+        ticketList.endIndex
     }
+    
 }

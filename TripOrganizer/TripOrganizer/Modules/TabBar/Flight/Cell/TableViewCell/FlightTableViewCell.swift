@@ -52,56 +52,43 @@ class FlightTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    public func setupCell(data: Ticket) {
-//        departureTimeLabel.text = data.legs[0].departure
-//        arrivalTimeLabel.text = data.legs[0].arrival
-//        departurePlaceLabel.text = data.legs[0].departure
-//        arrivalPlaceLabel.text = data.legs[0]
-//        travelDurationLabel.text = data.travelDuration
-//        flightPriceLabel.text = data.flightPrice
+    public func setupCell(data: Ticket?) {
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let departure = formatter.date(from: data?.legs?[0].departure ?? "")
+        let arrival = formatter.date(from: data?.legs?[0].arrival ?? "")
+        let departureReturn = formatter.date(from: data?.legs?[1].departure ?? "")
+        let arrivalReturn = formatter.date(from: data?.legs?[1].arrival ?? "")
+        
+        formatter.dateFormat = "HH:mm"
+        formatter.locale = Locale.init(identifier: "pt-br")
+        
+        if let departure {
+            departureTimeLabel.text = formatter.string(from: departure)
+        }
+        
+        if let arrival {
+            arrivalTimeLabel.text = formatter.string(from: arrival)
+        }
+        
+        if let departureReturn {
+            departureTimeReturnTripLabel.text = formatter.string(from: departureReturn)
+        }
+        
+        if let arrivalReturn {
+            arrivalTimeReturnTripLabel.text = formatter.string(from: arrivalReturn)
+        }
+        
+        departurePlaceLabel.text = data?.legs?[0].origin?.name
+        arrivalPlaceLabel.text = data?.legs?[0].destination?.name
+        travelDurationLabel.text = "\(data?.legs?[0].duration ?? 0) minutos"
+        flightPriceLabel.text = "R$:\(data?.price?.amount ?? 0.0)"
+        
+        // Se você tem dados de viagem de retorno, configure-os também
+        departurePlaceReturnTripLabel.text = data?.legs?[1].origin?.name
+        arrivalPlaceReturnTripLabel.text = data?.legs?[1].destination?.name
+        TravelDurationReturnTripLabel.text = "\(data?.legs?[1].duration ?? 0) minutos"
     }
+    
 }
-
-//let priceString = String(flights[0].price.amount)
-//self.priceLabel.text = "Valor: \(priceString)"
-//
-//let originString = String(flights[0].legs[0].origin.name)
-//self.airportOriginLabel.text = "Origem: \(originString)"
-//
-//let destinString = String(flights[0].legs[0].destination.name)
-//self.airportDestinationLabel.text = "Destino: \(destinString)"
-//
-//let carrierString = String(flights[0].legs[0].carriers[0].name)
-//self.carrierLabel.text = "Compania: \(carrierString)"
-//
-//let departureString = String(flights[0].legs[0].departure)
-//self.departureLabel.text = "Saida: \(departureString)"
-//
-//let arrivalString = String(flights[0].legs[0].arrival)
-//self.arrivalLabel.text = "Chegada: \(arrivalString)"
-//
-//let durationString = String(flights[0].legs[0].duration)
-//self.flightDurationLabel.text = "Duração: \(durationString)"
-//
-//// VOLTA
-//let priceString2 = String(flights[0].price.amount)
-//self.priceLabel2.text = "Valor: \(priceString2)"
-//
-//let originString2 = String(flights[0].legs[1].origin.name)
-//self.airportOriginLabel2.text = "Origem: \(originString2)"
-//
-//let destinString2 = String(flights[0].legs[1].destination.name)
-//self.airportDestinationLabel2.text = "Destino: \(destinString2)"
-//
-//let carrierString2 = String(flights[0].legs[1].carriers[0].name)
-//self.carrierLabel2.text = "Compania: \(carrierString2)"
-//
-//let departureString2 = String(flights[0].legs[1].departure)
-//self.departureLabel2.text = "Saida: \(departureString2)"
-//
-//let arrivalString2 = String(flights[0].legs[1].arrival)
-//self.arrivalLabel2.text = "Chegada: \(arrivalString2)"
-//
-//let durationString2 = String(flights[0].legs[1].duration)
-//self.flightDurationLabel2.text = "Duração: \(durationString2)"

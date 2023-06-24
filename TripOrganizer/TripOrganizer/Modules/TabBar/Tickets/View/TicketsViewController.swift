@@ -11,9 +11,14 @@ class TicketsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var flightViewModel: FlightViewModel?
     var alert: Alert?
     
     public let viewModel: TicketsViewModel = TicketsViewModel()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +27,11 @@ class TicketsViewController: UIViewController {
         configProtocolsTableView()
     }
     
-    private func configProtocolsTableView(){
+    private func configProtocolsTableView() {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
     private func configTableView() {
         tableView.register(FlightTableViewCell.nib(), forCellReuseIdentifier: FlightTableViewCell.identifier)
         tableView.separatorStyle = .singleLine
@@ -38,13 +44,14 @@ class TicketsViewController: UIViewController {
 
 extension TicketsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getNumberOfRowsInSection()
+        return flightViewModel?.getNumberTicketList ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FlightTableViewCell.identifier, for: indexPath) as? FlightTableViewCell else {
             return UITableViewCell()
         }
+        cell.setupCell(data: flightViewModel?.getTicketList(index: indexPath))
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.clipsToBounds = true

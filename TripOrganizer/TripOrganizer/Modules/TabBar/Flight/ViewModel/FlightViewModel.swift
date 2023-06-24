@@ -13,7 +13,7 @@ protocol FlightModelProtocol: AnyObject {
 
 class FlightViewModel {
     
-    var delegate: FlightModelProtocol?
+    weak var delegate: FlightModelProtocol?
     
     public func delegate(delegate: FlightModelProtocol) {
         self.delegate = delegate
@@ -27,12 +27,20 @@ class FlightViewModel {
                                              FlightModel(cityNameObject: "Belo Horizonte", cityDescriptionObject: "Rodeada de montanhas, a cidade é conhecida pelo enorme Estádio Mineirão e a lagoa da Pampulha.", cityImageObject:  "bh"),
                                              FlightModel(cityNameObject: "Porto Alegre", cityDescriptionObject: "Capital do estado de Rio Grande do Sul, no sul do Brasil. Na praça principal, a Praça Marechal Deodoro, encontra-se a Catedral.", cityImageObject: "pa")]
     
-    public func getListObject() -> Int{
+    public var getListObject: Int {
         return listObject.endIndex
     }
     
-    public func getListObjectCellForItemAt(index: Int) -> FlightModel{
-        return listObject[index]
+    public var getNumberTicketList: Int? {
+        return ticketList?.endIndex
+    }
+    
+    public func getTicketList(index: IndexPath) -> Ticket? {
+        return ticketList?[index.row]
+    }
+    
+    public func getListObjectCellForItemAt(index: IndexPath) -> FlightModel {
+        return listObject[index.row]
     }
     
     public func sizeForItem(IndexPath: IndexPath, frame: CGRect, height: CGFloat, collectionView: UICollectionView) -> CGSize{

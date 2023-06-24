@@ -48,12 +48,7 @@ class FlightViewController: UIViewController {
         viewModel.fetchRequest(origin: flightOriginTextField.text ?? "", destination: flightDestinationTextField.text ?? "", date: calendarOnGoingTextField.text ?? "", numberOfPassengers: passengersTextField.text ?? "", returnDate: calendarOutGoingTextField.text ?? "")
         
                 self.configLoadingAnimation()
-        
-        //        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-        //            self.present(viewController ?? UIViewController(), animated: true)
-        //            self.removeLoadingAnimation()
-        //    }
-        
+
     }
     
     private func configLoadingAnimation() {
@@ -135,14 +130,14 @@ class FlightViewController: UIViewController {
 extension FlightViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getListObject()
+        return viewModel.getListObject
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FlightScreenCollectionViewCell.identifier, for: indexPath) as? FlightScreenCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(cityObject: viewModel.getListObjectCellForItemAt(index: indexPath.row))
+        cell.setupCell(cityObject: viewModel.getListObjectCellForItemAt(index: indexPath))
         return cell
     }
     
@@ -162,6 +157,7 @@ extension FlightViewController: FlightModelProtocol {
         DispatchQueue.main.async {
             self.removeLoadingAnimation()
             let viewController: TicketsViewController? = UIStoryboard(name: Localized.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.ticketsViewController) as? TicketsViewController
+            viewController?.flightViewModel = self.viewModel
             viewController?.modalPresentationStyle = .automatic
             self.present(viewController ?? UIViewController(), animated: true)
         }

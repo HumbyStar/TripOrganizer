@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - CurrencyData
+// MARK: - TicketsModel
 struct TicketsModel: Codable {
     let status: Bool?
 //    let message: String?
@@ -15,7 +15,7 @@ struct TicketsModel: Codable {
     let data: [Ticket]?
 }
 
-// MARK: - Datum
+// MARK: - Ticket
 struct Ticket: Codable {
     let price: Price?
     let legs: [Leg]?

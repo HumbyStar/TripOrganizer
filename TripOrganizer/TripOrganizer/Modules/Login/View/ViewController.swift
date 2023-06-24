@@ -38,6 +38,8 @@ class ViewController: UIViewController {
         configButtons(button: loginWithAppleButton)
         configButtons(button: loginButton)
         configPasswordView()
+        emailTextField.text = "gabriel@gmail.com"
+        passwordTextField .text = "123456"
         auth = Auth.auth()
         firestore = Firestore.firestore()
         alert = Alert(controller: self)
