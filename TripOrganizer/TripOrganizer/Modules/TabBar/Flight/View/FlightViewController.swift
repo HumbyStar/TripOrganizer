@@ -58,14 +58,23 @@ class FlightViewController: UIViewController {
     }
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
-        viewModel.fetchRequest(origin: flightOriginTextField.text ?? "", destination: flightDestinationTextField.text ?? "", date: calendarOnGoingDatePicker.date, returnDate: calendarOutGoingDatePicker.date, numberOfPassengers: passengersTextField.text ?? "")
+        let onGoingDate = calendarOnGoingDatePicker.date
+        let returnDate = calendarOutGoingDatePicker.date
+        
+        viewModel.fetchRequest(
+            origin: flightOriginTextField.text ?? "",
+            destination: flightDestinationTextField.text ?? "",
+            onGoingDate: onGoingDate,
+            returnDate: returnDate,
+            numberOfPassengers: passengersTextField.text ?? ""
+        )
         
         self.configLoadingAnimation()
     }
     
     private func configDatePicker() {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         calendarOnGoingDatePicker.locale = Locale(identifier: "pt_BR")
         calendarOnGoingDatePicker.minimumDate = Date()
         calendarOutGoingDatePicker.minimumDate = Date()
@@ -166,7 +175,6 @@ extension FlightViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         viewModel.getValidationTextFieldShouldReturn(textField: textField, flightOriginTextField: flightOriginTextField, flightDestinationTextField: flightDestinationTextField, passengersTextField: passengersTextField)
-        
     }
 }
 

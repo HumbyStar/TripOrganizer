@@ -55,7 +55,7 @@ class FlightViewModel {
         }
     }
     
-    public func getValidationTextFieldShouldReturn(textField: UITextField,flightOriginTextField: UITextField,flightDestinationTextField: UITextField, passengersTextField: UITextField )-> Bool {
+    public func getValidationTextFieldShouldReturn(textField: UITextField,flightOriginTextField: UITextField,flightDestinationTextField: UITextField, passengersTextField: UITextField ) -> Bool {
         if textField == flightOriginTextField {
             flightDestinationTextField.becomeFirstResponder()
         } else if textField == passengersTextField{
@@ -64,13 +64,17 @@ class FlightViewModel {
         return true
     }
     
-    public func fetchRequest(origin: String, destination: String, date: Date, returnDate: Date, numberOfPassengers: String) {
-
-        let urlString = "https://skyscanner50.p.rapidapi.com/api/v1/searchFlights?origin=\(origin)&destination=\(destination)&date=\(date)&adults=\(numberOfPassengers)&currency=BRL&countryCode=US&market=en-US&returnDate=\(returnDate)"
-            
+    public func fetchRequest(origin: String, destination: String, onGoingDate: Date, returnDate: Date, numberOfPassengers: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let formattedOnGoingDate = dateFormatter.string(from: onGoingDate)
+        let formattedReturnDate = dateFormatter.string(from: returnDate)
+        
+        let urlString = "https://skyscanner50.p.rapidapi.com/api/v1/searchFlights?origin=\(origin)&destination=\(destination)&date=\(formattedOnGoingDate)&adults=\(numberOfPassengers)&currency=BRL&countryCode=US&market=en-US&returnDate=\(formattedReturnDate)"
+        
         service.getFlight(url: urlString) { flights, error in
             if error != nil {
-                
+                print("Deu ruim!! erro na hora de ler sua URL")
             } else {
                 self.ticketList = flights?.data
                 self.delegate?.showTicketsViewController()
