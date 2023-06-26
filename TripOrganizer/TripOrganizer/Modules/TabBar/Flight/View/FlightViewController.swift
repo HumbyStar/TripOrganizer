@@ -39,6 +39,7 @@ class FlightViewController: UIViewController {
         viewModel.delegate(delegate: self)
         configUIViewCornerRadius()
         configTextFieldBorderStyle()
+        configDatePicker()
         configLabel()
         configButton()
         configCollectionView()
@@ -47,17 +48,27 @@ class FlightViewController: UIViewController {
     @IBAction func tappedCalendarOnGoingDatePicker(_ sender: UIDatePicker) {
         let selectedDateTime = sender.date
         print("Data selecionada: \(selectedDateTime)")
+        calendarOnGoingDatePicker.resignFirstResponder()
     }
     
     @IBAction func tappedCalendarOutGoingDatePicker(_ sender: UIDatePicker) {
         let selectedDateTime = sender.date
         print("Data selecionada: \(selectedDateTime)")
+        calendarOutGoingDatePicker.resignFirstResponder()
     }
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
         viewModel.fetchRequest(origin: flightOriginTextField.text ?? "", destination: flightDestinationTextField.text ?? "", date: calendarOnGoingDatePicker.date, returnDate: calendarOutGoingDatePicker.date, numberOfPassengers: passengersTextField.text ?? "")
         
         self.configLoadingAnimation()
+    }
+    
+    private func configDatePicker() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        calendarOnGoingDatePicker.locale = Locale(identifier: "pt_BR")
+        calendarOnGoingDatePicker.minimumDate = Date()
+        calendarOutGoingDatePicker.minimumDate = Date()
     }
     
     private func configLoadingAnimation() {
@@ -116,6 +127,8 @@ class FlightViewController: UIViewController {
     }
     
     private func configUIView(view: UIView) {
+        calendarOnGoingView.backgroundColor = .clear
+        calendarOutGoingView.backgroundColor = .clear
         view.layer.cornerRadius = 5
         view.clipsToBounds = true
     }

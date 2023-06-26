@@ -99,6 +99,7 @@
                                     </imageView>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="qaF-26-HIF">
                                         <rect key="frame" x="32" y="0.0" width="128" height="34"/>
+                                        <color key="tintColor" red="0.43921568989999998" green="0.61176472900000001" blue="0.58431375029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
                                             <!--2037-12-31 11:00:00 +0000-->
                                         </date>
@@ -166,6 +167,7 @@
                                     </imageView>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="djJ-yV-aAF">
                                         <rect key="frame" x="32" y="0.0" width="128" height="34"/>
+                                        <color key="tintColor" red="0.87058823529999996" green="0.46666666870000001" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
                                             <!--2037-12-31 11:00:00 +0000-->
                                         </date>
