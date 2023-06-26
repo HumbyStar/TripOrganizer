@@ -55,22 +55,16 @@ class FlightViewModel {
         }
     }
     
-    public func getValidationTextFieldShouldReturn(textField: UITextField,flightOriginTextField: UITextField,flightDestinationTextField: UITextField, calendarOnGoingTextField: UITextField, calendarOutGoingTextField: UITextField, passengersTextField: UITextField )-> Bool {
+    public func getValidationTextFieldShouldReturn(textField: UITextField,flightOriginTextField: UITextField,flightDestinationTextField: UITextField, passengersTextField: UITextField )-> Bool {
         if textField == flightOriginTextField {
             flightDestinationTextField.becomeFirstResponder()
-        } else if textField == flightDestinationTextField {
-            calendarOnGoingTextField.becomeFirstResponder()
-        } else if textField == calendarOnGoingTextField {
-            calendarOutGoingTextField.becomeFirstResponder()
-        } else if textField == calendarOutGoingTextField{
-            passengersTextField.becomeFirstResponder()
         } else if textField == passengersTextField{
             passengersTextField.resignFirstResponder()
         }
         return true
     }
     
-    public func fetchRequest(origin: String, destination: String, date: String, numberOfPassengers: String, returnDate: String) {
+    public func fetchRequest(origin: String, destination: String, date: Date, returnDate: Date, numberOfPassengers: String) {
 
         let urlString = "https://skyscanner50.p.rapidapi.com/api/v1/searchFlights?origin=\(origin)&destination=\(destination)&date=\(date)&adults=\(numberOfPassengers)&currency=BRL&countryCode=US&market=en-US&returnDate=\(returnDate)"
             

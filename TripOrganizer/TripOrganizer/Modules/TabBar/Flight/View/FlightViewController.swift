@@ -23,9 +23,9 @@ class FlightViewController: UIViewController {
     @IBOutlet weak var flightOriginView: UIView!
     @IBOutlet weak var flightOriginTextField: UITextField!
     @IBOutlet weak var calendarOnGoingView: UIView!
-    @IBOutlet weak var calendarOnGoingTextField: UITextField!
+    @IBOutlet weak var calendarOnGoingDatePicker: UIDatePicker!
     @IBOutlet weak var calendarOutGoingView: UIView!
-    @IBOutlet weak var calendarOutGoingTextField: UITextField!
+    @IBOutlet weak var calendarOutGoingDatePicker: UIDatePicker!
     @IBOutlet weak var flightDestinationView: UIView!
     @IBOutlet weak var flightDestinationTextField: UITextField!
     @IBOutlet weak var passengersView: UIView!
@@ -44,11 +44,20 @@ class FlightViewController: UIViewController {
         configCollectionView()
     }
     
+    @IBAction func tappedCalendarOnGoingDatePicker(_ sender: UIDatePicker) {
+        let selectedDateTime = sender.date
+        print("Data selecionada: \(selectedDateTime)")
+    }
+    
+    @IBAction func tappedCalendarOutGoingDatePicker(_ sender: UIDatePicker) {
+        let selectedDateTime = sender.date
+        print("Data selecionada: \(selectedDateTime)")
+    }
+    
     @IBAction func tappedSearchButton(_ sender: UIButton) {
-        viewModel.fetchRequest(origin: flightOriginTextField.text ?? "", destination: flightDestinationTextField.text ?? "", date: calendarOnGoingTextField.text ?? "", numberOfPassengers: passengersTextField.text ?? "", returnDate: calendarOutGoingTextField.text ?? "")
+        viewModel.fetchRequest(origin: flightOriginTextField.text ?? "", destination: flightDestinationTextField.text ?? "", date: calendarOnGoingDatePicker.date, returnDate: calendarOutGoingDatePicker.date, numberOfPassengers: passengersTextField.text ?? "")
         
-                self.configLoadingAnimation()
-
+        self.configLoadingAnimation()
     }
     
     private func configLoadingAnimation() {
@@ -72,8 +81,6 @@ class FlightViewController: UIViewController {
     private func configTextFieldBorderStyle(){
         configTextField(textField:flightOriginTextField)
         configTextField(textField:flightDestinationTextField)
-        configTextField(textField:calendarOnGoingTextField)
-        configTextField(textField:calendarOutGoingTextField)
         configTextField(textField:passengersTextField)
     }
     
@@ -82,8 +89,6 @@ class FlightViewController: UIViewController {
         textField.borderStyle = .none
         flightOriginTextField.placeholder = Localized.originPlaceholderFight.localized
         flightDestinationTextField.placeholder = Localized.destinationPlaceholderFlight.localized
-        calendarOnGoingTextField.placeholder = Localized.calendarOnGoingPlaceholderFlight.localized
-        calendarOutGoingTextField.placeholder = Localized.calendarOutGoingPlaceholderFlight.localized
         passengersTextField.placeholder = Localized.passengersPlaceholderFlight.localized
     }
     
@@ -147,7 +152,7 @@ extension FlightViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        viewModel.getValidationTextFieldShouldReturn(textField: textField, flightOriginTextField: flightOriginTextField, flightDestinationTextField: flightDestinationTextField, calendarOnGoingTextField: calendarOnGoingTextField, calendarOutGoingTextField: calendarOutGoingTextField, passengersTextField: passengersTextField)
+        viewModel.getValidationTextFieldShouldReturn(textField: textField, flightOriginTextField: flightOriginTextField, flightDestinationTextField: flightDestinationTextField, passengersTextField: passengersTextField)
         
     }
 }
