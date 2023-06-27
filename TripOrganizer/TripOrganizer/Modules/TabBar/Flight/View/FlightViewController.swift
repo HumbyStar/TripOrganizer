@@ -182,10 +182,17 @@ extension FlightViewController: FlightModelProtocol {
     func showTicketsViewController() {
         DispatchQueue.main.async {
             self.removeLoadingAnimation()
+            
             let viewController: TicketsViewController? = UIStoryboard(name: Localized.ticketsViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.ticketsViewController) as? TicketsViewController
             viewController?.flightViewModel = self.viewModel
+            viewController?.selectedOnGoingDate = self.calendarOnGoingDatePicker.date
+            viewController?.selectedReturnDate = self.calendarOutGoingDatePicker.date
+            viewController?.originAirport = self.flightOriginTextField.text
+            viewController?.destinationAirport = self.flightDestinationTextField.text
             viewController?.modalPresentationStyle = .automatic
+            
             self.present(viewController ?? UIViewController(), animated: true)
         }
     }
+
 }

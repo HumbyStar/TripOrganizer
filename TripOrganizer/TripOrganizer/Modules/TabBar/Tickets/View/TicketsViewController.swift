@@ -9,10 +9,18 @@ import UIKit
 
 class TicketsViewController: UIViewController {
     
+    @IBOutlet weak var calendarOnGoingLabel: UILabel!
+    @IBOutlet weak var calendarOutGoingLabel: UILabel!
+    @IBOutlet weak var ticketDateLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var flightViewModel: FlightViewModel?
     var alert: Alert?
+    var selectedOnGoingDate: Date?
+    var selectedReturnDate: Date?
+    var originAirport: String?
+    var destinationAirport: String?
+
     
     public let viewModel: TicketsViewModel = TicketsViewModel()
     
@@ -25,6 +33,16 @@ class TicketsViewController: UIViewController {
         self.alert = Alert(controller: self)
         configTableView()
         configProtocolsTableView()
+        configureFlightData()
+    }
+    
+    private func configureFlightData() {
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "dd/MM/yyyy"
+           
+           calendarOnGoingLabel.text = dateFormatter.string(from: selectedOnGoingDate ?? Date())
+           calendarOutGoingLabel.text = dateFormatter.string(from: selectedReturnDate ?? Date())
+           ticketDateLabel.text = "\(originAirport ?? "") - \(destinationAirport ?? "")"
     }
     
     private func configProtocolsTableView() {
