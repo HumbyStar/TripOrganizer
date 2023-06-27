@@ -76,11 +76,9 @@ class ViewController: UIViewController {
                 if user == nil {
                     self.alert?.createAlert(title: Localized.attention.localized, message: Localized.loginErroMessage.localized)
                 } else {
-                    self.alert?.createAlert(title: "", message: Localized.logInSuccessfullyMessage.localized,completion: {
-                        let viewController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? TabBarController
-                        self.resetTextField()
-                        self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
-                    })
+                    let viewController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? TabBarController
+                    self.resetTextField()
+                    self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
                 }
             }
         })
