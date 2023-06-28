@@ -8,6 +8,9 @@
 import UIKit
 import MapKit
 
+protocol RestaurantViewControllerProtocol: AnyObject {
+    func updateButton(button: UIButton)
+}
 enum addRestautant: String {
     case titleEmpty = ""
     case message = "Restaurante adicionado com sucesso a sua lista de viagem!"
@@ -31,8 +34,11 @@ class RestaurantViewController: UIViewController {
     var alert: Alert?
     
     //MARK: - Variables
+    weak var delegate: RestaurantViewControllerProtocol?
+    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    var homeViewModel: HomeViewModel? = HomeViewModel()
+    var indexPath: IndexPath? = nil
     private var restaurantViewModel = RestaurantViewModel()
-    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +46,12 @@ class RestaurantViewController: UIViewController {
         configMenuCollectionView()
         configRestaurantInfoView()
         configRestaurantMapView()
-        restaurantViewModel.fetchRestaurants()
+        //  restaurantViewModel.fetchRestaurants()
         configButton()
         configSearch()
-        setupUI()
+        // setupUI()
+        addButton.isEnabled = false
+       // buttonEnable()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +66,10 @@ class RestaurantViewController: UIViewController {
         restaurantViewModel.getCollectionViewLayout(collection: menuCollectionView)
     }
     
+//    func buttonEnable(){
+//        delegate?.updateButton(button: addButton)
+//
+//    }
     private func configSearch() {
         searchBar.placeholder = Localized.searchPlaceholderRestaurant.localized
     }
@@ -87,7 +99,13 @@ class RestaurantViewController: UIViewController {
     
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
+        
+        tripViewModel.addObjectRestaurant(object: RestaurantModel(name: restaurantNameLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", rating: restaurantRatingLabel.text ?? ""))//, images: restaurantViewModel.getRestaurantImages(indexPath: self.indexPath ?? IndexPath())))
+        
+        
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -104,8 +122,9 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
-        cell.setupCell(image: images[indexPath.row])
+       // let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
+        self.indexPath = indexPath
+            // cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }
@@ -115,4 +134,10 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
 }
+
+
+    //    func modifyProgressBar(tappedRestaurantView: UIView, restaurantImageView: UIImageView, progressBar: Float) {
+//        restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
+//        //homeViewModel?.getProgressBar() += 0.25
+//    }
 

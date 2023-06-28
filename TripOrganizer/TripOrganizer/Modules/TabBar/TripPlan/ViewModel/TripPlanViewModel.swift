@@ -9,19 +9,36 @@ import UIKit
 
 class TripPlanViewModel {
     
-    private var placeList: [TripPlanModel] = [TripPlanModel(name: "Coliseum", images: "teste3"),
-                                              TripPlanModel(name: "Paris", images: "teste2"),
-                                              TripPlanModel(name: "Restaurante", images: "restaurante1"),
-                                              TripPlanModel(name: "Restaurante", images: "restaurante2"),
-                                              TripPlanModel(name: "Hotel", images: "hotel1"),
-                                              TripPlanModel(name: "Hotel", images: "hotel2"),
-                                              TripPlanModel(name: "Hotel", images: "imagehotel")
-                                              
-    ]
+   var restaurantViewModel: RestaurantViewModel = RestaurantViewModel()
     
-    public func getPlaceList(index: Int) -> TripPlanModel {
-        placeList[index]
+  private static var restaurantList: [RestaurantModel] = []
+    
+    public func addObjectRestaurant(object: RestaurantModel) {
+        TripPlanViewModel.restaurantList.append(object)
+        }
+    
+    public func getSizeRestaurant()-> Int{
+        return TripPlanViewModel.restaurantList.count
     }
+   
+    public func getRestaurantList2()-> [RestaurantModel]{
+        return TripPlanViewModel.restaurantList
+    }
+    
+    public func getRestaurantList(index: Int) -> RestaurantModel {
+        return TripPlanViewModel.restaurantList[index]
+    }
+//    public func getRestaurantList() -> [RestaurantModel]{
+//        return restaurantList
+//    }
+    
+        //  private var restaurants: [RestaurantModel] = []
+    
+//    private var placeList: [TripPlanModel] = []
+//
+//    public func getPlaceList(index: Int) -> TripPlanModel {
+//        placeList[index]
+//    }
     
     public func configLayoutCollectionView(collectionView: UICollectionView){
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -32,12 +49,23 @@ class TripPlanViewModel {
         }
     }
     
-    public func getNumberList() -> Int {
-        return placeList.endIndex
-    }
+//    func getRestaurantList(index: Int)-> RestaurantModel {
+//    //    restaurants = restaurantViewModel.getRestaurantList()
+//        return restaurants[index]
+//    }
+//
+//    public func getNumberList() -> Int {
+//        return restaurants.endIndex
+//    }
     
     public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat, view: UIView) -> CGSize {
             return CGSize(width: view.frame.width - 70, height: 150)
         }
     
 }
+
+//extension TripPlanViewModel: RestaurantViewControllerProtocol {
+//    func getObjectRestaurant(object: [RestaurantModel]) {
+//        self.restaurants = object
+//    }
+//}

@@ -37,9 +37,13 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
     }
     
     
-    public func setupCell(place: TripPlanModel) {
+    public func setupCell(place: RestaurantModel, placeHotel: HotelModel) {
         placeNameLabel.text = place.name
-        placeImageView.image = UIImage(named: place.images)
+        placeAddressLabel.text = place.address
+        placePhoneLabel.text = place.phoneNumber
+        openingHoursLabel.text = place.openingHours
+        //  placeImageView.image = UIImage(named: place.images)
+        
     }
     
     private func configCellLayout() {

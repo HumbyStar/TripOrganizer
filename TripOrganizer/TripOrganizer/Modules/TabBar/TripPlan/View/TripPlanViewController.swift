@@ -15,7 +15,9 @@ class TripPlanViewController: UIViewController {
     @IBOutlet var backButton: UIButton!
     
     var placeNameReceived: String?
-    var viewModel: TripPlanViewModel = TripPlanViewModel()
+   // var viewModel: TripPlanViewModel = TripPlanViewModel()
+   // var viewModel = RestaurantViewModel()
+    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,9 @@ class TripPlanViewController: UIViewController {
         configCollectionView()
         configCollectionViewProtocol()
         tripNameLabel.text = placeNameReceived
+       // collectionView.reloadData()
+      //  print(tripViewModel.getRestaurantList())
+        print(tripViewModel.getRestaurantList2())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +40,7 @@ class TripPlanViewController: UIViewController {
     }
     
     private func configCollectionView() {
-        viewModel.configLayoutCollectionView(collectionView: collectionView)
+        tripViewModel.configLayoutCollectionView(collectionView: collectionView)
         collectionView.register(TripPlanCollectionViewCell.nib(), forCellWithReuseIdentifier: TripPlanCollectionViewCell.identifier)
     }
     
@@ -47,18 +52,20 @@ class TripPlanViewController: UIViewController {
 extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getNumberList()
+      //  return viewModel.getNumberList()
+        return tripViewModel.getSizeRestaurant()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: TripPlanCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: TripPlanCollectionViewCell.identifier, for: indexPath) as? TripPlanCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(place: viewModel.getPlaceList(index: indexPath.row))
+        cell.setupCell(place: tripViewModel.getRestaurantList(index: indexPath.row))
         return cell 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return viewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, view: view)
+        //return viewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, view: view)
+   return CGSize(width: view.frame.width - 70, height: 150)
     }
 }

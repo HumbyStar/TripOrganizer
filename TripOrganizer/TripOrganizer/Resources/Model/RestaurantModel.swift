@@ -10,6 +10,6 @@ import Foundation
 // MARK: - Restaurant
 struct RestaurantModel: Codable {
     let name, address, openingHours, phoneNumber: String
-    let rating: Double
-    let images: [String]
+    let rating: String
+   // let images: [String]
 }

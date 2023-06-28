@@ -7,8 +7,16 @@
 
 import UIKit
 
-class HomeViewModel {
+//protocol HomeViewModelProtocol: AnyObject {
+//   func didUpdateData()
+//}
+//protocol HomeViewModelProtocol: AnyObject {
+//    func modifyProgressBar(tappedRestaurantView: UIView,restaurantImageView: UIImageView, progressBar: Float) -> Float
+//
+//}
 
+class HomeViewModel {
+    
     private var tripImages: [String] = ["trip1",
                                         "trip2",
                                         "trip3",
@@ -28,27 +36,33 @@ class HomeViewModel {
                                         "trip2",
                                         "trip3"]
     
+ //  weak var delegate: HomeViewModelProtocol?
     
-    private var tripList: [AddTripModel] = []
+    private static var tripList: [AddTripModel] = []
     
     var tripNumberOfRows: Int {
-        tripList.endIndex
+        HomeViewModel.tripList.endIndex
     }
     
+    
+    public func getTripList()-> Int{
+        HomeViewModel.tripList.count
+    }
     public func getListTripImages(index: Int) -> String {
         tripImages[index]
     }
     
     public func getTripList(index: Int) -> AddTripModel {
-        return tripList[index]
+        return HomeViewModel.tripList[index]
     }
     
     public func removeTrip(index: Int) {
-        tripList.remove(at: index)
+        HomeViewModel.tripList.remove(at: index)
     }
     
     public func appendTripToList(trip: AddTripModel) {
-        tripList.append(trip)
+        HomeViewModel.tripList.append(trip)
+
     }
         
    private var progressBar: Float = 0
@@ -126,3 +140,13 @@ class HomeViewModel {
     }
     
 }
+
+//extension HomeViewModel: RestaurantViewControllerProtocol {
+//    func updateButton(button: UIButton) {
+//        if HomeViewModel.tripList.count == 1 {
+//            button.isEnabled = true
+//        }else{
+//            button.isEnabled = false
+//        }
+//    }
+//}

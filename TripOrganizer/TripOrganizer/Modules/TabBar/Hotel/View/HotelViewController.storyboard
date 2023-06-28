@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -110,7 +110,7 @@
                                     <constraint firstItem="WJx-Mt-kLU" firstAttribute="leading" secondItem="gTJ-Yf-Mvs" secondAttribute="trailing" constant="8" id="VgG-y8-rnb"/>
                                     <constraint firstAttribute="trailing" secondItem="gjB-fu-2JS" secondAttribute="trailing" constant="11" id="YLL-08-J5M"/>
                                     <constraint firstItem="3lA-Es-FyI" firstAttribute="top" secondItem="nvr-IS-zhN" secondAttribute="bottom" constant="4" id="a6f-E0-kDR"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gjB-fu-2JS" secondAttribute="bottom" constant="10" id="e4a-4s-3NH"/>
+                                    <constraint firstAttribute="bottom" secondItem="gjB-fu-2JS" secondAttribute="bottom" constant="10" id="e4a-4s-3NH"/>
                                     <constraint firstItem="nvr-IS-zhN" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="epp-65-afb"/>
                                     <constraint firstItem="2IU-2u-fBc" firstAttribute="top" secondItem="bvT-rh-uuw" secondAttribute="bottom" constant="5" id="gcC-ub-zUo"/>
                                     <constraint firstItem="gjB-fu-2JS" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="11" id="kpZ-Zb-GTs"/>
