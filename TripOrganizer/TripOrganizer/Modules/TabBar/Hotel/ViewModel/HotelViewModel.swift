@@ -14,6 +14,7 @@ enum PlaceData {
     case gmsPlace(GMSPlace)
     case hotelModel([HotelModel])
     case restaurantModel([RestaurantModel])
+    case attractionModel([AttractionModel])
 }
 
 class HotelViewModel {

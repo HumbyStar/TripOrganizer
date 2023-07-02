@@ -136,7 +136,6 @@ class HotelViewController: UIViewController {
     }
     
     private func displayDetailsScreen(local: PlaceData) {
-        
         switch local {
         case .hotelModel(let hotel):
             hotelPhoneNumberLabel.text = hotel[0].phoneNumber

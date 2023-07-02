@@ -6,31 +6,42 @@
 //
 
 import UIKit
+import MapKit
+import GooglePlaces
 
 class AttractionViewModel {
-    
     private var attractionList: [AttractionModel] = []
     private var placeService: PlaceService = PlaceService()
     
+    public var isLoading = false
+    public var skeletonCount = 0
+    public var isUsingMockData = false
+    public var localPhotos = [UIImage]()
+    public var alertHandler: (() -> Void)?
+    public var completion: ((PlaceData) -> Void)?
+    public var updateCollectionView: (() -> Void)?
+    public var placeClient = GMSPlacesClient.shared()
+    public var regionUpdaterHandler: ((MKCoordinateRegion) -> Void)?
+    public var annotationUpdateHandler: (([MKPointAnnotation]) -> Void)?
+    
     public func fetchAttractions() {
         placeService.getPlaceDataJson { data, error in
-            if error == nil {
+            if let error = error {
+                print("Error ao recuperar os dados mockados: \(error.localizedDescription)")
+            } else {
                 self.attractionList = data?.attractions ?? []
+                self.isUsingMockData = true
+                self.completion?(.attractionModel(self.attractionList))
             }
         }
     }
     
-    public func getAttractionList() -> [AttractionModel] {
-        return attractionList
+    public func getAttractionImageList() -> [String] {
+        return attractionList[0].images
     }
     
     public func numberOfItens() -> Int {
-        return 5
-    }
-    
-    public func getAttractionImages(indexPath: IndexPath) -> [String] {
-        let attraction = attractionList[0]
-        return attraction.images
+        return attractionList[0].images.count
     }
     
     public func configLayoutCollectionView(collectionView: UICollectionView){
@@ -41,6 +52,107 @@ class AttractionViewModel {
     }
     
     public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
-            return CGSize(width: 140, height: height - 20)
+        return CGSize(width: 140, height: height - 20)
+    }
+    
+    public func findAttraction(typed place: String?){
+        guard let place = place else {return}
+        CLGeocoder().geocodeAddressString(place) { placemark, error in
+            if error == nil {
+                guard let firstPlaceMark = placemark?.first else {return}
+                guard let coordinate = firstPlaceMark.location?.coordinate else {return}
+                let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 6000, longitudinalMeters: 6000)
+                self.regionUpdaterHandler?(region)
+            }
         }
-   }
+    }
+    
+    public func buildMKPoints(region: MKCoordinateRegion){
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = Localized.titleAttractionView
+        request.region = region
+        
+        let search = MKLocalSearch(request: request)
+        search.start { response, error in
+            guard error == nil, let response = response else {return}
+            
+            var annotations: [MKPointAnnotation] = []
+            
+            for item in response.mapItems {
+                let annotation = MKPointAnnotation()
+                annotation.title = item.name
+                annotation.coordinate = item.placemark.location?.coordinate ?? MKPointAnnotation.defaultLocation
+                annotations.append(annotation)
+            }
+            self.annotationUpdateHandler?(annotations)
+        }
+    }
+    
+    public func searchEstabilishment(value: String, filter: GMSAutocompleteFilter){
+        placeClient.findAutocompletePredictions(fromQuery: value, filter: filter, sessionToken: nil) { results, error in
+            
+            guard error == nil else {
+                self.fetchAttractions()
+                return
+            }
+            
+            guard let results = results, let firstResult = results.first else{
+                self.fetchAttractions()
+                return
+            }
+            
+            self.findAttractionDetails(placeID: firstResult.placeID)
+        }
+    }
+    
+    public func findAttractionDetails(placeID: String){
+        let field: GMSPlaceField = .all
+        
+        placeClient.fetchPlace(fromPlaceID: placeID, placeFields: field, sessionToken: nil) { localDetails, error in
+            guard error == nil else {
+                self.fetchAttractions()
+                return
+            }
+            
+            guard let localDetails = localDetails else {
+                self.fetchAttractions()
+                return
+            }
+            
+            self.isUsingMockData = false
+            self.completion?(.gmsPlace(localDetails))
+        }
+    }
+    
+    public func checkLocalHour(dataHour: GMSPlaceOpenStatus) -> String {
+        switch dataHour {
+        case .open:
+            return Localized.estabilishOpenLabelTitle
+        case .closed:
+            return Localized.estabilishClosedLabelTitle
+        case .unknown:
+            return Localized.estabilishUnavailable
+        @unknown default:
+            return Localized.estabilishUnavailable
+        }
+    }
+    
+    public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]) {
+        skeletonCount = photos.count
+        self.localPhotos.removeAll()
+        let dispatchGroup = DispatchGroup()
+        
+        for photo in photos {
+            dispatchGroup.enter()
+            placeClient.loadPlacePhoto(photo) { image, error in
+                if let image = image, error == nil {
+                    self.localPhotos.append(image)
+                }
+                dispatchGroup.leave()
+            }
+        }
+        dispatchGroup.notify(queue: .main) {
+            self.updateCollectionView?()
+        }
+    }
+}
