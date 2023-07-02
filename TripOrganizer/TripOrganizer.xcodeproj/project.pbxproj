@@ -110,6 +110,7 @@
 		C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4619CDD29F02ACC00530196 /* HomeViewModel.swift */; };
 		C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */; };
 		C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */; };
+		C4E2A7AB2A50FBA800B2CC32 /* Flight.json in Resources */ = {isa = PBXBuildFile; fileRef = C4E2A7AA2A50FBA800B2CC32 /* Flight.json */; };
 		C4F9A2392A193166004EA00E /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F9A2382A193166004EA00E /* Localized.swift */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +195,7 @@
 		C4619CDD29F02ACC00530196 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C4CC788729F862B70055DC8A /* TripPlanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlanViewModel.swift; sourceTree = "<group>"; };
 		C4CC788929F862CF0055DC8A /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
+		C4E2A7AA2A50FBA800B2CC32 /* Flight.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Flight.json; sourceTree = "<group>"; };
 		C4F9A2382A193166004EA00E /* Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -535,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				50A0E36C2A2CED03002F82F3 /* PlacesData.json */,
+				C4E2A7AA2A50FBA800B2CC32 /* Flight.json */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -905,6 +908,7 @@
 				0C1DA9EC2A17E00800C4AC1B /* GoogleService-Info.plist in Resources */,
 				C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */,
 				509DCC1029F6FD20002F04B0 /* TripPlanCollectionViewCell.xib in Resources */,
+				C4E2A7AB2A50FBA800B2CC32 /* Flight.json in Resources */,
 				0C36EC4E29B6621E009550C8 /* LaunchScreen.storyboard in Resources */,
 				0C3AD1E529C3524800E7FE73 /* ProfileViewController.storyboard in Resources */,
 				5050BCB829B8D92B0019BB69 /* RegisterViewController.storyboard in Resources */,
