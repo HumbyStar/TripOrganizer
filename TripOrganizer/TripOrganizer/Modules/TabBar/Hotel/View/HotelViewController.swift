@@ -162,6 +162,9 @@ class HotelViewController: UIViewController {
             
             viewModel.loadLocalPhotos(photos: photos)
             self.collectionView.reloadData()
+            
+        default:
+            break
         }
 
     }

@@ -13,6 +13,7 @@ import GooglePlaces
 enum PlaceData {
     case gmsPlace(GMSPlace)
     case hotelModel([HotelModel])
+    case restaurantModel([RestaurantModel])
 }
 
 class HotelViewModel {

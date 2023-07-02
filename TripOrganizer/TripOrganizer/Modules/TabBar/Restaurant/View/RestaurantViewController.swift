@@ -20,13 +20,25 @@ class RestaurantViewController: UIViewController {
     @IBOutlet weak var restaurantInfoView: UIView!
     @IBOutlet weak var restaurantMapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var restaurantAddressLabel: UILabel!
     @IBOutlet weak var restaurantOpeningHoursLabel: UILabel!
     @IBOutlet weak var restaurantPhoneNumberLabel: UILabel!
     @IBOutlet weak var restaurantRatingLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var menuLabel: UILabel!
+    
+    lazy var menuCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .clear
+        collectionView.delaysContentTouches = false
+        return collectionView
+    }()
+
     
     var alert: Alert?
     
@@ -75,7 +87,7 @@ class RestaurantViewController: UIViewController {
     }
     
     private func setupUI(){
-        let restaurant = restaurantViewModel.getRestaurantList()[0]
+        let restaurant = restaurantViewModel.getRestaurantList()
         restaurantAddressLabel.text = Localized.addressTitle.localized + restaurant.address
         restaurantOpeningHoursLabel.text = Localized.timeTitle.localized + restaurant.openingHours
         restaurantPhoneNumberLabel.text = Localized.phoneTitle.localized + restaurant.phoneNumber
@@ -104,8 +116,8 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
-        cell.setupCell(image: images[indexPath.row])
+//        let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
+        //cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }
