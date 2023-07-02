@@ -36,10 +36,6 @@ class RestaurantViewModel {
         }
     }
     
-//    public func getRestaurantList() -> RestaurantModel {
-//        return restaurantList[0]
-//    }
-    
     public func getRestaurantImages() -> [String] {
         return restaurantList[0].images
     }

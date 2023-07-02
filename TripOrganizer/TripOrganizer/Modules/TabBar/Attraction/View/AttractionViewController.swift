@@ -214,17 +214,36 @@ class AttractionViewController: UIViewController {
 extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItens()
+        if viewModel.isUsingMockData {
+            return viewModel.numberOfItens()
+        } else {
+            return viewModel.isLoading ? viewModel.skeletonCount : viewModel.localPhotos.count
+        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: AttractionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell else {
             return UICollectionViewCell()
         }
-        let images = viewModel.getAttractionImageList()[indexPath.row]
-        cell.setupCell(image: images)
+        
         cell.layer.cornerRadius = 10
+        
+        if viewModel.isUsingMockData {
+            let hotelImage = viewModel.getAttractionImageList()[indexPath.row]
+            if let image = UIImage(named: hotelImage) {
+                cell.hideSkeleton()
+                cell.setupCell(image: image)
+            }
+        } else {
+            if viewModel.isLoading {
+                cell.showSkeleton()
+            } else {
+                cell.hideSkeleton()
+                cell.setupCell(image: viewModel.localPhotos[indexPath.row])
+            }
+        }
+
         return cell
     }
     

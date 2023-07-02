@@ -30,6 +30,11 @@ class MenuCollectionViewCell: UICollectionViewCell {
         menuItemImageView.contentMode = .scaleAspectFill
     }
     
+    override func layoutSubviews() {
+        addSubview(skeletionView)
+        skeletionView.frame = bounds
+    }
+    
     func showSkeleton() {
         skeletionView.isHidden = false
     }
