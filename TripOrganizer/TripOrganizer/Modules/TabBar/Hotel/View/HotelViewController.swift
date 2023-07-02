@@ -7,11 +7,6 @@ import UIKit
 import MapKit
 import GooglePlaces
 
-enum messageAlertHotel: String {
-    case title = ""
-    case addHotel = "Hotel adicionado com sucesso a sua lista de viagem!"
-}
-
 class HotelViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var hotelPhoneNumberLabel: UILabel!
@@ -46,7 +41,6 @@ class HotelViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
-        
     }
     
     override func viewDidLoad() {
@@ -71,15 +65,15 @@ class HotelViewController: UIViewController {
             self?.hotelMapView.showAnnotations(annotations, animated: true)
         }
     
-        viewModel.completion = { [weak self] localDetail in
+        viewModel.completion = { [weak self] places in
             guard let self = self else {return}
             
             if self.viewInfoHeight.constant == 153 {
-                self.displayDetailsScreen(local: localDetail)
+                self.displayDetailsScreen(local: places)
                 self.showView(check: true)
                 self.updateCollectionView()
             } else {
-                self.changePlaceAnimated(infoPlace: localDetail)
+                self.changePlaceAnimated(infoPlace: places)
             }
         }
         
@@ -90,7 +84,7 @@ class HotelViewController: UIViewController {
         
     }
     
-    private func changePlaceAnimated(infoPlace: GMSPlace) {
+    private func changePlaceAnimated(infoPlace: PlaceData) {
         UIView.animate(withDuration: 0.6) {
             self.hotelNameLabel.alpha = 0
             self.hotelRatingLabel.alpha = 0
@@ -142,27 +136,34 @@ class HotelViewController: UIViewController {
         }
     }
     
-    private func displayDetailsScreen(local: GMSPlace) {
-        hotelNameLabel.text = local.name
-        hotelAddressLabel.text = local.formattedAddress
+    private func displayDetailsScreen(local: PlaceData) {
         
-        if local.phoneNumber != nil {
-            hotelPhoneNumberLabel.text = "Contato: \(local.phoneNumber ?? "")"
-        } else {
-            hotelPhoneNumberLabel.text = "Contato: Indisponível"
+        switch local {
+        case .hotelModel(let hotel):
+            hotelPhoneNumberLabel.text = hotel[0].phoneNumber
+            hotelRatingLabel.text = hotel[0].rating
+            hotelNameLabel.text = hotel[0].name
+            hotelOpeningHoursLabel.text = hotel[0].openingHours
+            hotelAddressLabel.text = hotel[0].address
+            
+        case .gmsPlace(let gmsHotel):
+            if gmsHotel.phoneNumber != nil {
+                hotelPhoneNumberLabel.text = "\(Localized.contactLabelTitle) \(gmsHotel.phoneNumber ?? "")"
+            } else {
+                hotelPhoneNumberLabel.text = Localized.invalidContact
+            }
+            
+            hotelRatingLabel.text = "\(Localized.ratingLabelTitle) \(gmsHotel.rating)"
+            hotelOpeningHoursLabel.text = viewModel.checkLocalHour(dataHour: gmsHotel.isOpen())
+            hotelNameLabel.text = gmsHotel.name
+            hotelAddressLabel.text = gmsHotel.formattedAddress
+            
+            guard let photos = gmsHotel.photos else {return}
+            
+            viewModel.loadLocalPhotos(photos: photos)
+            self.collectionView.reloadData()
         }
-        
-        hotelRatingLabel.text = "Avaliações - \(local.rating)"
 
-        hotelOpeningHoursLabel.text = viewModel.checkLocalHour(dataHour: local.isOpen())
-        
-        guard let photos = local.photos else {
-            print("Não foi possível recuperar fotos")
-            return
-        }
-        
-        viewModel.loadLocalPhotos(photos: photos)
-        self.collectionView.reloadData()
     }
     
     private func configHotelMapView() {
@@ -217,13 +218,13 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell else {
             return UICollectionViewCell()
         }
-
-        //let images = viewModel.getHotelImages(indexPath: indexPath)
+        
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let hotel = viewModel.getHotelList()[indexPath.row]
-            if let image = UIImage(named: hotel.room[indexPath.row]) {
+            let hotelImage = viewModel.getHotelList()[indexPath.row]
+            if let image = UIImage(named: hotelImage) {
+                cell.hideSkeleton()
                 cell.setupCell(image: image)
             }
         } else {
@@ -253,7 +254,7 @@ extension HotelViewController: UISearchBarDelegate {
             } completion: {_ in
                 UIView.animate(withDuration: 0.5) {
                     if self.hotelInfoView.alpha == 0 {
-                        self.infoToSearchLabel.text = "Digite em um icone para ver os detalhes"
+                        self.infoToSearchLabel.text = Localized.touchDetailsLabelTitle
                         self.infoToSearchLabel.alpha = 1
                     }
                 }
@@ -293,7 +294,7 @@ extension HotelViewController: MKMapViewDelegate {
             
             let filter = GMSAutocompleteFilter()
             filter.type = .establishment
-            let stringFinal = "Hotel,\(placeName),\(regionTyped ?? "")"
+            let stringFinal = "\(Localized.titleHotelView),\(placeName),\(regionTyped ?? "")"
 
             viewModel.isLoading = true
             viewModel.searchEstabilishment(value: stringFinal, filter: filter)
