@@ -11,6 +11,14 @@ class MenuCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var menuItemImageView: UIImageView!
     
+    lazy var skeletionView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .secondarySystemBackground
+        view.layer.cornerRadius = 8
+        return view
+    }()
+    
     static let identifier: String = String(describing: MenuCollectionViewCell.self)
     
     static func nib() -> UINib {
@@ -22,8 +30,16 @@ class MenuCollectionViewCell: UICollectionViewCell {
         menuItemImageView.contentMode = .scaleAspectFill
     }
     
-    func setupCell(image: String){
-        menuItemImageView.image = UIImage(named: image)
+    func showSkeleton() {
+        skeletionView.isHidden = false
+    }
+    
+    func hideSkeleton() {
+        skeletionView.isHidden = true
+    }
+    
+    func setupCell(image: UIImage){
+        menuItemImageView.image = image
         menuItemImageView.layer.cornerRadius = 10
     }
     

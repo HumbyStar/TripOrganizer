@@ -19,8 +19,6 @@ class HotelCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    public var data: [HotelModel] = []
-    
     static let identifier = String(describing: HotelCollectionViewCell.self)
     
     static func nib() -> UINib {

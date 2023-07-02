@@ -26,7 +26,7 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="CVV-2M-ZbG"/>
                                 </connections>
                             </searchBar>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-rP-i9z">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-rP-i9z">
                                 <rect key="frame" x="16" y="507" width="343" height="153"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boteco do João" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPe-PM-rMM">
@@ -59,7 +59,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5Y-E9-hlc">
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5Y-E9-hlc">
                                         <rect key="frame" x="239" y="5" width="96" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="96" id="Vc4-o7-Xdh"/>
@@ -105,6 +105,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-1q-S0N">
                                 <rect key="frame" x="16" y="76" width="343" height="416"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="HAN-Ot-iFj"/>
+                                </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para buscar um local digite na barra de pesquisa acima" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-i6-DIj">
                                 <rect key="frame" x="13" y="523" width="349" height="41"/>
@@ -133,6 +136,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="u5Y-E9-hlc" id="l1z-US-JYm"/>
+                        <outlet property="infoToSearchLabel" destination="9Ky-i6-DIj" id="C2s-eQ-Zfh"/>
                         <outlet property="menuLabel" destination="vNc-Fn-fWu" id="W4w-ar-Hgq"/>
                         <outlet property="restaurantAddressLabel" destination="n4R-xD-NE1" id="r5E-Eh-Rx3"/>
                         <outlet property="restaurantInfoView" destination="OKB-rP-i9z" id="HuI-9N-oRZ"/>
@@ -142,6 +146,7 @@
                         <outlet property="restaurantPhoneNumberLabel" destination="Tqf-Zg-znt" id="Bet-fm-mr8"/>
                         <outlet property="restaurantRatingLabel" destination="J65-go-2Dg" id="2cG-mA-N2X"/>
                         <outlet property="searchBar" destination="qvI-Wk-zli" id="Eu6-Fk-kIa"/>
+                        <outlet property="viewInfoHeight" destination="9Zw-H3-gjy" id="aDi-jm-t9M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

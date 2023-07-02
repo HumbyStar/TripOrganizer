@@ -36,9 +36,9 @@ class RestaurantViewModel {
         }
     }
     
-    public func getRestaurantList() -> RestaurantModel {
-        return restaurantList[0]
-    }
+//    public func getRestaurantList() -> RestaurantModel {
+//        return restaurantList[0]
+//    }
     
     public func getRestaurantImages() -> [String] {
         return restaurantList[0].images
@@ -100,7 +100,7 @@ class RestaurantViewModel {
                 return
             }
             
-            guard let results = results, let firstResult = results.first else{
+            guard let results = results, let firstResult = results.first else {
                 self.fetchRestaurants()
                 return
             }

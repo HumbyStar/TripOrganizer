@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import GooglePlaces
 
 enum addRestautant: String {
     case titleEmpty = ""
@@ -26,6 +27,11 @@ class RestaurantViewController: UIViewController {
     @IBOutlet weak var restaurantRatingLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var menuLabel: UILabel!
+    @IBOutlet weak var viewInfoHeight: NSLayoutConstraint!
+    @IBOutlet weak var infoToSearchLabel: UILabel!
+    
+    private var viewModel: RestaurantViewModel = RestaurantViewModel()
+    var alert: Alert?
     
     lazy var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -36,11 +42,9 @@ class RestaurantViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
         collectionView.delaysContentTouches = false
+        collectionView.register(MenuCollectionViewCell.nib(), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         return collectionView
     }()
-
-    
-    var alert: Alert?
     
     //MARK: - Variables
     private var restaurantViewModel = RestaurantViewModel()
@@ -49,13 +53,40 @@ class RestaurantViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
-        configMenuCollectionView()
-        configRestaurantInfoView()
         configRestaurantMapView()
-        restaurantViewModel.fetchRestaurants()
+        configRestaurantInfoView()
         configButton()
         configSearch()
-        setupUI()
+        
+        viewModel.regionUpdaterHandler = {[weak self] (region) in
+            guard let self = self else {return}
+            self.restaurantMapView.setRegion(region, animated: true)
+        }
+        
+        viewModel.annotationUpdateHandler = {[weak self] (annotations) in
+            print(annotations)
+            self?.restaurantMapView.removeAnnotations(self?.restaurantMapView.annotations ?? [])
+            self?.restaurantMapView.addAnnotations(annotations)
+            self?.restaurantMapView.showAnnotations(annotations, animated: true)
+        }
+    
+        viewModel.completion = { [weak self] places in
+            guard let self = self else {return}
+            
+            if self.viewInfoHeight.constant == 153 {
+                self.displayDetailsScreen(local: places)
+                self.showView(check: true)
+                self.updateCollectionView()
+            } else {
+                self.changePlaceAnimated(infoPlace: places)
+            }
+        }
+        
+        viewModel.updateCollectionView = {
+            self.viewModel.isLoading = false
+            self.menuCollectionView.reloadData()
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,11 +94,88 @@ class RestaurantViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
     
-    private func configMenuCollectionView(){
-        menuCollectionView.register(MenuCollectionViewCell.nib(), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
+    private func updateCollectionView() {
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
-        restaurantViewModel.getCollectionViewLayout(collection: menuCollectionView)
+        restaurantInfoView.addSubview(menuCollectionView)
+        
+        menuCollectionView.topAnchor.constraint(equalTo: menuLabel.bottomAnchor, constant: 10).isActive = true
+         menuCollectionView.leadingAnchor.constraint(equalTo: restaurantInfoView.leadingAnchor).isActive = true
+        menuCollectionView.trailingAnchor.constraint(equalTo: restaurantInfoView.trailingAnchor).isActive = true
+        menuCollectionView.bottomAnchor.constraint(equalTo: restaurantInfoView.bottomAnchor).isActive = true
+    }
+    
+    private func showView(check: Bool) {
+        if check {
+            self.viewInfoHeight.constant = 315
+        } else {
+            self.viewInfoHeight.constant = 153
+        }
+        
+        UIView.animate(withDuration: 0.8) {
+            self.restaurantInfoView.backgroundColor = .white
+            self.restaurantInfoView.alpha = 1
+            self.infoToSearchLabel.alpha = 0
+            self.restaurantInfoView.layoutIfNeeded()
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func changePlaceAnimated(infoPlace: PlaceData) {
+        UIView.animate(withDuration: 0.6) {
+            self.restaurantNameLabel.alpha = 0
+            self.restaurantRatingLabel.alpha = 0
+            self.restaurantAddressLabel.alpha = 0
+            self.restaurantPhoneNumberLabel.alpha = 0
+            self.restaurantOpeningHoursLabel.alpha = 0
+            self.menuLabel.alpha = 0
+            self.menuCollectionView.alpha = 0
+            self.addButton.alpha = 0
+        } completion: { _ in
+            UIView.animate(withDuration: 0.4) {
+                self.displayDetailsScreen(local: infoPlace)
+                self.restaurantNameLabel.alpha = 1
+                self.restaurantRatingLabel.alpha = 1
+                self.restaurantAddressLabel.alpha = 1
+                self.restaurantPhoneNumberLabel.alpha = 1
+                self.restaurantOpeningHoursLabel.alpha = 1
+                self.menuLabel.alpha = 1
+                self.menuCollectionView.alpha = 1
+                self.addButton.alpha = 1
+            }
+        }
+    }
+    
+    private func displayDetailsScreen(local: PlaceData) {
+        switch local {
+        case .restaurantModel(let restaurant):
+            restaurantPhoneNumberLabel.text = restaurant[0].phoneNumber
+            restaurantRatingLabel.text = restaurant[0].rating
+            restaurantNameLabel.text = restaurant[0].name
+            restaurantOpeningHoursLabel.text = restaurant[0].openingHours
+            restaurantAddressLabel.text = restaurant[0].address
+            
+        case .gmsPlace(let gmsRestaurant):
+            if gmsRestaurant.phoneNumber != nil {
+                restaurantPhoneNumberLabel.text = "\(Localized.contactLabelTitle) \(gmsRestaurant.phoneNumber ?? "")"
+            } else {
+                restaurantPhoneNumberLabel.text = Localized.invalidContact
+            }
+            
+            restaurantRatingLabel.text = "\(Localized.ratingLabelTitle) \(gmsRestaurant.rating)"
+            restaurantOpeningHoursLabel.text = viewModel.checkLocalHour(dataHour: gmsRestaurant.isOpen())
+            restaurantNameLabel.text = gmsRestaurant.name
+            restaurantAddressLabel.text = gmsRestaurant.formattedAddress
+            
+            guard let photos = gmsRestaurant.photos else {return}
+            
+            viewModel.loadLocalPhotos(photos: photos)
+            self.menuCollectionView.reloadData()
+            
+        default:
+            break
+        }
+
     }
     
     private func configSearch() {
@@ -85,18 +193,7 @@ class RestaurantViewController: UIViewController {
     private func configRestaurantMapView(){
         restaurantMapView.layer.cornerRadius = 12
     }
-    
-    private func setupUI(){
-        let restaurant = restaurantViewModel.getRestaurantList()
-        restaurantAddressLabel.text = Localized.addressTitle.localized + restaurant.address
-        restaurantOpeningHoursLabel.text = Localized.timeTitle.localized + restaurant.openingHours
-        restaurantPhoneNumberLabel.text = Localized.phoneTitle.localized + restaurant.phoneNumber
-        restaurantRatingLabel.text = Localized.assessmentsTitle + String(restaurant.rating)
-        restaurantNameLabel.text = restaurant.name
-        menuLabel.text = Localized.menuRestaurantTitle.localized
-        restaurantRatingLabel.text = Localized.assessmentsTitle.localized
-    }
-    
+        
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
     }
@@ -109,16 +206,35 @@ class RestaurantViewController: UIViewController {
 
 extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return restaurantViewModel.numberOfItens()
+        if viewModel.isUsingMockData {
+            return viewModel.numberOfItens()
+        } else {
+            return viewModel.isLoading ? viewModel.skeletonCount : viewModel.localPhotos.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
             return UICollectionViewCell()
         }
-//        let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
-        //cell.setupCell(image: images[indexPath.row])
+        
         cell.layer.cornerRadius = 10
+        
+        if viewModel.isUsingMockData {
+            let restaurantImage = viewModel.getRestaurantImages()[indexPath.row]
+            if let image = UIImage(named: restaurantImage) {
+                cell.hideSkeleton()
+                cell.setupCell(image: image)
+            }
+        } else {
+            if viewModel.isLoading {
+                cell.showSkeleton()
+            } else {
+                cell.hideSkeleton()
+                cell.setupCell(image: viewModel.localPhotos[indexPath.row])
+            }
+        }
+
         return cell
     }
     
@@ -126,5 +242,62 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         return restaurantViewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
     }
     
+}
+
+extension RestaurantViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        viewModel.findRestaurant(typed: searchBar.text)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            UIView.animate(withDuration: 0.5) {
+                self.infoToSearchLabel.alpha = 0
+            } completion: {_ in
+                UIView.animate(withDuration: 0.5) {
+                    if self.restaurantInfoView.alpha == 0 {
+                        self.infoToSearchLabel.text = Localized.touchDetailsLabelTitle
+                        self.infoToSearchLabel.alpha = 1
+                    }
+                }
+            }
+            self.restaurantMapView.removeAnnotations(self.restaurantMapView.annotations)
+            self.viewModel.buildMKPoints(region: self.restaurantMapView.region)
+        }
+    }
+}
+
+extension RestaurantViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else {
+            return nil
+        }
+        
+        let identifier = "Annotation"
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            annotationView?.tintColor = .orange
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation as? MKPointAnnotation {
+            let placeName = annotation.title ?? ""
+            let regionTyped = searchBar.text
+            
+            let filter = GMSAutocompleteFilter()
+            filter.type = .establishment
+            let stringFinal = "\(Localized.titleRestaurantView),\(placeName),\(regionTyped ?? "")"
+
+            viewModel.isLoading = true
+            viewModel.searchEstabilishment(value: stringFinal, filter: filter)
+        }
+    }
 }
 

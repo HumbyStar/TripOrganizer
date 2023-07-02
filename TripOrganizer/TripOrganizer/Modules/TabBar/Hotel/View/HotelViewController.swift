@@ -44,14 +44,13 @@ class HotelViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        self.alert = Alert(controller: self)
         super.viewDidLoad()
+        self.alert = Alert(controller: self)
         hotelMapView.delegate = self
         configHotelMapView()
         configHotelInfoView()
         configSearchBar()
         configButton()
-        setupUI()
         
         viewModel.regionUpdaterHandler = {[weak self] (region) in
             guard let self = self else {return}
@@ -187,15 +186,7 @@ class HotelViewController: UIViewController {
         addButton.setTitle(Localized.addButtonTitle.localized, for: .normal)
         addButton.layer.cornerRadius = 15
     }
-    
-    private func setupUI(){
-        hotelRatingLabel.text = Localized.assessmentsTitle.localized
-        hotelAddressLabel.text = Localized.addressTitle.localized
-        hotelOpeningHoursLabel.text = Localized.timeTitle.localized
-        hotelPhoneNumberLabel.text = Localized.phoneTitle.localized
-        accommodationLabel.text = Localized.accommodationTitle.localized
-    }
-    
+
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
     }
