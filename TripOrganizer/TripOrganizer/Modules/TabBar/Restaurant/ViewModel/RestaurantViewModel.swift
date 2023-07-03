@@ -23,17 +23,21 @@ class RestaurantViewModel {
     public var placeClient = GMSPlacesClient.shared()
     public var regionUpdaterHandler: ((MKCoordinateRegion) -> Void)?
     public var annotationUpdateHandler: (([MKPointAnnotation]) -> Void)?
-    
-    public func fetchRestaurants() {
+
+    init() {
         placeService.getPlaceDataJson { data, error in
             if let error = error {
                 print("Erro ao recuperar os dados mockados:\(error.localizedDescription)")
             } else {
                 self.restaurantList = data?.restaurants ?? []
-                self.isUsingMockData = true
-                self.completion?(.restaurantModel(self.restaurantList))
+                
             }
         }
+    }
+    
+    public func switchToMock() {
+        self.isUsingMockData = true
+        self.completion?(.restaurantModel(self.restaurantList))
     }
     
     public func getRestaurantImages() -> [String] {
@@ -92,12 +96,12 @@ class RestaurantViewModel {
         placeClient.findAutocompletePredictions(fromQuery: value, filter: filter, sessionToken: nil) { results, error in
 
             guard error == nil else {
-                self.fetchRestaurants()
+                self.switchToMock()
                 return
             }
             
             guard let results = results, let firstResult = results.first else {
-                self.fetchRestaurants()
+                self.switchToMock()
                 return
             }
         
@@ -110,12 +114,12 @@ class RestaurantViewModel {
         
         placeClient.fetchPlace(fromPlaceID: placeID, placeFields: field, sessionToken: nil) { localDetails, error in
             guard error == nil else {
-                self.fetchRestaurants()
+                self.switchToMock()
                 return
             }
             
             guard let localDetails = localDetails else {
-                self.fetchRestaurants()
+                self.switchToMock()
                 return
             }
 
@@ -137,19 +141,23 @@ class RestaurantViewModel {
         }
     }
     
-    public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]) {
-        skeletonCount = photos.count
+    public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]?) {
+        skeletonCount = photos?.count ?? 0
         self.localPhotos.removeAll()
         let dispatchGroup = DispatchGroup()
-        
-        for photo in photos {
-            dispatchGroup.enter()
-            placeClient.loadPlacePhoto(photo) { image, error in
-                if let image = image, error == nil {
-                    self.localPhotos.append(image)
+    
+        if skeletonCount == 0 {
+            self.localPhotos = []
+        } else {
+            guard let photos = photos else {return}
+            for photo in photos {
+                dispatchGroup.enter()
+                placeClient.loadPlacePhoto(photo) { image, error in
+                    if let image = image, error == nil {
+                        self.localPhotos.append(image)
+                    }
+                    dispatchGroup.leave()
                 }
-                
-                dispatchGroup.leave()
             }
         }
         dispatchGroup.notify(queue: .main) {

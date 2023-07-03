@@ -167,7 +167,10 @@ class RestaurantViewController: UIViewController {
             restaurantNameLabel.text = gmsRestaurant.name
             restaurantAddressLabel.text = gmsRestaurant.formattedAddress
             
-            guard let photos = gmsRestaurant.photos else {return}
+            guard let photos = gmsRestaurant.photos else {
+                viewModel.loadLocalPhotos(photos: nil)
+                return
+            }
             
             viewModel.loadLocalPhotos(photos: photos)
             self.menuCollectionView.reloadData()
@@ -209,7 +212,10 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         if viewModel.isUsingMockData {
             return viewModel.numberOfItens()
         } else {
-            return viewModel.isLoading ? viewModel.skeletonCount : viewModel.localPhotos.count
+            
+            return viewModel.isLoading ? viewModel.skeletonCount :
+            viewModel.localPhotos.isEmpty ? viewModel.numberOfItens() :
+            viewModel.localPhotos.count
         }
     }
     
@@ -231,6 +237,7 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
+                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getRestaurantImages()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }
