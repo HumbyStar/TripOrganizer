@@ -145,7 +145,7 @@ open class AnimatedSwitch: AnimatedControl {
     let finalProgress = endProgress
 
     if cancelBehavior == .reverse {
-      let realtimeProgress = loadingAnimationView.realtimeAnimationProgress
+      let realtimeProgress = animationView.realtimeAnimationProgress
 
       let previousStateStart = isOn ? offStartProgress : onStartProgress
       let previousStateEnd = isOn ? offEndProgress : onEndProgress
@@ -163,7 +163,7 @@ open class AnimatedSwitch: AnimatedControl {
     updateAccessibilityLabel()
 
     guard animated == true else {
-      loadingAnimationView.currentProgress = finalProgress
+      animationView.currentProgress = finalProgress
       return
     }
 
@@ -171,7 +171,7 @@ open class AnimatedSwitch: AnimatedControl {
       hapticGenerator.generateImpact()
     }
 
-    loadingAnimationView.play(
+    animationView.play(
       fromProgress: startProgress,
       toProgress: endProgress,
       loopMode: LottieLoopMode.playOnce,
@@ -180,8 +180,8 @@ open class AnimatedSwitch: AnimatedControl {
 
         // For the Main Thread rendering engine, we freeze the animation at the expected final progress
         // once the animation is complete. This isn't necessary on the Core Animation engine.
-        if finished, !(self.loadingAnimationView.animationLayer is CoreAnimationLayer) {
-          self.loadingAnimationView.currentProgress = finalProgress
+        if finished, !(self.animationView.animationLayer is CoreAnimationLayer) {
+          self.animationView.currentProgress = finalProgress
         }
       })
   }

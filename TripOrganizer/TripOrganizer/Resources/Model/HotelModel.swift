@@ -10,6 +10,5 @@ import Foundation
 // MARK: - Hotel
 struct HotelModel: Codable {
     let room: [String]
-    let name, ratings, phoneNumber, address: String
-    let openingHours: String
+    let name, rating, phoneNumber, address, openingHours: String
 }

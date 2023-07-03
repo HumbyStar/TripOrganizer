@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Procure um hotel de estadia" translatesAutoresizingMaskIntoConstraints="NO" id="DY3-Ls-0Q8">
-                                <rect key="frame" x="16" y="30" width="343" height="56"/>
+                                <rect key="frame" x="16" y="10" width="343" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="70U-R7-NCD"/>
                                 </constraints>
@@ -28,8 +27,8 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="wpz-4k-htJ"/>
                                 </connections>
                             </searchBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-f6-HQp">
-                                <rect key="frame" x="16" y="345" width="343" height="315"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-f6-HQp">
+                                <rect key="frame" x="16" y="507" width="343" height="153"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2IU-2u-fBc">
                                         <rect key="frame" x="8" y="51" width="327" height="11"/>
@@ -55,19 +54,6 @@
                                         <color key="textColor" red="0.15396149980000001" green="0.15396149980000001" blue="0.15396149980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gjB-fu-2JS">
-                                        <rect key="frame" x="11" y="128" width="321" height="177"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="gjB-fu-2JS" secondAttribute="height" multiplier="107:59" id="3Z1-OJ-xZP"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fJL-2d-BKP">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJx-Mt-kLU">
                                         <rect key="frame" x="239" y="5" width="96" height="22"/>
                                         <constraints>
@@ -96,33 +82,38 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="2IU-2u-fBc" secondAttribute="trailing" constant="8" id="8It-vI-t9T"/>
+                                    <constraint firstAttribute="height" constant="153" id="9Nj-SO-C70"/>
                                     <constraint firstItem="bvT-rh-uuw" firstAttribute="top" secondItem="gTJ-Yf-Mvs" secondAttribute="bottom" constant="1" id="9T9-fh-Tyv"/>
                                     <constraint firstItem="WJx-Mt-kLU" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="5" id="Aq1-Wa-txj"/>
                                     <constraint firstItem="gTJ-Yf-Mvs" firstAttribute="top" secondItem="sHU-f6-HQp" secondAttribute="top" constant="8" id="BhI-2b-mAW"/>
                                     <constraint firstItem="3lA-Es-FyI" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="Cls-IS-Kkr"/>
                                     <constraint firstAttribute="trailing" secondItem="WJx-Mt-kLU" secondAttribute="trailing" constant="8" id="Foc-wu-eKB"/>
-                                    <constraint firstAttribute="width" secondItem="sHU-f6-HQp" secondAttribute="height" multiplier="49:45" id="HuI-IM-Hpw"/>
                                     <constraint firstItem="eJI-kv-blR" firstAttribute="top" secondItem="3lA-Es-FyI" secondAttribute="bottom" constant="9" id="NBz-Lj-wkH"/>
                                     <constraint firstItem="nvr-IS-zhN" firstAttribute="top" secondItem="2IU-2u-fBc" secondAttribute="bottom" constant="3" id="NuY-eo-IQ8"/>
                                     <constraint firstItem="WJx-Mt-kLU" firstAttribute="leading" secondItem="gTJ-Yf-Mvs" secondAttribute="trailing" constant="8" id="VgG-y8-rnb"/>
-                                    <constraint firstAttribute="trailing" secondItem="gjB-fu-2JS" secondAttribute="trailing" constant="11" id="YLL-08-J5M"/>
                                     <constraint firstItem="3lA-Es-FyI" firstAttribute="top" secondItem="nvr-IS-zhN" secondAttribute="bottom" constant="4" id="a6f-E0-kDR"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gjB-fu-2JS" secondAttribute="bottom" constant="10" id="e4a-4s-3NH"/>
                                     <constraint firstItem="nvr-IS-zhN" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="epp-65-afb"/>
                                     <constraint firstItem="2IU-2u-fBc" firstAttribute="top" secondItem="bvT-rh-uuw" secondAttribute="bottom" constant="5" id="gcC-ub-zUo"/>
-                                    <constraint firstItem="gjB-fu-2JS" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="11" id="kpZ-Zb-GTs"/>
                                     <constraint firstItem="gTJ-Yf-Mvs" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="10" id="nrM-uE-PdE"/>
                                     <constraint firstItem="bvT-rh-uuw" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="10" id="wa9-IT-a56"/>
                                     <constraint firstItem="2IU-2u-fBc" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="x2W-zp-ooY"/>
-                                    <constraint firstItem="gjB-fu-2JS" firstAttribute="top" secondItem="eJI-kv-blR" secondAttribute="bottom" constant="7" id="xil-UK-FOr"/>
                                     <constraint firstItem="eJI-kv-blR" firstAttribute="leading" secondItem="sHU-f6-HQp" secondAttribute="leading" constant="8" id="xu6-31-iZM"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para buscar um local digite na barra de pesquisa acima" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBh-Cd-LSJ">
+                                <rect key="frame" x="12" y="523" width="350" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="16L-NF-rvj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xls-1V-ZE4">
-                                <rect key="frame" x="16" y="96" width="343" height="234"/>
+                                <rect key="frame" x="16" y="76" width="343" height="416"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
@@ -132,19 +123,21 @@
                             <constraint firstItem="DY3-Ls-0Q8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="99C-Mp-S3N"/>
                             <constraint firstItem="sHU-f6-HQp" firstAttribute="top" secondItem="xls-1V-ZE4" secondAttribute="bottom" constant="15" id="9LV-Us-Tj0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sHU-f6-HQp" secondAttribute="bottom" constant="7" id="9b1-OI-Tkn"/>
+                            <constraint firstItem="gBh-Cd-LSJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="12" id="D66-BQ-8rq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DY3-Ls-0Q8" secondAttribute="trailing" constant="16" id="LWb-bN-2mL"/>
                             <constraint firstItem="xls-1V-ZE4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="QE5-BJ-oqO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sHU-f6-HQp" secondAttribute="trailing" constant="16" id="V89-2C-wXR"/>
+                            <constraint firstItem="gBh-Cd-LSJ" firstAttribute="top" secondItem="xls-1V-ZE4" secondAttribute="bottom" constant="31" id="XnM-Za-TnR"/>
                             <constraint firstItem="sHU-f6-HQp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ivV-Fe-XBK"/>
                             <constraint firstItem="xls-1V-ZE4" firstAttribute="top" secondItem="DY3-Ls-0Q8" secondAttribute="bottom" constant="10" id="p1B-sS-aJa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xls-1V-ZE4" secondAttribute="trailing" constant="16" id="ql6-aD-JTA"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gBh-Cd-LSJ" secondAttribute="trailing" constant="13" id="tKp-cp-tkU"/>
                             <constraint firstItem="DY3-Ls-0Q8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="ykX-TQ-4Am"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="accommodationLabel" destination="eJI-kv-blR" id="AOr-tA-r7M"/>
                         <outlet property="addButton" destination="WJx-Mt-kLU" id="YN4-qA-AFw"/>
-                        <outlet property="collectionView" destination="gjB-fu-2JS" id="ch3-a2-dSd"/>
                         <outlet property="hotelAddressLabel" destination="2IU-2u-fBc" id="bz0-I7-hId"/>
                         <outlet property="hotelInfoView" destination="sHU-f6-HQp" id="8ER-NG-Drp"/>
                         <outlet property="hotelMapView" destination="xls-1V-ZE4" id="7hK-81-tQB"/>
@@ -152,7 +145,9 @@
                         <outlet property="hotelOpeningHoursLabel" destination="nvr-IS-zhN" id="bwh-iB-D8S"/>
                         <outlet property="hotelPhoneNumberLabel" destination="3lA-Es-FyI" id="a3N-o9-DX2"/>
                         <outlet property="hotelRatingLabel" destination="bvT-rh-uuw" id="QaF-pc-pWJ"/>
+                        <outlet property="infoToSearchLabel" destination="gBh-Cd-LSJ" id="m5s-p2-Uct"/>
                         <outlet property="searchBar" destination="DY3-Ls-0Q8" id="XVQ-Ku-1Qr"/>
+                        <outlet property="viewInfoHeight" destination="9Nj-SO-C70" id="mZV-ld-Myg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -162,9 +157,6 @@
     </scenes>
     <resources>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum messageAlertHotel: String {
+    case title = ""
+    case addHotel = "Hotel adicionado com sucesso a sua lista de viagem!"
+}
+
 class Localized {
     
     //MARK: Routes identifier
@@ -48,6 +53,7 @@ class Localized {
     static let registerTapError = "error.register_tap".localized
     static let successTitle = "misc.success_title".localized
     static let tripNameEmpty = "error.trip_name_empty".localized
+    static let invalidContact = "error_contact_unavailable".localized
     
     //MARK: Button titles
     static let addFlight = "button.add_flight".localized
@@ -92,6 +98,12 @@ class Localized {
     static let tripTitle = "label.title_trip".localized
     static let users = "title.users".localized
     static let welcomeLabelTitle = "label.tile_welcome".localized
+    static let ratingLabelTitle = "label_rating".localized
+    static let contactLabelTitle = "label_contact".localized
+    static let touchDetailsLabelTitle = "label_touch_details".localized
+    static let estabilishOpenLabelTitle = "estabilish_work_hour_open".localized
+    static let estabilishClosedLabelTitle = "estabilish_work_hour_closed".localized
+    static let estabilishUnavailable = "estabilish_work_hour_unavailable".localized
     
     //MARK: Symbols
     static let atSymbol = "at_symbol".localized

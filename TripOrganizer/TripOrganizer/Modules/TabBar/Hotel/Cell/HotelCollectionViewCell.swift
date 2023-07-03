@@ -11,7 +11,13 @@ class HotelCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    public var data: [HotelModel] = []
+    lazy var skeletionView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .secondarySystemBackground
+        view.layer.cornerRadius = 8
+        return view
+    }()
     
     static let identifier = String(describing: HotelCollectionViewCell.self)
     
@@ -24,8 +30,22 @@ class HotelCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
     }
     
-    func setupCell(image: String){
-        imageView.image = UIImage(named: image)
+    override func layoutSubviews() {
+        addSubview(skeletionView)
+        skeletionView.frame = bounds
+    }
+    
+    func showSkeleton() {
+        skeletionView.isHidden = false
+    }
+    
+    func hideSkeleton() {
+        skeletionView.isHidden = true
+    }
+    
+    func setupCell(image: UIImage){
+        imageView.image = image
         imageView.layer.cornerRadius = 10
     }
+    
 }

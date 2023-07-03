@@ -17,6 +17,7 @@
 "error.invalid_data" = "Dados incorretos";
 "error.login_message" = "Tivemos um problema inesperado, tente novamente mais tarde";
 "registration.error_message" = "Erro ao cadastrar";
+"error_contact_unavailable" = "Contato: Indisponível";
 
 // Success
 "misc.success_title" = "Sucesso";
@@ -71,6 +72,9 @@
 "label.title_return_date" = "Data de retorno";
 "attraction.search_placeholder" = "Procure por um ponto turístico";
 "title.entrance_free" = "Taxa de Entrada: Gratuito";
+"label_rating" = "Avaliações -";
+"label_contact" = "Contato:";
+"label_touch_details" = "Digite em um icone para ver os detalhes";
 
 // Symbols
 "at_symbol" = "@";
@@ -85,6 +89,13 @@
 "title.attraction_view" = "Lazer";
 "profile.name_text" = "Caio Fabrini";
 "prifile.email_exemplo" = "exemple@gmail.com";
+
+
+"estabilish_work_hour_open" = "Funcionamento - Estabelecimento Aberto";
+"estabilish_work_hour_unavailable" = "Funcionamento - Dado indisponível";
+"estabilish_work_hour_closed" = "Funcionamento - Estabelecimento Fechado";
+
+
 
 
 

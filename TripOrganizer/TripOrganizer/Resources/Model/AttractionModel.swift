@@ -10,6 +10,5 @@ import Foundation
 // MARK: - Attraction
 struct AttractionModel: Codable {
     let images: [String]
-    let ratings, name, address, openingHours: String
-    let phoneNumber, entranceFee: String
+    let rating, name, address, phoneNumber, entranceFee, openingHours: String
 }

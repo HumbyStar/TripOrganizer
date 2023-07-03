@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Procure um restaurante para visitar" translatesAutoresizingMaskIntoConstraints="NO" id="qvI-Wk-zli">
-                                <rect key="frame" x="16" y="30" width="343" height="56"/>
+                                <rect key="frame" x="16" y="10" width="343" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="EWN-N7-BZn"/>
                                 </constraints>
@@ -27,23 +26,9 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="CVV-2M-ZbG"/>
                                 </connections>
                             </searchBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-rP-i9z">
-                                <rect key="frame" x="16" y="345" width="343" height="315"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OKB-rP-i9z">
+                                <rect key="frame" x="16" y="507" width="343" height="153"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="izv-be-YaA">
-                                        <rect key="frame" x="11" y="128" width="321" height="177"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="izv-be-YaA" secondAttribute="height" multiplier="107:59" id="zxg-vb-QFe"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pS0-4J-0Xh">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boteco do João" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPe-PM-rMM">
                                         <rect key="frame" x="10" y="8" width="221" height="21"/>
                                         <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="17"/>
@@ -74,7 +59,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5Y-E9-hlc">
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5Y-E9-hlc">
                                         <rect key="frame" x="239" y="5" width="96" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="96" id="Vc4-o7-Xdh"/>
@@ -98,23 +83,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="9Zw-H3-gjy"/>
                                     <constraint firstItem="J65-go-2Dg" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="10" id="AqZ-1V-i7W"/>
                                     <constraint firstItem="vNc-Fn-fWu" firstAttribute="top" secondItem="Tqf-Zg-znt" secondAttribute="bottom" constant="9" id="Bie-9D-tw1"/>
                                     <constraint firstItem="J65-go-2Dg" firstAttribute="top" secondItem="iPe-PM-rMM" secondAttribute="bottom" constant="1" id="FGQ-JK-Pbg"/>
                                     <constraint firstItem="n4R-xD-NE1" firstAttribute="top" secondItem="J65-go-2Dg" secondAttribute="bottom" constant="5" id="HKC-Bk-1UT"/>
-                                    <constraint firstAttribute="trailing" secondItem="izv-be-YaA" secondAttribute="trailing" constant="11" id="HcH-1w-bgP"/>
                                     <constraint firstAttribute="trailing" secondItem="n4R-xD-NE1" secondAttribute="trailing" constant="8" id="Kxq-1F-ckP"/>
                                     <constraint firstAttribute="trailing" secondItem="u5Y-E9-hlc" secondAttribute="trailing" constant="8" id="O7k-y6-79Y"/>
                                     <constraint firstItem="u5Y-E9-hlc" firstAttribute="leading" secondItem="iPe-PM-rMM" secondAttribute="trailing" constant="8" id="OoK-4d-GOh"/>
                                     <constraint firstItem="Tqf-Zg-znt" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="Q6x-JL-GVg"/>
                                     <constraint firstItem="mtU-HF-njQ" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="SFV-s0-Bhb"/>
-                                    <constraint firstAttribute="width" secondItem="OKB-rP-i9z" secondAttribute="height" multiplier="49:45" id="Ugz-Y2-H2l"/>
                                     <constraint firstItem="Tqf-Zg-znt" firstAttribute="top" secondItem="mtU-HF-njQ" secondAttribute="bottom" constant="4" id="Yb7-0A-5M3"/>
                                     <constraint firstItem="iPe-PM-rMM" firstAttribute="top" secondItem="OKB-rP-i9z" secondAttribute="top" constant="8" id="bpH-bk-nsZ"/>
-                                    <constraint firstItem="izv-be-YaA" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="11" id="cFh-th-ycO"/>
-                                    <constraint firstItem="izv-be-YaA" firstAttribute="top" secondItem="vNc-Fn-fWu" secondAttribute="bottom" constant="7" id="d83-Eg-uAe"/>
                                     <constraint firstItem="n4R-xD-NE1" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="es7-I6-Lgv"/>
-                                    <constraint firstAttribute="bottom" secondItem="izv-be-YaA" secondAttribute="bottom" constant="10" id="goe-bB-mXn"/>
                                     <constraint firstItem="vNc-Fn-fWu" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="8" id="nB8-P4-J4g"/>
                                     <constraint firstItem="iPe-PM-rMM" firstAttribute="leading" secondItem="OKB-rP-i9z" secondAttribute="leading" constant="10" id="nSu-wf-Lbp"/>
                                     <constraint firstItem="mtU-HF-njQ" firstAttribute="top" secondItem="n4R-xD-NE1" secondAttribute="bottom" constant="3" id="pTk-KV-CWm"/>
@@ -122,28 +103,40 @@
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-1q-S0N">
-                                <rect key="frame" x="16" y="96" width="343" height="234"/>
+                                <rect key="frame" x="16" y="76" width="343" height="416"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="HAN-Ot-iFj"/>
+                                </connections>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para buscar um local digite na barra de pesquisa acima" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-i6-DIj">
+                                <rect key="frame" x="13" y="523" width="349" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.9529411793" green="0.93725490570000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qvI-Wk-zli" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="488-s0-yxC"/>
                             <constraint firstItem="OKB-rP-i9z" firstAttribute="top" secondItem="8b7-1q-S0N" secondAttribute="bottom" constant="15" id="7fo-Hg-06p"/>
+                            <constraint firstItem="9Ky-i6-DIj" firstAttribute="top" secondItem="8b7-1q-S0N" secondAttribute="bottom" constant="31" id="9Ci-dW-MS3"/>
+                            <constraint firstItem="9Ky-i6-DIj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="13" id="BPA-bT-LHf"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8b7-1q-S0N" secondAttribute="trailing" constant="16" id="BpF-zE-j4g"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OKB-rP-i9z" secondAttribute="trailing" constant="16" id="NFB-zh-e1B"/>
                             <constraint firstItem="8b7-1q-S0N" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="TLn-RG-xQ5"/>
                             <constraint firstItem="OKB-rP-i9z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="TOd-D5-ZG9"/>
                             <constraint firstItem="qvI-Wk-zli" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="TbO-Eb-fph"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OKB-rP-i9z" secondAttribute="bottom" constant="7" id="TmS-Rm-iPv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9Ky-i6-DIj" secondAttribute="trailing" constant="13" id="hPq-dc-sPz"/>
                             <constraint firstItem="8b7-1q-S0N" firstAttribute="top" secondItem="qvI-Wk-zli" secondAttribute="bottom" constant="10" id="sjv-fb-gkb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qvI-Wk-zli" secondAttribute="trailing" constant="16" id="vsl-Vd-hhh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="u5Y-E9-hlc" id="l1z-US-JYm"/>
-                        <outlet property="menuCollectionView" destination="izv-be-YaA" id="tuh-bi-51x"/>
+                        <outlet property="infoToSearchLabel" destination="9Ky-i6-DIj" id="C2s-eQ-Zfh"/>
                         <outlet property="menuLabel" destination="vNc-Fn-fWu" id="W4w-ar-Hgq"/>
                         <outlet property="restaurantAddressLabel" destination="n4R-xD-NE1" id="r5E-Eh-Rx3"/>
                         <outlet property="restaurantInfoView" destination="OKB-rP-i9z" id="HuI-9N-oRZ"/>
@@ -153,6 +146,7 @@
                         <outlet property="restaurantPhoneNumberLabel" destination="Tqf-Zg-znt" id="Bet-fm-mr8"/>
                         <outlet property="restaurantRatingLabel" destination="J65-go-2Dg" id="2cG-mA-N2X"/>
                         <outlet property="searchBar" destination="qvI-Wk-zli" id="Eu6-Fk-kIa"/>
+                        <outlet property="viewInfoHeight" destination="9Zw-H3-gjy" id="aDi-jm-t9M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

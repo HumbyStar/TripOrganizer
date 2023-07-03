@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" restorationIdentifier="searchField" searchBarStyle="minimal" placeholder="Procure por um ponto turístico" translatesAutoresizingMaskIntoConstraints="NO" id="pJW-sN-Uf9">
-                                <rect key="frame" x="16" y="30" width="343" height="56"/>
+                                <rect key="frame" x="16" y="10" width="343" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="sWb-TF-OYE"/>
                                 </constraints>
@@ -28,8 +27,8 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="B6B-xE-q4E"/>
                                 </connections>
                             </searchBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o14-IW-ZfX">
-                                <rect key="frame" x="16" y="345" width="343" height="315"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o14-IW-ZfX">
+                                <rect key="frame" x="16" y="507" width="343" height="153"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVO-Zj-FsQ">
                                         <rect key="frame" x="8" y="51" width="327" height="11"/>
@@ -49,20 +48,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J9O-3G-o3I">
-                                        <rect key="frame" x="11" y="128" width="321" height="177"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="J9O-3G-o3I" secondAttribute="height" multiplier="107:59" id="bnA-hC-ADZ"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kW7-cn-67q">
-                                            <size key="itemSize" width="128" height="128"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells/>
-                                    </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Praça do Japão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVf-Ka-K8c">
                                         <rect key="frame" x="10" y="8" width="221" height="21"/>
                                         <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="17"/>
@@ -104,39 +89,47 @@
                                     <constraint firstItem="eVf-Ka-K8c" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="8" id="A7X-hX-2sV"/>
                                     <constraint firstAttribute="trailing" secondItem="TBb-Fx-bvz" secondAttribute="trailing" constant="8" id="B7t-Cf-QN0"/>
                                     <constraint firstItem="pYL-8r-ReW" firstAttribute="top" secondItem="k5y-2D-KVG" secondAttribute="bottom" constant="4" id="CIT-Pv-q4E"/>
-                                    <constraint firstAttribute="trailing" secondItem="J9O-3G-o3I" secondAttribute="trailing" constant="11" id="D8S-Yi-SIb"/>
                                     <constraint firstItem="ims-98-vC7" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="HuR-PK-gnR"/>
-                                    <constraint firstAttribute="bottom" secondItem="J9O-3G-o3I" secondAttribute="bottom" constant="10" id="IXk-0q-qWf"/>
                                     <constraint firstItem="k5y-2D-KVG" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="8" id="Ldp-hi-Bw9"/>
                                     <constraint firstItem="eVf-Ka-K8c" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="10" id="NxZ-XA-XKW"/>
                                     <constraint firstItem="h37-WY-j25" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="8" id="eSP-P7-9db"/>
                                     <constraint firstItem="TBb-Fx-bvz" firstAttribute="top" secondItem="o14-IW-ZfX" secondAttribute="top" constant="5" id="ha5-mE-qQ7"/>
-                                    <constraint firstAttribute="width" secondItem="o14-IW-ZfX" secondAttribute="height" multiplier="49:45" id="ik3-uO-gY7"/>
                                     <constraint firstItem="k5y-2D-KVG" firstAttribute="top" secondItem="EVO-Zj-FsQ" secondAttribute="bottom" constant="3" id="lNv-GK-eiO"/>
                                     <constraint firstItem="TBb-Fx-bvz" firstAttribute="leading" secondItem="eVf-Ka-K8c" secondAttribute="trailing" constant="8" id="mz1-kB-2qW"/>
+                                    <constraint firstAttribute="height" constant="153" id="nVw-fC-nOY"/>
                                     <constraint firstItem="ims-98-vC7" firstAttribute="top" secondItem="eVf-Ka-K8c" secondAttribute="bottom" constant="1" id="pNc-85-zC7"/>
                                     <constraint firstItem="h37-WY-j25" firstAttribute="top" secondItem="pYL-8r-ReW" secondAttribute="bottom" constant="9" id="txs-ce-CyE"/>
                                     <constraint firstItem="pYL-8r-ReW" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="8" id="wTW-hk-LeM"/>
-                                    <constraint firstItem="J9O-3G-o3I" firstAttribute="top" secondItem="h37-WY-j25" secondAttribute="bottom" constant="7" id="wbv-63-pxE"/>
                                     <constraint firstItem="EVO-Zj-FsQ" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="8" id="wfT-zF-wNJ"/>
-                                    <constraint firstItem="J9O-3G-o3I" firstAttribute="leading" secondItem="o14-IW-ZfX" secondAttribute="leading" constant="11" id="x6d-uX-p8l"/>
                                 </constraints>
                             </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLn-RZ-hM1">
-                                <rect key="frame" x="16" y="96" width="343" height="234"/>
+                                <rect key="frame" x="16" y="76" width="343" height="416"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="ptr-Cs-jW3"/>
+                                </connections>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para buscar um local digite na barra de pesquisa acima" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ziv-Xa-FmO">
+                                <rect key="frame" x="13" y="523" width="349" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.93725484609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ziv-Xa-FmO" firstAttribute="top" secondItem="PLn-RZ-hM1" secondAttribute="bottom" constant="31" id="6wh-5i-uOe"/>
                             <constraint firstItem="pJW-sN-Uf9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="FuQ-ii-gl5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ziv-Xa-FmO" secondAttribute="trailing" constant="13" id="U6k-Wf-slC"/>
                             <constraint firstItem="o14-IW-ZfX" firstAttribute="top" secondItem="PLn-RZ-hM1" secondAttribute="bottom" constant="15" id="fAB-rc-xBJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pJW-sN-Uf9" secondAttribute="trailing" constant="16" id="fzT-v6-jej"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PLn-RZ-hM1" secondAttribute="trailing" constant="16" id="g3c-Qk-vjE"/>
                             <constraint firstItem="PLn-RZ-hM1" firstAttribute="top" secondItem="pJW-sN-Uf9" secondAttribute="bottom" constant="10" id="lfU-V6-plG"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="o14-IW-ZfX" secondAttribute="bottom" constant="7" id="t6f-tQ-b5T"/>
                             <constraint firstItem="PLn-RZ-hM1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="tRM-q5-l3c"/>
+                            <constraint firstItem="Ziv-Xa-FmO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="13" id="uNe-s5-7RZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o14-IW-ZfX" secondAttribute="trailing" constant="16" id="uoh-4T-pO4"/>
                             <constraint firstItem="pJW-sN-Uf9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="wiq-eb-F7t"/>
                             <constraint firstItem="o14-IW-ZfX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="zW1-qT-oKx"/>
@@ -149,12 +142,13 @@
                         <outlet property="attractionInfoView" destination="o14-IW-ZfX" id="mdn-I4-BUi"/>
                         <outlet property="attractionMapView" destination="PLn-RZ-hM1" id="gSi-6s-kft"/>
                         <outlet property="attractionNameLabel" destination="eVf-Ka-K8c" id="oQN-fF-qxJ"/>
+                        <outlet property="attractionOpeningHourLabel" destination="k5y-2D-KVG" id="9YZ-On-37F"/>
                         <outlet property="attractionPhoneNumberLabel" destination="pYL-8r-ReW" id="QaO-XY-Neg"/>
                         <outlet property="attractionRatingLabel" destination="ims-98-vC7" id="X7C-MZ-SmB"/>
-                        <outlet property="collectionView" destination="J9O-3G-o3I" id="buX-6J-wCI"/>
                         <outlet property="entranceFeeLabel" destination="h37-WY-j25" id="ODh-ua-XPf"/>
-                        <outlet property="openingHoursLabel" destination="k5y-2D-KVG" id="9YZ-On-37F"/>
+                        <outlet property="infoToSearchLabel" destination="Ziv-Xa-FmO" id="txU-sR-Xl6"/>
                         <outlet property="searchBar" destination="pJW-sN-Uf9" id="pMT-u3-Yld"/>
+                        <outlet property="viewInfoHeight" destination="nVw-fC-nOY" id="ccl-HX-ncH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

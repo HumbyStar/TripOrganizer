@@ -5,7 +5,7 @@
             "address": "70044 Bari, Itály",
             "openingHours": "Aberto",
             "phoneNumber": "(+39) 080-4252300",
-            "rating": 4.6,
+            "rating": "Avaliações - 4.6",
             "images": [
                 "restaurant1.1",
                 "restaurant1.2",
@@ -23,7 +23,7 @@
                     "quarto03"
             ],
             "name": "Chatolamour",
-            "ratings": "Avaliações",
+            "rating": "Avaliações - 4.6",
             "phoneNumber": "Telefone: (41) 3243-3430",
             "address": "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020",
             "openingHours": "Horario: abre as 12:00"
@@ -38,7 +38,7 @@
                     "4",
                     "5"
             ],
-            "ratings": "Avaliações",
+            "rating": "Avaliações - 4.6",
             "name": "Praça do Japão",
             "address": "Av. Silva Jardim, 2487 - Água Verde, Curitiba - PR, 80240-020",
             "openingHours": "Horario: abre as 12:00",

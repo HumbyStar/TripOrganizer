@@ -43,6 +43,9 @@ class ViewController: UIViewController {
         auth = Auth.auth()
         firestore = Firestore.firestore()
         alert = Alert(controller: self)
+        
+        emailTextField.text = "betogrt@gmail.com"
+        passwordTextField.text = "123456"
     }
     
     @IBAction func tapToRecoverPassword(_ sender: UIButton) {
