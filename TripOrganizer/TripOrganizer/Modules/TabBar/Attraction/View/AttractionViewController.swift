@@ -46,7 +46,8 @@ class AttractionViewController: UIViewController {
         configCollectionView()
         roundedBorder()
         addAttractionButton.isEnabled = false
-        NotificationCenter.default.addObserver(self, selector: #selector(atualizarEstadoBotao), name: Notification.Name("updateList"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
+        updateButtonState()
     }
     
     private func roundedBorder() {
@@ -85,7 +86,7 @@ class AttractionViewController: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
     }
     
-    @objc func atualizarEstadoBotao() {
+    @objc func updateButtonState() {
         if homeViewModel?.getTripList() != 0 {
             addAttractionButton.isEnabled = true
             } else {

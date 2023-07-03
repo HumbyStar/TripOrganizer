@@ -47,7 +47,8 @@ class HotelViewController: UIViewController {
         configButton()
         setupUI()
         addButton.isEnabled = false
-        NotificationCenter.default.addObserver(self, selector: #selector(atualizarEstadoBotao), name: Notification.Name("updateList"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
+        updateButtonState()
     }
     
     private func configHotelMapView() {
@@ -92,7 +93,7 @@ class HotelViewController: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
     }
     
-    @objc func atualizarEstadoBotao() {
+    @objc func updateButtonState() {
         if homeViewModel?.getTripList() != 0 {
                 addButton.isEnabled = true
             } else {
@@ -129,5 +130,3 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
 }
-
-

@@ -50,7 +50,8 @@ class RestaurantViewController: UIViewController {
         configSearch()
         // setupUI()
         addButton.isEnabled = false
-        NotificationCenter.default.addObserver(self, selector: #selector(atualizarEstadoBotao), name: Notification.Name("updateList"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
+        updateButtonState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,7 +102,7 @@ class RestaurantViewController: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
     }
     
-    @objc func atualizarEstadoBotao() {
+    @objc func updateButtonState() {
         if homeViewModel?.getTripList() != 0 {
                 addButton.isEnabled = true
             } else {
