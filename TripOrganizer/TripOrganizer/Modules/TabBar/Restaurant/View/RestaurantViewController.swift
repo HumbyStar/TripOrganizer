@@ -46,7 +46,7 @@ class RestaurantViewController: UIViewController {
         configMenuCollectionView()
         configRestaurantInfoView()
         configRestaurantMapView()
-        //  restaurantViewModel.fetchRestaurants()
+       //   restaurantViewModel.fetchRestaurants()
         configButton()
         configSearch()
         // setupUI()
