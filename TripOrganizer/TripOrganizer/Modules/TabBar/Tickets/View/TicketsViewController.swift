@@ -58,6 +58,7 @@ extension TicketsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarTickets"), object: nil)
         alert?.createAlert(title: "", message: Localized.flightAddedSuccessfully.localized) { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         }

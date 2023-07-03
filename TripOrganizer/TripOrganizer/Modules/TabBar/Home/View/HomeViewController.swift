@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var addTripButton: UIButton!
     
     
-    
+    private var progressBar: Float = 0
     var viewModel: HomeViewModel = HomeViewModel()
     weak var delegate: HomeViewControllerProtocol?
      
@@ -51,9 +51,17 @@ class HomeViewController: UIViewController {
         changeProfileImageNotification()
         circularProfileButton()
         configImagesViews()
+       notificationCenterProgressBar()
     }
     
-    private func configImagesViews() {
+    func notificationCenterProgressBar(){
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBarAndImageViewRestaurant), name: Notification.Name("updateProgressBarRestaurant"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBarAndImageViewHotel), name: Notification.Name("updateProgressBarHotel"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBarAndImageViewAttracion), name: Notification.Name("updateProgressBarAttraction"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBarAndImageViewTickets), name: Notification.Name("updateProgressBarTickets"), object: nil)
+    }
+    
+    func configImagesViews() {
         let imageViews = [tappedTicketView, tappedHotelView, tappedRestaurantView, tappedAttractionView]
         
         for imageView in imageViews {
@@ -64,8 +72,93 @@ class HomeViewController: UIViewController {
     }
 
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
-        viewModel.progressBarLogic(sender: sender, tappedTicketView: tappedTicketView, ticketImageView: ticketImageView, tripProgressView: tripProgressView, tappedHotelView: tappedHotelView, hotelImageView: hotelImageView, tappedRestaurantView: tappedRestaurantView, restaurantImageView: restaurantImageView, tappedAttractionView: tappedAttractionView, attractionImageView: attractionImageView)
+       
+        guard let imageView = sender.view else { return }
+        
+         switch imageView {
+         case tappedTicketView:
+             switch ticketImageView.image {
+             case UIImage(systemName: Localized.square):
+                 ticketImageView.image = UIImage(systemName: Localized.squareCheck)
+                progressBar += 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+             case UIImage(systemName: Localized.squareCheck):
+                 ticketImageView.image = UIImage(systemName: Localized.square)
+                 progressBar -= 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             default:
+                 break
+             }
+         case tappedHotelView:
+             switch hotelImageView.image {
+             case UIImage(systemName: Localized.square.localized):
+                 hotelImageView.image = UIImage(systemName: Localized.squareCheck)
+                 progressBar += 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             case UIImage(systemName: Localized.squareCheck):
+                 hotelImageView.image = UIImage(systemName: Localized.square)
+                 progressBar -= 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             default:
+                 break
+             }
+             
+         case tappedRestaurantView:
+             switch restaurantImageView.image {
+             case UIImage(systemName: Localized.square):
+                 restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
+                 progressBar += 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             case UIImage(systemName: Localized.squareCheck):
+                 restaurantImageView.image = UIImage(systemName: Localized.square)
+                 progressBar -= 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             default:
+                 break
+             }
+             
+         case tappedAttractionView:
+             switch attractionImageView.image {
+             case UIImage(systemName: Localized.square):
+                 attractionImageView.image = UIImage(systemName: Localized.squareCheck)
+                 progressBar += 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             case UIImage(systemName: Localized.squareCheck):
+                 attractionImageView.image = UIImage(systemName: Localized.square)
+                 progressBar -= 0.25
+                 tripProgressView.setProgress(progressBar, animated: true)
+             default:
+                 break
+             }
+             
+         default:
+             break
+         }
     }
+    
+  @objc  func updateProgressBarAndImageViewRestaurant() {
+        progressBar += 0.25
+        tripProgressView.setProgress(progressBar, animated: true)
+        restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
+    }
+    
+    @objc  func updateProgressBarAndImageViewHotel() {
+          progressBar += 0.25
+          tripProgressView.setProgress(progressBar, animated: true)
+          hotelImageView.image = UIImage(systemName: Localized.squareCheck)
+      }
+    
+    @objc  func updateProgressBarAndImageViewAttracion() {
+          progressBar += 0.25
+          tripProgressView.setProgress(progressBar, animated: true)
+          attractionImageView.image = UIImage(systemName: Localized.squareCheck)
+      }
+    
+    @objc  func updateProgressBarAndImageViewTickets() {
+          progressBar += 0.25
+          tripProgressView.setProgress(progressBar, animated: true)
+        ticketImageView.image = UIImage(systemName: Localized.squareCheck)
+      }
     
     override func viewWillAppear(_ animated: Bool) {
         updateTableView()

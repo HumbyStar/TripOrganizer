@@ -34,7 +34,6 @@ class RestaurantViewController: UIViewController {
     var alert: Alert?
     
     //MARK: - Variables
-    weak var delegate: RestaurantViewControllerProtocol?
     var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     var homeViewModel: HomeViewModel? = HomeViewModel()
     var indexPath: IndexPath? = nil
@@ -99,7 +98,7 @@ class RestaurantViewController: UIViewController {
         
         tripViewModel.addObjectRestaurant(object: RestaurantModel(name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? ""))//, images: restaurantViewModel.getRestaurantImages(indexPath: self.indexPath ?? IndexPath())))
         
-        
+        NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
     }
     
     @objc func atualizarEstadoBotao() {

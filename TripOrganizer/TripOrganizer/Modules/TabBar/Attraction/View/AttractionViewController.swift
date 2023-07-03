@@ -81,6 +81,8 @@ class AttractionViewController: UIViewController {
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
         alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
         tripViewModel.addObjectAttraction(object: AttractionModel(name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: openingHoursLabel.text ?? ""))
+        
+        NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
     }
     
     @objc func atualizarEstadoBotao() {
