@@ -143,6 +143,7 @@ class HotelViewController: UIViewController {
             hotelNameLabel.text = hotel[0].name
             hotelOpeningHoursLabel.text = hotel[0].openingHours
             hotelAddressLabel.text = hotel[0].address
+            self.collectionView.reloadData()
             
         case .gmsPlace(let gmsHotel):
             if gmsHotel.phoneNumber != nil {

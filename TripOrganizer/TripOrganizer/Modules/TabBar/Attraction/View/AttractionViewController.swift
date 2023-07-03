@@ -52,7 +52,6 @@ class AttractionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
-        self.viewModel.fetchAttractions()
         configSearch()
         configButton()
         configLabel()
@@ -121,7 +120,10 @@ class AttractionViewController: UIViewController {
             attractionNameLabel.text = gmsAttraction.name
             attractionAdressLabel.text = gmsAttraction.formattedAddress
             
-            guard let photos = gmsAttraction.photos else {return}
+            guard let photos = gmsAttraction.photos else {
+                viewModel.loadLocalPhotos(photos: nil)
+                return
+            }
             
             viewModel.loadLocalPhotos(photos: photos)
             self.collectionView.reloadData()
@@ -217,7 +219,9 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
         if viewModel.isUsingMockData {
             return viewModel.numberOfItens()
         } else {
-            return viewModel.isLoading ? viewModel.skeletonCount : viewModel.localPhotos.count
+            return viewModel.isLoading ? viewModel.skeletonCount :
+            viewModel.localPhotos.isEmpty ? viewModel.numberOfItens() :
+            viewModel.localPhotos.count
         }
     }
     
@@ -230,8 +234,8 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let hotelImage = viewModel.getAttractionImageList()[indexPath.row]
-            if let image = UIImage(named: hotelImage) {
+            let restaurantImage = viewModel.getAttractionImageList()[indexPath.row]
+            if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
             }
@@ -240,10 +244,11 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
+                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getAttractionImageList()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }
-
+        
         return cell
     }
     

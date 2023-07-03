@@ -24,18 +24,22 @@ class AttractionViewModel {
     public var regionUpdaterHandler: ((MKCoordinateRegion) -> Void)?
     public var annotationUpdateHandler: (([MKPointAnnotation]) -> Void)?
     
-    public func fetchAttractions() {
+    init() {
         placeService.getPlaceDataJson { data, error in
             if let error = error {
-                print("Error ao recuperar os dados mockados: \(error.localizedDescription)")
+                print("Erro ao recuperar os dados mockados:\(error.localizedDescription)")
             } else {
                 self.attractionList = data?.attractions ?? []
-                self.isUsingMockData = true
-                self.completion?(.attractionModel(self.attractionList))
+                
             }
         }
     }
     
+    public func switchToMock() {
+        self.isUsingMockData = true
+        self.completion?(.attractionModel(self.attractionList))
+    }
+
     public func getAttractionImageList() -> [String] {
         return attractionList[0].images
     }
@@ -92,12 +96,12 @@ class AttractionViewModel {
         placeClient.findAutocompletePredictions(fromQuery: value, filter: filter, sessionToken: nil) { results, error in
             
             guard error == nil else {
-                self.fetchAttractions()
+                self.switchToMock()
                 return
             }
             
             guard let results = results, let firstResult = results.first else{
-                self.fetchAttractions()
+                self.switchToMock()
                 return
             }
             
@@ -110,12 +114,12 @@ class AttractionViewModel {
         
         placeClient.fetchPlace(fromPlaceID: placeID, placeFields: field, sessionToken: nil) { localDetails, error in
             guard error == nil else {
-                self.fetchAttractions()
+                self.switchToMock()
                 return
             }
             
             guard let localDetails = localDetails else {
-                self.fetchAttractions()
+                self.switchToMock()
                 return
             }
             
@@ -137,18 +141,23 @@ class AttractionViewModel {
         }
     }
     
-    public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]) {
-        skeletonCount = photos.count
+    public func loadLocalPhotos(photos: [GMSPlacePhotoMetadata]?) {
+        skeletonCount = photos?.count ?? 0
         self.localPhotos.removeAll()
         let dispatchGroup = DispatchGroup()
-        
-        for photo in photos {
-            dispatchGroup.enter()
-            placeClient.loadPlacePhoto(photo) { image, error in
-                if let image = image, error == nil {
-                    self.localPhotos.append(image)
+    
+        if skeletonCount == 0 {
+            self.localPhotos = []
+        } else {
+            guard let photos = photos else {return}
+            for photo in photos {
+                dispatchGroup.enter()
+                placeClient.loadPlacePhoto(photo) { image, error in
+                    if let image = image, error == nil {
+                        self.localPhotos.append(image)
+                    }
+                    dispatchGroup.leave()
                 }
-                dispatchGroup.leave()
             }
         }
         dispatchGroup.notify(queue: .main) {
