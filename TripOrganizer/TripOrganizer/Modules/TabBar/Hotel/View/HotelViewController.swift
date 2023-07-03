@@ -157,7 +157,10 @@ class HotelViewController: UIViewController {
             hotelNameLabel.text = gmsHotel.name
             hotelAddressLabel.text = gmsHotel.formattedAddress
             
-            guard let photos = gmsHotel.photos else {return}
+            guard let photos = gmsHotel.photos else {
+                viewModel.loadLocalPhotos(photos: nil)
+                return
+            }
             
             viewModel.loadLocalPhotos(photos: photos)
             self.collectionView.reloadData()
@@ -203,9 +206,11 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         if viewModel.isUsingMockData {
             return viewModel.numberOfItens()
         } else {
-            return viewModel.isLoading ? viewModel.skeletonCount : viewModel.localPhotos.count
+            
+            return viewModel.isLoading ? viewModel.skeletonCount :
+            viewModel.localPhotos.isEmpty ? viewModel.numberOfItens() :
+            viewModel.localPhotos.count
         }
-       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -216,8 +221,8 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let hotelImage = viewModel.getHotelList()[indexPath.row]
-            if let image = UIImage(named: hotelImage) {
+            let restaurantImage = viewModel.getHotelList()[indexPath.row]
+            if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
             }
@@ -226,6 +231,7 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
+                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getHotelList()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }
