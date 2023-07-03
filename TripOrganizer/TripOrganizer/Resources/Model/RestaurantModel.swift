@@ -8,8 +8,25 @@
 import Foundation
 
 // MARK: - Restaurant
-struct RestaurantModel: Codable {
-    let name, address, openingHours, phoneNumber: String
-    let rating: String
+class RestaurantModel: Codable, ProtocolObject {
+    var name: String
+    
+    var ratings: String
+    
+    var phoneNumber: String
+    
+    var address: String
+    
+    var openingHours: String
+    
+    init(name: String, ratings: String, phoneNumber: String, address: String, openingHours: String) {
+        self.name = name
+        self.ratings = ratings
+        self.phoneNumber = phoneNumber
+        self.address = address
+        self.openingHours = openingHours
+    }
+//    let name, address, openingHours, phoneNumber: String
+//    let rating: String
    // let images: [String]
 }

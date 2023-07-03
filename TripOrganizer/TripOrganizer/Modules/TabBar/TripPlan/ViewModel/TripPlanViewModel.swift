@@ -13,21 +13,38 @@ class TripPlanViewModel {
     
   private static var restaurantList: [RestaurantModel] = []
     
+    private static var hotelList: [HotelModel] = []
+    
+    private static var objectList: [ProtocolObject] = []
+    
     public func addObjectRestaurant(object: RestaurantModel) {
-        TripPlanViewModel.restaurantList.append(object)
+        TripPlanViewModel.objectList.append(object)
         }
     
     public func getSizeRestaurant()-> Int{
-        return TripPlanViewModel.restaurantList.count
-    }
-   
-    public func getRestaurantList2()-> [RestaurantModel]{
-        return TripPlanViewModel.restaurantList
+        return TripPlanViewModel.objectList.count
     }
     
-    public func getRestaurantList(index: Int) -> RestaurantModel {
-        return TripPlanViewModel.restaurantList[index]
+    public func getRestaurantList(index: Int) -> ProtocolObject {
+        return TripPlanViewModel.objectList[index]
     }
+    
+    public func addObjectHotel(object: HotelModel) {
+        TripPlanViewModel.objectList.append(object)
+        }
+    
+//    public func getSizeHotel()-> Int{
+//        return TripPlanViewModel.hotelList.count
+//    }
+//   
+    
+//    public func getHotelList(index: Int) -> HotelModel {
+//        return TripPlanViewModel.hotelList[index]
+//    }
+//
+    public func addObjectAttraction(object: AttractionModel) {
+        TripPlanViewModel.objectList.append(object)
+        }
 //    public func getRestaurantList() -> [RestaurantModel]{
 //        return restaurantList
 //    }

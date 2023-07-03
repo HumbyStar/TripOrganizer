@@ -14,7 +14,8 @@ enum messageAlertHotel: String {
 }
 
 class HotelViewController: UIViewController {
-    
+    var homeViewModel: HomeViewModel? = HomeViewModel()
+    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     public var hotelViewModel: HotelViewModel = HotelViewModel()
     
     var alert: Alert?
@@ -45,6 +46,8 @@ class HotelViewController: UIViewController {
         configSearchBar()
         configButton()
         setupUI()
+        addButton.isEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(atualizarEstadoBotao), name: Notification.Name("updateList"), object: nil)
     }
     
     private func configHotelMapView() {
@@ -83,7 +86,17 @@ class HotelViewController: UIViewController {
     
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
+        
+        tripViewModel.addObjectHotel(object: HotelModel(name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours:  hotelOpeningHoursLabel.text ?? ""))
     }
+    
+    @objc func atualizarEstadoBotao() {
+        if homeViewModel?.getTripList() != 0 {
+                addButton.isEnabled = true
+            } else {
+                addButton.isEnabled = false
+            }
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -101,8 +114,8 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let images = hotelViewModel.getHotelImages(indexPath: indexPath)
-        cell.setupCell(image: images[indexPath.row])
+     //   let images = hotelViewModel.getHotelImages(indexPath: indexPath)
+       // cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }

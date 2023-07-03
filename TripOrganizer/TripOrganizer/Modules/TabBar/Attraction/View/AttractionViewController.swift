@@ -14,9 +14,9 @@ enum messageAttraction: String {
 }
 
 class AttractionViewController: UIViewController {
-    
+    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     public let attractionViewModel: AttractionViewModel = AttractionViewModel()
-    
+    var homeViewModel: HomeViewModel? = HomeViewModel()
     var alert: Alert?
     
     @IBOutlet weak var attractionRatingLabel: UILabel!
@@ -45,6 +45,8 @@ class AttractionViewController: UIViewController {
         configLabel()
         configCollectionView()
         roundedBorder()
+        addAttractionButton.isEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(atualizarEstadoBotao), name: Notification.Name("updateList"), object: nil)
     }
     
     private func roundedBorder() {
@@ -78,7 +80,16 @@ class AttractionViewController: UIViewController {
     
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
         alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
+        tripViewModel.addObjectAttraction(object: AttractionModel(name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: openingHoursLabel.text ?? ""))
     }
+    
+    @objc func atualizarEstadoBotao() {
+        if homeViewModel?.getTripList() != 0 {
+            addAttractionButton.isEnabled = true
+            } else {
+                addAttractionButton.isEnabled = false
+            }
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -96,8 +107,8 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell: AttractionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell else {
             return UICollectionViewCell()
         }
-        let images = attractionViewModel.getAttractionImages(indexPath: indexPath)
-        cell.setupCell(image: images[indexPath.row])
+      //  let images = attractionViewModel.getAttractionImages(indexPath: indexPath)
+       // cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }

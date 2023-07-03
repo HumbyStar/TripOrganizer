@@ -8,7 +8,7 @@
 import UIKit
 
 //protocol HomeViewModelProtocol: AnyObject {
-//   func didUpdateData()
+//    func didUpdateData(count: Int)
 //}
 //protocol HomeViewModelProtocol: AnyObject {
 //    func modifyProgressBar(tappedRestaurantView: UIView,restaurantImageView: UIImageView, progressBar: Float) -> Float
@@ -36,9 +36,17 @@ class HomeViewModel {
                                         "trip2",
                                         "trip3"]
     
- //  weak var delegate: HomeViewModelProtocol?
-    
-    private static var tripList: [AddTripModel] = []
+//   weak var delegate: HomeViewModelProtocol?
+//
+//    public func setDelegate(delegate: HomeViewModelProtocol){
+//        self.delegate = delegate
+//    }
+//
+    private static var tripList: [AddTripModel] = []{
+        didSet{
+            NotificationCenter.default.post(name: NSNotification.Name("updateList"), object: nil)
+        }
+    }
     
     var tripNumberOfRows: Int {
         HomeViewModel.tripList.endIndex

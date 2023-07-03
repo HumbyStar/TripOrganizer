@@ -28,10 +28,10 @@ class HotelViewModel {
         return 3
     }
     
-    public func getHotelImages(indexPath: IndexPath) -> [String] {
-        let hotel = hotelList[0]
-        return hotel.room
-    }
+//    public func getHotelImages(indexPath: IndexPath) -> [String] {
+//        let hotel = hotelList[0]
+//        return hotel.room
+//    }
     
     public func configLayoutCollectionView(collectionView: UICollectionView){
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {

@@ -27,7 +27,6 @@ class TripPlanViewController: UIViewController {
         tripNameLabel.text = placeNameReceived
        // collectionView.reloadData()
       //  print(tripViewModel.getRestaurantList())
-        print(tripViewModel.getRestaurantList2())
     }
     
     override func viewWillAppear(_ animated: Bool) {

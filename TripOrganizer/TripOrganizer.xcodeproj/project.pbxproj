@@ -92,6 +92,7 @@
 		50D3EB742A17E6560056A421 /* 103343-airplane-loader-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D3EB702A17E6560056A421 /* 103343-airplane-loader-animation.json */; };
 		50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB329EF214E0041ED71 /* Alert.swift */; };
 		50D5FBB729EF219B0041ED71 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB629EF219B0041ED71 /* ProfileViewModel.swift */; };
+		880A51C92A4CB07900D6A885 /* ProtocolObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880A51C82A4CB07900D6A885 /* ProtocolObject.swift */; };
 		8814475F29F036F000AC429A /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814475E29F036F000AC429A /* AttractionViewModel.swift */; };
 		8814476229F0371C00AC429A /* AttractionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476129F0371C00AC429A /* AttractionModel.swift */; };
 		8814476829F0CC9300AC429A /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476729F0CC9300AC429A /* FlightModel.swift */; };
@@ -172,6 +173,7 @@
 		50D3EB702A17E6560056A421 /* 103343-airplane-loader-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "103343-airplane-loader-animation.json"; sourceTree = "<group>"; };
 		50D5FBB329EF214E0041ED71 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		50D5FBB629EF219B0041ED71 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		880A51C82A4CB07900D6A885 /* ProtocolObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolObject.swift; sourceTree = "<group>"; };
 		8814475E29F036F000AC429A /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
 		8814476129F0371C00AC429A /* AttractionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionModel.swift; sourceTree = "<group>"; };
 		8814476729F0CC9300AC429A /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				509DCC0B29F6FC58002F04B0 /* AddTripModel.swift */,
 				8814476129F0371C00AC429A /* AttractionModel.swift */,
 				50A0E3712A2CED60002F82F3 /* PlacesData.swift */,
+				880A51C82A4CB07900D6A885 /* ProtocolObject.swift */,
 			);
 			name = Model;
 			path = Resources/Model;
@@ -1004,6 +1007,7 @@
 				886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */,
 				50A0E3702A2CED29002F82F3 /* PlaceService.swift in Sources */,
 				0C2037A829F0A328001BE709 /* RestaurantModel.swift in Sources */,
+				880A51C92A4CB07900D6A885 /* ProtocolObject.swift in Sources */,
 				C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */,
 				C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantViewController.swift in Sources */,

@@ -11,6 +11,9 @@ enum emptyText: String {
     case empty = "Não há viagens para exibir, crie uma nova viagem clicando no botão acima."
 }
 
+protocol HomeViewControllerProtocol: AnyObject {
+    func didUpdateData(count: Int)
+}
 class HomeViewController: UIViewController {
     
     @IBOutlet var appNameLabel: UILabel!
@@ -32,7 +35,11 @@ class HomeViewController: UIViewController {
     
     
     var viewModel: HomeViewModel = HomeViewModel()
-    
+    weak var delegate: HomeViewControllerProtocol?
+     
+     public func setDelegate(delegate: HomeViewControllerProtocol){
+         self.delegate = delegate
+     }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true

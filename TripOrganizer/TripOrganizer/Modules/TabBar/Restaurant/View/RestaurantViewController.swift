@@ -52,6 +52,7 @@ class RestaurantViewController: UIViewController {
         // setupUI()
         addButton.isEnabled = false
        // buttonEnable()
+        NotificationCenter.default.addObserver(self, selector: #selector(atualizarEstadoBotao), name: Notification.Name("updateList"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +92,7 @@ class RestaurantViewController: UIViewController {
         restaurantAddressLabel.text = Localized.addressTitle.localized + restaurant.address
         restaurantOpeningHoursLabel.text = Localized.timeTitle.localized + restaurant.openingHours
         restaurantPhoneNumberLabel.text = Localized.phoneTitle.localized + restaurant.phoneNumber
-        restaurantRatingLabel.text = Localized.assessmentsTitle + String(restaurant.rating)
+       // restaurantRatingLabel.text = Localized.assessmentsTitle + String(restaurant.rating)
         restaurantNameLabel.text = restaurant.name
         menuLabel.text = Localized.menuRestaurantTitle.localized
         restaurantRatingLabel.text = Localized.assessmentsTitle.localized
@@ -99,13 +100,20 @@ class RestaurantViewController: UIViewController {
     
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
+       
         
-        tripViewModel.addObjectRestaurant(object: RestaurantModel(name: restaurantNameLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", rating: restaurantRatingLabel.text ?? ""))//, images: restaurantViewModel.getRestaurantImages(indexPath: self.indexPath ?? IndexPath())))
+        tripViewModel.addObjectRestaurant(object: RestaurantModel(name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? ""))//, images: restaurantViewModel.getRestaurantImages(indexPath: self.indexPath ?? IndexPath())))
         
         
     }
     
-    
+    @objc func atualizarEstadoBotao() {
+        if homeViewModel?.getTripList() != 0 {
+                addButton.isEnabled = true
+            } else {
+                addButton.isEnabled = false
+            }
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
