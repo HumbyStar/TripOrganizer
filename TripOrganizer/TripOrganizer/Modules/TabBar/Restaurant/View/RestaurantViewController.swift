@@ -46,12 +46,11 @@ class RestaurantViewController: UIViewController {
         configMenuCollectionView()
         configRestaurantInfoView()
         configRestaurantMapView()
-       //   restaurantViewModel.fetchRestaurants()
+        restaurantViewModel.fetchRestaurants()
         configButton()
         configSearch()
         // setupUI()
         addButton.isEnabled = false
-       // buttonEnable()
         NotificationCenter.default.addObserver(self, selector: #selector(atualizarEstadoBotao), name: Notification.Name("updateList"), object: nil)
     }
     
@@ -67,10 +66,6 @@ class RestaurantViewController: UIViewController {
         restaurantViewModel.getCollectionViewLayout(collection: menuCollectionView)
     }
     
-//    func buttonEnable(){
-//        delegate?.updateButton(button: addButton)
-//
-//    }
     private func configSearch() {
         searchBar.placeholder = Localized.searchPlaceholderRestaurant.localized
     }
@@ -142,10 +137,4 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
 }
-
-
-    //    func modifyProgressBar(tappedRestaurantView: UIView, restaurantImageView: UIImageView, progressBar: Float) {
-//        restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
-//        //homeViewModel?.getProgressBar() += 0.25
-//    }
 
