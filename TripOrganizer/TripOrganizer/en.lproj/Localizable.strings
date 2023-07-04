@@ -17,6 +17,8 @@
 "error.invalid_data" = "Dados incorretos";
 "error.login_message" = "Tivemos um problema inesperado, tente novamente mais tarde";
 "registration.error_message" = "Erro ao cadastrar";
+"error.sending_email" = "Erro ao verificar seu email.";
+"not.registered_email" = "email não registrado!";
 
 // Success
 "misc.success_title" = "Sucesso";
@@ -24,6 +26,8 @@
 "misc.data_changed_successfully" = "Dados alterados com sucesso!";
 "misc.instruction_email_sent" = "Um email de instrução foi enviado para sua caixa de entrada";
 "misc.log_successfully" = "Login efetuado com sucesso";
+"email.reset_password" = "Email para resetar sua senha foi envaido, verifique sua caixa de entrada";
+"email_send" = "Enviado";
 
 // button titles
 "button.title_forget_password" = "Esqueci minha senha";

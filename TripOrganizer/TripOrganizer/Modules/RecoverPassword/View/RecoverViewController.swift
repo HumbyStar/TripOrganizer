@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RecoverViewController: UIViewController{
     
@@ -55,14 +56,32 @@ class RecoverViewController: UIViewController{
     }
     
     @IBAction func recoverPasswordButtonPressed(_ sender: UIButton) {
-        guard let emailValue = emailTextField.text else {return}
-        if viewModel.validateConfirmEmail(emailValue) {
-            alert?.createAlert(title: Localized.errorTitle.localized, message: Localized.invalidEmail.localized)
-        } else {
-            alert?.createAlert(title: Localized.successTitle.localized, message: Localized.instructionEmailSent.localized , completion: {
-                self.navigationController?.popViewController(animated: true)
-            })
+        guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !email.isEmpty else {
+            return
         }
+        
+        Auth.auth().fetchSignInMethods(forEmail: email) { [weak self] signInMethods, error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("Erro ao verificar os métodos de login:", error.localizedDescription)
+                self.alert?.createAlert(title: Localized.errorTitle.localized, message: Localized.errorSendingEmail.localized)
+            } else if let signInMethods = signInMethods, signInMethods.isEmpty {
+                self.alert?.createAlert(title: Localized.errorTitle.localized, message: Localized.emailNotRegistered.localized)
+            } else {
+                Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
+                    guard let self = self else { return }
+                    
+                    if let error = error {
+                        print("Erro ao enviar o link de redefinição de senha:", error.localizedDescription)
+                        self.alert?.createAlert(title: Localized.errorTitle.localized, message: Localized.errorSendingEmail.localized)
+                    } else {
+                        self.alert?.createAlert(title: Localized.sentEmail.localized, message: Localized.EmailToResetPassword.localized)
+                    }
+                }
+            }
+        }
+        
     }
 }
 
