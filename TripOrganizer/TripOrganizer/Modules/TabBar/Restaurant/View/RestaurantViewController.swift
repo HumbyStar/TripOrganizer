@@ -32,6 +32,8 @@ class RestaurantViewController: UIViewController {
     
     private var viewModel: RestaurantViewModel = RestaurantViewModel()
     var alert: Alert?
+    var homeViewModel: HomeViewModel? = HomeViewModel()
+        var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     
     lazy var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -86,7 +88,8 @@ class RestaurantViewController: UIViewController {
             self.viewModel.isLoading = false
             self.menuCollectionView.reloadData()
         }
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
+                updateButtonState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -150,7 +153,7 @@ class RestaurantViewController: UIViewController {
         switch local {
         case .restaurantModel(let restaurant):
             restaurantPhoneNumberLabel.text = restaurant[0].phoneNumber
-            restaurantRatingLabel.text = restaurant[0].rating
+            restaurantRatingLabel.text = restaurant[0].ratings
             restaurantNameLabel.text = restaurant[0].name
             restaurantOpeningHoursLabel.text = restaurant[0].openingHours
             restaurantAddressLabel.text = restaurant[0].address
@@ -198,8 +201,25 @@ class RestaurantViewController: UIViewController {
     }
         
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
+        guard let image = viewModel.localPhotos.first,
+              let imageData = image.pngData() else {
+            
+            return
+        }
         alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
+       
+   tripViewModel.addObjectRestaurant(object: RestaurantModel(name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "", images: imageData))
+
+                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
     }
+    
+    @objc func updateButtonState() {
+            if homeViewModel?.getTripList() != 0 {
+                    addButton.isEnabled = true
+                } else {
+                    addButton.isEnabled = false
+                }
+            }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -227,7 +247,7 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let restaurantImage = viewModel.getRestaurantImages()[indexPath.row]
+            let restaurantImage = "abobrinha"//viewModel.getRestaurantImages()[indexPath.row]
             if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
@@ -237,7 +257,7 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getRestaurantImages()[indexPath.row]) ?? UIImage()) :
+//                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getRestaurantImages()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }

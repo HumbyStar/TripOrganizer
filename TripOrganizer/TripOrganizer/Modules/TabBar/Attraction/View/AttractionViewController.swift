@@ -31,6 +31,8 @@ class AttractionViewController: UIViewController {
     
     private let viewModel: AttractionViewModel = AttractionViewModel()
     var alert: Alert?
+    var homeViewModel: HomeViewModel? = HomeViewModel()
+    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -86,6 +88,8 @@ class AttractionViewController: UIViewController {
             self.viewModel.isLoading = false
             self.collectionView.reloadData()
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
+                updateButtonState()
     }
     
     private func updateCollectionView() {
@@ -103,7 +107,7 @@ class AttractionViewController: UIViewController {
         switch local {
         case .attractionModel(let attraction):
             attractionPhoneNumberLabel.text = attraction[0].phoneNumber
-            assessmentLabel.text = attraction[0].rating
+            assessmentLabel.text = attraction[0].ratings
             attractionNameLabel.text = attraction[0].name
             attractionOpeningHourLabel.text = attraction[0].openingHours
             attractionAdressLabel.text = attraction[0].address
@@ -205,8 +209,25 @@ class AttractionViewController: UIViewController {
     }
     
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
+        guard let image = viewModel.localPhotos.first,
+              let imageData = image.pngData() else {
+            
+            return
+        }
         alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
+        
+        tripViewModel.addObjectAttraction(object: AttractionModel(name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "", images: imageData ))
+
+                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
     }
+    
+    @objc func updateButtonState() {
+            if homeViewModel?.getTripList() != 0 {
+                addAttractionButton.isEnabled = true
+                } else {
+                    addAttractionButton.isEnabled = false
+                }
+            }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -234,7 +255,7 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let restaurantImage = viewModel.getAttractionImageList()[indexPath.row]
+            let restaurantImage = "banana"//viewModel.getAttractionImageList()[indexPath.row]
             if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
@@ -244,7 +265,7 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getAttractionImageList()[indexPath.row]) ?? UIImage()) :
+             //   viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getAttractionImageList()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }

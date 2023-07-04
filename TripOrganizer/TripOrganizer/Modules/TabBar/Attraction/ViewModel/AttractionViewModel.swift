@@ -40,9 +40,9 @@ class AttractionViewModel {
         self.completion?(.attractionModel(self.attractionList))
     }
 
-    public func getAttractionImageList() -> [String] {
-        return attractionList[0].images
-    }
+//    public func getAttractionImageList() -> [String] {
+//        return attractionList[0].images
+//    }
     
     public func numberOfItens() -> Int {
         return attractionList[0].images.count

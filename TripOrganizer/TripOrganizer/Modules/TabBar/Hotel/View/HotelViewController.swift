@@ -26,6 +26,10 @@ class HotelViewController: UIViewController {
     var alert: Alert?
     var localPhotos: [UIImage] = []
     
+    var homeViewModel: HomeViewModel? = HomeViewModel()
+        var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    var index: IndexPath = IndexPath()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -80,7 +84,8 @@ class HotelViewController: UIViewController {
             self.viewModel.isLoading = false
             self.collectionView.reloadData()
         }
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
+        updateButtonState()
     }
     
     private func changePlaceAnimated(infoPlace: PlaceData) {
@@ -139,7 +144,7 @@ class HotelViewController: UIViewController {
         switch local {
         case .hotelModel(let hotel):
             hotelPhoneNumberLabel.text = hotel[0].phoneNumber
-            hotelRatingLabel.text = hotel[0].rating
+            hotelRatingLabel.text = hotel[0].ratings
             hotelNameLabel.text = hotel[0].name
             hotelOpeningHoursLabel.text = hotel[0].openingHours
             hotelAddressLabel.text = hotel[0].address
@@ -191,8 +196,26 @@ class HotelViewController: UIViewController {
     }
 
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
+        guard let image = viewModel.localPhotos.first,
+              let imageData = image.pngData() else {
+            
+            return
+        }
+        
         alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
+       
+        tripViewModel.addObjectHotel(object: HotelModel(name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours:  hotelOpeningHoursLabel.text ?? "", images: imageData ))
+
+                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
     }
+    
+    @objc func updateButtonState() {
+            if homeViewModel?.getTripList() != 0 {
+                    addButton.isEnabled = true
+                } else {
+                    addButton.isEnabled = false
+                }
+            }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -221,7 +244,7 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let restaurantImage = viewModel.getHotelList()[indexPath.row]
+             let restaurantImage = "abobrinha"//viewModel.getHotelList()[indexPath.row]
             if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
@@ -231,7 +254,7 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getHotelList()[indexPath.row]) ?? UIImage()) :
+              //  viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getHotelList()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }

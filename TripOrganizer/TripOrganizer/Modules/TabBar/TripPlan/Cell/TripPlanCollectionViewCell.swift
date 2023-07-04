@@ -37,9 +37,27 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
     }
     
     
-    public func setupCell(place: TripPlanModel) {
+    public func setupCell(place: ProtocolObject) {
         placeNameLabel.text = place.name
-        placeImageView.image = UIImage(named: place.images)
+        placeAddressLabel.text = place.address
+        placePhoneLabel.text = place.phoneNumber
+        openingHoursLabel.text = place.openingHours
+        //        placeNameLabel.text = place.name
+//        placeAddressLabel.text = place.address
+//        placePhoneLabel.text = place.phoneNumber
+//        openingHoursLabel.text = place.openingHours
+//        //  placeImageView.image = UIImage(named: place.images)
+//        placeNameLabel.text = placeHotel.name
+//        placeAddressLabel.text = placeHotel.address
+//        placePhoneLabel.text = placeHotel.phoneNumber
+//        openingHoursLabel.text = placeHotel.openingHours
+       
+            // Converta a representação de dados em uma instância de UIImage
+        let image = UIImage(data: place.images)
+            // Exiba a imagem em uma UIImageView
+            placeImageView.image = image
+        
+//  placeImageView.image = UIImage(named: place.images[0])
     }
     
     private func configCellLayout() {
@@ -54,7 +72,7 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         placeImageView.layer.cornerRadius = 20
         openingHoursLabel.clipsToBounds = true
         closingHoursLabel.clipsToBounds = true
-        openingHoursLabel.layer.cornerRadius = 5
+        openingHoursLabel.layer.cornerRadius = 3
         closingHoursLabel.layer.cornerRadius = 5
         openingHoursLabel.textColor = .white
         closingHoursLabel.textColor = .white

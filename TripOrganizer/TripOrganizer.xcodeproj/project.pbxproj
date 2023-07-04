@@ -98,6 +98,7 @@
 		8814476829F0CC9300AC429A /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476729F0CC9300AC429A /* FlightModel.swift */; };
 		8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476A29F0CEAD00AC429A /* FlightViewModel.swift */; };
 		8814476D29F0CEC900AC429A /* TicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476C29F0CEC900AC429A /* TicketsViewModel.swift */; };
+		88389A752A54787D002AF1E9 /* ProtocolObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88389A742A54787D002AF1E9 /* ProtocolObject.swift */; };
 		886E229D29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E229C29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift */; };
 		886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E22C229EEF29D00E70FF7 /* HotelModel.swift */; };
 		886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E22C529EEF33600E70FF7 /* HotelViewModel.swift */; };
@@ -183,6 +184,7 @@
 		8814476729F0CC9300AC429A /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		8814476A29F0CEAD00AC429A /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
 		8814476C29F0CEC900AC429A /* TicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewModel.swift; sourceTree = "<group>"; };
+		88389A742A54787D002AF1E9 /* ProtocolObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProtocolObject.swift; path = TripOrganizer/Resources/Model/ProtocolObject.swift; sourceTree = SOURCE_ROOT; };
 		886E229C29EDB21D00E70FF7 /* RecoverPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewModel.swift; sourceTree = "<group>"; };
 		886E22C229EEF29D00E70FF7 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		886E22C529EEF33600E70FF7 /* HotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewModel.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				8814476129F0371C00AC429A /* AttractionModel.swift */,
 				50A0E3712A2CED60002F82F3 /* PlacesData.swift */,
 				C4096D1B2A424B9900C7906A /* TicketsModel.swift */,
+				88389A742A54787D002AF1E9 /* ProtocolObject.swift */,
 			);
 			name = Model;
 			path = Resources/Model;
@@ -1040,6 +1043,7 @@
 				886E22C329EEF29D00E70FF7 /* HotelModel.swift in Sources */,
 				50A0E3702A2CED29002F82F3 /* PlaceService.swift in Sources */,
 				0C2037A829F0A328001BE709 /* RestaurantModel.swift in Sources */,
+				88389A752A54787D002AF1E9 /* ProtocolObject.swift in Sources */,
 				C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */,
 				C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantViewController.swift in Sources */,

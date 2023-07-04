@@ -48,14 +48,14 @@ class HotelViewModel {
         self.completion?(.hotelModel(self.hotelList))
     }
     
-    public func getHotelList() -> [String]{
-        return hotelList[0].room
-    }
+//    public func getHotelList() -> [String]{
+//        return hotelList[0].images
+//    }
     
     public func numberOfItens() -> Int {
-        return hotelList[0].room.count
+        return hotelList[0].images.count
     }
-    
+
     public func configLayoutCollectionView(collectionView: UICollectionView){
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
