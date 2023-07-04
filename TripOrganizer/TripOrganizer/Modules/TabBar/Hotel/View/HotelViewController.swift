@@ -88,7 +88,7 @@ class HotelViewController: UIViewController {
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
         alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
         
-        tripViewModel.addObjectHotel(object: HotelModel(name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours:  hotelOpeningHoursLabel.text ?? ""))
+        tripViewModel.addObjectHotel(object: HotelModel(name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours:  hotelOpeningHoursLabel.text ?? "", images: hotelViewModel.getHotelImages(indexPath: IndexPath())))
       
         NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
     }
@@ -117,8 +117,8 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HotelCollectionViewCell.identifier, for: indexPath) as? HotelCollectionViewCell else {
             return UICollectionViewCell()
         }
-     //   let images = hotelViewModel.getHotelImages(indexPath: indexPath)
-       // cell.setupCell(image: images[indexPath.row])
+        let images = hotelViewModel.getHotelImages(indexPath: indexPath)
+        cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }

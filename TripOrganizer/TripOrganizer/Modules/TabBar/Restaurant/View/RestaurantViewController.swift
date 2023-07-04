@@ -97,7 +97,7 @@ class RestaurantViewController: UIViewController {
         alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
        
         
-        tripViewModel.addObjectRestaurant(object: RestaurantModel(name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? ""))//, images: restaurantViewModel.getRestaurantImages(indexPath: self.indexPath ?? IndexPath())))
+        tripViewModel.addObjectRestaurant(object: RestaurantModel(name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "", images: restaurantViewModel.getRestaurantImages(indexPath: self.indexPath ?? IndexPath())))
         
         NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
     }
@@ -125,9 +125,9 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as? MenuCollectionViewCell else {
             return UICollectionViewCell()
         }
-       // let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
+      let images = restaurantViewModel.getRestaurantImages(indexPath: indexPath)
         self.indexPath = indexPath
-            // cell.setupCell(image: images[indexPath.row])
+             cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }

@@ -9,6 +9,8 @@ import Foundation
 
 // MARK: - Restaurant
 class RestaurantModel: Codable, ProtocolObject {
+    var images: [String]
+    
     var name: String
     
     var ratings: String
@@ -19,12 +21,13 @@ class RestaurantModel: Codable, ProtocolObject {
     
     var openingHours: String
     
-    init(name: String, ratings: String, phoneNumber: String, address: String, openingHours: String) {
+    init(name: String, ratings: String, phoneNumber: String, address: String, openingHours: String, images: [String]) {
         self.name = name
         self.ratings = ratings
         self.phoneNumber = phoneNumber
         self.address = address
         self.openingHours = openingHours
+        self.images = images
     }
 //    let name, address, openingHours, phoneNumber: String
 //    let rating: String

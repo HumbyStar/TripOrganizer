@@ -81,7 +81,7 @@ class AttractionViewController: UIViewController {
     
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
         alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
-        tripViewModel.addObjectAttraction(object: AttractionModel(name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: openingHoursLabel.text ?? ""))
+        tripViewModel.addObjectAttraction(object: AttractionModel(name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: openingHoursLabel.text ?? "", images: attractionViewModel.getAttractionImages(indexPath: IndexPath())))
         
         NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
     }
@@ -110,8 +110,8 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let cell: AttractionCell = collectionView.dequeueReusableCell(withReuseIdentifier: AttractionCell.identifier, for: indexPath) as? AttractionCell else {
             return UICollectionViewCell()
         }
-      //  let images = attractionViewModel.getAttractionImages(indexPath: indexPath)
-       // cell.setupCell(image: images[indexPath.row])
+        let images = attractionViewModel.getAttractionImages(indexPath: indexPath)
+        cell.setupCell(image: images[indexPath.row])
         cell.layer.cornerRadius = 10
         return cell
     }

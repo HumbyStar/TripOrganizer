@@ -13,4 +13,5 @@ protocol ProtocolObject: AnyObject {
     var phoneNumber: String { get }
     var address: String { get }
     var openingHours: String { get }
+    var images: [String]  { get }
 }

@@ -29,10 +29,10 @@ class RestaurantViewModel {
         return 5
     }
     
-//    public func getRestaurantImages(indexPath: IndexPath) -> [String] {
-//        let restaurant = restaurantList[0]
-//        return restaurant.images
-//    }
+    public func getRestaurantImages(indexPath: IndexPath) -> [String] {
+        let restaurant = restaurantList[0]
+        return restaurant.images
+    }
     
     public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
             return CGSize(width: 140, height: height - 20)

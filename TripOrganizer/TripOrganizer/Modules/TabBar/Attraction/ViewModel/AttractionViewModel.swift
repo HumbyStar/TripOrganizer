@@ -28,11 +28,11 @@ class AttractionViewModel {
         return 5
     }
     
-//    public func getAttractionImages(indexPath: IndexPath) -> [String] {
-//        let attraction = attractionList[0]
-//       // return attraction.images
-//    }
-//    
+    public func getAttractionImages(indexPath: IndexPath) -> [String] {
+        let attraction = attractionList[0]
+        return attraction.images
+    }
+    
     public func configLayoutCollectionView(collectionView: UICollectionView){
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
