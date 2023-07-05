@@ -9,9 +9,9 @@ import UIKit
 
 class TripPlanViewModel {
     
-    private static var objectList: [ProtocolObject] = []
+    private static var objectList: [ObjectPlaces] = []
     
-    public func addObjectRestaurant(object: RestaurantModel) {
+    public func addObjectRestaurant(object: ObjectPlaces) {
         TripPlanViewModel.objectList.append(object)
         }
     
@@ -19,15 +19,15 @@ class TripPlanViewModel {
         return TripPlanViewModel.objectList.count
     }
     
-    public func getObjectList(index: Int) -> ProtocolObject {
+    public func getObjectList(index: Int) -> ObjectPlaces {
         return TripPlanViewModel.objectList[index]
     }
     
-    public func addObjectHotel(object: HotelModel) {
+    public func addObjectHotel(object: ObjectPlaces) {
         TripPlanViewModel.objectList.append(object)
         }
     
-    public func addObjectAttraction(object: AttractionModel) {
+    public func addObjectAttraction(object: ObjectPlaces) {
         TripPlanViewModel.objectList.append(object)
         }
     

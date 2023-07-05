@@ -216,7 +216,7 @@ class AttractionViewController: UIViewController {
         }
         alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
         
-        tripViewModel.addObjectAttraction(object: AttractionModel(name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "", images: imageData ))
+        tripViewModel.addObjectAttraction(object: ObjectPlaces(images: imageData, name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "" ))
 
                 NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
     }

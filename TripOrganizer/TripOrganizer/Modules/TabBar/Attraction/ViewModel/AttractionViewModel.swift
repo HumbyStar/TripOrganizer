@@ -10,7 +10,7 @@ import MapKit
 import GooglePlaces
 
 class AttractionViewModel {
-    private var attractionList: [AttractionModel] = []
+    private var attractionList: [ObjectPlaces] = []
     private var placeService: PlaceService = PlaceService()
     
     public var isLoading = false

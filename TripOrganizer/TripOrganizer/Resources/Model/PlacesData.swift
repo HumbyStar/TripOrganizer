@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: - PlacesData
 struct PlacesData: Codable {
-    let restaurants: [RestaurantModel]
-    let hotels: [HotelModel]
-    let attractions: [AttractionModel]
+    let restaurants: [ObjectPlaces]
+    let hotels: [ObjectPlaces]
+    let attractions: [ObjectPlaces]
 }

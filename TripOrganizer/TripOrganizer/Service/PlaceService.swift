@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class PlaceService {
-    
+
     func getPlaceDataJson(completion: @escaping (PlacesData?, Error?) -> Void) {
         if let url = Bundle.main.url(forResource: "PlacesData", withExtension: "json") {
             do {

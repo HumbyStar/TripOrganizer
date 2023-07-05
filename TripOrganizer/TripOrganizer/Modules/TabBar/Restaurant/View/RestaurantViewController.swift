@@ -208,7 +208,7 @@ class RestaurantViewController: UIViewController {
         }
         alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
        
-   tripViewModel.addObjectRestaurant(object: RestaurantModel(name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "", images: imageData))
+        tripViewModel.addObjectRestaurant(object: ObjectPlaces(images: imageData, name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? ""))
 
                 NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
     }

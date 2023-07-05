@@ -10,7 +10,7 @@ import MapKit
 import GooglePlaces
 
 class RestaurantViewModel {
-    private var restaurantList: [RestaurantModel] = []
+    private var restaurantList: [ObjectPlaces] = []
     private var placeService: PlaceService = PlaceService()
 
     public var isLoading = false

@@ -204,7 +204,7 @@ class HotelViewController: UIViewController {
         
         alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
        
-        tripViewModel.addObjectHotel(object: HotelModel(name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours:  hotelOpeningHoursLabel.text ?? "", images: imageData ))
+        tripViewModel.addObjectHotel(object: ObjectPlaces(images: imageData, name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours:  hotelOpeningHoursLabel.text ?? "" ))
 
                 NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
     }

@@ -12,13 +12,13 @@ import GooglePlaces
 
 enum PlaceData {
     case gmsPlace(GMSPlace)
-    case hotelModel([HotelModel])
-    case restaurantModel([RestaurantModel])
-    case attractionModel([AttractionModel])
+    case hotelModel([ObjectPlaces])
+    case restaurantModel([ObjectPlaces])
+    case attractionModel([ObjectPlaces])
 }
 
 class HotelViewModel {
-    private var hotelList: [HotelModel] = []
+    private var hotelList: [ObjectPlaces] = []
     private var placeService: PlaceService = PlaceService()
     
     public var isLoading = false
