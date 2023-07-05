@@ -92,6 +92,8 @@
 		50D3EB742A17E6560056A421 /* 103343-airplane-loader-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D3EB702A17E6560056A421 /* 103343-airplane-loader-animation.json */; };
 		50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB329EF214E0041ED71 /* Alert.swift */; };
 		50D5FBB729EF219B0041ED71 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5FBB629EF219B0041ED71 /* ProfileViewModel.swift */; };
+		50EBF6F42A55A18100CB1B57 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBF6F32A55A18100CB1B57 /* FirestoreManager.swift */; };
+		50EBF6F62A55A20500CB1B57 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBF6F52A55A20500CB1B57 /* User.swift */; };
 		8814475F29F036F000AC429A /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814475E29F036F000AC429A /* AttractionViewModel.swift */; };
 		8814476829F0CC9300AC429A /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476729F0CC9300AC429A /* FlightModel.swift */; };
 		8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476A29F0CEAD00AC429A /* FlightViewModel.swift */; };
@@ -175,6 +177,8 @@
 		50D3EB702A17E6560056A421 /* 103343-airplane-loader-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "103343-airplane-loader-animation.json"; sourceTree = "<group>"; };
 		50D5FBB329EF214E0041ED71 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		50D5FBB629EF219B0041ED71 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		50EBF6F32A55A18100CB1B57 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		50EBF6F52A55A20500CB1B57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8814475E29F036F000AC429A /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
 		8814476729F0CC9300AC429A /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		8814476A29F0CEAD00AC429A /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 				509DCC0B29F6FC58002F04B0 /* AddTripModel.swift */,
 				C4096D1B2A424B9900C7906A /* TicketsModel.swift */,
 				88389A782A5505D8002AF1E9 /* PlacesData.swift */,
+				50EBF6F52A55A20500CB1B57 /* User.swift */,
 			);
 			name = Model;
 			path = Resources/Model;
@@ -543,6 +548,7 @@
 			children = (
 				50A0E36F2A2CED29002F82F3 /* PlaceService.swift */,
 				C4096D172A423B5400C7906A /* FlightService.swift */,
+				50EBF6F32A55A18100CB1B57 /* FirestoreManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1020,11 +1026,13 @@
 				0C3AD1EE29C3546C00E7FE73 /* ProfileViewController.swift in Sources */,
 				C4619CDE29F02ACC00530196 /* HomeViewModel.swift in Sources */,
 				0C111C2929BACD9000A0DCF4 /* HotelViewController.swift in Sources */,
+				50EBF6F42A55A18100CB1B57 /* FirestoreManager.swift in Sources */,
 				50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */,
 				C4096D1C2A424B9900C7906A /* TicketsModel.swift in Sources */,
 				8814476829F0CC9300AC429A /* FlightModel.swift in Sources */,
 				8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
+				50EBF6F62A55A20500CB1B57 /* User.swift in Sources */,
 				8814476D29F0CEC900AC429A /* TicketsViewModel.swift in Sources */,
 				0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */,
 				5084C69329F9A59600858135 /* LaunchScreenViewController.swift in Sources */,

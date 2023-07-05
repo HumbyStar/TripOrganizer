@@ -15,6 +15,7 @@ class TripPlanViewController: UIViewController {
     @IBOutlet var backButton: UIButton!
     
     var placeNameReceived: String?
+    private var fireStoreManager = FirestoreManager.shared
     var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     
     override func viewDidLoad() {
@@ -23,11 +24,12 @@ class TripPlanViewController: UIViewController {
         configCollectionView()
         configCollectionViewProtocol()
         tripNameLabel.text = placeNameReceived
-       // collectionView.reloadData()
+        tripViewModel.delegate(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+        tripViewModel.fetchPlaces()
     }
     
     private func configCollectionViewProtocol() {
@@ -61,5 +63,15 @@ extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return tripViewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, view: view)
+    }
+}
+
+extension TripPlanViewController: TripPlanViewModelProtocol {
+    func sucess() {
+        self.collectionView.reloadData()
+    }
+    
+    func error() {
+        print("erro")
     }
 }

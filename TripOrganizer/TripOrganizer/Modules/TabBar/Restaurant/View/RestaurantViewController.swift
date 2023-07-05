@@ -33,7 +33,8 @@ class RestaurantViewController: UIViewController {
     private var viewModel: RestaurantViewModel = RestaurantViewModel()
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
-        var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    private var fireStoreManager = FirestoreManager.shared
     
     lazy var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -71,7 +72,7 @@ class RestaurantViewController: UIViewController {
             self?.restaurantMapView.addAnnotations(annotations)
             self?.restaurantMapView.showAnnotations(annotations, animated: true)
         }
-    
+        
         viewModel.completion = { [weak self] places in
             guard let self = self else {return}
             
@@ -89,7 +90,7 @@ class RestaurantViewController: UIViewController {
             self.menuCollectionView.reloadData()
         }
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
-                updateButtonState()
+        updateButtonState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +104,7 @@ class RestaurantViewController: UIViewController {
         restaurantInfoView.addSubview(menuCollectionView)
         
         menuCollectionView.topAnchor.constraint(equalTo: menuLabel.bottomAnchor, constant: 10).isActive = true
-         menuCollectionView.leadingAnchor.constraint(equalTo: restaurantInfoView.leadingAnchor).isActive = true
+        menuCollectionView.leadingAnchor.constraint(equalTo: restaurantInfoView.leadingAnchor).isActive = true
         menuCollectionView.trailingAnchor.constraint(equalTo: restaurantInfoView.trailingAnchor).isActive = true
         menuCollectionView.bottomAnchor.constraint(equalTo: restaurantInfoView.bottomAnchor).isActive = true
     }
@@ -181,7 +182,7 @@ class RestaurantViewController: UIViewController {
         default:
             break
         }
-
+        
     }
     
     private func configSearch() {
@@ -199,32 +200,41 @@ class RestaurantViewController: UIViewController {
     private func configRestaurantMapView(){
         restaurantMapView.layer.cornerRadius = 12
     }
-        
+    
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
         guard let image = viewModel.localPhotos.first,
-              let imageData = image.pngData() else {
+              let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
             
             return
         }
+        
         alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
-       
-        tripViewModel.addObjectRestaurant(object: ObjectPlaces(images: imageData, name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? ""))
-
-                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
-    }
-    
-    @objc func updateButtonState() {
-            if homeViewModel?.getTripList() != 0 {
-                    addButton.isEnabled = true
-                } else {
-                    addButton.isEnabled = false
-                }
+        
+        fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "")) { result in
+            
+            switch result {
+            case .success:
+                print("Lugar adicionado com sucesso!")
+            case .failure(let error):
+                print("Erro ao adicionar lugar: \(error.localizedDescription)")
             }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
+        
+        NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
     }
-    
+}
+
+@objc func updateButtonState() {
+    if homeViewModel?.getTripList() != 0 {
+        addButton.isEnabled = true
+    } else {
+        addButton.isEnabled = false
+    }
+}
+
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    view.endEditing(true)
+}
+
 }
 
 extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -257,11 +267,11 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-//                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getRestaurantImages()[indexPath.row]) ?? UIImage()) :
+                //                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getRestaurantImages()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }
-
+        
         return cell
     }
     
@@ -321,7 +331,7 @@ extension RestaurantViewController: MKMapViewDelegate {
             let filter = GMSAutocompleteFilter()
             filter.type = .establishment
             let stringFinal = "\(Localized.titleRestaurantView),\(placeName),\(regionTyped ?? "")"
-
+            
             viewModel.isLoading = true
             viewModel.searchEstabilishment(value: stringFinal, filter: filter)
         }

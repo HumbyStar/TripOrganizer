@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 // MARK: - PlacesData
 struct PlacesData: Codable {
     let restaurants: [ObjectPlaces]
