@@ -54,6 +54,10 @@ class Localized {
     static let successTitle = "misc.success_title".localized
     static let tripNameEmpty = "error.trip_name_empty".localized
     static let invalidContact = "error_contact_unavailable".localized
+    static let EmailToResetPassword = "email.reset_password".localized
+    static let sentEmail = "email_send".localized
+    static let emailNotRegistered = "not.registered_email".localized
+    static let errorSendingEmail = "error.sending_email".localized
     
     //MARK: Button titles
     static let addFlight = "button.add_flight".localized

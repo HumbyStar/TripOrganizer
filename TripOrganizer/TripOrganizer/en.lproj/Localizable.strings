@@ -18,6 +18,8 @@
 "error.login_message" = "Tivemos um problema inesperado, tente novamente mais tarde";
 "registration.error_message" = "Erro ao cadastrar";
 "error_contact_unavailable" = "Contato: Indisponível";
+"error.sending_email" = "Erro ao verificar seu email.";
+"not.registered_email" = "email não registrado!";
 
 // Success
 "misc.success_title" = "Sucesso";
@@ -25,6 +27,8 @@
 "misc.data_changed_successfully" = "Dados alterados com sucesso!";
 "misc.instruction_email_sent" = "Um email de instrução foi enviado para sua caixa de entrada";
 "misc.log_successfully" = "Login efetuado com sucesso";
+"email_send" = "Enviado";
+"email.reset_password" = "Email para resetar sua senha foi enviado! Verifique sua caixa de entrada.";
 
 // button titles
 "button.title_forget_password" = "Esqueci minha senha";
@@ -94,8 +98,3 @@
 "estabilish_work_hour_open" = "Funcionamento - Estabelecimento Aberto";
 "estabilish_work_hour_unavailable" = "Funcionamento - Dado indisponível";
 "estabilish_work_hour_closed" = "Funcionamento - Estabelecimento Fechado";
-
-
-
-
-
