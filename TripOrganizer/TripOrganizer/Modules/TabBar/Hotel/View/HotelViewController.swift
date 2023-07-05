@@ -29,6 +29,7 @@ class HotelViewController: UIViewController {
     var homeViewModel: HomeViewModel? = HomeViewModel()
         var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     var index: IndexPath = IndexPath()
+    private var buttonPressedCount = 0
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -84,6 +85,7 @@ class HotelViewController: UIViewController {
             self.viewModel.isLoading = false
             self.collectionView.reloadData()
         }
+        addButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
         updateButtonState()
     }
@@ -205,8 +207,15 @@ class HotelViewController: UIViewController {
         alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
        
         tripViewModel.addObjectHotel(object: ObjectPlaces(images: imageData, name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours:  hotelOpeningHoursLabel.text ?? "" ))
-
-                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
+buttonPressed()
+                
+    }
+    
+    @objc func buttonPressed() {
+        buttonPressedCount += 1
+        if buttonPressedCount == 1 {
+            NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
+        }
     }
     
     @objc func updateButtonState() {

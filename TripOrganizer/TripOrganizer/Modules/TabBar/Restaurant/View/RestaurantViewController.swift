@@ -33,7 +33,8 @@ class RestaurantViewController: UIViewController {
     private var viewModel: RestaurantViewModel = RestaurantViewModel()
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
-        var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+   private var buttonPressedCount = 0
     
     lazy var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -88,6 +89,7 @@ class RestaurantViewController: UIViewController {
             self.viewModel.isLoading = false
             self.menuCollectionView.reloadData()
         }
+        addButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
                 updateButtonState()
     }
@@ -210,9 +212,16 @@ class RestaurantViewController: UIViewController {
        
         tripViewModel.addObjectRestaurant(object: ObjectPlaces(images: imageData, name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? ""))
 
-                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
+             buttonPressed()
     }
     
+    @objc func buttonPressed() {
+        buttonPressedCount += 1
+        if buttonPressedCount == 1 {
+            NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
+        }
+    }
+        
     @objc func updateButtonState() {
             if homeViewModel?.getTripList() != 0 {
                     addButton.isEnabled = true

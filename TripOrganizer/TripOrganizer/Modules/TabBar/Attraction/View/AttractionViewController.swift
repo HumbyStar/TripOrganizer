@@ -33,6 +33,7 @@ class AttractionViewController: UIViewController {
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
     var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    private var buttonPressedCount = 0
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -88,6 +89,7 @@ class AttractionViewController: UIViewController {
             self.viewModel.isLoading = false
             self.collectionView.reloadData()
         }
+        addAttractionButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
                 updateButtonState()
     }
@@ -218,7 +220,13 @@ class AttractionViewController: UIViewController {
         
         tripViewModel.addObjectAttraction(object: ObjectPlaces(images: imageData, name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "" ))
 
-                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
+    }
+    
+    @objc func buttonPressed() {
+        buttonPressedCount += 1
+        if buttonPressedCount == 1 {
+            NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
+        }
     }
     
     @objc func updateButtonState() {

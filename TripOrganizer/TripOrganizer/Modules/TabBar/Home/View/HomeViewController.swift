@@ -36,7 +36,6 @@ class HomeViewController: UIViewController {
     private var progressBar: Float = 0
     var viewModel: HomeViewModel = HomeViewModel()
     weak var delegate: HomeViewControllerProtocol?
-     
      public func setDelegate(delegate: HomeViewControllerProtocol){
          self.delegate = delegate
      }
@@ -137,9 +136,9 @@ class HomeViewController: UIViewController {
     }
     
   @objc  func updateProgressBarAndImageViewRestaurant() {
-        progressBar += 0.25
-        tripProgressView.setProgress(progressBar, animated: true)
-        restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
+          progressBar += 0.25
+          tripProgressView.setProgress(progressBar, animated: true)
+          restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
     }
     
     @objc  func updateProgressBarAndImageViewHotel() {
