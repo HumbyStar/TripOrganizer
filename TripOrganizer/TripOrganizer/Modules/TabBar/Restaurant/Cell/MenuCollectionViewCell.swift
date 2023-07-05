@@ -47,5 +47,4 @@ class MenuCollectionViewCell: UICollectionViewCell {
         menuItemImageView.image = image
         menuItemImageView.layer.cornerRadius = 10
     }
-    
 }

@@ -15,4 +15,6 @@ struct ObjectPlaces: Codable {
     var phoneNumber: String
     var address: String
     var openingHours: String
-    }
+}
+
+

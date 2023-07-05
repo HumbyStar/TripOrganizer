@@ -33,6 +33,7 @@ class AttractionViewController: UIViewController {
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
     var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    private var fireStoreManager = FirestoreManager.shared
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -71,7 +72,7 @@ class AttractionViewController: UIViewController {
             self?.attractionMapView.addAnnotations(annotations)
             self?.attractionMapView.showAnnotations(annotations, animated: true)
         }
-    
+        
         viewModel.completion = { [weak self] places in
             guard let self = self else {return}
             
@@ -89,7 +90,7 @@ class AttractionViewController: UIViewController {
             self.collectionView.reloadData()
         }
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
-                updateButtonState()
+        updateButtonState()
     }
     
     private func updateCollectionView() {
@@ -135,7 +136,7 @@ class AttractionViewController: UIViewController {
         default:
             break
         }
-
+        
     }
     
     private func changePlaceAnimated(infoPlace: PlaceData) {
@@ -210,24 +211,33 @@ class AttractionViewController: UIViewController {
     
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
         guard let image = viewModel.localPhotos.first,
-              let imageData = image.pngData() else {
+              let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
             
             return
         }
+        
         alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
         
-        tripViewModel.addObjectAttraction(object: ObjectPlaces(images: imageData, name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "" ))
-
-                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
+        fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "")) { result in
+            
+            switch result {
+            case .success:
+                print("Lugar adicionado com sucesso!")
+            case .failure(let error):
+                print("Erro ao adicionar lugar: \(error.localizedDescription)")
+            }
+            
+            NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
+        }
     }
     
     @objc func updateButtonState() {
-            if homeViewModel?.getTripList() != 0 {
-                addAttractionButton.isEnabled = true
-                } else {
-                    addAttractionButton.isEnabled = false
-                }
-            }
+        if homeViewModel?.getTripList() != 0 {
+            addAttractionButton.isEnabled = true
+        } else {
+            addAttractionButton.isEnabled = false
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -265,7 +275,7 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-             //   viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getAttractionImageList()[indexPath.row]) ?? UIImage()) :
+                //   viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getAttractionImageList()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }
@@ -275,7 +285,6 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return viewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height)
-
     }
 }
 
@@ -303,13 +312,13 @@ extension AttractionViewController: UISearchBarDelegate {
 extension AttractionViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else {
-           return nil
+            return nil
         }
-
+        
         let identifier = "Annotation"
-
+        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-
+        
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
@@ -317,11 +326,10 @@ extension AttractionViewController: MKMapViewDelegate {
         } else {
             annotationView?.annotation = annotation
         }
-
-
+        
         return annotationView
     }
-
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? MKPointAnnotation {
             let placeName = annotation.title ?? ""
@@ -330,7 +338,7 @@ extension AttractionViewController: MKMapViewDelegate {
             let filter = GMSAutocompleteFilter()
             filter.type = .establishment
             let stringFinal = "\(Localized.titleAttractionView),\(placeName),\(regionTyped ?? "")"
-
+            
             viewModel.isLoading = true
             viewModel.searchEstabilishment(value: stringFinal, filter: filter)
         }

@@ -62,5 +62,4 @@ class RegisterViewModel {
         }
         return true
     }
-    
 }

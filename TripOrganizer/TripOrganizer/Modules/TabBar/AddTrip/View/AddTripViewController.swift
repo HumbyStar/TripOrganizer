@@ -11,8 +11,6 @@ protocol AddTripviewControllerDelegate: AnyObject {
     func sendTrip(trip: AddTripModel)
 }
 
-
-
 class AddTripViewController: UIViewController {
     
     let viewModel: AddTripViewModel = AddTripViewModel()

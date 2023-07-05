@@ -13,7 +13,6 @@ class TicketsViewModel {
     private var service: FlightService = FlightService()
     private var listObjectSecondFlightScreen: [FlightModel] = []
     
-    
     public func getListObjectSecondFlightScreenCellForItemAt(index: Int) -> FlightModel{
         return listObjectSecondFlightScreen[index]
     }
