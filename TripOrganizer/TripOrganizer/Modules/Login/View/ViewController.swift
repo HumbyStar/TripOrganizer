@@ -7,8 +7,11 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class ViewController: UIViewController {
+    
+    let signInConfig = GIDConfiguration.init(clientID: "60868162820-0nrf4k2ngjdvecbcol6s2hfg7tbegaiv.apps.googleusercontent.com")
     
     @IBOutlet var appLogoImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
@@ -46,6 +49,18 @@ class ViewController: UIViewController {
         
         emailTextField.text = "betogrt@gmail.com"
         passwordTextField.text = "123456"
+    }
+    
+    
+    @IBAction func tappedLoginWithGoogleButton(_ sender: UIButton) {
+        
+        GIDSignIn.sharedInstance.signIn(with: signInConfig, presentingViewController: self) { user, error in
+            guard error == nil else { return }
+            guard let user = user else { return }
+            
+            let emailAddress = user.profile?.email
+        }
+        
     }
     
     @IBAction func tapToRecoverPassword(_ sender: UIButton) {

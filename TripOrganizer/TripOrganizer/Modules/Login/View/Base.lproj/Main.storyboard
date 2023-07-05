@@ -65,6 +65,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappedLoginWithGoogleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ArF-si-K1h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-bi-QRd">
                                 <rect key="frame" x="30" y="571" width="315" height="40"/>
