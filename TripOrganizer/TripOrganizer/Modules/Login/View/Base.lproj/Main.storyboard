@@ -197,7 +197,7 @@
                         <outlet property="emailTextField" destination="aaT-XT-xTR" id="2hC-2j-J1b"/>
                         <outlet property="eyeButton" destination="BAE-Uo-Q6A" id="Nst-nF-Ozp"/>
                         <outlet property="loginButton" destination="bjz-zO-erX" id="jOf-nZ-Nr4"/>
-                        <outlet property="loginWithAppleButton" destination="GlW-bi-QRd" id="YCW-c0-pCA"/>
+                        <outlet property="loginWithFacebookButton" destination="GlW-bi-QRd" id="YCW-c0-pCA"/>
                         <outlet property="loginWithGoogleButton" destination="a1d-bh-LYk" id="aPt-II-pbC"/>
                         <outlet property="passwordTextField" destination="7ah-EP-5Vn" id="k3e-2t-oUN"/>
                         <outlet property="passwordView" destination="2rH-50-HKL" id="hO1-ds-ypI"/>

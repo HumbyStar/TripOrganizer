@@ -68,7 +68,7 @@ class Localized {
     static let createAccountButtonTitle = "button.title_create_account".localized
     static let exitButtonTitle = "button.title_exit".localized
     static let forgetPasswordButtonTitle = "button.title_forget_password".localized
-    static let loginAppleButtonTitle = "button.title_login_apple".localized
+    static let loginFacebookButtonTitle = "button.title_login_facebook".localized
     static let loginGoogleButtonTitle = "button.title_login_google".localized
     static let loginSuccessButtonTitle = "button.title_login_success".localized
     static let registerButtonTitle = "button.title_register".localized

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginWithGoogleButton: UIButton!
-    @IBOutlet weak var loginWithAppleButton: UIButton!
+    @IBOutlet weak var loginWithFacebookButton: UIButton!
     @IBOutlet var recoverButton: UIButton!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet weak var passwordView: UIView!
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configTextField()
         configButtons(button: loginWithGoogleButton)
-        configButtons(button: loginWithAppleButton)
+        configButtons(button: loginWithFacebookButton)
         configButtons(button: loginButton)
         configPasswordView()
         emailTextField.text = "gabriel@gmail.com"
@@ -107,13 +107,13 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 10
         loginButton.setTitle(Localized.loginSuccessButtonTitle.localized, for: .normal)
         loginWithGoogleButton.setTitle(Localized.loginGoogleButtonTitle.localized, for: .normal)
-        loginWithAppleButton.setTitle(Localized.loginAppleButtonTitle.localized, for: .normal)
+        loginWithFacebookButton.setTitle(Localized.loginFacebookButtonTitle.localized, for: .normal)
         recoverButton.setTitle(Localized.forgetPasswordButtonTitle, for: .normal)
         recoverButton.setTitleColor(.logoTextOrange, for: .normal)
         registerButton.setTitle(Localized.createAccountButtonTitle.localized, for: .normal)
         registerButton.setTitleColor(.logoTextOrange, for: .normal)
         configShadowButton(button: loginWithGoogleButton)
-        configShadowButton(button: loginWithAppleButton)
+        configShadowButton(button: loginWithFacebookButton)
         eyeButton.tintColor = .lightGray
         eyeButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
         
