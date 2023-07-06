@@ -7,15 +7,18 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class ViewController: UIViewController {
+    
+    let signInConfig = GIDConfiguration.init(clientID: "60868162820-0nrf4k2ngjdvecbcol6s2hfg7tbegaiv.apps.googleusercontent.com")
     
     @IBOutlet var appLogoImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginWithGoogleButton: UIButton!
-    @IBOutlet weak var loginWithAppleButton: UIButton!
+    @IBOutlet weak var loginWithFacebookButton: UIButton!
     @IBOutlet var recoverButton: UIButton!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet weak var passwordView: UIView!
@@ -35,7 +38,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configTextField()
         configButtons(button: loginWithGoogleButton)
-        configButtons(button: loginWithAppleButton)
+        configButtons(button: loginWithFacebookButton)
         configButtons(button: loginButton)
         configPasswordView()
         emailTextField.text = "gabriel@gmail.com"
@@ -46,6 +49,30 @@ class ViewController: UIViewController {
         
         emailTextField.text = "betogrt@gmail.com"
         passwordTextField.text = "123456"
+    }
+    
+    
+    @IBAction func tappedLoginWithGoogleButton(_ sender: UIButton) {
+        
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+                
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
+            guard error == nil else { return }
+            guard let signInResult = signInResult else { return }
+
+            let user = signInResult.user // here i got access to the user
+            
+            let viewController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? TabBarController
+            self.resetTextField()
+            self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
+
+        //    let emailAddress = user.profile?.email
+        }
+        
     }
     
     @IBAction func tapToRecoverPassword(_ sender: UIButton) {
@@ -107,13 +134,13 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 10
         loginButton.setTitle(Localized.loginSuccessButtonTitle.localized, for: .normal)
         loginWithGoogleButton.setTitle(Localized.loginGoogleButtonTitle.localized, for: .normal)
-        loginWithAppleButton.setTitle(Localized.loginAppleButtonTitle.localized, for: .normal)
+        loginWithFacebookButton.setTitle(Localized.loginFacebookButtonTitle.localized, for: .normal)
         recoverButton.setTitle(Localized.forgetPasswordButtonTitle, for: .normal)
         recoverButton.setTitleColor(.logoTextOrange, for: .normal)
         registerButton.setTitle(Localized.createAccountButtonTitle.localized, for: .normal)
         registerButton.setTitleColor(.logoTextOrange, for: .normal)
         configShadowButton(button: loginWithGoogleButton)
-        configShadowButton(button: loginWithAppleButton)
+        configShadowButton(button: loginWithFacebookButton)
         eyeButton.tintColor = .lightGray
         eyeButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
         
