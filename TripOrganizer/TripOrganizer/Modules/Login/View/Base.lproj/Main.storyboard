@@ -80,7 +80,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
                                 <state key="normal" title="Continuar com Facebook">
                                     <color key="titleColor" red="0.65490196079999996" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <imageReference key="image" image="fb" symbolScale="medium" renderingMode="original"/>
+                                    <imageReference key="image" image="apple.logo" catalog="system" symbolScale="medium" renderingMode="original"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -200,12 +200,12 @@
                         <outlet property="emailTextField" destination="aaT-XT-xTR" id="2hC-2j-J1b"/>
                         <outlet property="eyeButton" destination="BAE-Uo-Q6A" id="Nst-nF-Ozp"/>
                         <outlet property="loginButton" destination="bjz-zO-erX" id="jOf-nZ-Nr4"/>
-                        <outlet property="loginWithFacebookButton" destination="GlW-bi-QRd" id="YCW-c0-pCA"/>
-                        <outlet property="loginWithGoogleButton" destination="a1d-bh-LYk" id="aPt-II-pbC"/>
                         <outlet property="passwordTextField" destination="7ah-EP-5Vn" id="k3e-2t-oUN"/>
                         <outlet property="passwordView" destination="2rH-50-HKL" id="hO1-ds-ypI"/>
                         <outlet property="recoverButton" destination="VNy-Te-OV8" id="ITX-6C-9LQ"/>
                         <outlet property="registerButton" destination="Lbv-d6-7XD" id="Pza-bG-vBp"/>
+                        <outlet property="signInWithAppleButton" destination="GlW-bi-QRd" id="YCW-c0-pCA"/>
+                        <outlet property="signInWithGoogleButton" destination="a1d-bh-LYk" id="aPt-II-pbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -214,7 +214,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fb" width="16" height="16"/>
+        <image name="apple.logo" catalog="system" width="105" height="128"/>
         <image name="google2" width="16" height="16"/>
         <image name="newLogo" width="455" height="549"/>
         <systemColor name="systemBackgroundColor">

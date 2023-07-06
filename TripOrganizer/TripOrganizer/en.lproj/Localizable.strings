@@ -35,7 +35,7 @@
 "button.title_create_account" = "Não tenho uma conta";
 "button.title_login_success" = "Entrar";
 "button.title_login_google" = "Continuar com Google";
-"button.title_login_facebook" = "Continuar com Facebook";
+"button.title_login_facebook" = "Continuar com Apple";
 "button.title_register" = "Registrar";
 "button.title_already_have_account" = "Já possui uma conta? Entre aqui";
 "button.title_tap_to_register" = "Recuperar senha";
