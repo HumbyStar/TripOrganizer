@@ -10,6 +10,7 @@ import MapKit
 import GooglePlaces
 
 class RestaurantViewModel {
+    
     private var restaurantList: [ObjectPlaces] = []
     private var placeService: PlaceService = PlaceService()
 
@@ -30,7 +31,6 @@ class RestaurantViewModel {
                 print("Erro ao recuperar os dados mockados:\(error.localizedDescription)")
             } else {
                 self.restaurantList = data?.restaurants ?? []
-                
             }
         }
     }

@@ -78,7 +78,7 @@
 "title.entrance_free" = "Taxa de Entrada: Gratuito";
 "label_rating" = "Avaliações -";
 "label_contact" = "Contato:";
-"label_touch_details" = "Digite em um icone para ver os detalhes";
+"label_touch_details" = "Clique em um icone para ver os detalhes";
 
 // Symbols
 "at_symbol" = "@";

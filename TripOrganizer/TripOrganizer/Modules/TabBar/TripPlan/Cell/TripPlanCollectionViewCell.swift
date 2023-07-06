@@ -9,7 +9,7 @@ import UIKit
 
 class TripPlanCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var placeRatingLabel: UILabel!
+    @IBOutlet weak var placeRatingsLabel: UILabel!
     @IBOutlet var placeImageView: UIImageView!
     @IBOutlet var placeNameLabel: UILabel!
     @IBOutlet var placeAddressLabel: UILabel!
@@ -30,7 +30,7 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         layer.shadowRadius = 4
         layer.masksToBounds = false
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configCellLayout()
@@ -43,23 +43,9 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         placeAddressLabel.text = place.address
         placePhoneLabel.text = place.phoneNumber
         openingHoursLabel.text = place.openingHours
-        placeRatingLabel.text = place.ratings
-        //        placeNameLabel.text = place.name
-//        placeAddressLabel.text = place.address
-//        placePhoneLabel.text = place.phoneNumber
-//        openingHoursLabel.text = place.openingHours
-//        //  placeImageView.image = UIImage(named: place.images)
-//        placeNameLabel.text = placeHotel.name
-//        placeAddressLabel.text = placeHotel.address
-//        placePhoneLabel.text = placeHotel.phoneNumber
-//        openingHoursLabel.text = placeHotel.openingHours
-       
-            // Converta a representação de dados em uma instância de UIImage
         let image = UIImage(data: place.images)
-            // Exiba a imagem em uma UIImageView
-            placeImageView.image = image
-        
-//  placeImageView.image = UIImage(named: place.images[0])
+        placeImageView.image = image
+        placeRatingsLabel.text = place.ratings
     }
     
     private func configCellLayout() {

@@ -48,14 +48,14 @@ class HotelViewModel {
         self.completion?(.hotelModel(self.hotelList))
     }
     
-//    public func getHotelList() -> [String]{
-//        return hotelList[0].images
-//    }
+    //    public func getHotelList() -> [String]{
+    //        return hotelList[0].images
+    //    }
     
     public func numberOfItens() -> Int {
         return hotelList[0].images.count
     }
-
+    
     public func configLayoutCollectionView(collectionView: UICollectionView){
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
@@ -64,8 +64,8 @@ class HotelViewModel {
     }
     
     public func sizeForItem(indexPath: IndexPath, frame: CGRect, height: CGFloat) -> CGSize {
-            return CGSize(width: 140, height: height - 20)
-        }
+        return CGSize(width: 140, height: height - 20)
+    }
     
     public func findHotel(typed place: String?){
         guard let place = place else {return}
@@ -102,7 +102,7 @@ class HotelViewModel {
     
     public func searchEstabilishment(value: String, filter: GMSAutocompleteFilter){
         placeClient.findAutocompletePredictions(fromQuery: value, filter: filter, sessionToken: nil) { results, error in
-
+            
             guard error == nil else {
                 self.switchToMock()
                 return
@@ -112,7 +112,7 @@ class HotelViewModel {
                 self.switchToMock()
                 return
             }
-        
+            
             self.findHotelDetails(placeID: firstResult.placeID)
         }
     }
@@ -130,7 +130,7 @@ class HotelViewModel {
                 self.switchToMock()
                 return
             }
-
+            
             self.isUsingMockData = false
             self.completion?(.gmsPlace(localDetails))
         }
@@ -153,7 +153,7 @@ class HotelViewModel {
         skeletonCount = photos?.count ?? 0
         self.localPhotos.removeAll()
         let dispatchGroup = DispatchGroup()
-    
+        
         if skeletonCount == 0 {
             self.localPhotos = []
         } else {

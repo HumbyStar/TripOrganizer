@@ -8,6 +8,7 @@ import MapKit
 import GooglePlaces
 
 class HotelViewController: UIViewController {
+    
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var hotelPhoneNumberLabel: UILabel!
     @IBOutlet weak var hotelOpeningHoursLabel: UILabel!
@@ -25,11 +26,10 @@ class HotelViewController: UIViewController {
     
     var alert: Alert?
     var localPhotos: [UIImage] = []
-    
+    private var fireStoreManager = FirestoreManager.shared
     var homeViewModel: HomeViewModel? = HomeViewModel()
-        var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     var index: IndexPath = IndexPath()
-    private var buttonPressedCount = 0
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -43,7 +43,7 @@ class HotelViewController: UIViewController {
         collectionView.register(HotelCollectionViewCell.nib(), forCellWithReuseIdentifier: HotelCollectionViewCell.identifier)
         return collectionView
     }()
-
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -68,7 +68,7 @@ class HotelViewController: UIViewController {
             self?.hotelMapView.addAnnotations(annotations)
             self?.hotelMapView.showAnnotations(annotations, animated: true)
         }
-    
+        
         viewModel.completion = { [weak self] places in
             guard let self = self else {return}
             
@@ -85,7 +85,6 @@ class HotelViewController: UIViewController {
             self.viewModel.isLoading = false
             self.collectionView.reloadData()
         }
-        addButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
         updateButtonState()
     }
@@ -115,7 +114,7 @@ class HotelViewController: UIViewController {
         }
     }
     
-    private func updateCollectionView() { 
+    private func updateCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         hotelInfoView.addSubview(collectionView)
@@ -175,7 +174,7 @@ class HotelViewController: UIViewController {
         default:
             break
         }
-
+        
     }
     
     private func configHotelMapView() {
@@ -196,35 +195,36 @@ class HotelViewController: UIViewController {
         addButton.setTitle(Localized.addButtonTitle.localized, for: .normal)
         addButton.layer.cornerRadius = 15
     }
-
+    
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
         guard let image = viewModel.localPhotos.first,
-              let imageData = image.pngData() else {
+              let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
             
             return
         }
         
         alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
-       
-        tripViewModel.addObjectHotel(object: ObjectPlaces(images: imageData, name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours:  hotelOpeningHoursLabel.text ?? "" ))
-buttonPressed()
-                
-    }
-    
-    @objc func buttonPressed() {
-        buttonPressedCount += 1
-        if buttonPressedCount == 1 {
+        
+        fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours: hotelOpeningHoursLabel.text ?? "")) { result in
+            
+            switch result {
+            case .success:
+                print("Lugar adicionado com sucesso!")
+            case .failure(let error):
+                print("Erro ao adicionar lugar: \(error.localizedDescription)")
+            }
+            
             NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
         }
     }
     
     @objc func updateButtonState() {
-            if homeViewModel?.getTripList() != 0 {
-                    addButton.isEnabled = true
-                } else {
-                    addButton.isEnabled = false
-                }
-            }
+        if homeViewModel?.getTripList() != 0 {
+            addButton.isEnabled = true
+        } else {
+            addButton.isEnabled = false
+        }
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -253,7 +253,7 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-             let restaurantImage = "abobrinha"//viewModel.getHotelList()[indexPath.row]
+            let restaurantImage = ""//viewModel.getHotelList()[indexPath.row]
             if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
@@ -263,11 +263,10 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-              //  viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getHotelList()[indexPath.row]) ?? UIImage()) :
+                //  viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getHotelList()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }
-
         return cell
     }
     
@@ -300,13 +299,13 @@ extension HotelViewController: UISearchBarDelegate {
 extension HotelViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else {
-           return nil
+            return nil
         }
-
+        
         let identifier = "Annotation"
-
+        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-
+        
         if annotationView == nil {
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView?.canShowCallout = true
@@ -314,11 +313,9 @@ extension HotelViewController: MKMapViewDelegate {
         } else {
             annotationView?.annotation = annotation
         }
-
-
         return annotationView
     }
-
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? MKPointAnnotation {
             let placeName = annotation.title ?? ""
@@ -327,7 +324,7 @@ extension HotelViewController: MKMapViewDelegate {
             let filter = GMSAutocompleteFilter()
             filter.type = .establishment
             let stringFinal = "\(Localized.titleHotelView),\(placeName),\(regionTyped ?? "")"
-
+            
             viewModel.isLoading = true
             viewModel.searchEstabilishment(value: stringFinal, filter: filter)
         }

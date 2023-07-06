@@ -100,7 +100,7 @@
                 <outlet property="placeImageView" destination="HGf-Fs-8gV" id="cJ2-I4-Lfh"/>
                 <outlet property="placeNameLabel" destination="1X3-hS-r2w" id="Fdl-Zu-C8K"/>
                 <outlet property="placePhoneLabel" destination="XJW-jM-C0Q" id="mQg-37-mz1"/>
-                <outlet property="placeRatingLabel" destination="mN8-a9-RyS" id="PRa-51-R0V"/>
+                <outlet property="placeRatingsLabel" destination="mN8-a9-RyS" id="abv-4x-3Am"/>
             </connections>
             <point key="canvasLocation" x="-411.4503816793893" y="-21.83098591549296"/>
         </collectionViewCell>

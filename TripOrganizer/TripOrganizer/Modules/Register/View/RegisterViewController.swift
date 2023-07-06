@@ -25,6 +25,8 @@ class RegisterViewController: UIViewController {
     private let viewModel = RegisterViewModel()
     private var auth: Auth?
     private var firestore: Firestore?
+    private var fireStoreManager = FirestoreManager.shared
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +90,6 @@ class RegisterViewController: UIViewController {
     }
     
     func registerNewUser() {
-        
         guard let emailValid = emailTextField.text, let passwordValid = passwordTextField.text else {return}
         self.auth?.createUser(withEmail: emailValid, password: passwordValid, completion: { result, error in
             if error != nil {
@@ -100,6 +101,14 @@ class RegisterViewController: UIViewController {
                         Localized.emailTitle: self.emailTextField.text ?? "",
                         Localized.id.localized: idUser
                     ])
+                    
+                    self.fireStoreManager.createUser(name: self.nameTextField.text ?? "", email: emailValid) { error in
+                        if error != nil {
+                            print(error?.localizedDescription as Any)
+                        } else {
+                            print("Firestore database criado")
+                        }
+                    }
                 }
                 self.alert?.createAlert(title: Localized.successTitle.localized, message: Localized.registrationSuccessMessage.localized,completion: {
                     self.login()
