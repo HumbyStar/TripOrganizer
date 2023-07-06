@@ -32,7 +32,6 @@ class AttractionViewController: UIViewController {
     private let viewModel: AttractionViewModel = AttractionViewModel()
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
-    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     private var fireStoreManager = FirestoreManager.shared
     
     lazy var collectionView: UICollectionView = {
@@ -265,7 +264,7 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let restaurantImage = "banana"//viewModel.getAttractionImageList()[indexPath.row]
+            let restaurantImage = ""
             if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
@@ -275,7 +274,6 @@ extension AttractionViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-                //   viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getAttractionImageList()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }

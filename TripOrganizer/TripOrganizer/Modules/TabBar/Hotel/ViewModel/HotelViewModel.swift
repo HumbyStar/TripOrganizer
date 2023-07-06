@@ -48,9 +48,6 @@ class HotelViewModel {
         self.completion?(.hotelModel(self.hotelList))
     }
     
-    //    public func getHotelList() -> [String]{
-    //        return hotelList[0].images
-    //    }
     
     public func numberOfItens() -> Int {
         return hotelList[0].images.count

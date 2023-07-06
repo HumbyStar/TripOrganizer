@@ -40,9 +40,6 @@ class RestaurantViewModel {
         self.completion?(.restaurantModel(self.restaurantList))
     }
     
-//    public func getRestaurantImages() -> [String] {
-//        return restaurantList[0].images
-//    }
     
     public func numberOfItens() -> Int {
         return restaurantList[0].images.count

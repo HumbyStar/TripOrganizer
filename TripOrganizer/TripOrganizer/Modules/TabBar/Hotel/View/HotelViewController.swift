@@ -28,7 +28,6 @@ class HotelViewController: UIViewController {
     var localPhotos: [UIImage] = []
     private var fireStoreManager = FirestoreManager.shared
     var homeViewModel: HomeViewModel? = HomeViewModel()
-    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     var index: IndexPath = IndexPath()
     
     lazy var collectionView: UICollectionView = {
@@ -253,7 +252,7 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let restaurantImage = ""//viewModel.getHotelList()[indexPath.row]
+            let restaurantImage = ""
             if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
@@ -263,7 +262,6 @@ extension HotelViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-                //  viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getHotelList()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }

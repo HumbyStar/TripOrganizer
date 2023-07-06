@@ -33,7 +33,6 @@ class RestaurantViewController: UIViewController {
     private var viewModel: RestaurantViewModel = RestaurantViewModel()
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
-    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     private var fireStoreManager = FirestoreManager.shared
     
     lazy var menuCollectionView: UICollectionView = {
@@ -257,7 +256,7 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.layer.cornerRadius = 10
         
         if viewModel.isUsingMockData {
-            let restaurantImage = "abobrinha"//viewModel.getRestaurantImages()[indexPath.row]
+            let restaurantImage = ""
             if let image = UIImage(named: restaurantImage) {
                 cell.hideSkeleton()
                 cell.setupCell(image: image)
@@ -267,7 +266,6 @@ extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDa
                 cell.showSkeleton()
             } else {
                 cell.hideSkeleton()
-                //                viewModel.localPhotos.isEmpty ? cell.setupCell(image: UIImage(named: viewModel.getRestaurantImages()[indexPath.row]) ?? UIImage()) :
                 cell.setupCell(image: viewModel.localPhotos[indexPath.row])
             }
         }

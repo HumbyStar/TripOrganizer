@@ -41,14 +41,10 @@ class ViewController: UIViewController {
         configButtons(button: signInWithAppleButton)
         configButtons(button: loginButton)
         configPasswordView()
-        emailTextField.text = "gabriel@gmail.com"
-        passwordTextField .text = "123456"
         auth = Auth.auth()
         firestore = Firestore.firestore()
         alert = Alert(controller: self)
         
-        emailTextField.text = "betogrt@gmail.com"
-        passwordTextField.text = "123456"
     }
     
     
@@ -70,7 +66,6 @@ class ViewController: UIViewController {
             self.resetTextField()
             self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
 
-        //    let emailAddress = user.profile?.email
         }
         
     }
