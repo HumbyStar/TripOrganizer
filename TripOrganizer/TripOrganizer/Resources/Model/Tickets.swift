@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - TicketsModel
-struct TicketsModel: Codable {
+struct Tickets: Codable {
     let status: Bool?
     let data: [Ticket]?
 }

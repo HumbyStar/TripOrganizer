@@ -28,21 +28,23 @@ class HomeViewModel {
                                         "trip2",
                                         "trip3"]
     
-    
+    private var fireStoreManager = FirestoreManager.shared
+
     public func fetchPlaces() {
         fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
             switch result {
             case .success(let sucess):
-                self.objectList = sucess.tripList
-                self.delegate?.sucess()
+                HomeViewModel.tripList = sucess.tripList
+//                self.delegate?.sucess()
             case .failure(let error):
                 print(error)
-                self.delegate?.error()
+//                self.delegate?.error()
             }
         }
     }
     
-    private static var tripList: [AddTripModel] = []{
+    public static var tripList: [AddTripModel] = []{
+        
         didSet{
             NotificationCenter.default.post(name: NSNotification.Name("updateList"), object: nil)
         }

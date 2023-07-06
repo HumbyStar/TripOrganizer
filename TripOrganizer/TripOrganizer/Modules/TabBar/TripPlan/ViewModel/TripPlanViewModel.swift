@@ -15,7 +15,7 @@ protocol TripPlanViewModelProtocol: AnyObject {
 class TripPlanViewModel {
     
     private var fireStoreManager = FirestoreManager.shared
-    private var objectList: [ObjectPlaces]
+    private var objectList: [Places]
     private var delegate: TripPlanViewModelProtocol?
     
     public func delegate(delegate: TripPlanViewModelProtocol) {
@@ -23,13 +23,12 @@ class TripPlanViewModel {
     }
     
     
-    
-    init(objectList: [ObjectPlaces]) {
+    init(objectList: [Places]) {
         self.objectList = objectList
 
     }
     
-    public func addObjectRestaurant(object: ObjectPlaces) {
+    public func addObjectRestaurant(object: Places) {
         objectList.append(object)
     }
     
@@ -37,15 +36,15 @@ class TripPlanViewModel {
         objectList.count
     }
     
-    public func getObjectList(index: Int) -> ObjectPlaces {
+    public func getObjectList(index: Int) -> Places {
         objectList[index]
     }
     
-    public func addObjectHotel(object: ObjectPlaces) {
+    public func addObjectHotel(object: Places) {
         objectList.append(object)
     }
     
-    public func addObjectAttraction(object: ObjectPlaces) {
+    public func addObjectAttraction(object: Places) {
         objectList.append(object)
     }
     

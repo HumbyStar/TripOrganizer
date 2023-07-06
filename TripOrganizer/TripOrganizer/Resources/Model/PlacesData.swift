@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - PlacesData
 struct PlacesData: Codable {
-    let restaurants: [ObjectPlaces]
-    let hotels: [ObjectPlaces]
-    let attractions: [ObjectPlaces]
+    let restaurants: [Places]
+    let hotels: [Places]
+    let attractions: [Places]
 }

@@ -36,9 +36,11 @@ class HomeViewController: UIViewController {
     private var progressBar: Float = 0
     var viewModel: HomeViewModel = HomeViewModel()
     weak var delegate: HomeViewControllerProtocol?
-     public func setDelegate(delegate: HomeViewControllerProtocol){
+     
+    public func setDelegate(delegate: HomeViewControllerProtocol){
          self.delegate = delegate
      }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -50,7 +52,8 @@ class HomeViewController: UIViewController {
         changeProfileImageNotification()
         circularProfileButton()
         configImagesViews()
-       notificationCenterProgressBar()
+        notificationCenterProgressBar()
+        viewModel.fetchPlaces()
     }
     
     func notificationCenterProgressBar(){
@@ -268,7 +271,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let vc: TripPlanViewController? = UIStoryboard(name: Localized.tripPlanViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.tripPlanViewController) as? TripPlanViewController
       //  data[indexPath.row].placeList
         
-        vc?.tripViewModel = TripPlanViewModel(objectList: [])
+        vc?.tripViewModel = TripPlanViewModel(objectList: viewModel.getTripList(index: indexPath.row).placeList)
         
         vc?.placeNameReceived = viewModel.getTripList(index: indexPath.row).tripName
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)

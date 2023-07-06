@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Restaurant
-struct ObjectPlaces: Codable {
+struct Places: Codable {
     var images: Data
     var name: String
     var ratings: String

@@ -21,11 +21,11 @@ class FlightViewModel {
     
     private var service: FlightService = FlightService()
     private var ticketList: [Ticket]?
-    private var listObject: [FlightModel] = [FlightModel(cityNameObject: "Florianópolis", cityDescriptionObject: "Conhecida por suas praias     paradisíacas,                                    Floripa também é famosa por sua culinária e por apresentar uma cultura     vibrante.",cityImageObject: "floripa" ),
-                                             FlightModel(cityNameObject: "Rio de Janeiro", cityDescriptionObject: "Famosa por suas praias, Cristo Redentor e pelo Pão de Açúcar. Também conhecida pelas grandes favelas e o Carnaval.", cityImageObject:  "rioDeJaneiro"),
-                                             FlightModel(cityNameObject: "Fernando de Noronha", cityDescriptionObject: "Arquipélago reconhecido pelas suas praias pouco urbanizadas e por atividades como mergulho e snorkeling.", cityImageObject:  "noronha" ),
-                                             FlightModel(cityNameObject: "Belo Horizonte", cityDescriptionObject: "Rodeada de montanhas, a cidade é conhecida pelo enorme Estádio Mineirão e a lagoa da Pampulha.", cityImageObject:  "bh"),
-                                             FlightModel(cityNameObject: "Porto Alegre", cityDescriptionObject: "Capital do estado de Rio Grande do Sul, no sul do Brasil. Na praça principal, a Praça Marechal Deodoro, encontra-se a Catedral.", cityImageObject: "pa")]
+    private var listObject: [Flight] = [Flight(cityNameObject: "Florianópolis", cityDescriptionObject: "Conhecida por suas praias     paradisíacas,                                    Floripa também é famosa por sua culinária e por apresentar uma cultura     vibrante.",cityImageObject: "floripa" ),
+                                             Flight(cityNameObject: "Rio de Janeiro", cityDescriptionObject: "Famosa por suas praias, Cristo Redentor e pelo Pão de Açúcar. Também conhecida pelas grandes favelas e o Carnaval.", cityImageObject:  "rioDeJaneiro"),
+                                             Flight(cityNameObject: "Fernando de Noronha", cityDescriptionObject: "Arquipélago reconhecido pelas suas praias pouco urbanizadas e por atividades como mergulho e snorkeling.", cityImageObject:  "noronha" ),
+                                             Flight(cityNameObject: "Belo Horizonte", cityDescriptionObject: "Rodeada de montanhas, a cidade é conhecida pelo enorme Estádio Mineirão e a lagoa da Pampulha.", cityImageObject:  "bh"),
+                                             Flight(cityNameObject: "Porto Alegre", cityDescriptionObject: "Capital do estado de Rio Grande do Sul, no sul do Brasil. Na praça principal, a Praça Marechal Deodoro, encontra-se a Catedral.", cityImageObject: "pa")]
     
     public var getListObject: Int {
         return listObject.endIndex
@@ -39,7 +39,7 @@ class FlightViewModel {
         return ticketList?[index.row]
     }
     
-    public func getListObjectCellForItemAt(index: IndexPath) -> FlightModel {
+    public func getListObjectCellForItemAt(index: IndexPath) -> Flight {
         return listObject[index.row]
     }
     

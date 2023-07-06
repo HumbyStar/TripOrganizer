@@ -38,7 +38,7 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
     }
     
     
-    public func setupCell(place: ObjectPlaces) {
+    public func setupCell(place: Places) {
         placeNameLabel.text = place.name
         placeAddressLabel.text = place.address
         placePhoneLabel.text = place.phoneNumber

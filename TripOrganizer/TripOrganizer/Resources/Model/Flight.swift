@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FlightModel {
+struct Flight {
     public let cityNameObject: String
     public let cityDescriptionObject: String
     public let cityImageObject: String

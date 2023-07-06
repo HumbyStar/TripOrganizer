@@ -30,7 +30,7 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
         cityImageView.clipsToBounds = true
     }
     
-    public func setupCell(cityObject: FlightModel) {
+    public func setupCell(cityObject: Flight) {
         cityNameLabel.text = cityObject.cityNameObject
         cityDescriptionLabel.text = cityObject.cityDescriptionObject
         cityImageView.image = UIImage(named: cityObject.cityImageObject)

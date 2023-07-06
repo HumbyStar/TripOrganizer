@@ -217,7 +217,7 @@ class AttractionViewController: UIViewController {
         
         alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
         
-        fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "")) { result in
+        fireStoreManager.addPlace(place: Places(images: imageData, name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "")) { result in
             
             switch result {
             case .success:

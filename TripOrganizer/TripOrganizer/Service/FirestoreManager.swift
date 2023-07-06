@@ -40,7 +40,7 @@ class FirestoreManager {
     }
     
     
-    func addPlace(place: ObjectPlaces, completion: @escaping (Result<Void, Error>) -> Void) {
+    func addPlace(place: Places, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
             completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as! Error))
             return
