@@ -54,10 +54,19 @@ class ViewController: UIViewController {
     
     @IBAction func tappedLoginWithGoogleButton(_ sender: UIButton) {
         
-        GIDSignIn.sharedInstance.signIn(with: signInConfig, presentingViewController: self) { user, error in
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+                
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+                
+        GIDSignIn.sharedInstance.configuration = config
+        
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
             guard error == nil else { return }
-            guard let user = user else { return }
-            
+            guard let signInResult = signInResult else { return }
+
+            let user = signInResult.user // here i got access to the user
+
             let emailAddress = user.profile?.email
         }
         
