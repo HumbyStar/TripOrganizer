@@ -5,6 +5,14 @@ PODS:
   - AppAuth/Core (1.6.2)
   - AppAuth/ExternalUserAgent (1.6.2):
     - AppAuth/Core
+  - FBAEMKit (16.1.2):
+    - FBSDKCoreKit_Basics (= 16.1.2)
+  - FBSDKCoreKit (16.1.2):
+    - FBAEMKit (= 16.1.2)
+    - FBSDKCoreKit_Basics (= 16.1.2)
+  - FBSDKCoreKit_Basics (16.1.2)
+  - FBSDKLoginKit (16.1.2):
+    - FBSDKCoreKit (= 16.1.2)
   - GooglePlaces (8.0.0)
   - GoogleSignIn (7.0.0):
     - AppAuth (~> 1.5)
@@ -18,6 +26,7 @@ PODS:
   - lottie-ios (4.2.0)
 
 DEPENDENCIES:
+  - FBSDKLoginKit
   - GooglePlaces (~> 8.0)
   - GoogleSignIn (~> 7.0.0)
   - IQKeyboardManagerSwift
@@ -26,6 +35,10 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AppAuth
+    - FBAEMKit
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
+    - FBSDKLoginKit
     - GooglePlaces
     - GoogleSignIn
     - GTMAppAuth
@@ -35,6 +48,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
+  FBAEMKit: 1d6160f527eef3e5cc18c28e6afc7f1168d86332
+  FBSDKCoreKit: 05ec20fc0fd61dc4e14cc6905360ca976ff4c9e1
+  FBSDKCoreKit_Basics: c95336ffe7299dac5224e8e6154154f52917f20d
+  FBSDKLoginKit: 7cee95a08136391cab5175a11c8e85af56f86ace
   GooglePlaces: 46231f49e2dc52aa9a604f99e2e6b29996f30cc7
   GoogleSignIn: b232380cf495a429b8095d3178a8d5855b42e842
   GTMAppAuth: 99fb010047ba3973b7026e45393f51f27ab965ae
@@ -42,6 +59,6 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
   lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
 
-PODFILE CHECKSUM: 0f02010e35075d888b27fdfcc1b5e87aa0dcdbf9
+PODFILE CHECKSUM: cf1bd1591bf18380a9a8065b5decd6dfd4ac9721
 
 COCOAPODS: 1.12.0

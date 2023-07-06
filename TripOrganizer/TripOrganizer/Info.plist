@@ -41,9 +41,39 @@
 					<string></string>
 					<key>UISceneStoryboardFile</key>
 					<string></string>
+                    
+                    <key>CFBundleURLTypes</key>
+                    <array>
+                        <dict>
+                            <key>CFBundleURLSchemes</key>
+                            <array>
+                                <string>fb1248618105794117</string>
+                            </array>
+                        </dict>
+                    </array>
+                    <key>FacebookAppID</key>
+                    <string>1248618105794117</string>
+                    <key>FacebookClientToken</key>
+                    <string>65e9bb4d402e0187f238227ce4b30ac1</string>
+                    <key>FacebookDisplayName</key>
+                    <string>TripOrganizer</string>
+                    
+                    
+                    <key>LSApplicationQueriesSchemes</key>
+                    <array>
+                        <string>fbapi</string>
+                        <string>fb-messenger-share-api</string>
+                    </array>
+                    
 				</dict>
 			</array>
 		</dict>
 	</dict>
+    
+  
+    
 </dict>
+  
 </plist>
+
+

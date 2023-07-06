@@ -12,6 +12,7 @@ pod 'IQKeyboardManagerSwift'
 pod 'lottie-ios'
 pod 'GooglePlaces', '~> 8.0'
 pod 'GoogleSignIn', '~> 7.0.0'
+pod 'FBSDKLoginKit'
 
 end
 
