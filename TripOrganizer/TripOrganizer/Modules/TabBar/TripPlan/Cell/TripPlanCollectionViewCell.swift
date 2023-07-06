@@ -9,6 +9,7 @@ import UIKit
 
 class TripPlanCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var placeRatingLabel: UILabel!
     @IBOutlet var placeImageView: UIImageView!
     @IBOutlet var placeNameLabel: UILabel!
     @IBOutlet var placeAddressLabel: UILabel!
@@ -42,6 +43,7 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         placeAddressLabel.text = place.address
         placePhoneLabel.text = place.phoneNumber
         openingHoursLabel.text = place.openingHours
+        placeRatingLabel.text = place.ratings
         //        placeNameLabel.text = place.name
 //        placeAddressLabel.text = place.address
 //        placePhoneLabel.text = place.phoneNumber

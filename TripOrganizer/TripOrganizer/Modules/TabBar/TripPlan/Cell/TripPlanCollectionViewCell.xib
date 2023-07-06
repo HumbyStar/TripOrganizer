@@ -29,38 +29,37 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="estrela" translatesAutoresizingMaskIntoConstraints="NO" id="dYN-fJ-KP4">
-                        <rect key="frame" x="140" y="40.333333333333336" width="62" height="14"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="14" id="4hY-Hp-hgA"/>
-                            <constraint firstAttribute="width" constant="62" id="fjM-bX-MjU"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P.za San Marco, 328, 30100 Venezia VE, Itália" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fnn-dB-oEF">
-                        <rect key="frame" x="150" y="59.333333333333336" width="177" height="26.333333333333336"/>
+                        <rect key="frame" x="150" y="59.000000000000007" width="177" height="26.333333333333336"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(11) 3454-1023" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJW-jM-C0Q">
-                        <rect key="frame" x="150" y="90.666666666666671" width="87.666666666666686" height="14.333333333333329"/>
+                        <rect key="frame" x="150" y="90.333333333333329" width="87.666666666666686" height="14.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9:00 am" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ay-De-QKy">
-                        <rect key="frame" x="150" y="115" width="177" height="14.333333333333343"/>
+                        <rect key="frame" x="150" y="114.66666666666667" width="177" height="14.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj7-Tq-smh">
-                        <rect key="frame" x="150" y="136.33333333333334" width="0.0" height="10"/>
+                        <rect key="frame" x="150" y="136" width="0.0" height="10"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="10" id="CT7-K9-5al"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN8-a9-RyS">
+                        <rect key="frame" x="150" y="38.333333333333336" width="31" height="14.333333333333336"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -71,9 +70,9 @@
                 <constraint firstItem="XJW-jM-C0Q" firstAttribute="top" secondItem="Fnn-dB-oEF" secondAttribute="bottom" constant="5" id="0jN-nL-0mO"/>
                 <constraint firstItem="HGf-Fs-8gV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4Pl-SY-Whe"/>
                 <constraint firstAttribute="trailing" secondItem="1X3-hS-r2w" secondAttribute="trailing" constant="10" id="7ps-bg-ECs"/>
-                <constraint firstItem="Fnn-dB-oEF" firstAttribute="top" secondItem="dYN-fJ-KP4" secondAttribute="bottom" constant="5" id="Enl-Tj-Lac"/>
+                <constraint firstItem="Fnn-dB-oEF" firstAttribute="top" secondItem="mN8-a9-RyS" secondAttribute="bottom" constant="6.3300000000000001" id="9QB-yo-KPR"/>
+                <constraint firstItem="mN8-a9-RyS" firstAttribute="top" secondItem="1X3-hS-r2w" secondAttribute="bottom" constant="3" id="9yF-bf-C8D"/>
                 <constraint firstAttribute="bottom" secondItem="HGf-Fs-8gV" secondAttribute="bottom" id="GtE-5d-hP9"/>
-                <constraint firstItem="dYN-fJ-KP4" firstAttribute="top" secondItem="1X3-hS-r2w" secondAttribute="bottom" constant="5" id="IUR-GH-gEF"/>
                 <constraint firstItem="1X3-hS-r2w" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="8" symbolic="YES" id="J9K-nO-9rh"/>
                 <constraint firstItem="2ay-De-QKy" firstAttribute="top" secondItem="XJW-jM-C0Q" secondAttribute="bottom" constant="10" id="OsS-In-3AB"/>
                 <constraint firstAttribute="trailing" secondItem="2ay-De-QKy" secondAttribute="trailing" constant="10" id="Vhp-qc-nI8"/>
@@ -84,8 +83,8 @@
                 <constraint firstItem="HGf-Fs-8gV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lKK-xk-BJM"/>
                 <constraint firstItem="2ay-De-QKy" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="10" id="mji-FO-lnr"/>
                 <constraint firstItem="1X3-hS-r2w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="pNT-Oo-lBK"/>
+                <constraint firstItem="mN8-a9-RyS" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="10" id="qu2-80-Oz7"/>
                 <constraint firstItem="XJW-jM-C0Q" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="10" id="sem-6q-vaZ"/>
-                <constraint firstItem="dYN-fJ-KP4" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" id="u7x-5z-a2d"/>
             </constraints>
             <size key="customSize" width="337" height="189"/>
             <connections>
@@ -95,12 +94,12 @@
                 <outlet property="placeImageView" destination="HGf-Fs-8gV" id="cJ2-I4-Lfh"/>
                 <outlet property="placeNameLabel" destination="1X3-hS-r2w" id="Fdl-Zu-C8K"/>
                 <outlet property="placePhoneLabel" destination="XJW-jM-C0Q" id="mQg-37-mz1"/>
+                <outlet property="placeRatingLabel" destination="mN8-a9-RyS" id="PRa-51-R0V"/>
             </connections>
             <point key="canvasLocation" x="-411.4503816793893" y="-21.47887323943662"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="estrela" width="45" height="14"/>
         <image name="hotel2" width="1024" height="768"/>
     </resources>
 </document>
