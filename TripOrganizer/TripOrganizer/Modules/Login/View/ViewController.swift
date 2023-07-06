@@ -58,7 +58,6 @@ class ViewController: UIViewController {
                 
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
-                
         GIDSignIn.sharedInstance.configuration = config
         
         GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
@@ -66,8 +65,12 @@ class ViewController: UIViewController {
             guard let signInResult = signInResult else { return }
 
             let user = signInResult.user // here i got access to the user
+            
+            let viewController = UIStoryboard(name: Localized.tabBarController, bundle: nil).instantiateViewController(withIdentifier: Localized.tabBarController) as? TabBarController
+            self.resetTextField()
+            self.navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
 
-            let emailAddress = user.profile?.email
+        //    let emailAddress = user.profile?.email
         }
         
     }
