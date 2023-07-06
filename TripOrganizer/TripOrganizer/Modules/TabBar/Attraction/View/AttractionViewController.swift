@@ -54,6 +54,7 @@ class AttractionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
+        configBackgroud()
         configSearch()
         configButton()
         configLabel()
@@ -101,6 +102,10 @@ class AttractionViewController: UIViewController {
         collectionView.leadingAnchor.constraint(equalTo: attractionInfoView.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: attractionInfoView.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: attractionInfoView.bottomAnchor).isActive = true
+    }
+    
+    private func configBackgroud() {
+        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
     }
     
     private func displayDetailsScreen(local: PlaceData) {

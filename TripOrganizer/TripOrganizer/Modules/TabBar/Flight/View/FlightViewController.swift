@@ -36,6 +36,7 @@ class FlightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configBackgroud()
         viewModel.delegate(delegate: self)
         configUIViewCornerRadius()
         configTextFieldBorderStyle()
@@ -104,12 +105,19 @@ class FlightViewController: UIViewController {
         configTextField(textField:passengersTextField)
     }
     
+    private func configBackgroud() {
+        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+    }
+    
     private func configTextField(textField: UITextField) {
         textField.delegate = self
         textField.borderStyle = .none
         flightOriginTextField.placeholder = Localized.originPlaceholderFight.localized
+        flightOriginTextField.backgroundColor = .white
         flightDestinationTextField.placeholder = Localized.destinationPlaceholderFlight.localized
+        flightDestinationTextField.backgroundColor = .white
         passengersTextField.placeholder = Localized.passengersPlaceholderFlight.localized
+        passengersTextField.backgroundColor = .white
     }
     
     private func configButton() {
@@ -125,6 +133,7 @@ class FlightViewController: UIViewController {
     private func configLabel() {
         chooseADestinationLabel.text = Localized.titleLabelFight.localized
         popularDestinationsLabel.text = Localized.popularDestinationsTitle.localized
+        popularDestinationsLabel.textColor = .black
     }
     
     private func configUIViewCornerRadius(){

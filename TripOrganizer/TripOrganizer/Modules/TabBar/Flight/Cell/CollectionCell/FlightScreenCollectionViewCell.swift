@@ -24,6 +24,11 @@ class FlightScreenCollectionViewCell: UICollectionViewCell {
         configImageView()
     }
     
+    private func configLabel() {
+        cityNameLabel.textColor = .black
+        cityDescriptionLabel.textColor = .black
+    }
+    
     private func configImageView() {
         cityImageView.contentMode = .scaleAspectFill
         cityImageView.layer.cornerRadius = 12

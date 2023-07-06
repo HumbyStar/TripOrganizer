@@ -56,6 +56,7 @@ class AddTripViewController: UIViewController {
         tripNameTextField.clipsToBounds = true
         tripNameTextField.layer.cornerRadius = 16
         tripNameTextField.borderStyle = .roundedRect
+        tripNameTextField.backgroundColor = .white
     }
     
     private func configAddTripButton() {

@@ -55,6 +55,7 @@ class RestaurantViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
+        configBackgroud()
         configRestaurantMapView()
         configRestaurantInfoView()
         configButton()
@@ -95,6 +96,10 @@ class RestaurantViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    private func configBackgroud() {
+        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
     }
     
     private func updateCollectionView() {

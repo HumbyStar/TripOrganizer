@@ -30,6 +30,10 @@ class TripPlanViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
     }
     
+    private func configBackgroud() {
+        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+    }
+    
     private func configCollectionViewProtocol() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -38,6 +42,7 @@ class TripPlanViewController: UIViewController {
     private func configCollectionView() {
         tripViewModel.configLayoutCollectionView(collectionView: collectionView)
         collectionView.register(TripPlanCollectionViewCell.nib(), forCellWithReuseIdentifier: TripPlanCollectionViewCell.identifier)
+        collectionView.backgroundColor = .white
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {

@@ -30,6 +30,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
+        configBackgroud()
         configProfileImage()
         configTextFieldDelegates()
         configTextFields()
@@ -42,10 +43,13 @@ class ProfileViewController: UIViewController {
         profileViewModel.getCircleBorderImageView(profileImageView: profileImageView)
     }
     
+    private func configBackgroud() {
+        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+    }
+    
     private func configTextFieldDelegates() {
         self.nameTextField.delegate = self
         self.emailTextField.delegate = self
-        
     }
     
     private func configProfileImage() {
@@ -68,6 +72,8 @@ class ProfileViewController: UIViewController {
     private func configTextFields() {
         configDefaultTextField(textfield: nameTextField, text: Localized.namePlaceholderProfile.localized, keyboardType: .default, isSecure: false)
         configDefaultTextField(textfield: emailTextField, text: Localized.emailPlaceholderProfile.localized, keyboardType: .emailAddress, isSecure: false)
+        emailTextField.textColor = .black
+        nameTextField.textColor = .black
     }
     
     private func configLabel() {

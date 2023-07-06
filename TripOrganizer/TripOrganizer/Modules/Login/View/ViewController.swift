@@ -141,7 +141,8 @@ class ViewController: UIViewController {
         passwordTextField.placeholder = Localized.passwordPlaceholder.localized
         passwordTextField.isSecureTextEntry = true
         passwordTextField.borderStyle = .none
-        
+        emailTextField.textColor = .black
+        passwordTextField.textColor = .black
     }
     
     private func configProtocol() {

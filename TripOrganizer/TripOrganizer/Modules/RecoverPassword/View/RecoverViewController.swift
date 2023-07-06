@@ -30,14 +30,20 @@ class RecoverViewController: UIViewController{
         navigationController?.popViewController(animated: true)
     }
     
+    private func configBackgroud() {
+        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+    }
+    
     private func configButton(){
         recoverPasswordButton.layer.cornerRadius = 10
         recoverPasswordButton.clipsToBounds = true
         recoverPasswordButton.setTitle(Localized.tapToRegisterButtonTitle.localized, for: .normal)
+        recoverPasswordButton.setTitleColor(UIColor.white, for: .normal)
     }
     
     private func configLabel(){
         descriptionLabel.text = Localized.confirmEmailDescription
+        descriptionLabel.textColor = .black
     }
     
     private func configTextField(){
@@ -49,6 +55,7 @@ class RecoverViewController: UIViewController{
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocorrectionType = .no
         emailTextField.placeholder = Localized.emailPlaceholder.localized
+        emailTextField.textColor = .black
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

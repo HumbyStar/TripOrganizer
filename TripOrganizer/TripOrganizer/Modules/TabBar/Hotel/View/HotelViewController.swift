@@ -51,6 +51,7 @@ class HotelViewController: UIViewController {
         super.viewDidLoad()
         self.alert = Alert(controller: self)
         hotelMapView.delegate = self
+        configBackgroud()
         configHotelMapView()
         configHotelInfoView()
         configSearchBar()
@@ -111,6 +112,10 @@ class HotelViewController: UIViewController {
                 self.addButton.alpha = 1
             }
         }
+    }
+    
+    private func configBackgroud() {
+        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
     }
     
     private func updateCollectionView() { 

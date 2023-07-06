@@ -29,9 +29,6 @@ class FlightService {
         URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
             guard let dataResult = data else { return }
             
-//            let json = try? JSONSerialization.jsonObject(with: dataResult, options: [])
-//            print(json)
-//            
             guard let response = response as? HTTPURLResponse else { return }
             
             if response.statusCode == 200 {

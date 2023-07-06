@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
+        configBackgroud()
         configTableView()
         configLabel()
         configButton()
@@ -59,6 +60,10 @@ class HomeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBarAndImageViewHotel), name: Notification.Name("updateProgressBarHotel"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBarAndImageViewAttracion), name: Notification.Name("updateProgressBarAttraction"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProgressBarAndImageViewTickets), name: Notification.Name("updateProgressBarTickets"), object: nil)
+    }
+    
+    private func configBackgroud() {
+        view.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
     }
     
     func configImagesViews() {
@@ -189,6 +194,7 @@ class HomeViewController: UIViewController {
         appNameLabel.text = Localized.tripTitle.localized
         greetingLabel.text = Localized.welcomeLabelTitle.localized
         changeProgressLabel.text = Localized.changeProgressTitle.localized
+        changeProgressLabel.textColor = .black
     }
     
     private func configButton() {
