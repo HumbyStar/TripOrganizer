@@ -92,7 +92,7 @@ class AddTripViewController: UIViewController {
     @IBAction func addTripButtonPressed(_ sender: UIButton) {
         if tripNameTextField.hasText {
             guard let name = tripNameTextField.text else {return}
-            self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
+            self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? "", placeList: []))
             navigationController?.popViewController(animated: true)
         } else {
             self.alert?.createAlert(title: "", message: Localized.tripNameEmpty.localized)

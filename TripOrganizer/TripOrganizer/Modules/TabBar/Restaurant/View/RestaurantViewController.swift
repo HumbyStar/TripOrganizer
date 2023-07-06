@@ -33,8 +33,8 @@ class RestaurantViewController: UIViewController {
     private var viewModel: RestaurantViewModel = RestaurantViewModel()
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
-    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     private var fireStoreManager = FirestoreManager.shared
+    
     
     lazy var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -337,4 +337,3 @@ extension RestaurantViewController: MKMapViewDelegate {
         }
     }
 }
-

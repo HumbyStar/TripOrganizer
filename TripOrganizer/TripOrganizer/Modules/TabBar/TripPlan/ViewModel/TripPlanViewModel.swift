@@ -15,24 +15,18 @@ protocol TripPlanViewModelProtocol: AnyObject {
 class TripPlanViewModel {
     
     private var fireStoreManager = FirestoreManager.shared
-    private var objectList: [ObjectPlaces] = []
+    private var objectList: [ObjectPlaces]
     private var delegate: TripPlanViewModelProtocol?
     
     public func delegate(delegate: TripPlanViewModelProtocol) {
         self.delegate = delegate
     }
     
-    public func fetchPlaces() {
-        fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
-            switch result {
-            case .success(let sucess):
-                self.objectList = sucess.placeList
-                self.delegate?.sucess()
-            case .failure(let error):
-                print(error)
-                self.delegate?.error()
-            }
-        }
+    
+    
+    init(objectList: [ObjectPlaces]) {
+        self.objectList = objectList
+
     }
     
     public func addObjectRestaurant(object: ObjectPlaces) {

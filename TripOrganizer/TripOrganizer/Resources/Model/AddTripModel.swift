@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct AddTripModel {
-    public let tripName: String
-    public let departureDate: String
-    public let returnDate: String
+struct AddTripModel: Codable {
+    var tripName: String
+    var departureDate: String
+    var returnDate: String
+    var placeList: [ObjectPlaces]
 }
 

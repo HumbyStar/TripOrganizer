@@ -32,7 +32,6 @@ class AttractionViewController: UIViewController {
     private let viewModel: AttractionViewModel = AttractionViewModel()
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
-    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     private var fireStoreManager = FirestoreManager.shared
     
     lazy var collectionView: UICollectionView = {

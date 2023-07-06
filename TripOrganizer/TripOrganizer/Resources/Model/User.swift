@@ -10,5 +10,5 @@ import Foundation
 struct User: Codable {
     var userID: String
     var name: String
-    var placeList: [ObjectPlaces]
+    var tripList: [AddTripModel]
 }

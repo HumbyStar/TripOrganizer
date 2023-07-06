@@ -28,7 +28,6 @@ class HotelViewController: UIViewController {
     var localPhotos: [UIImage] = []
     private var fireStoreManager = FirestoreManager.shared
     var homeViewModel: HomeViewModel? = HomeViewModel()
-    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     var index: IndexPath = IndexPath()
     
     lazy var collectionView: UICollectionView = {

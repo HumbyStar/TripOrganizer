@@ -16,7 +16,8 @@ class TripPlanViewController: UIViewController {
     
     var placeNameReceived: String?
     private var fireStoreManager = FirestoreManager.shared
-    var tripViewModel: TripPlanViewModel = TripPlanViewModel()
+    var tripViewModel: TripPlanViewModel?
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +25,12 @@ class TripPlanViewController: UIViewController {
         configCollectionView()
         configCollectionViewProtocol()
         tripNameLabel.text = placeNameReceived
-        tripViewModel.delegate(delegate: self)
+        tripViewModel?.delegate(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        tripViewModel.fetchPlaces()
+    //    tripViewModel.fetchPlaces()
     }
     
     private func configCollectionViewProtocol() {
@@ -38,7 +39,7 @@ class TripPlanViewController: UIViewController {
     }
     
     private func configCollectionView() {
-        tripViewModel.configLayoutCollectionView(collectionView: collectionView)
+        tripViewModel?.configLayoutCollectionView(collectionView: collectionView)
         collectionView.register(TripPlanCollectionViewCell.nib(), forCellWithReuseIdentifier: TripPlanCollectionViewCell.identifier)
     }
     
@@ -50,19 +51,22 @@ class TripPlanViewController: UIViewController {
 extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tripViewModel.getNumberOfItens()
+        return tripViewModel?.getNumberOfItens() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: TripPlanCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: TripPlanCollectionViewCell.identifier, for: indexPath) as? TripPlanCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setupCell(place: tripViewModel.getObjectList(index: indexPath.row))
+        guard let viewModel = tripViewModel else {
+            return UICollectionViewCell()
+        }
+        cell.setupCell(place: viewModel.getObjectList(index: indexPath.row))
         return cell 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return tripViewModel.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, view: view)
+        return tripViewModel?.sizeForItem(indexPath: indexPath, frame: collectionView.frame, height: collectionView.bounds.height, view: view) ?? CGSize()
     }
 }
 

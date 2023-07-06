@@ -266,6 +266,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc: TripPlanViewController? = UIStoryboard(name: Localized.tripPlanViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.tripPlanViewController) as? TripPlanViewController
+      //  data[indexPath.row].placeList
+        
+        vc?.tripViewModel = TripPlanViewModel(objectList: [])
+        
         vc?.placeNameReceived = viewModel.getTripList(index: indexPath.row).tripName
         navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
     }
