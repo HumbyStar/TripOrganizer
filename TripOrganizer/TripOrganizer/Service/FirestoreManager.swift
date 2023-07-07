@@ -14,6 +14,7 @@ fileprivate enum CollectionKeys: String {
     case user = "user"
 }
 
+
 class FirestoreManager {
     
     static let shared = FirestoreManager()
@@ -42,63 +43,49 @@ class FirestoreManager {
     
     func addPlace(place: ObjectPlaces, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
-            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as! Error))
+            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as? Error ?? Error.userNotFound(name: "Documento não encontrado")))
             return
         }
 
         do {
             let placeData = try Firestore.Encoder().encode(place)
-            
+
             let userRef = firestore.collection(CollectionKeys.user.rawValue).document(currentUserID)
             userRef.updateData(["placeList": FieldValue.arrayUnion([placeData])]) { error in
                 if let error = error {
-                    completion(.failure(error as! Error))
+                    completion(.failure(error as? Error ?? Error.fileNotFound(name: "Documento não encontrado")))
                 } else {
                     completion(.success(()))
                 }
             }
         } catch let error {
-            completion(.failure(error as! Error))
+            completion(.failure(error as? Error ?? Error.errorDetail(detail: "Erro")))
         }
-    }    
+    }
     
-    func removePlace(movieId: Int, completion: @escaping (Result<Void, Error>) -> Void) {
+
+    
+    func removePlace(place: ObjectPlaces, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
-            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as! Error))
+            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as? Error ?? Error.fileNotFound(name: "Documento não encontrado")))
             return
         }
         
         let userRef = firestore.collection(CollectionKeys.user.rawValue).document(currentUserID)
-        userRef.updateData(["favoriteMovies": FieldValue.arrayRemove([movieId])]) { error in
+        userRef.updateData(["placeList": FieldValue.arrayRemove([place])]) { error in
             if let error = error {
-                completion(.failure(error as! Error))
+                completion(.failure(error as? Error ?? Error.fileNotFound(name: "Documento não encontrado")))
             } else {
                 completion(.success(()))
             }
         }
     }
     
-    func isPlaceAdded(movieId: Int, completion: @escaping (Result<Bool, Error>) -> Void) {
-        guard let currentUserID = Auth.auth().currentUser?.uid else {
-            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as! Error))
-            return
-        }
-        
-        let userRef = firestore.collection("user").document(currentUserID)
-        userRef.getDocument { document, error in
-            if let error = error {
-                completion(.failure(error as! Error))
-            } else if let document = document, let data = document.data(), let favoriteMovies = data["favoriteMovies"] as? [Int] {
-                completion(.success(favoriteMovies.contains(movieId)))
-            } else {
-                completion(.failure(NSError(domain: "FirestoreManager", code: -2, userInfo: [NSLocalizedDescriptionKey: "Não foi possível obter os dados do usuário"]) as! Error))
-            }
-        }
-    }
+
     
     func getObjectData<T: Codable>(collection: String, forObjectType objectType: T.Type, completion: @escaping (Result<T, Swift.Error>) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
-            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as! Error))
+            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as? Error ?? Error.fileNotFound(name: "Documento não existe")))
             return
         }
         
