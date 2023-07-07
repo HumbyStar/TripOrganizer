@@ -53,14 +53,16 @@ class HomeViewController: UIViewController {
         circularProfileButton()
         configImagesViews()
         notificationCenterProgressBar()
-        getProfileImage()
+        getProfileInfo()
     }
     
-    private func getProfileImage() {
+    private func getProfileInfo() {
         fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
             switch result {
             case .success(let sucess):
                 let user = sucess
+                let name = sucess.name
+                self.greetingLabel.text = "Olá, \(name)! Está pronto para organizar a sua viagem e facilitar a sua jornada?"
                 if let imageData = user.profileImage {
                     self.perfilButton.setImage(UIImage(data: imageData), for: .normal)
                 } else {
