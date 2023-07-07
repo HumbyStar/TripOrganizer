@@ -3,7 +3,8 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +30,9 @@
                                     <constraint firstAttribute="height" constant="70" id="9zS-rx-0TU"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="Caio"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="perfilButtonPressed:" destination="ahI-c8-cW6" eventType="touchUpInside" id="jAX-hU-FeX"/>
                                 </connections>
@@ -265,11 +268,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Caio" width="1012" height="972"/>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="bed.double.fill" catalog="system" width="128" height="82"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
     </resources>
 </document>

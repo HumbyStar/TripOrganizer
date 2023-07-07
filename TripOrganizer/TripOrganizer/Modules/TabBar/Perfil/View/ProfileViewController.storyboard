@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,8 +104,8 @@
                                     <action selector="changeProfileImageButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="S8K-VX-WR7"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Caio" translatesAutoresizingMaskIntoConstraints="NO" id="hLk-dj-xHe">
-                                <rect key="frame" x="102.5" y="25" width="170" height="170"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hLk-dj-xHe">
+                                <rect key="frame" x="102.5" y="26.5" width="170" height="167.5"/>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="0jW-sB-svu"/>
@@ -159,8 +159,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Caio" width="1012" height="972"/>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="104"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="power" catalog="system" width="127" height="128"/>
     </resources>
 </document>

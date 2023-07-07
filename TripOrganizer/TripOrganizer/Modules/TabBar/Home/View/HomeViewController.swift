@@ -36,10 +36,11 @@ class HomeViewController: UIViewController {
     private var progressBar: Float = 0
     var viewModel: HomeViewModel = HomeViewModel()
     weak var delegate: HomeViewControllerProtocol?
-     
-     public func setDelegate(delegate: HomeViewControllerProtocol){
-         self.delegate = delegate
-     }
+    private var fireStoreManager = FirestoreManager.shared
+    
+    public func setDelegate(delegate: HomeViewControllerProtocol){
+        self.delegate = delegate
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -51,7 +52,28 @@ class HomeViewController: UIViewController {
         changeProfileImageNotification()
         circularProfileButton()
         configImagesViews()
-       notificationCenterProgressBar()
+        notificationCenterProgressBar()
+        getProfileInfo()
+    }
+    
+    private func getProfileInfo() {
+        fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
+            switch result {
+            case .success(let sucess):
+                let user = sucess
+                let name = sucess.name
+                self.greetingLabel.text = "Olá, \(name)! Está pronto para organizar a sua viagem e facilitar a sua jornada?"
+                if let imageData = user.profileImage {
+                    self.perfilButton.setImage(UIImage(data: imageData), for: .normal)
+                } else {
+                    let defaultImage = UIImage(systemName: "person")?.resizableImage(withCapInsets: .zero, resizingMode: .stretch).withRenderingMode(.alwaysTemplate)
+                    self.perfilButton.setImage(defaultImage, for: .normal)
+                    self.perfilButton.imageView?.contentMode = .scaleToFill
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func notificationCenterProgressBar(){
@@ -70,95 +92,95 @@ class HomeViewController: UIViewController {
             imageView?.isUserInteractionEnabled = true
         }
     }
-
+    
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
-       
+        
         guard let imageView = sender.view else { return }
         
-         switch imageView {
-         case tappedTicketView:
-             switch ticketImageView.image {
-             case UIImage(systemName: Localized.square):
-                 ticketImageView.image = UIImage(systemName: Localized.squareCheck)
+        switch imageView {
+        case tappedTicketView:
+            switch ticketImageView.image {
+            case UIImage(systemName: Localized.square):
+                ticketImageView.image = UIImage(systemName: Localized.squareCheck)
                 progressBar += 0.25
                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: Localized.squareCheck):
-                 ticketImageView.image = UIImage(systemName: Localized.square)
-                 progressBar -= 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             default:
-                 break
-             }
-         case tappedHotelView:
-             switch hotelImageView.image {
-             case UIImage(systemName: Localized.square.localized):
-                 hotelImageView.image = UIImage(systemName: Localized.squareCheck)
-                 progressBar += 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: Localized.squareCheck):
-                 hotelImageView.image = UIImage(systemName: Localized.square)
-                 progressBar -= 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             default:
-                 break
-             }
-             
-         case tappedRestaurantView:
-             switch restaurantImageView.image {
-             case UIImage(systemName: Localized.square):
-                 restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
-                 progressBar += 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: Localized.squareCheck):
-                 restaurantImageView.image = UIImage(systemName: Localized.square)
-                 progressBar -= 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             default:
-                 break
-             }
-             
-         case tappedAttractionView:
-             switch attractionImageView.image {
-             case UIImage(systemName: Localized.square):
-                 attractionImageView.image = UIImage(systemName: Localized.squareCheck)
-                 progressBar += 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             case UIImage(systemName: Localized.squareCheck):
-                 attractionImageView.image = UIImage(systemName: Localized.square)
-                 progressBar -= 0.25
-                 tripProgressView.setProgress(progressBar, animated: true)
-             default:
-                 break
-             }
-             
-         default:
-             break
-         }
+            case UIImage(systemName: Localized.squareCheck):
+                ticketImageView.image = UIImage(systemName: Localized.square)
+                progressBar -= 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+            default:
+                break
+            }
+        case tappedHotelView:
+            switch hotelImageView.image {
+            case UIImage(systemName: Localized.square.localized):
+                hotelImageView.image = UIImage(systemName: Localized.squareCheck)
+                progressBar += 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+            case UIImage(systemName: Localized.squareCheck):
+                hotelImageView.image = UIImage(systemName: Localized.square)
+                progressBar -= 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+            default:
+                break
+            }
+            
+        case tappedRestaurantView:
+            switch restaurantImageView.image {
+            case UIImage(systemName: Localized.square):
+                restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
+                progressBar += 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+            case UIImage(systemName: Localized.squareCheck):
+                restaurantImageView.image = UIImage(systemName: Localized.square)
+                progressBar -= 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+            default:
+                break
+            }
+            
+        case tappedAttractionView:
+            switch attractionImageView.image {
+            case UIImage(systemName: Localized.square):
+                attractionImageView.image = UIImage(systemName: Localized.squareCheck)
+                progressBar += 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+            case UIImage(systemName: Localized.squareCheck):
+                attractionImageView.image = UIImage(systemName: Localized.square)
+                progressBar -= 0.25
+                tripProgressView.setProgress(progressBar, animated: true)
+            default:
+                break
+            }
+            
+        default:
+            break
+        }
     }
     
-  @objc  func updateProgressBarAndImageViewRestaurant() {
+    @objc  func updateProgressBarAndImageViewRestaurant() {
         progressBar += 0.25
         tripProgressView.setProgress(progressBar, animated: true)
         restaurantImageView.image = UIImage(systemName: Localized.squareCheck)
     }
     
     @objc  func updateProgressBarAndImageViewHotel() {
-          progressBar += 0.25
-          tripProgressView.setProgress(progressBar, animated: true)
-          hotelImageView.image = UIImage(systemName: Localized.squareCheck)
-      }
+        progressBar += 0.25
+        tripProgressView.setProgress(progressBar, animated: true)
+        hotelImageView.image = UIImage(systemName: Localized.squareCheck)
+    }
     
     @objc  func updateProgressBarAndImageViewAttracion() {
-          progressBar += 0.25
-          tripProgressView.setProgress(progressBar, animated: true)
-          attractionImageView.image = UIImage(systemName: Localized.squareCheck)
-      }
+        progressBar += 0.25
+        tripProgressView.setProgress(progressBar, animated: true)
+        attractionImageView.image = UIImage(systemName: Localized.squareCheck)
+    }
     
     @objc  func updateProgressBarAndImageViewTickets() {
-          progressBar += 0.25
-          tripProgressView.setProgress(progressBar, animated: true)
+        progressBar += 0.25
+        tripProgressView.setProgress(progressBar, animated: true)
         ticketImageView.image = UIImage(systemName: Localized.squareCheck)
-      }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         updateTableView()
@@ -196,7 +218,7 @@ class HomeViewController: UIViewController {
     }
     
     private func emptyTableViewLabel() {
-    var emptyLabel : UILabel
+        var emptyLabel : UILabel
         emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: homeTableView.bounds.size.width, height: homeTableView.bounds.size.height))
         emptyLabel.text = emptyText.empty.rawValue
         emptyLabel.textColor = UIColor.gray
@@ -277,7 +299,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             updateTableView()
         }
     }
-
+    
 }
 
 extension HomeViewController: AddTripviewControllerDelegate {
