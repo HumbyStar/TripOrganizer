@@ -3,7 +3,6 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,26 +67,6 @@
                                 <connections>
                                     <action selector="tappedLoginWithGoogleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ArF-si-K1h"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-bi-QRd">
-                                <rect key="frame" x="30" y="571" width="315" height="40"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="brU-vc-PSl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
-                                <state key="normal" title="Continuar com Facebook">
-                                    <color key="titleColor" red="0.65490196079999996" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <imageReference key="image" image="apple.logo" catalog="system" symbolScale="medium" renderingMode="original"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aaT-XT-xTR">
                                 <rect key="frame" x="30" y="294" width="315" height="40"/>
@@ -170,13 +149,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GlW-bi-QRd" secondAttribute="bottom" constant="56" id="1yH-p5-35l"/>
                             <constraint firstItem="2rH-50-HKL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="22q-BZ-kgS"/>
                             <constraint firstItem="aaT-XT-xTR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="4Bz-UE-jd3"/>
                             <constraint firstItem="ccr-yE-ZGO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="6Rf-HL-Yf5"/>
-                            <constraint firstItem="GlW-bi-QRd" firstAttribute="top" secondItem="a1d-bh-LYk" secondAttribute="bottom" constant="15" id="8GC-jW-SZd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GlW-bi-QRd" secondAttribute="trailing" constant="30" id="BYY-L4-OSf"/>
-                            <constraint firstItem="GlW-bi-QRd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Ctk-Lq-zGf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fm4-r4-Y4U" secondAttribute="trailing" constant="30" id="LA9-Na-iSK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ccr-yE-ZGO" secondAttribute="trailing" constant="79" id="MKL-tU-ei0"/>
                             <constraint firstItem="2rH-50-HKL" firstAttribute="top" secondItem="aaT-XT-xTR" secondAttribute="bottom" constant="8" id="O3h-a8-02G"/>
@@ -185,6 +160,7 @@
                             <constraint firstItem="bjz-zO-erX" firstAttribute="top" secondItem="2rH-50-HKL" secondAttribute="bottom" constant="46" id="UDl-ZV-V3O"/>
                             <constraint firstItem="a1d-bh-LYk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="VKP-eJ-fIU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aaT-XT-xTR" secondAttribute="trailing" constant="30" id="WtI-GZ-NAv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a1d-bh-LYk" secondAttribute="bottom" constant="111" id="XQ7-Rt-x1k"/>
                             <constraint firstItem="bjz-zO-erX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="crN-Xc-vsc"/>
                             <constraint firstItem="ccr-yE-ZGO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="dmQ-z1-GBB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bjz-zO-erX" secondAttribute="trailing" constant="30" id="eqA-uQ-VAS"/>
@@ -204,7 +180,6 @@
                         <outlet property="passwordView" destination="2rH-50-HKL" id="hO1-ds-ypI"/>
                         <outlet property="recoverButton" destination="VNy-Te-OV8" id="ITX-6C-9LQ"/>
                         <outlet property="registerButton" destination="Lbv-d6-7XD" id="Pza-bG-vBp"/>
-                        <outlet property="signInWithAppleButton" destination="GlW-bi-QRd" id="YCW-c0-pCA"/>
                         <outlet property="signInWithGoogleButton" destination="a1d-bh-LYk" id="aPt-II-pbC"/>
                     </connections>
                 </viewController>
@@ -214,14 +189,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apple.logo" catalog="system" width="105" height="128"/>
         <image name="google2" width="16" height="16"/>
         <image name="newLogo" width="455" height="549"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
