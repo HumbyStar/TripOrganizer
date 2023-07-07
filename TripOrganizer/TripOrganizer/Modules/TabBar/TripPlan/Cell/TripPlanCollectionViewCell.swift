@@ -9,6 +9,7 @@ import UIKit
 
 class TripPlanCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var ratingsLabel: UILabel!
     @IBOutlet var placeImageView: UIImageView!
     @IBOutlet var placeNameLabel: UILabel!
     @IBOutlet var placeAddressLabel: UILabel!
@@ -44,6 +45,7 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         openingHoursLabel.text = place.openingHours
         let image = UIImage(data: place.images)
         placeImageView.image = image
+        ratingsLabel.text = place.ratings
     }
     
     private func configCellLayout() {
