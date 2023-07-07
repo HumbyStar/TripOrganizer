@@ -36,6 +36,7 @@ class HomeViewController: UIViewController {
     private var progressBar: Float = 0
     var viewModel: HomeViewModel = HomeViewModel()
     weak var delegate: HomeViewControllerProtocol?
+    private var fireStoreManager = FirestoreManager.shared
      
      public func setDelegate(delegate: HomeViewControllerProtocol){
          self.delegate = delegate
@@ -51,7 +52,20 @@ class HomeViewController: UIViewController {
         changeProfileImageNotification()
         circularProfileButton()
         configImagesViews()
-       notificationCenterProgressBar()
+        notificationCenterProgressBar()
+        getProfileImage()
+    }
+    
+    private func getProfileImage() {
+        fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
+            switch result {
+            case .success(let sucess):
+                let imageData = sucess.profileImage
+                self.perfilButton.setImage(UIImage(data: imageData ?? Data()), for: .normal)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func notificationCenterProgressBar(){

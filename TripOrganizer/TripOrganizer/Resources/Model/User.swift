@@ -10,5 +10,6 @@ import Foundation
 struct User: Codable {
     var userID: String
     var name: String
+    var profileImage: Data?
     var placeList: [ObjectPlaces]
 }

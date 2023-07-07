@@ -63,6 +63,24 @@ class FirestoreManager {
         }
     }
     
+    
+    func addProfileImage(image: Data, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            let error = NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"])
+            completion(.failure(error as? Error ?? Error.fileNotFound(name: "Usuário não encontrado")))
+            return
+        }
+
+        let userRef = firestore.collection(CollectionKeys.user.rawValue).document(currentUserID)
+        userRef.updateData(["profileImage": image]) { error in
+            if let error = error {
+                completion(.failure(error as? Error ?? Error.fileNotFound(name: "profileImage not found")))
+            } else {
+                completion(.success(()))
+            }
+        }
+    }
+    
 
     
     func removePlace(place: ObjectPlaces, completion: @escaping (Result<Void, Error>) -> Void) {

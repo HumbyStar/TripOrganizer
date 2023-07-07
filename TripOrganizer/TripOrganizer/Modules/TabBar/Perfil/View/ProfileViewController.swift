@@ -13,7 +13,6 @@ enum ProfileImageSelected: String {
 
 class ProfileViewController: UIViewController {
     
-    
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView!
@@ -26,6 +25,7 @@ class ProfileViewController: UIViewController {
     
     var alert: Alert?
     var profileViewModel: ProfileViewModel = ProfileViewModel()
+    private var fireStoreManager = FirestoreManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,22 @@ class ProfileViewController: UIViewController {
         configButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getProfileImage()
+    }
+    
+    private func getProfileImage() {
+        fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
+            switch result {
+            case .success(let sucess):
+                let imageData = sucess.profileImage
+                self.profileImageView.image = UIImage(data: imageData ?? Data())
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         profileViewModel.getCircleBorderImageView(profileImageView: profileImageView)
@@ -45,7 +61,6 @@ class ProfileViewController: UIViewController {
     private func configTextFieldDelegates() {
         self.nameTextField.delegate = self
         self.emailTextField.delegate = self
-        
     }
     
     private func configProfileImage() {
@@ -73,7 +88,7 @@ class ProfileViewController: UIViewController {
     private func configLabel() {
         nameLabel.text = Localized.nameTitle.localized
         emailLabel.text = Localized.emailTitle.localized
-
+        
     }
     
     private func configButton() {
@@ -132,12 +147,24 @@ extension ProfileViewController: UITextFieldDelegate {
         profileViewModel.getConfigTextFielShouldReturn(textField: textField, nameTextField: nameTextField, emailTextField: emailTextField)
     }
 }
-    extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            profileImageView.image = info[.originalImage] as? UIImage
-            if let selectedImage = info[.originalImage] as? UIImage {
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: ProfileImageSelected.profileImage.rawValue) , object: selectedImage)
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        profileImageView.image = info[.originalImage] as? UIImage
+        if let selectedImage = info[.originalImage] as? UIImage {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: ProfileImageSelected.profileImage.rawValue) , object: selectedImage)
+            
+            guard let imageData = selectedImage.jpegData(compressionQuality: .leastNonzeroMagnitude) else { return }
+            
+            fireStoreManager.addProfileImage(image: imageData) { result in
+                
+                switch result {
+                case .success:
+                    print("Imagem adicionado com sucesso!")
+                case .failure(let error):
+                    print("Erro ao adicionar Imagem: \(error.localizedDescription)")
+                }
             }
-            self.dismiss(animated: true, completion: nil)
         }
+        self.dismiss(animated: true, completion: nil)
     }
+}
