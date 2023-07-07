@@ -35,18 +35,21 @@ class ProfileViewController: UIViewController {
         configTextFields()
         configLabel()
         configButton()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         getProfileImage()
     }
+    
     
     private func getProfileImage() {
         fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
             switch result {
             case .success(let sucess):
-                let imageData = sucess.profileImage
-                self.profileImageView.image = UIImage(data: imageData ?? Data())
+                let user = sucess
+                if let imageData = user.profileImage {
+                    self.profileImageView.image = UIImage(data: imageData)
+                } else {
+                    let defaultImage = UIImage(systemName: "person")
+                    self.profileImageView.image = defaultImage
+                }
             case .failure(let error):
                 print(error)
             }
