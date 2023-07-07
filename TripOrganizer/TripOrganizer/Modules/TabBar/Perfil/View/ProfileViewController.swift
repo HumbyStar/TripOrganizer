@@ -35,9 +35,11 @@ class ProfileViewController: UIViewController {
         configTextFields()
         configLabel()
         configButton()
-        getUserProfileInfo()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getUserProfileInfo()
+    }
     
     private func getUserProfileInfo() {
         fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
