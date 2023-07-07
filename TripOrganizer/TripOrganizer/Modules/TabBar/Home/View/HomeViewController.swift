@@ -64,7 +64,6 @@ class HomeViewController: UIViewController {
                 if let imageData = user.profileImage {
                     self.perfilButton.setImage(UIImage(data: imageData), for: .normal)
                 } else {
-//                    let defaultImage = UIImage(systemName: "person")
                     let defaultImage = UIImage(systemName: "person")?.resizableImage(withCapInsets: .zero, resizingMode: .stretch).withRenderingMode(.alwaysTemplate)
                     self.perfilButton.setImage(defaultImage, for: .normal)
                     self.perfilButton.imageView?.contentMode = .scaleToFill
