@@ -29,6 +29,7 @@ class HotelViewController: UIViewController {
     private var fireStoreManager = FirestoreManager.shared
     var homeViewModel: HomeViewModel? = HomeViewModel()
     var index: IndexPath = IndexPath()
+    private var buttonPressedCount = 0
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -196,6 +197,7 @@ class HotelViewController: UIViewController {
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
 
             if homeViewModel?.getTripList() != 0 {
+                buttonPressed()
                 addButton.isEnabled = true
                 guard let image = viewModel.localPhotos.first,
                       let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
@@ -213,8 +215,6 @@ class HotelViewController: UIViewController {
                     case .failure(let error):
                         print("Erro ao adicionar lugar: \(error.localizedDescription)")
                     }
-                    
-                    NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
                 }
             
                 } else {
@@ -228,8 +228,12 @@ class HotelViewController: UIViewController {
                 }
             }
         
-    
-    
+    @objc func buttonPressed() {
+            buttonPressedCount += 1
+            if buttonPressedCount == 1 {
+                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
+            }
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

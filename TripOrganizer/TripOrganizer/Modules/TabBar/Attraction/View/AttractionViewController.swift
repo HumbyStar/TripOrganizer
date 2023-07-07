@@ -33,6 +33,7 @@ class AttractionViewController: UIViewController {
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
     private var fireStoreManager = FirestoreManager.shared
+    private var buttonPressedCount = 0
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -208,6 +209,7 @@ class AttractionViewController: UIViewController {
     
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
         if homeViewModel?.getTripList() != 0 {
+            buttonPressed()
             addAttractionButton.isEnabled = true
             guard let image = viewModel.localPhotos.first,
                   let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
@@ -225,8 +227,6 @@ class AttractionViewController: UIViewController {
                 case .failure(let error):
                     print("Erro ao adicionar lugar: \(error.localizedDescription)")
                 }
-                
-                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
             }
         } else {
             let alertController = UIAlertController(title: "Ops!", message: "Crie uma viagem na tela 'Home' para adicionar os locais desejados", preferredStyle: .alert)
@@ -239,6 +239,12 @@ class AttractionViewController: UIViewController {
         }
         }
 
+    @objc func buttonPressed() {
+            buttonPressedCount += 1
+            if buttonPressedCount == 1 {
+                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
+            }
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

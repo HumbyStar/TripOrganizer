@@ -34,6 +34,7 @@ class RestaurantViewController: UIViewController {
     var alert: Alert?
     var homeViewModel: HomeViewModel? = HomeViewModel()
     private var fireStoreManager = FirestoreManager.shared
+    private var buttonPressedCount = 0
     
     lazy var menuCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -201,6 +202,7 @@ class RestaurantViewController: UIViewController {
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
         
         if homeViewModel?.getTripList() != 0 {
+            buttonPressed()
             addButton.isEnabled = true
             guard let image = viewModel.localPhotos.first,
                   let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
@@ -219,7 +221,6 @@ class RestaurantViewController: UIViewController {
                     print("Erro ao adicionar lugar: \(error.localizedDescription)")
                 }
                 
-                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
             }
             
         } else {
@@ -233,6 +234,13 @@ class RestaurantViewController: UIViewController {
             
         }
     }
+    
+    @objc func buttonPressed() {
+            buttonPressedCount += 1
+            if buttonPressedCount == 1 {
+                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
+            }
+        }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
