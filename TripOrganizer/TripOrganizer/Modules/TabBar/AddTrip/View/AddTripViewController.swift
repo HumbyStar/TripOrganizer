@@ -94,6 +94,8 @@ class AddTripViewController: UIViewController {
             guard let name = tripNameTextField.text else {return}
             self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
             navigationController?.popViewController(animated: true)
+//            let vc = UIStoryboard(name: Localized.homeViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.homeViewController) as? HomeViewController
+//            navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
         } else {
             self.alert?.createAlert(title: "", message: Localized.tripNameEmpty.localized)
         }

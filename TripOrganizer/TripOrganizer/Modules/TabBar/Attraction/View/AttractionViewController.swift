@@ -87,9 +87,7 @@ class AttractionViewController: UIViewController {
         viewModel.updateCollectionView = {
             self.viewModel.isLoading = false
             self.collectionView.reloadData()
-        }
-        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
-        updateButtonState()
+        }       
     }
     
     private func updateCollectionView() {
@@ -209,34 +207,38 @@ class AttractionViewController: UIViewController {
     }
     
     @IBAction func tappedAddAttractionButton(_ sender: UIButton) {
-        guard let image = viewModel.localPhotos.first,
-              let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
-            
-            return
-        }
-        
-        alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
-        
-        fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "")) { result in
-            
-            switch result {
-            case .success:
-                print("Lugar adicionado com sucesso!")
-            case .failure(let error):
-                print("Erro ao adicionar lugar: \(error.localizedDescription)")
-            }
-            
-            NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
-        }
-    }
-    
-    @objc func updateButtonState() {
         if homeViewModel?.getTripList() != 0 {
             addAttractionButton.isEnabled = true
+            guard let image = viewModel.localPhotos.first,
+                  let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
+                
+                return
+            }
+            
+            alert?.createAlert(title: messageAttraction.titleEmpty.rawValue, message: messageAttraction.message.rawValue)
+            
+            fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: attractionNameLabel.text ?? "", ratings: attractionRatingLabel.text ?? "", phoneNumber: attractionPhoneNumberLabel.text ?? "", address: attractionAdressLabel.text ?? "", openingHours: attractionOpeningHourLabel.text ?? "")) { result in
+                
+                switch result {
+                case .success:
+                    print("Lugar adicionado com sucesso!")
+                case .failure(let error):
+                    print("Erro ao adicionar lugar: \(error.localizedDescription)")
+                }
+                
+                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarAttraction"), object: nil)
+            }
         } else {
-            addAttractionButton.isEnabled = false
+            let alertController = UIAlertController(title: "Ops!", message: "Crie uma viagem na tela 'Home' para adicionar os locais desejados", preferredStyle: .alert)
+            
+            let okButton = UIAlertAction(title: "OK", style: .default) { action in
+             
+            }
+            alertController.addAction(okButton)
+                       present(alertController, animated: true)
         }
-    }
+        }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

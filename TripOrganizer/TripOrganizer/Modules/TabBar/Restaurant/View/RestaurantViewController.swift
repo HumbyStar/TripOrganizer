@@ -88,8 +88,6 @@ class RestaurantViewController: UIViewController {
             self.viewModel.isLoading = false
             self.menuCollectionView.reloadData()
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
-        updateButtonState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -201,40 +199,46 @@ class RestaurantViewController: UIViewController {
     }
     
     @IBAction func addRestaurantButtonPressed(_ sender: UIButton) {
-        guard let image = viewModel.localPhotos.first,
-              let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
-            
-            return
-        }
         
-        alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
-        
-        fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "")) { result in
-            
-            switch result {
-            case .success:
-                print("Lugar adicionado com sucesso!")
-            case .failure(let error):
-                print("Erro ao adicionar lugar: \(error.localizedDescription)")
+        if homeViewModel?.getTripList() != 0 {
+            addButton.isEnabled = true
+            guard let image = viewModel.localPhotos.first,
+                  let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
+                
+                return
             }
-        
-        NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
+            
+            alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
+            
+            fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "")) { result in
+                
+                switch result {
+                case .success:
+                    print("Lugar adicionado com sucesso!")
+                case .failure(let error):
+                    print("Erro ao adicionar lugar: \(error.localizedDescription)")
+                }
+                
+                NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarRestaurant"), object: nil)
+            }
+            
+        } else {
+            let alertController = UIAlertController(title: "Ops!", message: "Crie uma viagem na tela 'Home' para adicionar os locais desejados", preferredStyle: .alert)
+            
+            let okButton = UIAlertAction(title: "OK", style: .default) { action in
+             
+            }
+            alertController.addAction(okButton)
+                       present(alertController, animated: true)
+            
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
 
-@objc func updateButtonState() {
-    if homeViewModel?.getTripList() != 0 {
-        addButton.isEnabled = true
-    } else {
-        addButton.isEnabled = false
-    }
-}
-
-override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    view.endEditing(true)
-}
-
-}
 
 extension RestaurantViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -84,8 +84,6 @@ class HotelViewController: UIViewController {
             self.viewModel.isLoading = false
             self.collectionView.reloadData()
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(updateButtonState), name: Notification.Name("updateList"), object: nil)
-        updateButtonState()
     }
     
     private func changePlaceAnimated(infoPlace: PlaceData) {
@@ -196,34 +194,42 @@ class HotelViewController: UIViewController {
     }
     
     @IBAction func addHotelButtonPressed(_ sender: UIButton) {
-        guard let image = viewModel.localPhotos.first,
-              let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
+
+            if homeViewModel?.getTripList() != 0 {
+                addButton.isEnabled = true
+                guard let image = viewModel.localPhotos.first,
+                      let imageData = image.jpegData(compressionQuality: .leastNonzeroMagnitude) else {
+                    
+                    return
+                }
+                
+                alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
+                
+                fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours: hotelOpeningHoursLabel.text ?? "")) { result in
+                    
+                    switch result {
+                    case .success:
+                        print("Lugar adicionado com sucesso!")
+                    case .failure(let error):
+                        print("Erro ao adicionar lugar: \(error.localizedDescription)")
+                    }
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
+                }
             
-            return
-        }
-        
-        alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
-        
-        fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours: hotelOpeningHoursLabel.text ?? "")) { result in
-            
-            switch result {
-            case .success:
-                print("Lugar adicionado com sucesso!")
-            case .failure(let error):
-                print("Erro ao adicionar lugar: \(error.localizedDescription)")
+                } else {
+                    let alertController = UIAlertController(title: "Ops!", message: "Crie uma viagem na tela 'Home' para adicionar os locais desejados", preferredStyle: .alert)
+                    
+                    let okButton = UIAlertAction(title: "OK", style: .default) { action in
+                     
+                    }
+                    alertController.addAction(okButton)
+                               present(alertController, animated: true)
+                }
             }
-            
-            NotificationCenter.default.post(name: NSNotification.Name("updateProgressBarHotel"), object: nil)
-        }
-    }
+        
     
-    @objc func updateButtonState() {
-        if homeViewModel?.getTripList() != 0 {
-            addButton.isEnabled = true
-        } else {
-            addButton.isEnabled = false
-        }
-    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)

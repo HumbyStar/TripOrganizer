@@ -23,6 +23,7 @@ class Localized {
     static let addTripViewController = "AddTripViewController"
     static let tripPlanViewController = "TripPlanViewController"
     static let ticketsViewController = "TicketsViewController"
+    static let homeViewController = "HomeViewController"
     
     //MARK: System Images
     static let blockedEye = "eye.slash.fill"
