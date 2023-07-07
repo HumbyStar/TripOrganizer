@@ -38,7 +38,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configTextField()
         configButtons(button: signInWithGoogleButton)
-        configButtons(button: signInWithAppleButton)
         configButtons(button: loginButton)
         configPasswordView()
         auth = Auth.auth()
@@ -129,13 +128,11 @@ class ViewController: UIViewController {
         button.layer.cornerRadius = 10
         loginButton.setTitle(Localized.loginSuccessButtonTitle.localized, for: .normal)
         signInWithGoogleButton.setTitle(Localized.signInWithGoogleButtonTitle.localized, for: .normal)
-        signInWithAppleButton.setTitle(Localized.signInwithAppleButtonTitle.localized, for: .normal)
         recoverButton.setTitle(Localized.forgetPasswordButtonTitle, for: .normal)
         recoverButton.setTitleColor(.logoTextOrange, for: .normal)
         registerButton.setTitle(Localized.createAccountButtonTitle.localized, for: .normal)
         registerButton.setTitleColor(.logoTextOrange, for: .normal)
         configShadowButton(button: signInWithGoogleButton)
-        configShadowButton(button: signInWithAppleButton)
         eyeButton.tintColor = .lightGray
         eyeButton.setImage(UIImage(systemName: Localized.blockedEye), for: .normal)
         
