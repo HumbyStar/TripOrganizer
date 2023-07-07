@@ -35,15 +35,16 @@ class ProfileViewController: UIViewController {
         configTextFields()
         configLabel()
         configButton()
-        getProfileImage()
+        getUserProfileInfo()
     }
     
     
-    private func getProfileImage() {
+    private func getUserProfileInfo() {
         fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
             switch result {
             case .success(let sucess):
                 let user = sucess
+                self.nameTextField.text = user.name
                 if let imageData = user.profileImage {
                     self.profileImageView.image = UIImage(data: imageData)
                 } else {
