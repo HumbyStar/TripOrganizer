@@ -45,6 +45,7 @@ class ProfileViewController: UIViewController {
             case .success(let sucess):
                 let user = sucess
                 self.nameTextField.text = user.name
+                self.emailTextField.text = user.email
                 if let imageData = user.profileImage {
                     self.profileImageView.image = UIImage(data: imageData)
                 } else {

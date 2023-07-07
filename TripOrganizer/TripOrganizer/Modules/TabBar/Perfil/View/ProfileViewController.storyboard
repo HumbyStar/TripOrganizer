@@ -104,7 +104,7 @@
                                     <action selector="changeProfileImageButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="S8K-VX-WR7"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hLk-dj-xHe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hLk-dj-xHe">
                                 <rect key="frame" x="102.5" y="26.5" width="170" height="167.5"/>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

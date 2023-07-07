@@ -30,7 +30,7 @@ class FirestoreManager {
             completion(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "User not logged in"]) as? Error)
             return
         }
-        let user = User(userID: userId, name: name, placeList: [])
+        let user = User(userID: userId, name: name, email: email, placeList: [])
         let userCollection = firestore.collection(CollectionKeys.user.rawValue)
         do {
             try userCollection.document(userId).setData(from: user)
