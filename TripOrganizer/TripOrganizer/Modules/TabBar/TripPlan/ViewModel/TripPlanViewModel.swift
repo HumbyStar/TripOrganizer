@@ -25,8 +25,8 @@ class TripPlanViewModel {
     public func fetchPlaces() {
         fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
             switch result {
-            case .success(let sucess):
-                self.objectList = sucess.placeList
+            case .success(let user):
+                self.objectList = user.trip?[0].placeList ?? []
                 self.delegate?.sucess()
             case .failure(let error):
                 print(error)

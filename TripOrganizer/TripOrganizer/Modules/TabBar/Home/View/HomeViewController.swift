@@ -44,6 +44,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
+        viewModel.delegate(delegate: self)
         configTableView()
         configLabel()
         configButton()
@@ -55,6 +56,7 @@ class HomeViewController: UIViewController {
         notificationCenterProgressBar()
         getProfileInfo()
     }
+    
     
     private func getProfileInfo() {
         fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
@@ -184,6 +186,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         updateTableView()
+        viewModel.fetchRequest()
     }
     
     @objc func profileImageSelected(_ notification: Notification) {
@@ -308,3 +311,12 @@ extension HomeViewController: AddTripviewControllerDelegate {
     }
 }
 
+extension HomeViewController: HomeViewModelProtocol {
+    func reloadTableView() {
+        self.homeTableView.reloadData()
+    }
+    
+    func error() {
+        
+    }
+}

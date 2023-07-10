@@ -12,5 +12,5 @@ struct User: Codable {
     var name: String
     var email: String
     var profileImage: Data?
-    var placeList: [ObjectPlaces]
+    var trip: [AddTripModel]?
 }

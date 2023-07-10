@@ -14,6 +14,7 @@ protocol AddTripviewControllerDelegate: AnyObject {
 class AddTripViewController: UIViewController {
     
     let viewModel: AddTripViewModel = AddTripViewModel()
+    private var fireStoreManager = FirestoreManager.shared
     var alert: Alert?
     
     @IBOutlet var returnDateLabel: UILabel!
@@ -92,10 +93,16 @@ class AddTripViewController: UIViewController {
     @IBAction func addTripButtonPressed(_ sender: UIButton) {
         if tripNameTextField.hasText {
             guard let name = tripNameTextField.text else {return}
-            self.delegate?.sendTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? ""))
+            fireStoreManager.addTrip(trip: AddTripModel(tripName: name, departureDate: startDateString ?? "", returnDate: finishDateString ?? "", placeList: [])) { result in
+                
+                switch result {
+                case .success:
+                    print("sucess")
+                case .failure:
+                    print("error")
+                }
+            }
             navigationController?.popViewController(animated: true)
-//            let vc = UIStoryboard(name: Localized.homeViewController, bundle: nil).instantiateViewController(withIdentifier: Localized.homeViewController) as? HomeViewController
-//            navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
         } else {
             self.alert?.createAlert(title: "", message: Localized.tripNameEmpty.localized)
         }

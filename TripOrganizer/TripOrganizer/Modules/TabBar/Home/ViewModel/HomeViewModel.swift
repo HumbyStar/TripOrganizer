@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol HomeViewModelProtocol: AnyObject {
+    func reloadTableView()
+    func error()
+}
+
 class HomeViewModel {
+    
+    var delegate: HomeViewModelProtocol?
+    
+    public func delegate(delegate: HomeViewModelProtocol) {
+        self.delegate = delegate
+    }
     
     private var tripImages: [String] = ["trip1",
                                         "trip2",
@@ -27,6 +38,21 @@ class HomeViewModel {
                                         "trip1",
                                         "trip2",
                                         "trip3"]
+    
+    private var fireStoreManager = FirestoreManager.shared
+    
+    public func fetchRequest() {
+        fireStoreManager.getObjectData(collection: "user", forObjectType: User.self) { result in
+            switch result {
+            case .success(let user):
+                HomeViewModel.tripList = user.trip ?? []
+                self.delegate?.reloadTableView()
+            case .failure(let error):
+                print(error)
+                self.delegate?.error()
+            }
+        }
+    }
     
 
     private static var tripList: [AddTripModel] = []{
@@ -65,6 +91,5 @@ class HomeViewModel {
             perfilButton.setImage(selectedImage, for: .normal)
         }
     }
-    
 }
 
