@@ -17,6 +17,8 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet var openingHoursLabel: UILabel!
     @IBOutlet var closingHoursLabel: UILabel!
     
+    private var fireStoreManager = FirestoreManager.shared
+    
     static let identifier: String = String(describing: TripPlanCollectionViewCell.self)
     
     static public func nib() -> UINib{
@@ -46,6 +48,10 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
         let image = UIImage(data: place.images)
         placeImageView.image = image
         ratingsLabel.text = place.ratings
+    }
+    
+    @IBAction func deletePlace(_ sender: UIButton) {
+        fireStoreManager.removePlace(place: <#T##ObjectPlaces#>, completion: <#T##(Result<Void, Error>) -> Void#>)
     }
     
     private func configCellLayout() {

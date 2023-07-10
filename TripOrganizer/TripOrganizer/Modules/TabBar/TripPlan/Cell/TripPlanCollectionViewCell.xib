@@ -68,6 +68,18 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Iy-ev-hli">
+                        <rect key="frame" x="297" y="10" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="3bo-K0-xNf"/>
+                            <constraint firstAttribute="width" constant="30" id="Fxb-Xy-ElA"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                        <connections>
+                            <action selector="deletePlace:" destination="gTV-IL-0wX" eventType="touchUpInside" id="36C-VV-3NT"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -81,9 +93,11 @@
                 <constraint firstAttribute="bottom" secondItem="HGf-Fs-8gV" secondAttribute="bottom" id="GtE-5d-hP9"/>
                 <constraint firstItem="1X3-hS-r2w" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="8" symbolic="YES" id="J9K-nO-9rh"/>
                 <constraint firstItem="2ay-De-QKy" firstAttribute="top" secondItem="XJW-jM-C0Q" secondAttribute="bottom" constant="5" id="OsS-In-3AB"/>
+                <constraint firstItem="9Iy-ev-hli" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Qkh-TW-jg0"/>
                 <constraint firstAttribute="trailing" secondItem="2ay-De-QKy" secondAttribute="trailing" constant="10" id="Vhp-qc-nI8"/>
                 <constraint firstAttribute="trailing" secondItem="Fnn-dB-oEF" secondAttribute="trailing" constant="10" id="WaC-tb-IhJ"/>
                 <constraint firstItem="Uj7-Tq-smh" firstAttribute="top" secondItem="2ay-De-QKy" secondAttribute="bottom" constant="7" id="bju-vg-MUT"/>
+                <constraint firstAttribute="trailing" secondItem="9Iy-ev-hli" secondAttribute="trailing" constant="10" id="cFd-6q-TJi"/>
                 <constraint firstItem="Uj7-Tq-smh" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="10" id="dAA-5C-O96"/>
                 <constraint firstItem="Fnn-dB-oEF" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="10" id="fUm-1K-0Pc"/>
                 <constraint firstItem="HGf-Fs-8gV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lKK-xk-BJM"/>
@@ -102,10 +116,11 @@
                 <outlet property="placePhoneLabel" destination="XJW-jM-C0Q" id="mQg-37-mz1"/>
                 <outlet property="ratingsLabel" destination="IEb-NO-6LZ" id="3hz-zR-x2Y"/>
             </connections>
-            <point key="canvasLocation" x="-411.4503816793893" y="-21.47887323943662"/>
+            <point key="canvasLocation" x="-411.4503816793893" y="-21.83098591549296"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="hotel2" width="1024" height="768"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
     </resources>
 </document>
