@@ -18,6 +18,7 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
     @IBOutlet var closingHoursLabel: UILabel!
     
     private var fireStoreManager = FirestoreManager.shared
+    var deleteButtonAction: (() -> Void)?
     
     static let identifier: String = String(describing: TripPlanCollectionViewCell.self)
     
@@ -51,7 +52,7 @@ class TripPlanCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func deletePlace(_ sender: UIButton) {
-        fireStoreManager.removePlace(place: <#T##ObjectPlaces#>, completion: <#T##(Result<Void, Error>) -> Void#>)
+        deleteButtonAction?()
     }
     
     private func configCellLayout() {

@@ -8,14 +8,14 @@
 import UIKit
 
 class TripPlanViewController: UIViewController {
-
+    
     @IBOutlet var tripImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var tripNameLabel: UILabel!
     @IBOutlet var backButton: UIButton!
     
     var placeNameReceived: String?
-    private var fireStoreManager = FirestoreManager.shared
+    var fireStoreManager = FirestoreManager.shared
     var tripViewModel: TripPlanViewModel = TripPlanViewModel()
     
     override func viewDidLoad() {
@@ -58,7 +58,19 @@ extension TripPlanViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         cell.setupCell(place: tripViewModel.getObjectList(index: indexPath.row))
-        return cell 
+        cell.deleteButtonAction = {
+            let place = self.tripViewModel.getObjectList(index: indexPath.row)
+            self.fireStoreManager.removePlace(place: place) { result in
+                switch result {
+                case .success:
+                    self.tripViewModel.fetchPlaces()
+                    self.collectionView.reloadData()
+                case .failure:
+                    print("erro ao excluir")
+                }
+            }
+        }
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

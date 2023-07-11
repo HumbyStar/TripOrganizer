@@ -14,7 +14,6 @@ fileprivate enum CollectionKeys: String {
     case user = "user"
 }
 
-
 class FirestoreManager {
     
     static let shared = FirestoreManager()
@@ -39,6 +38,7 @@ class FirestoreManager {
             completion(error as? Error)
         }
     }
+    
     
     func addTrip(trip: AddTripModel, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
@@ -87,25 +87,19 @@ class FirestoreManager {
 
                 if let userData = snapshot.data(),
                    let trip = userData["trip"] as? [[String: Any]], !trip.isEmpty {
-                    var updatedTrips = trip // Cria uma cópia da lista de trips
-
-                    // Obtém a primeira trip (índice 0) da lista
+                    
+                    var updatedTrips = trip
                     var firstTrip = updatedTrips[0]
 
-                    // Verifica se a primeira trip tem um lugarList
                     if var placeList = firstTrip["placeList"] as? [[String: Any]] {
-                        // Adiciona o novo lugar à lista de lugares da primeira trip
                         placeList.append(placeData)
                         firstTrip["placeList"] = placeList
                     } else {
-                        // Se a primeira trip não tiver um placeList, cria um novo com o lugar
                         firstTrip["placeList"] = [placeData]
                     }
 
-                    // Atualiza a primeira trip na lista de trips
                     updatedTrips[0] = firstTrip
 
-                    // Atualiza o documento do usuário com a lista de trips atualizada
                     userRef.updateData(["trip": updatedTrips]) { error in
                         if let error = error {
                             completion(.failure(error as? Error ?? Error.fileNotFound(name: "Documento não encontrado")))
@@ -120,47 +114,7 @@ class FirestoreManager {
         } catch let error {
             completion(.failure(error as? Error ?? Error.errorDetail(detail: "Erro")))
         }
-        
-        
-//        guard let currentUserID = Auth.auth().currentUser?.uid else {
-//            completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as? Error ?? Error.userNotFound(name: "Documento não encontrado")))
-//            return
-//        }
-//
-//        do {
-//            let placeData = try Firestore.Encoder().encode(place)
-//
-//            let userRef = firestore.collection(CollectionKeys.user.rawValue).document(currentUserID)
-//            userRef.updateData(["placeList": FieldValue.arrayUnion([placeData])]) { error in
-//                if let error = error {
-//                    completion(.failure(error as? Error ?? Error.fileNotFound(name: "Documento não encontrado")))
-//                } else {
-//                    completion(.success(()))
-//                }
-//            }
-//        } catch let error {
-//            completion(.failure(error as? Error ?? Error.errorDetail(detail: "Erro")))
-//        }
     }
-    
-    
-    func addProfileImage(image: Data, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let currentUserID = Auth.auth().currentUser?.uid else {
-            let error = NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"])
-            completion(.failure(error as? Error ?? Error.fileNotFound(name: "Usuário não encontrado")))
-            return
-        }
-
-        let userRef = firestore.collection(CollectionKeys.user.rawValue).document(currentUserID)
-        userRef.updateData(["profileImage": image]) { error in
-            if let error = error {
-                completion(.failure(error as? Error ?? Error.fileNotFound(name: "profileImage not found")))
-            } else {
-                completion(.success(()))
-            }
-        }
-    }
-    
 
     
     func removePlace(place: ObjectPlaces, completion: @escaping (Result<Void, Error>) -> Void) {
@@ -168,19 +122,51 @@ class FirestoreManager {
             completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as? Error ?? Error.fileNotFound(name: "Documento não encontrado")))
             return
         }
-        
+
         let userRef = firestore.collection(CollectionKeys.user.rawValue).document(currentUserID)
-        userRef.updateData(["placeList": FieldValue.arrayRemove([place])]) { error in
+        
+        userRef.getDocument { (document, error) in
             if let error = error {
-                completion(.failure(error as? Error ?? Error.fileNotFound(name: "Documento não encontrado")))
+                completion(.failure(error as! Error))
+                return
+            }
+            
+            guard let document = document, document.exists else {
+                completion(.failure(Error.fileNotFound(name: "Documento não encontrado")))
+                return
+            }
+            
+            if var trips = document.data()?["trip"] as? [[String: Any]] {
+
+                for (index, trip) in trips.enumerated() {
+                    if var placeList = trip["placeList"] as? [[String: Any]] {
+
+                        if let placeIndex = placeList.firstIndex(where: { $0["name"] as? String == place.name }) {
+                            placeList.remove(at: placeIndex)
+                            
+                            trips[index]["placeList"] = placeList
+                            
+                            userRef.updateData(["trip": trips]) { error in
+                                if let error = error {
+                                    completion(.failure(error as! Error))
+                                } else {
+                                    completion(.success(()))
+                                }
+                            }
+                            
+                            return
+                        }
+                    }
+                }
+                
+                completion(.failure(Error.fileNotFound(name: "Objeto não encontrado na lista")))
             } else {
-                completion(.success(()))
+                completion(.failure(Error.fileNotFound(name: "Lista de viagens 'trip' não encontrada")))
             }
         }
     }
-    
 
-    
+
     func getObjectData<T: Codable>(collection: String, forObjectType objectType: T.Type, completion: @escaping (Result<T, Swift.Error>) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
             completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as? Error ?? Error.fileNotFound(name: "Documento não existe")))
@@ -204,6 +190,24 @@ class FirestoreManager {
                 completion(.success(object))
             } catch let error {
                 completion(.failure(error))
+            }
+        }
+    }
+    
+    
+    func addProfileImage(image: Data, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let currentUserID = Auth.auth().currentUser?.uid else {
+            let error = NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"])
+            completion(.failure(error as? Error ?? Error.fileNotFound(name: "Usuário não encontrado")))
+            return
+        }
+
+        let userRef = firestore.collection(CollectionKeys.user.rawValue).document(currentUserID)
+        userRef.updateData(["profileImage": image]) { error in
+            if let error = error {
+                completion(.failure(error as? Error ?? Error.fileNotFound(name: "profileImage not found")))
+            } else {
+                completion(.success(()))
             }
         }
     }
