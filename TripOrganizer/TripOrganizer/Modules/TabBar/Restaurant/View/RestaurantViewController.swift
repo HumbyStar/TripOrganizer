@@ -212,7 +212,7 @@ class RestaurantViewController: UIViewController {
             
             alert?.createAlert(title: addRestautant.titleEmpty.rawValue, message: addRestautant.message.rawValue)
             
-            fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "")) { result in
+            fireStoreManager.addPlace(place: Places(images: imageData, name: restaurantNameLabel.text ?? "", ratings: restaurantRatingLabel.text ?? "", phoneNumber: restaurantPhoneNumberLabel.text ?? "", address: restaurantAddressLabel.text ?? "", openingHours: restaurantOpeningHoursLabel.text ?? "")) { result in
                 
                 switch result {
                 case .success:

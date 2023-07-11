@@ -63,7 +63,7 @@ class FirestoreManager {
     }
     
     
-    func addPlace(place: ObjectPlaces, completion: @escaping (Result<Void, Error>) -> Void) {
+    func addPlace(place: Places, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
             completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as? Error ?? Error.userNotFound(name: "Documento não encontrado")))
             return
@@ -117,7 +117,7 @@ class FirestoreManager {
     }
 
     
-    func removePlace(place: ObjectPlaces, completion: @escaping (Result<Void, Error>) -> Void) {
+    func removePlace(place: Places, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let currentUserID = Auth.auth().currentUser?.uid else {
             completion(.failure(NSError(domain: "FirestoreManager", code: -1, userInfo: [NSLocalizedDescriptionKey: "Usuário não autenticado"]) as? Error ?? Error.fileNotFound(name: "Documento não encontrado")))
             return

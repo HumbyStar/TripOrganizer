@@ -24,7 +24,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="St.Marks Basilica hdvbuhuef" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X3-hS-r2w">
-                        <rect key="frame" x="148" y="7" width="179" height="40.666666666666664"/>
+                        <rect key="frame" x="148" y="7" width="144" height="40.666666666666664"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40.670000000000002" id="POa-ct-WZ6"/>
                         </constraints>
@@ -88,7 +88,6 @@
                 <constraint firstItem="XJW-jM-C0Q" firstAttribute="top" secondItem="Fnn-dB-oEF" secondAttribute="bottom" constant="5" id="0jN-nL-0mO"/>
                 <constraint firstItem="HGf-Fs-8gV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="4Pl-SY-Whe"/>
                 <constraint firstItem="Fnn-dB-oEF" firstAttribute="top" secondItem="IEb-NO-6LZ" secondAttribute="bottom" constant="5.6699999999999999" id="4xe-30-g1G"/>
-                <constraint firstAttribute="trailing" secondItem="1X3-hS-r2w" secondAttribute="trailing" constant="10" id="7ps-bg-ECs"/>
                 <constraint firstItem="IEb-NO-6LZ" firstAttribute="top" secondItem="1X3-hS-r2w" secondAttribute="bottom" constant="4.3300000000000001" id="BPh-qq-AO4"/>
                 <constraint firstAttribute="bottom" secondItem="HGf-Fs-8gV" secondAttribute="bottom" id="GtE-5d-hP9"/>
                 <constraint firstItem="1X3-hS-r2w" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="8" symbolic="YES" id="J9K-nO-9rh"/>
@@ -103,6 +102,7 @@
                 <constraint firstItem="HGf-Fs-8gV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lKK-xk-BJM"/>
                 <constraint firstItem="2ay-De-QKy" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="10" id="mji-FO-lnr"/>
                 <constraint firstItem="1X3-hS-r2w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="pNT-Oo-lBK"/>
+                <constraint firstItem="9Iy-ev-hli" firstAttribute="leading" secondItem="1X3-hS-r2w" secondAttribute="trailing" constant="5" id="peZ-DQ-He7"/>
                 <constraint firstItem="XJW-jM-C0Q" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="10" id="sem-6q-vaZ"/>
                 <constraint firstItem="IEb-NO-6LZ" firstAttribute="leading" secondItem="HGf-Fs-8gV" secondAttribute="trailing" constant="10" id="tBp-eP-wtg"/>
             </constraints>

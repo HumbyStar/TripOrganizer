@@ -207,7 +207,7 @@ class HotelViewController: UIViewController {
                 
                 alert?.createAlert(title: messageAlertHotel.title.rawValue, message: messageAlertHotel.addHotel.rawValue)
                 
-                fireStoreManager.addPlace(place: ObjectPlaces(images: imageData, name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours: hotelOpeningHoursLabel.text ?? "")) { result in
+                fireStoreManager.addPlace(place: Places(images: imageData, name: hotelNameLabel.text ?? "", ratings: hotelRatingLabel.text ?? "", phoneNumber: hotelPhoneNumberLabel.text ?? "", address: hotelAddressLabel.text ?? "", openingHours: hotelOpeningHoursLabel.text ?? "")) { result in
                     
                     switch result {
                     case .success:

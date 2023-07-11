@@ -48,7 +48,7 @@
 		0C1DA9EA2A16CC3500C4AC1B /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 0C1DA9E92A16CC3500C4AC1B /* FirebaseStorageCombine-Community */; };
 		0C1DA9EC2A17E00800C4AC1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C1DA9EB2A17E00800C4AC1B /* GoogleService-Info.plist */; };
 		0C2037A629F0A21D001BE709 /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2037A529F0A21D001BE709 /* RestaurantViewModel.swift */; };
-		0C2037A829F0A328001BE709 /* ObjectPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2037A729F0A328001BE709 /* ObjectPlaces.swift */; };
+		0C2037A829F0A328001BE709 /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2037A729F0A328001BE709 /* Places.swift */; };
 		0C36EC4229B6621C009550C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4129B6621C009550C8 /* AppDelegate.swift */; };
 		0C36EC4429B6621C009550C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4329B6621C009550C8 /* SceneDelegate.swift */; };
 		0C36EC4629B6621C009550C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36EC4529B6621C009550C8 /* ViewController.swift */; };
@@ -97,7 +97,7 @@
 		50EBF6F42A55A18100CB1B57 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBF6F32A55A18100CB1B57 /* FirestoreManager.swift */; };
 		50EBF6F62A55A20500CB1B57 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBF6F52A55A20500CB1B57 /* User.swift */; };
 		8814475F29F036F000AC429A /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814475E29F036F000AC429A /* AttractionViewModel.swift */; };
-		8814476829F0CC9300AC429A /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476729F0CC9300AC429A /* FlightModel.swift */; };
+		8814476829F0CC9300AC429A /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476729F0CC9300AC429A /* Flight.swift */; };
 		8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476A29F0CEAD00AC429A /* FlightViewModel.swift */; };
 		8814476D29F0CEC900AC429A /* TicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814476C29F0CEC900AC429A /* TicketsViewModel.swift */; };
 		88389A792A5505D8002AF1E9 /* PlacesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88389A782A5505D8002AF1E9 /* PlacesData.swift */; };
@@ -105,7 +105,7 @@
 		886E22C629EEF33600E70FF7 /* HotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E22C529EEF33600E70FF7 /* HotelViewModel.swift */; };
 		C4096D182A423B5400C7906A /* FlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4096D172A423B5400C7906A /* FlightService.swift */; };
 		C4096D1A2A42419E00C7906A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4096D192A42419E00C7906A /* Error.swift */; };
-		C4096D1C2A424B9900C7906A /* TicketsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4096D1B2A424B9900C7906A /* TicketsModel.swift */; };
+		C4096D1C2A424B9900C7906A /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4096D1B2A424B9900C7906A /* Tickets.swift */; };
 		C43C4B4329ED7AAD0013D509 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */; };
 		C43C4B4729ED9B960013D509 /* UIColor .swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C4B4629ED9B950013D509 /* UIColor .swift */; };
 		C43C4B4929EDA0460013D509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C36EC4A29B6621E009550C8 /* Assets.xcassets */; };
@@ -132,7 +132,7 @@
 		0C111C2229BACD9000A0DCF4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0C1DA9EB2A17E00800C4AC1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0C2037A529F0A21D001BE709 /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
-		0C2037A729F0A328001BE709 /* ObjectPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPlaces.swift; sourceTree = "<group>"; };
+		0C2037A729F0A328001BE709 /* Places.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		0C36EC3E29B6621C009550C8 /* TripOrganizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripOrganizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C36EC4129B6621C009550C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C36EC4329B6621C009550C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		50EBF6F32A55A18100CB1B57 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		50EBF6F52A55A20500CB1B57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8814475E29F036F000AC429A /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
-		8814476729F0CC9300AC429A /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+		8814476729F0CC9300AC429A /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		8814476A29F0CEAD00AC429A /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
 		8814476C29F0CEC900AC429A /* TicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewModel.swift; sourceTree = "<group>"; };
 		88389A782A5505D8002AF1E9 /* PlacesData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesData.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		9B70FBC1E46219888EE81715 /* Pods_TripOrganizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripOrganizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4096D172A423B5400C7906A /* FlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightService.swift; sourceTree = "<group>"; };
 		C4096D192A42419E00C7906A /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		C4096D1B2A424B9900C7906A /* TicketsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsModel.swift; sourceTree = "<group>"; };
+		C4096D1B2A424B9900C7906A /* Tickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
 		C43C4B4229ED7AAD0013D509 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C43C4B4629ED9B950013D509 /* UIColor .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor .swift"; sourceTree = "<group>"; };
 		C43C4B4D29EDB95F0013D509 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -335,11 +335,11 @@
 		0C188F902A06C80500820586 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0C2037A729F0A328001BE709 /* ObjectPlaces.swift */,
+				0C2037A729F0A328001BE709 /* Places.swift */,
 				50CEEDBA29F70DC9002548B5 /* TripPlanModel.swift */,
-				8814476729F0CC9300AC429A /* FlightModel.swift */,
+				8814476729F0CC9300AC429A /* Flight.swift */,
 				509DCC0B29F6FC58002F04B0 /* AddTripModel.swift */,
-				C4096D1B2A424B9900C7906A /* TicketsModel.swift */,
+				C4096D1B2A424B9900C7906A /* Tickets.swift */,
 				88389A782A5505D8002AF1E9 /* PlacesData.swift */,
 				50EBF6F52A55A20500CB1B57 /* User.swift */,
 			);
@@ -1035,8 +1035,8 @@
 				0C111C2929BACD9000A0DCF4 /* HotelViewController.swift in Sources */,
 				50EBF6F42A55A18100CB1B57 /* FirestoreManager.swift in Sources */,
 				50D5FBB429EF214E0041ED71 /* Alert.swift in Sources */,
-				C4096D1C2A424B9900C7906A /* TicketsModel.swift in Sources */,
-				8814476829F0CC9300AC429A /* FlightModel.swift in Sources */,
+				C4096D1C2A424B9900C7906A /* Tickets.swift in Sources */,
+				8814476829F0CC9300AC429A /* Flight.swift in Sources */,
 				8814476B29F0CEAD00AC429A /* FlightViewModel.swift in Sources */,
 				43BE0D3429E5E958001B5963 /* FlightTableViewCell.swift in Sources */,
 				50EBF6F62A55A20500CB1B57 /* User.swift in Sources */,
@@ -1045,7 +1045,7 @@
 				5084C69329F9A59600858135 /* LaunchScreenViewController.swift in Sources */,
 				0C5484F22A3E807900AEF9D9 /* MKPointAnnotation.swift in Sources */,
 				50A0E3702A2CED29002F82F3 /* PlaceService.swift in Sources */,
-				0C2037A829F0A328001BE709 /* ObjectPlaces.swift in Sources */,
+				0C2037A829F0A328001BE709 /* Places.swift in Sources */,
 				C4CC788829F862B70055DC8A /* TripPlanViewModel.swift in Sources */,
 				C4CC788A29F862CF0055DC8A /* AddTripViewModel.swift in Sources */,
 				0C111C2629BACD9000A0DCF4 /* RestaurantViewController.swift in Sources */,

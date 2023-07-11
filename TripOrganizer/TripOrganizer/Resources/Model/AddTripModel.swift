@@ -11,6 +11,6 @@ struct AddTripModel: Codable {
     var tripName: String
     var departureDate: String
     var returnDate: String
-    var placeList: [ObjectPlaces]
+    var placeList: [Places]
 }
 

@@ -11,7 +11,7 @@ import GooglePlaces
 
 class RestaurantViewModel {
     
-    private var restaurantList: [ObjectPlaces] = []
+    private var restaurantList: [Places] = []
     private var placeService: PlaceService = PlaceService()
 
     public var isLoading = false

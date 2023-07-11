@@ -14,7 +14,7 @@ enum ErrorDetail: Swift.Error {
 
 class FlightService {
     
-    public func getFlight(url: String, completion: @escaping (TicketsModel?, Error?) -> Void) {
+    public func getFlight(url: String, completion: @escaping (Tickets?, Error?) -> Void) {
         let headers = ["X-RapidAPI-Key": "7ff4a9f926msh5fc948782424c27p16d26fjsn0e934eba019d", "X-RapidAPI-Host": "skyscanner50.p.rapidapi.com"]
         
         guard let url = URL(string: url) else {
@@ -36,7 +36,7 @@ class FlightService {
             
             if response.statusCode == 200 {
                 do {
-                    let data: TicketsModel = try JSONDecoder().decode(TicketsModel.self, from: dataResult)
+                    let data: Tickets = try JSONDecoder().decode(Tickets.self, from: dataResult)
                     print("SUCCESS -> \(#function)")
                     completion(data, nil)
                 } catch {
